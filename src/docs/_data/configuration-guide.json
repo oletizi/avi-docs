@@ -1,0 +1,35 @@
+{
+  "configuration-guide": {
+    "url": "index.html",
+    "title": "Overview",
+    "next": "virtual-services"
+  },
+  "virtual-services": {
+    "parent": "configuration-guide",
+    "url": "virtual-services",
+    "title": "Virtual Services",
+    "prev": "configuration-guide",
+    "next": "virtual-service-analytics"
+  },
+  "virtual-service-analytics": {
+    "parent": "virtual-services",
+    "url": "virtual-service-analytics",
+    "title": "Analytics",
+    "prev": "virtual-services",
+    "next": "virtual-service-logs"
+  },
+  "virtual-service-logs": {
+    "parent": "virtual-services",
+    "url": "virtual-service-logs",
+    "title": "Logs",
+    "prev": "virtual-service-analytics",
+    "next": "virtual-service-health-monitoring"
+  },
+  "virtual-service-health-monitoring":{
+    "parent": "virtual-services",
+    "url": "virtual-services-health-monitoring",
+    "title": "Health Monitoring",
+    "prev": "virtual-service-logs",
+    "next": "virtual-service-client-information"
+  }
+}

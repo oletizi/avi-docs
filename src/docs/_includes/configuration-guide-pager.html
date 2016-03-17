@@ -1,0 +1,19 @@
+{% assign name = page.url | split:"/" | last | remove: '.html' %}
+{% assign metapages = site.data.configuration-guide %}
+{% assign me = metapages[name] %}
+{% assign next = metapages[me.next] %}
+{% assign prev = metapages[me.prev] %}
+
+<div class="pager" style="width: 100%; text-align: right">
+    {% if prev %}
+    <a href="{{prev.url}}">&lsaquo;&nbsp;[ {{prev.title}} ]&nbsp;Prev</a>&nbsp;
+    {% endif %}
+
+    {% if prev %}
+      {% if next %} | {% endif %}
+    {% endif %}
+
+    {% if next %}
+    &nbsp;<a href="{{next.url}}">Next&nbsp;[ {{next.title}} ]&nbsp;&rsaquo;</a>
+    {% endif %}
+</div>
