@@ -1,0 +1,98 @@
+{
+  "configuration-guide": {
+    "url": "index.html",
+    "title": "Overview",
+    "next": "virtual-services"
+  },
+  "virtual-services": {
+    "parent": "configuration-guide",
+    "url": "virtual-services",
+    "title": "Virtual Services",
+    "prev": "configuration-guide",
+    "next": "virtual-service-analytics"
+  },
+  "virtual-service-analytics": {
+    "parent": "virtual-services",
+    "url": "virtual-service-analytics",
+    "title": "Analytics",
+    "prev": "virtual-services",
+    "next": "virtual-service-logs"
+  },
+  "virtual-service-logs": {
+    "parent": "virtual-services",
+    "url": "virtual-service-logs",
+    "title": "Logs",
+    "prev": "virtual-service-analytics",
+    "next": "virtual-service-health-monitoring"
+  },
+  "virtual-service-health-monitoring": {
+    "parent": "virtual-services",
+    "url": "virtual-service-health-monitoring",
+    "title": "Health Monitoring",
+    "prev": "virtual-service-logs",
+    "next": "virtual-service-client-information"
+  },
+  "virtual-service-client-information": {
+    "parent": "virtual-services",
+    "url": "virtual-service-client-information",
+    "title": "Virtual Service Client Information",
+    "prev": "virtual-service-health-monitoring",
+    "next": "virtual-service-security"
+  },
+  "virtual-service-security": {
+    "parent": "virtual-services",
+    "url": "virtual-service-security",
+    "title": "Virtual Service Security",
+    "prev": "virtual-service-client-information",
+    "next": "virtual-service-events-log"
+  },
+  "virtual-service-events-log": {
+    "parent": "virtual-services",
+    "url": "virtual-service-events-log",
+    "title": "Virtual Service Events Log",
+    "prev": "virtual-service-client-information",
+    "next": "virtual-service-alerts"
+  },
+  "virtual-service-alerts": {
+    "parent": "virtual-services",
+    "url": "virtual-service-alerts",
+    "title": "Virtual Service Alerts",
+    "prev": "virtual-service-events-log",
+    "next": "virtual-service-create"
+  },
+  "virtual-service-create": {
+    "parent": "virtual-services",
+    "url": "virtual-service-create",
+    "title": "Create a Virtual Service",
+    "prev": "virtual-service-alerts",
+    "next": "virtual-service-scaling"
+  },
+  "virtual-service-scaling": {
+    "parent": "configuration-guide",
+    "url": "virtual-service-scaling",
+    "title": "Virtual Service Scaling",
+    "prev": "virtual-service-create",
+    "next": "virtual-service-policies"
+  },
+  "virtual-service-policies": {
+    "parent": "configuration-guide",
+    "url": "virtual-service-policies",
+    "title": "Virtual Service Policies",
+    "prev": "virtual-service-create",
+    "next": "pools"
+  },
+  "pools": {
+    "parent": "configuration-guide",
+    "url": "pools",
+    "title": "Pools",
+    "prev": "virtual-service-policies",
+    "next": "servers"
+  },
+  "servers": {
+    "parent": "configuration-guide",
+    "url": "servers",
+    "title": "Servers",
+    "prev": "pools",
+    "next": "operations"
+  }
+}

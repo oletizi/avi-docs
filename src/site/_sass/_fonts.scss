@@ -1,0 +1,19 @@
+@mixin font-face($family-name, $filename) {
+  @font-face {
+    font-family: $family-name;
+    src: url(quote($font-root + $filename + ".eot")); /* IE9 Compat Modes */
+    src: url(quote($font-root + $filename + ".eot?#iefix")) format('embedded-opentype'), /* IE6-IE8 */
+    //url(quote($font-root + $font-root + $filename +".woff2")) format('woff2'), /* Super Modern Browsers */
+    url(quote($font-root + $filename + ".woff")) format('woff'), /* Pretty Modern Browsers */
+    url(quote($font-root + $filename + ".ttf")) format('truetype'), /* Safari, Android, iOS */
+    url(quote($font-root + $filename + ".svg#svgFontName")) format('svg'); /* Legacy iOS */
+  }
+}
+
+@include font-face ("brandon-black", "brandontext-black-webfont");
+@include font-face ("brandon-bold-italic", "brandontext-bolditalic-webfont");
+@include font-face ("brandon-light-italic", "brandontext-lightitalic-webfont");
+@include font-face ("brandon-medium", "brandontext-medium-webfont");
+@include font-face ("brandon-medium-italic", "brandontext-mediumitalic-webfont");
+@include font-face ("brandon-regular-italic", "brandontext-regularitalic-webfont");
+@include font-face ("brandon-regular", "hvdfonts-brandontext-regular");
