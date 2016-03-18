@@ -27,7 +27,7 @@
   },
   "virtual-service-health-monitoring":{
     "parent": "virtual-services",
-    "url": "virtual-services-health-monitoring",
+    "url": "virtual-service-health-monitoring",
     "title": "Health Monitoring",
     "prev": "virtual-service-logs",
     "next": "virtual-service-client-information"
