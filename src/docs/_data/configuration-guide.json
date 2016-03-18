@@ -31,5 +31,12 @@
     "title": "Health Monitoring",
     "prev": "virtual-service-logs",
     "next": "virtual-service-client-information"
+  },
+  "virtual-service-client-information":{
+    "parent": "virtual-services",
+    "url": "virtual-service-client-information",
+    "title": "Virtual Service Client Information",
+    "prev" : "virtual-service-health-monitoring",
+    "next" : "virtual-service-security"
   }
 }
