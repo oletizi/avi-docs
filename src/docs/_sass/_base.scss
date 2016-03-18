@@ -37,7 +37,13 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: brandon-medium;
+}
 
+h1 {
+  font-size: 34px;
+}
 
 /**
  * Images
@@ -83,6 +89,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
+    color: #ff4a00;
 }
 
 

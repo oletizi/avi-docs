@@ -3,42 +3,6 @@ layout: configuration-guide
 title: Configuration Guide
 ---
 
-## Contents ##
-
-* [Overview](#architecture)
-* Applications
-  * [Virtual Services](virtual-services)
-    * [Analytics](virtual-service-analytics)
-    * [Logs](virtual-service-logs)
-    * [Health Monitoring](virtual-service-health-monitoring)
-    * [Client Information](virtual-service-client-information)
-    * [Security](virtual-service-security)
-    * [Events Log](virtual-service-events-log)
-    * [Alerts](virtual-service-alerts)
-    * [Create a Virtual Service](virtual-service-create)
-  * [Virtual Service Scaling](virtual-service-scaling)
-  * [Virtual Service Policies](virtual-service-policies)
-  * [Pools](apps-pools)
-  * [Servers](apps-servers)
-* Operations
-  * [Alerts](ops-alerts)
-  * [Events](ops-events)
-  * [Services](ops-services)
-  * [Traffic Capture](ops-traffic-capture)
-* [Templates](templates)
-  * [Profiles](templates-profiles)
-  * [Groups](templates-groups)
-  * [Security](templates-security)
-  * [Scripts](templates-scripts)
-* [Infrastructure](infrastructure)
-* [Administration](administration)
-  * [User Accounts](admin-user-accounts)
-  * [Settings](admin-settings)
-  * [Controller](admin-controller)
-
-
-<a name="architecture"></a>
-
 ## Architecture ##
 
 Avi Vantage is built using a modern software defined network (SDN) architecture that centralizes the control plane while distributing the data plane. This allows network services to scale near infinitely without the added complexity of managing hundreds of disparate appliances.

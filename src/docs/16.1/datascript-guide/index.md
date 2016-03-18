@@ -1,7 +1,6 @@
 ---
 layout: page
 title: DataScript Guide
-permalink: /datascript-guide/
 ---
 
 ## About ##
