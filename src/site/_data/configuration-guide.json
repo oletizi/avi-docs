@@ -145,11 +145,73 @@
     "prev": "application-profile",
     "next": "persistence-profile"
   },
-  "persistence-profile":{
+  "persistence-profile": {
     "parent": "templates-profile",
     "url": "persistence-profile",
     "title": "Persistence Profile",
     "prev": "tcpudp-profile",
     "next": "health-monitor-profile"
+  },
+  "health-monitor-profile": {
+    "parent": "templates-profile",
+    "url": "health-monitor-profile",
+    "title": "Health Monitor Profile",
+    "prev": "persistence-profile",
+    "next": "analytics-profile"
+  },
+  "analytics-profile": {
+    "parent": "templates-profile",
+    "url": "analytics-profile",
+    "title": "Analytics Profile",
+    "prev": "health-monitor-profile",
+    "next": "templates-groups"
+  },
+  "templates-groups": {
+    "parent": "templates",
+    "url": "templates-groups",
+    "title": "Groups",
+    "prev": "analytics-profile",
+    "next": "templates-security"
+  },
+  "templates-security": {
+    "parent": "templates",
+    "url": "templates-security",
+    "title": "Security",
+    "prev": "templates-groups",
+    "next": "templates-scripts"
+  },
+  "templates-scripts": {
+    "parent": "templates",
+    "url": "templates-scripts",
+    "title": "Scripts",
+    "prev": "templates-security",
+    "next": "infrastructure"
+  },
+  "infrastructure": {
+    "parent": "configuration-guide",
+    "url": "infrastructure",
+    "title": "Infrastructure",
+    "prev": "templates-scripts",
+    "next": "admin-user-accounts"
+  },
+  "admin-user-accounts": {
+    "parent": "administration",
+    "url": "admin-user-accounts",
+    "title": "User Accounts",
+    "prev": "infrastructure",
+    "next": "admin-settings"
+  },
+  "admin-settings": {
+    "parent": "administration",
+    "url": "admin-settings",
+    "title": "Settings",
+    "prev": "admin-user-accounts",
+    "next": "admin-controller"
+  },
+  "admin-controller": {
+    "parent": "administration",
+    "url": "admin-controller",
+    "title": "Controller",
+    "prev": "admin-settings"
   }
 }
