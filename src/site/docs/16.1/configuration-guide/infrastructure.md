@@ -11,7 +11,7 @@ Since each cloud is its own environment, networking and Service Engine (SE) sett
 
 The default landing page for the Infrastructure section shows the dashboard for SEs. The SE dashboard display is similar to the one for virtual services (Applications > Dashboard), but shows only SEs.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-dashboard-1.png" rel="attachment wp-att-5194"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-dashboard-1.png" alt="infra-dashboard" width="919" height="294" class="alignnone size-full wp-image-5194" /></a>
+<a href="img/infra-dashboard-1.png" rel="attachment wp-att-5194"><img src="img/infra-dashboard-1.png" alt="infra-dashboard" width="919" height="294" class="alignnone size-full wp-image-5194" /></a>
 
 All SEs across all clouds are shown. For each SE, the color indicates its health, with a numeric health score also shown next to the heart icon below the name of each SE. Hovering the mouse over the SE icon shows the SE health score breakdown. Clicking the SE name will jump to that SE's page.
 
@@ -53,7 +53,7 @@ An initial cloud is created by default when Vantage is first deployed, and is do
 
 Select the desired cloud. For deploying Avi SEs on bare metal servers, select No Orchestrator. This step is for the virtualization infrastructure and orchestrator. Supported network SDN technologies such as Cisco APIC or Nuage may be configured as additional properties of the cloud for which they are supported.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/inf_cloud_create-withmesos.jpg" rel="attachment wp-att-4542"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/inf_cloud_create-withmesos.jpg" alt="inf_cloud_create-withmesos" class="alignnone size-full wp-image-4542" /></a>
+<a href="img/inf_cloud_create-withmesos.jpg" rel="attachment wp-att-4542"><img src="img/inf_cloud_create-withmesos.jpg" alt="inf_cloud_create-withmesos" class="alignnone size-full wp-image-4542" /></a>
 
 Vantage supports hybrid deployments. A single deployment can exist in multiple environments (for example, VMware and OpenStack) at the same time. Vantage does not support multiple clouds of the same type. For instance, Vantage cannot be deployed in write access mode into multiple VMware vCenter clouds.
 
@@ -63,7 +63,7 @@ Clicking on the name of a cloud allows configuration of infrastructure objects w
 
 ### Service Engines
 
-<img src="/wp-content/uploads/2016/01/architecture_2-1.jpg" height="40%" width="40%" class="alignright" /> Avi Service Engines (SEs) handle all of the data plane operations within Vantage. SEs host the virtual services and require either direct or routable access to all client and server networks a virtual service touches.
+<img src="img/architecture_2-1.jpg" height="40%" width="40%" class="alignright" /> Avi Service Engines (SEs) handle all of the data plane operations within Vantage. SEs host the virtual services and require either direct or routable access to all client and server networks a virtual service touches.
 
 A typical Vantage deployment may have many SEs for various purposes, such as redundancy, scalability, and accommodating large numbers of applications being served. SEs are always grouped within the context of a SE group, which provides settings for high availability, scalability, and potentially resource isolation for tenants.
 
@@ -81,7 +81,7 @@ A typical Vantage deployment may have many SEs for various purposes, such as red
 
 The Service Engines page lists the SEs that are currently configured in Vantage.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-list.png" rel="attachment wp-att-5168"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-list.png" alt="se-list" width="919" height="434" class="alignnone size-full wp-image-5168" /></a>
+<a href="img/se-list.png" rel="attachment wp-att-5168"><img src="img/se-list.png" alt="se-list" width="919" height="434" class="alignnone size-full wp-image-5168" /></a>
 
 To display the SE list for a cloud, select Infrastructure > Clouds, click on a cloud name, and click Service Engines.
 
@@ -111,7 +111,7 @@ This page contains the following information for each SE in the selected cloud:
 
 The Service Engine Details page shows information about the currently selected SE.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-details-drilleddown.png" rel="attachment wp-att-5178"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-details-drilleddown.png" alt="se-details-drilleddown" width="921" height="709" class="alignnone size-full wp-image-5178" /></a>
+<a href="img/se-details-drilleddown.png" rel="attachment wp-att-5178"><img src="img/se-details-drilleddown.png" alt="se-details-drilleddown" width="921" height="709" class="alignnone size-full wp-image-5178" /></a>
 
 This page contains the following popup and tabs:
 
@@ -131,7 +131,7 @@ This page contains the following popup and tabs:
 
 Hovering over or clicking the name of the SE in the top left corner of the Service Engine Details page opens the Service Engine Info popup for that SE.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-details-hoverover.png" rel="attachment wp-att-5171"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-details-hoverover.png" alt="se-details-hoverover" width="360" height="426" class="alignnone size-full wp-image-5171" /></a>
+<a href="img/se-details-hoverover.png" rel="attachment wp-att-5171"><img src="img/se-details-hoverover.png" alt="se-details-hoverover" width="360" height="426" class="alignnone size-full wp-image-5171" /></a>
 
 This popup provides the following information for the SE:
 
@@ -163,11 +163,11 @@ The Analytics tab presents information about various performance metrics over th
 
 The following metrics are available for SEs:
 
-<img src="/wp-content/uploads/2016/01/infra-se-metric1.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
+<img src="img/infra-se-metric1.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
 
 *   **Throughput:** Total bandwidth flowing through the SE for all virtual services being hosted by that SE. This includes the bandwidth flowing in and out of the SE between the client and the virtual service, and the traffic between the SE and the servers. Thus, an SE may report approximately double the throughput of its virtual services.
 
-<img src="/wp-content/uploads/2016/01/infra-se-metric2.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
+<img src="img/infra-se-metric2.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
 
 *   **CPU Usage:** Displays the utilization of the CPUs allocated to the SE. The total number of CPUs appears in the Service Engine Quick Info Popup. Under normal conditions, CPU usage should not regularly exceed 90%, as this may cause latency in the virtual services and disrupt the client experience. The CPU Usage metric tile shows a horizontal bar indicating current usage, with a red line at the right to indicate how close the SE is to pushing the limits of its available CPU capacity.
     
@@ -181,11 +181,11 @@ The following metrics are available for SEs:
     
     *   **CPU Reservation:** By default, CPUs resource is not reserved in a VMware deployment. Within vCenter, you may enable reservation for the SE's virtual machine, which guarantees that other virtual machines sharing the same physical host server will not be able to borrow or compete for CPU resources. This setting may be changed in the SE group properties. Changes will take effect for new SEs only. To make this change for existing SEs, it must be manually changed within vCenter. Refer to your VMware documentation.
 
-<img src="/wp-content/uploads/2016/01/infra-se-metric3.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
+<img src="img/infra-se-metric3.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
 
 *   **Interface Throughput:** Shows the combined throughput for all network interfaces utilized by this SE. Throughput is measured as both client and server side of any virtual services, plus the management traffic between the SE and the Controllers.
 
-<img src="/wp-content/uploads/2016/01/infra-se-metric4.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
+<img src="img/infra-se-metric4.jpg" class="alignright" style="margin: 10px 0 10px 10px" />
 
 *   **Virtual Service Throughput:** Shows the combined throughput for all network interfaces utilized by this SE. Throughput is measured as both client and server side of any virtual services, plus the management traffic between the SE and the Controllers.
 
@@ -369,7 +369,7 @@ The chart pane of the tab shows a detailed graph of the selected score:
 
 The Events tab presents system-generated events over the time period selected for the SE. System events are applicable to the context in which you are viewing them. For example, when viewing events for a SE, only events that are relevant to that object are displayed.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-details-events.png" rel="attachment wp-att-5182"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-details-events.png" alt="se-details-events" width="922" height="392" class="alignnone size-full wp-image-5182" /></a>
+<a href="img/se-details-events.png" rel="attachment wp-att-5182"><img src="img/se-details-events.png" alt="se-details-events" width="922" height="392" class="alignnone size-full wp-image-5182" /></a>
 
 The top of this tab displays the following items:
 
@@ -457,7 +457,7 @@ The table at the bottom of the Alerts tab displays the following alert details:
 
 An Avi Controller that is deployed in write access mode has full write access to the virtualization platform and can automatically deploy new SEs and modify the network configuration of existing SEs. The Controller will place the virtual service on a SE within a cluster and host that has optimal reachability to the servers. In a new Vantage deployment, the first SE will not be created until the first virtual service is created, as this is required to know which server network will be used.
 
-<img src="/wp-content/uploads/2016/01/inf_se_creation.jpg" class="alignright" style="margin: 20px 0 10px 10px" /> The health score of a newly created virtual service will appear as gray with an exclamation point while the SE is being created; hovering the mouse over the health score will show the status as Creating. During this time, the Controller copies the SE image file from itself to the host server, sets up virtual machine settings via the virtualization orchestrator, then sets the network adapters and IP addresses required to reach clients and servers. This process may take anywhere from a few seconds to a few minutes, depending on the time it takes to copy the SE image across the network to a physical host. If creation of the SE fails, the Controller will wait for five minutes and then attempt to recreate the SE on a new host.
+<img src="img/inf_se_creation.jpg" class="alignright" style="margin: 20px 0 10px 10px" /> The health score of a newly created virtual service will appear as gray with an exclamation point while the SE is being created; hovering the mouse over the health score will show the status as Creating. During this time, the Controller copies the SE image file from itself to the host server, sets up virtual machine settings via the virtualization orchestrator, then sets the network adapters and IP addresses required to reach clients and servers. This process may take anywhere from a few seconds to a few minutes, depending on the time it takes to copy the SE image across the network to a physical host. If creation of the SE fails, the Controller will wait for five minutes and then attempt to recreate the SE on a new host.
 
 In an established environment, a new virtual service may use an existing SE and thus be brought up immediately. Preferences for high availability, scalability, and number of virtual services per SE are defined within the SE group settings.
 
@@ -479,7 +479,7 @@ Creating a new SE when the Avi Controller has Read or no access to the virtualiz
 
 The Edit Service Engine popup allows an administrator to modify the network settings for the SE. To edit an SE, select Infrastructure > Service Engines and click on the SE name or on the edit icon.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-edit.png" rel="attachment wp-att-5185"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-edit.png" alt="se-edit" width="745" height="588" class="alignnone size-full wp-image-5185" /></a>
+<a href="img/se-edit.png" rel="attachment wp-att-5185"><img src="img/se-edit.png" alt="se-edit" width="745" height="588" class="alignnone size-full wp-image-5185" /></a>
 
 > **Note:** Properties such as hardware resources and VLAN placement are configured within the SE group.
 
@@ -527,7 +527,7 @@ SEs in write access mode deployments cannot be migrated to new SE groups. Instea
 
 The Service Engine Groups page lists the configured SE groups.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-list.png" rel="attachment wp-att-5156"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-list.png" alt="se-group-list" width="803" height="418" class="alignnone size-full wp-image-5156" /></a>
+<a href="img/se-group-list.png" rel="attachment wp-att-5156"><img src="img/se-group-list.png" alt="se-group-list" width="803" height="418" class="alignnone size-full wp-image-5156" /></a>
 
 The table on this page contains the following information for each SE group:
 
@@ -575,7 +575,7 @@ Edit the High Availability settings:
 
 ##### Virtual Service High Availability Settings
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-ha-settings-1.png" rel="attachment wp-att-5161"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-ha-settings-1.png" alt="se-group-ha-settings" width="760" height="273" class="alignnone size-full wp-image-5161" /></a>
+<a href="img/se-group-ha-settings-1.png" rel="attachment wp-att-5161"><img src="img/se-group-ha-settings-1.png" alt="se-group-ha-settings" width="760" height="273" class="alignnone size-full wp-image-5161" /></a>
 
 *   **High Availability Mode:** Controls how load is scaled across SEs and how Vantage handles SE redundancy and failures. Switching between the four HA modes will change the settings and options exposed below the slider bar. These modes provide a range of choices for using the fewest virtual machine resources versus providing the best high availability.
 
@@ -642,7 +642,7 @@ Edit the High Availability settings:
         </td>
         
         <td valign="top">
-          <img src="/wp-content/uploads/2016/01/inf_se_group_ha_1.png" style="margin-left: 20px" />
+          <img src="img/inf_se_group_ha_1.png" style="margin-left: 20px" />
         </td>
       </tr>
     </table>
@@ -746,7 +746,7 @@ Edit the High Availability settings:
         </td>
         
         <td valign="top">
-          <img src="/wp-content/uploads/2016/01/inf_se_group_ha_2.png" style="margin-left: 20px" />
+          <img src="img/inf_se_group_ha_2.png" style="margin-left: 20px" />
         </td>
       </tr>
     </table>
@@ -870,7 +870,7 @@ Edit the High Availability settings:
         </td>
         
         <td valign="top">
-          <img src="/wp-content/uploads/2016/01/inf_se_group_ha_3.png" style="margin-left: 20px" />
+          <img src="img/inf_se_group_ha_3.png" style="margin-left: 20px" />
         </td>
       </tr>
     </table>
@@ -994,7 +994,7 @@ Edit the High Availability settings:
         </td>
         
         <td>
-          <img src="/wp-content/uploads/2016/01/inf_se_group_ha_4.png" style="margin-left: 20px" />
+          <img src="img/inf_se_group_ha_4.png" style="margin-left: 20px" />
         </td>
       </tr>
     </table>
@@ -1013,7 +1013,7 @@ Edit the High Availability settings:
 
 ##### Service Engine Capacity and Limit Settings
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-limit-settings.png" rel="attachment wp-att-5188"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-limit-settings.png" alt="se-group-limit-settings" width="756" height="127" class="alignnone size-full wp-image-5188" /></a>
+<a href="img/se-group-limit-settings.png" rel="attachment wp-att-5188"><img src="img/se-group-limit-settings.png" alt="se-group-limit-settings" width="756" height="127" class="alignnone size-full wp-image-5188" /></a>
 
 *   **Number of Service Engines:** defines the maximum SEs that may be created within a SE group. This number, combined with the virtual services per SE setting, dictate the maximum number of virtual services that can be created within an SE group. If this limit is reached, it is possible new virtual services may not be able to be deployed and will show a gray, undeployed status. This setting can be useful for limiting Vantage from consuming too many virtual machines.
 
@@ -1031,7 +1031,7 @@ The Advanced tab in the Edit Service Engine Group popup allows configuration of 
 
 Note: This tab appears only when Vantage is deployed in write access mode.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-advanced-settings.png" rel="attachment wp-att-5215"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/se-group-advanced-settings.png" alt="se-group-advanced-settings" width="767" height="492" class="alignnone size-full wp-image-5215" /></a>
+<a href="img/se-group-advanced-settings.png" rel="attachment wp-att-5215"><img src="img/se-group-advanced-settings.png" alt="se-group-advanced-settings" width="767" height="492" class="alignnone size-full wp-image-5215" /></a>
 
 *   **Service Engine Name Prefix:** Enter the prefix to use when naming the SEs within the SE group. This name will be seen both within Vantage, and as the name of the virtual machine within the virtualization orchestrator.
 

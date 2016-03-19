@@ -11,13 +11,13 @@ Information for each server within a pool is available within the Server Details
 
 The Server Page may be access by clicking on the server's name from either the *Pool > Servers *page or the *Pool > Analytics' Servers* tile. When viewing the Server Details page, the server shown is within the context of the pool it was selected within. Rephrased, if the server (IP:Port) is a member of two or more pools, the stats and health monitors shown are only for the server within the context of the viewed pool.
 
-<img class="alignnone wp-image-1228" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/apps_pools_details_servers.jpg" alt="apps_pools_details_servers" width="499" height="114" />
+<img class="alignnone wp-image-1228" src="img/apps_pools_details_servers.jpg" alt="apps_pools_details_servers" width="499" height="114" />
 
  
 
 Not all metrics within the Server Page are available in all environments. For instance, servers that are not virtualized or hooked into a hypervisor are not able to have their physical resources displayed.
 
-<img class="alignnone size-full wp-image-1229" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/apps_servers_details_page.jpg" alt="apps_servers_details_page" width="750" height="552" />
+<img class="alignnone size-full wp-image-1229" src="img/apps_servers_details_page.jpg" alt="apps_servers_details_page" width="750" height="552" />
 
 The statistics can be changed or skewed by switching between Average Values, Peak Values, and Current Values. To see the highest CPU usage over the past day, change the time to 24 hour and the Value to Peak. This will show the highest stats recorded during the past day.
 

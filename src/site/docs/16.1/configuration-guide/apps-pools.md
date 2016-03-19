@@ -15,7 +15,7 @@ This chapter contains the following sections:
 
 Pools maintain the list of servers assigned to them and perform health monitoring, load balancing, persistence, and functions that involve Vantage-to-server interaction. A typical virtual service will point to one pool; however, more advanced configurations may have a virtual service content switching across multiple pools via <a href="http://kb.avinetworks.com/2015/12/18/http-request-policy/" target="_blank">HTTP request policies</a> or <a href="http://kb.avinetworks.com/2015/12/14/overview-of-datascript/" target="_blank">DataScripts</a>. A pool may only be used or referenced by only one virtual service at a time.
 
-<img class="alignnone wp-image-1084" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/architecture_1.jpg" alt="architecture_1" width="578" height="110" />
+<img class="alignnone wp-image-1084" src="img/architecture_1.jpg" alt="architecture_1" width="578" height="110" />
 
 Creating a virtual service using the basic method automatically creates a new pool for that virtual service, using the name of the virtual service with a *-pool* appended. When creating a virtual service via the advanced mode, an existing, unused pool may be specified, or a new pool may be created.
 
@@ -26,24 +26,24 @@ Creating a virtual service using the basic method automatically creates a new po
 Select *Applications > Pools* to open the pools page. This page displays a high level overview of configured pools. This page includes the following functions:
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_search.png"><img class="size-full wp-image-1086 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_search.png" alt="icon_search" width="60" height="18" /></a> <strong>Search</strong>: Filter the list of pools by entering full or partial name of a pool.
+  <a href="img/icon_search.png"><img class="size-full wp-image-1086 alignleft" src="img/icon_search.png" alt="icon_search" width="60" height="18" /></a> <strong>Search</strong>: Filter the list of pools by entering full or partial name of a pool.
 </p>
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_new.png"><img class="size-full wp-image-1087 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_new.png" alt="icon_new" width="60" height="18" /></a> <strong>Create</strong>: Opens the create pool popup.
+  <a href="img/icon_new.png"><img class="size-full wp-image-1087 alignleft" src="img/icon_new.png" alt="icon_new" width="60" height="18" /></a> <strong>Create</strong>: Opens the create pool popup.
 </p>
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_edit_white.png"><img class="size-full wp-image-1088 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_edit_white.png" alt="icon_edit_white" width="60" height="18" /></a> <strong>Edit</strong>: Opens the edit pool popup.
+  <a href="img/icon_edit_white.png"><img class="size-full wp-image-1088 alignleft" src="img/icon_edit_white.png" alt="icon_edit_white" width="60" height="18" /></a> <strong>Edit</strong>: Opens the edit pool popup.
 </p>
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_delete.png"><img class="size-full wp-image-1089 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_delete.png" alt="icon_delete" width="60" height="18" /></a> <strong>Delete</strong>: Select one or more pools in the table and click the delete button at the top left of the table to delete the pools. Only unused pools (with a gray health score) may be deleted. Pools that are in use (e.g. pools referenced by a virtual service) must first be disassociated from the virtual service by deleting or editing the VS.
+  <a href="img/icon_delete.png"><img class="size-full wp-image-1089 alignleft" src="img/icon_delete.png" alt="icon_delete" width="60" height="18" /></a> <strong>Delete</strong>: Select one or more pools in the table and click the delete button at the top left of the table to delete the pools. Only unused pools (with a gray health score) may be deleted. Pools that are in use (e.g. pools referenced by a virtual service) must first be disassociated from the virtual service by deleting or editing the VS.
 </p>
 
 The table on this page displays the following information for each pool. The columns shown may be modified via the sprocket icon in the top right of the table:
 
-<img src="https://avinetworks.com/manual/15.2/images/apps_pools_page.jpg" alt="" border="0" />
+<img src="img/apps_pools_page.jpg" alt="" border="0" />
 
 *   <span style="line-height: 1.42857"><strong>Name</strong>: Lists the name of each pool. Clicking the name opens the A</span>nalytics tab<span style="line-height: 1.42857"> of the Pool Details page.</span>
 *   **Health**: Provides both a number from 1-100 and a color-coded status to provide quick information about the health of each pool. This will be gray if the pool is unused, such as not associated with a virtual service or associated with a VS that can not or has not been placed on a Service Engine. 
@@ -62,7 +62,7 @@ The table on this page displays the following information for each pool. The col
 
 Clicking into a pool brings up the Details pages, which provide deeper views into the current pool.
 
-<img class="" src="https://avinetworks.com/manual/15.2/images/apps_pools_details_page.jpg" alt="" width="356" height="69" border="0" />
+<img class="" src="img/apps_pools_details_page.jpg" alt="" width="356" height="69" border="0" />
 
 This page contains the following sub-pages:
 
@@ -81,7 +81,7 @@ This page contains the following sub-pages:
 
 The pool's Analytics tab presents information about various pool performance metrics. Data shown is filtered by the time period selected.
 
-<img class="alignnone wp-image-1158" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_analytics_about_7.jpg" alt="details_analytics_about_7" width="600" height="397" />
+<img class="alignnone wp-image-1158" src="img/details_analytics_about_7.jpg" alt="details_analytics_about_7" width="600" height="397" />
 
  
 
@@ -104,7 +104,7 @@ The End to End Timing pane at the top of the Analytics tab of the Pool Details P
 
 It may be helpful to compare the end-to-end time against other metrics, such as throughput, to see how increases in traffic impact the ability of the application to respond. For instance, if new connections double but the end-to-end time quadruples, you may need to consider adding additional servers.
 
-<img class="alignnone size-full wp-image-1159" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/template_profiles_analytics_create-edit4.jpg" alt="template_profiles_analytics_create-edit4" width="542" height="90" />
+<img class="alignnone size-full wp-image-1159" src="img/template_profiles_analytics_create-edit4.jpg" alt="template_profiles_analytics_create-edit4" width="542" height="90" />
 
 From left to right, this pane displays the following timing information:
 
@@ -119,12 +119,12 @@ From left to right, this pane displays the following timing information:
 
 The sidebar metrics tiles contain the following metrics for the pool. Clicking any metric tile will change the main chart pane to show the chosen metric.
 
-*   **<img class=" wp-image-1160 alignright" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric1.jpg" alt="infra-pool-metric1" width="174" height="60" />End to End Timing:** Shows the total time from the pool's End to End Timing graph. To see the complete end-to-end timing, including the client latency, see the <a href="http://kb.avinetworks.com/2015/12/07/vs-analytics-page/" target="_blank">Analytics tab</a> of the Virtual Service Details page, which includes the client to Service Engine metric.
-*   **<img class=" wp-image-1161 alignright" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric2.jpg" alt="infra-pool-metric2" width="174" height="60" />Open Connections:** The number of open (existing) connections during the selected time period.  
-*   **<img class="alignright wp-image-1162" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric3.jpg" alt="infra-pool-metric3" width="174" height="60" />New Connections:** The number of client connections that were completed or closed over the selected time period. See this <a href="http://kb.avinetworks.com/2015/11/30/new-connections-metric-reporting-incorrectly/" target="_blank">article </a>for an explanation of new versus closed connections per second.
-*   **<img class="alignright wp-image-1163" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric4.jpg" alt="infra-pool-metric4" width="174" height="60" />Throughput:** Total bandwidth passing between the virtual service and the servers assigned to the pool. This throughput number may be different than the virtual service throughput, which measures throughput between the client and the virtual service. Many features may affect these numbers between the client and server side of Vantage, such as caching, compression, SSL, and TCP multiplexing. Hovering your mouse cursor over this graph displays the throughput in Mbps for the selected time period.
-*   **<img class="alignright wp-image-1164" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric5.jpg" alt="infra-pool-metric5" width="174" height="60" />Requests:** The number of HTTP requests sent to the servers assigned to the pool. This metric also shows errors sent to servers or returned by servers. Any client requests that received an error generated by Vantage as a response (such as a 500 when no servers are available) are not be forwarded to the pool and will not be tracked in this view.
-*   **<img class="alignright wp-image-1165" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric6.jpg" alt="infra-pool-metric6" width="174" height="60" />Servers:** Displays the number of servers in the pool and their health. The X-axis represents the number of HTTP requests or connections to the server, while the Y-axis represents the health score of the server. The chart allows you to view servers in relation to their peers within the pool, thus helping to spot outliers. Within the chart pane, click and drag the mouse over server dots to select and display a table of the highlighted servers below the Chart pane. The table provides more details about these servers, such as hostname, IP address, health, new connections or requests, health score, and the server’s static load balanced ratio. Clicking on the name of a server will jump to the pool's Server Insight page, which shows additional health and resource status.
+*   **<img class=" wp-image-1160 alignright" src="img/infra-pool-metric1.jpg" alt="infra-pool-metric1" width="174" height="60" />End to End Timing:** Shows the total time from the pool's End to End Timing graph. To see the complete end-to-end timing, including the client latency, see the <a href="http://kb.avinetworks.com/2015/12/07/vs-analytics-page/" target="_blank">Analytics tab</a> of the Virtual Service Details page, which includes the client to Service Engine metric.
+*   **<img class=" wp-image-1161 alignright" src="img/infra-pool-metric2.jpg" alt="infra-pool-metric2" width="174" height="60" />Open Connections:** The number of open (existing) connections during the selected time period.  
+*   **<img class="alignright wp-image-1162" src="img/infra-pool-metric3.jpg" alt="infra-pool-metric3" width="174" height="60" />New Connections:** The number of client connections that were completed or closed over the selected time period. See this <a href="http://kb.avinetworks.com/2015/11/30/new-connections-metric-reporting-incorrectly/" target="_blank">article </a>for an explanation of new versus closed connections per second.
+*   **<img class="alignright wp-image-1163" src="img/infra-pool-metric4.jpg" alt="infra-pool-metric4" width="174" height="60" />Throughput:** Total bandwidth passing between the virtual service and the servers assigned to the pool. This throughput number may be different than the virtual service throughput, which measures throughput between the client and the virtual service. Many features may affect these numbers between the client and server side of Vantage, such as caching, compression, SSL, and TCP multiplexing. Hovering your mouse cursor over this graph displays the throughput in Mbps for the selected time period.
+*   **<img class="alignright wp-image-1164" src="img/infra-pool-metric5.jpg" alt="infra-pool-metric5" width="174" height="60" />Requests:** The number of HTTP requests sent to the servers assigned to the pool. This metric also shows errors sent to servers or returned by servers. Any client requests that received an error generated by Vantage as a response (such as a 500 when no servers are available) are not be forwarded to the pool and will not be tracked in this view.
+*   **<img class="alignright wp-image-1165" src="img/infra-pool-metric6.jpg" alt="infra-pool-metric6" width="174" height="60" />Servers:** Displays the number of servers in the pool and their health. The X-axis represents the number of HTTP requests or connections to the server, while the Y-axis represents the health score of the server. The chart allows you to view servers in relation to their peers within the pool, thus helping to spot outliers. Within the chart pane, click and drag the mouse over server dots to select and display a table of the highlighted servers below the Chart pane. The table provides more details about these servers, such as hostname, IP address, health, new connections or requests, health score, and the server’s static load balanced ratio. Clicking on the name of a server will jump to the pool's Server Insight page, which shows additional health and resource status.
 
  
 
@@ -136,7 +136,7 @@ The main chart pane in the middle of the Analytics tab displays a detailed histo
 *   Clicking within the chart will freeze the popup at that point in time. This may be useful when the chart is scrolling as the display updates over time.
 *   Clicking again will unfreeze the highlighted point in time.
 
-<img class="alignnone wp-image-1166" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/inf_chart_pane.jpg" alt="inf_chart_pane" width="536" height="160" />
+<img class="alignnone wp-image-1166" src="img/inf_chart_pane.jpg" alt="inf_chart_pane" width="536" height="160" />
 
 Many charts contain radio buttons in the top right that allow customization of data that should be included or excluded from the chart. For example, if the End to End Timing chart is heavily skewed by one very large metric, then deselecting that metric by clearing the appropriate radio button will re-factor the chart based on the remaining metrics shown. This may change the value of the vertical Y-axis.
 
@@ -146,7 +146,7 @@ Some charts also contain overlay items, which will appear as color-coded icons a
 
 The overlays pane is used to highlight important events within the timeline of the chart pane. This feature helps correlate anomalies, alerts, configuration changes, or system events with changes in traffic patterns.
 
-<img class="alignnone size-full wp-image-1167" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/overlays.png" alt="overlays" width="659" height="46" />
+<img class="alignnone size-full wp-image-1167" src="img/overlays.png" alt="overlays" width="659" height="46" />
 
 Within the overlays pane:
 
@@ -164,13 +164,13 @@ Within the overlays pane:
 
 The anomalies overlay displays periods during which traffic behavior was considered abnormal based on recent historical moving averages. Changing the time interval will provide greater granularity and potentially show more anomalies.
 
-Clicking the Anomalies Overlay button [<img class="alignleft wp-image-1168 size-full" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_anomalies_6-d-b.jpg" alt="overlays_anomalies" width="94" height="28" />][19] displays yellow anomaly icons in the chart pane.  Selecting one of these icons within the chart pane brings up additional information in a table at the bottom of the page. During times of anomalous traffic, Vantage records any metrics that have deviated from the norm, which may provide hints as to the root cause of the anomaly.
+Clicking the Anomalies Overlay button [<img class="alignleft wp-image-1168 size-full" src="img/details_overlays_anomalies_6-d-b.jpg" alt="overlays_anomalies" width="94" height="28" />][19] displays yellow anomaly icons in the chart pane.  Selecting one of these icons within the chart pane brings up additional information in a table at the bottom of the page. During times of anomalous traffic, Vantage records any metrics that have deviated from the norm, which may provide hints as to the root cause of the anomaly.
 
 An anomaly is defined as a metric that has a deviation of 4 sigma or greater across the moving average of the chart.
 
 Anomalies are not recorded or displayed while viewing with the Real Time display period.
 
-<img class="alignnone size-full wp-image-1169" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_anomalies.jpg" alt="details_overlays_anomalies" width="689" height="232" />
+<img class="alignnone size-full wp-image-1169" src="img/details_overlays_anomalies.jpg" alt="details_overlays_anomalies" width="689" height="232" />
 
  
 
@@ -192,10 +192,10 @@ The alerts overlay displays the results of any events that meet the filtering cr
 
 Alerts may be transitory, meaning that they may expire after a defined period of time. For instance, Vantage may generate an alert if a server is down and then allow that alert to expire after a specified time period once the server comes back online. The original event remains available for later troubleshooting purposes.
 
-Clicking the alerts icon [<img class="alignleft wp-image-1171 size-full" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_alerts_6-d-c.jpg" alt="details_overlays_alerts_6-d-c" width="75" height="24" />][21] in the overlay items bar displays any red alerts icons in the chart pane. Selecting one of these chart alerts will bring up additional information below the overlay Items bar, which will show the following information:
+Clicking the alerts icon [<img class="alignleft wp-image-1171 size-full" src="img/details_overlays_alerts_6-d-c.jpg" alt="details_overlays_alerts_6-d-c" width="75" height="24" />][21] in the overlay items bar displays any red alerts icons in the chart pane. Selecting one of these chart alerts will bring up additional information below the overlay Items bar, which will show the following information:
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_alerts.jpg"><img class="alignnone size-full wp-image-1172" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_alerts.jpg" alt="details_overlays_alerts" width="755" height="189" /></a>
+  <a href="img/details_overlays_alerts.jpg"><img class="alignnone size-full wp-image-1172" src="img/details_overlays_alerts.jpg" alt="details_overlays_alerts" width="755" height="189" /></a>
 </p>
 
 *   **Timestamp**: Date and time when the alert occurred.
@@ -216,11 +216,11 @@ Clicking the alerts icon [<img class="alignleft wp-image-1171 size-full" src="ht
 
 The config events overlay displays configuration events, such as changing the Vantage configuration by adding, deleting, or modifying a pool, virtual service, or Service Engine, or an object related to the object being inspected. If traffic dropped off at precisely 10:00am, and at that time an administrator made a change to the virtual services security settings, there's a good chance the cause of the change in traffic was due to the (mis)configuration.
 
-<img class="alignnone size-full wp-image-1173" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_config_events.jpg" alt="details_overlays_config_events" width="757" height="99" />
+<img class="alignnone size-full wp-image-1173" src="img/details_overlays_config_events.jpg" alt="details_overlays_config_events" width="757" height="99" />
 
  
 
-Clicking the Config Events icon [<img class="alignleft wp-image-1174 size-full" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_config-events_6-d-d.jpg" alt="details_overlays_config-events_6-d-d" width="115" height="25" />][23] in the Overlay Items bar displays any blue config event icons in the chart pane. Selecting one of these chart alerts will bring up additional information below the Overlay Items bar, which will show the following information:
+Clicking the Config Events icon [<img class="alignleft wp-image-1174 size-full" src="img/details_overlays_config-events_6-d-d.jpg" alt="details_overlays_config-events_6-d-d" width="115" height="25" />][23] in the Overlay Items bar displays any blue config event icons in the chart pane. Selecting one of these chart alerts will bring up additional information below the Overlay Items bar, which will show the following information:
 
 *   **Timestamp**: Date and time when the configuration change occurred.
 *   **Event Type**: This event type will always be scoped to configuration event types.
@@ -241,9 +241,9 @@ Clicking the Config Events icon [<img class="alignleft wp-image-1174 size-full" 
 
 This overlay displays system events relevant to the current object, such as a server changing status from up to down or the health score of a virtual service changing from 50 to 100.
 
-<img class="alignnone size-full wp-image-1175" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_events.jpg" alt="details_overlays_events" width="735" height="130" />
+<img class="alignnone size-full wp-image-1175" src="img/details_overlays_events.jpg" alt="details_overlays_events" width="735" height="130" />
 
-Clicking the system events icon [<img class="alignleft wp-image-1176 size-full" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_sys-events_6-d-e.jpg" alt="details_overlays_sys-events_6-d-e" width="140" height="28" />][25] in the overlay items bar displays any purple system event icons in the Chart Pane. Select a system event icon in the chart pane to bring up more information below the overlay items bar.
+Clicking the system events icon [<img class="alignleft wp-image-1176 size-full" src="img/details_overlays_sys-events_6-d-e.jpg" alt="details_overlays_sys-events_6-d-e" width="140" height="28" />][25] in the overlay items bar displays any purple system event icons in the Chart Pane. Select a system event icon in the chart pane to bring up more information below the overlay items bar.
 
 *   **Timestamp**: Date and time when the system even occurred.
 *   **Event Type**: This will always be system.
@@ -266,7 +266,7 @@ For the complete descriptions of logs, see the [VS logs page][26] help.
 
 The health tab presents a detailed breakdown of health score information for the pool.
 
-<img class="alignnone  wp-image-1092" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_insights_tab_8.jpg" alt="details_insights_tab_8" width="392" height="156" />
+<img class="alignnone  wp-image-1092" src="img/details_insights_tab_8.jpg" alt="details_insights_tab_8" width="392" height="156" />
 
 The health score of a pool is comprised from the following scores:
 
@@ -289,11 +289,11 @@ Information for each server within a pool is available within the Server Details
 
 The Server Page may be accessed by clicking on the server's name from either the Pool > Servers page or the Pool > Analytics Servers tile. When viewing the Server Details page, the server shown is within the context of the pool it was selected within. Rephrased, if the server (IP:Port) is a member of two or more pools, the stats and health monitors shown are only for the server within the context of the viewed pool.
 
-<img class="alignnone wp-image-1228" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/apps_pools_details_servers.jpg" alt="apps_pools_details_servers" width="499" height="114" />
+<img class="alignnone wp-image-1228" src="img/apps_pools_details_servers.jpg" alt="apps_pools_details_servers" width="499" height="114" />
 
 Not all metrics within the Server Page are available in all environments. For instance, servers that are not virtualized or hooked into a hypervisor are not able to have their physical resources displayed.
 
-<img class="alignnone size-full wp-image-1229" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/apps_servers_details_page.jpg" alt="apps_servers_details_page" width="750" height="552" />
+<img class="alignnone size-full wp-image-1229" src="img/apps_servers_details_page.jpg" alt="apps_servers_details_page" width="750" height="552" />
 
 The statistics can be changed or skewed by switching between Average Values, Peak Values, and Current Values. To see the highest CPU usage over the past day, change the time to 24 hour and the Value to Peak. This will show the highest stats recorded during the past day.
 
@@ -314,7 +314,7 @@ The statistics can be changed or skewed by switching between Average Values, Pea
 
 The events tab presents system-generated events over the time period selected for the pool. System events are applicable to the context in which you are viewing them. For example, when viewing events for a pool, only events that are relevant to that pool are displayed.
 
-<img class="alignnone size-full wp-image-1203" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_events_tab_91.jpg" alt="details_events_tab_9" width="740" height="241" />
+<img class="alignnone size-full wp-image-1203" src="img/details_events_tab_91.jpg" alt="details_events_tab_9" width="740" height="241" />
 
 The top of this tab displays the following items:
 
@@ -348,7 +348,7 @@ For configuration events, expanding the event displays a difference comparison b
 
 The alerts tab displays user-specified events for the selected time period. You can configure alert actions and proactive notifications via Syslog or email in the Notifications tab of the Administration page. Alerts act as filters that provide notification for prioritized events or combinations of events through various mechanisms. Avi Vantage includes a number of default alerts based on events deemed to be universally important.
 
-<img class="alignnone size-full wp-image-1206" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_alerts_tab_101.jpg" alt="details_alerts_tab_10" width="740" height="191" />
+<img class="alignnone size-full wp-image-1206" src="img/details_alerts_tab_101.jpg" alt="details_alerts_tab_10" width="740" height="191" />
 
 The top of this tab shows the following items:
 

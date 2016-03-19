@@ -15,7 +15,7 @@ A virtual service can be thought of as an IP address that Vantage is listening t
 
 Typically, the connection between the client and Vantage is terminated or proxied at the SE, which opens a new TCP connection between itself and the server. The server will respond back directly to the Vantage IP address, not to the original client address. Vantage forwards the response to the client via the TCP connection between itself and the client.
 
-[<img class="alignnone  wp-image-1084" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/architecture_1.jpg" alt="architecture_1" width="573" height="109" />][1]
+[<img class="alignnone  wp-image-1084" src="img/architecture_1.jpg" alt="architecture_1" width="573" height="109" />][1]
 
 A typical virtual service consists of a single IP address and service port that uses a single network protocol. Vantage allows a virtual service to listen to multiple service ports or network protocols.
 
@@ -40,24 +40,24 @@ Select Applications > Virtual Services to open the virtual services page. This p
 This page includes the following functions:
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_search.png"><img class="size-full wp-image-1086 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_search.png" alt="icon_search" width="60" height="18" /></a>  <strong>Search:</strong> Search through the names of the objects.
+  <a href="img/icon_search.png"><img class="size-full wp-image-1086 alignleft" src="img/icon_search.png" alt="icon_search" width="60" height="18" /></a>  <strong>Search:</strong> Search through the names of the objects.
 </p>
 
 <p style="padding-left: 30px">
-  <span style="line-height: 1.42857"><a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_new.png"><img class="size-full wp-image-1087 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_new.png" alt="icon_new" width="60" height="18" /></a>  <strong>Create:</strong> Opens the </span><em style="line-height: 1.42857">Create Virtual Service</em><span style="line-height: 1.42857"> popup.</span>
+  <span style="line-height: 1.42857"><a href="img/icon_new.png"><img class="size-full wp-image-1087 alignleft" src="img/icon_new.png" alt="icon_new" width="60" height="18" /></a>  <strong>Create:</strong> Opens the </span><em style="line-height: 1.42857">Create Virtual Service</em><span style="line-height: 1.42857"> popup.</span>
 </p>
 
 <p style="padding-left: 30px">
-  <span style="line-height: 1.42857"><a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_edit_white.png"><img class="size-full wp-image-1088 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_edit_white.png" alt="icon_edit_white" width="60" height="18" /></a>  <strong>Edit:</strong> Opens the </span><em style="line-height: 1.42857">Edit Virtual Service</em><span style="line-height: 1.42857"> popup.</span>
+  <span style="line-height: 1.42857"><a href="img/icon_edit_white.png"><img class="size-full wp-image-1088 alignleft" src="img/icon_edit_white.png" alt="icon_edit_white" width="60" height="18" /></a>  <strong>Edit:</strong> Opens the </span><em style="line-height: 1.42857">Edit Virtual Service</em><span style="line-height: 1.42857"> popup.</span>
 </p>
 
 <p style="padding-left: 30px">
-  <a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_delete.png"><img class="size-full wp-image-1089 alignleft" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/icon_delete.png" alt="icon_delete" width="60" height="18" /></a>  <strong>Delete:</strong> Immediately removes a virtual service from Vantage. This will terminate all existing connections, delete the configuration of the virtual service, and place the pools used by that virtual service into an unused state. When deleting, a secondary prompt will ask to remove the pool at the same time or leave it intact. The SEs hosting the virtual service may be eligible for deletion if they are no longer in use. Note that an object cannot be un-deleted.
+  <a href="img/icon_delete.png"><img class="size-full wp-image-1089 alignleft" src="img/icon_delete.png" alt="icon_delete" width="60" height="18" /></a>  <strong>Delete:</strong> Immediately removes a virtual service from Vantage. This will terminate all existing connections, delete the configuration of the virtual service, and place the pools used by that virtual service into an unused state. When deleting, a secondary prompt will ask to remove the pool at the same time or leave it intact. The SEs hosting the virtual service may be eligible for deletion if they are no longer in use. Note that an object cannot be un-deleted.
 </p>
 
 The table on this page contains the following information for each virtual service. The columns are customizable, so the exact view may be different.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/vs-list-1.png" rel="attachment wp-att-5282"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/vs-list-1.png" alt="vs-list" width="880" height="324" class="alignnone size-full wp-image-5282" /></a>
+<a href="img/vs-list-1.png" rel="attachment wp-att-5282"><img src="img/vs-list-1.png" alt="vs-list" width="880" height="324" class="alignnone size-full wp-image-5282" /></a>
 
 *   <span style="line-height: 1.42857"><strong>Name:</strong>  Lists the name of each virtual service. Clicking the name of a virtual service opens the </span>Analytics<span style="line-height: 1.42857"> tab of the Virtual Service Details page.</span>
 *   **Health:**  Provides both a number from 1-100 and a color-coded status to provide quick information about the health of each virtual service. If the virtual service is down, an exclamation point will appear instead of a number. A dash appears if the virtual service is disabled, not deployed, or in an error state.
@@ -101,7 +101,7 @@ The details pages are a loose collection of a number of sub-pages under the umb
 
 All of the virtual service details pages include the Virtual Service Quick Info popup, which may be accessed by hovering over or clicking the name of the virtual service in the top left corner of the page.
 
-[<img class="alignnone  wp-image-1077" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/details_quick_info_vs_1.jpg" alt="details_quick_info_vs_1" width="472" height="281" />][9]
+[<img class="alignnone  wp-image-1077" src="img/details_quick_info_vs_1.jpg" alt="details_quick_info_vs_1" width="472" height="281" />][9]
 
  The Virtual Service Quick Info popup provides buttons for the following functions:
 

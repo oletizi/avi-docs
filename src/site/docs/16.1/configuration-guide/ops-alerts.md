@@ -11,7 +11,7 @@ Alerts may be generated when a trigger such as a system event occurs. If all con
 
 The Operations > Alerts > All Alerts page shows all Alerts across Avi Vantage.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/ops_alerts-1.jpg" rel="attachment wp-att-4987"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/ops_alerts-1.jpg" alt="ops_alerts" width="832" height="324" class="alignnone size-full wp-image-4987" /></a>
+<a href="img/ops_alerts-1.jpg" rel="attachment wp-att-4987"><img src="img/ops_alerts-1.jpg" alt="ops_alerts" width="832" height="324" class="alignnone size-full wp-image-4987" /></a>
 
 The functionality on this page is identical to that of the alerts tab found in the virtual services and pools pages; however, those pages are filtered to only show alerts related to those objects. See the Virtual Service Alerts tab for more information on navigating the Alert options.
 
@@ -19,11 +19,11 @@ The functionality on this page is identical to that of the alerts tab found in t
 
 If the virtual service has alerts, an alerts icon appears on the virtual service icon on the Dashboard. Click the virtual service icon to access details for the virtual service, including its alerts:
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertPopup-accessing1.png" rel="attachment wp-att-5003"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertPopup-accessing1.png" alt="AlertPopup-accessing1" width="399" height="291" class="alignnone size-full wp-image-5003" /></a>
+<a href="img/AlertPopup-accessing1.png" rel="attachment wp-att-5003"><img src="img/AlertPopup-accessing1.png" alt="AlertPopup-accessing1" width="399" height="291" class="alignnone size-full wp-image-5003" /></a>
 
 Click Alerts to display the alerts log for the virtual service, or click the alerts icon next to the health score to display a popup list of the mot recent alerts.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertPopup-accessing.png" rel="attachment wp-att-5002"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertPopup-accessing.png" alt="AlertPopup-accessing" width="1121" height="421" class="alignnone size-full wp-image-5002" /></a>
+<a href="img/AlertPopup-accessing.png" rel="attachment wp-att-5002"><img src="img/AlertPopup-accessing.png" alt="AlertPopup-accessing" width="1121" height="421" class="alignnone size-full wp-image-5002" /></a>
 
 ### Alert Configuration
 
@@ -43,7 +43,7 @@ The Alert Config page has the following options:
 
 The table on this page contains the following information for each Alert:
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/ops_alert_config_page-1.jpg" rel="attachment wp-att-4989"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/ops_alert_config_page-1.jpg" alt="ops_alert_config_page" width="1321" height="190" class="alignnone size-full wp-image-4989" /></a>
+<a href="img/ops_alert_config_page-1.jpg" rel="attachment wp-att-4989"><img src="img/ops_alert_config_page-1.jpg" alt="ops_alert_config_page" width="1321" height="190" class="alignnone size-full wp-image-4989" /></a>
 
 *   **Name:** Name of the Alert.
 
@@ -61,7 +61,7 @@ The table on this page contains the following information for each Alert:
 
 The New and Edit Alert Config popups share the same interface.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/ops_alert_config_create-1.png" rel="attachment wp-att-4986"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/ops_alert_config_create-1.png" alt="ops_alert_config_create" width="1010" height="455" class="alignnone size-full wp-image-4986" /></a>
+<a href="img/ops_alert_config_create-1.png" rel="attachment wp-att-4986"><img src="img/ops_alert_config_create-1.png" alt="ops_alert_config_create" width="1010" height="455" class="alignnone size-full wp-image-4986" /></a>
 
 To create or edit an Alert notification:
 
@@ -107,7 +107,7 @@ Select Operations > Alerts > Alert Actions to display the configured alert actio
 *    **Edit:** Opens the Create/Edit Alert Action popup. 
 *    **Delete:** Remove the selected alert action. 
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertActionTable-1.png" rel="attachment wp-att-4993"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertActionTable-1.png" alt="AlertActionTable" width="675" height="355" class="alignnone size-full wp-image-4993" /></a>
+<a href="img/AlertActionTable-1.png" rel="attachment wp-att-4993"><img src="img/AlertActionTable-1.png" alt="AlertActionTable" width="675" height="355" class="alignnone size-full wp-image-4993" /></a>
 
 This example shows the system default alert actions (*System-Alert-*) and some custom alert actions configured by a Vantage user. The default system alert actions may be modified, but not deleted. 
 
@@ -124,7 +124,7 @@ The table on this tab contains the following information for each alert action:
 
 Alert actions may be stored locally on Vantage, and they may also be sent to remote systems.  To direct alerts to a remote system, first configure a Notification or a ControlScript which may be referenced by the alert action.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertConfigNew-1.png" rel="attachment wp-att-4997"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/AlertConfigNew-1.png" alt="AlertConfigNew" width="372" height="485" class="alignnone size-full wp-image-4997" /></a>
+<a href="img/AlertConfigNew-1.png" rel="attachment wp-att-4997"><img src="img/AlertConfigNew-1.png" alt="AlertConfigNew" width="372" height="485" class="alignnone size-full wp-image-4997" /></a>
 
 Alert action options that can be configured here:
 

@@ -9,7 +9,7 @@ The Administration > Controller page provides information about the Controller (
 
 The Controller table lists the Controllers. If Vantage is deployed with a single Controller, only that Controller is listed. If Vantage is deployed as a 3-node Controller cluster, each Controller node is listed. The following example is from a deployment that uses a single Controller:
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin-ctlr-list.png" rel="attachment wp-att-5363"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin-ctlr-list.png" alt="admin-ctlr-list" width="880" height="231" class="alignnone size-full wp-image-5363" /></a>
+<a href="img/admin-ctlr-list.png" rel="attachment wp-att-5363"><img src="img/admin-ctlr-list.png" alt="admin-ctlr-list" width="880" height="231" class="alignnone size-full wp-image-5363" /></a>
 
 The Controller table contains the following information:
 
@@ -53,7 +53,7 @@ Best practice is to always access the Controller cluster through the cluster IP 
 
 This page lists Controller-related events. This page automatically filters the Vantage events log to display only those events related to Controller operation. The same events also are included in the events log accessed by [Operations > Events][1]. The same search options also are supported.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-events.png" rel="attachment wp-att-5383"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-events.png" alt="admin-events" width="880" height="531" class="alignnone size-full wp-image-5383" /></a>
+<a href="img/admin-events.png" rel="attachment wp-att-5383"><img src="img/admin-events.png" alt="admin-events" width="880" height="531" class="alignnone size-full wp-image-5383" /></a>
 
 <div style="margin-top: 60px;">
 </div>
@@ -91,11 +91,11 @@ In this procedure, the Controller node that is already deployed in the singe-nod
 
 6.  In the Controller Node-2 and Controller Node-3 fields, enter the management IP addresses of the new Controller nodes.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-info-3.png" rel="attachment wp-att-5381"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-info-3.png" alt="admin-ctlr-cluster-info" width="767" height="384" class="alignnone size-full wp-image-5381" /></a>
+<a href="img/admin-ctlr-cluster-info-3.png" rel="attachment wp-att-5381"><img src="img/admin-ctlr-cluster-info-3.png" alt="admin-ctlr-cluster-info" width="767" height="384" class="alignnone size-full wp-image-5381" /></a>
 
 After these steps, the incumbent Controller becomes the primary (leader) for the cluster and invites the other Controllers to the cluster as members. Vantage then performs a warm reboot of the cluster. This process can take 2-3 minutes. The configuration of the primary (leader) Controller is synchronized to the new member nodes when the cluster comes online following the reboot.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-topo-small-1.png" rel="attachment wp-att-5396"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-topo-small-1.png" alt="admin-ctlr-cluster-topo-small" width="450" height="236" class="alignnone size-full wp-image-5396" /></a>
+<a href="img/admin-ctlr-cluster-topo-small-1.png" rel="attachment wp-att-5396"><img src="img/admin-ctlr-cluster-topo-small-1.png" alt="admin-ctlr-cluster-topo-small" width="450" height="236" class="alignnone size-full wp-image-5396" /></a>
 
 <div style="margin-top: 60px;">
 </div>
@@ -114,7 +114,7 @@ Controller-level high availability requires a quorum of Controller nodes to be u
 
 Each Controller node in a cluster periodically sends heartbeat messages to the other Controller nodes in the cluster.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-heartbeats.png" rel="attachment wp-att-5399"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-heartbeats.png" alt="admin-ctlr-cluster-heartbeats" width="375" height="330" class="alignnone size-full wp-image-5399" /></a>
+<a href="img/admin-ctlr-cluster-heartbeats.png" rel="attachment wp-att-5399"><img src="img/admin-ctlr-cluster-heartbeats.png" alt="admin-ctlr-cluster-heartbeats" width="375" height="330" class="alignnone size-full wp-image-5399" /></a>
 
 <div style="margin-top: 40px;">
 </div>
@@ -125,14 +125,14 @@ If only one node is down, quorum is maintained and the cluster can continue to o
 
 *   If a member node goes down by the primary (leader) node stays, access to virtual services continues without interruption.
     
-    <a href="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-heartbeats-missed-1.png" rel="attachment wp-att-5405"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-heartbeats-missed-1.png" alt="admin-ctlr-cluster-heartbeats-missed" width="375" height="321" class="alignnone size-full wp-image-5405" /></a>
+    <a href="img/admin-ctlr-cluster-heartbeats-missed-1.png" rel="attachment wp-att-5405"><img src="img/admin-ctlr-cluster-heartbeats-missed-1.png" alt="admin-ctlr-cluster-heartbeats-missed" width="375" height="321" class="alignnone size-full wp-image-5405" /></a>
     
     <div style="margin-top: 40px;">
     </div>
 
 *   If the primary (leader) node goes down, the member nodes form a new quorum and elect a cluster leader. The election process takes about 50-60 seconds and during this period, there is no impact on the data plane. The SEs will continue to operate in "headless mode" but control plane service is not going to be available. During this period, Vantage users will not be able to create a VIP through LBaaS or using the Vantage web interface, API, or CLI.
     
-    <a href="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-heartbeats-missed-headless-1.png" rel="attachment wp-att-5406"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/02/admin-ctlr-cluster-heartbeats-missed-headless-1.png" alt="admin-ctlr-cluster-heartbeats-missed-headless" width="375" height="276" class="alignnone size-full wp-image-5406" /></a>
+    <a href="img/admin-ctlr-cluster-heartbeats-missed-headless-1.png" rel="attachment wp-att-5406"><img src="img/admin-ctlr-cluster-heartbeats-missed-headless-1.png" alt="admin-ctlr-cluster-heartbeats-missed-headless" width="375" height="276" class="alignnone size-full wp-image-5406" /></a>
 
 <div style="margin-top: 40px;">
 </div>

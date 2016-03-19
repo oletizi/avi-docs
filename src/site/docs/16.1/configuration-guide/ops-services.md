@@ -7,7 +7,7 @@ Alert actions may be configured to proactively send notifications to an administ
 
 Before creating an alert action, the notification destinations must be configured. These can be syslog servers, email servers and addresses, and SNMP trap servers. In addition to notifications, an alert action also can include running a ControlScript. Notifications need to be configured only if they are going to be used for an alert action.
 
-<img class="alignnone size-full wp-image-1265" src="http://kb.avinetworks.com/wp-content/uploads/2015/12/Notification.png" alt="Notification" width="600" height="150" />
+<img class="alignnone size-full wp-image-1265" src="img/Notification.png" alt="Notification" width="600" height="150" />
 
 ### Syslog Notifications
 

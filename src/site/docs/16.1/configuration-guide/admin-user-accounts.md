@@ -37,7 +37,7 @@ This tab includes the following functions:
 
 The table on this tab contains the following information for each user:
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_accounts_users_tab.jpg" rel="attachment wp-att-4946"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_accounts_users_tab.jpg" alt="admin_accounts_users_tab" width="1092" height="117" class="alignnone size-full wp-image-4946" /></a>
+<a href="img/admin_accounts_users_tab.jpg" rel="attachment wp-att-4946"><img src="img/admin_accounts_users_tab.jpg" alt="admin_accounts_users_tab" width="1092" height="117" class="alignnone size-full wp-image-4946" /></a>
 
 *   **User Name:** The account name used to log into Avi Vantage via GUI, API, or CLI.
 
@@ -55,7 +55,7 @@ The table on this tab contains the following information for each user:
 
 The Create User and Edit User popups share the same interface.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_accounts_users_create.jpg" rel="attachment wp-att-4948"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_accounts_users_create.jpg" alt="admin_accounts_users_create" width="836" height="507" class="alignnone size-full wp-image-4948" /></a>
+<a href="img/admin_accounts_users_create.jpg" rel="attachment wp-att-4948"><img src="img/admin_accounts_users_create.jpg" alt="admin_accounts_users_create" width="836" height="507" class="alignnone size-full wp-image-4948" /></a>
 
 Enter the following information to create or edit a role:
 
@@ -163,7 +163,7 @@ The table on this tab contains the following information for each role:
 
 The Create Role and Edit Role popups share the same interface. To create or edit a Role:
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_accounts_roles_create-edit.jpg" rel="attachment wp-att-4943"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_accounts_roles_create-edit.jpg" alt="admin_accounts_roles_create-edit" width="774" height="558" class="alignnone size-full wp-image-4943" /></a>
+<a href="img/admin_accounts_roles_create-edit.jpg" rel="attachment wp-att-4943"><img src="img/admin_accounts_roles_create-edit.jpg" alt="admin_accounts_roles_create-edit" width="774" height="558" class="alignnone size-full wp-image-4943" /></a>
 
 *   **Name:** Enter a name in the Role field.
 

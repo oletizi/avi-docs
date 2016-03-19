@@ -47,7 +47,7 @@ The table on this tab contains the following information for each IP group:
 
 The Create IP Group and Edit IP Group popups share the same interface.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/template_groups_create-edit-2.jpg" rel="attachment wp-att-5112"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/template_groups_create-edit-2.jpg" alt="template_groups_create-edit" width="764" height="291" class="alignnone size-full wp-image-5112" /></a> To create or edit an IP group:
+<a href="img/template_groups_create-edit-2.jpg" rel="attachment wp-att-5112"><img src="img/template_groups_create-edit-2.jpg" alt="template_groups_create-edit" width="764" height="291" class="alignnone size-full wp-image-5112" /></a> To create or edit an IP group:
 
 *   **Name:** Enter a unique name for the IP group. 
 *   **Select by IP Address:** Add one or more addresses to the list. Any combination of the following methods may be used: 

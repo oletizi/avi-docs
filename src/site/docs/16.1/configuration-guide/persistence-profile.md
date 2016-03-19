@@ -41,7 +41,7 @@ The table on this tab provides the following information for each persistence pr
 
 The New Persistence Profile and Edit Persistence Profile popups share the same interface.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2016/01/template_profiles_persist_create-edit-1.jpg" rel="attachment wp-att-4804"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/01/template_profiles_persist_create-edit-1.jpg" alt="template_profiles_persist_create-edit" width="1012" height="175" class="alignnone size-full wp-image-4804" /></a>
+<a href="img/template_profiles_persist_create-edit-1.jpg" rel="attachment wp-att-4804"><img src="img/template_profiles_persist_create-edit-1.jpg" alt="template_profiles_persist_create-edit" width="1012" height="175" class="alignnone size-full wp-image-4804" /></a>
 
 To create or edit a Persistence Profile:
 

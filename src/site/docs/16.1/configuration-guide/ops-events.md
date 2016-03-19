@@ -9,7 +9,7 @@ Events are used throughout the system to provide a history of relevant changes t
 
 Select Operations > Events to open the All Events page, which shows all Events for the entire Avi Vantage system. Events pages elsewhere within Avi Vantage will be filtered by the context of the section they exist within, such as only showing Events relevant to the Virtual Service they are being viewed within.
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_events-2.jpg" rel="attachment wp-att-4967"><img src="http://kb.avinetworks.com/wp-content/uploads/2015/12/admin_events-2.jpg" alt="admin_events" width="862" height="408" class="alignnone size-full wp-image-4967" /></a>
+<a href="img/admin_events-2.jpg" rel="attachment wp-att-4967"><img src="img/admin_events-2.jpg" alt="admin_events" width="862" height="408" class="alignnone size-full wp-image-4967" /></a>
 
 The top of this page displays the following items:
 

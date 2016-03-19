@@ -51,7 +51,7 @@ The table on this tab provides the following information for each application pr
 
 ### Create/Edit an Application Profile
 
-<img src="http://kb.avinetworks.com/wp-content/uploads/2016/01/template_profiles_type.jpg" class="alignright" /> The Create Application Profile and Edit Application Profile screens share the same interface regardless of the application profile chosen.
+<img src="img/template_profiles_type.jpg" class="alignright" /> The Create Application Profile and Edit Application Profile screens share the same interface regardless of the application profile chosen.
 
 The initial settings for a new profile are similar regardless of the type of profile chosen:
 
@@ -155,7 +155,7 @@ Vantage can validate the certificates presented by clients, by checking them aga
 
 The Acceleration tab governs the acceleration settings for the HTTP application profile. To edit HTTP acceleration settings:
 
-<a href="http://kb.avinetworks.com/wp-content/uploads/2016/01/template_profiles_app_create-edit_accel-1.jpg" rel="attachment wp-att-4758"><img src="http://kb.avinetworks.com/wp-content/uploads/2016/01/template_profiles_app_create-edit_accel-1.jpg" alt="template_profiles_app_create-edit_accel" width="1012" height="234" class="alignnone size-full wp-image-4758" /></a>
+<a href="img/template_profiles_app_create-edit_accel-1.jpg" rel="attachment wp-att-4758"><img src="img/template_profiles_app_create-edit_accel-1.jpg" alt="template_profiles_app_create-edit_accel" width="1012" height="234" class="alignnone size-full wp-image-4758" /></a>
 
 *   Check the Compression checkbox to enable HTTP Gzip compression,, then enter the appropriate compression settings.
 
