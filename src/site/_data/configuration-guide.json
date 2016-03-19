@@ -79,20 +79,77 @@
     "url": "virtual-service-policies",
     "title": "Virtual Service Policies",
     "prev": "virtual-service-create",
-    "next": "pools"
+    "next": "apps-pools"
   },
-  "pools": {
+  "apps-pools": {
     "parent": "configuration-guide",
-    "url": "pools",
+    "url": "apps-pools",
     "title": "Pools",
     "prev": "virtual-service-policies",
-    "next": "servers"
+    "next": "apps-servers"
   },
-  "servers": {
+  "apps-servers": {
     "parent": "configuration-guide",
-    "url": "servers",
+    "url": "apps-servers",
     "title": "Servers",
-    "prev": "pools",
-    "next": "operations"
+    "prev": "apps-pools",
+    "next": "ops-alerts"
+  },
+  "ops-alerts": {
+    "url": "ops-alerts",
+    "title": "Alerts",
+    "prev": "apps-servers",
+    "next": "ops-events"
+  },
+  "ops-events": {
+    "url": "ops-events",
+    "title": "Events",
+    "prev": "ops-alerts",
+    "next": "ops-services"
+  },
+  "ops-services": {
+    "url": "ops-services",
+    "title": "Services",
+    "prev": "ops-events",
+    "next": "ops-traffic"
+  },
+  "ops-traffic": {
+    "url": "ops-traffic",
+    "title": "Traffic Capture",
+    "prev": "ops-services",
+    "next": "templates"
+  },
+  "templates": {
+    "url": "templates",
+    "title": "Templates",
+    "prev": "ops-services",
+    "next": "templates-profiles"
+  },
+  "templates-profiles": {
+    "url": "templates-profiles",
+    "title": "Profiles",
+    "prev": "templates",
+    "next": "application-profile"
+  },
+  "application-profile": {
+    "parent": "templates-profiles",
+    "url": "application-profile",
+    "title": "Application Profile",
+    "prev": "templates-profiles",
+    "next": "tcpudp-profile"
+  },
+  "tcpudp-profile": {
+    "parent": "templates-profiles",
+    "url": "tcpudp-profile",
+    "title": "TCP/UDP Profile",
+    "prev": "application-profile",
+    "next": "persistence-profile"
+  },
+  "persistence-profile":{
+    "parent": "templates-profile",
+    "url": "persistence-profile",
+    "title": "Persistence Profile",
+    "prev": "tcpudp-profile",
+    "next": "health-monitor-profile"
   }
 }
