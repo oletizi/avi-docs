@@ -17,7 +17,7 @@ while (<STDIN>) {
     my @urls = getUrls( $line );
     foreach (@urls) {
       my $url = $_;
-      if ($url =~ /^http/ || $url =~ /\/wp-content/) {
+      if (($url =~ /^http/ || $url =~ /\/wp-content/) && $url =~ /\.jpg|\.png/) {
         fetchImage( $url );
         my @chunks = split /\//, $url;
         my $imgName = pop @chunks;
@@ -39,7 +39,7 @@ while (<STDIN>) {
   close OUT;
   my $cmd = "mv $outfile $filename";
   println( "moving updated file: $cmd" );
-  #`$cmd`;
+  `$cmd`;
 }
 
 sub fetchImage {
@@ -47,7 +47,7 @@ sub fetchImage {
   if ($url =~ /^\//) {
     $url = "http://kb.avinetworks.com".$url;
   }
-  my $cmd = "wget $url";
+  my $cmd = "wget -N $url";
   println( "Fetching img with command: $cmd" );
   `$cmd`;
 }
