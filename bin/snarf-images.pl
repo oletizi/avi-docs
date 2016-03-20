@@ -9,19 +9,16 @@ while (<STDIN>) {
   println( "filename: $filename" );
   open FILE, $filename or die "Can't open $filename for reading: $!";
 
-  my $outfile = $filename.".tmp";
-  open OUT, ">$outfile" or die "Can't open $outfile for writing: $!";
-
+  my @contents = ();
   while (<FILE>) {
     my $line = $_;
     my $outline = $line;
+
     my @urls = getUrls( $line );
     foreach (@urls) {
       my $url = $_;
       if ($url =~ /^http/ || $url =~ /\/wp-content/) {
-        my $cmd = "wget $url";
-        println( "Fetching img with command: $cmd" );
-  #      `$cmd`;
+        fetchImage( $url );
         my @chunks = split /\//, $url;
         my $imgName = pop @chunks;
         println( "swapping image: $imgName" );
@@ -31,12 +28,27 @@ while (<STDIN>) {
         println( "  $outline" );
       }
     }
-    print OUT $outline;
+    push @contents, $outline;
   }
   close FILE;
+  my $outfile = $filename.".tmp";
+  open OUT, ">$outfile" or die "Can't open $outfile for writing: $!";
+  foreach (@contents) {
+    print OUT;
+  }
   close OUT;
   my $cmd = "mv $outfile $filename";
   println( "moving updated file: $cmd" );
+  #`$cmd`;
+}
+
+sub fetchImage {
+  my ($url) = @_;
+  if ($url =~ /^\//) {
+    $url = "http://kb.avinetworks.com".$url;
+  }
+  my $cmd = "wget $url";
+  println( "Fetching img with command: $cmd" );
   `$cmd`;
 }
 
@@ -47,7 +59,10 @@ sub getUrls {
     println( "Found url: $1" );
     push @rv, $1;
   }
-
+  while ($line =~ /^ \[.+\]: (.+)/g) {
+    println ("Found indexed url: $1");
+    push @rv, $1;
+  }
   return @rv;
 }
 
