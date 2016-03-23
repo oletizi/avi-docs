@@ -89,10 +89,10 @@ To create or edit an Analytics Profile:
     
     *   **Resource Penalties:** Resources that are constrained will increase the Resource Penalty score. Examples include the CPU, memory, or disk utilization of a Service Engine or a server running on a virtual machine.
 
- [1]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit.jpg
- [2]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit1.jpg
- [3]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit5.jpg
- [4]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit3.jpg
- [5]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit4.jpg
- [6]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit2.jpg
- [7]: /wp-content/uploads/2016/01/template_profiles_analytics_create-edit6.jpg
+ [1]: img/template_profiles_analytics_create-edit.jpg
+ [2]: img/template_profiles_analytics_create-edit1.jpg
+ [3]: img/template_profiles_analytics_create-edit5.jpg
+ [4]: img/template_profiles_analytics_create-edit3.jpg
+ [5]: img/template_profiles_analytics_create-edit4.jpg
+ [6]: img/template_profiles_analytics_create-edit2.jpg
+ [7]: img/template_profiles_analytics_create-edit6.jpg

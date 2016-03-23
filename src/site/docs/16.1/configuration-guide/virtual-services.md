@@ -138,7 +138,7 @@ This popup also displays the following information (if applicable) for the virtu
 
 <a name="logs"></a>
 
- [1]: /wp-content/uploads/2015/12/architecture_1.jpg
+ [1]: img/architecture_1.jpg
  [2]: /docs/configuration-guide/applications/virtual-services/vs-analytics
  [3]: /docs/configuration-guide/applications/virtual-services/vs-logs
  [4]: /docs/configuration-guide/applications/virtual-services/vs-health
@@ -146,4 +146,4 @@ This popup also displays the following information (if applicable) for the virtu
  [6]: /docs/configuration-guide/applications/virtual-services/vs-security
  [7]: /docs/configuration-guide/applications/virtual-services/vs-events
  [8]: /docs/configuration-guide/applications/virtual-services/vs-alerts
- [9]: /wp-content/uploads/2015/12/details_quick_info_vs_1.jpg
+ [9]: img/details_quick_info_vs_1.jpg

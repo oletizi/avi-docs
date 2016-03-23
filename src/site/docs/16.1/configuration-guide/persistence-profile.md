@@ -71,4 +71,4 @@ To create or edit a Persistence Profile:
     
     *   **Never:** No replacement server will be selected. Persistent entries will be required to expire normally based upon the persistence type.
 
- [1]: /wp-content/uploads/2016/01/template_profiles_persist_tab.jpg
+ [1]: img/template_profiles_persist_tab.jpg

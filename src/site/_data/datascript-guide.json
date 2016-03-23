@@ -1,0 +1,37 @@
+{
+  "datascript-guide": {
+    "url": "index.html",
+    "title": "Overview",
+    "next": "object-model"
+  },
+  "object-model": {
+    "url": "object-model",
+    "title": "DataScript Object Model",
+    "prev": "datascript-guide",
+    "next": "constructs"
+  },
+  "constructs": {
+    "url":"constructs",
+    "title": "DataScript Constructs",
+    "prev": "object-model",
+    "next": "precedence"
+  },
+  "precedence": {
+    "url": "precedence",
+    "title": "DataScript Precendence",
+    "prev": "constructs",
+    "next": "samples"
+  },
+  "samples": {
+    "url": "samples",
+    "title": "DataScript Samples",
+    "prev": "precedence",
+    "next": "functions"
+  },
+  "functions": {
+    "url": "functions",
+    "title": "DataScript Functions",
+    "prev": "samples"
+  }
+
+}

@@ -57,4 +57,4 @@ For configuration events, expanding the event displays a difference comparison b
 
 *   Changed fields will show highlighted in yellow.
 
- [1]: /wp-content/uploads/2016/01/admin_configuration.jpg
+ [1]: img/admin_configuration.jpg

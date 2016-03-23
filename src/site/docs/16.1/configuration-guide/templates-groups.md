@@ -93,6 +93,6 @@ To create or edit a string group:
 
 This article will be updated with more information on this feature.
 
- [1]: /wp-content/uploads/2016/01/template_groups_ip.jpg
- [2]: /wp-content/uploads/2016/01/template_groups_string_tab.jpg
- [3]: /wp-content/uploads/2016/01/template_groups_string_create-edit.jpg
+ [1]: img/template_groups_ip.jpg
+ [2]: img/template_groups_string_tab.jpg
+ [3]: img/template_groups_string_create-edit.jpg

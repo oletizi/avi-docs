@@ -25,4 +25,4 @@ When the capture is started, the Capture Configuration section indicates the pro
 
 Once a traffic capture has completed, it will show in the Completed Captures table. This table shows the date, virtual service name and size. The far right column of the table contains an export icon, which allows administrators to download the pcap file. This file type can be viewed by common traffic capture utilities such as Wireshark.
 
- [1]: /wp-content/uploads/2016/01/ops_traffic_capture.jpg
+ [1]: img/ops_traffic_capture.jpg

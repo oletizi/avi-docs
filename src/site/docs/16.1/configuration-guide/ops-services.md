@@ -101,6 +101,6 @@ Creating an SNMP trap server presents the following options:
 
 *   **SNMP Community:** Trap servers may require a community string, which provides a basic form of security for access to the server.
 
- [1]: /wp-content/uploads/2016/01/admin_notify_syslog_tab.jpg
- [2]: /wp-content/uploads/2016/01/admin_notify_syslog_create-edit.jpg
- [3]: /wp-content/uploads/2016/01/admin_notify_email_create-edit.jpg
+ [1]: img/admin_notify_syslog_tab.jpg
+ [2]: img/admin_notify_syslog_create-edit.jpg
+ [3]: img/admin_notify_email_create-edit.jpg

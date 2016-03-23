@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: datascript-guide
 title: DataScript Guide
 ---
 

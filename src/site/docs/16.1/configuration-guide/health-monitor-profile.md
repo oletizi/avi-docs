@@ -201,5 +201,5 @@ With passive Health Monitors, server failures will not cause Avi Vantage to mark
 
 > **Note:** Best practice is to enable both a passive and an active health monitor to each pool.
 
- [1]: /wp-content/uploads/2016/01/template_profiles_health_tab.jpg
- [2]: /wp-content/uploads/2016/01/template_profiles_health_create-edit.jpg
+ [1]: img/template_profiles_health_tab.jpg
+ [2]: img/template_profiles_health_create-edit.jpg

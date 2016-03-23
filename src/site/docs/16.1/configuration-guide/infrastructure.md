@@ -1154,14 +1154,14 @@ Enter the following information to create or edit a static route:
  [7]: #health-tab
  [8]: #events-tab
  [9]: #alerts-tab
- [10]: /wp-content/uploads/2016/01/inf_chart_pane.jpg
- [11]: /wp-content/uploads/2016/01/details_overlays_about.jpg
- [12]: /wp-content/uploads/2016/01/details_overlays_anomalies.jpg
- [13]: /wp-content/uploads/2016/01/details_overlays_alerts.jpg
+ [10]: img/inf_chart_pane.jpg
+ [11]: img/details_overlays_about.jpg
+ [12]: img/details_overlays_anomalies.jpg
+ [13]: img/details_overlays_alerts.jpg
  [14]: http://kb.avinetworks.com/docs/configuration-guide/operations/alerts/
- [15]: /wp-content/uploads/2016/01/details_overlays_config_events.jpg
- [16]: /wp-content/uploads/2016/01/details_alerts_tab_10-1.jpg
- [17]: http://kb.avinetworks.com/wp-content/uploads/2016/01/inf_networks_networks_net-tab.jpg
- [18]: http://kb.avinetworks.com/wp-content/uploads/2016/01/inf_networks_editing.jpg
- [19]: http://kb.avinetworks.com/wp-content/uploads/2016/01/inf_networks_static_routes_statroute_tab.jpg
- [20]: http://kb.avinetworks.com/wp-content/uploads/2016/01/inf_networks_static_routes_create-edit.jpg
+ [15]: img/details_overlays_config_events.jpg
+ [16]: img/details_alerts_tab_10-1.jpg
+ [17]: img/inf_networks_networks_net-tab.jpg
+ [18]: img/inf_networks_editing.jpg
+ [19]: img/inf_networks_static_routes_statroute_tab.jpg
+ [20]: img/inf_networks_static_routes_create-edit.jpg

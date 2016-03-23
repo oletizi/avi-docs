@@ -239,6 +239,6 @@ To create or edit a Tenant:
 
 Once the Tenant has been created, users can be moved into or created in the Tenant.
 
- [1]: /wp-content/uploads/2016/01/admin_accounts_users_edit-account.jpg
- [2]: http://kb.avinetworks.com/wp-content/uploads/2016/01/admin_accounts_tenants_tab.jpg
- [3]: http://kb.avinetworks.com/wp-content/uploads/2016/01/admin_accounts_tenants_create-edit.jpg
+ [1]: img/admin_accounts_users_edit-account.jpg
+ [2]: img/admin_accounts_tenants_tab.jpg
+ [3]: img/admin_accounts_tenants_create-edit.jpg

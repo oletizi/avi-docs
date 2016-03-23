@@ -537,37 +537,37 @@ Review this information and then click Save to finish creating the pool. If need
 
 > **Note:** This tab only displays when you are creating a new pool; it does not display when editing an existing pool.
 
- [1]: http://kb.avinetworks.com/wp-content/uploads/2015/12/apps_pools_details_servers.jpg
- [2]: http://kb.avinetworks.com/wp-content/uploads/2015/12/apps_servers_details_page.jpg
+ [1]: img/apps_pools_details_servers.jpg
+ [2]: img/apps_servers_details_page.jpg
  [3]: #logs
  [4]: #health
  [5]: #servers
  [6]: #events
  [7]: #alerts
- [8]: http://kb.avinetworks.com/wp-content/uploads/2015/12/architecture_1.jpg
- [9]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_analytics_about_7.jpg
- [10]: http://kb.avinetworks.com/wp-content/uploads/2015/12/template_profiles_analytics_create-edit4.jpg
- [11]: http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric1.jpg
- [12]: http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric2.jpg
- [13]: http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric3.jpg
- [14]: http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric4.jpg
- [15]: http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric5.jpg
- [16]: http://kb.avinetworks.com/wp-content/uploads/2015/12/infra-pool-metric6.jpg
- [17]: http://kb.avinetworks.com/wp-content/uploads/2015/12/inf_chart_pane.jpg
- [18]: http://kb.avinetworks.com/wp-content/uploads/2015/12/overlays.png
- [19]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_anomalies_6-d-b.jpg
- [20]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_anomalies.jpg
- [21]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_alerts_6-d-c.jpg
- [22]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_config_events.jpg
- [23]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_config-events_6-d-d.jpg
- [24]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_events.jpg
- [25]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_overlays_sys-events_6-d-e.jpg
+ [8]: img/architecture_1.jpg
+ [9]: img/details_analytics_about_7.jpg
+ [10]: img/template_profiles_analytics_create-edit4.jpg
+ [11]: img/infra-pool-metric1.jpg
+ [12]: img/infra-pool-metric2.jpg
+ [13]: img/infra-pool-metric3.jpg
+ [14]: img/infra-pool-metric4.jpg
+ [15]: img/infra-pool-metric5.jpg
+ [16]: img/infra-pool-metric6.jpg
+ [17]: img/inf_chart_pane.jpg
+ [18]: img/overlays.png
+ [19]: img/details_overlays_anomalies_6-d-b.jpg
+ [20]: img/details_overlays_anomalies.jpg
+ [21]: img/details_overlays_alerts_6-d-c.jpg
+ [22]: img/details_overlays_config_events.jpg
+ [23]: img/details_overlays_config-events_6-d-d.jpg
+ [24]: img/details_overlays_events.jpg
+ [25]: img/details_overlays_sys-events_6-d-e.jpg
  [26]: http://kb.avinetworks.com/2015/12/06/vs-logs-page/
- [27]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_insights_tab_8.jpg
- [28]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_events_tab_91.jpg
- [29]: http://kb.avinetworks.com/wp-content/uploads/2015/12/details_alerts_tab_101.jpg
- [30]: /wp-content/uploads/2016/01/apps_pools_create-edit_settings.jpg
- [31]: /wp-content/uploads/2016/01/apps_pools_create-edit_servers.jpg
- [32]: /wp-content/uploads/2016/01/apps_pools_create-edit_servers2.jpg
- [33]: /wp-content/uploads/2016/01/apps_pools_create-edit_advanced.jpg
- [34]: /wp-content/uploads/2016/01/apps_pools_create-edit_review.jpg
+ [27]: img/details_insights_tab_8.jpg
+ [28]: img/details_events_tab_91.jpg
+ [29]: img/details_alerts_tab_101.jpg
+ [30]: img/apps_pools_create-edit_settings.jpg
+ [31]: img/apps_pools_create-edit_servers.jpg
+ [32]: img/apps_pools_create-edit_servers2.jpg
+ [33]: img/apps_pools_create-edit_advanced.jpg
+ [34]: img/apps_pools_create-edit_review.jpg

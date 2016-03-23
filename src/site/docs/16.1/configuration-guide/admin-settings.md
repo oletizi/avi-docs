@@ -109,6 +109,6 @@ The SMTP Source is where the email will be source from when the Avi Controller i
     
     *   **From Address:** The email field that denotes who sent the email.
 
- [1]: /wp-content/uploads/2016/01/admin_settings_dnsntp_tab.jpg
- [2]: /wp-content/uploads/2016/01/admin_settings_dnsntp_updating.jpg
- [3]: http://kb.avinetworks.com/wp-content/uploads/2016/01/admin_settings_license.jpg
+ [1]: img/admin_settings_dnsntp_tab.jpg
+ [2]: img/admin_settings_dnsntp_updating.jpg
+ [3]: img/admin_settings_license.jpg

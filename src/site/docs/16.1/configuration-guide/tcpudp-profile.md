@@ -144,8 +144,8 @@ This profile type uses the following settings:
  [1]: #tcp-proxy
  [2]: #tcp-fast-path
  [3]: #udp-fast-path
- [4]: /wp-content/uploads/2016/01/template_profiles_tcp_tab.jpg
- [5]: /wp-content/uploads/2016/01/template_profiles_tcp_settings_proxy.jpg
- [6]: /wp-content/uploads/2016/01/template_profiles_tcp_settings_proxy1.jpg
- [7]: /wp-content/uploads/2016/01/template_profiles_tcp_settings_fastpath.jpg
- [8]: /wp-content/uploads/2016/01/template_profiles_tcp_setings_udp-fastpath.jpg
+ [4]: img/template_profiles_tcp_tab.jpg
+ [5]: img/template_profiles_tcp_settings_proxy.jpg
+ [6]: img/template_profiles_tcp_settings_proxy1.jpg
+ [7]: img/template_profiles_tcp_settings_fastpath.jpg
+ [8]: img/template_profiles_tcp_setings_udp-fastpath.jpg

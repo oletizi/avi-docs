@@ -351,10 +351,10 @@ To create or edit an authentication profile:
 
 *   **Group Member Attribute Is Full DN:** Group member entries contain full DNs instead of just User ID attribute values.
 
- [1]: /wp-content/uploads/2016/01/template_ssl_page.jpg
- [2]: /wp-content/uploads/2016/01/template_ssl_create-edit_about.jpg
- [3]: /wp-content/uploads/2016/01/template_ssl_create-edit_about-1.jpg
- [4]: /wp-content/uploads/2016/01/template_ssl_create-edit_import.jpg
- [5]: /wp-content/uploads/2016/01/template_profiles_ssl_tab.jpg
- [6]: /wp-content/uploads/2016/01/template_profiles_pki_1.jpg
- [7]: /wp-content/uploads/2016/01/template_profiles_auth_1.jpg
+ [1]: img/template_ssl_page.jpg
+ [2]: img/template_ssl_create-edit_about.jpg
+ [3]: img/template_ssl_create-edit_about-1.jpg
+ [4]: img/template_ssl_create-edit_import.jpg
+ [5]: img/template_profiles_ssl_tab.jpg
+ [6]: img/template_profiles_pki_1.jpg
+ [7]: img/template_profiles_auth_1.jpg

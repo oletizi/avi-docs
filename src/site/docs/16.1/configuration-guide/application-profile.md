@@ -363,10 +363,10 @@ The Syslog application profile allows Vantage to decode the Syslog protocol. Thi
  [2]: #dns-profile
  [3]: #l4-profile
  [4]: #syslog-profile
- [5]: /wp-content/uploads/2016/01/template_profiles_app_tab.jpg
- [6]: /wp-content/uploads/2016/01/template_profiles_http_general.jpg
- [7]: http://kb.avinetworks.com/wp-content/uploads/2016/01/template_profiles_http_security.jpg
+ [5]: img/template_profiles_app_tab.jpg
+ [6]: img/template_profiles_http_general.jpg
+ [7]: img/template_profiles_http_security.jpg
  [8]: /docs/configuration-guide/applications/vs-policies/
  [9]: /docs/datascript-guide/
  [10]: http://kb.avinetworks.com/2015/11/28/overview-of-http-cache/
- [11]: /wp-content/uploads/2016/01/template_profiles_http_ddos.jpg
+ [11]: img/template_profiles_http_ddos.jpg
