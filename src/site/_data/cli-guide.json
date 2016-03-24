@@ -1,0 +1,18 @@
+{
+  "cli-guide": {
+    "url": "index.html",
+    "title": "Overview",
+    "next": "common-tasks"
+  },
+  "common-tasks": {
+    "url": "common-tasks",
+    "title": "Common Tasks",
+    "prev": "cli-guide",
+    "next": "top-level-commands"
+  },
+  "top-level-commands": {
+    "url": "top-level-commands",
+    "title": "Top-Level Commands",
+    "prev": "common-tasks"
+  }
+}

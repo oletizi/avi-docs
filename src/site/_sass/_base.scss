@@ -128,6 +128,11 @@ code {
       */
 }
 
+pre.console, code.console {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 code {
   padding: 1px 5px;
 }
@@ -195,9 +200,19 @@ pre {
 /**
  * Tables
  */
-td {
+table {
+  border-collapse: collapse;
+}
+th, td {
   padding: 8px;
   line-height: 1.428571429;
   vertical-align: top;
+}
+
+tr {
   border-top: 1px solid #ddd
+}
+
+tr:hover {
+  background-color: #f6f6f6;
 }
