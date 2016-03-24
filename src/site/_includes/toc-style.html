@@ -1,0 +1,19 @@
+<script type="application/javascript">
+  $(function () {
+    var pageName = window.location.pathname.split('/').pop();
+    var isIndex = window.location.pathname.endsWith('/') || pageName == 'index.html';
+    $("a").each(function () {
+      if (
+          ($(this).attr("href") == '.' && isIndex)
+          || ($(this).attr("href") == pageName)) {
+        $(this).addClass("selected");
+      }
+    });
+  });
+</script>
+<style type="text/css">
+  a.selected {
+    color: #ff4a00;
+    font-weight: bold;
+  }
+</style>

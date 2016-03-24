@@ -1,23 +1,8 @@
-<script type="application/javascript">
-    $(function(){
-        var pageName = window.location.pathname.split('/').pop()
-        $("a").each(function(){
-            if ($(this).attr("href") == pageName) {
-                $(this).addClass("selected");
-            }
-        });
-    });
-</script>
-<style type="text/css">
-    a.selected {
-        color: #ff4a00;
-        font-weight: bold;
-    }
-</style>
+{% include toc-style.html %}
 <div id="toc">
     <h3>Avi Vantage<br/>Configuration Guide v. 16.1</h3>
     <ul>
-        <li><a href="./index.html">Overview</a></li>
+        <li><a href=".">Overview</a></li>
         <li>Applications
             <ul>
                 <li><a href="virtual-services">Virtual Services</a>
