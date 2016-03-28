@@ -10,9 +10,28 @@ title: Avi Vantage Configuration Guide
     margin-bottom: 15px;
   }
 </style>
+{% capture page_toc %}<div id="toc"><ul>{% endcapture %}
+{% capture page_contents %}{% endcapture %}
+
 {% for meta in site.data.configuration-guide %}
 {% assign url = meta[1].url | remove: ".html" | remove: "./" %}
+{% assign title = meta[1].title %}
 {% capture path %}{{ url }}.md{% endcapture %}
 {% capture rendered %}{% include_relative {{ path }} %}{% endcapture %}
+
+  {% capture page_toc %}{{ page_toc }}
+  <li><a href="#{{url}}">{{ title }}</a></li>
+  {% endcapture %}
+
+{% capture page_contents %}
+{{ page_contents }}
+<a name="{{ url }}"></a>
 {{ rendered | remove_first: "---" | remove_first: "layout: configuration-guide" | replace_first: "title: Configuration Guide", "# Avi Vantage Configuration Guide" |replace_first: "title:", "#" | markdownify}}
+{% endcapture %}
 {% endfor %}
+
+  {% capture page_toc %}{{page_toc}}
+</ul></div>{% endcapture %}
+
+{{ page_toc }}
+{{ page_contents }}
