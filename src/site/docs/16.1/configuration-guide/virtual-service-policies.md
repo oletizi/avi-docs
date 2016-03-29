@@ -124,7 +124,15 @@ The following table lists both the available Network Security Match Criteria and
     
     <tr>
       <td>
-        <strong>Rate Limit:</strong> Restrict clients from opening greater than the specified number of connections per second in the Maximum Rate. Clients that exceed this number will have their excessive connection attempts silently discarded. If Burst Size is enabled, clients may be able to burst above the Max Rate provided they have not recently been opening connections. This feature may be applied to TCP or UDP. All clients that match the Match criteria will be treated as one bucket. For instance, if no Match is defined, any and all IP addresses will increment the Max Rate counter. Throttling will occur for all new connecting clients. To enable per client throttling, see the <a href="/docs/configuration-guide/applications/virtual-services/create-virtual-service/#vscreateadvanced">Advanced tab</a> for the virtual service. The manual for this page also contains a more robust description of connecting throttling.
+        <strong>Rate Limit:</strong> Restrict clients from opening greater than the specified number of connections per 
+        second in the Maximum Rate. Clients that exceed this number will have their excessive connection attempts silently 
+        discarded. If Burst Size is enabled, clients may be able to burst above the Max Rate provided they have not 
+        recently been opening connections. This feature may be applied to TCP or UDP. All clients that match the Match 
+        criteria will be treated as one bucket. For instance, if no Match is defined, any and all IP addresses will 
+        increment the Max Rate counter. Throttling will occur for all new connecting clients. To enable per client 
+        throttling, see the <a href="/docs/latest/configuration-guide/virtual-service-create/#vscreateadvanced">Advanced 
+        tab</a> for the virtual service. The manual for this page also contains a more robust description of connecting 
+        throttling.
       </td>
     </tr>
   </tbody>
