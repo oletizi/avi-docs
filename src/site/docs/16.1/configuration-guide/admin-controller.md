@@ -139,5 +139,5 @@ If only one node is down, quorum is maintained and the cluster can continue to o
 
  [1]: ops-events
  [2]: ops-alerts/
- [3]: img/vantage-installation-guides
+ [3]: http://kb.avinetworks.com/2016/02/25/vantage-installation-guides/
  [4]: virtual-service-create#vscreateadvancedadvancedtab

@@ -63,7 +63,7 @@ Clicking on the name of a cloud allows configuration of infrastructure objects w
 
 ### Service Engines
 
-<img src="img/architecture_2-1.jpg" height="40%" width="40%" class="alignright" /> Avi Service Engines (SEs) handle all of the data plane operations within Vantage. SEs host the virtual services and require either direct or routable access to all client and server networks a virtual service touches.
+<img src="img/architecture_2.jpg" height="40%" width="40%" class="alignright" /> Avi Service Engines (SEs) handle all of the data plane operations within Vantage. SEs host the virtual services and require either direct or routable access to all client and server networks a virtual service touches.
 
 A typical Vantage deployment may have many SEs for various purposes, such as redundancy, scalability, and accommodating large numbers of applications being served. SEs are always grouped within the context of a SE group, which provides settings for high availability, scalability, and potentially resource isolation for tenants.
 
