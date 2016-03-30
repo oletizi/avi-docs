@@ -3,6 +3,6 @@
 cd `dirname $0`
 cd ../src/site
 
-cmd="jekyll serve --incremental"
+cmd="jekyll serve"
 echo "Executing \"$cmd\" from `pwd`"
 $cmd

@@ -58,7 +58,7 @@
                 </style>
             </head>
             <body>
-                <h1>Avi Vantage Configuration Guide v16.1</h1>
+                <h1><xsl:value-of select="$docname"/> v<xsl:value-of select="$docversion"/></h1>
                 <div class="description">Copyright (c) 2016 Avi Networks</div>
                 <div style="font-family: arial, sans-serif; font-size: 20pt; margin-bottom: 20pt">Table of Contents</div>
                 <ul>
