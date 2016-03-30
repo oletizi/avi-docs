@@ -12,9 +12,9 @@ base_url="http://localhost:4000"
 source_root="/docs/${doc_version}"
 dest_root="${base_dir}/src/site/docs/${doc_version}"
 
-names=("Avi Configuration Guide")
-sources=("/configuration-guide/configuration-guide-single-page")
-dests=("/configuration-guide/configuration-guide.pdf")
+names=("Avi Configuration Guide" "DataScript Guide")
+sources=("/configuration-guide/configuration-guide-single-page" "/datascript-guide/datascript-guide-single-page")
+dests=("/configuration-guide/configuration-guide.pdf" "/datascript-guide/datascript-guide.pdf")
 
 toc_xsl="${base_dir}/src/resources/toc.xsl"
 
