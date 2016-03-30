@@ -6,8 +6,8 @@
     <xsl:output doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
                 indent="yes"/>
-    <xsl:variable name="docversion" select="'16.1'"/>
-    <xsl:variable name="docname" select="'Avi Vantage Configuration Guide'"/>
+    <xsl:variable name="docversion" select="'__DOC__VERSION__'"/>
+    <xsl:variable name="docname" select="'__DOC_NAME__'"/>
     <xsl:template match="outline:outline">
         <html>
             <head>
@@ -15,33 +15,46 @@
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                 <style>
                     h1 {
-                    text-align: center;
-                    font-size: 36pt;
-                    font-family: arial;
-                    padding-top: 200px;
+                        text-align: center;
+                        font-size: 36pt;
+                        font-family: arial;
+                        padding-top: 200px;
                     }
                     div.description {
-                      text-align: center;
-                      border: none;
-                      margin-bottom: 700px;
-                      font-family: arial, sans-serif;
-                      font-size: 12pt;
+                        text-align: center;
+                        border: none;
+                        margin-bottom: 700px;
+                        font-family: arial, sans-serif;
+                        font-size: 12pt;
                     }
 
-                    div {border-bottom: 1px dashed rgb(200,200,200);}
-                    span {float: right;}
-                    li {list-style: none;}
-                    ul {
-                    font-size: 12pt;
-                    font-family: arial;
+                    div {
+                        border-bottom:
+                        1px dashed rgb(200,200,200);
                     }
-                    ul ul {font-size: 80%; }
-                    ul {
-                      margin-top: 10px;
-                      padding-left: 0em;
+                    span {
+                        float: right;
                     }
-                    ul ul {padding-left: 1em;}
-                    a {text-decoration:none; color: black;}
+                    li {
+                        list-style: none;
+                    }
+                    ul {
+                        font-size: 12pt;
+                        font-family: arial;
+                    }
+                    ul ul {
+                        font-size: 80%;
+                    }
+                    ul {
+                        margin-top: 10px;
+                        padding-left: 0em;
+                    }
+                    ul ul {
+                        padding-left: 1em;
+                    }
+                    a {
+                        text-decoration:none; color: black;
+                    }
                 </style>
             </head>
             <body>

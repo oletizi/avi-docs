@@ -6,34 +6,42 @@ cd ..
 base_dir=`pwd`
 popd > /dev/null
 
+doc_version="16.1"
+
 base_url="http://localhost:4000"
-version="16.1"
-source_root="/docs/${version}"
-dest_root="${base_dir}/src/site/docs/${version}"
-echo "Dest root: < $dest_root >"
+source_root="/docs/${doc_version}"
+dest_root="${base_dir}/src/site/docs/${doc_version}"
+
+names=("Avi Configuration Guide")
 sources=("/configuration-guide/configuration-guide-single-page")
 dests=("/configuration-guide/configuration-guide.pdf")
+
 toc_xsl="${base_dir}/src/resources/toc.xsl"
-toc="toc \
-  --xsl-style-sheet ${toc_xsl}"
-#toc=""
 
 source_count=${#sources[@]}
 
 for (( i=0; i<$source_count; i++ )); do
+name="${names[$i]}"
 url="${base_url}/${source_root}/${sources[$i]}"
 dest="${dest_root}/${dests[$i]}"
+tmp_xsl="/tmp/toc.xsl"
+
+cp $toc_xsl $tmp_xsl
+perl -p -i -e "s/__DOC__VERSION__/${doc_version}/g" $tmp_xsl
+perl -p -i -e "s/__DOC_NAME__/${name}/g" $tmp_xsl
+
 cmd="wkhtmltopdf \
   --outline \
   --outline-depth 2 \
   --page-size Letter \
   --footer-left [title] \
-  --footer-center v${version} \
+  --footer-center v${doc_version} \
   --footer-right [page]/[toPage] \
   --footer-font-size 8 \
   --footer-line \
   --footer-spacing 2 \
-${toc} \
+toc \
+  --xsl-style-sheet ${tmp_xsl} \
     ${url} ${dest}"
 echo "cmd: $cmd"
 $cmd
