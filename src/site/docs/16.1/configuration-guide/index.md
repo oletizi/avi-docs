@@ -5,6 +5,8 @@ title: Configuration Guide
 
 ## Architecture ##
 
+*Hello, World!*
+
 Avi Vantage is built using a modern software defined network (SDN) architecture that centralizes the control plane while distributing the data plane. This allows network services to scale near infinitely without the added complexity of managing hundreds of disparate appliances.
 
 Avi Vantage consists of the following key components:
