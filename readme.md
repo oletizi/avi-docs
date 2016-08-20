@@ -18,11 +18,11 @@
     
 * Make edits to files here:
 
-    *<path/to/avi-docs>*`/src/site/docs/`
+    *&lt;path/to/avi-docs&gt;*`/src/site/docs/`
     
 * The rendered html files live here:
 
-    *<path/to/avi-docs>*`/src/site/_site/docs`
+    *&lt;path/to/avi-docs&gt;*`/src/site/_site/docs`
     
 ### RHEL 7
 
