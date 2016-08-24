@@ -19,7 +19,7 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
 [TOC levels=4]: # "## Contents"
 ## Contents
 - [Get Started](#get-started)
-    - [Basic steps:](#basic-steps)
+    - [Basic Steps](#basic-steps)
     - [Prepare Toolkit for Mac OS](#prepare-toolkit-for-mac-os)
     - [Prepare Toolkit for Ubuntu Desktop](#prepare-toolkit-for-ubuntu-desktop)
     - [Post Toolkit Installation](#post-toolkit-installation)
@@ -36,7 +36,7 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
 
 ## Get Started
 
-### Basic steps:
+### Basic Steps
 
 * Add your public ssh key to your github account:
 
