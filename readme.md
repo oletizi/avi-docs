@@ -22,6 +22,7 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
     - [Basic Steps](#basic-steps)
     - [Prepare Toolkit for Mac OS](#prepare-toolkit-for-mac-os)
     - [Prepare Toolkit for Ubuntu Desktop](#prepare-toolkit-for-ubuntu-desktop)
+    - [Prepare Toolkit for Windows](#prepare-toolkit-for-windows)
     - [Post Toolkit Installation](#post-toolkit-installation)
 - [Adding New Files](#adding-new-files)
     - [Configuring the Header](#configuring-the-header)
@@ -93,6 +94,12 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
 * Install git:
 
     sudo apt-get install git
+
+### Prepare Toolkit for Windows
+
+Ugh. Seriously? Ideally, you'd be using a real development platform. But, if you really need it, I'll figure it out. Most of it is probably pretty straightforward except the stuff that uses a CLI. Windows CLI interaction is always a giant pain, although it can usually be done with Cygwin.
+
+If you need to try this on Windows, the first thing you should do is install Cygwin. Then, let's talk.
 
 ### Post Toolkit Installation
 
