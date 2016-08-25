@@ -22,6 +22,7 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
     - [Basic Steps](#basic-steps)
     - [Prepare Toolkit for Mac OS](#prepare-toolkit-for-mac-os)
     - [Prepare Toolkit for Ubuntu Desktop](#prepare-toolkit-for-ubuntu-desktop)
+        - [Special Instructions for Ubuntu 14.x](#special-instructions-for-ubuntu-14x)
     - [Prepare Toolkit for Windows](#prepare-toolkit-for-windows)
     - [Post Toolkit Installation](#post-toolkit-installation)
 - [Adding New Files](#adding-new-files)
@@ -94,6 +95,18 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
 * Install git:
 
     sudo apt-get install git
+    
+#### Special Instructions for Ubuntu 14.x
+
+Ranga reported the following steps were necessary to get ruby, gem, and jekyll installed:
+
+    sudo apt-get install ruby2.0
+    sudo apt-get install ruby2.0-dev
+    sudo rm /usr/bin/ruby
+    sudo rm /usr/bin/gem
+    sudo ln -s /usr/bin/ruby2.0 /usr/bin/ruby
+    sudo ln -s /usr/bin/gem2.0 /usr/bin/gem
+    sudo gem install jekyll
 
 ### Prepare Toolkit for Windows
 
