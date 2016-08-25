@@ -3,6 +3,6 @@
 cd `dirname $0`
 cd ../src/site
 
-cmd="jekyll serve"
+cmd="jekyll serve --host=0.0.0.0"
 echo "Executing \"$cmd\" from `pwd`"
 $cmd
