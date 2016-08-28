@@ -9,7 +9,6 @@ Changes made to an SE group may be applied immediately, only applied to SEs cre
 
 Multiple SE groups may exist within a cloud.  A newly created virtual service will be placed on the default SE group, though this can be changed via the VS > Advanced page while creating a VS via the advanced mode.  To move an existing virtual service from one SE group to another, the VS must first be disabled, moved, and then re-enabled.  SE groups provide data plane isolation, therefore moving a VS from one SE group to another is disruptive to existing connections through the virtual service. [![legacy-ha-gui1](img/legacy-ha-gui1.png)](img/legacy-ha-gui1.png)
 
-
 ### SE Group--Basic Settings Tab
 
 To access the Service Engine group page, navigate to Infrastructure > Clouds > -cloudname- > Service Engine Group.
