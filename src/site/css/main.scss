@@ -2,19 +2,16 @@
 ---
 
 @charset "utf-8";
-// Our variables
-//$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-root: "/static/fonts/";
-$base-font-family: brandon-regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size: 14px;
-$base-font-weight: 400;
-$small-font-size: $base-font-size * 0.875;
-$base-line-height: 1.5;
 
-$spacing-unit: 30px;
 
+//
+// Colors
+//
 $text-color: #333;
 $background-color: #fdfdfd;
+$header-background-color: rgb(42, 42, 45);
+$sidebar-background-color: green;
+$main-content-background-color: blue;
 $brand-color: #ff4b00;
 
 $grey-color: #ccc;
@@ -22,21 +19,21 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 25%);
 
 $border-color: $grey-color;
+//
+// Typography
+//
+$font-root: "/static/fonts/";
+$font-family-normal: brandon-regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-normal: 14px;
+$base-font-weight: 400;
+$font-size-small: $font-size-normal * 0.875;
+$base-line-height: 1.5;
 
-$edge-padding: 10px;
+//
+// Spacing
+//
+$spacing-unit: 30px;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-  @media screen and (min-width: $device) {
-    @content;
-  }
-}
 
 @mixin font-face($family-name, $filename) {
   @font-face {
@@ -58,92 +55,73 @@ $edge-padding: 10px;
 @include font-face ("brandon-regular-italic", "brandontext-regularitalic-webfont");
 @include font-face ("brandon-regular", "hvdfonts-brandontext-regular");
 
-body {
-  margin: 0px;
-  padding-top: 125px;
-  font: $base-font-size $base-font-family;
-  color: #333;
-  background-color: transparent;
-}
+/**
+* Base
+*/
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+body {
+  font: $font-size-normal $font-family-normal;
+  background-color: $background-color;
+  color: $text-color;
 }
 
 a {
-  color: #fb5100;
   text-decoration: none;
+  color: $brand-color;
 }
 
 /**
 * Layout
-**/
-body,
-html {
-  margin: 0;
-  padding: 0;
-  color: #000;
-  background: #a7a09a;
+*/
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
 }
 
-#wrap {
-  width: 100%;
-  margin: 0 auto;
-  background: #99c;
+.content-container {
+  padding: 0 $spacing-unit 0 $spacing-unit;
 }
 
-#header {
-  margin: 0;
-  padding: $edge-padding;
-  background-color: #2a2a2d;
+.header {
+  padding-top: 12px;
+  padding-bottom: 10px;
+  background-color: $header-background-color;
   color: white;
-  height: 80px;
-  #nav-wrapper {
 
-    #logo {
-      float: left;
-      margin-right: 10px;
-      .site-title {
+  #logo {
+    float: left;
+    a {
+      color: $brand-color;
+      h2 {
+        margin: 0;
+        padding-top: 5px;
         font-size: 11px;
         text-transform: uppercase;
       }
     }
-    #nav {
-      float: left;
-      padding-top: 30px;
-      text-transform: uppercase;
-      font-family: brandon-medium, sans-serif;
-      ul {
-        list-style: none;
-        display: inline;
-        li {
-          display: inline;
-          padding-left: 15px;
-          padding-right: 15px;
-          a {
-            color: white;
-          }
-        }
+  }
+
+  #top-nav {
+    float: left;
+    padding-top: 25px;
+    ul {
+      list-style: none;
+      li {
+        float: left;
+        font-family: brandon-medium, sans-serif;
+        text-transform: uppercase;
+        padding: 0 $spacing-unit / 2 0 $spacing-unit / 2;
       }
     }
   }
 }
 
-#main {
-  //float:right;
-  padding: 0 $edge-padding 0 $edge-padding;
-  background: #9c9;
+.sidebar {
+  background-color: $sidebar-background-color;
 }
 
-#sidebar {
-  float: left;
-  padding: 0 $edge-padding 0 $edge-padding;
-  width: 20%;
-  background: #c9c;
-}
-
-#footer {
-  clear: both;
-  padding: 0 $edge-padding 0 $edge-padding;
-  background: #cc9;
+.main-content {
+  background-color: $main-content-background-color;
 }

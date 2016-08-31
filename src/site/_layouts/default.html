@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
   <script src="/js/jquery-3.1.0.js"></script>
@@ -6,18 +6,16 @@
   <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{ "
   /css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <!-- for development/testing -->
 </head>
-<body id="mybody">
-<div id="wrap" class="container">
-  <div id="header">
-    <div id="nav-wrapper">
+<body>
+<div class="container-fluid">
+  <div class="row header">
+    <div class="col-xs-12">
       <div id="logo">
-        <img src="/img/logo.png">
-        <a href="/"><h2 class="site-title">Knowledge Base</h2></a>
+        <a href="https://avinetworks.com/"><img src="/img/logo.png"></a>
+        <a href="/"><h2>Knowledge Base</h2></a>
       </div>
-      <div id="nav" class="vcenter">
+      <div id="top-nav">
         <ul>
           <li>Solutions</li>
           <li>Product</li>
@@ -27,58 +25,21 @@
           <li>Company</li>
         </ul>
       </div>
-
     </div>
   </div>
-  <div id="sidebar" style="clear: both;">
-    <h2>Sidebar</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae purus felis. Curabitur
-      luctus velit eget feugiat venenatis. Fusce porta vel magna vitae luctus. Integer gravida felis mollis sem
-      malesuada tincidunt. Integer finibus aliquet congue. In hac habitasse platea dictumst. Nam posuere ut orci quis
-      condimentum. Suspendisse nisl nisi, vehicula nec laoreet sit amet, rhoncus ut velit. Etiam eu nunc sit amet lorem
-      scelerisque molestie vel sed mi. Ut rhoncus interdum arcu, nec feugiat turpis vulputate at. Duis sit amet velit
-      eget neque feugiat maximus. Morbi viverra nec metus non faucibus.</p>
+  <div class="row content-row">
+    <div class="sidebar col-xs-3">
+      <p>one</p>
+    </div>
+    <div class="main-content col-xs-9">
+      <p>tw0</p>
+    </div>
+  </div>  <!-- end of row -->
+  <div class="row footer">
+    <div class="col-xs-12">
+      <p>Footer</p>
+    </div>
   </div>
-  <div id="main">
-    <h1>Main</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae purus felis. Curabitur luctus velit eget
-      feugiat venenatis. Fusce porta vel magna vitae luctus. Integer gravida felis mollis sem malesuada tincidunt.
-      Integer finibus aliquet congue. In hac habitasse platea dictumst. Nam posuere ut orci quis condimentum.
-      Suspendisse nisl nisi, vehicula nec laoreet sit amet, rhoncus ut velit. Etiam eu nunc sit amet lorem scelerisque
-      molestie vel sed mi. Ut rhoncus interdum arcu, nec feugiat turpis vulputate at. Duis sit amet velit eget neque
-      feugiat maximus. Morbi viverra nec metus non faucibus.</p>
-
-    <p>Proin lobortis dignissim augue at fermentum. Morbi auctor id ligula in pulvinar. Suspendisse id gravida eros.
-      Nullam in aliquam enim, non condimentum orci. Nunc lobortis placerat dolor, eget hendrerit ipsum hendrerit ac.
-      Morbi hendrerit porttitor mi sed faucibus. Etiam in cursus diam, et egestas odio. Etiam mattis tortor est, sit
-      amet facilisis nisi pretium sit amet. Praesent a metus accumsan, pellentesque arcu sed, tincidunt ante. Cras
-      auctor libero ex, sit amet ornare quam imperdiet vitae. In sem justo, luctus ac dictum in, lobortis sodales
-      enim.</p>
-
-    <p>Maecenas mattis nisl ex, ac rhoncus magna fermentum ac. Quisque non turpis velit. Suspendisse imperdiet nisi ut
-      sem interdum, ac volutpat diam malesuada. Sed augue mauris, consequat sit amet ipsum et, sollicitudin tristique
-      mi. Sed tristique nisi ac enim sagittis, quis rhoncus erat pellentesque. Aliquam maximus convallis aliquet.
-      Maecenas mollis suscipit odio, ultrices aliquam lacus finibus vitae. Aenean fringilla condimentum mauris placerat
-      fringilla. Donec at metus a sem dapibus fringilla vel eu justo. Aenean aliquam rhoncus fringilla. Integer in
-      faucibus lectus. Duis consectetur sodales nibh sit amet cursus. Pellentesque ac semper nisl. Integer ut faucibus
-      leo, eu venenatis odio. Ut aliquam libero elit, vel volutpat nisi aliquam sed.</p>
-    <p>Proin lobortis dignissim augue at fermentum. Morbi auctor id ligula in pulvinar. Suspendisse id gravida eros.
-      Nullam in aliquam enim, non condimentum orci. Nunc lobortis placerat dolor, eget hendrerit ipsum hendrerit ac.
-      Morbi hendrerit porttitor mi sed faucibus. Etiam in cursus diam, et egestas odio. Etiam mattis tortor est, sit
-      amet facilisis nisi pretium sit amet. Praesent a metus accumsan, pellentesque arcu sed, tincidunt ante. Cras
-      auctor libero ex, sit amet ornare quam imperdiet vitae. In sem justo, luctus ac dictum in, lobortis sodales
-      enim.</p>
-
-    <p>Maecenas mattis nisl ex, ac rhoncus magna fermentum ac. Quisque non turpis velit. Suspendisse imperdiet nisi ut
-      sem interdum, ac volutpat diam malesuada. Sed augue mauris, consequat sit amet ipsum et, sollicitudin tristique
-      mi. Sed tristique nisi ac enim sagittis, quis rhoncus erat pellentesque. Aliquam maximus convallis aliquet.
-      Maecenas mollis suscipit odio, ultrices aliquam lacus finibus vitae. Aenean fringilla condimentum mauris placerat
-      fringilla. Donec at metus a sem dapibus fringilla vel eu justo. Aenean aliquam rhoncus fringilla. Integer in
-      faucibus lectus. Duis consectetur sodales nibh sit amet cursus. Pellentesque ac semper nisl. Integer ut faucibus
-      leo, eu venenatis odio. Ut aliquam libero elit, vel volutpat nisi aliquam sed.</p>
-  </div>
-  <div id="footer">
-    <h2>Footer</h2>
-  </div>
+</div>  <!-- end of container -->
 </body>
 </html>
