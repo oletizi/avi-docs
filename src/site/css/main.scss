@@ -3,7 +3,6 @@
 
 @charset "utf-8";
 
-
 //
 // Colors
 //
@@ -33,7 +32,6 @@ $base-line-height: 1.5;
 // Spacing
 //
 $spacing-unit: 30px;
-
 
 @mixin font-face($family-name, $filename) {
   @font-face {
@@ -103,16 +101,26 @@ a {
     }
   }
 
+  ul {
+    list-style: none;
+  }
+
   #top-nav {
     float: left;
     padding-top: 25px;
-    ul {
-      list-style: none;
+    li {
+      float: left;
+      font-family: brandon-medium, sans-serif;
+      text-transform: uppercase;
+      padding: 0 $spacing-unit / 2 0 $spacing-unit / 2;
+    }
+    .menu-contents {
+      padding: 0;
+      float: none;//left;
       li {
-        float: left;
-        font-family: brandon-medium, sans-serif;
-        text-transform: uppercase;
-        padding: 0 $spacing-unit / 2 0 $spacing-unit / 2;
+        float: none;
+        padding: 0;
+        text-transform: none;
       }
     }
   }
