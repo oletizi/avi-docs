@@ -17,13 +17,7 @@
       </div>
       <ul id="top-nav">
         <li>
-            <a class="dropdown-toggle" href="#">Solutions</a>
-            <ul class="dropdown-menu">
-              <li>Solution One</li>
-              <li>Solution Two</li>
-              <li>Solution Three</li>
-              <li>Solution Four</li>
-            </ul>
+          Solutions
         </li>
         <li>Product</li>
         <li>Customers</li>
@@ -35,10 +29,11 @@
   </div>
   <div class="row content-row">
     <div class="sidebar col-xs-3">
-      <p>one</p>
+      {% include left-nav.html %}
     </div>
     <div class="main-content col-xs-9">
-      <p>tw0</p>
+      <h1>{{ page.title }}</h1>
+      {{ content }}
     </div>
   </div>  <!-- end of row -->
   <div class="row footer">

@@ -6,11 +6,12 @@
 //
 // Colors
 //
-$text-color: #333;
+$font-color-normal: #333;
 $background-color: #fdfdfd;
 $header-background-color: rgb(42, 42, 45);
-$sidebar-background-color: green;
-$main-content-background-color: blue;
+$sidebar-background-color: white;
+$main-content-background-color: white;
+$footer-background-color: green;
 $brand-color: #ff4b00;
 
 $grey-color: #ccc;
@@ -27,11 +28,6 @@ $font-size-normal: 14px;
 $base-font-weight: 400;
 $font-size-small: $font-size-normal * 0.875;
 $base-line-height: 1.5;
-
-//
-// Spacing
-//
-$spacing-unit: 30px;
 
 @mixin font-face($family-name, $filename) {
   @font-face {
@@ -53,6 +49,17 @@ $spacing-unit: 30px;
 @include font-face ("brandon-regular-italic", "brandontext-regularitalic-webfont");
 @include font-face ("brandon-regular", "hvdfonts-brandontext-regular");
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: brandon-medium;
+}
+
+//
+// Spacing
+//
+$spacing-unit: 30px;
+
+
+
 /**
 * Base
 */
@@ -60,7 +67,7 @@ $spacing-unit: 30px;
 body {
   font: $font-size-normal $font-family-normal;
   background-color: $background-color;
-  color: $text-color;
+  color: $font-color-normal;
 }
 
 a {
@@ -128,8 +135,29 @@ a {
 
 .sidebar {
   background-color: $sidebar-background-color;
+  a {
+    color: $font-color-normal;
+  }
+  p {
+    padding: 0;
+  }
+  ul#expandable-nav {
+    list-style: none;
+    padding: 0;
+    li {
+      padding-top: $spacing-unit / 2;
+    }
+    ul {
+      padding-left: $spacing-unit / 2;
+      list-style: none;
+    }
+  }
 }
 
 .main-content {
   background-color: $main-content-background-color;
+}
+
+.footer {
+  background-color: $footer-background-color;
 }
