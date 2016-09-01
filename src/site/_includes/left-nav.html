@@ -30,7 +30,7 @@
       </li>
       <li title="Persistence" cookiename="nav-features-lb-persistence">
         <a href="#" data-toggle="collapse" data-target="#collapse-features-persistence">Persistence</a>
-        <ul id="collapse-features-persistence" class="collapse">
+        <ul id="collapse-features-persistence" class="collapse ">
           <li><a href="/overview-of-server-persistence/">Overview</a></li>
           <li><a href="/http-cookie-persistence/">HTTP Cookie</a></li>
           <li><a href="/app-cookie-persistence/">App Cookie</a></li>
@@ -43,3 +43,22 @@
     </ul>
   </li>
 </ul>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var last = Cookies.get('expandable-nav');
+    console.log("Expandable nav cookie: " + last);
+    if (last != null) {
+//remove default collapse settings
+      $("#expandable-nav .collapse").removeClass('in');
+//show the last visible group
+      $(last).collapse("show");
+    }
+  });
+
+  //when a group is shown, save it as the active accordion group
+  $("[data-toggle='collapse']").on("click", function () {
+    var dataTarget = this.attributes['data-target'].value;
+    Cookies.set('expandable-nav', dataTarget);
+  });
+</script>
