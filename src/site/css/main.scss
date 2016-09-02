@@ -142,6 +142,28 @@ a {
     margin: 0;
     padding: 0;
   }
+  .search-field-wrapper {
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .search-field {
+    border: 1px solid $border-color;
+    padding: 0;
+    margin: 0 0 0 10px;
+    height: $spacing-unit;
+    width: 100%;
+  }
+
+  .search-button {
+    border: 1px solid $border-color;
+    background-color: $background-color;
+    background-image: url("/img/search-icon.png");
+    height: $spacing-unit;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
+
   ul#expandable-nav {
     list-style: none;
     padding: 0;
