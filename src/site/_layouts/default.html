@@ -1,70 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="/js/jquery-3.1.0.js"></script>
-  <script src="/js/js.cookie.js"></script>
-  <script src="/js/bootstrap.js"></script>
-  <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
-  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
-  <link rel="stylesheet" href="{{ "
-  /css/main.css" | prepend: site.baseurl }}">
-
+  {% include head.html %}
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row header">
-    <div class="col-xs-12">
-      <div id="logo">
-        <a href="https://avinetworks.com/"><img src="/img/logo.png"></a>
-        <a href="/"><h2>Knowledge Base</h2></a>
-      </div>
-      <ul id="top-nav">
-        <li>
-          Solutions
-        </li>
-        <li>Product</li>
-        <li>Customers</li>
-        <li>Partners</li>
-        <li>Resources</li>
-        <li>Company</li>
-      </ul>
-    </div>
-  </div>
+  {% include header.html %}
   <div class="row content-row">
-    <div class="sidebar col-xs-3">
-      <form class="search-form" action="/search/">
-        <div class="search-wrapper">
-          <div class="row">
-            <div class="col-xs-10 search-field-wrapper">
-              <input id="search-input" class="search-field" type="search">
-            </div>
-            <button type="submit" class="search-button col-xs-2"></button>
-          </div>
-        </div>
-      </form>
-      <script type="text/javascript">
-        var client = algoliasearch('272ZBU7KSH', '6fc3a75f0821308178cd612cfd4f8d2e')
-        var index = client.initIndex('wp_searchable_posts');
-        $('#search-input').autocomplete({ hint: true }, [
-          {
-            source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5 }),
-            displayKey: 'my_attribute',
-            templates: {
-              suggestion: function(suggestion) {
-                return "<a href=\"" + suggestion.permalink + "\">" + suggestion._highlightResult.post_title.value + "</a>";
-              }
-            }
-          }
-        ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-          console.log(suggestion, dataset);
-        });
-        $('#search-input').on('autocomplete:selected', function (event, suggestions, datasetName) {
-          console.log("Autocomplete selected: " + event + ", suggestions: " + suggestions + ", dataset name: " + datasetName);
-        });
-      </script>
-      {% include left-nav.html %}
-    </div>
+    {% include sidebar.html %}
     <div class="main-content col-xs-9">
       <h1>{{ page.title }}</h1>
       {{ content }}

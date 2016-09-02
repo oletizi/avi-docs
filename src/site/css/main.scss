@@ -153,21 +153,7 @@ a {
     height: $spacing-unit;
     width: 100%;
   }
-  //
-  //.aa-dropdown-menu {
-  //  background-color: $background-color;
-  //  border: 1px solid $border-color;
-  //  padding: 10px 10px 0 10px;
-  //}
-  //
-  //.aa-suggestion {
-  //  font-family: brandon-medium, sans-serif;
-  //  margin: 10px 0 10px 0;
-  //}
-  //
-  //.aa-cursor {
-  //  background-color: $border-color;
-  //}
+
   /**
   * Default Algolia style
   */
@@ -233,4 +219,16 @@ a {
 
 .footer {
   background-color: $footer-background-color;
+}
+
+/**
+* Search Results
+*/
+#search-results {
+  a {
+    color: $font-color-normal;
+  }
+  h2 {
+    font-size: $font-size-normal * 1.5;
+  }
 }
