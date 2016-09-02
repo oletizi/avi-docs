@@ -63,6 +63,10 @@ h1, h2, h3, h4, h5, h6 {
 //
 $spacing-unit: 30px;
 
+h1 {
+  margin-top: $spacing-unit + 10px;
+}
+
 /**
 * Base
 */
@@ -75,7 +79,7 @@ body {
 
 a, a:hover, a:visited {
   text-decoration: none;
-  color: $brand-color;
+  color: $blue-color;
 }
 
 /**
@@ -224,6 +228,34 @@ a, a:hover, a:visited {
 
 .footer {
   background-color: $footer-background-color;
+}
+
+/**
+* Table of Contents
+*/
+.toc {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  #toc-title {
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+    //height: $spacing-unit;
+    //border: 1px solid $border-color;
+    //background-color: $highlight-color;
+    background-color: #ddd;
+    color: #999;
+    font: $font-size-normal * 1.5 brandon-medium, sans-serif;
+  }
+  #toc {
+    padding: 5px 5px 5px 20px;
+    //border: 1px solid $border-color;
+    background-color: $highlight-color;
+    li {
+      padding: 10px 0;
+    }
+  }
 }
 
 /**
