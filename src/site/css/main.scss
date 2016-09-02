@@ -6,7 +6,7 @@
 //
 // Colors
 //
-$font-color-normal: #333;
+$font-color-normal: #555;
 $background-color: #fdfdfd;
 $header-background-color: rgb(42, 42, 45);
 $sidebar-background-color: white;
@@ -18,7 +18,12 @@ $grey-color: #ccc;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark: darken($grey-color, 25%);
 
+$blue-color: #22a4e6;
+
+$highlight-color: rgb(245, 245, 245);
+
 $border-color: $grey-color;
+
 //
 // Typography
 //
@@ -50,7 +55,7 @@ $base-line-height: 1.5;
 @include font-face ("brandon-regular", "hvdfonts-brandontext-regular");
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: brandon-medium;
+  font-family: brandon-medium, sans-serif;
 }
 
 //
@@ -68,7 +73,7 @@ body {
   color: $font-color-normal;
 }
 
-a {
+a, a:hover, a:visited {
   text-decoration: none;
   color: $brand-color;
 }
@@ -225,10 +230,30 @@ a {
 * Search Results
 */
 #search-results {
-  a {
-    color: $font-color-normal;
+
+  li {
+    margin: 0;
+    padding: 5px 0;
+    a {
+      color: $font-color-normal;
+    }
+    h2 {
+      color: $brand-color;
+      font-size: $font-size-normal * 1.2;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    .link {
+      color: $blue-color;
+    }
   }
-  h2 {
-    font-size: $font-size-normal * 1.5;
+  li:hover {
+    background-color: $highlight-color;
+    border-left: 2px solid $border-color;
+    padding: 5px;
   }
+
 }
