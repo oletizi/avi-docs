@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 dir=`dirname $0`
-cmd="$dir/clean.sh"
+#cmd="$dir/clean.sh"
 $cmd
 cd $dir
 cd ../src/site

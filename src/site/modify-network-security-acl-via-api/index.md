@@ -1,0 +1,203 @@
+---
+title: Modify Network Security ACL via API
+layout: default
+---
+The easiest and most scalable method to provide network layer access control lists is via a Network Security Policy pointing to an IP Group.  The IP Group may be used by multiple virtual services.  When an IP is added to the group, that address will be blocked by all virtual services with a network security policy blocking the IP Group's list of addresses.
+
+ 
+
+### Create an IP ACL
+
+<img src="img/ACL2.png" alt="ACL2" width="427" height="189">First, set up the environment:
+
+1. From the GUI, navigate to *Templates > Groups > IP Groups* and create a new IP Group.
+1. Create or edit a virtual service.
+1. From the *VS edit > Rules > Network Security Policy* tab, add a new Network Security rule.  Set the match to IP address and select the new IP Group from the pull down list.
+
+See the following <a href="/2015/11/29/block-an-ip-address-from-a-virtual-service/">article </a>for creating an IP access control list via DataScript.
+
+ 
+
+### Grab the IP Group's UUID
+
+To update the ACL list, first acquire the UUID of the IP Group.  API calls may be made to the name of an object, though UUIDs are preferred as they provide uniqueness.  In the following example, the Controller's cluster IP is 10.1.1.1 and the IP Group is named 'blacklist'.
+https://10.1.1.1/api/ipaddrgroup?name=blacklist
+
+1 https : //10.1.1.1/api/ipaddrgroup?name=blacklist
+
+The following JSON result is returned from the example query:
+
+{ "count": 1, "results": [ { "url": "https://10.1.1.1/api/ipaddrgroup/ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b", "uuid": "ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b", "name": "Blacklist" "tenant_ref": "https://10.1.1.1/api/tenant/admin", "prefixes": [ { "ip_addr": { "type": "V4", "addr": "10.128.0.0" }, "mask": 16 }, ] } ] }
+
+1
+
+2
+3
+
+4
+5
+
+6
+7
+
+8
+9
+
+10
+11
+
+12
+13
+
+14
+15
+
+16
+17
+
+18
+19
+
+20 {
+
+   "count" :  1 ,
+   "results" :  [
+
+       {
+         "url" :  "https://10.1.1.1/api/ipaddrgroup/ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b" ,
+
+         "uuid" :  "ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b" ,
+         "name" :  "Blacklist"
+
+         "tenant_ref" :  "https://10.1.1.1/api/tenant/admin" ,
+         "prefixes" :  [
+
+             {
+               "ip_addr" :  {
+
+                   "type" :  "V4" ,
+                   "addr" :  "10.128.0.0"
+
+               } ,
+             "mask" :  16
+
+             } ,
+         ]
+
+       }
+   ]
+
+}
+
+The query can be filtered to be more specific by appending *&fields=uuid* .  For this example, an IP network **10.128.0.0/16** already exists in the IP Group.
+
+ 
+
+### Modify the IP Group Via API
+
+To add the IP network **10.0.0.0/16** and the IP range **192.168.0.1 - 192.168.1.250** to the IP group, make a PUT request to the IP group URL *https://10.1.1.1/api/ipaddrgroup/ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b* with the following payload:
+{ "url": "https://10.1.1.1/api/ipaddrgroup/ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b", "uuid": "ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b", "name": "Blacklist", "tenant_ref": "https://10.1.1.1/api/tenant/admin", "ranges": [ { "begin": { "type": "V4", "addr": "192.168.1.1" }, "end": { "type": "V4", "addr": "192.168.1.250" } } ], "prefixes": [ { "ip_addr": { "type": "V4", "addr": "10.128.0.0" }, "mask": 16 }, { "ip_addr": { "type": "V4", "addr": "10.0.0.0" }, "mask": 16 } ] }
+
+1
+
+2
+3
+
+4
+5
+
+6
+7
+
+8
+9
+
+10
+11
+
+12
+13
+
+14
+15
+
+16
+17
+
+18
+19
+
+20
+21
+
+22
+23
+
+24
+25
+
+26
+27
+
+28
+29
+
+30
+31
+
+32
+33
+
+34 {
+
+   "url" :  "https://10.1.1.1/api/ipaddrgroup/ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b" ,
+   "uuid" :  "ipaddrgroup-dc43bd65-7227-4585-8213-34c84c9b1c3b" ,
+
+   "name" :  "Blacklist" ,
+   "tenant_ref" :  "https://10.1.1.1/api/tenant/admin" ,
+
+   "ranges" :  [
+       {
+
+         "begin" :  {
+             "type" :  "V4" ,
+
+             "addr" :  "192.168.1.1"
+         } ,
+
+         "end" :  {
+             "type" :  "V4" ,
+
+             "addr" :  "192.168.1.250"
+         }
+
+       }
+   ] ,
+
+   "prefixes" :  [
+       {
+
+         "ip_addr" :  {
+             "type" :  "V4" ,
+
+             "addr" :  "10.128.0.0"
+         } ,
+
+         "mask" :  16
+         } ,
+
+       {
+         "ip_addr" :  {
+
+             "type" :  "V4" ,
+             "addr" :  "10.0.0.0"
+
+         } ,
+       "mask" :  16
+
+       }
+   ]
+
+}
+
+Note:  All of the desired config must be included in the PUT request, including previously configured IP addresses.

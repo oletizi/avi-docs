@@ -1,0 +1,41 @@
+---
+title: DataScript: Constants
+layout: default
+---
+Constants are static strings that can be used to get or set information from the data path. For instance, a constant could be used to return an HTTP 403 message to a client request that did not have valid credentials. The following constants are available:
+
+### HTTP Method Constants:
+
+HTTP_GET HTTP_GET HTTP_POST HTTP_PUT HTTP_HEAD HTTP_DELETE HTTP_OPTIONS HTTP_MKCOL HTTP_COPY HTTP_MOVE HTTP_PROPFIND HTTP_PROPPATCH HTTP_PATCH HTTP_LOCK HTTP_UNLOCK HTTP_TRACE
+
+ 
+
+### HTTP Status Constants**:**
+
+HTTP_OK 200 OK HTTP_CREATED 201 Created HTTP_MOVED_PERMANENTLY 301 Moved Permanently HTTP_MOVED_TEMPORARILY 302 Found HTTP_NOT_MODIFIED 304 Not Modified HTTP_TEMPORARY_REDIRECT 307 Temporary Redirect HTTP_BAD_REQUEST 400 Bad Request HTTP_UNAUTHORIZED 401 Unauthorized HTTP_FORBIDDEN 403 Forbidden HTTP_NOT_FOUND 404 Not Found HTTP_NOT_ALLOWED 405 Method Not Allowed HTTP_INTERNAL_SERVER_ERROR 500 Internal Server Error HTTP_METHOD_NOT_IMPLEMENTED       501 Not Implemented HTTP_SERVICE_UNAVAILABLE 503 Service Unavailable HTTP_GATEWAY_TIMEOUT 504 Gateway Timeout
+
+ 
+
+### Crypto Constants**:**
+
+CIPHER_AES CIPHER_3DES
+
+ 
+
+### Query Return Types**:**
+
+QUERY_STRING QUERY_TABLE
+
+ 
+
+### Context Constants**:**
+
+HTTP_REQUEST HTTP_RESPONSE
+
+ 
+
+### Client Certificate Attribute Constants**:**
+
+CLIENT_CERT CLIENT_CERT_FINGERPRINT CLIENT_CERT_SUBJECT CLIENT_CERT_ISSUER CLIENT_CERT_SERIAL
+
+ 
