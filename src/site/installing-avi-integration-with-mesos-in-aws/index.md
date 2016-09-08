@@ -42,7 +42,38 @@ Core OS is an OS optimized for container-based solutions using Linux as well as 
 
 ### Software Versions
 
-Software Version Avi Vantage 15.3.1 or higher Mesosphere DC/OS 1.0.0 Marathon 0.9.1 CoreOS 717.3.0 Docker client, server 1.6.2 Fleet 0.10.2
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Software</th> 
+   <th width="60%">Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Vantage</td> 
+   <td>15.3.1 or higher</td> 
+  </tr> 
+  <tr> 
+   <td>Mesosphere DC/OS</td> 
+   <td>1.0.0</td> 
+  </tr> 
+  <tr> 
+   <td>Marathon</td> 
+   <td>0.9.1</td> 
+  </tr> 
+  <tr> 
+   <td>CoreOS</td> 
+   <td>717.3.0</td> 
+  </tr> 
+  <tr> 
+   <td>Docker client, server</td> 
+   <td>1.6.2</td> 
+  </tr> 
+  <tr> 
+   <td>Fleet</td> 
+   <td>0.10.2</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### System Time (NTP) Requirement
 
@@ -113,7 +144,7 @@ To begin, log in to your AWS account using an Internet browser.
 
 1. Download Docker.json from <a href="https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json">https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json</a>. Save the file in Downloads.
 1. Open an SSH session to the Mesos master's IP address, and post the application:
-curl -H "Content-Type: application/json" -X POST -d@Downloads/Docker.json http://:8080/v2/apps
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>curl -H "Content-Type: application/json" -X POST -d@Downloads/Docker.json http://:8080/v2/apps</code></pre>
 
 ### Application Verification
 

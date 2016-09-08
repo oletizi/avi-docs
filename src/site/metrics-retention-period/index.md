@@ -7,7 +7,50 @@ At regular intervals, Avi Service Engines collect values for a <a href="/metrics
 The frequency of metrics collection is determine by the setting with a virtual service's analytics setting. This may be as infrequent as every five minutes, or as frequent as every 5 seconds. If a DDoS event is detected by an SE, the SE immediately sends information about the attack to the Controller, instead of locally storing the data until the next polling interval.
 
 The following table lists the increments in which metrics data can be displayed in the web interface. The data granularity per increment and the retention period also are listed.
-Metric Increments  Data Granularity  Retention Period Real time/*    5 seconds      1 hour Past 6 hours    5 minutes      1 day Past day    5 minutes      1 day Past week    1 per hour      1 week Past Month    1 per day      1 year Past quarter    1 per day      1 year Past year    1 per day      1 per year
+<table class="myTable"> 
+ <tbody> 
+  <tr> 
+   <th>Metric Increments</th> 
+   <th>&nbsp;Data Granularity</th> 
+   <th>&nbsp;Retention Period</th> 
+  </tr> 
+  <tr> 
+   <td>Real time*</td> 
+   <td style="text-align: left;">&nbsp; &nbsp;5 seconds</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 hour</td> 
+  </tr> 
+  <tr> 
+   <td>Past 6 hours</td> 
+   <td>&nbsp; &nbsp;5 minutes</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 day</td> 
+  </tr> 
+  <tr> 
+   <td>Past day</td> 
+   <td>&nbsp; &nbsp;5 minutes</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 day</td> 
+  </tr> 
+  <tr> 
+   <td>Past week</td> 
+   <td>&nbsp; &nbsp;1 per hour</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 week</td> 
+  </tr> 
+  <tr> 
+   <td>Past Month</td> 
+   <td>&nbsp; &nbsp;1 per day</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 year</td> 
+  </tr> 
+  <tr> 
+   <td>Past quarter</td> 
+   <td>&nbsp; &nbsp;1 per day</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 year</td> 
+  </tr> 
+  <tr> 
+   <td>Past year</td> 
+   <td>&nbsp; &nbsp;1 per day</td> 
+   <td>&nbsp; &nbsp; &nbsp;1 per year</td> 
+  </tr> 
+ </tbody> 
+</table>
 
  
 

@@ -8,30 +8,35 @@ Operators compare or contrast sets of data, and will return as *true* or *false*
 
 ### Arithmetic Operators:
 
-+                      -- Addition -                      -- Subtraction /*                      -- Multiplication /                      -- Division
+<pre crayon="false" class="">+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Addition
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Subtraction
+*&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Multiplication
+/&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Division</pre>
 
  
 
 ### Relational Operators:
 
->                     -- Greater than <                     -- Less than >=                    -- Greater than or equal <=                    -- Less than or equal ==                    -- Equal ~=                    -- Not equal
+<pre crayon="false" class="">&gt;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Greater than
+&lt;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Less than
+&gt;=&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Greater than or equal
+&lt;=&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Less than or equal
+==&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Equal
+~=&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Not equal</pre>
 
 If the port does not equal 443, then redirect the client to HTTPS.
 
-if avi.vs.port() ~= <strong>"</strong>443<strong>"</strong> then    avi.http.redirect(<strong>"</strong>https://<strong>"</strong> .. avi.vs.host() .. avi.http.get_uri()) end
-
-1
-
-2
-3 if  avi . vs . port ( )  ~ =  < strong > "</strong>443<strong>" < / strong >  then
-
-    avi . http . redirect ( < strong > "</strong>https://<strong>" < / strong >  . .  avi . vs . host ( )  . .  avi . http . get_uri ( ) )
-end
+<pre><code class="language-lua">if avi.vs.port() ~= <strong>"</strong>443<strong>"</strong> then
+&nbsp;&nbsp; avi.http.redirect(<strong>"</strong>https://<strong>"</strong> .. avi.vs.host() .. avi.http.get_uri())
+end</code></pre>
 
  
 
 ### Logical Operators
 
-and or not string.find          -- Search for a string within another string.
+<pre crayon="false" class="">and
+or
+not
+string.find&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; -- Search for a string within another string.</pre>
 
  

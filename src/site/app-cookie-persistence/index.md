@@ -9,9 +9,7 @@ Rather than have Avi Vantage insert its own cookie into HTTP responses for per
 Servers using session ID do not have control over whether a client will accept a cookie. For this purpose, they may choose to embed the session ID in both a cookie and the URI.  Older browsers or clients from Europe may skip the cookie, but still include the session ID within the query of their requests. For this reason Vantage automatically checks both locations.
 
 Once an identifier has been located in a server response and a client's request, Vantage creates an entry in a local persistence table for future persistence.
-www.avinetworks.com/index.html?jsessionid=a1b2c3d4e5
-
-1 www . avinetworks . com / index . html ? jsessionid = a1b2c3d4e5
+<pre><code class="language-lua">www.avinetworks.com/index.html?jsessionid=a1b2c3d4e5</code></pre>
 
 Note: This method involves using an existing server cookie. For Vantage to use its own cookie for persistence, use the <a href="/http-cookie-persistence/">HTTP Cookie persistence</a> mode, which is straightforward and more scalable.
 

@@ -34,20 +34,25 @@ Open the downloaded file and copy the entire contents of the file to the clipboa
 
 To add the SSH user configured on the Controller to each of the SE hosts, use the following steps. These steps also enable password-less sudo access for the SSH user. The SSH account and password-less sudo access are required by the Controller to log onto the SE host, transfer the Docker container for the SE onto the host, and start the SE within the Docker container.
 
-1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76): 
-ssh avi@10.130.164.76 password:
+1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76): <pre crayon="false" pre="" class="command-line language-bash" data-user="" data-host="$" data-output="1-100"><code>ssh avi@10.130.164.76
+password:
+</code></pre>
 
-1. Prepare the Avi SE host for adding the key from the Avi Controller: 
-mkdir .ssh && chmod 700 .ssh && cd .ssh
+1. Prepare the Avi SE host for adding the key from the Avi Controller: <pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+</code></pre>
 
-1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:
-echo "paste-key-file-copied-from-Controller" > .ssh/authorized_keys chmod 644 authorized_keys
-Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
+1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+chmod 644 authorized_keys</code></pre>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
 
 1. Repeat these steps on each Avi SE host.
 
 **Example:**
-mkdir .ssh && chmod 700 .ssh && cd .ssh echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOS Uo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+ AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" > .ssh/authorized_keys chmod 644 authorized_keys
+<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOS
+Uo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+
+AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" &gt; .ssh/authorized_keys
+chmod 644 authorized_keys
+</code></pre>
 
 Note: Make sure to paste the public key for the Avi SE in your deployment. The key shown here is only an example and will not work with your Avi SEs.
 
@@ -55,21 +60,25 @@ Note: Make sure to paste the public key for the Avi SE in your deployment. The k
 
 The steps above assume that SSH user "root" will be used by the Avi Controller to log into the Avi SE for management. To use a different SSH user instead, perform the following steps ***on each Avi SE host***:
 
-1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76): 
-ssh avi@10.130.164.76 password:
+1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76): <pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~" data-output="1-100"><code>ssh avi@10.130.164.76
+password:
+</code></pre>
 
-1. Prepare the Avi SE host for adding the key from the Avi Controller: 
-mkdir .ssh && chmod 700 .ssh && cd .ssh
+1. Prepare the Avi SE host for adding the key from the Avi Controller: <pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+</code></pre>
 
-1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:
-echo "paste-key-file-copied-from-Controller" > .ssh/authorized_keys chmod 644 authorized_keys
-Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
+1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+chmod 644 authorized_keys</code></pre>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
 
-1. Enable sudo password-less login for the SSH user:
-sudo echo "avise ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoer
-Where the example shows "avise," make sure to type the SSH user name created above.
+1. Enable sudo password-less login for the SSH user:<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo echo "avise ALL=(ALL) NOPASSWD:ALL" &gt;&gt; /etc/sudoer</code></pre>Where the example shows "avise," make sure to type the SSH user name created above.
 
 1. Repeat these steps on each Avi SE host.
 
 **Example:**
-mkdir .ssh && chmod 700 .ssh && cd .ssh echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOS Uo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+ AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" > .ssh/authorized_keys chmod 644 authorized_keys sudo echo "avise ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoer
+<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOS
+Uo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+
+AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" &gt; .ssh/authorized_keys
+chmod 644 authorized_keys
+sudo echo "avise ALL=(ALL) NOPASSWD:ALL" &gt;&gt; /etc/sudoer
+</code></pre>

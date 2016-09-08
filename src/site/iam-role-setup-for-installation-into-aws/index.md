@@ -3,12 +3,33 @@ title: IAM Role Setup for Installation into AWS
 layout: default
 ---
 If using the IAM role method to define access for an Avi Vantage installation in Amazon Web Services (AWS), use the steps in this article to set up the IAM roles before beginning deployment of the Avi Controller EC2 instance.
-IAM Role Name Policy Name Description Required vmimport
-<a href="https://s3-us-west-1.amazonaws.com/avikbs/vmimport-role-trust.json">vmimport-role-trust.json</a> vmimport
-<a href="https://s3-us-west-1.amazonaws.com/avikbs/vmimport-role-policy.json">vmimport-role-policy.json</a> Allows Avi SE VM to be imported into AWS. Without this IAM role, the Avi SE cannot be launched. This role is associated with the AWS account (not with the Avi Controller). Yes AviController-Refined-Role
-<a href="https://s3-us-west-1.amazonaws.com/avikbs/avicontroller-role-trust.json">avicontroller-role-trust.json</a> AviController-EC2-Policy
-<a href="https://s3-us-west-1.amazonaws.com/avikbs/avicontroller-role-policy.json">avicontroller-role-policy.json</a> Allows Avi Controller instance to be installed. Yes AviController-R53-Policy
-<a href="https://s3-us-west-1.amazonaws.com/avikbs/avicontroller-role-r53-policy.json">avicontroller-role-r53-policy.json</a> Allows access to the AWS cloud's DNS. No
+<table class="myTable"> 
+ <tbody> 
+  <tr> 
+   <th>IAM Role Name</th> 
+   <th>Policy Name</th> 
+   <th style="text-align: center;">Description</th> 
+   <th style="text-align: center;">Required</th> 
+  </tr> 
+  <tr> 
+   <td>vmimport<br> <a href="https://s3-us-west-1.amazonaws.com/avikbs/vmimport-role-trust.json">vmimport-role-trust.json</a></td> 
+   <td>vmimport<br> <a href="https://s3-us-west-1.amazonaws.com/avikbs/vmimport-role-policy.json">vmimport-role-policy.json</a></td> 
+   <td align="center">Allows Avi SE VM to be imported into AWS. Without this IAM role, the Avi SE cannot be launched. This role is associated with the AWS account (not with the Avi Controller).</td> 
+   <td align="center">Yes</td> 
+  </tr> 
+  <tr> 
+   <td rowspan="2">AviController-Refined-Role<br> <a href="https://s3-us-west-1.amazonaws.com/avikbs/avicontroller-role-trust.json">avicontroller-role-trust.json</a></td> 
+   <td>AviController-EC2-Policy<br> <a href="https://s3-us-west-1.amazonaws.com/avikbs/avicontroller-role-policy.json">avicontroller-role-policy.json</a></td> 
+   <td align="center">Allows Avi Controller instance to be installed.</td> 
+   <td align="center">Yes</td> 
+  </tr> 
+  <tr> 
+   <td>AviController-R53-Policy<br> <a href="https://s3-us-west-1.amazonaws.com/avikbs/avicontroller-role-r53-policy.json">avicontroller-role-r53-policy.json</a></td> 
+   <td align="center">Allows access to the AWS cloud's DNS.</td> 
+   <td align="center">No</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## IAM Role Setup for Avi Vantage Installation into AWS
 
@@ -22,7 +43,15 @@ The AWS CLI will need to be run from the same directory where you save the files
 
 At the command prompt, enter the following AWS CLI commands.
 **Note: Do not use the commands to create and attach the AviController-R53-Policy unless the AWS DNS service (R53) will be used.**
-aws iam create-role --role-name vmimport --assume-role-policy-document file://vmimport-role-trust.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://vmimport-role-policy.json aws iam create-role --role-name AviController-Refined-Role --assume-role-policy-document file://avicontroller-role-trust.json aws iam create-policy --policy-name AviController-EC2-Policy --policy-document file://avicontroller-role-policy.json aws iam attach-role-policy --role-name AviController-Refined-Role --policy-arn "arn:aws:iam::123456789012:policy/AviController-EC2-Policy" aws iam create-policy --policy-name AviController-R53-Policy --policy-document file://avicontroller-role-53-policy.json aws iam attach-role-policy --role-name AviController-Refined-Role --policy-arn "arn:aws:iam::123456789012:policy/AviController-R53-Policy"
+<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100"><code>
+aws iam create-role --role-name vmimport --assume-role-policy-document file://vmimport-role-trust.json
+aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://vmimport-role-policy.json
+aws iam create-role --role-name AviController-Refined-Role --assume-role-policy-document file://avicontroller-role-trust.json
+aws iam create-policy --policy-name AviController-EC2-Policy --policy-document file://avicontroller-role-policy.json
+aws iam attach-role-policy --role-name AviController-Refined-Role --policy-arn "arn:aws:iam::123456789012:policy/AviController-EC2-Policy"
+aws iam create-policy --policy-name AviController-R53-Policy --policy-document file://avicontroller-role-53-policy.json
+aws iam attach-role-policy --role-name AviController-Refined-Role --policy-arn "arn:aws:iam::123456789012:policy/AviController-R53-Policy"
+</code></pre>
 
 Notes:
 

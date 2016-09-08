@@ -41,7 +41,28 @@ The physical and software requirements differ depending on the deployment mode.
 ### Virtual Machine Requirements
 
 The following table lists the minimum requirements for the VMs on which the Avi Controller and SEs are installed.
-Component Memory vCPUs HD Avi Controller 24 GB 8 64 GB Service Engine 2 GB 2 10 GB
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Component</th> 
+   <th>Memory</th> 
+   <th>vCPUs</th> 
+   <th>HD</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>24 GB</td> 
+   <td>8</td> 
+   <td>64 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Service Engine</td> 
+   <td>2 GB</td> 
+   <td>2</td> 
+   <td>10 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Add 3 GB for each additional Controller vCPU. Add 1 GB for each additional SE vCPU.
 
@@ -50,7 +71,30 @@ If you allocate more than the minimum number of vCPUs required, make sure to als
 ### Software Requirements
 
 The following table lists the software requirements.
-Component Version Avi Controller 16.1 Avi device package for Cisco APIC 1.1 Cisco APIC 1.03f or later VMware vCenter 5.1, 5.5, or 6.0
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Component</th> 
+   <th>Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>16.1</td> 
+  </tr> 
+  <tr> 
+   <td>Avi device package for Cisco APIC</td> 
+   <td>1.1</td> 
+  </tr> 
+  <tr> 
+   <td>Cisco APIC</td> 
+   <td>1.03f or later</td> 
+  </tr> 
+  <tr> 
+   <td>VMware vCenter</td> 
+   <td>5.1, 5.5, or 6.0</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The Avi Vantage software image is available as a Qcow2 or raw image of the Controller and SEs. The Avi device package for Cisco APIC is embedded in the Avi Vantage software image.
 

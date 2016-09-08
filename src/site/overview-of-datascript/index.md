@@ -11,19 +11,10 @@ The DataScript scripting language is built upon an embedded Lua interpreter, wit
 DataScripts are executed within the data plane on the Avi Service Engines hosting the virtual service to which the DataScript has been attached. DataScript is different than ControlScript, which is a Python-based scripting tool for automation of the control plane and executed from the Avi Controller.
 
 A typical DataScript will typically be in some form of if / then logic, similar to a policy's match / action logic.
-path = avi.http.get_path() if string.beginswith(path, "/docs/") then avi.redirect("http://docs.avinetworks.com/index.html") end
-
-1
-
-2
-3
-
-4 path  =  avi . http . get_path ( )
-
-if  string . beginswith ( path ,  "/docs/" )  then
-   avi . redirect ( "http://docs.avinetworks.com/index.html" )
-
-end
+<pre><code class="language-lua">path = avi.http.get_path()
+if string.beginswith(path, "/docs/") then
+   avi.redirect("http://docs.avinetworks.com/index.html")
+end</code></pre>
 
  
 

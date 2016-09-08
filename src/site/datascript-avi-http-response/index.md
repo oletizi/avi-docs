@@ -2,56 +2,43 @@
 title: DataScript: avi.http.response
 layout: default
 ---
-**Function** **avi.http.response( status, [headers, [body]] )** ### **Description**
-
- Responds to the HTTP request with a custom HTTP response. ### **Events**
-
- HTTP_REQ
-HTTP_RESP ### **Parameter**
-
- ***status***is used to specify the HTTP status code. See list for supported status codes below.
-
-Optional ***headers***are used to specify a table to add headers in the response. The default content-type used is “text/plain”. Hence if the body is some other mime-type such as “text/html”, the headers parameter should be used to specify the corresponding content-type.
-
-Otional ***body***flag is a string used to specify a custom HTTP response body. ### **Supported Status Code**
-
- 200 HTTP Ok
-301 Moved Permanently
-302 Found
-303 See Other
-307 Temporary Redirect
-400 Bad Request
-401 Unauthorized
-402 Forbidden
-404 Not Found
-405 Method Not Allowed
-413 Request Entity Too Large
-414 Request-URI Too Long
-429 Too Many Requests
-501 Not Implemented
-503 Service Unavailable ### **Returns**
-
- No return value ### **Example**
-
- Prevent shell shock attack and notify the attacker with a friendly message.
-local h = avi.http.get_headers() for k, v in pairs(h) do if string.sub(v, 1, 2) == "()" and /#v > 2 then avi.http.response(404, {content_type="text/html"}, "Blocking Shellshock Attack!") end end
-
-1
-
-2
-3
-
-4
-5
-
-6
-7 local  h  =  avi . http . get_headers ( )
-
-for  k ,  v  in  pairs ( h )  do
-   if  string . sub ( v ,  1 ,  2 )  ==  "()"  and  /# v  >  2  then
-
-       avi . http . response ( 404 ,  { content_type = "text/html" } ,
-       "Blocking Shellshock Attack!" )
-
-   end
-end
+<table class="table table-hover"> 
+ <tbody> 
+  <tr bgcolor="ff4b00"> 
+   <td width="100"><span style="color: white; font-size: medium;"><strong>Function</strong></span></td> 
+   <td width="600"><span style="color: white;"><b>avi.http.response( status, [headers, [body]] )</b></span></td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <h4><span id="Description"><strong>Description</strong></span></h4> </td> 
+   <td width="600">Responds to the HTTP request with a custom HTTP response.</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <h4><span id="Events"><strong>Events</strong></span></h4> </td> 
+   <td width="600">HTTP_REQ<br> HTTP_RESP</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <h4><span id="Parameter"><strong>Parameter</strong></span></h4> </td> 
+   <td width="600"><strong><em>status</em> </strong>is used to specify the HTTP status code. See list for supported status codes below.<p></p> <p>Optional <em><strong>headers</strong> </em>are used to specify a table to add headers in the response. The default content-type used is “text/plain”. Hence if the body is some other mime-type such as “text/html”, the headers parameter should be used to specify the corresponding content-type.</p> <p>Otional <strong><em>body</em> </strong>flag is a string used to specify a custom HTTP response body.</p></td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <h4><span id="Supported_Status_Code"><strong>Supported Status Code</strong></span></h4> </td> 
+   <td width="600">200 HTTP Ok<br> 301 Moved Permanently<br> 302 Found<br> 303 See Other<br> 307 Temporary Redirect<br> 400 Bad Request<br> 401 Unauthorized<br> 402 Forbidden<br> 404 Not Found<br> 405 Method Not Allowed<br> 413 Request Entity Too Large<br> 414 Request-URI Too Long<br> 429 Too Many Requests<br> 501 Not Implemented<br> 503 Service Unavailable</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <h4><span id="Returns"><strong>Returns</strong></span></h4> </td> 
+   <td width="600">No return value</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <h4><span id="Example"><strong>Example</strong></span></h4> </td> 
+   <td width="600">Prevent shell shock attack and notify the attacker with a friendly message.<br> 
+    <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">local h = avi.http.get_headers()
+for k, v in pairs(h) do
+   if string.sub(v, 1, 2) == "()" and #v &gt; 2 then
+      avi.http.response(404, {content_type="text/html"},
+      "Blocking Shellshock Attack!")
+   end
+end</code></pre> 
+    <!-- [Format Time: 0.0034 seconds] --> </td> 
+  </tr> 
+ </tbody> 
+</table>

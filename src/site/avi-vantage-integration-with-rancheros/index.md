@@ -17,8 +17,12 @@ Note: Vantage works only with OSs that have systemctl support. Currently, this a
 
 <a href="img/rancher-integration0.png"><img src="img/rancher-integration0.png" alt="rancher-integration0" width="608" height="565"></a>
 
-* The Avi Controller must be configured with a link-local subnet, to use for allocating IP addresses for east-west applications. In this article, we will use subnet of 169.254.0.0/24. To create a link-local subnet using the Vantage CLI, log onto the Avi Controller through SSH or the CLI shell, and use the following commands: 
-: > configure serviceengineproperties seproperties> se_runtime_properties seproperties:se_runtime_properties> service_ip_subnets 169.254.0.0/24 seproperties:se_runtime_properties> save seproperties> save : >
+* The Avi Controller must be configured with a link-local subnet, to use for allocating IP addresses for east-west applications. In this article, we will use subnet of 169.254.0.0/24. To create a link-local subnet using the Vantage CLI, log onto the Avi Controller through SSH or the CLI shell, and use the following commands: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-5"><code>: &gt; configure serviceengineproperties
+seproperties&gt; se_runtime_properties
+seproperties:se_runtime_properties&gt; service_ip_subnets 169.254.0.0/24
+seproperties:se_runtime_properties&gt; save
+seproperties&gt; save
+: &gt;</code></pre>
 
 ## Creating the Rancher OS Cloud
 
@@ -46,54 +50,19 @@ The Avi Controller now will connect to every Rancher node in the cluster using t
 ## Creating Virtual Services
 
 A sample rancher-compose.yml below configures 1 north-south application (6 containers) and 1 east-west application (2 containers). In this example, the east-west application is given IP address 169.254.0.10.
-east-west-app: image: avinetworks/node-app-nsew labels: com.avinetworks.avi_proxy: '{"virtualservice": {"east_west_placement": true, "ip_address": {"type": "V4", "addr": "169.254.0.10"}, "analytics_policy": {"client_insights": "NO_INSIGHTS", "metrics_realtime_update": {"duration": 0, "enabled": true}, "full_client_logs": {"duration": 0, "enabled": true}}}, "pool": {"lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN"}}' ports: - '8080' scale: 2 north-south-app: image: avinetworks/node-app-nsew labels: com.avinetworks.avi_proxy: '{"virtualservice": {"ip_address": {"type": "V4", "addr": "10.144.131.197"}, "analytics_policy": {"client_insights": "NO_INSIGHTS", "metrics_realtime_update": {"duration": 0, "enabled": true}, "full_client_logs": {"duration": 0, "enabled": true}}}, "pool": {"lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN"}}' ports: - '8080' scale: 6
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16  
-
-east - west - app :
-   image :  avinetworks / node - app - nsew
-
-   labels :
-     com . avinetworks . avi_proxy :  '{"virtualservice": {"east_west_placement": true, "ip_address": {"type": "V4", "addr": "169.254.0.10"}, "analytics_policy": {"client_insights": "NO_INSIGHTS", "metrics_realtime_update": {"duration": 0, "enabled": true}, "full_client_logs": {"duration": 0, "enabled": true}}}, "pool": {"lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN"}}'
-
-   ports :
-   -  '8080'
-
-   scale :  2
-north - south - app :
-
-   image :  avinetworks / node - app - nsew
-   labels :
-
-     com . avinetworks . avi_proxy :  '{"virtualservice": {"ip_address": {"type": "V4", "addr": "10.144.131.197"}, "analytics_policy": {"client_insights": "NO_INSIGHTS", "metrics_realtime_update": {"duration": 0, "enabled": true}, "full_client_logs": {"duration": 0, "enabled": true}}}, "pool": {"lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN"}}'
-   ports :
-
-   -  '8080'
-   scale :  6
-
- 
+<pre><code class="language-lua">east-west-app:
+  image: avinetworks/node-app-nsew
+  labels:
+    com.avinetworks.avi_proxy: '{"virtualservice": {"east_west_placement": true, "ip_address": {"type": "V4", "addr": "169.254.0.10"}, "analytics_policy": {"client_insights": "NO_INSIGHTS", "metrics_realtime_update": {"duration": 0, "enabled": true}, "full_client_logs": {"duration": 0, "enabled": true}}}, "pool": {"lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN"}}'
+  ports:
+  - '8080'
+  scale: 2
+north-south-app:
+  image: avinetworks/node-app-nsew
+  labels:
+    com.avinetworks.avi_proxy: '{"virtualservice": {"ip_address": {"type": "V4", "addr": "10.144.131.197"}, "analytics_policy": {"client_insights": "NO_INSIGHTS", "metrics_realtime_update": {"duration": 0, "enabled": true}, "full_client_logs": {"duration": 0, "enabled": true}}}, "pool": {"lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN"}}'
+  ports:
+  - '8080'
+  scale: 6</code></pre>
 
 On the Avi Controller, the applications show up as virtual services. (In the web interface, navigate to the Applications > Dashboard.)

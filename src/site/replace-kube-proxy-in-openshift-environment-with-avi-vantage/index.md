@@ -13,22 +13,14 @@ If a user wishes to use service subnet to load balance traffic using Avi, kube-p
 To disable kube-proxy on your OpenShift environment, follow the below steps:
 
 * Login to the OpenShift Master node.
-ssh username@os_master_ip
-
-1 ssh username @ os_master_ip
+<pre><code class="language-lua">ssh username@os_master_ip oc delete service --all OPTIONS="--loglevel=2 --disable proxy" systemctl restart origin-node.service</code></pre>
 * Delete all services that maybe running (run this on master node only).
-oc delete service --all
-
-1 oc delete service  -- all
+<pre><code class="language-lua">ssh username@os_master_ip oc delete service --all OPTIONS="--loglevel=2 --disable proxy" systemctl restart origin-node.service</code></pre>
 * Edit /etc/sysconfig/origin-node and change the OPTIONS variable to read as below:
-OPTIONS="--loglevel=2 --disable proxy"
-
-1 OPTIONS = "--loglevel=2 --disable proxy"
+<pre><code class="language-lua">ssh username@os_master_ip oc delete service --all OPTIONS="--loglevel=2 --disable proxy" systemctl restart origin-node.service</code></pre>
 * Save and exit the editor.
 * Restart the origin-node service.
-systemctl restart origin-node.service
-
-1 systemctl restart origin - node . service
+<pre><code class="language-lua">ssh username@os_master_ip oc delete service --all OPTIONS="--loglevel=2 --disable proxy" systemctl restart origin-node.service</code></pre>
 
 Repeat the above steps for all other nodes in the OpenShift cluster
 

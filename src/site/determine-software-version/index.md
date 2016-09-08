@@ -7,7 +7,12 @@ To determine the specific Avi Vantage software version running on the Avi Contro
 ### CLI
 
 From the Controller shell, enter this command:
-: > show version controller +-----------------+--------------------------------------+ | Controller Name | Version | +-----------------+--------------------------------------+ | 10.130.162.14 | 15.2.4(9007) 2015-10-17 01:43:38 UTC | +-----------------+--------------------------------------+
+<pre crayon="false" class="">: &gt; show version controller
++-----------------+--------------------------------------+
+| Controller Name | Version                              |
++-----------------+--------------------------------------+
+| 10.130.162.14   | 15.2.4(9007) 2015-10-17 01:43:38 UTC |
++-----------------+--------------------------------------+</pre>
 
 Alternatively, from bash, run this command:
 

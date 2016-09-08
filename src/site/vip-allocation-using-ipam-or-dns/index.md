@@ -20,15 +20,114 @@ These procedures assume the cloud configuration has already been created on the 
 ## Providers of IPAM and DNS Support
 
 Here is the list of providers and supported functionalities for IPAM and DNS:
-Support / Provider Profile Infoblox Internal  AWS/OpenStack IPAM only No (not currently supported) Yes Yes DNS only No (not currently supported) Yes No IPAM + DNS Yes Yes No
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Support / Provider Profile</th> 
+   <th>Infoblox</th> 
+   <th>Internal</th> 
+   <th>&nbsp;AWS/OpenStack</th> 
+  </tr> 
+  <tr> 
+   <td>IPAM only</td> 
+   <td>No (not currently supported)</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>DNS only</td> 
+   <td>No (not currently supported)</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+  <tr> 
+   <td>IPAM + DNS</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 For example, if Infoblox is the chosen provider, both IPAM and DNS profiles should be pointing to Infoblox. If Vantage is the chosen provider, the Vantage user has an option to use IPAM, DNS, or both.
 
 ## IPAM / DNS Support for Cloud Infrastructure
 
 This table lists the IPAM and DNS provider support available for each type of cloud (infrastructure) configured in Vantage. For example, when creating VirtualServices in OpenStack or AWS cloud, a separate configuration for IPAM is not needed/allowed as the cloud configuration has support for IPAM natively in Avi. However, Vantage DNS service can be still be used with these Clouds.
-Cloud / Provider Profile Infoblox Internal AWS/OpenStack IPAM+DNS IPAM DNS IPAM DNS VMware (Read Access) No Yes
-(16.2.1 onwards) Yes N/A N/A VMware (Write Access) No No Yes N/A N/A OpenStack No No Yes N/A (default, native) N/A (default, not used) AWS No No Yes N/A (default, native) N/A (default, native) Containers (Mesos/Rancher/Docker UCP) Yes Yes Yes Yes No Linux Server Yes Yes Yes Yes No No access Yes Yes Yes Yes No
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Cloud / Provider Profile</th> 
+   <th>Infoblox</th> 
+   <th colspan="2">Internal</th> 
+   <th colspan="2">AWS/OpenStack</th> 
+  </tr> 
+  <tr> 
+   <th width="60%"></th> 
+   <th>IPAM+DNS</th> 
+   <th>IPAM</th> 
+   <th>DNS</th> 
+   <th>IPAM</th> 
+   <th>DNS</th> 
+  </tr> 
+  <tr> 
+   <td>VMware (Read Access)</td> 
+   <td>No</td> 
+   <td>Yes<br> (16.2.1 onwards)</td> 
+   <td>Yes</td> 
+   <td>N/A</td> 
+   <td>N/A</td> 
+  </tr> 
+  <tr> 
+   <td>VMware (Write Access)</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>N/A</td> 
+   <td>N/A</td> 
+  </tr> 
+  <tr> 
+   <td>OpenStack</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>N/A (default, native)</td> 
+   <td>N/A (default, not used)</td> 
+  </tr> 
+  <tr> 
+   <td>AWS</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>N/A (default, native)</td> 
+   <td>N/A (default, native)</td> 
+  </tr> 
+  <tr> 
+   <td>Containers (Mesos/Rancher/Docker UCP)</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+  <tr> 
+   <td>Linux Server</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+  <tr> 
+   <td>No access</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## Cloud Configuration Workflow
 

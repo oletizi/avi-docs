@@ -97,11 +97,17 @@ Click Save.
 ## Creating a Virtual Service Using avi_proxy Labels
 
 The following set of avi_proxy labels configures a virtual service, and enables auto-allocation of IP addresses from subnet 20.20.20.0/24. This is the subnet containing the IP address pool that was added to the cloud in the previous section:
+<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"auto_allocate_ip\": true, \"subnet\": \"20.20.20.0/24\"}}"
+  
+</code></pre>
 
 If the subnet is not specified in the label, as in the following example, Vantage will choose from one of the network subnets configured in the network object of the Mesos cloud on the Controller.
 
+<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"auto_allocate_ip\": true}}"
+  
+</code></pre>
 
 ## Setting Up a Common DNS Infrastructure in a Mesos Environment
 
@@ -114,12 +120,51 @@ If the Controller and Mesos-DNS are running on the same machine, it is required 
 
 ### DNS Query Code Example (python)
 
-from dns import resolver def get_avi_controller_ip(): """ Insert code that gets Avi Controller IP. If it's static just return that IP. """ controller_ip = 10.10.10.100 /#Avi Controller IP return controller_ip def dns_get_resolver(ips=[]): dns_resolver = resolver.Resolver() dns_resolver.nameservers = ips dns_resolver.nameservers.extend([]) /# Add your corp DNS IPs here for google.com resolution /# dns_resolver.port = 8053 /#Avi DNS port (explained above). return dns_resolver def sample_dns_request(app_fqdn): dns_resolver = dns_get_resolver(get_controller_ip()) /# To Query A record print app_fqdn + ', A record: ' rsp = dns_resolver.query(app_fqdn, 'A') for record in rsp: print record print app_fqdn + ', SRV records: ' /# To Query SRV record rsp = dns_resolver.query(app_fqdn, 'SRV') for record in rsp: print record.port
+<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+from dns import resolver
+
+def get_avi_controller_ip():
+    """
+    Insert code that gets Avi Controller IP. If it's static just return that IP.
+    """
+    controller_ip = 10.10.10.100 #Avi Controller IP
+    return controller_ip
+
+def dns_get_resolver(ips=[]):
+    dns_resolver = resolver.Resolver()
+    dns_resolver.nameservers = ips
+    dns_resolver.nameservers.extend([]) # Add your corp DNS IPs here for google.com resolution
+    # dns_resolver.port = 8053 #Avi DNS port (explained above).
+    return dns_resolver
+
+def sample_dns_request(app_fqdn):
+    dns_resolver = dns_get_resolver(get_controller_ip())
+    # To Query A record
+    print app_fqdn + ', A record: '
+    rsp = dns_resolver.query(app_fqdn, 'A')
+    for record in rsp:
+        print record
+    print app_fqdn + ', SRV records: '
+    # To Query SRV record
+    rsp = dns_resolver.query(app_fqdn, 'SRV')
+    for record in rsp:
+        print record.port
+  
+</code></pre>
 
 ### Sample Request
 
-sample_dns_request("my-app.my-company-avi-mesos") /#Application's (my-app) FQDN with domain as my-company-avi-mesos configured in Avi’s IPAM Profile.
+<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+sample_dns_request("my-app.my-company-avi-mesos") #Application's (my-app) FQDN with domain as my-company-avi-mesos configured in Avi’s IPAM Profile.
+
+</code></pre>
 
 ### Sample Output
 
-my-app.my-company-avi-mesos, A record: 10.10.10.102 My-app.my-company-avi-mesos, SRV records: 10001 10002
+<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+my-app.my-company-avi-mesos, A record:
+10.10.10.102
+My-app.my-company-avi-mesos, SRV records:
+10001
+10002
+</code></pre>

@@ -26,21 +26,37 @@ When deploying Avi Vantage within Amazon Web Services (AWS), the installation wi
 ## 4. Protocol Ports Used by Avi Vantage for Management Communication
 
 In an AWS deployment, the Avi Controller and Avi Service Engines use the following ports for management. The firewall should allow traffic for these ports.
-Traffic Source Traffic Destination Ports To Allow Avi Controller Avi Controller TCP 22 (SSH)
-
-TCP 8443
-
-TCP 5054 Avi Service Engine TCP 22 Management Net *See section below the table.* Avi Service Engine Avi Controller TCP 22
-
-TCP 8443
-
-UDP 123 Management Net TCP 22
-
-TCP 80 *(optional)*
-
-TCP 443
-
-TCP 5054 *(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)*
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Traffic Source</th> 
+   <th>Traffic Destination</th> 
+   <th width="60%">Ports To Allow</th> 
+  </tr> 
+  <tr> 
+   <td rowspan="3">Avi Controller</td> 
+   <td>Avi Controller</td> 
+   <td>TCP 22 (SSH)<p></p> <p>TCP 8443</p> <p>TCP 5054</p></td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td>TCP 22</td> 
+  </tr> 
+  <tr> 
+   <td>Management Net</td> 
+   <td><em>See section below the table.</em></td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td rowspan="2">Avi Controller</td> 
+   <td>TCP 22<p></p> <p>TCP 8443</p> <p>UDP 123</p></td> 
+  </tr> 
+  <tr> 
+   <td>Management Net</td> 
+   <td>TCP 22<p></p> <p>TCP 80 <em>(optional)</em></p> <p>TCP 443</p> <p>TCP 5054 <em>(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em></p></td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### 4.1 Ports Used by the Controller for Network Services
 
@@ -64,7 +80,28 @@ To install Avi Vantage in AWS, we need to deploy an EC2 instance of the Avi Cont
 1. Click on EC2 to go to the EC2 Dashboard options.<a href="img/EC2_deployment.png"><img src="img/EC2_deployment.png" alt="EC2_deployment" width="2880" height="1798"></a>
 1. Click on Launch Instance to start the EC2 deployment process.<a href="img/Launch_instance.png"><img src="img/Launch_instance.png" alt="Launch_instance" width="2880" height="1800"></a>
 1. Click on My AMIs in the left panel and select (checkmark) Shared with me , filter the list to display AMIs that have the Avi-Controller tag. The Avi Vantage AMI should be listed, with name “Avi-Controller-<Version>”. For example, select AMI Avi-Controller-16.2-9091 AMI to deploy Avi Vantage Controller version 16.2 onto a virtual machine (VM).<a href="img/AMI_options.png"><img src="img/AMI_options.png" alt="AMI_options" width="2872" height="1797"></a>
-1. Choose instance type m4.xlarge from the Instance Type pull-down list, and click Next.The following table lists the ideal requirements for the VMs on which the Avi Controller and Avi SEs are installed.  Component Memory vCPUs Disk Avi Controller 24 GB 8 64 GB Service Engine 2 GB 2 10 GB
+1. Choose instance type m4.xlarge from the Instance Type pull-down list, and click Next.The following table lists the ideal requirements for the VMs on which the Avi Controller and Avi SEs are installed.  <table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Component</th> 
+   <th>Memory</th> 
+   <th>vCPUs</th> 
+   <th>Disk</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>24 GB</td> 
+   <td>8</td> 
+   <td>64 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Service Engine</td> 
+   <td>2 GB</td> 
+   <td>2</td> 
+   <td>10 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Add 1 GB of RAM to the SE configuration for each additional vCPU. With 10 GB as an absolute minimum, set the disk value to at least (2 x RAM Size) + 5 GB.
 

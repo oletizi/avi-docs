@@ -21,7 +21,9 @@ To switch the focus of the management session to the All Tenants view, use any o
 ### CLI
 
 Enter the following command:
-switchto tenant /* Switching to tenant /*  
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2"><code>switchto tenant *
+Switching to tenant *
+&nbsp;</code></pre>
 
 Specifying /* (wildcard) instead of a tenant name gives access to objects across all tenants.
 

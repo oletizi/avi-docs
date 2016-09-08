@@ -47,7 +47,64 @@ In addition to the hardware factors outlined above, maximum TPS is dependent on 
 ###
 
 The table below illustrates the average performance seen on a Service Engine running on a virtual machine in VMware ESX 6, using a Xeon E5-2630 v3 @ 2.4-GHz processor.  These numbers are generated with SSL session reuse disabled.
-Type PFS 2 Core 4 Core 8 Core 16 Core ECDH-ECDSA-AES256-SHA EC N 5107 9352 16091 34543 ECDHE-ECDSA-AES256-SHA EC Y 4011 7950 12173 26040 ECDHE-ECDSA-AES128-GCM-SHA256 EC Y 4543 9237 15979 33994 AES128-GCM-SHA256 RSA N 1476 2740 5314 9586 DHE-RSA-AES128-GCM-SHA256 RSA Y 828 1538 2939 5220
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td></td> 
+   <td>Type</td> 
+   <td>PFS</td> 
+   <td>2 Core</td> 
+   <td>4 Core</td> 
+   <td>8 Core</td> 
+   <td>16 Core</td> 
+  </tr> 
+  <tr> 
+   <td>ECDH-ECDSA-AES256-SHA</td> 
+   <td>EC</td> 
+   <td>N</td> 
+   <td>5107</td> 
+   <td>9352</td> 
+   <td>16091</td> 
+   <td>34543</td> 
+  </tr> 
+  <tr> 
+   <td>ECDHE-ECDSA-AES256-SHA</td> 
+   <td>EC</td> 
+   <td>Y</td> 
+   <td>4011</td> 
+   <td>7950</td> 
+   <td>12173</td> 
+   <td>26040</td> 
+  </tr> 
+  <tr> 
+   <td>ECDHE-ECDSA-AES128-GCM-SHA256</td> 
+   <td>EC</td> 
+   <td>Y</td> 
+   <td>4543</td> 
+   <td>9237</td> 
+   <td>15979</td> 
+   <td>33994</td> 
+  </tr> 
+  <tr> 
+   <td>AES128-GCM-SHA256</td> 
+   <td>RSA</td> 
+   <td>N</td> 
+   <td>1476</td> 
+   <td>2740</td> 
+   <td>5314</td> 
+   <td>9586</td> 
+  </tr> 
+  <tr> 
+   <td>DHE-RSA-AES128-GCM-SHA256</td> 
+   <td>RSA</td> 
+   <td>Y</td> 
+   <td>828</td> 
+   <td>1538</td> 
+   <td>2939</td> 
+   <td>5220</td> 
+  </tr> 
+ </tbody> 
+</table>
 
  
 
@@ -64,19 +121,10 @@ Using multiple NICs for client and server traffic can reduce the possibility of 
 As a general rule of thumb, Vantage can terminate and push about 1 Gb/s throughput per vCPU core, up to the PPS limit of the system.  This number is generated with standard ciphers (such as those listed above).  Using more esoteric or expensive ciphers can have a negative impact on throughput.  Similarly, using less secure ciphers, such as RC4-MD5, will provide better performance, but are also not recommended by security experts.
 
 The bulk throughput numbers, like any single benchmark metric, are based on large transaction sizes with fewer TPS. To estimate CPU requirements for real world scenarios, add the requirements for bulk throughput plus TPS.  In the following example, the goal is to achieve 20k TPS and 5 Gb/s throughput for a virtual service using elliptic curve with perfect forward secrecy, ECDHE-ECDSA-AES128-GCM-SHA256.
-Requirement Estimates 20k TPS 2k TPS per core + 10 cores for TPS 5 Gb/s 1 Gb/s Tput + 5 cores for Tput = 15 CPU cores required
-
-1
-
-2
-3
-
-4 Requirement               Estimates               
-
-20k  TPS                    2k  TPS per core          +  10  cores for  TPS       
-   5  Gb / s                  1    Gb / s  Tput            +    5  cores for  Tput
-
-                                                 =  15  CPU cores required
+<pre><code class="language-lua">Requirement              Estimates               
+20k TPS                  2k TPS per core        + 10 cores for TPS       
+  5 Gb/s                 1  Gb/s Tput           +  5 cores for Tput
+                                                = 15 CPU cores required</code></pre>
 
 Typically, SSL termination is only performed on the client-to-Vantage side of the connection, not Vantage to the server. If SSL re-encryption is required, generally the TPS impact is negligible on the Service Engine's CPU, since the majority of the CPU cost for establishing a new SSL session is on the server, not the client. For the bulk throughput, the impact to the Service Engine's CPU will be double for this metric.
 

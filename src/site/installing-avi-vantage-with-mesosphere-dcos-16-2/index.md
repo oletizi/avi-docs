@@ -47,81 +47,121 @@ For deployment of SEs, the following system-level software is required:
 
 To install the Avi Controller:
 
-1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: 
-scp controller_docker.tgz username@remotehost.com:/some/local/directory
- Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
+1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
 1. Log onto the Mesos node:
-ssh username@remotehost.com
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ssh username@remotehost.com</code></pre>
 1. Unzip the Avi Controller image:
-gunzip controller.tgz
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>gunzip controller.tgz</code></pre>
 1. Load the Avi Controller image into the host's local Docker repository:
-sudo docker load -i controller_docker.tar
-1. As a best practice, clean up any data that may be lingering from a previous run: 
-sudo rm -rf /var/lib/controller//*
-1. Use the vi editor to create a new file for spawning the Avi Controller service: 
-sudo vi /etc/systemd/system/avicontroller.service
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo docker load -i controller_docker.tar</code></pre>
+1. As a best practice, clean up any data that may be lingering from a previous run: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo rm -rf /var/lib/controller/*</code></pre>
+1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
 1. Copy the following lines into the file:
-[Unit] Description=AviController After=docker.service Requires=docker.service [Service] Restart=always RestartSec=0 TimeoutStartSec=0 TimeoutStopSec=120 StartLimitInterval=0 ExecStartPre=-/usr/bin/docker kill avicontroller ExecStartPre=-/usr/bin/docker rm avicontroller ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk '{print $4}' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag" ExecStart=/usr/bin/docker logs -f avicontroller ExecStop=/usr/bin/docker stop avicontroller [Install] WantedBy=multi-user.target
+<pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-1
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk '{print $4}' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
 
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20 [ Unit ]
-
-Description = AviController
-After = docker . service
-
-Requires = docker . service
- 
-
-[ Service ]
-Restart = always
-
-RestartSec = 0
-TimeoutStartSec = 0
-
-TimeoutStopSec = 120
-StartLimitInterval = 0
-
-ExecStartPre = - / usr / bin / docker kill avicontroller
-ExecStartPre = - / usr / bin / docker rm avicontroller
-
-ExecStartPre = / usr / bin / bash  - c  "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk '{print $4}' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
-ExecStart = / usr / bin / docker logs  - f  avicontroller
-
-ExecStop = / usr / bin / docker stop avicontroller
- 
-
-[ Install ]
-WantedBy = multi - user . target
-
- 
+[Install]
+WantedBy=multi-user.target {
+      "id": "webappew1",
+      "cpus": 0.5,
+      "mem": 64.0,
+      "instances": 2,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "avinetworks/server",
+          "network": "BRIDGE",
+          "portMappings": [
+            { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+          ]
+        }
+      },
+      "labels": {
+          "avi_proxy": "{\"virtualservice\": {\"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+      },
+      "healthChecks": [
+        {
+          "protocol": "HTTP",
+          "portIndex": 0,
+          "path": "/",
+          "gracePeriodSeconds": 5,
+          "intervalSeconds": 20,
+          "maxConsecutiveFailures": 3
+        }
+      ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"10.90.28.250\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"20.20.20.20\", \"type\": \"V4\"}, \"subnet\": {\"ip_addr\": {\"addr\": \"172.17.0.0\", \"type\": \"V4\"}, \"mask\": 16}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}</code></pre>
 
 1. Edit the following values in the file:
 
@@ -135,14 +175,14 @@ WantedBy = multi - user . target
 ### Starting the Avi Controller Service
 
 To start the Avi Controller, enter the following command at the OS shell prompt on the node where you installed the Avi Controller service:
-sudo systemctl enable avicontroller && sudo systemctl start avicontroller
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
 
 Initial startup and full system initialization takes around 5 minutes.
 
 ### Accessing the Avi Controller Web Interface
 
 To access the Avi Controller web interface, navigate to the following URL:
-https://mesos-ip-or-hostname:9443
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>https://mesos-ip-or-hostname:9443</code></pre>
 
 The following section provides steps for initial configuration of the Avi Controller.
 
@@ -219,111 +259,121 @@ The details for each deployment differ slightly, mainly in regard to network add
 Use these steps if the VIP and the client are both in the same Mesos cluster.
 
 1. Create a Docker image file such as the following for the application:
-{ "id": "webappew1", "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "avi_proxy": "{\"virtualservice\": {\"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-1
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk '{print $4}' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
 
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20
-21
-
-22
-23
-
-24
-25
-
-26
-27
-
-28
-29
-
-30
-31  
-
-{
-       "id" :  "webappew1" ,
-
-       "cpus" :  0.5 ,
-       "mem" :  64.0 ,
-
-       "instances" :  2 ,
-       "container" :  {
-
-         "type" :  "DOCKER" ,
-         "docker" :  {
-
-           "image" :  "avinetworks/server" ,
-           "network" :  "BRIDGE" ,
-
-           "portMappings" :  [
-             {  "containerPort" :  80 ,  "hostPort" :  0 ,  "servicePort" :  0 ,  "protocol" :  "tcp"  }
-
-           ]
-         }
-
-       } ,
-       "labels" :  {
-
-           "avi_proxy" :  "{\"virtualservice\": {\"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
-       } ,
-
-       "healthChecks" :  [
-         {
-
-           "protocol" :  "HTTP" ,
-           "portIndex" :  0 ,
-
-           "path" :  "/" ,
-           "gracePeriodSeconds" :  5 ,
-
-           "intervalSeconds" :  20 ,
-           "maxConsecutiveFailures" :  3
-
-         }
-       ]
-
-}
- 
+[Install]
+WantedBy=multi-user.target {
+      "id": "webappew1",
+      "cpus": 0.5,
+      "mem": 64.0,
+      "instances": 2,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "avinetworks/server",
+          "network": "BRIDGE",
+          "portMappings": [
+            { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+          ]
+        }
+      },
+      "labels": {
+          "avi_proxy": "{\"virtualservice\": {\"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+      },
+      "healthChecks": [
+        {
+          "protocol": "HTTP",
+          "portIndex": 0,
+          "path": "/",
+          "gracePeriodSeconds": 5,
+          "intervalSeconds": 20,
+          "maxConsecutiveFailures": 3
+        }
+      ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"10.90.28.250\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"20.20.20.20\", \"type\": \"V4\"}, \"subnet\": {\"ip_addr\": {\"addr\": \"172.17.0.0\", \"type\": \"V4\"}, \"mask\": 16}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}</code></pre>
 
 1. Start the application to create a virtual service for it in Vantage:
-curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps
- The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
 
 1. Start a client container on the VM:
-sudo docker run -d --name=aviclient avinetworks/server
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo docker run -d --name=aviclient avinetworks/server</code></pre>
 1. Connect to the client container that you just started:
-sudo docker exec -it aviclient bash
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo docker exec -it aviclient bash</code></pre>
 1. Generate test traffic:
-ab -n 100 http://172.17.0.1:10001/100kb.txt
- This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ab -n 100 http://172.17.0.1:10001/100kb.txt</code></pre> This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.
 To view the service port number for the application, select the Configuration tab in the Marathon web interface. The virtual service service port number is specified in the Docker file by the servicePort parameter: <a href="img/marathon-app-panel-2.png"><img src="img/marathon-app-panel-2.png" alt="marathon-app-panel" width="400" height="424"></a>
 
 ### North-south Application with Inside VIP
@@ -331,104 +381,117 @@ To view the service port number for the application, select the Configuration t
 Use these steps if the VIP is in the same Mesos cluster as the application but the client is outside the cluster. In this example, the Mesos host and the VIP (10.10.10.100) are both in subnet 10.10.10.0/24.
 
 1. Create a Docker image file such as the following for the application. In the file, edit the FE-Proxy­VIP to match the address of your VIP.
-{ "id": "webapp", "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "FE-Proxy": "yes", "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"10.90.28.250\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-1
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk '{print $4}' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
 
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20
-21
-
-22
-23
-
-24
-25
-
-26
-27
-
-28
-29
-
-30 {
-
-   "id" :  "webapp" ,
-   "cpus" :  0.5 ,
-
-   "mem" :  64.0 ,
-   "instances" :  2 ,
-
-   "container" :  {
-     "type" :  "DOCKER" ,
-
-     "docker" :  {
-       "image" :  "avinetworks/server" ,
-
-       "network" :  "BRIDGE" ,
-       "portMappings" :  [
-
-         {  "containerPort" :  80 ,  "hostPort" :  0 ,  "servicePort" :  0 ,  "protocol" :  "tcp"  }
-       ]
-
-     }
-   } ,
-
-   "labels" :  {
-     "FE-Proxy" :  "yes" ,
-
-     "avi_proxy" :  "{\"virtualservice\": {\"ip_address\": {\"addr\": \"10.90.28.250\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
-   } ,
-
-   "healthChecks" :  [
-     {
-
-       "protocol" :  "HTTP" ,
-       "portIndex" :  0 ,
-
-       "path" :  "/" ,
-       "gracePeriodSeconds" :  5 ,
-
-       "intervalSeconds" :  20 ,
-       "maxConsecutiveFailures" :  3
-
-     }
-   ]
-
-}
+[Install]
+WantedBy=multi-user.target {
+      "id": "webappew1",
+      "cpus": 0.5,
+      "mem": 64.0,
+      "instances": 2,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "avinetworks/server",
+          "network": "BRIDGE",
+          "portMappings": [
+            { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+          ]
+        }
+      },
+      "labels": {
+          "avi_proxy": "{\"virtualservice\": {\"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+      },
+      "healthChecks": [
+        {
+          "protocol": "HTTP",
+          "portIndex": 0,
+          "path": "/",
+          "gracePeriodSeconds": 5,
+          "intervalSeconds": 20,
+          "maxConsecutiveFailures": 3
+        }
+      ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"10.90.28.250\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"20.20.20.20\", \"type\": \"V4\"}, \"subnet\": {\"ip_addr\": {\"addr\": \"172.17.0.0\", \"type\": \"V4\"}, \"mask\": 16}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}</code></pre>
 
 1. Start the application to create a virtual service for it in Avi Vantage:
-curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps
- The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
 
 1. To generate traffic to the application, open an SSH ssh connection to another VM that is located in the same network as the host, and enter the following command:
-ab -n 100 http://10.10.10.100/100kb.txt
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ab -n 100 http://10.10.10.100/100kb.txt</code></pre>
 
 This command sends 100 requests for the specified file to the application VIP (10.10.10.100 in this example).
 
@@ -437,110 +500,124 @@ This command sends 100 requests for the specified file to the application VIP (1
 Use these steps if neither the VIP nor the client is in the same Mesos cluster as the application. In this example, the VIP is 20.20.20.20.
 
 1. Create a Docker image file such as the following for the application. In the file, edit the FE-Proxy­VIP to match the address of your VIP.
-{ "id": "webapp", "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "FE-Proxy": "yes", "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"20.20.20.20\", \"type\": \"V4\"}, \"subnet\": {\"ip_addr\": {\"addr\": \"172.17.0.0\", \"type\": \"V4\"}, \"mask\": 16}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-1
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk '{print $4}' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
 
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20
-21
-
-22
-23
-
-24
-25
-
-26
-27
-
-28
-29
-
-30 {
-
-   "id" :  "webapp" ,
-   "cpus" :  0.5 ,
-
-   "mem" :  64.0 ,
-   "instances" :  2 ,
-
-   "container" :  {
-     "type" :  "DOCKER" ,
-
-     "docker" :  {
-       "image" :  "avinetworks/server" ,
-
-       "network" :  "BRIDGE" ,
-       "portMappings" :  [
-
-         {  "containerPort" :  80 ,  "hostPort" :  0 ,  "servicePort" :  0 ,  "protocol" :  "tcp"  }
-       ]
-
-     }
-   } ,
-
-   "labels" :  {
-     "FE-Proxy" :  "yes" ,
-
-     "avi_proxy" :  "{\"virtualservice\": {\"ip_address\": {\"addr\": \"20.20.20.20\", \"type\": \"V4\"}, \"subnet\": {\"ip_addr\": {\"addr\": \"172.17.0.0\", \"type\": \"V4\"}, \"mask\": 16}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
-   } ,
-
-   "healthChecks" :  [
-     {
-
-       "protocol" :  "HTTP" ,
-       "portIndex" :  0 ,
-
-       "path" :  "/" ,
-       "gracePeriodSeconds" :  5 ,
-
-       "intervalSeconds" :  20 ,
-       "maxConsecutiveFailures" :  3
-
-     }
-   ]
-
-}
+[Install]
+WantedBy=multi-user.target {
+      "id": "webappew1",
+      "cpus": 0.5,
+      "mem": 64.0,
+      "instances": 2,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "avinetworks/server",
+          "network": "BRIDGE",
+          "portMappings": [
+            { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+          ]
+        }
+      },
+      "labels": {
+          "avi_proxy": "{\"virtualservice\": {\"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+      },
+      "healthChecks": [
+        {
+          "protocol": "HTTP",
+          "portIndex": 0,
+          "path": "/",
+          "gracePeriodSeconds": 5,
+          "intervalSeconds": 20,
+          "maxConsecutiveFailures": 3
+        }
+      ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"10.90.28.250\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+} {
+  "id": "webapp",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"ip_address\": {\"addr\": \"20.20.20.20\", \"type\": \"V4\"}, \"subnet\": {\"ip_addr\": {\"addr\": \"172.17.0.0\", \"type\": \"V4\"}, \"mask\": 16}, \"services\": [{\"port\": 80}], \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\", \"full_client_logs\": {\"enabled\":true}}}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}</code></pre>
 
 1. Start the application to create a virtual service for it in Avi Vantage:
-curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-­hostname:8080/v2/apps
- The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-­hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.
 
 1. To generate traffic to the application:
 
 1. Open an SSH ssh connection to another VM that is located in the same network as the host.
 1. Add a static host route that forwards traffic addressed to the VIP to the VM IP address:
-ip route add 20.20.20.20/32 via
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ip route add 20.20.20.20/32 via 
+       
+  <vm-ip></vm-ip></code></pre>
 1. Generate traffic:
-ab -n 100 http://20.20.20.20/100kb.txt
- This command sends 100 requests for the specified file to the application VIP (20.20.20.20 in this example).
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ab -n 100 http://20.20.20.20/100kb.txt</code></pre> This command sends 100 requests for the specified file to the application VIP (20.20.20.20 in this example).
 
 ## Creating Virtual Services (applications)
 

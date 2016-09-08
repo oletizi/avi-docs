@@ -8,52 +8,36 @@ This DataScript can be altered to encrypt all cookies, set the HTTPonly and Secu
 
 ### HTTP Response
 
-cookie = "my_cookie" if avi.http.cookie_exists(cookie) then key = "01234567890123456789012345678901" value = avi.http.get_cookie(cookie) encrypted_value = avi.crypto.encrypt(key, value) avi.http.replace_cookie( cookie, encrypted_value ) end
-
-1
-
-2
-3
-
-4
-5
-
-6
-7 cookie  =  "my_cookie"
-
-if  avi . http . cookie_exists ( cookie )  then
-   key  =  "01234567890123456789012345678901"
-
-   value  =  avi . http . get_cookie ( cookie )
-   encrypted_value  =  avi . crypto . encrypt ( key ,  value )
-
-   avi . http . replace_cookie (  cookie ,  encrypted _value  )
-end
+<pre><code class="language-lua">cookie = "my_cookie"
+if avi.http.cookie_exists(cookie) then
+   key = "01234567890123456789012345678901"
+   value = avi.http.get_cookie(cookie)
+   encrypted_value = avi.crypto.encrypt(key, value)
+   avi.http.replace_cookie( cookie, encrypted_value )
+end cookie = "my_cookie"
+if avi.http.cookie_exists(cookie) then
+   key = "01234567890123456789012345678901"
+   value = avi.http.get_cookie(cookie)
+   decrypted_value = avi.crypto.decrypt(key, value)
+   avi.http.replace_cookie( cookie, encrypted_value )
+end</code></pre>
 
  
 
 ### HTTP Request
 
-cookie = "my_cookie" if avi.http.cookie_exists(cookie) then key = "01234567890123456789012345678901" value = avi.http.get_cookie(cookie) decrypted_value = avi.crypto.decrypt(key, value) avi.http.replace_cookie( cookie, encrypted_value ) end
-
-1
-
-2
-3
-
-4
-5
-
-6
-7 cookie  =  "my_cookie"
-
-if  avi . http . cookie_exists ( cookie )  then
-   key  =  "01234567890123456789012345678901"
-
-   value  =  avi . http . get_cookie ( cookie )
-   decrypted_value  =  avi . crypto . decrypt ( key ,  value )
-
-   avi . http . replace_cookie (  cookie ,  encrypted _value  )
-end
+<pre><code class="language-lua">cookie = "my_cookie"
+if avi.http.cookie_exists(cookie) then
+   key = "01234567890123456789012345678901"
+   value = avi.http.get_cookie(cookie)
+   encrypted_value = avi.crypto.encrypt(key, value)
+   avi.http.replace_cookie( cookie, encrypted_value )
+end cookie = "my_cookie"
+if avi.http.cookie_exists(cookie) then
+   key = "01234567890123456789012345678901"
+   value = avi.http.get_cookie(cookie)
+   decrypted_value = avi.crypto.decrypt(key, value)
+   avi.http.replace_cookie( cookie, encrypted_value )
+end</code></pre>
 
  

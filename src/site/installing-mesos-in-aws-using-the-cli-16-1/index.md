@@ -46,81 +46,36 @@ For deployment of SEs, the following system-level software is required:
 
 To install the Avi Controller:
 
-1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: 
-scp controller_docker.tgz username@remotehost.com:/some/local/directory
- Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
+1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
 1. Log onto the Mesos node:
-ssh username@remotehost.com
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@remotehost.com</code></pre>
 1. Unzip the Avi Controller image:
-gunzip controller.tgz
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>gunzip controller.tgz</code></pre>
 1. Load the Avi Controller image into the host's local docker repository:
-sudo docker load -i controller_docker.tar
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo docker load -i controller_docker.tar</code></pre>
 1. As a best practice, clean up any data that may be lingering from a previous run
-sudo rm -rf /var/lib/controller//*
-1. Use the vi editor to create a new file for spawning the Avi Controller service: 
-sudo vi /etc/systemd/system/avicontroller.service
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo rm -rf /var/lib/controller/*</code></pre>
+1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
 1. Copy the following lines into the file:
-[Unit] Description=AviController After=docker.service Requires=docker.service [Service] Restart=always RestartSec=0 TimeoutStartSec=0 TimeoutStopSec=120 StartLimitInterval=0 ExecStartPre=-/usr/bin/docker kill avicontroller ExecStartPre=-/usr/bin/docker rm avicontroller ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=4 -e NUM_MEMG=12 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk \'{print $4}\' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag" ExecStart=/usr/bin/docker logs -f avicontroller ExecStop=/usr/bin/docker stop avicontroller [Install] WantedBy=multi-user.target
+<pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-1
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=4 -e NUM_MEMG=12 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk \'{print $4}\' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
 
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20 [ Unit ]
-
-Description = AviController
-After = docker . service
-
-Requires = docker . service
- 
-
-[ Service ]
-Restart = always
-
-RestartSec = 0
-TimeoutStartSec = 0
-
-TimeoutStopSec = 120
-StartLimitInterval = 0
-
-ExecStartPre = - / usr / bin / docker kill avicontroller
-ExecStartPre = - / usr / bin / docker rm avicontroller
-
-ExecStartPre = / usr / bin / bash  - c  "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=4 -e NUM_MEMG=12 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk \'{print $4}\' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
-ExecStart = / usr / bin / docker logs  - f  avicontroller
-
-ExecStop = / usr / bin / docker stop avicontroller
- 
-
-[ Install ]
-WantedBy = multi - user . target
-
- 
+[Install]
+WantedBy=multi-user.target curl -H <span class="token string">"Content-Type: application/json"</span> -X POST -d@Downloads/Docker.json http://:8080/v2/apps</code></pre>
 
 1. Edit the following values in the file:
 
@@ -134,7 +89,7 @@ WantedBy = multi - user . target
 ### Starting the Avi Controller Service
 
 To start the Avi Controller, enter the following command at the OS shell prompt on the node where you installed the Avi Controller service:
-sudo systemctl enable avicontroller && sudo systemctl start avicontroller
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
 
 Initial startup and full system initialization takes around 5 minutes.
 
@@ -143,7 +98,7 @@ Initial startup and full system initialization takes around 5 minutes.
 Note: Avi Controller UI listens on ports 9080 & 9443. Allow 9080 & 9443 ports in the security group of the AWS instance where Avi Controller is running.
 
 To access the Avi Controller web interface, navigate to the following URL:
-https://mesos-ip-or-hostname:9443
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>https://mesos-ip-or-hostname:9443</code></pre>
 
 The following section provides steps for initial configuration of the Avi Controller.
 
@@ -216,9 +171,25 @@ After initial setup is completed using the wizard, the option to make service po
 1. Download Docker.json from <a href="https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json">https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json</a>. Save the file in Downloads.
 1. Open an SSH session to the Mesos master’s IP address, and post the application:
 
-curl -H <span class="token string">"Content-Type: application/json"</span> -X POST -d@Downloads/Docker.json http://:8080/v2/apps
+<pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-1 curl  - H  < span class = "token string" > "Content-Type: application/json" < / span >  - X  POST  - d @ Downloads / Docker . json http : //:8080/v2/apps
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5054:5054 -p 8053:53/udp -p 161:161 -p 9080:9080 -p 9443:9443 -p 5098:5098 -p 8443:8443 -d -t -e NUM_CPU=4 -e NUM_MEMG=12 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$(ip -o -4 addr list $interface | grep global | awk \'{print $4}\' | cut -d/ -f1) -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$tag"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
+
+[Install]
+WantedBy=multi-user.target curl -H <span class="token string">"Content-Type: application/json"</span> -X POST -d@Downloads/Docker.json http://:8080/v2/apps</code></pre>
 
 ### APPLICATION VERIFICATION
 

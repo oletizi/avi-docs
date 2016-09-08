@@ -270,6 +270,40 @@ Note: This setting is only applicable for VMware environments.
 * **Server Network Profile**: By default, a new virtual service will use the same TCP/UDP profile specified in the Settings tab for both the client and the server side of a TCP proxied connection. You may override this setting for the connection between the Service Engine and the server by specifying a different TCP proxy profile. While the same TCP stack should negotiate correctly and independently with both clients and servers, it may be desirable to have a TCP stack tuned to servers, such as disabling Nagle’s algorithm on the server side but enabling it on the client side. This option only applies to virtual services set for TCP proxy.
 * **Auto Gateway**: Return packets are sent to the source MAC address that is associated with the connection instead of returning client data via the default gateway of Avi Vantage. If Vantage has the wrong default gateway, no configured gateway, or multiple gateways, client-initiated return traffic will still flow correctly. The Vantage default gateway will still be used for management and outbound-initiated traffic.
 * **Host Name Translation**: If the host header name in a client HTTP request is not the same as this field, or if it is an IP address, Vantage will translate the host header to this name prior to sending the request to a server. If a server issues a redirect with the translated name, or with its own IP address, the redirect's location header will be replaced with the client's original requested host name. Host name translation does not rewrite cookie domains or absolute links that might be embedded within the HTML page. This option is applicable to HTTP virtual services only. This capability may be manually created using HTTP request and response policies.
-In this example, the Host Name Translation field is set to "b.com" **Client**  Avi  **Server** ==> Request sent a.com ==> b.com Request received <== Response received a.com/foo <== b.com/foo Redirect response
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td colspan="6" width="260">In this example, the Host Name Translation field is set to "b.com"</td> 
+  </tr> 
+  <tr> 
+   <td></td> 
+   <td><b><i>Client</i></b></td> 
+   <td></td> 
+   <td> 
+    <center> 
+     <br> 
+     <i>Avi</i> 
+    </center></td> 
+   <td></td> 
+   <td><b><i>Server</i></b></td> 
+  </tr> 
+  <tr> 
+   <td>==&gt;</td> 
+   <td><i>Request sent</i></td> 
+   <td>a.com</td> 
+   <td>==&gt;</td> 
+   <td>b.com</td> 
+   <td><i>Request received</i></td> 
+  </tr> 
+  <tr> 
+   <td>&lt;==</td> 
+   <td><i>Response received</i></td> 
+   <td>a.com/foo</td> 
+   <td>&lt;==</td> 
+   <td>b.com/foo</td> 
+   <td><i>Redirect response</i></td> 
+  </tr> 
+ </tbody> 
+</table>
 
 * **SE Group**: The Service Engine group is a container of service engines that includes settings such as high availability properties. Placing a virtual service in a specific Service Engine group may be used to guarantee resource reservation and data plane isolation, such as separating production from test environments. This field may be hidden based on configured Roles or Tenant options. To change an existing virtual service's Service Engine group, first disable the virtual service, save, switch it to another group, save, then enable and save. Switching a virtual service to another SE group is disruptive to existing client connections.

@@ -29,9 +29,6 @@ When XFF header insertion is enabled, the SE checks the headers of client-server
 There are times when this behavior (removing pre-existing XFF headers) is not desired, such as when multiple proxies may be SNATing and inserting XFF headers. In this case, to insert an XFF header without removing pre-existing XFF headers, use either a DataScript or an HTTP Request Policy.
 
 Example: 
-Lua
-
-avi.http.add_header("XFF", avi.vs.client_ip())
-1 avi . http . add_header ( "XFF" ,  avi . vs . client_ip ( ) )
+<pre><code class="language-lua">avi.http.add_header("XFF", avi.vs.client_ip())</code></pre>
 
    

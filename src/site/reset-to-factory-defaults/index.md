@@ -9,7 +9,7 @@ As part of the factory reset, the Controllers and Service Engines (SEs) will reb
 Following a factory reset, the next time a Vantage user logs onto the Controller through the web interface, the initial setup wizard starts. The Vantage user can then enter new configuration settings, including a new password.
 
 To reset to factory defaults, run the following command from the CLI:
-reboot clean
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>reboot clean</code></pre>
 
 Note: Upon reboot clean, a new self-signed certificate is generated for the portal. If you are logged in the UI, the browser may not redirect the page to login as it sees a certificate change. You will have to refresh the page in the browser to get back to login page.
 

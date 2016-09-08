@@ -11,15 +11,52 @@ Prior to v15.3, both session based and HTTP basic auth could be used for API cal
 ### Enable via CLI
 
 HTTP Basic Authentication may be enabled via the following CLI commands.
-bash/# shell : > configure systemconfiguration : systemconfiguration> portal_configuration : systemconfiguration:portal_configuration> allow_basic_authentication Overwriting the previously entered value for allow_basic_authentication : systemconfiguration:portal_configuration> exit : systemconfiguration> exit
+<pre crayon="false">bash# shell
+: &gt; configure systemconfiguration
+: systemconfiguration&gt; portal_configuration
+: systemconfiguration:portal_configuration&gt; allow_basic_authentication
+Overwriting the previously entered value for allow_basic_authentication
+: systemconfiguration:portal_configuration&gt; exit
+: systemconfiguration&gt; exit
+</pre>
 
 Truncated view of the results:
 
-+-------------------------------------+----------------------------------+ | Field | Value | +-------------------------------------+----------------------------------+ | uuid | default | | portal_configuration | | | enable_https | True | | redirect_to_https | True | | enable_http | True | | enable_clickjacking_protection | True | | **allow_basic_authentication** | **True** | | password_strength_check | False | +-------------------------------------+----------------------------------+
+<pre crayon="false">+-------------------------------------+----------------------------------+
+| Field                               | Value                            |
++-------------------------------------+----------------------------------+
+| uuid                                | default                          |
+| portal_configuration                |                                  |
+|   enable_https                      | True                             |
+|   redirect_to_https                 | True                             |
+|   enable_http                       | True                             |
+|   enable_clickjacking_protection    | True                             |
+|   <b>allow_basic_authentication</b>        | <b>True</b>                             |
+|   password_strength_check           | False                            |
++-------------------------------------+----------------------------------+
+</pre>
 
 ### Enable via API
 
 HTTP Basic Authentication method may be enabled by setting "allow_basic_authentication" = True in "/api/systemconfiguration" under "portal_configuration".
 
 Truncated view of the results:
---snip-- docker_mode: false, portal_configuration: { use_uuid_from_input: false, redirect_to_https: true, sslprofile_ref: "https://10.10.5.27/api/sslprofile/sslprofile-0-1", **allow_basic_authentication: true,** enable_clickjacking_protection: true, enable_https: true, sslkeyandcertificate_refs: [ "https://10.1.1.10/api/sslkeyandcertificate/sslkeyandcertificate-ae6c1033-859b" ], password_strength_check: false, enable_http: false }, --snip--
+<pre crayon="false">--snip--
+    docker_mode: false,
+    portal_configuration: 
+    {
+        use_uuid_from_input: false,
+        redirect_to_https: true,
+        sslprofile_ref: "https://10.10.5.27/api/sslprofile/sslprofile-0-1",
+        <b>allow_basic_authentication: true,</b>
+        enable_clickjacking_protection: true,
+        enable_https: true,
+        sslkeyandcertificate_refs: 
+        [
+            "https://10.1.1.10/api/sslkeyandcertificate/sslkeyandcertificate-ae6c1033-859b"
+        ],
+        password_strength_check: false,
+        enable_http: false
+    },
+    --snip--
+</pre>

@@ -139,21 +139,15 @@ This Monitor type allows scripts to be written to provide highly customized and 
 **Script Variables:** Custom environment variables may be fed into the script to allow for simplified reusability. For example, a script that authenticates to the server may have a variable set to USER=test.
 
 Sharepoint example script:
-/#!/bin/bash /#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L > /run/hmuser/$HM_NAME.out 2>/dev/null curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK"
-
-1
-
-2
-3 /#!/bin/bash
-
-/#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L > /run/hmuser/$HM_NAME.out 2>/dev/null
-curl http : //$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L  | grep "200 OK"
+<pre><code class="language-lua">#!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L  | grep "200 OK" USER='foo\administrator' PASS=foo123</code></pre>
 
 Sharepoint script variables:
 
-USER='foo\administrator' PASS=foo123
-
-1 USER = 'foo\administrator'  PASS = foo123
+<pre><code class="language-lua">#!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L  | grep "200 OK" USER='foo\administrator' PASS=foo123</code></pre>
 
 ### HTTP Monitor
 
@@ -165,13 +159,7 @@ This Monitor type sends a request to a web server and validates either the HTTP 
 * 
 Any method may be used, though GET, POST and HEAD are the most common for monitoring. If no method is specified Avi Vantage will use GET.
 * 
-The Path may include the URI and Query, such as
-
-/index.htm?user=test
-. If no Path is specified, Avi Vantage will use
-
-/
-.
+The Path may include the URI and Query, such as <code>/index.htm?user=test</code>. If no Path is specified, Avi Vantage will use <code>/</code>.
 * 
 The HTTP version can be 1.0 or 1.1. If no version is specified, Avi Vantage will use 1.0. When using 1.1, web servers expect a Host header to be included with the request, such as GET / index.htm HTTP/1.1 Host: www.avinetworks.com.
 * 
@@ -193,13 +181,7 @@ This Monitor type can be used to validate the health of HTTPS encrypted web serv
 * 
 Any method may be used, though GET, POST and HEAD are the most common for monitoring. If no method is defined, Vantage will use GET.
 * 
-The path may include the URI and query, such as
-
-/index.htm?user=test
-. If no path is specified, Vantage will use
-
-/
-.
+The path may include the URI and query, such as <code>/index.htm?user=test</code>. If no path is specified, Vantage will use <code>/</code>.
 * 
 The HTTP version can be 1.0 or 1.1. If no version is specified, Vantage will use 1.0. When using 1.1, web servers may expect a Host header to be included with the request, such as GET / index.htm HTTP/1.1 Host: www.site.com.
 * 

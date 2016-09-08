@@ -7,6 +7,6 @@ In the case where two of the three Controller nodes within a cluster are permane
 To recover the cluster, the remaining healthy Controller node needs to first be converted to a single-node cluster. After this, you are able to add two new nodes to the cluster.
 
 To convert this remaining Controller node to a single-node cluster while preserving configuration, execute the following command:
-/opt/avi/python/bin/cluster_mgr/recover.py
+<pre crayon="false" class="command-line language-bash" data-prompt="root@avi-controller#"><code>/opt/avi/python/bin/cluster_mgr/recover.py</code></pre>
 
 The script may take several minutes to successfully complete. Once the script finishes, you will be able to log in to the Controller node as a single node cluster. To make this into a fully redundant three node cluster, add two new, unconfigured Controllers nodes to the cluster.

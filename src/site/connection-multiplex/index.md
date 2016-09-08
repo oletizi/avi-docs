@@ -9,7 +9,18 @@ Connection multiplexing, configured via the *Templates > Profiles > HTTP applica
 * How long lived the client connections are
 * The HTTP version
 * How frequently request/responses utilizing the connection
-<a href="img/Multiplex-1.png"><img src="img/Multiplex-1.png" alt="Multiplex-1" width="300" height="91"></a> <a href="img/Multiplex-2.png"><img src="img/Multiplex-2.png" alt="Multiplex-2" width="300" height="94"></a> Without multiplexing:  Request distribution from traffic originating from one client connection With multiplexing:  Request distribution from traffic originating from one client connection
+<table border="0"> 
+ <tbody> 
+  <tr> 
+   <td width="400"><a href="img/Multiplex-1.png"><img src="img/Multiplex-1.png" alt="Multiplex-1" width="300" height="91"></a></td> 
+   <td><a href="img/Multiplex-2.png"><img src="img/Multiplex-2.png" alt="Multiplex-2" width="300" height="94"></a></td> 
+  </tr> 
+  <tr> 
+   <td width="300">Without multiplexing: &nbsp;Request&nbsp;distribution from traffic originating from one client connection</td> 
+   <td width="300">With multiplexing: &nbsp;Request&nbsp;distribution from traffic originating from one client connection</td> 
+  </tr> 
+ </tbody> 
+</table>
 
  
 

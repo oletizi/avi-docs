@@ -64,27 +64,99 @@ The Virtual Service editor defines policies that consist of one or more rules t
 ### Network Security
 
 The following table lists both the available Network Security Match Criteria and the configurable Actions that can occur when a match is made.
-Match **Client IP:** Client IP address or a Group of client addresses.
-
-* Use a "-" to specify a range:
-
-10.0.0.0-10.1.255.255
-* Use a "/" to specify a netmask:
-
-10.0.0.0/24 **Service Port:** The ports the Virtual Service is listening on. Actions **Logging:** Selecting the logging checkbox causes Vantage to log when an action has been invoked. **Allow / Deny:** Explicitly allow or deny any matched traffic. Denied traffic will be issued a reset (RST), unless the system is under a volumetric or denial of service attack, in which case the connection may be silently discarded. **Rate Limit:** Restrict clients from opening greater than the specified number of connections per second in the Maximum Rate. Clients that exceed this number will have their excessive connection attempts silently discarded. If Burst Size is enabled, clients may be able to burst above the Max Rate provided they have not recently been opening connections. This feature may be applied to TCP or UDP. All clients that match the Match criteria will be treated as one bucket. For instance, if no Match is defined, any and all IP addresses will increment the Max Rate counter. Throttling will occur for all new connecting clients. To enable per client throttling, see the <a href="/docs/configuration-guide/applications/virtual-services/create-virtual-service/#vscreateadvanced">Advanced tab</a> for the virtual service. The manual for this page also contains a more robust description of connecting throttling.
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td rowspan="2">Match</td> 
+   <td><strong>Client IP:</strong> Client IP address or a Group of client addresses.<p></p> 
+    <ul> 
+     <li>Use a "-" to specify a range: <code>10.0.0.0-10.1.255.255</code></li> 
+     <li>Use a "/" to specify a netmask: <code>10.0.0.0/24</code></li> 
+    </ul> </td> 
+  </tr> 
+  <tr> 
+   <td><strong>Service Port:</strong> The ports the Virtual Service is listening on.</td> 
+  </tr> 
+  <tr> 
+   <td rowspan="3">Actions</td> 
+   <td><strong>Logging:</strong> Selecting the logging checkbox causes Vantage to log when an action has been invoked.</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Allow / Deny:</strong> Explicitly allow or deny any matched traffic. Denied traffic will be issued a reset (RST), unless the system is under a volumetric or denial of service attack, in which case the connection may be silently discarded.</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Rate Limit:</strong> Restrict clients from opening greater than the specified number of connections per second in the Maximum Rate. Clients that exceed this number will have their excessive connection attempts silently discarded. If Burst Size is enabled, clients may be able to burst above the Max Rate provided they have not recently been opening connections. This feature may be applied to TCP or UDP. All clients that match the Match criteria will be treated as one bucket. For instance, if no Match is defined, any and all IP addresses will increment the Max Rate counter. Throttling will occur for all new connecting clients. To enable per client throttling, see the <a href="/docs/configuration-guide/applications/virtual-services/create-virtual-service/#vscreateadvanced">Advanced tab</a> for the virtual service. The manual for this page also contains a more robust description of connecting throttling.</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### HTTP Security
 
 The following table lists both the available HTTP Security Match Criteria and the configurable Actions that can occur when a match is made.
-Match **Client IP:** Client IP address or a Group of client addresses.
-
-* Use a "-" to specify a range:
-
-10.0.0.0-10.1.255.255
-* Use a "/" to specify a netmask: <code **Service Port:** The ports the Virtual Service is listening on. **Protocol Type:** HTTP or HTTPS.
-Example: ***https:**//www.avinetworks.com/marketing/index.html?a=1&b=2* **HTTP Method:** The method used by the client request. The match is true if any one of the methods that an administrator specifies is true. **HTTP Version:** True if the client version is .9, 1.0, or 1.1 **Path:** The path or a group of paths. Paths do not need to begin with a forward slash ( / ). For comparison purposes, Vantage automatically omits any initial slash specified in the match field. Example: https://www.avinetworks.com/**marketing/index.html**?a=1&b=2 **Query:** A query or a group of queries. Do not add the leading ‘?’ or ‘&’ characters to a match.
-Example: *https://www.avinetworks.com/marketing/index.html?**a=1&b=2*** **Headers:** True if a header exists, or if it exists and contains a specified value **Cookie:** True if a cookie exists, or if it exists and contains a specified value **Host Header:** The request’s host header.
-Example: *https://**www.avinetworks.com**/marketing/index.html?a=1&b=2* **Location Header:** The Location Header may not exist for every website. **HTTP Status:** The status of the response, such as 200 (success), 404 (file not found), or similar. The statuses can be separated by commas, or be a range. For example: 301, 302, 307, 308, 300-599 **Response Header:** Match based on a specific header sent by the server. Actions **Logging:** Selecting the logging checkbox causes Vantage to log when an action has been invoked. **Action Allow:** Allows matched requests to continue on to further policies or to the destination pool servers. **Action Close Conn:** Matched requests will cause Vantage to close the TCP connection that received the request via a FIN. Many browsers open multiple connections, which are not closed unless requests sent over those connections also trigger a close connection action. **Redirect To HTTPS:** Respond to the request with a temporary redirect to the desired port for SSL. **Action Send Response:** Vantage may serve an HTTP response using HTTP status code 200 (success), 403 (unauthorized), or 404 (file not found). A default page is rendered by the browser for each of these status codes, or you may upload a custom .html file. This file may have links to images or other files, but only the initial html file will be stored and served via the Send Response.
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td rowspan="13">Match</td> 
+   <td><strong>Client IP:</strong> Client IP address or a Group of client addresses.<p></p> 
+    <ul> 
+     <li>Use a "-" to specify a range: <code>10.0.0.0-10.1.255.255</code></li> 
+     <li>Use a "/" to specify a netmask: &lt;code</li> 
+    </ul> </td> 
+  </tr> 
+  <tr> 
+   <td><strong>Service Port:</strong> The ports the Virtual Service is listening on.</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Protocol Type:</strong> HTTP or HTTPS.<br> Example: <em><strong>https:</strong>//www.avinetworks.com/marketing/index.html?a=1&amp;b=2</em></td> 
+  </tr> 
+  <tr> 
+   <td><strong>HTTP Method:</strong> The method used by the client request. The match is true if any one of the methods that an administrator specifies is true.</td> 
+  </tr> 
+  <tr> 
+   <td><strong>HTTP Version:</strong> True if the client version is .9, 1.0, or 1.1</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Path:</strong> The path or a group of paths. Paths do not need to begin with a forward slash ( / ). For comparison purposes, Vantage automatically omits any initial slash specified in the match field. Example: https://www.avinetworks.com/<b>marketing/index.html</b>?a=1&amp;b=2</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Query:</strong> A query or a group of queries. Do not add the leading ‘?’ or ‘&amp;’ characters to a match.<br> Example: <em>https://www.avinetworks.com/marketing/index.html?<strong>a=1&amp;b=2</strong></em></td> 
+  </tr> 
+  <tr> 
+   <td><strong>Headers:</strong> True if a header exists, or if it exists and contains a specified value</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Cookie:</strong> True if a cookie exists, or if it exists and contains a specified value</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Host Header:</strong> The request’s host header.<br> Example: <em>https://<strong>www.avinetworks.com</strong>/marketing/index.html?a=1&amp;b=2</em></td> 
+  </tr> 
+  <tr> 
+   <td><strong>Location Header:</strong> The Location Header may not exist for every website.</td> 
+  </tr> 
+  <tr> 
+   <td><strong>HTTP Status:</strong> The status of the response, such as 200 (success), 404 (file not found), or similar. The statuses can be separated by commas, or be a range. For example: 301, 302, 307, 308, 300-599</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Response Header:</strong> Match based on a specific header sent by the server.</td> 
+  </tr> 
+  <tr> 
+   <td rowspan="5">Actions</td> 
+   <td><b>Logging:</b> Selecting the logging checkbox causes Vantage to log when an action has been invoked.</td> 
+  </tr> 
+  <tr> 
+   <td><b>Action Allow:</b> Allows matched requests to continue on to further policies or to the destination pool servers.</td> 
+  </tr> 
+  <tr> 
+   <td><b>Action Close Conn:</b> Matched requests will cause Vantage to close the TCP connection that received the request via a FIN. Many browsers open multiple connections, which are not closed unless requests sent over those connections also trigger a close connection action.</td> 
+  </tr> 
+  <tr> 
+   <td><b>Redirect To HTTPS:</b> Respond to the request with a temporary redirect to the desired port for SSL.</td> 
+  </tr> 
+  <tr> 
+   <td><b>Action Send Response:</b> Vantage may serve an HTTP response using HTTP status code 200 (success), 403 (unauthorized), or 404 (file not found). A default page is rendered by the browser for each of these status codes, or you may upload a custom .html file. This file may have links to images or other files, but only the initial html file will be stored and served via the Send Response.</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Policy Tokens
 
@@ -94,7 +166,26 @@ Variables may be used to insert dynamic data into the Modify Header Actions of H
 
 Tokens may be used to find and reorder specific parts of the HTTP hostname or path. For example, it is possible to rewrite the original request **http://support.avinetworks.com/docs/index.htm** to **http://www.avinetworks.com/support/docs/index.htm**. Tokens can be used for HTTP host and HTTP path. The tokens are derived from the original URL. Token delimiter in host header is "." and in the URL path is "/".
 Example 1
- Original request URL: support avinetworks com docs index.htm Token: host[0] host[1] host[2] path[0] path[1]
+ <table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td>Original request&nbsp;URL:</td> 
+   <td>support</td> 
+   <td>avinetworks</td> 
+   <td>com</td> 
+   <td>docs</td> 
+   <td>index.htm</td> 
+  </tr> 
+  <tr> 
+   <td>Token:</td> 
+   <td>host[0]</td> 
+   <td>host[1]</td> 
+   <td>host[2]</td> 
+   <td>path[0]</td> 
+   <td>path[1]</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 In the example above, the client request is broken down into HTTP host and HTTP path. Each section of the host and path are further broken down according to the "." and "/" delimiters for host and path. A host or path token may be used in an Action to rewrite a header, a host, or a path. In the example below, a redirect of **http://www.avinetworks.com/support/docs/index.htm** would send requests to docs.avinetworks.com/support/docs/index.htm.
 
@@ -107,9 +198,77 @@ Example 2
 
 New URL: region.avinetworks.com/france/paris/index.htm
 
-Request URL: paris france avinetworks com region index.htm Token: host[0] host[1] host[2] host[3] path[0] path[1] New Host: path[0].host[2:] New Path: /host[1]/host[0]/path[1] 
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td>Request URL:</td> 
+   <td>paris</td> 
+   <td>france</td> 
+   <td>avinetworks</td> 
+   <td>com</td> 
+   <td>region</td> 
+   <td>index.htm</td> 
+  </tr> 
+  <tr> 
+   <td>Token:</td> 
+   <td>host[0]</td> 
+   <td>host[1]</td> 
+   <td>host[2]</td> 
+   <td>host[3]</td> 
+   <td>path[0]</td> 
+   <td>path[1]</td> 
+  </tr> 
+  <tr> 
+   <td>New Host:</td> 
+   <td colspan="6">path[0].host[2:]</td> 
+  </tr> 
+  <tr> 
+   <td>New Path:</td> 
+   <td colspan="6">/host[1]/host[0]/path[1]</td> 
+  </tr> 
+ </tbody> 
+</table> 
 Example 3
- Request URL: www1 avinetworks com sales foo index.htm auth=true Token: host[0] host[1] host[2] path[0] path[1] path[2] (query) New Host: www.host[1:] New Path: /host[0]/path[0:] Query: Keep Query enabled New URL: www.avi.com/www1/sales/foo/index.htm?auth=true
+ <table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td>Request URL:</td> 
+   <td>www1</td> 
+   <td>avinetworks</td> 
+   <td>com</td> 
+   <td>sales</td> 
+   <td>foo</td> 
+   <td>index.htm</td> 
+   <td>auth=true</td> 
+  </tr> 
+  <tr> 
+   <td>Token:</td> 
+   <td>host[0]</td> 
+   <td>host[1]</td> 
+   <td>host[2]</td> 
+   <td>path[0]</td> 
+   <td>path[1]</td> 
+   <td>path[2]</td> 
+   <td>(query)</td> 
+  </tr> 
+  <tr> 
+   <td>New Host:</td> 
+   <td colspan="8">www.host[1:]</td> 
+  </tr> 
+  <tr> 
+   <td>New Path:</td> 
+   <td colspan="8">/host[0]/path[0:]</td> 
+  </tr> 
+  <tr> 
+   <td>Query:</td> 
+   <td colspan="8">Keep Query enabled</td> 
+  </tr> 
+  <tr> 
+   <td>New URL:</td> 
+   <td colspan="8">www.avi.com/www1/sales/foo/index.htm?auth=true</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 * If the host header contains an IPv4 address and not a FQDN, and the rewrite URL or redirect action refers to a host token (e.g. host[0], host[1,2], etc.) the rule action is skipped and the next rule is evaluated.
 * If the host header or path contains less tokens than that referenced in the action, then the rule action is skipped. For example, if the host name in host header has only 3 tokens (host name www.avinetworks.com - token host[0] = www, host<a href="img/apps_vs_policies_about1-1.jpg">1</a> = avinetworks, host<a href="img/apps_vs_policies_about2-1.jpg">2</a> = com). If the action refers to host[4] the rule action is skipped.

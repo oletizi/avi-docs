@@ -11,15 +11,20 @@ To force faster deletion of the ports, the following CLI command or API request 
 ### CLI
 
 To force faster deletion of the ports, the following CLI command can be used:
-exec cloud *cloud-name* gc force  
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>exec cloud <em>cloud-name</em> gc force
+&nbsp;</code></pre>
 
 The command will need to be run 3 or 4 times. The first time the command is run the ports are marked for deletion. The ports are then deleted upon subsequent runs of the command.
 
 API
 
 To force faster deletion of the unneeded ports, use the following API request:
-PUT /api/cloud/*cloud-uuid*/gc?force=True
+<pre crayon="false">
+PUT /api/cloud/<em>cloud-uuid</em>/gc?force=True
+</pre>
 
 Example:
 
+<pre crayon="false">
 PUT /api/cloud/cloud-bbd20bcf-ebf5-4d2b-b521-9c3f0c369df0/gc?force=True
+</pre>

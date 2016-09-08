@@ -11,15 +11,9 @@ Many functions are only available within specific events.  For instance, avi.ht
 Some functions, such as avi.http.method may be used in either the request or response events, even though the data returned is specifically from the client's HTTP request.
 
 Some functions may contain a context parameter, which means that while the function may be called during any event, it is grabbing data from an explicit event. Executing the avi.http.get_header function during an HTTP response event will return headers from the server's response.  However, adding the context parameter, headers from the client request may be retrieved and evaluated during the response event.
-if avi.http.get_header("my_header", avi.HTTP_REQUEST) then avi.http.close_conn() end
-
-1
-
-2
-3 if  avi . http . get_header ( "my_header" ,  avi . HTTP_REQUEST )  then
-
-avi . http . close_conn ( )
-end
+<pre><code class="language-lua">if avi.http.get_header("my_header", avi.HTTP_REQUEST) then
+ avi.http.close_conn()
+end</code></pre>
 
 While the DataScript above could be applied to either the HTTP request or response events, it is explicitly inspecting headers from the client's request due to the optional context parameter.
 

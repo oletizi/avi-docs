@@ -18,14 +18,37 @@ When deploying Avi Vantage within Amazon Web Services (AWS), the installation wi
 ## Protocol Ports Used by Avi Vantage for Management Communication
 
 In an AWS deployment, the Avi Controller and Avi Service Engines use the following ports for management. The firewall should allow traffic for these ports.
-Traffic Source Traffic Destination Ports To Allow Avi Controller Avi Controller TCP 22 (SSH)
-TCP 8443
-TCP 5054 Avi Service Engine TCP 22 Mgmt Net *See section below the table.* Avi Service Engine Avi Controller TCP 22
-TCP 8443
-UDP 123 Mgmt Net TCP 22
-TCP 80 *(optional)*
-TCP 443
-TCP 5054 *(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)*
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Traffic Source</th> 
+   <th>Traffic Destination</th> 
+   <th width="60%">Ports To Allow</th> 
+  </tr> 
+  <tr> 
+   <td rowspan="3">Avi Controller</td> 
+   <td>Avi Controller</td> 
+   <td>TCP 22 (SSH)<br> TCP 8443<br> TCP 5054</td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td>TCP 22</td> 
+  </tr> 
+  <tr> 
+   <td>Mgmt Net</td> 
+   <td><em>See section below the table.</em></td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td rowspan="2">Avi Controller</td> 
+   <td>TCP 22<br> TCP 8443<br> UDP 123</td> 
+  </tr> 
+  <tr> 
+   <td>Mgmt Net</td> 
+   <td>TCP 22<br> TCP 80 <em>(optional)</em><br> TCP 443<br> TCP 5054 <em>(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em></td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Ports Used by Controller for Network Services
 

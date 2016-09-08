@@ -28,4 +28,7 @@ Note: This procedure assumes that Vantage is installed and the Mesos cloud has a
 ### Creating a Virtual Service and Assigning it to the Custom SE Group
 
 To assign a virtual service (the front-end application in this example) to the new SE group, use the avi_proxy label:
+<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"se_group_ref\": \"/api/serviceenginegroup/?name=frontend\"}}"
+  
+</code></pre>

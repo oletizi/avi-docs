@@ -104,51 +104,43 @@ To configure a BGP profile:
 ### CLI
 
 The following commands configure the BGP profile. The BGP profile is included under Vantage's virtual routing and forwarding (VRF) settings.
-: &gt; configure vrfcontext global : vrfcontext &gt; bgp_profile : vrfcontext:bgp_profile &gt; local_as 100 : vrfcontext:bgp_profile &gt; ibgp : vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd : vrfcontext:bgp_profile:peers &gt; save : vrfcontext:bgp_profile &gt; save : vrfcontext &gt; save : &gt;
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 :  & gt ;  configure vrfcontext global
-
-:  vrfcontext  & gt ;  bgp_profile
-:  vrfcontext : bgp_profile  & gt ;  local _as  100
-
-:  vrfcontext : bgp_profile  & gt ;  ibgp
-:  vrfcontext : bgp_profile  & gt ;  peers peer _ip  10.115.0.1  subnet  10.115.0.0 / 16  md5_secret abcd
-
-:  vrfcontext : bgp_profile : peers  & gt ;  save     
-:  vrfcontext : bgp_profile  & gt ;  save
-
-:  vrfcontext  & gt ;  save
-:  & gt ;
+<pre><code class="language-lua">: &gt; configure vrfcontext global
+: vrfcontext &gt; bgp_profile
+: vrfcontext:bgp_profile &gt; local_as 100
+: vrfcontext:bgp_profile &gt; ibgp
+: vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd
+: vrfcontext:bgp_profile:peers &gt; save    
+: vrfcontext:bgp_profile &gt; save
+: vrfcontext &gt; save
+: &gt; : &gt; configure virtualservice vs-1 
+: virtualservice &gt; enable_rhi 
+: virtualservice &gt; save
+: &gt; : &gt; show virtualservice</code></pre>
 
 This profile enables iBGP with peer BGP router 10.115.0.1/16 in local AS 100. The BGP connection is secured using MD5 with shared secret "abcd."
 
 The following commands enable RHI for a virtual service (vs-1):
-: &gt; configure virtualservice vs-1 : virtualservice &gt; enable_rhi : virtualservice &gt; save : &gt;
-
-1
-
-2
-3
-
-4 :  & gt ;  configure virtualservice vs - 1
-
-:  virtualservice  & gt ;  enable_rhi
-:  virtualservice  & gt ;  save
-
-:  & gt ;
-  The following command can be used to view the virtual service's configuration:
-: &gt; show virtualservice
-
-1 :  & gt ;  show virtualservice
+<pre><code class="language-lua">: &gt; configure vrfcontext global
+: vrfcontext &gt; bgp_profile
+: vrfcontext:bgp_profile &gt; local_as 100
+: vrfcontext:bgp_profile &gt; ibgp
+: vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd
+: vrfcontext:bgp_profile:peers &gt; save    
+: vrfcontext:bgp_profile &gt; save
+: vrfcontext &gt; save
+: &gt; : &gt; configure virtualservice vs-1 
+: virtualservice &gt; enable_rhi 
+: virtualservice &gt; save
+: &gt; : &gt; show virtualservice</code></pre>  The following command can be used to view the virtual service's configuration:
+<pre><code class="language-lua">: &gt; configure vrfcontext global
+: vrfcontext &gt; bgp_profile
+: vrfcontext:bgp_profile &gt; local_as 100
+: vrfcontext:bgp_profile &gt; ibgp
+: vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd
+: vrfcontext:bgp_profile:peers &gt; save    
+: vrfcontext:bgp_profile &gt; save
+: vrfcontext &gt; save
+: &gt; : &gt; configure virtualservice vs-1 
+: virtualservice &gt; enable_rhi 
+: virtualservice &gt; save
+: &gt; : &gt; show virtualservice</code></pre>

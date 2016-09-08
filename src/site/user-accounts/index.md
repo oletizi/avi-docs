@@ -39,13 +39,7 @@ To create a user account:
 1. Enter or select the following information:
 
 * **Name:** Full name of the user.
-* **Username:** Name that the user will supply when signing into Avi Vantage, such as
-
-jdoe
-or
-
-jdoe@avinetworks.com
-.
+* **Username:** Name that the user will supply when signing into Avi Vantage, such as <code>jdoe</code> or <code>jdoe@avinetworks.com</code>.
 * **Password:** You may either enter a case-sensitive password in this field or click the Generate button to create a random password for the new user.
 * **Email:** Email address of the user. This field is used when a user loses their password and requests to have it reset. See Password Recovery.
 * **Role:** Areas of the Vantage system to which the user account will be allowed access. For each system area, the role defines whether the user account has read, write, or no access. Vantage comes with predefined roles. In addition, users who have write access to the Accounts section of Vantage can customize the predefined roles and create new roles. See <a href="/user-account-roles">Roles</a>.

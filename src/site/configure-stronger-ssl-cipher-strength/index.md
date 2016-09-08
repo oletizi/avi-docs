@@ -23,6 +23,4 @@ The default cipher list view shows common ciphers in order of priority. Enable o
 ### String View
 
 The second cipher configuration mode allows accepted ciphers to be added as a string, similar to the OpenSSL syntax for viewing and setting ciphers. For this mode, Avi accepts all TLS 1.0 - 1.2, and Elliptic Curve ciphers from www.openssl.org/docs/apps/ciphers.html  In this mode, the administrator must determine if the enabled ciphers are secure.  Consider setting strong security by employing a known cipher suite, such as "HIGH".
-ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES256
-
-1 ECDHE - ECDSA - AES128 - GCM - SHA256 : ECDHE - ECDSA - AES128 - SHA : ECDHE - ECDSA - AES256 - SHA : ECDHE - ECDSA - AES256
+<pre><code class="language-lua">ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES256</code></pre>

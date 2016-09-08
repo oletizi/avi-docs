@@ -13,14 +13,35 @@ Create the virtual service.
 
 ### Pool Creation
 
-: > configure pool Test : pool> servers ip 10.1.1.100 port 80 : pool:servers> save : pool> servers ip 10.1.1.101 port 80 : pool:servers> save : pool> where Tenant: admin +------------+------------+ | Field | Value | +------------+------------+ | name | Test | | servers[1] | | | ip | 10.1.1.100 | | port | 80 | | servers[2] | | | ip | 10.1.1.101 | | port | 80 | +------------+------------+ : pool> save
+<pre crayon="false">: &gt; configure pool Test
+: pool&gt; servers ip 10.1.1.100 port 80
+: pool:servers&gt; save
+: pool&gt; servers ip 10.1.1.101 port 80
+: pool:servers&gt; save
+: pool&gt; where
+Tenant: admin
++------------+------------+
+| Field      | Value      |
++------------+------------+
+| name       | Test       |
+| servers[1] |            |
+| ip         | 10.1.1.100 |
+| port       | 80         |
+| servers[2] |            |
+| ip         | 10.1.1.101 |
+| port       | 80         |
++------------+------------+
+: pool&gt; save</pre>
 
  
 
 ### Virtual Service Creation
 
 Once the pool is created, the next step is to create the virtual service:
-: > configure virtualservice Test_VS : virtualservice> address 10.10.10.10 : virtualservice> services port 80 : virtualservice> pool_ref Test
+<pre crayon="false">: &gt; configure virtualservice Test_VS
+: virtualservice&gt; address 10.10.10.10
+: virtualservice&gt; services port 80
+: virtualservice&gt; pool_ref Test</pre>
 
      
 

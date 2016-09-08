@@ -104,9 +104,73 @@ To support fewer HMACs, specify the individual HMACs:
 ### IP Addresses That Are Allowed Management Access
 
 The following request to the Vantage REST API retrieves the current system settings, including the mgmt_ip_access_control section. This section specifies the client IP addresses that are allowed to access the Avi Controller through the management services. In this example, access through the web interface or REST API is restricted to addresses in the 10.10.0.0/16 subnet, and to IP addresses in the range 3.3.3.1-100. IP access for the other management services is not included in this output, because IP access has not been explicitly defined for them.
-API: GET /api/systemconfiguration Data: { "email_configuration": { "from_email": "admin@avicontroller.net", "mail_server_name": "localhost", "smtp_type": "SMTP_NONE", "mail_server_port": 25 }, ... "mgmt_ip_access_control": { "api_access": { "ranges": [ { "begin": { "type": "V4", "addr": "3.3.3.0" }, "end": { "type": "V4", "addr": "3.3.3.100" } } ], "prefixes": [ { "ip_addr": { "type": "V4", "addr": "10.10.0.0" }, "mask": 16 } ], "match_criteria": "IS_IN" } }, }
+<pre crayon="false">API: GET /api/systemconfiguration
+Data:
+{
+    "email_configuration": {
+        "from_email": "admin@avicontroller.net",
+        "mail_server_name": "localhost",
+        "smtp_type": "SMTP_NONE",
+        "mail_server_port": 25
+    },
+	...
+
+    "mgmt_ip_access_control": {
+        "api_access": {
+            "ranges": [
+                {
+                    "begin": {
+                        "type": "V4",
+                        "addr": "3.3.3.0"
+                    },
+                    "end": {
+                        "type": "V4",
+                        "addr": "3.3.3.100"
+                    }
+                }
+            ],
+            "prefixes": [
+                {
+                    "ip_addr": {
+                        "type": "V4",
+                        "addr": "10.10.0.0"
+                    },
+                    "mask": 16
+                }
+            ],
+            "match_criteria": "IS_IN"
+        }
+    },
+}
+</pre>
 
 ### Allowed Ciphers and HMACs
 
 The following REST API request retrieves the list of allowed ciphers and HMACs.
-API: GET /api/systemconfiguration Data: { "email_configuration": { "from_email": "admin@avicontroller.net", "mail_server_name": "localhost", "smtp_type": "SMTP_NONE", "mail_server_port": 25 }, ... "ssh_ciphers": [ "aes128-ctr", "aes256-ctr", "aes192-cbc", "aes256-cbc" ], "ssh_hmacs": [ "hmac-md5", "hmac-md5-96", "hmac-sha1", "hmac-sha256-96@ssh.com", "hmac-sha2-512" ], }
+<pre crayon="false">API: GET /api/systemconfiguration
+Data:
+{
+    "email_configuration": {
+        "from_email": "admin@avicontroller.net",
+        "mail_server_name": "localhost",
+        "smtp_type": "SMTP_NONE",
+        "mail_server_port": 25
+    },
+        ...
+
+    "ssh_ciphers": [
+        "aes128-ctr",
+        "aes256-ctr",
+        "aes192-cbc",
+        "aes256-cbc"
+    ],
+
+    "ssh_hmacs": [
+        "hmac-md5",
+        "hmac-md5-96",
+        "hmac-sha1",
+        "hmac-sha256-96@ssh.com",
+        "hmac-sha2-512"
+    ],
+}
+</pre>

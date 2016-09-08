@@ -13,23 +13,16 @@ See also:
 
 ### Access the Controller CLI
 
-To access the command line interface, either SSH (port 22) to the Vantage Controller IP or cluster IP, or access the Controller via the console from an orchestrator such as vCenter. Some user accounts may default into Linux bash. For these accounts, enter the Vantage shell by typing:
+To access the command line interface, either SSH (port 22) to the Vantage Controller IP or cluster IP, or access the Controller via the console from an orchestrator such as vCenter. Some user accounts may default into Linux bash. For these accounts, enter the Vantage shell by typing: <code>shell</code>
+<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code class=" language-bash">shell</code></pre>
 
-shell
-shell
+Similarly, to exit the Vantage shell into Linux, type: <code>bash</code>
 
-Similarly, to exit the Vantage shell into Linux, type:
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: 0px; tab-size: 4; box-shadow: black 1px 1px 0.5em inset; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; -webkit-text-stroke-width: 0px; background: #141414;"><code class=" language-bash">bash</code></pre>
 
-bash
+When jumping from Linux bash to the Vantage shell, or from the Vantage shell to Linux bash, you may return to the previous mode by typing: <code>exit</code>
 
-bash
-
-When jumping from Linux bash to the Vantage shell, or from the Vantage shell to Linux bash, you may return to the previous mode by typing:
-
-exit
-
-exit
- 
+<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code class=" language-bash">exit</code></pre> 
 **Note:** While it is possible to directly access the CLI of a Service Engine, it is not recommended, and may only be used for basic troubleshooting. All configuration management must be done from the Controller.
 
 ### Access Using Remote Authentication

@@ -35,7 +35,58 @@ Vantage can be deployed into an OpenStack cloud in one of the following modes. T
 Note: The Avi-managed LBaaS option is recommended for its ease of use and advanced feature accessibility.
 
 The following table compares each deployment mode:
-Single-tenant Mode Avi-managed LBaaS Mode OpenStack-managed LBaaS Mode Administrator privileges for cloud required No Yes Yes Managed by tenant user No Yes Yes Automated tenant creation N/A Yes Yes Advanced load-balancing features Yes Yes Limited Analytics service Yes Yes Yes Avi LBaaS driver install required No No Yes Avi extension for Horizon dashboard required No No Yes (required for SSL offload and analytics)
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%"></th> 
+   <th>Single-tenant Mode</th> 
+   <th>Avi-managed LBaaS Mode</th> 
+   <th>OpenStack-managed LBaaS Mode</th> 
+  </tr> 
+  <tr> 
+   <td>Administrator privileges for cloud required</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Managed by tenant user</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Automated tenant creation</td> 
+   <td>N/A</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Advanced load-balancing features</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Limited</td> 
+  </tr> 
+  <tr> 
+   <td>Analytics service</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Avi LBaaS driver install required</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Avi extension for Horizon dashboard required</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes (required for SSL offload and analytics)</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## Deployment Prerequisites
 
@@ -44,7 +95,28 @@ The physical and software requirements differ depending on the deployment mode.
 ### Virtual Machine Requirements
 
 The following table lists the minimum requirements for the VMs on which the Avi Controller and SEs are installed.
-Component Memory vCPUs HD Avi Controller 12 GB 4 64 GB Service Engine 2 GB 2 10 GB
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Component</th> 
+   <th>Memory</th> 
+   <th>vCPUs</th> 
+   <th>HD</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>12 GB</td> 
+   <td>4</td> 
+   <td>64 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Service Engine</td> 
+   <td>2 GB</td> 
+   <td>2</td> 
+   <td>10 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Add 1GB for each additional vCPU.
 
@@ -53,7 +125,34 @@ If you allocate more than the minimum number of vCPUs required, make sure to als
 ### Software Requirements
 
 The following table lists the software requirements.
-Software Version Avi Controller 15.3 OpenStack (and Neutron service) One of the following: Havana, Icehouse, Juno, or Kilo Neutron extension for allowed-address-pair Avi LBaaS driver 15.3 Avi SSL extension for OpenStack Horizon 15.3
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Software</th> 
+   <th width="60%">Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>15.3</td> 
+  </tr> 
+  <tr> 
+   <td>OpenStack (and Neutron service)</td> 
+   <td>One of the following: Havana, Icehouse, Juno, or Kilo</td> 
+  </tr> 
+  <tr> 
+   <td>Neutron extension for allowed-address-pair</td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td>Avi LBaaS driver</td> 
+   <td>15.3</td> 
+  </tr> 
+  <tr> 
+   <td>Avi SSL extension for OpenStack Horizon</td> 
+   <td>15.3</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The Avi Vantage image is available as a Qcow2 or raw image of the Controller and SEs. The SE software is embedded in the Controller image and does require separate installation.
 
@@ -64,86 +163,95 @@ Note: Installation of Avi Vantage into Devstack is supported only if the DevStac
 ## Importing User Accounts from Keystone
 
 Using the Avi API, user roles can be exported from Keystone into the Avi Controller and directly mapped to role names in the Controller. The accounts do not need to be recreated on the Controller. Here is an example:
-"openstack_configuration": { .... "role_mapping": [ {"os_role": "admin", "avi_role": "Tenant-Admin"}, {"os_role": "_member_", "avi_role": "Tenant-Admin"}, {"os_role": "/*", "avi_role": "Application-Operator"} ], .... }
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14 "openstack_configuration" :
-
+<pre><code class="language-lua">"openstack_configuration": 
 {
-     . . . .
-
-     "role_mapping" :  [
-       { "os_role" :  "admin" ,
-
-         "avi_role" :  "Tenant-Admin" } ,
-       { "os_role" :  "_member_" ,
-
-         "avi_role" :  "Tenant-Admin" } ,
-       { "os_role" :  "/*" ,
-
-         "avi_role" :  "Application-Operator" }
-     ] ,
-
-     . . . .
-}
-
- 
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+}  "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} cd ./openstack_lbplugin
+./install.sh --aname avi_adc --aip 10.114.214.250 --auser admin --apass avinetworks
+  --&gt; Install SeLinux module 'avi_lbaas'? (y/n) n
+  --&gt; Configure Neutron Server with Avi LBaaS provider 'avi_adc' with driver 'avi'? (y/n) y
+  08/28/2014 23:27:55 INFO: Neutron Avi LBaaS provider 'avi_adc' configure...OK
+  08/28/2014 23:27:56 INFO: Neutron Avi LBaaS driver 'avi' setup...OK
+  08/28/2014 23:28:01 INFO: neutron-server restart...OK
+  08/28/2014 23:28:01 INFO: Neutron Avi LBaaS configuration setup...OK</code></pre>
 
 The role_mapping parameter is an ordered list, where each item specifies how a Keystone role (os_role) maps to a role in the Controller (avi_role). A default mapping can be defined for any Keystone role by specifying the “ /* ” wildcard for the os_role field. In the above example, roles admin and _member_ from Keystone are mapped to the role Tenant-Admin in the Controller. Further, any other role from Keystone is mapped to role Application-Operator on the Controller.
 
 In the following example, only users with role lbaas_project_admin are allowed to access the Controller:
-1  
-
-"openstack_configuration": { .... "role_mapping": [ {"os_role": "lbaas_project_admin", "avi_role": "Tenant-Admin"} ], .... }
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10 "openstack_configuration" :
-
+<pre><code class="language-lua">"openstack_configuration": 
 {
-     . . . .
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+}  "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} cd ./openstack_lbplugin
+./install.sh --aname avi_adc --aip 10.114.214.250 --auser admin --apass avinetworks
+  --&gt; Install SeLinux module 'avi_lbaas'? (y/n) n
+  --&gt; Configure Neutron Server with Avi LBaaS provider 'avi_adc' with driver 'avi'? (y/n) y
+  08/28/2014 23:27:55 INFO: Neutron Avi LBaaS provider 'avi_adc' configure...OK
+  08/28/2014 23:27:56 INFO: Neutron Avi LBaaS driver 'avi' setup...OK
+  08/28/2014 23:28:01 INFO: neutron-server restart...OK
+  08/28/2014 23:28:01 INFO: Neutron Avi LBaaS configuration setup...OK</code></pre>
 
-     "role_mapping" :  [
-       { "os_role" :  "lbaas_project_admin" ,
-
-         "avi_role" :  "Tenant-Admin" }
-     ] ,
-
-     . . . .
-}
-
- 
+<pre><code class="language-lua">"openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+}  "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} cd ./openstack_lbplugin
+./install.sh --aname avi_adc --aip 10.114.214.250 --auser admin --apass avinetworks
+  --&gt; Install SeLinux module 'avi_lbaas'? (y/n) n
+  --&gt; Configure Neutron Server with Avi LBaaS provider 'avi_adc' with driver 'avi'? (y/n) y
+  08/28/2014 23:27:55 INFO: Neutron Avi LBaaS provider 'avi_adc' configure...OK
+  08/28/2014 23:27:56 INFO: Neutron Avi LBaaS driver 'avi' setup...OK
+  08/28/2014 23:28:01 INFO: neutron-server restart...OK
+  08/28/2014 23:28:01 INFO: Neutron Avi LBaaS configuration setup...OK</code></pre>
 
 ## Deploying Single-tenant Mode
 
@@ -388,36 +496,36 @@ Note: An account with root privileges for the Neutron API server is required. Th
 1. Copy the package onto the OpenStack Neutron API host.
 1. Log into the Neutron API server.
 1. On the OpenStack Neutron API server, back up neutron.conf.
-1. Unzip and untar the driver package: 
-tar -xzf avi_openstack_package.tar.gz
+1. Unzip and untar the driver package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>tar -xzf avi_openstack_package.tar.gz</code></pre>
 1. Run the Avi LBaaS installation script.In the following example, 10.114.214.250 is the IP address for the Avi Controller cluster. The login credentials for the Controller are admin, avinetworks. Make sure to replace the IP address in the example with the cluster IP address.
-cd ./openstack_lbplugin ./install.sh --aname avi_adc --aip 10.114.214.250 --auser admin --apass avinetworks --&gt; Install SeLinux module 'avi_lbaas'? (y/n) n --&gt; Configure Neutron Server with Avi LBaaS provider 'avi_adc' with driver 'avi'? (y/n) y 08/28/2014 23:27:55 INFO: Neutron Avi LBaaS provider 'avi_adc' configure...OK 08/28/2014 23:27:56 INFO: Neutron Avi LBaaS driver 'avi' setup...OK 08/28/2014 23:28:01 INFO: neutron-server restart...OK 08/28/2014 23:28:01 INFO: Neutron Avi LBaaS configuration setup...OK
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 cd  . / openstack _lbplugin
-
-. / install . sh  -- aname avi_adc  -- aip  10.114.214.250  -- auser admin  -- apass avinetworks
-   -- & gt ;  Install SeLinux module  'avi_lbaas' ?  ( y / n )  n
-
-   -- & gt ;  Configure Neutron Server with Avi LBaaS provider  'avi_adc'  with driver  'avi' ?  ( y / n )  y
-   08 / 28 / 2014  23 : 27 : 55  INFO :  Neutron Avi LBaaS provider  'avi_adc'  configure . . . OK
-
-   08 / 28 / 2014  23 : 27 : 56  INFO :  Neutron Avi LBaaS driver  'avi'  setup . . . OK
-   08 / 28 / 2014  23 : 28 : 01  INFO :  neutron - server restart . . . OK
-
-   08 / 28 / 2014  23 : 28 : 01  INFO :  Neutron Avi LBaaS configuration setup . . . OK
- 
+<pre><code class="language-lua">"openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+}  "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} cd ./openstack_lbplugin
+./install.sh --aname avi_adc --aip 10.114.214.250 --auser admin --apass avinetworks
+  --&gt; Install SeLinux module 'avi_lbaas'? (y/n) n
+  --&gt; Configure Neutron Server with Avi LBaaS provider 'avi_adc' with driver 'avi'? (y/n) y
+  08/28/2014 23:27:55 INFO: Neutron Avi LBaaS provider 'avi_adc' configure...OK
+  08/28/2014 23:27:56 INFO: Neutron Avi LBaaS driver 'avi' setup...OK
+  08/28/2014 23:28:01 INFO: neutron-server restart...OK
+  08/28/2014 23:28:01 INFO: Neutron Avi LBaaS configuration setup...OK</code></pre>
 
 ### Install Avi Extension for Horizon Dashboard
 

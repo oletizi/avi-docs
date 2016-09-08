@@ -37,8 +37,33 @@ On the Avi Controller node that will be the leader:
 Login to the CLI (or CLI shell) and enter the commands shown in the following example.
 
 Note: Make sure to enter the host IP addresses of your Avi Controller nodes instead of the IP addresses shown in the example.
-configure cluster Updating an existing object. Currently, the object is: +---------------+----------------------------------------------+ | Field | Value | +---------------+----------------------------------------------+ | uuid | cluster-eb01bf05-7313-4a4f-91b6-21e46d3c237d | | name | cluster-0-1 | | nodes[1] | | | name | 10.10.25.81 | | ip | 10.10.25.81 | | vm_ref | EB01BF05-7313-4A4F-91B6-21E46D3C237D | | vm_mor | | | vm_hostname | node1.controller.local | | tenant_ref | admin | +---------------+----------------------------------------------+ : cluster> nodes name 10.10.25.82 ip 10.10.25.82 New object being created : cluster:nodes> save : cluster> nodes name 10.10.25.83 ip 10.10.25.83 New object being created : cluster:nodes> save : cluster> save Configuring the cluster with the controller nodes at [u'10.10.25.81', '10.10.25.82', '10.10.25.83']. If nodes were added or removed from the cluster, this controller will be brought down and then back up with the new configuration. Waiting for the cluster to be ready... Controller is ready.
- <a name="removebothfollowers"></a>
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
+Updating an existing object. Currently, the object is:
++---------------+----------------------------------------------+
+| Field | Value |
++---------------+----------------------------------------------+
+| uuid | cluster-eb01bf05-7313-4a4f-91b6-21e46d3c237d |
+| name | cluster-0-1 |
+| nodes[1] | |
+| name | 10.10.25.81 |
+| ip | 10.10.25.81 |
+| vm_ref | EB01BF05-7313-4A4F-91B6-21E46D3C237D |
+| vm_mor | |
+| vm_hostname | node1.controller.local |
+| tenant_ref | admin |
++---------------+----------------------------------------------+
+: cluster&gt; nodes name 10.10.25.82 ip 10.10.25.82
+New object being created
+: cluster:nodes&gt; save
+: cluster&gt; nodes name 10.10.25.83 ip 10.10.25.83
+New object being created
+: cluster:nodes&gt; save
+: cluster&gt; save
+Configuring the cluster with the controller nodes at [u'10.10.25.81', '10.10.25.82', '10.10.25.83'].
+If nodes were added or removed from the cluster, this controller will be brought down and then back up with the new configuration.
+
+Waiting for the cluster to be ready...
+Controller is ready.</code></pre> <a name="removebothfollowers"></a>
 
 ## Removing Both Followers (Dismantling the Cluster)
 
@@ -55,8 +80,45 @@ configure cluster Updating an existing object. Currently, the object is: +------
 Login to the CLI (or CLI shell) and enter the commands shown in the following example.
 
 Note: Make sure to enter the host IP addresses of your Avi Controller nodes instead of the IP addresses shown in the example.
-configure cluster Updating an existing object. Currently, the object is: +---------------+----------------------------------------------+ | Field | Value | +---------------+----------------------------------------------+ | uuid | cluster-eb01bf05-7313-4a4f-91b6-21e46d3c237d | | name | cluster-0-1 | | nodes[1] | | | name | node-1 | | ip | 10.10.25.81 | | vm_ref | EB01BF05-7313-4A4F-91B6-21E46D3C237D | | vm_mor | | | vm_hostname | node1.controller.local | | nodes[2] | | | name | node-2 | | ip | 10.10.25.82 | | vm_ref | EC123A05-7313-4A4F-91B6-21E46D3D46AF | | vm_mor | | | vm_hostname | node2.controller.local | | nodes[3] | | | name | 10.10.25.83 | | ip | 10.10.25.83 | | vm_ref | EA12C05-7313-4A4F-91B6-21E46D3E256EA | | vm_mor | | | vm_hostname | node3.controller.local | | tenant_ref | admin | +---------------+----------------------------------------------+ : cluster> no nodes name node-2 Removed nodes with name=node-2 : cluster:nodes> save : cluster> no nodes name node-3 Removed nodes with name=node-3 : cluster:nodes> save : cluster> save Configuring the cluster with the controller nodes at [u'10.10.25.81']. If nodes were added or removed from the cluster, this controller will be brought down and then back up with the new configuration. Waiting for the cluster to be ready... Controller is ready.
- After Save:
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
+Updating an existing object. Currently, the object is:
++---------------+----------------------------------------------+
+| Field | Value |
++---------------+----------------------------------------------+
+| uuid | cluster-eb01bf05-7313-4a4f-91b6-21e46d3c237d |
+| name | cluster-0-1 |
+| nodes[1] | |
+| name | node-1 |
+| ip | 10.10.25.81 |
+| vm_ref | EB01BF05-7313-4A4F-91B6-21E46D3C237D |
+| vm_mor | |
+| vm_hostname | node1.controller.local |
+| nodes[2] | |
+| name | node-2 |
+| ip | 10.10.25.82 |
+| vm_ref | EC123A05-7313-4A4F-91B6-21E46D3D46AF |
+| vm_mor | |
+| vm_hostname | node2.controller.local |
+| nodes[3] | |
+| name | 10.10.25.83 |
+| ip | 10.10.25.83 |
+| vm_ref | EA12C05-7313-4A4F-91B6-21E46D3E256EA |
+| vm_mor | |
+| vm_hostname | node3.controller.local |
+| tenant_ref | admin |
++---------------+----------------------------------------------+
+: cluster&gt; no nodes name node-2
+Removed nodes with name=node-2
+: cluster:nodes&gt; save
+: cluster&gt; no nodes name node-3
+Removed nodes with name=node-3
+: cluster:nodes&gt; save
+: cluster&gt; save
+Configuring the cluster with the controller nodes at [u'10.10.25.81'].
+If nodes were added or removed from the cluster, this controller will be brought down and then back up with the new configuration.
+
+Waiting for the cluster to be ready...
+Controller is ready.</code></pre> After Save:
 
 * The cluster is dismantled and recovered into a single node.
 * Each follower is re-imaged into its default state with no configuration and no access to the leader.
@@ -86,8 +148,45 @@ Note: If the node will be removed and replaced with a different node (different 
 Login to the CLI (or CLI shell) and enter the commands shown in the following example.
 
 Note: Make sure to enter the host IP addresses of your Avi Controller nodes instead of the IP addresses shown in the example.
-configure cluster Updating an existing object. Currently, the object is: +---------------+----------------------------------------------+ | Field | Value | +---------------+----------------------------------------------+ | uuid | cluster-eb01bf05-7313-4a4f-91b6-21e46d3c237d | | name | cluster-0-1 | | nodes[1] | | | name | node-1 | | ip | 10.10.25.81 | | vm_ref | EB01BF05-7313-4A4F-91B6-21E46D3C237D | | vm_mor | | | vm_hostname | node1.controller.local | | nodes[2] | | | name | node-2 | | ip | 10.10.25.82 | | vm_ref | EC123A05-7313-4A4F-91B6-21E46D3D46AF | | vm_mor | | | vm_hostname | node2.controller.local | | nodes[3] | | | name | 10.10.25.83 | | ip | 10.10.25.83 | | vm_ref | EA12C05-7313-4A4F-91B6-21E46D3E256EA | | vm_mor | | | vm_hostname | node3.controller.local | | tenant_ref | admin | +---------------+----------------------------------------------+ : cluster> no nodes name node-3 Removed nodes with name=node-3 : cluster:nodes> save : cluster> nodes name node-4 ip 10.10.25.84 Removed nodes with name=node-4 : cluster:nodes> save : cluster> save Configuring the cluster with the controller nodes at [u'10.10.25.81', '10.10.25.82', '10.10.25.84']. If nodes were added or removed from the cluster, this controller will be brought down and then back up with the new configuration. Waiting for the cluster to be ready... Controller is ready.
- After Save:
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
+Updating an existing object. Currently, the object is:
++---------------+----------------------------------------------+
+| Field | Value |
++---------------+----------------------------------------------+
+| uuid | cluster-eb01bf05-7313-4a4f-91b6-21e46d3c237d |
+| name | cluster-0-1 |
+| nodes[1] | |
+| name | node-1 |
+| ip | 10.10.25.81 |
+| vm_ref | EB01BF05-7313-4A4F-91B6-21E46D3C237D |
+| vm_mor | |
+| vm_hostname | node1.controller.local |
+| nodes[2] | |
+| name | node-2 |
+| ip | 10.10.25.82 |
+| vm_ref | EC123A05-7313-4A4F-91B6-21E46D3D46AF |
+| vm_mor | |
+| vm_hostname | node2.controller.local |
+| nodes[3] | |
+| name | 10.10.25.83 |
+| ip | 10.10.25.83 |
+| vm_ref | EA12C05-7313-4A4F-91B6-21E46D3E256EA |
+| vm_mor | |
+| vm_hostname | node3.controller.local |
+| tenant_ref | admin |
++---------------+----------------------------------------------+
+: cluster&gt; no nodes name node-3
+Removed nodes with name=node-3
+: cluster:nodes&gt; save
+: cluster&gt; nodes name node-4 ip 10.10.25.84
+Removed nodes with name=node-4
+: cluster:nodes&gt; save
+: cluster&gt; save
+Configuring the cluster with the controller nodes at [u'10.10.25.81', '10.10.25.82', '10.10.25.84'].
+If nodes were added or removed from the cluster, this controller will be brought down and then back up with the new configuration.
+
+Waiting for the cluster to be ready...
+Controller is ready.</code></pre> After Save:
 
 * The removed follower node is sent an API request asking it to gracefully clear its own state.
 * Since the old follower is not always expected to clear its own state, the leader will forcibly remove it if necessary.

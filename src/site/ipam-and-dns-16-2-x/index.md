@@ -20,7 +20,34 @@ These procedures assume the cloud configuration has already been created on the 
 ## Providers of IPAM and DNS Support
 
 Here is the list of providers and supported functionalities for IPAM and DNS:
-Support / Provider Profile Infoblox Internal  AWS/OpenStack IPAM only No (not currently supported) Yes Yes DNS only No (not currently supported) Yes No IPAM + DNS Yes Yes No
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Support / Provider Profile</th> 
+   <th>Infoblox</th> 
+   <th>Internal</th> 
+   <th>&nbsp;AWS/OpenStack</th> 
+  </tr> 
+  <tr> 
+   <td>IPAM only</td> 
+   <td>No (not currently supported)</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>DNS only</td> 
+   <td>No (not currently supported)</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+  <tr> 
+   <td>IPAM + DNS</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>No</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 For example, if Infoblox is the chosen provider, both IPAM and DNS profiles should be pointing to Infoblox. If Vantage is the chosen provider, the Vantage user has an option to use IPAM, DNS, or both.
 
@@ -29,7 +56,80 @@ For example, if Infoblox is the chosen provider, both IPAM and DNS profiles shou
 This table lists the IPAM and DNS provider support available for each type of cloud (infrastructure) configured in Vantage. For example, when creating VirtualServices in OpenStack or AWS cloud, a separate configuration for IPAM is not needed/allowed as the cloud configuration has support for IPAM natively in Avi. However, Vantage DNS service can be still be used with these Clouds.
 
  
-**Cloud / Provider Profile** **Infoblox** **Internal** **AWS/OpenStack** **IPAM+DNS** **IPAM** **DNS** **IPAM** **DNS** VMware (Read Access) Yes Yes Yes N/A N/A VMware (Write Access) No No No N/A N/A OpenStack No No Yes N/A (default, native) N/A (default, not used) AWS No No Yes N/A (default, native) N/A (default, native) Containers (Mesos/Rancher/Docker UCP) Yes Yes Yes Yes No Linux Server Yes Yes Yes Yes No No access Yes Yes Yes Yes No
+<table style="height: 296px" width="913"> 
+ <tbody> 
+  <tr> 
+   <td><b>Cloud / Provider Profile</b></td> 
+   <td><b>Infoblox</b></td> 
+   <td colspan="2"><b>Internal</b></td> 
+   <td colspan="2"><b>AWS/OpenStack</b></td> 
+  </tr> 
+  <tr> 
+   <td></td> 
+   <td><b>IPAM+DNS</b></td> 
+   <td><b>IPAM</b></td> 
+   <td><b>DNS</b></td> 
+   <td><b>IPAM</b></td> 
+   <td><b>DNS</b></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">VMware (Read Access)</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">N/A</span></td> 
+   <td><span style="font-weight: 400">N/A</span></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">VMware (Write Access)</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">N/A</span></td> 
+   <td><span style="font-weight: 400">N/A</span></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">OpenStack</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">N/A (default, native)</span></td> 
+   <td><span style="font-weight: 400">N/A (default, not used)</span></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">AWS</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">N/A (default, native)</span></td> 
+   <td><span style="font-weight: 400">N/A (default, native)</span></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">Containers (Mesos/Rancher/Docker UCP)</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">Linux Server</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+  </tr> 
+  <tr> 
+   <td><span style="font-weight: 400">No access</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">Yes</span></td> 
+   <td><span style="font-weight: 400">No</span></td> 
+  </tr> 
+ </tbody> 
+</table>
 
  
 

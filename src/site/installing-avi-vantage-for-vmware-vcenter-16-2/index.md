@@ -43,7 +43,28 @@ Each Avi SE runs on its own VM. The Avi Controller manages the lifecycles of Avi
 ### Virtual Machine Requirements
 
 The following table lists the minimum requirements for the VMs on which the Avi Controller and Avi SEs are installed.
-Component Memory vCPUs Disk Avi Controller 24 GB 8 64 GB Service Engine 2 GB 2 10 GB
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Component</th> 
+   <th>Memory</th> 
+   <th>vCPUs</th> 
+   <th>Disk</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>24 GB</td> 
+   <td>8</td> 
+   <td>64 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Service Engine</td> 
+   <td>2 GB</td> 
+   <td>2</td> 
+   <td>10 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Add 1 GB of RAM to the SE configuration for each additional vCPU. With 10 GB as an absolute minimum, set the disk value to at least (2 x RAM-size) + 5 GB.
 
@@ -52,7 +73,22 @@ For added resiliency and redundancy, the Avi Controller can be deployed as a 3-n
 ### Software Requirements
 
 The following table lists the software requirements.
-Component Version Avi Controller 16.2 VMware vCenter 5.1, 5.5, or 6.0
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Component</th> 
+   <th width="60%">Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>16.2</td> 
+  </tr> 
+  <tr> 
+   <td>VMware vCenter</td> 
+   <td>5.1, 5.5, or 6.0</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The Avi Controller OVA contains the images files for the Avi Controller and Avi SEs.
 

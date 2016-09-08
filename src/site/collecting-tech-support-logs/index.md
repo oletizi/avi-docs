@@ -9,27 +9,19 @@ Note: In a 3-node Avi Controller cluster, the commands shown below automatically
 ## CLI
 
 The following command collects the debug logs on each of the Avi Controller nodes. This option keeps the collected tech support bundle to a minimal size. The option is especially useful if the core archive bundles that are present have already been uploaded and fixed.
-show tech-support debuglogs
-
-1 show tech - support debuglogs
-  The following command includes the collection of the core archive bundles.
-show tech-support debuglogs filter include_archive
-
-1 show tech - support debuglogs filter include_archive
-  If you have external connectivity to AWS S3 from the Avi Controller, you can upload the tech support information to the Avi customer support S3 bucket, using the following command:
-upload tech-support debuglogs
-
-1 upload tech - support debuglogs
+<pre><code class="language-lua">show tech-support debuglogs show tech-support debuglogs filter include_archive upload tech-support debuglogs GET https:///api/techsupport/debuglogs
+GET https:///api/techsupport/debuglogs?include_archive=true
+GET https:///api/techsupport/debuglogs?upload=true</code></pre>  The following command includes the collection of the core archive bundles.
+<pre><code class="language-lua">show tech-support debuglogs show tech-support debuglogs filter include_archive upload tech-support debuglogs GET https:///api/techsupport/debuglogs
+GET https:///api/techsupport/debuglogs?include_archive=true
+GET https:///api/techsupport/debuglogs?upload=true</code></pre>  If you have external connectivity to AWS S3 from the Avi Controller, you can upload the tech support information to the Avi customer support S3 bucket, using the following command:
+<pre><code class="language-lua">show tech-support debuglogs show tech-support debuglogs filter include_archive upload tech-support debuglogs GET https:///api/techsupport/debuglogs
+GET https:///api/techsupport/debuglogs?include_archive=true
+GET https:///api/techsupport/debuglogs?upload=true</code></pre>
 
 ## API
 
 Use the following REST API commands to collect tech support information.
-GET https:///api/techsupport/debuglogs GET https:///api/techsupport/debuglogs?include_archive=true GET https:///api/techsupport/debuglogs?upload=true
-
-1
-
-2
-3 GET https : ///api/techsupport/debuglogs
-
-GET https : ///api/techsupport/debuglogs?include_archive=true
-GET https : ///api/techsupport/debuglogs?upload=true
+<pre><code class="language-lua">show tech-support debuglogs show tech-support debuglogs filter include_archive upload tech-support debuglogs GET https:///api/techsupport/debuglogs
+GET https:///api/techsupport/debuglogs?include_archive=true
+GET https:///api/techsupport/debuglogs?upload=true</code></pre>

@@ -2,41 +2,55 @@
 title: DataScript: avi.ssl.client_cert
 layout: default
 ---
-**Function** **avi.ssl.client_cert( [[avi.CLIENT_CERT] [, avi.CLIENT_CERT_FINGERPRINT] [, avi.CLIENT_CERT_SUBJECT] [, avi.CLIENT_CERT_ISSUER] [, avi.CLIENT_CERT_SERIAL]] )** **Description** Returns the client certificate in the PEM format for an established SSL connection. Optional parameters will filter the fields returned from the client certificate. **Events** HTTP_REQ
-HTTP_RESP **Parameter** When no argument or avi.CLIENT_CERT is specified, returns the client certificate in the PEM format for an established SSL connection from the client to the virtual service, with each line except the first prepended with the tab character.
-***avi.CLIENT_CERT_SUBJECT*** returns the subject DN string.
-***avi.CLIENT_CERT_ISSUER*** returns the issuer DN string.
-***avi.CLIENT_CERT_SERIAL*** returns the serial number.
-***avi.CLIENT_CERT_FINGERPRINT*** returns the SHA1 fingerprint (hash) of the cert. **Returns** Up to five arguments, pertaining to the client cert and its fields. **Example 1** If the cert's issuer isn't correct, add the issuer to a header and forward to a quarantine server pool.
-if avi.ssl.client_cert("avi.CLIENT_CERT_ISSUER") ~= "/C=US/O=foo/OU=www.foo.com/CN=www.foo.com/email=admin@foo.com" then avi.http.add_header("client_cert_issuer", avi.ssl.client_cert("avi.CLIENT_CERT_ISSUER")) avi.pool.select("Quarantine-Pool") end
-
-1
-
-2
-3
-
-4
-5
-
-6 if  avi . ssl . client_cert ( "avi.CLIENT_CERT_ISSUER" )  ~ =
-
-   "/C=US/O=foo/OU=www.foo.com/CN=www.foo.com/email=admin@foo.com"  then
-   avi . http . add_header ( "client_cert_issuer" ,
-
-       avi . ssl . client_cert ( "avi.CLIENT_CERT_ISSUER" ) )
-   avi . pool . select ( "Quarantine-Pool" )
-
-end **Example 2** Logs the client cert attributes for the SSL connection.
-if avi.http.secure() then -- test if the connection is secure fingerprint = avi.ssl.client_cert(avi.CLIENT_CERT_FINGERPRINT) avi.vs.log(fingerprint) end
-
-1
-
-2
-3
-
-4 if  avi . http . secure ( )  then  -- test if the connection is secure
-
-   fingerprint  =  avi . ssl . client_cert ( avi . CLIENT_CERT_FINGERPRINT )
-   avi . vs . log ( fingerprint )
-
-end
+<table class="table table-hover"> 
+ <tbody> 
+  <tr bgcolor="ff4b00"> 
+   <td width="100"> <font size="3" color="white"><strong>Function</strong></font> </td> 
+   <td width="600"><font color="white"><b>avi.ssl.client_cert( [[avi.CLIENT_CERT] [, avi.CLIENT_CERT_FINGERPRINT] [, avi.CLIENT_CERT_SUBJECT] [, avi.CLIENT_CERT_ISSUER] [, avi.CLIENT_CERT_SERIAL]] )</b></font></td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <font size="3"><strong>Description</strong></font> </td> 
+   <td width="600">Returns the client certificate in the PEM format for an established SSL connection. Optional parameters will filter the fields returned from the client certificate.</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <font size="3"><strong>Events</strong></font> </td> 
+   <td width="600">HTTP_REQ<br> HTTP_RESP</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <font size="3"><strong>Parameter</strong></font> </td> 
+   <td width="600">When no argument or avi.CLIENT_CERT is specified, returns the client certificate in the PEM format for an established SSL connection from the client to the virtual service, with each line except the first prepended with the tab character.<br> <strong><em>avi.CLIENT_CERT_SUBJECT</em></strong> returns the subject DN string.<br> <strong><em>avi.CLIENT_CERT_ISSUER</em></strong> returns the issuer DN string.<br> <em><strong>avi.CLIENT_CERT_SERIAL</strong></em> returns the serial number.<br> <em><strong>avi.CLIENT_CERT_FINGERPRINT</strong></em> returns the SHA1 fingerprint (hash) of the cert.</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <font size="3"><strong>Returns</strong></font> </td> 
+   <td width="600">Up to five arguments, pertaining to the client cert and its fields.</td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <font size="3"><strong>Example 1</strong></font> </td> 
+   <td width="600">If the cert's issuer isn't correct, add the issuer to a header and forward to a quarantine server pool.<br> 
+    <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.ssl.client_cert("avi.CLIENT_CERT_ISSUER") ~=
+   "/C=US/O=foo/OU=www.foo.com/CN=www.foo.com/email=admin@foo.com" then
+   avi.http.add_header("client_cert_issuer", 
+      avi.ssl.client_cert("avi.CLIENT_CERT_ISSUER"))
+   avi.pool.select("Quarantine-Pool")
+end if avi.http.secure() then -- test if the connection is secure
+   fingerprint = avi.ssl.client_cert(avi.CLIENT_CERT_FINGERPRINT)
+   avi.vs.log(fingerprint)
+end</code></pre> 
+    <!-- [Format Time: 0.0037 seconds] --> </td> 
+  </tr> 
+  <tr> 
+   <td width="100"> <font size="3"><strong>Example 2</strong></font> </td> 
+   <td width="600">Logs the client cert attributes for the SSL connection.<br> 
+    <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.ssl.client_cert("avi.CLIENT_CERT_ISSUER") ~=
+   "/C=US/O=foo/OU=www.foo.com/CN=www.foo.com/email=admin@foo.com" then
+   avi.http.add_header("client_cert_issuer", 
+      avi.ssl.client_cert("avi.CLIENT_CERT_ISSUER"))
+   avi.pool.select("Quarantine-Pool")
+end if avi.http.secure() then -- test if the connection is secure
+   fingerprint = avi.ssl.client_cert(avi.CLIENT_CERT_FINGERPRINT)
+   avi.vs.log(fingerprint)
+end</code></pre> 
+    <!-- [Format Time: 0.0031 seconds] --> </td> 
+  </tr> 
+ </tbody> 
+</table>

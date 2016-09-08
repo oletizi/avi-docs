@@ -32,15 +32,33 @@ To enable source NAT for a virtual service:
 ## High Availability Support for Source NAT
 
 Source NAT can be used with either of the high availability (HA) modes, cluster HA or <a href="/legacy-ha/">legacy HA</a>. The configuration requirements differ depending on whether the SE and back-end servers are in the same subnet (connected at Layer 2) or in different subnets (connected at Layer 3).
-SE-server Connection HA Type Requirements Layer 2 Cluster HA
-(Active/Active) SNAT IPs: 1 per SE
-Floating IP: Not Req'd Legacy HA
-(Active/Standby) SNAT IPs: 1 per virtual service
-Floating IP: Not Req'd Layer 3 Dynamic HA using BGP
-(Active/Active) SNAT IPs: 1 per SE in SE group (to support scale out)
-Floating IP: Not Req'd Legacy HA
-(Active/Standby) SNAT IPs: 1 per virtual service
-Floating IP: Req'd
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>SE-server Connection</th> 
+   <th>HA Type</th> 
+   <th style="text-align: center;">Requirements</th> 
+  </tr> 
+  <tr> 
+   <td rowspan="2">Layer 2</td> 
+   <td>Cluster HA<br> (Active/Active)</td> 
+   <td>SNAT IPs: 1 per SE<br> Floating IP: Not Req'd</td> 
+  </tr> 
+  <tr> 
+   <td>Legacy HA<br> (Active/Standby)</td> 
+   <td>SNAT IPs: 1 per virtual service<br> Floating IP: Not Req'd</td> 
+  </tr> 
+  <tr> 
+   <td rowspan="2">Layer 3</td> 
+   <td>Dynamic HA using BGP<br> (Active/Active)</td> 
+   <td>SNAT IPs: 1 per SE in SE group (to support scale out)<br> Floating IP: Not Req'd</td> 
+  </tr> 
+  <tr> 
+   <td>Legacy HA<br> (Active/Standby)</td> 
+   <td>SNAT IPs: 1 per virtual service<br> Floating IP: Req'd</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Notes:
 
@@ -89,4 +107,9 @@ A floating interface IP needs to be provisioned in order to provide adjacency to
 ### Using the CLI
 
 The following commands add SNAT IP address 10.200.1.1 to Virtual Service 1:
-: > configure virtualservice Virtual Service 1 ... : snat_ip 10.200.1.1 : save
+<pre crayon="false">: &gt; configure virtualservice Virtual Service 1
+...
+
+: snat_ip 10.200.1.1
+: save
+</pre>

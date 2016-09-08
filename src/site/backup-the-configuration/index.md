@@ -18,7 +18,18 @@ Single virtual service and its child properties
 ## Exporting a Configuration
 
 The following commands will export the configuration to a file named *config_export*, SCP it to a remote location, then return to the Avi shell.  
-: > export configuration file config_export Completed writing the export configuration to config_export : > bash admin@Avi-Controller:~$ pwd /home/admin admin@Avi-Controller:~$ ls config_export admin@Avi-Controller:~$ scp ./config_export root@10.1.1.1:/root root@10.1.1.1's password: config_export 100% 232KB 431.8KB/s 00:00 admin@Avi-Controller:~$ exit : >
+<pre crayon="false" class="">: &gt; export configuration file config_export
+Completed writing the export configuration to config_export
+: &gt; bash
+admin@Avi-Controller:~$ pwd
+/home/admin
+admin@Avi-Controller:~$ ls
+config_export
+admin@Avi-Controller:~$ scp ./config_export root@10.1.1.1:/root
+root@10.1.1.1's password:
+config_export 100% 232KB 431.8KB/s 00:00
+admin@Avi-Controller:~$ exit
+: &gt;</pre>
 
 To export only a single virtual service, use the *virtual service* flag instead of the *configuration* flag with the *export* command. The specified virtual service and its child objects (for example, its pools) are exported into the JSON file.
 
@@ -30,7 +41,8 @@ To export only a single virtual service, use the *virtual service* flag instead 
 /* OpenStack infrastructure (OpenStack deployments only)
 
 The following commands import a backed up configuration to a Controller cluster:
-: > import configuration file /home/admin/myconfig keep_uuid Successfully imported the configuration file
+<pre crayon="false" class="">: &gt; import configuration file /home/admin/myconfig keep_uuid
+Successfully imported the configuration file</pre>
 
 The configuration information can be restored to an existing (deployed) Avi Controller or to a new one.
 

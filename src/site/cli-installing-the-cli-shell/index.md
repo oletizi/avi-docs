@@ -41,19 +41,40 @@ The following sections provide steps for installing the Vantage CLI shell.
 ## Installing the CLI Shell on a Ubuntu Docker Container
 
 To install the Vantage CLI shell on a Ubuntu Docker container, download the shell package onto the host, then enter the following commands. Make sure to edit the "/tmp" in "/tmp ubuntu" to the directory where you downloaded the image.
-docker run -it -v /tmp:/tmp ubuntu sudo apt-get update sudo apt-get install python-pip
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4 docker run  - it  - v  / tmp : / tmp ubuntu
-
-sudo apt - get update
-sudo apt - get install python - pip
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 <a name="shell-install"></a>
 
@@ -64,181 +85,299 @@ Note: If installing a CLI shell to manage an OpenStack write access mode deploym
 
 1. Install pip, if not already installed.
 1. Install virtualenv, if not already installed:
-sudo pip install virtualenv Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB) 100% |████████████████████████████████| 1.8MB 178kB/s Installing collected packages: virtualenv Successfully installed virtualenv-14.0.6
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4
-5
-
-6 sudo pip install virtualenv
-
-   Downloading virtualenv - 14.0.6 - py2 . py3 - none - any . whl  ( 1.8MB )
-     100 %  |████████████████████████████████ |  1.8MB  178kB / s
-
-Installing collected packages :  virtualenv
-Successfully installed virtualenv - 14.0.6
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Create a virtual environment for the CLI shell:
-virtualenv avi_shell New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python Installing setuptools, pip, wheel...done.
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4 virtualenv avi_shell
-
-New  python executable in  / home / user / git / clean / avi - dev / build / avi_shell / bin / python
-Installing setuptools ,  pip ,  wheel . . . done .
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Go to the CLI shell virtual environment:
-cd avi_shell/ source ./bin/activate
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3 cd avi_shell /
-
-source  . / bin / activate
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Install the CLI shell package:
-pip install /tmp/avi_shell-16.1.5000.tar.gz Processing /tmp/avi_shell-16.1.5000.tar.gz Collecting cmd2==0.6.8 (from shell-client==16.1) Collecting iso8601==0.1.11 (from shell-client==16.1) Using cached iso8601-0.1.11-py2.py3-none-any.whl ... ... Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 pip install  / tmp / avi_shell - 16.1.5000.tar.gz
-
-Processing  / tmp / avi_shell - 16.1.5000.tar.gz
-Collecting cmd2 == 0.6.8  ( from shell - client == 16.1 )
-
-Collecting iso8601 == 0.1.11  ( from shell - client == 16.1 )
-   Using cached iso8601 - 0.1.11 - py2 . py3 - none - any . whl
-
-. . .
-. . .
-
-Successfully installed cmd2 - 0.6.8  commentjson - 0.6  iso8601 - 0.1.11  prettytable - 0.7.2  pyparsing - 2.1.0  pytz - 2015.7  requests - 2.9.1  requests - toolbelt - 0.5.1  shell - client - 16.1  urllib3 - 1.14  virtualenv - 13.1.2  wheel - 0.26.0  wrapt - 1.10.6
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 ## Logging Onto the CLI Shell
 
 To log onto the Avi Vantage CLI shell:
-avi_shell --address 10.10.10.99 Login: admin Password /*/*/*/*/*
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4
-5 avi_shell  -- address  10.10.10.99
-
-Login :  admin
-Password /* /* /* /* /*
-
-  
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 The *IPADDR* is the IP address of the Controller (10.10.10.99 in the example).
 
 After login, Vantage CLI commands can be entered into the shell. The command in the following example displays the Vantage version:
-: &gt; show version controller +-----------------+------------------------------------+ | Controller Name | Version | +-----------------+------------------------------------+ | 10.10.25.44 | 16.1(5000) 2016-03-03 22:42:48 UTC | +-----------------+------------------------------------+ : &gt;
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 :  & gt ;  show version controller
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  Controller Name  |  Version                              |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  10.10.25.44      |  16.1 ( 5000 )  2016 - 03 - 03  22 : 42 : 48  UTC  |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-:  & gt ;
-
- 
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 <a name="shell-install-lbaas"></a>
 
 ## Leaving the CLI Virtual Environment
 
 To exit the CLI shell virtual environment:
-deactivate
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2 deactivate
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 ## Restarting the CLI Shell
 
 After the CLI shell is installed, just enter the following command to start it the next time:
-avi_shell/bin/avi_shell : &gt; show version controller +-----------------+------------------------------------+ | Controller Name | Version | +-----------------+------------------------------------+ | node-1 | 16.2(5000) 2016-03-07 16:45:38 UTC | | node-2 | 16.2(5000) 2016-03-07 16:45:38 UTC | | node-3 | 16.2(5000) 2016-03-07 16:45:38 UTC | +-----------------+------------------------------------+
+<pre><code class="language-lua">docker run -it -v /tmp:/tmp ubuntu
+sudo apt-get update
+sudo apt-get install python-pip sudo pip install virtualenv
+  Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
+    100% |████████████████████████████████| 1.8MB 178kB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-14.0.6 virtualenv avi_shell
+New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
+Installing setuptools, pip, wheel...done. cd avi_shell/
+source ./bin/activate pip install /tmp/avi_shell-16.1.5000.tar.gz
+Processing /tmp/avi_shell-16.1.5000.tar.gz
+Collecting cmd2==0.6.8 (from shell-client==16.1)
+Collecting iso8601==0.1.11 (from shell-client==16.1)
+  Using cached iso8601-0.1.11-py2.py3-none-any.whl
+...
+...
+Successfully installed cmd2-0.6.8 commentjson-0.6 iso8601-0.1.11 prettytable-0.7.2 pyparsing-2.1.0 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-16.1 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 avi_shell --address 10.10.10.99
+Login: admin
+Password ***** : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
++-----------------+------------------------------------+
+: &gt; deactivate avi_shell/bin/avi_shell 
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12 avi_shell / bin / avi_shell
-
- 
-:  & gt ;  show version controller
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  Controller Name  |  Version                              |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  node - 1            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-
-|  node - 2            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-|  node - 3            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
- 
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>

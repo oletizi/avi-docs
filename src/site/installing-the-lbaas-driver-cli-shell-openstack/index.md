@@ -31,45 +31,72 @@ The Vantage CLI shell requires the following software:
 * Avi Vantage CLI shell installation file: from AWS S3.
 
 Additionally, the LBaaS version of the CLI shell is applicable if the Avi Controller is deployed into an OpenStack cloud and Keystone support is enabled. A Keystone catalog entry such as the following is required:
-source admincc keystone catalog Service: avi-lbaas +-----------+----------------------------------+ | Property | Value | +-----------+----------------------------------+ | id | db5e92e8740c4850ba3d81c73b6c4f23 | | publicURL | https://10.10.25.201/api | | region | regionOne | +-----------+----------------------------------+ ... ...
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13 source admincc
-
+<pre><code class="language-lua">source admincc
 keystone catalog
-Service :  avi - lbaas
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-+ -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|    Property  |                Value                |
-
-+ -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|      id      |  db5e92e8740c4850ba3d81c73b6c4f23  |
-
-|  publicURL  |      https : //10.10.25.201/api     |
-|    region    |              regionOne              |
-
-+ -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-. . .
-
-. . .
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 If the Keystone catalog does not contain an entry for Avi Vantage, one will need to be added using the steps in the following section.
 
@@ -89,285 +116,892 @@ Make sure to replace the following with the values that are applicable to your d
 Depending on the version of open-stack client, use one or the other set of commands shown here. If the openrc credentials contain "OS_IDENTITY_API_VERSION=3," use the second set of commands. Otherwise, use the first set of commands.
 
 **If openrc credentials *do not* contain "OS_IDENTITY_API_VERSION=3":**
-openstack service create --name avi --description "Avi LBaaS" avi-lbaas openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3 openstack service create    -- name avi  -- description  "Avi LBaaS"  avi - lbaas
-
-openstack endpoint create  -- publicurl https : //<em>AviControllerIP</em>/api --region RegionOne avi-lbaas
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 **If openrc credentials contain "OS_IDENTITY_API_VERSION=3":**
 
-openstack service create --name avi --description "Avi LBaaS" avi-lbaas openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3 openstack service create    -- name avi  -- description  "Avi LBaaS"  avi - lbaas
-
-openstack endpoint create  -- region RegionOne avi - lbaas public  https : //AviControllerIP/api
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 ### If Using **keystone-client**
 
-keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS" keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3 keystone service - create  -- name avi  -- type avi - lbaas  -- description  "Avi LBaaS"
-
-keystone endpoint - create  -- service - id  $ ( keystone service - list  |  awk  '/ avi-lbaas / {print $2}' )  -- publicurl https : //<em>AviControllerIP</em>/api --region RegionOne
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 ## Installing the LBaaS CLI Shell
 
 1. Download the LBaaS shell client package:avi_lbaas-16.1.9014.tar.gz
 
 1. Create a virtual environment for the CLI shell:
-virtualenv .avi_lbaas New python executable in .avi_lbaas/bin/python Installing setuptools, pip, wheel...done.
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3
-
-4 virtualenv  . avi_lbaas
-
-New  python executable in  . avi_lbaas / bin / python
-Installing setuptools ,  pip ,  wheel . . . done .
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Activate the virtual environment:
-source .avi_lbaas/bin/activate
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2 source  . avi_lbaas / bin / activate
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Install the downloaded package:
-pip install ./avi_lbaas-16.1.9014.tar.gz Processing ./avi_lbaas-16.1.9014.tar.gz Collecting Babel==2.1.1 (from shell-client-lbaas==16.1) Using cached Babel-2.1.1-py2.py3-none-any.whl Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1) Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1) Using cached debtcollector-1.1.0-py2.py3-none-any.whl ... ... Building wheels for collected packages: shell-client-lbaas Running setup.py bdist_wheel for shell-client-lbaas Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221 Successfully built shell-client-lbaas Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas Found existing installation: wheel 0.24.0 Uninstalling wheel-0.24.0: Successfully uninstalled wheel-0.24.0 Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20 pip install  . / avi_lbaas - 16.1.9014.tar.gz
-
-Processing  . / avi_lbaas - 16.1.9014.tar.gz
-Collecting Babel == 2.1.1  ( from shell - client - lbaas == 16.1 )
-
-   Using cached Babel - 2.1.1 - py2 . py3 - none - any . whl
-Collecting cmd2 == 0.6.8  ( from shell - client - lbaas == 16.1 )
-
-Collecting debtcollector == 1.1.0  ( from shell - client - lbaas == 16.1 )
-   Using cached debtcollector - 1.1.0 - py2 . py3 - none - any . whl
-
-. . .
-. . .
-
-Building wheels for  collected packages :  shell - client - lbaas
-   Running setup . py bdist_wheel for  shell - client - lbaas
-
-   Stored in  directory :  / Users / user / Library / Caches / pip / wheels / 7e / 00 / 01 / ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
-Successfully built shell - client - lbaas
-
-Installing collected packages :  pytz ,  Babel ,  pyparsing ,  cmd2 ,  pbr ,  wrapt ,  six ,  debtcollector ,  funcsigs ,  iso8601 ,  monotonic ,  msgpack - python ,  netaddr ,  netifaces ,  argparse ,  stevedore ,  oslo . config ,  oslo . i18n ,  oslo . utils ,  oslo . serialization ,  prettytable ,  requests ,  python - keystoneclient ,  requests - toolbelt ,  urllib3 ,  virtualenv ,  wheel ,  commentjson ,  shell - client - lbaas
-   Found existing installation :  wheel  0.24.0
-
-     Uninstalling wheel - 0.24.0 :
-       Successfully uninstalled wheel - 0.24.0
-
-Successfully installed Babel - 2.1.1  argparse - 1.4.0  cmd2 - 0.6.8  commentjson - 0.6  debtcollector - 1.1.0  funcsigs - 0.4  iso8601 - 0.1.11  monotonic - 0.5  msgpack - python - 0.4.6  netaddr - 0.7.18  netifaces - 0.10.4  oslo . config - 3.2.0  oslo . i18n - 3.1.0  oslo . serialization - 2.2.0  oslo . utils - 3.3.0  pbr - 1.8.1  prettytable - 0.7.2  pyparsing - 2.1.0  python - keystoneclient - 1.8.1  pytz - 2015.7  requests - 2.9.1  requests - toolbelt - 0.5.1  shell - client - lbaas - 16.1  six - 1.10.0  stevedore - 1.10.0  urllib3 - 1.14  virtualenv - 13.1.2  wheel - 0.26.0  wrapt - 1.10.6
- 
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Source your keystone credentials or set the environment variables explicitly.
 To source them:
-source admincc keystone catalog ... ... Service: avi-lbaas +-----------+----------------------------------+ | Property | Value | +-----------+----------------------------------+ | id | db5e92e8740c4850ba3d81c73b6c4f23 | | publicURL | https://10.10.25.201/api | | region | regionOne | +-----------+----------------------------------+ ... ...
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16 source admincc
-
+<pre><code class="language-lua">source admincc
 keystone catalog
-. . .
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-. . .
-Service :  avi - lbaas
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>  Or, to instead set the environment variables explicitly:
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-+ -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|    Property  |                Value                |
-
-+ -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|      id      |  db5e92e8740c4850ba3d81c73b6c4f23  |
-
-|  publicURL  |      https : //10.10.25.201/api     |
-|    region    |              regionOne              |
-
-+ -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-. . .
-
-. . .
- 
-
- 
-  Or, to instead set the environment variables explicitly:
-export OS_USERNAME=admin export OS_AUTH_URL=http://10.10.16.82:5000/v2.0 export OS_PASSWORD=avi123 export OS_TENANT_NAME=admin
-
-1
-
-2
-3
-
-4
-5 export OS_USERNAME = admin
-
-export OS_AUTH_URL = http : //10.10.16.82:5000/v2.0
-export OS_PASSWORD = avi123
-
-export OS_TENANT_NAME = admin
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Invoke avi_lbaas for CLI access to Avi Controller:
-avi_lbaas
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1 avi_lbaas
-  The Avi Vantage CLI shell prompt appears: >
-: &gt; show version controller +-----------------+------------------------------------+ | Controller Name | Version | +-----------------+------------------------------------+ | node-1 | 16.2(5000) 2016-03-07 16:45:38 UTC | | node-2 | 16.2(5000) 2016-03-07 16:45:38 UTC | | node-3 | 16.2(5000) 2016-03-07 16:45:38 UTC | +-----------------+------------------------------------+
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>  The Avi Vantage CLI shell prompt appears: >
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 :  & gt ;  show version controller
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  Controller Name  |  Version                              |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  node - 1            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-
-|  node - 2            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-|  node - 3            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 1. Type **exit** at the CLI prompt to exit:
-: &gt; exit
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2 :  & gt ;  exit
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 ## Leaving the LBaaS CLI Virtual Environment
 
 To exit the LBaaS virtual environment, deactivate:
-deactivate
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1 deactivate
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>
 
 ## Starting the LBaaS CLI Shell
 
 After the LBaaS CLI shell is installed, just enter the following command to start it the next time:
-.avi_lbaas/bin/avi_lbaas : &gt; show version controller +-----------------+------------------------------------+ | Controller Name | Version | +-----------------+------------------------------------+ | node-1 | 16.2(5000) 2016-03-07 16:45:38 UTC | | node-2 | 16.2(5000) 2016-03-07 16:45:38 UTC | | node-3 | 16.2(5000) 2016-03-07 16:45:38 UTC | +-----------------+------------------------------------+
+<pre><code class="language-lua">source admincc
+keystone catalog
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --publicurl https://<em>AviControllerIP</em>/api --region RegionOne avi-lbaas openstack service create  --name avi --description "Avi LBaaS" avi-lbaas
+openstack endpoint create --region RegionOne avi-lbaas public https://AviControllerIP/api keystone service-create --name avi --type avi-lbaas --description "Avi LBaaS"
+keystone endpoint-create --service-id $(keystone service-list | awk '/ avi-lbaas / {print $2}') --publicurl https://<em>AviControllerIP</em>/api --region RegionOne virtualenv .avi_lbaas
+New python executable in .avi_lbaas/bin/python
+Installing setuptools, pip, wheel...done. source .avi_lbaas/bin/activate pip install ./avi_lbaas-16.1.9014.tar.gz 
+Processing ./avi_lbaas-16.1.9014.tar.gz
+Collecting Babel==2.1.1 (from shell-client-lbaas==16.1)
+  Using cached Babel-2.1.1-py2.py3-none-any.whl
+Collecting cmd2==0.6.8 (from shell-client-lbaas==16.1)
+Collecting debtcollector==1.1.0 (from shell-client-lbaas==16.1)
+  Using cached debtcollector-1.1.0-py2.py3-none-any.whl
+...
+...
+Building wheels for collected packages: shell-client-lbaas
+  Running setup.py bdist_wheel for shell-client-lbaas
+  Stored in directory: /Users/user/Library/Caches/pip/wheels/7e/00/01/ce4f12b9b00cc413c6a1a7400a95532bfa7279e99e40b37221
+Successfully built shell-client-lbaas
+Installing collected packages: pytz, Babel, pyparsing, cmd2, pbr, wrapt, six, debtcollector, funcsigs, iso8601, monotonic, msgpack-python, netaddr, netifaces, argparse, stevedore, oslo.config, oslo.i18n, oslo.utils, oslo.serialization, prettytable, requests, python-keystoneclient, requests-toolbelt, urllib3, virtualenv, wheel, commentjson, shell-client-lbaas
+  Found existing installation: wheel 0.24.0
+    Uninstalling wheel-0.24.0:
+      Successfully uninstalled wheel-0.24.0
+Successfully installed Babel-2.1.1 argparse-1.4.0 cmd2-0.6.8 commentjson-0.6 debtcollector-1.1.0 funcsigs-0.4 iso8601-0.1.11 monotonic-0.5 msgpack-python-0.4.6 netaddr-0.7.18 netifaces-0.10.4 oslo.config-3.2.0 oslo.i18n-3.1.0 oslo.serialization-2.2.0 oslo.utils-3.3.0 pbr-1.8.1 prettytable-0.7.2 pyparsing-2.1.0 python-keystoneclient-1.8.1 pytz-2015.7 requests-2.9.1 requests-toolbelt-0.5.1 shell-client-lbaas-16.1 six-1.10.0 stevedore-1.10.0 urllib3-1.14 virtualenv-13.1.2 wheel-0.26.0 wrapt-1.10.6 source admincc
+keystone catalog
+...
+...
+Service: avi-lbaas
++-----------+----------------------------------+
+|  Property |              Value               |
++-----------+----------------------------------+
+|     id    | db5e92e8740c4850ba3d81c73b6c4f23 |
+| publicURL |     https://10.10.25.201/api     |
+|   region  |            regionOne             |
++-----------+----------------------------------+
+...
+... export OS_USERNAME=admin
+export OS_AUTH_URL=http://10.10.16.82:5000/v2.0
+export OS_PASSWORD=avi123
+export OS_TENANT_NAME=admin avi_lbaas : &gt; show version controller
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+ : &gt; exit deactivate .avi_lbaas/bin/avi_lbaas 
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12 . avi_lbaas / bin / avi_lbaas
-
- 
-:  & gt ;  show version controller
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  Controller Name  |  Version                              |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
-|  node - 1            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-
-|  node - 2            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-|  node - 3            |  16.2 ( 5000 )  2016 - 03 - 07  16 : 45 : 38  UTC  |
-
-+ -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- +
- 
-
- 
+: &gt; show version controller 
++-----------------+------------------------------------+
+| Controller Name | Version                            |
++-----------------+------------------------------------+
+| node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
+| node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
++-----------------+------------------------------------+</code></pre>

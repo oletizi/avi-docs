@@ -41,16 +41,59 @@ Figure 1 shows Lync architecture we are going to use through the rest of this do
 ### Load Balancing Policies
 
 Lync requires four separate load balancers for security reason, one as Reverse proxy and one each for load balancing the external side of Edge pool, internal side of Edge pool, and Front End pool. The figure 2 table shows all the required Lync ports and services to load balance. In this Lync deployment example, the front end server assumes the Director and Mediation services. Set up your active directory and DNS servers based on the figure.
-**Lync Role** **FQDN of Virtual Service** **Ports on VS** **FQDN of Servers** **Ports on Servers** **Front End** fe-pool.test.local 80, 135, 443, 444, 448, 4443, 5061, 5070, 5071, 5072, 5073, 5075, 5076, 5080, 8080 fe-1.test.local
-fe-2.test.local
-f3-3.test.local Same as VS **External Access Edge** access.test.com 443, 5061 access-1.test.com
-access-2.test.com
-access-3.test.com Same as VS **External Web Conf Edge** webconf.test.com 443 webconf-1.test.com
-webconf-2.test.com Same as VS **External A/V Edge** av.test.com 443, 34789/UDP av-1.test.com
-av-2.test.com Same as VS **Internal Edge** edge-pool.test.local 443, 5061, 5062, 3478/UDP edge-1.test.local
-edge-2.test.local Same as VS **Reverse Proxy** lyncdiscover.test.com 80
-4443 fe-pool.test.local 8080
-4443
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Lync Role</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">FQDN of Virtual Service</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Ports on VS</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">FQDN of Servers</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Ports on Servers</span></b></td> 
+  </tr> 
+  <tr> 
+   <td><b>Front End</b></td> 
+   <td>fe-pool.test.local</td> 
+   <td>80, 135, 443, 444, 448, 4443, 5061, 5070, 5071, 5072, 5073, 5075, 5076, 5080, 8080</td> 
+   <td>fe-1.test.local<br> fe-2.test.local<br> f3-3.test.local</td> 
+   <td>Same as VS</td> 
+  </tr> 
+  <tr> 
+   <td><b>External Access Edge</b></td> 
+   <td>access.test.com</td> 
+   <td>443, 5061</td> 
+   <td>access-1.test.com<br> access-2.test.com<br> access-3.test.com</td> 
+   <td>Same as VS</td> 
+  </tr> 
+  <tr> 
+   <td><b>External Web Conf Edge</b></td> 
+   <td>webconf.test.com</td> 
+   <td>443</td> 
+   <td>webconf-1.test.com<br> webconf-2.test.com</td> 
+   <td>Same as VS</td> 
+  </tr> 
+  <tr> 
+   <td><b>External A/V Edge</b></td> 
+   <td>av.test.com</td> 
+   <td>443, 34789/UDP</td> 
+   <td>av-1.test.com<br> av-2.test.com</td> 
+   <td>Same as VS</td> 
+  </tr> 
+  <tr> 
+   <td><b>Internal Edge</b></td> 
+   <td>edge-pool.test.local</td> 
+   <td>443, 5061, 5062, 3478/UDP</td> 
+   <td>edge-1.test.local<br> edge-2.test.local</td> 
+   <td>Same as VS</td> 
+  </tr> 
+  <tr> 
+   <td><b>Reverse Proxy</b></td> 
+   <td>lyncdiscover.test.com</td> 
+   <td>80<br> 4443</td> 
+   <td>fe-pool.test.local</td> 
+   <td>8080<br> 4443</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Common Policies
 

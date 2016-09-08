@@ -71,13 +71,8 @@ The resources suggested in this installation guide are minimum recommendations f
 * Create one NIC in the management network used by the Controller.  This NIC is reserved for management.
 * Create additional NICs as necessary for access to client and server networks for load balancing traffic.  Note that while the management network may be used for load-balanced traffic, it will require a second NIC configured for that network.
 * Custom Scripts:  Paste the following information into this section.  This info is used to tell the Service Engine about the Controller IP address and the auth token it should present.  The auth token should have already been generated in step 3.  See the graphic for an example.
-AVICNTRL: [Controller IP address] AVICNTRL_AUTHTOKEN: [Auth token]
-
-1
-
-2 AVICNTRL :  [ Controller IP address ]
-
-AVICNTRL_AUTHTOKEN :  [ Auth token ]
+<pre><code class="language-lua">AVICNTRL: [Controller IP address]
+AVICNTRL_AUTHTOKEN: [Auth token]</code></pre>
 * **Verify connectivity** between the SE and Controller.  Power on the SE VM.  From the Controller, navigate to Infrastructure > Dashboard.  The SE icon should be present and green.
 * **Repeat as necessary** to create any additional Service Engines.
 

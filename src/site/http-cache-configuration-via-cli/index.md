@@ -3,7 +3,31 @@ title: CLI: HTTP Cache Configuration
 layout: default
 ---
 This article describes the CLI commands that are most commonly used for configuring the HTTP cache.  
-: > show applicationprofile System‐HTTP      +‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+ | Field                             | Value                             | +‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+ | uuid                              | applicationprofile‐0‐2            | | name                              | System‐HTTP                       | | type                              | APPLICATION_PROFILE_TYPE_HTTP     | | http_profile                      |                                   | |   ...                             | ...                               | |   cache_config                    |                                   | |     enabled                       | True                              | |     xcache_header                 | True                              | |     age_header                    | True                              | |     date_header                   | True                              | |     min_object_size               | 100                               | |     max_object_size               | 4194304                           | |     default_expire                | 600                               | |     heuristic_expire              | False                             | |     max_cache_size                | 0                                 | |     query_cacheable               | True                              | |     mime_types_group_refs[1]      | System‐Cacheable‐Resource‐Types   | |     aggressive                    | False                             | +‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
+<pre crayon="false" class="">:&nbsp;&gt;&nbsp;show&nbsp;applicationprofile&nbsp;System‐HTTP &nbsp;&nbsp;&nbsp;&nbsp;
+
++‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
+|&nbsp;Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
++‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
+|&nbsp;uuid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;applicationprofile‐0‐2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;System‐HTTP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;APPLICATION_PROFILE_TYPE_HTTP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;http_profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;cache_config&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enabled&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xcache_header&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age_header&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_header&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_object_size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_object_size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;4194304&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default_expire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;600&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heuristic_expire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_cache_size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query_cacheable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mime_types_group_refs[1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;System‐Cacheable‐Resource‐Types&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aggressive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
++‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
+</pre>
 
 **enabled** ­ Enable/disable HTTP object caching.
 
@@ -59,33 +83,98 @@ False = disable True = enable
 
 ### Show Cached Objects from the Pool's Cache
 
-: > show pool prod-l7-pool httpcache Config: enabled=True min_object_size=0 max_object_size=0 max_cache_size=33363600 default_expire=600 age_header=True xcache_header=True heuristic_expire=0 date_header=True query_cacheable=0 aggressive=0 mime_white_list= mime_white_group= effective_white_mime_types=/*//* mime_black_list= mime_black_group= effective_black_mime_types= -------------------------------------------------------------------------------- URI: /test.js ctype: application/x-javascript raw_key: pool-0-4]widgets.test.com:5000/test.js key: c5d6c9adf844e1c8671707e98bd1f767 raw_extn: key_extn: data_size: 43056 meta_size: 205 hdr_size: 310 body_size: 42746 mbuf_head: 0x600006fb8880 date_time: 1410026395 last_mod_time: 1409662024 etag: "830a10a95fb2a1cac5290f:1409662024" CLI Support (Sat Sep 6 17:59:55 2014) (Tue Sep 2 12:47:04 2014) in_time: 1410026395 exp_age: 604800 init_age: last_used: reuse_cnt: (Sat Sep 6 17:59:55 2014) (Sat Sep 13 17:59:55 2014) handle: 0x600000df1548 proc_id: C1_L7 refcnt: 1 mcache_out: has_vary: True no_exp_info: exp_age_hrt: is_expired: is_purged: no_txm: proxy_reval: must_reval: reval: ae_type_bm: 0xb (IGD) ce_type_bm: ce_top: is_chunked: --------------------------------------------------------------------------------
+<pre crayon="false" class="">: &gt; show pool prod-l7-pool httpcache
+
+Config: enabled=True min_object_size=0 max_object_size=0 max_cache_size=33363600 default_expire=600
+  age_header=True xcache_header=True heuristic_expire=0 date_header=True query_cacheable=0 aggressive=0
+  mime_white_list=
+  mime_white_group=
+  effective_white_mime_types=*/*
+  mime_black_list=
+  mime_black_group=
+  effective_black_mime_types=
+--------------------------------------------------------------------------------
+URI: /test.js
+  ctype: application/x-javascript
+  raw_key: pool-0-4]widgets.test.com:5000/test.js
+  key: c5d6c9adf844e1c8671707e98bd1f767
+  raw_extn:
+  key_extn:
+  data_size: 43056 meta_size: 205 hdr_size: 310 body_size: 42746 mbuf_head: 0x600006fb8880
+  date_time: 1410026395 last_mod_time: 1409662024 etag: "830a10a95fb2a1cac5290f:1409662024"
+  CLI Support
+   (Sat Sep 6 17:59:55 2014) (Tue Sep 2 12:47:04 2014)
+  in_time: 1410026395 exp_age: 604800 init_age: last_used: reuse_cnt:
+  (Sat Sep 6 17:59:55 2014) (Sat Sep 13 17:59:55 2014)
+  handle: 0x600000df1548 proc_id: C1_L7 refcnt: 1
+  mcache_out: has_vary: True no_exp_info: exp_age_hrt: is_expired:
+  is_purged: no_txm: proxy_reval: must_reval: reval:
+  ae_type_bm: 0xb (IGD) ce_type_bm: ce_top: is_chunked:
+--------------------------------------------------------------------------------</pre>
 
  
 
 ### Show Cache Statistics
 
-: > show pool prod-l7-pool httpcachestats +-------------------+----------------+ | Field | Value | +-------------------+----------------+ | se_ref | SE_Aggregate | | proc_id | PROC_Aggregate | | available_size | 667273600 | | current_size | 19680552 | | objects | 925 | | lookups | 3244 | | hits | 1 | | additions | 941 | | deletions | 16 | | out_of_mem_evicts | 0 | | served_bytes | 1706 | +-------------------+----------------+
+<pre crayon="false">: &gt; show pool prod-l7-pool httpcachestats
+
++-------------------+----------------+
+| Field             | Value          |
++-------------------+----------------+
+| se_ref            | SE_Aggregate   |
+| proc_id           | PROC_Aggregate |
+| available_size    | 667273600      |
+| current_size      | 19680552       |
+| objects           | 925            |
+| lookups           | 3244           |
+| hits              | 1              |
+| additions         | 941            |
+| deletions         | 16             |
+| out_of_mem_evicts | 0              |
+| served_bytes      | 1706           |
++-------------------+----------------+</pre>
 
  
 
 ### Clear Cache Objects
 
-: > clear pool prod‐l7‐pool httpcache
+<pre crayon="false">: &gt; clear pool prod‐l7‐pool httpcache</pre>
 
  
 
 ### Clear Cache Statistics
 
-: > clear pool prod‐l7‐pool httpcachestats
+<pre crayon="false">: &gt; clear pool prod‐l7‐pool httpcachestats</pre>
 
  
 
 ### Filter Cache Objects
 
-: > show pool prod-l7-pool httpcache filter resource_type html +---------------------------------------------------------------- URI: /boxtv.cms ctype: text/html raw_key: pool-0-4-test.com:5000/test.cms key: d6fae30e568de8cef6fd40f5 key_extn: data_size: 763 meta_size: 160 date_time: 1410026396 last_mod_time: 1409953279 (Sat Sep 6 17:59:56 2014) (Fri Sep 5 21:41:19 2014) in_time: 1410026396 exp_age: 13283 (Sat Sep 6 17:59:56 2014) (Sat Sep 6 21:41:19 2014) ... -----------------------------------------------------------------
+<pre crayon="false">: &gt; show pool prod-l7-pool httpcache filter resource_type html
+
++----------------------------------------------------------------
+URI: /boxtv.cms
+ctype: text/html
+raw_key: pool-0-4-test.com:5000/test.cms
+key: d6fae30e568de8cef6fd40f5
+key_extn:
+  data_size: 763             meta_size: 160
+  date_time: 1410026396      last_mod_time: 1409953279
+    (Sat Sep 6 17:59:56 2014)  (Fri Sep 5 21:41:19 2014)
+  in_time: 1410026396        exp_age: 13283
+    (Sat Sep 6 17:59:56 2014)  (Sat Sep 6 21:41:19 2014)
+...
+-----------------------------------------------------------------</pre>
 
  
 
 Here is another example.
-: > show virtualservice prod-l7 httpstats +---------------------+--------+ | Field | Value | +---------------------+--------+ | ... | | cache_hits | 83 | | cache_bytes | 713364 | +---------------------+--------+
+<pre crayon="false">: &gt; show virtualservice prod-l7 httpstats
+
++---------------------+--------+
+| Field               | Value  |
++---------------------+--------+
+| ...                          |
+| cache_hits          | 83     |
+| cache_bytes         | 713364 |
++---------------------+--------+</pre>

@@ -2,18 +2,40 @@
 title: DataScript: avi.http.get_userid
 layout: default
 ---
-**Function** **avi.http.get_userid()** **Description** Returns the user ID associated with a connection. The userid may be used by the DataScript in a number of ways, such as evaluating a user against a white or blacklist. This field is also used in the client logs to populate the searchable UserID field. This field is populated via the following methods, prioritized in the following order:
-
-1. **Custom**: The userid may be explicitly set by a DataScript via the <a href="/datascript-avi-set_userid/">avi.http.set_userid()</a> command. For instance, DataScript may parse through a cookie to grab a user name or session ID, then insert that value into the user ID field.
-1. **Basic Auth**: If HTTP Basic Auth is enabled on the Virtual Service and a client authenticates, the username field will be used to populate the userid.
-1. **Client Certificate**: If client certificate authentication has been enabled, the userid will be populated with the user name field from the client certificate received during the SSL/TLS handshake. **Events** HTTP_REQ
-HTTP_RESP **Parameter** None **Returns** String of the user ID, ‘nil’ if empty. **Example** If HTTP header 'username' exists, insert its value into the UserID field, else set the field to none.
-if not avi.http.get_userid() then avi.http.redirect("http://login.foo.com") end
-
-1
-
-2
-3 if  not  avi . http . get_userid ( )  then
-
-   avi . http . redirect ( "http://login.foo.com" )
-end
+<table class="table table-hover"> 
+ <tbody> 
+  <tr bgcolor="ff4b00"> 
+   <td width="100"><span style="color: white; font-size: medium;"><strong>Function</strong></span></td> 
+   <td width="600"><span style="color: white;"><b>avi.http.get_userid()</b></span></td> 
+  </tr> 
+  <tr> 
+   <td width="100"><span style="font-size: medium;"><strong>Description</strong></span></td> 
+   <td width="600">Returns the user ID associated with a connection. The userid may be used by the DataScript in a number of ways, such as evaluating a user against a white or blacklist. This field is also used in the client logs to populate the searchable UserID field. This field is populated via the following methods, prioritized in the following order:<p></p> 
+    <ol> 
+     <li><strong>Custom</strong>: The userid may be explicitly set by a DataScript via the <a href="/datascript-avi-set_userid/">avi.http.set_userid()</a> command. For instance, DataScript may parse through a cookie to grab a user name or session ID, then insert that value into the user ID field.</li> 
+     <li><strong>Basic Auth</strong>: If HTTP Basic Auth is enabled on the Virtual Service and a client authenticates, the username field will be used to populate the userid.</li> 
+     <li><strong>Client Certificate</strong>: If client certificate authentication has been enabled, the userid will be populated with the user name field from the client certificate received during the SSL/TLS handshake.</li> 
+    </ol> </td> 
+  </tr> 
+  <tr> 
+   <td width="100"><span style="font-size: medium;"><strong>Events</strong></span></td> 
+   <td width="600">HTTP_REQ<br> HTTP_RESP</td> 
+  </tr> 
+  <tr> 
+   <td width="100"><span style="font-size: medium;"><strong>Parameter</strong></span></td> 
+   <td width="600">None</td> 
+  </tr> 
+  <tr> 
+   <td width="100"><span style="font-size: medium;"><strong>Returns</strong></span></td> 
+   <td width="600">String of the user ID, ‘nil’ if empty.</td> 
+  </tr> 
+  <tr> 
+   <td width="100"><span style="font-size: medium;"><strong>Example</strong></span></td> 
+   <td width="600">If HTTP header 'username' exists, insert its value into the UserID field, else set the field to none.<br> 
+    <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if not avi.http.get_userid() then
+   avi.http.redirect("http://login.foo.com")
+end</code></pre> 
+    <!-- [Format Time: 0.0012 seconds] --> </td> 
+  </tr> 
+ </tbody> 
+</table>

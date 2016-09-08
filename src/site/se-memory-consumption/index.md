@@ -13,10 +13,25 @@ Service Engines support 1-128 GB memory. Avi's minimum recommendation is 2 GB, t
 ### Memory Allocation
 
 Service Engine's memory allocation is summarized in the following three buckets:
-**Base
-** 500 MB Required to turn on the SE (Linux plus basic SE functionality) **Local
-** 100 MB / core Memory allocated per vCPU core **Shared
-** Remaining Remaining memory is split between *Connections* and *HTTP Cache*
+<table style="height: 88px;" width="650"> 
+ <tbody> 
+  <tr> 
+   <td><strong>Base<br> </strong></td> 
+   <td>500 MB</td> 
+   <td>Required to turn on the SE (Linux plus basic SE functionality)</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Local<br> </strong></td> 
+   <td>100 MB / core</td> 
+   <td>Memory allocated per vCPU core</td> 
+  </tr> 
+  <tr> 
+   <td><strong>Shared<br> </strong></td> 
+   <td>Remaining</td> 
+   <td>Remaining memory is split between <em>Connections</em> and <em>HTTP Cache</em></td> 
+  </tr> 
+ </tbody> 
+</table>
 
 <a href="img/MemAllocation.png"><img src="img/MemAllocation.png" alt="MemAllocation" width="467" height="82"></a>The shared memory pool is divided up between two components, *Connections* and *Buffers*. A minimum of 10% must be allocated to the each. Changing the Connection Memory Percentage slider will impact newly created SEs but will not impact existing SEs.
 
@@ -46,7 +61,34 @@ Concurrent L4 connections = ((SE memory - 500 MB - (100 MB /* num vCPU)) /* Conn
 
 To calculate layer 7 sessions for an SE with 8 vCPU cores and 8 GB RAM, using the default Connection Percent, the math looks like:
 ((8000 - 500 - ( 100 /* 8 )) /* .20) / 20 KB
-**1 vCPU** **4 vCPU** **32 vCPU** **1 GB** 36k 9k n/a **4 GB** 306k 279k 27k **32 GB** 2.82m 2.80m 2.52m
+<table style="height: 94px;" width="300"> 
+ <tbody> 
+  <tr> 
+   <td></td> 
+   <td><strong>1 vCPU</strong></td> 
+   <td><strong>4 vCPU</strong></td> 
+   <td><strong>32 vCPU</strong></td> 
+  </tr> 
+  <tr> 
+   <td><strong>1 GB</strong></td> 
+   <td>36k</td> 
+   <td>9k</td> 
+   <td>n/a</td> 
+  </tr> 
+  <tr> 
+   <td><strong>4 GB</strong></td> 
+   <td>306k</td> 
+   <td>279k</td> 
+   <td>27k</td> 
+  </tr> 
+  <tr> 
+   <td><strong>32 GB</strong></td> 
+   <td>2.82m</td> 
+   <td>2.80m</td> 
+   <td>2.52m</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The table above shows the number of concurrent connections for L4 (TCP Proxy mode) optimized for connections.
 
@@ -56,33 +98,21 @@ The table above shows the number of concurrent connections for L4 (TCP Proxy mod
 
 From the CLI: *show serviceengine <SE Name> memdist*
 This command shows a truncated breakdown of memory distribution for the SE. This SE has one vCPU core with 141 MB allocated for the shared memory's connection table. The 'huge_pages' value of 91 means there are 91 pages of 2 MB each. This indicates 182 MB has been allocated for the shared memory's HTTP cache table.
-: &gt; show serviceengine Avi-se-bajip memdist +-------------------------+---------------------------+ | Field                   | Value                     | +-------------------------+---------------------------+ | se_ref                  | Avi-se-bajip:se-0068b1 | | huge_pages              | 91                        | | conn_memory_mb          | 141                       | | conn_memory_mb_per_core | 141                       | +-------------------------+---------------------------+
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 :  & gt ;  show serviceengine Avi - se - bajip memdist
-
-+ -- -- -- -- -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- - +
-|  Field                    |  Value                      |
-
-+ -- -- -- -- -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- - +
-|  se _ref                   |  Avi - se - bajip : se - 0068b1      |
-
-|  huge _pages               |  91                         |
-|  conn_memory _mb           |  141                        |
-
-|  conn_memory_mb_per_core  |  141                        |
-+ -- -- -- -- -- -- -- -- -- -- -- -- - + -- -- -- -- -- -- -- -- -- -- -- -- -- - +
+<pre><code class="language-lua">: &gt; show serviceengine Avi-se-bajip memdist
++-------------------------+---------------------------+
+| Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
++-------------------------+---------------------------+
+| se_ref&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Avi-se-bajip:se-0068b1    |
+| huge_pages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| conn_memory_mb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| conn_memory_mb_per_core | 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
++-------------------------+---------------------------+ "statistics": {
+   "max": 141,
+} "statistics": {
+   "min": 5,
+   "max": 5,
+   "mean": 5
+},</code></pre>
 
  
 
@@ -92,29 +122,34 @@ The total memory allocated to the connection table and the percentage in use may
 
 https://<IP Address>/api/analytics/metrics/serviceengine/se-<SE UUID>?metric_id=se_stats.max_connection_mem_total
 Returns the total memory available to the connection table. In the response snippet below, 141 MB is allocated.
-"statistics": { "max": 141, }
-
-1
-
-2
-3 "statistics" :  {
-
-   "max" :  141 ,
-}
-  https://<IP Address>/api/analytics/metrics/serviceengine/se-<SE UUID>?metric_id=se_stats.avg_connection_mem_usage&step=5
+<pre><code class="language-lua">: &gt; show serviceengine Avi-se-bajip memdist
++-------------------------+---------------------------+
+| Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
++-------------------------+---------------------------+
+| se_ref&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Avi-se-bajip:se-0068b1    |
+| huge_pages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| conn_memory_mb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| conn_memory_mb_per_core | 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
++-------------------------+---------------------------+ "statistics": {
+   "max": 141,
+} "statistics": {
+   "min": 5,
+   "max": 5,
+   "mean": 5
+},</code></pre>  https://<IP Address>/api/analytics/metrics/serviceengine/se-<SE UUID>?metric_id=se_stats.avg_connection_mem_usage&step=5
 Returns the average percent of memory used during the queried time period. In the result snippet below, 5% of the memory was in use.
-"statistics": { "min": 5, "max": 5, "mean": 5 },
-
-1
-
-2
-3
-
-4
-5 "statistics" :  {
-
-   "min" :  5 ,
-   "max" :  5 ,
-
-   "mean" :  5
-} ,
+<pre><code class="language-lua">: &gt; show serviceengine Avi-se-bajip memdist
++-------------------------+---------------------------+
+| Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
++-------------------------+---------------------------+
+| se_ref&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Avi-se-bajip:se-0068b1    |
+| huge_pages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| conn_memory_mb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| conn_memory_mb_per_core | 141&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
++-------------------------+---------------------------+ "statistics": {
+   "max": 141,
+} "statistics": {
+   "min": 5,
+   "max": 5,
+   "mean": 5
+},</code></pre>

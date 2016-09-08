@@ -70,7 +70,34 @@ For SNMP, choose a name. Then define by IP address (or hostname) and community a
 For ControlScript, either upload a text file with your Python code or enter it directly into the provided scrolling window.<a href="img/python-scropt.png"><img src="img/python-scropt.png" alt="python scropt" width="598" height="298"></a>
 
 The window size in the above screenshot is too small to show the entire ControlScript, which is as follows. It simply prints the parameters passed to the ControlScript.
-/#!/usr/bin/python import os import sys import json from avi.sdk.avi_api import ApiSession def ParseAviParams(argv):      if len(argv) != 2:           return      alert_dict = json.loads(argv[1])      print str(alert_dict) def DisableVirtualService(vs_name):     /# Get session on the basis of authentication token     token=os.environ.get('API_TOKEN')     user=os.environ.get('USER')     tenant=os.environ.get('TENANT')     with ApiSession("localhost", user, token=token, tenant=tenant) as session:         /# Get the virtualservice objct of name myVirtualService         vs_obj = session.get_object_by_name('virtualservice', vs_name) /# Update the object         if vs_obj: vs_obj['enabled'] = False         /# Save the object         session.put('virtualservice/%s' %vs_obj['uuid'], data=json.dumps(vs_obj)) if __name__ == "__main__":     ParseAviParams(sys.argv)     DisableVirtualService('myVirtualService')
+<pre crayon="false"> #!/usr/bin/python
+ import os
+ import sys
+ import json
+ from avi.sdk.avi_api import ApiSession
+
+ def ParseAviParams(argv):
+ &nbsp; &nbsp; &nbsp;if len(argv) != 2:
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+ &nbsp; &nbsp; &nbsp;alert_dict = json.loads(argv[1])
+ &nbsp; &nbsp; &nbsp;print str(alert_dict)
+ def DisableVirtualService(vs_name):
+ &nbsp; &nbsp; # Get session on the basis of authentication token
+ &nbsp; &nbsp; token=os.environ.get('API_TOKEN')
+ &nbsp; &nbsp; user=os.environ.get('USER')
+ &nbsp; &nbsp; tenant=os.environ.get('TENANT')
+ &nbsp; &nbsp; with ApiSession("localhost", user, token=token, tenant=tenant) as session:
+ &nbsp; &nbsp; &nbsp; &nbsp; # Get the virtualservice objct of name myVirtualService
+ &nbsp; &nbsp; &nbsp; &nbsp; vs_obj = session.get_object_by_name('virtualservice', vs_name)
+         # Update the object
+ &nbsp; &nbsp; &nbsp; &nbsp; if vs_obj:
+             vs_obj['enabled'] = False
+&nbsp; &nbsp; &nbsp; &nbsp;  # Save the object
+ &nbsp; &nbsp; &nbsp; &nbsp; session.put('virtualservice/%s' %vs_obj['uuid'], data=json.dumps(vs_obj))
+
+ if __name__ == "__main__":
+ &nbsp; &nbsp; ParseAviParams(sys.argv)
+ &nbsp; &nbsp; DisableVirtualService('myVirtualService')</pre>
 
 ### Parameters Passed to ControlScript
 

@@ -8,12 +8,28 @@ Operators compare or contrast sets of data, and will return as true or false. Da
 
 ### Arithmetic Operators
 
-+ -- Addition - -- Subtraction /* -- Multiplication / -- Division
+<pre crayon="false">
+  + -- Addition 
+  - -- Subtraction 
+  * -- Multiplication 
+  / -- Division
+</pre>
 
 ### Relational Operators
 
-> -- Greater than < -- Less than >= -- Greater than or equal <= -- Less than or equal == -- Equal ~= -- Not equal
+<pre crayon="false">
+  &gt; -- Greater than 
+  &lt; -- Less than 
+  &gt;= -- Greater than or equal 
+  &lt;= -- Less than or equal 
+  == -- Equal ~= -- Not equal
+</pre>
 
 ### Logical Operators
 
-and or not string.find -- Used to search for a string within another string.
+<pre crayon="false">
+  and 
+  or 
+  not 
+  string.find -- Used to search for a string within another string.
+</pre>

@@ -17,7 +17,30 @@ The Avi Vantage Linux server cloud solution uses containerization provided by Do
 ## Deployment Topologies
 
 Vantage can be deployed onto a Linux server cloud in the following topologies. The number of Linux servers required for deployment depends on the deployment topology.
-Deployment Topology Linux Servers Required Description Single host 1 Avi Controller and Avi SE both run on a single host. Separate hosts 2 Avi Controller and Avi SE run on separate hosts. The Avi Controller is deployed on one of the hosts. The Avi SE is deployed on the other host. 3-node cluster 3 Provides high availability for the Avi Controller.
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <th>Deployment Topology</th> 
+   <th style="text-align: center;">Linux Servers Required</th> 
+   <th style="text-align: center;">Description</th> 
+  </tr> 
+  <tr> 
+   <td>Single host</td> 
+   <td align="center">1</td> 
+   <td align="center">Avi Controller and Avi SE both run on a single host.</td> 
+  </tr> 
+  <tr> 
+   <td>Separate hosts</td> 
+   <td align="center">2</td> 
+   <td align="center">Avi Controller and Avi SE run on separate hosts. The Avi Controller is deployed on one of the hosts. The Avi SE is deployed on the other host.</td> 
+  </tr> 
+  <tr> 
+   <td>3-node cluster</td> 
+   <td align="center">3</td> 
+   <td align="center">Provides high availability for the Avi Controller.</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 A single instance of the Avi Controller is deployed on each host. At any given time, one of the Avi Controllers is the leader and the other 2 are followers.
 
@@ -48,15 +71,54 @@ This section lists the minimum requirements for installation.
 ### Hardware Requirements
 
 Each Linux server to be managed by Vantage must meet at least the following physical requirements:
-Component Minimum Requirement CPU Intel Xeon with 8 cores Memory 24 GB RAM Hard Drive (HD) 64 GB Network Interface Controller (NIC) 1 x 1 Gbps (Intel NIC 82598 or 82599 controller family)
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <th>Component</th> 
+   <th style="text-align: center;">Minimum Requirement</th> 
+  </tr> 
+  <tr> 
+   <td>CPU</td> 
+   <td align="center">Intel Xeon with 8 cores</td> 
+  </tr> 
+  <tr> 
+   <td>Memory</td> 
+   <td align="center">24 GB RAM</td> 
+  </tr> 
+  <tr> 
+   <td>Hard Drive (HD)</td> 
+   <td align="center">64 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Network Interface Controller (NIC)</td> 
+   <td align="center">1 x 1 Gbps (Intel NIC 82598 or 82599 controller family)</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Software Requirements
 
 Installation of Vantage for a Linux server cloud also requires the following software:
-Software Version Avi Vantage (distributed by Avi Networks as Docker image) 16.1 Docker (image management service that runs on Linux) 1.6.1 or greater Operating System (OS) One of the following:
-Oracle Enterprise Linux 7.0, 7.1, or 7.2
-Red Hat Enterprise Linux 7.0, 7.1, or 7.2
-CentOS 7.0, 7.1, 7.2
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <th>Software</th> 
+   <th style="text-align: center;">Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Vantage (distributed by Avi Networks as Docker image)</td> 
+   <td align="center">16.1</td> 
+  </tr> 
+  <tr> 
+   <td>Docker (image management service that runs on Linux)</td> 
+   <td align="center">1.6.1 or greater</td> 
+  </tr> 
+  <tr> 
+   <td>Operating System (OS)</td> 
+   <td align="center">One of the following:<br> Oracle Enterprise Linux 7.0, 7.1, or 7.2<br> Red Hat Enterprise Linux 7.0, 7.1, or 7.2<br> CentOS 7.0, 7.1, 7.2</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## Installation
 
@@ -90,64 +152,119 @@ Avi Vantage for Linux server cloud is distributed as a Docker image. If Docker i
 
 ### Install Docker onto Oracle Enterprise Linux
 
-1. Install updates to Oracle Linux (OEL): 
-yum update
-1. Download and install the latest version of Docker: 
-wget –qO- https://get.docker.com/ | sh
-1. Start Docker services: 
-sudo systemctl start docker
-1. Enable Docker services: 
-sudo systemctl enable docker
+1. Install updates to Oracle Linux (OEL): <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>yum update</code></pre>
+1. Download and install the latest version of Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>wget –qO- https://get.docker.com/ | sh</code></pre>
+1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
+1. Enable Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Install Docker onto Red Hat Linux
 
-1. Register the Linux server with Red Hat: 
-subscription-manager register
-1. Enable the repository for extra services: 
-subscription-manager --enable=rhel-7-server-extras-rpms
-1. Install updates to Red Hat: 
-sudo yum update
-1. Install Docker: 
-sudo yum install docker
-1. Start Docker services: 
-sudo systemctl start docker
-1. Enable Docker services: 
-sudo systemctl enable docker
+1. Register the Linux server with Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
+1. Enable the repository for extra services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager --enable=rhel-7-server-extras-rpms</code></pre>
+1. Install updates to Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
+1. Install Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install docker</code></pre>
+1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
+1. Enable Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Verify Docker Installation and Version
 
 Enter the **docker version** command to verify the Docker version that is installed and running. In this example, the version is 1.8.1.:
-docker version Client: Version: 1.8.1 API version: 1.20 Go version: go1.4.2 Git commit: d12ea79 Built: Thu Aug 13 02:35:49 UTC 2015 OS/Arch: linux/amd64 Server: Version: 1.8.1 API version: 1.20 Go version: go1.4.2 Git commit: d12ea79 Built: Thu Aug 13 02:35:49 UTC 2015 OS/Arch: linux/amd64
+<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="2-100"><code>docker version
+Client:
+ Version:      1.8.1
+ API version:  1.20
+ Go version:   go1.4.2
+ Git commit:   d12ea79
+ Built:        Thu Aug 13 02:35:49 UTC 2015
+ OS/Arch:      linux/amd64
+Server:
+ Version:      1.8.1
+ API version:  1.20
+ Go version:   go1.4.2
+ Git commit:   d12ea79
+ Built:        Thu Aug 13 02:35:49 UTC 2015
+ OS/Arch:      linux/amd64
+</code></pre>
 
 ### 2. Install Avi Controller Image
 
-1. Use SCP to copy the .tgz package onto the Linux server that will host the Avi Controller: 
-scp docker_install.tar.gz root@Host-IP:/tmp/
-1. Use SSH to log into the host: 
-ssh root@Host-IP
-1. Change to the /tmp directory: 
-cd /tmp/
-1. Unzip the .tgz package: 
-sudo tar -xvf docker_install.tar.gz
+1. Use SCP to copy the .tgz package onto the Linux server that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre>
+1. Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh root@Host-IP</code></pre>
+1. Change to the /tmp directory: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd /tmp/</code></pre>
+1. Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo tar -xvf docker_install.tar.gz</code></pre>
 
 1. Run the setup.py script. The setup script can be run in interactive mode or as a single command string.
 
 * If entered as a command string, the script sets the options that are included in the command string to the specified values, and leaves the other values set to their defaults. Go to Step 6.
 * In interactive mode, the script displays a prompt for configuring each option. Go to Step 7.
 
-1. To run the setup script as a single command, enter a command string such as the following: 
-./avi_baremetal_setup.py -c -cc 4 -cm 12 -i 10.120.0.39 -m 10.120.0.39
- The options are explained in the CLI help:
+1. To run the setup script as a single command, enter a command string such as the following: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>./avi_baremetal_setup.py -c -cc 4 -cm 12 -i 10.120.0.39 -m 10.120.0.39</code></pre> The options are explained in the CLI help:
 
-avi_baremetal_setup.py [-h] [-d] [-s] [-sc SE_CORES] [-sm SE_MEMORY_MB] [-c] [-cc CON_CORES] [-cm CON_MEMORY_GB] -i CONTROLLER_IP -m MASTER_CTL_IP -h, --help show this help message and exit -d, --dpdk_mode Run SE in DPDK Mode. Default is False -s, --run_se Run SE locally. Default is False -sc SE_CORES, --se_cores SE_CORES Cores to be used for AVI SE. Default is 1 -sm SE_MEMORY_MB, --se_memory_mb SE_MEMORY_MB Memory to be used for AVI SE. Default is 2048 -c, --run_controller Run Controller locally. Default is No -cc CON_CORES, --con_cores CON_CORES Cores to be used for AVI Controller. Default is 4 -cm CON_MEMORY_GB, --con_memory_gb CON_MEMORY_GB Memory to be used for AVI Controller. Default is 12 -i CONTROLLER_IP, --controller_ip CONTROLLER_IP Controller IP Address -m MASTER_CTL_IP, --master_ctl_ip MASTER_CTL_IP Master controller IP Address
+<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100"><code>
+avi_baremetal_setup.py [-h] [-d] [-s] [-sc SE_CORES] [-sm SE_MEMORY_MB] [-c] [-cc CON_CORES] [-cm CON_MEMORY_GB] -i CONTROLLER_IP -m MASTER_CTL_IP 
 
-1. To run in interactive mode, start by entering "avi_baremetal_setup.py". Here is an example: 
-./avi_baremetal_setup.py Welcome to AVI Initialization Script DPDK Mode: Pre-requisites(DPDK): This script assumes the below utilities are installed: docker (yum -y install docker) Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers Supported Vers(DPDK): OEL/CentOS/RHEL - 7.0,7.1,7.2 Non-DPDK Mode: Pre-requisites: This script assumes the below utilities are installed: docker (yum -y install docker) Supported Vers: OEL/CentOS/RHEL - 7.0,7.1,7.2 Caution : This script deletes existing AVI docker containers & images. Do you want to proceed in DPDK Mode [y/n] Do you want to run AVI Controller on this Host [y/n] y Do you want to run AVI SE on this Host [y] n Enter The Number Of Cores For AVI Controller. Range [4, 39] 4 Please Enter Memory (in GB) for AVI Controller. Range [12, 125] 12 Please Enter Controller IP 10.120.0.39 Please Enter Master Controller IP 10.120.0.39 Run SE : No Run Controller : Yes Controller Cores : 4 Memory(mb) : 12 Controller IP : 10.120.0.39 Disabling AVI Services... Loading AVI CONTROLLER Image. Please Wait.. kernel.core_pattern = /var/crash/%e.%p.%t.core Installation Successful. Starting Services..
 
-1. Reboot the host to complete installation: 
-reboot
+  -h, --help            show this help message and exit
+  -d, --dpdk_mode       Run SE in DPDK Mode. Default is False
+  -s, --run_se          Run SE locally. Default is False
+  -sc SE_CORES, --se_cores SE_CORES
+                        Cores to be used for AVI SE. Default is 1
+  -sm SE_MEMORY_MB, --se_memory_mb SE_MEMORY_MB
+                        Memory to be used for AVI SE. Default is 2048
+  -c, --run_controller  Run Controller locally. Default is No
+  -cc CON_CORES, --con_cores CON_CORES
+                        Cores to be used for AVI Controller. Default is 4
+  -cm CON_MEMORY_GB, --con_memory_gb CON_MEMORY_GB
+                        Memory to be used for AVI Controller. Default is 12
+  -i CONTROLLER_IP, --controller_ip CONTROLLER_IP
+                        Controller IP Address
+  -m MASTER_CTL_IP, --master_ctl_ip MASTER_CTL_IP
+                        Master controller IP Address
+                        
+</code></pre>
+
+1. To run in interactive mode, start by entering "avi_baremetal_setup.py". Here is an example: <pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="2-100"><code>./avi_baremetal_setup.py
+
+Welcome to AVI Initialization Script
+
+DPDK Mode:
+  Pre-requisites(DPDK): This script assumes the below utilities are installed:
+                        docker (yum -y install docker)
+  Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers
+  Supported Vers(DPDK): OEL/CentOS/RHEL -  7.0,7.1,7.2
+
+Non-DPDK Mode:
+  Pre-requisites: This script assumes the below utilities are installed:
+                  docker (yum -y install docker)
+  Supported Vers: OEL/CentOS/RHEL - 7.0,7.1,7.2
+
+Caution       : This script deletes existing AVI docker containers &amp; images.
+
+Do you want to proceed in DPDK Mode [y/n]
+Do you want to run AVI Controller on this Host [y/n] y
+Do you want to run AVI SE on this Host [y] n
+Enter The Number Of Cores For AVI Controller. Range [4, 39] 4
+Please Enter Memory (in GB) for AVI Controller. Range [12, 125] 12
+Please Enter Controller IP 10.120.0.39
+Please Enter Master Controller IP 10.120.0.39
+
+Run SE           : No
+Run Controller   : Yes
+Controller Cores : 4
+Memory(mb)       : 12
+Controller IP    : 10.120.0.39
+
+Disabling AVI Services...
+Loading AVI CONTROLLER Image. Please Wait..
+kernel.core_pattern = /var/crash/%e.%p.%t.core
+
+Installation Successful. Starting Services..
+
+</code></pre>
+
+1. Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>reboot</code></pre>
 
 1. If deploying a 3-node cluster, repeat the steps above on the hosts for each of the other 2 Controllers.
 
@@ -197,20 +314,26 @@ Note: If the wizard has timed out or you have decided to click through the rest 
 
 Leaving the wizard open, use another window or device to open a CLI session in the Linux shell on one of the Avi SE hosts.
 
-1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76): 
-ssh avi@10.130.164.76 password:
+1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76): <pre crayon="false" pre="" class="command-line language-bash" data-user="" data-host="$" data-output="1-100"><code>ssh avi@10.130.164.76
+password:
+</code></pre>
 
-1. Prepare the Avi SE host for adding the key from the Avi Controller: 
-mkdir .ssh && chmod 700 .ssh && cd .ssh
+1. Prepare the Avi SE host for adding the key from the Avi Controller: <pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+</code></pre>
 
 1. Add the Avi Controller's public key to the authorized key file by pasting the key <a href="#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line:
-echo "paste-key-file-copied-from-Controller" > .ssh/authorized_keys chmod 644 authorized_keys
- Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+chmod 644 authorized_keys</code></pre> Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
 
 1. Repeat these steps on each Avi SE host.
 
 **Example:**
-mkdir .ssh && chmod 700 .ssh && cd .ssh echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOS Uo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+ AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" > .ssh/authorized_keys chmod 644 authorized_keys
+<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOS
+Uo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+
+AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" &gt; .ssh/authorized_keys
+chmod 644 authorized_keys
+</code></pre>
 
 Note: Make sure to paste the public key for the Avi SE in your deployment. The key shown here is only an example and will not work with your Avi SEs.
 

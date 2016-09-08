@@ -34,24 +34,15 @@ Script Success:  If a script exits with any response it is considered a success
  
 
 *MySQL example script:*
-/#!/bin/bash /#mysql --host=$IP --user=root --password=s3cret! -e "select 1"
-
-1
-
-2 /#!/bin/bash
-
-/#mysql --host=$IP --user=root --password=s3cret! -e "select 1"
-  *Sharepoint example script:*
-/#!/bin/bash /#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK"
-
-1
-
-2
-3 /#!/bin/bash
-
-/#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
-curl http : //$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK"
-  *Sharepoint script variables:*
-USER='foo\administrator' PASS=foo123
-
-1 USER = 'foo\administrator'  PASS = foo123
+<pre><code class="language-lua">#!/bin/bash
+#mysql --host=$IP --user=root --password=s3cret! -e "select 1" #!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK" USER='foo\administrator' PASS=foo123</code></pre>  *Sharepoint example script:*
+<pre><code class="language-lua">#!/bin/bash
+#mysql --host=$IP --user=root --password=s3cret! -e "select 1" #!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK" USER='foo\administrator' PASS=foo123</code></pre>  *Sharepoint script variables:*
+<pre><code class="language-lua">#!/bin/bash
+#mysql --host=$IP --user=root --password=s3cret! -e "select 1" #!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK" USER='foo\administrator' PASS=foo123</code></pre>

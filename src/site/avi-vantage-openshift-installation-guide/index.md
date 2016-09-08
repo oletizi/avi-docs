@@ -36,77 +36,45 @@ For deployment of SEs, the following system-level software is required:
 To install the Avi Controller:
 
 1. Copy the .tgz package onto the OpenShift slave node that will host the Avi Controller leader (for controller cluster two followers run on separate nodes):
-scp controller_docker.tgz username@remotehost.com:~/
- Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:~/</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
 1. Log onto the OpenShift node:
-ssh username@remotehost.com
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@remotehost.com</code></pre>
 1. Load the Avi Controller image into the host's local Docker repository:
-sudo docker load < controller_docker.tgz
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo docker load &lt; controller_docker.tgz</code></pre>
 1. As a best practice, clean up any data that may be lingering from a previous run:
-sudo rm -rf /var/lib/controller//*
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo rm -rf /var/lib/controller/*</code></pre>
 1. Use the vi editor to create a new file for spawning the Avi Controller service:
-sudo vi /etc/systemd/system/avicontroller.service
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
 1. Copy the following lines into the file:
 
  
-Shell
+<table style="height: 454px" width="742"> 
+ <tbody> 
+  <tr> 
+   <td style="text-align: left" width="468"> 
+    <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[Unit]
+Description=AviController
+After=docker.service
+Requires=docker.service
 
-[Unit] Description=AviController After=docker.service Requires=docker.service [Service] Restart=always RestartSec=0 TimeoutStartSec=0 TimeoutStopSec=120 StartLimitInterval=0 ExecStartPre=-/usr/bin/docker kill avicontroller ExecStartPre=-/usr/bin/docker rm avicontroller ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5098:5098 -p 9080:9080 -p 9443:9443 -p 8443:8443 -p 5054:5054 -p 161:161 -p 8053:53/udp -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$$HOST_MANAGEMENT_IP -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$$TAG" ExecStart=/usr/bin/docker logs -f avicontroller ExecStop=/usr/bin/docker stop avicontroller [Install] WantedBy=multi-user.target
-1
+[Service]
+Restart=always
+RestartSec=0
+TimeoutStartSec=0
+TimeoutStopSec=120
+StartLimitInterval=0
+ExecStartPre=-/usr/bin/docker kill avicontroller
+ExecStartPre=-/usr/bin/docker rm avicontroller
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5098:5098 -p 9080:9080 -p 9443:9443 -p 8443:8443 -p 5054:5054 -p 161:161 -p 8053:53/udp -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$$HOST_MANAGEMENT_IP -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$$TAG"
+ExecStart=/usr/bin/docker logs -f avicontroller
+ExecStop=/usr/bin/docker stop avicontroller
 
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19 [ Unit ]
-
-Description = AviController
-After = docker .service
-
-Requires = docker .service
- 
-
-[ Service ]
-Restart = always
-
-RestartSec = 0
-TimeoutStartSec = 0
-
-TimeoutStopSec = 120
-StartLimitInterval = 0
-
-ExecStartPre = - / usr / bin / docker kill  avicontroller
-ExecStartPre = - / usr / bin / docker rm  avicontroller
-
-ExecStartPre = / usr / bin / bash  - c  "/usr/bin/docker run --name=avicontroller --privileged=true -p 5098:5098 -p 9080:9080 -p 9443:9443 -p 8443:8443 -p 5054:5054 -p 161:161 -p 8053:53/udp -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$$HOST_MANAGEMENT_IP -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$$TAG"
-ExecStart = / usr / bin / docker logs  - f  avicontroller
-
-ExecStop = / usr / bin / docker stop avicontroller
- 
-
-[ Install ]
-WantedBy = multi - user .target
+[Install]
+WantedBy=multi-user.target</code></pre> 
+    <!-- [Format Time: 0.0061 seconds] --> </td> 
+  </tr> 
+ </tbody> 
+</table>
 
 1. Edit the following values in the file:
 
@@ -122,7 +90,7 @@ WantedBy = multi - user .target
 
 To start the Avi Controller, enter the following command on the node on which you created the Avi Controller:
 
-sudo systemctl enable avicontroller && sudo systemctl start avicontroller
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
 
 Initial startup and full system initialization takes around 10 minutes.
 
@@ -270,11 +238,11 @@ The Avi Controller needs to be configured with the same private key which is use
 
 * SSH to Master node.
 
-ssh username@os_master_ip
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@os_master_ip</code></pre>
 
 * Run below command and copy the contents of key file (id_rsa)
 
-cat ~/.ssh/id_rsa
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cat ~/.ssh/id_rsa</code></pre>
 
 * On Avi Controller, navigate to Administration > Settings > SSH Key Settings and click Create.
 * Enter the SSH username.
@@ -286,7 +254,9 @@ cat ~/.ssh/id_rsa
 
 * Use SCP to copy OpenShift certificate files form the master node
 
-scp username@os_master_ip:/etc/origin/master/admin.crt scp username@os_master_ip:/etc/origin/master/admin.key scp username@os_master_ip:/etc/origin/master/ca.crt .
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp username@os_master_ip:/etc/origin/master/admin.crt
+scp username@os_master_ip:/etc/origin/master/admin.key
+scp username@os_master_ip:/etc/origin/master/ca.crt .</code></pre>
 
 * On Avi Controller, navigate to Templates > Security > SSL/TLS Certificates. <a href="img/Fig17-2.png"><img src="img/Fig17-2.png" alt="Fig17" width="650" height="93"></a>
 * Click Create and select Root/Intermediate CA.

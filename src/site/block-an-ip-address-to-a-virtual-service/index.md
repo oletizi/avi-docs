@@ -15,13 +15,6 @@ A network security policy can be used to deny a single IP address or multiple ad
 ### DataScript
 
 For finer control, DataScripts may be used to evaluate additional criteria before discarding a client connection.
-Lua
-
-if avi.vs.client_ip() == "10.1.2.3" then avi.close_conn() end
-1
-
-2
-3 if  avi . vs . client_ip ( )  ==  "10.1.2.3"  then
-
-   avi . close_conn ( )
-end
+<pre><code class="language-lua">if avi.vs.client_ip() == "10.1.2.3" then
+  avi.close_conn()
+end</code></pre>

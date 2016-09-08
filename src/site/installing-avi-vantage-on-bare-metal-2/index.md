@@ -9,7 +9,30 @@ Avi Vantage is a software-based solution that provides real-time analytics and e
 ## Deployment Topologies
 
 Avi Vantage can be deployed onto bare-metal servers in the following topologies. The number of bare-metal servers required for deployment depends on the deployment topology.
-Deployment Topology Bare-metal Servers Required Description Single host 1 Avi Controller and SE both run on a single host. Separate hosts 2 Avi Controller and SE run on separate hosts. The Controller is deployed on one of the hosts. The SE is deployed on the other host. 3-node cluster 3 Provides high availability for the Controller.
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Deployment Topology</th> 
+   <th>Bare-metal Servers Required</th> 
+   <th width="60%">Description</th> 
+  </tr> 
+  <tr> 
+   <td>Single host</td> 
+   <td>1</td> 
+   <td>Avi Controller and SE both run on a single host.</td> 
+  </tr> 
+  <tr> 
+   <td>Separate hosts</td> 
+   <td>2</td> 
+   <td>Avi Controller and SE run on separate hosts. The Controller is deployed on one of the hosts. The SE is deployed on the other host.</td> 
+  </tr> 
+  <tr> 
+   <td>3-node cluster</td> 
+   <td>3</td> 
+   <td>Provides high availability for the Controller.</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 A single instance of the Controller is deployed on each host. At any given time, one of the Controllers is the leader and the other 2 are followers.
 
@@ -40,14 +63,54 @@ This section lists the minimum requirements for installation.
 ### Hardware Requirements
 
 Each bare-metal server on which you plan to install and run Avi Vantage must meet at least the following physical requirements:
-Component Minimum Requirement CPU Intel Xeon with 8 cores Memory 16 GB RAM Hard Drive (HD) 64 GB Network Interface Controller (NIC) 1 x 1 Gbps (Intel NIC 82598 or 82599 controller family)
+<table class="myTable"> 
+ <tbody> 
+  <tr> 
+   <th>Component</th> 
+   <th style="text-align: center;">Minimum Requirement</th> 
+  </tr> 
+  <tr> 
+   <td>CPU</td> 
+   <td align="center">Intel Xeon with 8 cores</td> 
+  </tr> 
+  <tr> 
+   <td>Memory</td> 
+   <td align="center">16 GB RAM</td> 
+  </tr> 
+  <tr> 
+   <td>Hard Drive (HD)</td> 
+   <td align="center">64&nbsp;GB</td> 
+  </tr> 
+  <tr> 
+   <td>Network Interface Controller (NIC)</td> 
+   <td align="center">1 x 1 Gbps (Intel NIC 82598 or 82599 controller family)</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Software Requirements
 
 Bare-metal deployment of Avi Vantage also requires the following software:
-Software Version Avi Vantage (distributed by Avi Networks as Docker image) 15.3 Docker (image management service that runs on Linux) 1.6.0 Operating System (OS) One of the following:
-Oracle Enterprise Linux 7.0, 7.1, or 7.2
-Red Hat Enterprise Linux 7.0
+<table class="myTable"> 
+ <tbody> 
+  <tr> 
+   <th>Software</th> 
+   <th style="text-align: center;">Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Vantage (distributed by Avi Networks as Docker image)</td> 
+   <td align="center">15.3</td> 
+  </tr> 
+  <tr> 
+   <td>Docker (image management service that runs on Linux)</td> 
+   <td align="center">1.6.0</td> 
+  </tr> 
+  <tr> 
+   <td>Operating System (OS)</td> 
+   <td align="center">One of the following:<br> Oracle Enterprise Linux 7.0, 7.1, or 7.2<br> Red Hat Enterprise Linux 7.0</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## Installation
 
@@ -66,49 +129,81 @@ Avi Vantage for bare-metal servers is distributed as a Docker image. If Docker i
 
 ### Install Docker onto Oracle Enterprise Linux
 
-1. Install updates to Oracle Linux (OEL): 
-yum update
-1. Download and install the latest version of Docker: 
-wget –q0- https://get.docker.yom/ | sh
-1. Start Docker services: 
-sudo service docker start
+1. Install updates to Oracle Linux (OEL): <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>yum update</code></pre>
+1. Download and install the latest version of Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>wget –q0- https://get.docker.yom/ | sh</code></pre>
+1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo service docker start</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Install Docker onto Red Hat Linux
 
-1. Register the bare-metal host with Red Hat: 
-subscription-manager register
-1. Enable the repository for extra services: 
-subscription-manager --enable=rhel-7-server-extras-rpms
-1. Install updates to Red Hat: 
-sudo yum update
-1. Install Docker: 
-sudo yum install docker
-1. Start Docker services: 
-sudo service docker start
+1. Register the bare-metal host with Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
+1. Enable the repository for extra services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager --enable=rhel-7-server-extras-rpms</code></pre>
+1. Install updates to Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
+1. Install Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install docker</code></pre>
+1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo service docker start</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Verify Docker Installation and Version
 
 Enter the **docker version** command to verify the Docker version that is installed and running. In this example, the version is 1.8.1.:
-docker version Client: Version: 1.8.1 API version: 1.20 Go version: go1.4.2 Git commit: d12ea79 Built: Thu Aug 13 02:35:49 UTC 2015 OS/Arch: linux/amd64 Server: Version: 1.8.1 API version: 1.20 Go version: go1.4.2 Git commit: d12ea79 Built: Thu Aug 13 02:35:49 UTC 2015 OS/Arch: linux/amd64
+<pre crayon="false" br=""></pre> <pre crayon="false" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>docker version
+Client:
+ Version:      1.8.1
+ API version:  1.20
+ Go version:   go1.4.2
+ Git commit:   d12ea79
+ Built:        Thu Aug 13 02:35:49 UTC 2015
+ OS/Arch:      linux/amd64
+Server:
+ Version:      1.8.1
+ API version:  1.20
+ Go version:   go1.4.2
+ Git commit:   d12ea79
+ Built:        Thu Aug 13 02:35:49 UTC 2015
+ OS/Arch:      linux/amd64
+</code></pre>
 
 ## Install Avi Controller Image
 
-1. Use SCP to copy the .tgz package onto the bare-metal node that will host the Avi Controller: 
-scp docker_install.tar.gz root@Host-IP:/tmp/
-1. Use SSH to log into the host: 
-ssh root@Host-IP
-1. Change to the /tmp directory: 
-cd /tmp/
-1. Unzip the .tgz package: 
-sudo tar -xvf docker_install.tar.gz
+1. Use SCP to copy the .tgz package onto the bare-metal node that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre>
+1. Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh root@Host-IP</code></pre>
+1. Change to the /tmp directory: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd /tmp/</code></pre>
+1. Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo tar -xvf docker_install.tar.gz</code></pre>
 
-1. Run the setup.py script. The script will display prompts for a series of questions. For the yes/no questions, enter "y". For the questions about resource allocation, enter the amounts for your deployment. The script also prompts for the Controller's IP address. 
-./avi_baremetal_setup.py Welcome to AVI Initialization Script DPDK Mode: Pre-requisites(DPDK): This script assumes the below utilities are installed: docker, make, gcc, kernel-headers (yum -y install docker gcc make \ kernel-uek-devel-'uname -r' kernel-uek-headers-'uname -r') Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers Supported Vers(DPDK): Oracle Linux 7.0, 7.1, 7.2 Non-DPDK Mode: Pre-requisites: This script assumes the below utilities are installed: docker (yum -y install docker) Supported Vers: Oracle Linux 7.0, 7.1, 7.2; RHEL 7.0 Caution : This script deletes existing AVI docker containers & images. Do you want to proceed in DPDK Mode [y/n] y Do you want to run AVI Controller on this Host [y/n] y Do you want to run AVI SE on this Host [y] y Enter The Number Of Cores For AVI Controller. Range [4, 31] 4 Please Enter Memory (in GB) for AVI Controller. Range [12, 124] 12 Enter The Number Of Cores For AVI Service Engine. Range [1, 28] Please Enter Memory (in MB) for AVI Service Engine. Range [28672, 116378] Please Enter Controller IP 10.10.10.10 Disabling AVI Services... Removing Existing AVI SE Docker Images. Please Wait.. Loading AVI SE Image. Please Wait.. Removing Existing AVI CONTROLLER Docker Images. Please Wait.. Loading AVI CONTROLLER Image. Please Wait.. Compiling DPDK kernel.core_pattern = /var/crash/%e.%p.%t.core Installation Successful. Reboot At A Convenient Time
+1. Run the setup.py script. The script will display prompts for a series of questions. For the yes/no questions, enter "y". For the questions about resource allocation, enter the amounts for your deployment. The script also prompts for the Controller's IP address. <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>./avi_baremetal_setup.py 
+Welcome to AVI Initialization Script
+DPDK Mode:
+  Pre-requisites(DPDK): This script assumes the below utilities are installed: 
+                        docker, make, gcc, kernel-headers
+                         (yum -y install docker gcc make \
+                          kernel-uek-devel-'uname -r' kernel-uek-headers-'uname -r')
+  Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers
+  Supported Vers(DPDK): Oracle Linux 7.0, 7.1, 7.2
+Non-DPDK Mode:
+  Pre-requisites: This script assumes the below utilities are installed: 
+                  docker (yum -y install docker) 
+  Supported Vers: Oracle Linux 7.0, 7.1, 7.2; RHEL 7.0
+Caution       : This script deletes existing AVI docker containers &amp; images.
+Do you want to proceed in DPDK Mode [y/n] y
+Do you want to run AVI Controller on this Host [y/n] y
+Do you want to run AVI SE on this Host [y] y
+Enter The Number Of Cores For AVI Controller. Range [4, 31] 4
+Please Enter Memory (in GB) for AVI Controller. Range [12, 124] 12
+Enter The Number Of Cores For AVI Service Engine. Range [1, 28] 
+Please Enter Memory (in MB) for AVI Service Engine. Range [28672, 116378] 
+Please Enter Controller IP 10.10.10.10
+Disabling AVI Services...
+Removing Existing AVI SE Docker Images. Please Wait..
+Loading AVI SE Image. Please Wait..
+Removing Existing AVI CONTROLLER Docker Images. Please Wait..
+Loading AVI CONTROLLER Image. Please Wait..
+Compiling DPDK
+kernel.core_pattern = /var/crash/%e.%p.%t.core
 
-1. Reboot the host to complete installation: 
-reboot
+Installation Successful. Reboot At A Convenient Time
+</code></pre>
+
+1. Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>reboot</code></pre>
 1. If deploying a 3-node cluster, repeat the steps above on the hosts for each of the other 2 Controllers.
 
 ## Perform Initial Controller Setup
@@ -121,17 +216,38 @@ reboot
 
 ## Deploy Service Engine
 
-1. Use SCP to copy the .tgz package onto the bare-metal node that will host the SE: 
-scp docker_install.tar.gz root@Host-IP:/tmp/
-1. Use SSH to log into the host: 
-ssh root@Host-IP
-1. Change to the /tmp directory: 
-cd /tmp/
-1. Unzip the .tgz package: 
-sudo tar -xvf docker_install.tar.gz
+1. Use SCP to copy the .tgz package onto the bare-metal node that will host the SE: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre>
+1. Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh root@Host-IP</code></pre>
+1. Change to the /tmp directory: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd /tmp/</code></pre>
+1. Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo tar -xvf docker_install.tar.gz</code></pre>
 
-1. Run the setup.py script. The script will display prompts for a series of questions. Use the same answers as used for the Controller. (For the yes/no questions, enter "y". For the questions about resource allocation, enter the amounts for your deployment. The script also prompts for the Controller's IP address.) 
-./avi_baremetal_setup.py Welcome to AVI Initialization Script DPDK Mode: Pre-requisites(DPDK): This script assumes the below utilities are installed: docker, make, gcc, kernel-headers (yum -y install docker gcc make \ kernel-uek-devel-'uname -r' kernel-uek-headers-'uname -r') Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers Supported Vers(DPDK): Oracle Linux 7.0, 7.1, 7.2 Non-DPDK Mode: Pre-requisites: This script assumes the below utilities are installed: docker (yum -y install docker) Supported Vers: Oracle Linux 7.0, 7.1, 7.2; RHEL 7.0 Caution : This script deletes existing AVI docker containers & images. Do you want to proceed in DPDK Mode [y/n] y Do you want to run AVI Controller on this Host [y/n] n Do you want to run AVI SE on this Host [y] y Enter The Number Of Cores For AVI Service Engine. Range [1, 28] Please Enter Memory (in MB) for AVI Service Engine. Range [28672, 116378] Please Enter Controller IP: 10.10.10.10 Disabling AVI Services... Removing Existing AVI SE Docker Images. Please Wait.. Loading AVI SE Image. Please Wait.. Compiling DPDK kernel.core_pattern = /var/crash/%e.%p.%t.core Installation Successful. Reboot At A Convenient Time
+1. Run the setup.py script. The script will display prompts for a series of questions. Use the same answers as used for the Controller. (For the yes/no questions, enter "y". For the questions about resource allocation, enter the amounts for your deployment. The script also prompts for the Controller's IP address.) <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>./avi_baremetal_setup.py 
+Welcome to AVI Initialization Script
+DPDK Mode:
+  Pre-requisites(DPDK): This script assumes the below utilities are installed: 
+                        docker, make, gcc, kernel-headers
+                         (yum -y install docker gcc make \
+                          kernel-uek-devel-'uname -r' kernel-uek-headers-'uname -r')
+  Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers
+  Supported Vers(DPDK): Oracle Linux 7.0, 7.1, 7.2
+Non-DPDK Mode:
+  Pre-requisites: This script assumes the below utilities are installed: 
+                  docker (yum -y install docker) 
+  Supported Vers: Oracle Linux 7.0, 7.1, 7.2; RHEL 7.0
+Caution       : This script deletes existing AVI docker containers &amp; images.
+Do you want to proceed in DPDK Mode [y/n] y
+Do you want to run AVI Controller on this Host [y/n] n
+Do you want to run AVI SE on this Host [y] y
+Enter The Number Of Cores For AVI Service Engine. Range [1, 28] 
+Please Enter Memory (in MB) for AVI Service Engine. Range [28672, 116378]
+Please Enter Controller IP: 10.10.10.10
+Disabling AVI Services...
+Removing Existing AVI SE Docker Images. Please Wait..
+Loading AVI SE Image. Please Wait..
+Compiling DPDK
+kernel.core_pattern = /var/crash/%e.%p.%t.core
 
-1. Reboot the host to complete installation: 
-reboot
+Installation Successful. Reboot At A Convenient Time
+</code></pre>
+
+1. Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>reboot</code></pre>

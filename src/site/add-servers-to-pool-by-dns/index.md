@@ -43,4 +43,5 @@ In either case, where there is a timeout or error, Vantage will seek to resolve 
 ### Changing the DNS Refresh Interval
 
 The default DNS refresh time is 60 minutes. This may be changed using the CLI:
-: > configure controller properties dns_refresh_period 50 : > save
+<pre crayon="false" class="">: &gt; configure controller properties dns_refresh_period 50
+: &gt; save</pre>

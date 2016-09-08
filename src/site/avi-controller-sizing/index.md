@@ -11,9 +11,32 @@ During deployment of an Avi Controller, the system capacity of the Avi Controlle
 The amount of these resources that are allocated to an Avi Controller have a direct impact on the Avi Controller's performance.
 
 The following table lists recommended allocations for each type of deployment:
-Deployment Type Node Count Recommended Allocations CPU Memory Drive Demo / Customer Eval 1 8 24 GB 64 GB Production 3 See the following:
-<a href="#cpuandmemalloc">CPU/Memory Allocation</a>
-<a href="#drivealloc">Drive Allocation</a>
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th rowspan="2" width="60%">Deployment Type</th> 
+   <th rowspan="2">Node Count</th> 
+   <th colspan="3">Recommended Allocations</th> 
+  </tr> 
+  <tr> 
+   <th>CPU</th> 
+   <th>Memory</th> 
+   <th>Drive</th> 
+  </tr> 
+  <tr> 
+   <td>Demo / Customer Eval</td> 
+   <td>1</td> 
+   <td>8</td> 
+   <td>24 GB</td> 
+   <td>64&nbsp;GB</td> 
+  </tr> 
+  <tr> 
+   <td>Production</td> 
+   <td>3</td> 
+   <td colspan="3">See the following:<br> <a href="#cpuandmemalloc">CPU/Memory Allocation</a><br> <a href="#drivealloc">Drive Allocation</a></td> 
+  </tr> 
+ </tbody> 
+</table>
 
 In demo(nstration) and customer evaluation deployments, a single Avi Controller is adequate and is used for all control plane activities and workflows, as well as anaytics.
 
@@ -26,7 +49,40 @@ The following sections provide specific allocation recommendations. The recommen
 ## CPU / Memory Allocations
 
 Vantage uses the allocations of CPU and memory as follows:
-CPU/Memory Allocation 8 CPUs / 24 GB 16 CPUs / 32 GB 24 CPUs / 48 GB Base processes 15 GB 20 GB 24 GB Log analytics 9 GB 13 GB 24 GB Virtual Service Scale 0-200 200-1000 1000-5000 Avi Service Engine (SE) Scale 0-100 100-200 200-250
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">CPU/Memory Allocation</th> 
+   <th>8 CPUs / 24 GB</th> 
+   <th>16 CPUs / 32 GB</th> 
+   <th>24 CPUs / 48 GB</th> 
+  </tr> 
+  <tr> 
+   <td>Base processes</td> 
+   <td>15 GB</td> 
+   <td>20 GB</td> 
+   <td>24 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Log analytics</td> 
+   <td>9 GB</td> 
+   <td>13 GB</td> 
+   <td>24 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Virtual Service Scale</td> 
+   <td>0-200</td> 
+   <td>200-1000</td> 
+   <td>1000-5000</td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine (SE) Scale</td> 
+   <td>0-100</td> 
+   <td>100-200</td> 
+   <td>200-250</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The Avi Controller's base processes include dynamic processes and metrics collection and processing. The allocations shown here are based on assumptions of no more than 10 percent drive swapping and 25 percent drive margin.
 
@@ -42,7 +98,38 @@ The drive space allocated to an Avi Controller that is not used for base process
 
 * Logs: 70 percent of drive not used for base processes or analytics
 * Metrics: the other 30 percent not used for base processes or analytics
-Drive Allocation based on Drive Space 128 GB 256 GB 512 GB 1 TB Log analytics (70%) 56 GB 144 GB 328 GB 672 GB Metrics (30%) 24 GB 64 GB 128 GB 288 GB Base Processes 48 GB 48 GB 56 GB 64 GB
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Drive Allocation based on Drive Space</th> 
+   <th>128 GB</th> 
+   <th>256 GB</th> 
+   <th>512 GB</th> 
+   <th>1 TB</th> 
+  </tr> 
+  <tr> 
+   <td>Log analytics (70%)</td> 
+   <td>56 GB</td> 
+   <td>144 GB</td> 
+   <td>328 GB</td> 
+   <td>672 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Metrics (30%)</td> 
+   <td>24 GB</td> 
+   <td>64 GB</td> 
+   <td>128 GB</td> 
+   <td>288 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Base Processes</td> 
+   <td>48 GB</td> 
+   <td>48 GB</td> 
+   <td>56 GB</td> 
+   <td>64 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Drive quality impacts analytics performance and size:
 
@@ -58,10 +145,42 @@ If the drive fills up, then current metrics tables are deleted to make room for 
 
 ### Drive Allocation based on Number of Virtual Services to Support
 
-Drive Allocation based on Virtual Services Log analytics
-without full logs Log analytics
-with full logs Metrics Base processes Total (without full logs) 100 VS 16 GB 128 GB 16 GB 48 GB 80 GB 1,000 VS
-(100K transactions / year) 128 GB 1 TB 32 GB 56 GB 216 GB 5,000 VS 512 GB Not Sptd 160 GB 64 GB 736 GB
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Drive Allocation based on Virtual Services</th> 
+   <th>Log analytics<br> without full logs</th> 
+   <th>Log analytics<br> with full logs</th> 
+   <th>Metrics</th> 
+   <th>Base processes</th> 
+   <th>Total (without full logs)</th> 
+  </tr> 
+  <tr> 
+   <td>100 VS</td> 
+   <td>16 GB</td> 
+   <td>128 GB</td> 
+   <td>16 GB</td> 
+   <td>48 GB</td> 
+   <td>80 GB</td> 
+  </tr> 
+  <tr> 
+   <td>1,000 VS<br> (100K transactions / year)</td> 
+   <td>128 GB</td> 
+   <td>1 TB</td> 
+   <td>32 GB</td> 
+   <td>56 GB</td> 
+   <td>216 GB</td> 
+  </tr> 
+  <tr> 
+   <td>5,000 VS</td> 
+   <td>512 GB</td> 
+   <td>Not Sptd</td> 
+   <td>160 GB</td> 
+   <td>64 GB</td> 
+   <td>736 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## Assumptions and Sizing Data
 

@@ -27,7 +27,19 @@ To configure certificate management integration:
 ### Prepare the Script
 
 The script must use the def certificate_request command. The following example could be adapted:
-def certificate_request(csr, common_name, args_dict): """ Check if a token exists that can be used: If not, authenticate against the service with the provided credentials. Invoke the certificate request and get back a valid certificate. Inputs: @csr : Certificate signing request string. This is a multi-line string output like what you get from openssl. @common_name: Common name of the subject. @args_dict: Dictionary of the key value pairs from the certificate management profile. """
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+def certificate_request(csr, common_name, args_dict):
+    """
+    Check if a token exists that can be used:
+    If not, authenticate against the service with the provided credentials.
+    Invoke the certificate request and get back a valid certificate.
+    Inputs:
+      @csr : Certificate signing request string. This is a multi-line string output like what
+             you get from openssl.
+      @common_name: Common name of the subject.
+      @args_dict: Dictionary of the key value pairs from the certificate management profile.
+    """
+</code></pre>
 
 The specific parameter values to be passed to the script are specified within the certificate management profile.
 

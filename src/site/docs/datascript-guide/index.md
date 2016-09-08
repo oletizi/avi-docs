@@ -7,19 +7,10 @@ layout: default
 Most functionality desired from Avi Vantage can be configured directly through the GUI, CLI, or API.  However, there may be occasions where the native feature set is not robust enough to cater to a specific use case.  For this purpose Avi provides DataScript, which is a Lua based scripting environment capable of adding significant extensibility to the Avi Vantage functionality.  DataScripts are more advanced versions of the Policies, which similarly allow inspection and manipulation of client and server traffic.  DataScripts can be used to inspect client HTTP requests or server HTTP responses and perform content switching, redirection, header manipulation, logging, and more. The DataScript scripting language is built upon an embedded Lua interpreter, with additional Avi specific libraries added to extend the power.  The basic DataScript syntax is based on Lua, with additional commands, called functions, available for Avi specific tasks.  For in-depth help on Lua scripting syntax and usage, see <a href="http://www.lua.org">www.lua.org</a>.
 
 DataScripts are executed within the data plane on the Service Engines hosting the virtual service to which the DataScript has been attached.  DataScript is different than ControlScript, which is a Python based scripting tool for automation of the control plane and executed from the Avi Controller. A typical DataScript will typically be in some form of if / then logic, similar to a Policy's match / action logic.
-path = avi.http.get_path() if string.beginswith(path, "/docs/") then avi.redirect("http://docs.avinetworks.com/index.html") end
-
-1
-
-2
-3
-
-4 path  =  avi . http . get_path ( )
-
-if  string . beginswith ( path ,  "/docs/" )  then
-   avi . redirect ( "http://docs.avinetworks.com/index.html" )
-
-end
+<pre><code class="language-lua">path = avi.http.get_path()
+if string.beginswith(path, "/docs/") then
+   avi.redirect("http://docs.avinetworks.com/index.html")
+end</code></pre>
 
  
 

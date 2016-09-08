@@ -11,15 +11,9 @@ DataScripts are a powerful mechanism for customizing the behavior of Avi Vantage
 One or more DataScripts may be attached to the rules section of a virtual service.
 
 Scripts may be uploaded or copy/pasted into either the Request Event Script or Response Event Script section. For instance, to restrict access to the secure directory, the following text would be pasted into the Request Event Script section.
-if avi.http.uri == "/secure/" then avi.http.send(403) end
-
-1
-
-2
-3 if  avi . http . uri  ==  "/secure/"  then
-
-   avi . http . send ( 403 )
-end
+<pre><code class="language-lua">if avi.http.uri == "/secure/" then
+   avi.http.send(403)
+end</code></pre>
 
 See the <a href="/docs/datascript-guide">Avi DataScript Guide</a> for complete documentation of commands and example DataScripts.
 

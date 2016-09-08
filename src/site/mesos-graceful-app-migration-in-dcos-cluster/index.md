@@ -30,7 +30,38 @@ In the labels section, the north-south proxy service is enabled (FE-proxy), and 
 * Server pool load-balancing algorithm set to round robin
 
 The healthChecks section defines the health monitor that will be used to generate health checks to the application.
-{ "id": "app1", "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "FE-Proxy": "yes", "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true, \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\"}}, \"pool\": {\"lb_algorithm\": \"LB_ALGORITHM_ROUND_ROBIN\"}}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+{
+  "id": "app1",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true, \"analytics_policy\": {\"metrics_realtime_update\": {\"duration\": 0, \"enabled\":true}, \"client_insights\": \"NO_INSIGHTS\"}}, \"pool\": {\"lb_algorithm\": \"LB_ALGORITHM_ROUND_ROBIN\"}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
+</code></pre>
 
 ## Updated Virtual Service Configuration with A/B Pool and Higher Pool Priority
 
@@ -40,10 +71,74 @@ This JSON file creates an newer version of the application. The purpose of this 
 * ab_config: This label enables the A/B pool feature, identifies the virtual service that owns the A pool, and sets the priority value for the pool. Setting this B pool's priority value to a higher one than is set for the A pool ensures that all the application's traffic is sent to the B pool instead of the A pool.
 
 The load balancing algorithm is explicitly set to round robin again, since this is not the default. If the value is left unset, it will revert to its default value (not round robin). To direct app1's traffic to this version's pool, the A/B pool feature is enabled, with app1's pool set as the A pool, and the priority for the B pool set to 10.
-{ "id": "app1-100" "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "proxy_listener": "no", "ab_config": "{\"service\": \"app1\", \"priority\": 10}", "avi_proxy": "{\"pool\": {\"lb_algorithm\": \"LB_ALGORITHM_ROUND_ROBIN\"}}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+{
+  "id": "app1-100"
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "proxy_listener": "no",
+    "ab_config": "{\"service\": \"app1\", \"priority\": 10}",
+    "avi_proxy": "{\"pool\": {\"lb_algorithm\": \"LB_ALGORITHM_ROUND_ROBIN\"}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
+</code></pre>
 
 ## Updated Version with Higher Pool Priority
 
 This version of the app configuration sets the priority to 20. Since the virtual service previously used pool B, this version of the app is mapped to pool A and all traffic is routed to pool A of the virtual service. In this case, pool A should be used to monitor traffic. An unattached/unused pool corresponding to this version of the app will be created. It can be ignored.
 .
-{ "id": "app1-200" "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "proxy_listener": "no", "ab_config": "{\"service\": \"app1\", \"priority\": 20}", "avi_proxy": "{\"pool\": {\"lb_algorithm\": \"LB_ALGORITHM_ROUND_ROBIN\"}}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+{
+  "id": "app1-200"
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "proxy_listener": "no",
+    "ab_config": "{\"service\": \"app1\", \"priority\": 20}",
+    "avi_proxy": "{\"pool\": {\"lb_algorithm\": \"LB_ALGORITHM_ROUND_ROBIN\"}}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
+</code></pre>

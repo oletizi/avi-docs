@@ -3,16 +3,33 @@ title: Protocol Ports Used by Avi Vantage for Management Communication
 layout: default
 ---
 The Avi Controller and Avi Service Engines use the following ports for management. The firewall should allow traffic for these ports.
-Traffic Source Traffic Destination Ports To Allow Avi Controller Avi Controller TCP 22 (SSH)
-TCP 8443 (https)
-TCP 5098 (SSH) *(if controller is a docker container, SSH is on port 5098)* External Network Services *See section below the table.* Avi Service Engine Avi Controller TCP 22 (SSH)
-TCP 8443 (https)
-UDP 123 (NTP)
-TCP 5098 (SSH) *(if controller is a docker container, SSH is on port 5098)* External Network Services TCP 22 (SSH)
-TCP 80 (http) *(optional)*
-TCP 443 (https)
-TCP 5054 (CLI Server) *(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)*
-UDP 161 (SNMP)
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Traffic Source</th> 
+   <th>Traffic Destination</th> 
+   <th width="60%">Ports To Allow</th> 
+  </tr> 
+  <tr> 
+   <td rowspan="2">Avi Controller</td> 
+   <td>Avi Controller</td> 
+   <td> TCP 22 (SSH)<br> TCP 8443 (https)<br> TCP 5098 (SSH) <em>(if controller is a docker container, SSH is on port 5098)</em></td> 
+  </tr> 
+  <tr> 
+   <td>External Network Services</td> 
+   <td><em>See section below the table.</em></td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td rowspan="2">Avi Controller</td> 
+   <td> TCP 22 (SSH)<br> TCP 8443 (https)<br> UDP 123 (NTP)<br> TCP 5098 (SSH) <em>(if controller is a docker container, SSH is on port 5098)</em></td> 
+  </tr> 
+  <tr> 
+   <td>External Network Services</td> 
+   <td>TCP 22 (SSH)<br> TCP 80 (http) <em>(optional)</em><br> TCP 443 (https)<br> TCP 5054 (CLI Server) <em>(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em><br> UDP 161 (SNMP) </td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Ports Used by Controller for Network Services
 

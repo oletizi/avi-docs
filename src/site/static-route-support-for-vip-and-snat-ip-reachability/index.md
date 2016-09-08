@@ -74,4 +74,10 @@ Within the SE group configuration, legacy HA mode is selected and the floating I
 ### Using the CLI
 
 The following commands set the HA mode in SE group 1 to legacy HA, and configure floating IP address 10.10.1.100 for the SE group:
-: > configure serviceenginegroup SE group 1 ... : ha_mode ha_mode_legacy_active_standby : floating_intf_ip 10.10.1.100 : save
+<pre crayon="false">: &gt; configure serviceenginegroup SE group 1
+...
+
+: ha_mode ha_mode_legacy_active_standby
+: floating_intf_ip 10.10.1.100
+: save
+</pre>

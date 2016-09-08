@@ -16,24 +16,18 @@ If the system was upgraded from 16.2 to later, rollback to 16.2 is supported usi
 ### CLI
 
 To roll back the system to a previous version, use the following command at the Vantage CLI shell prompt:
-rollback
-
-1 rollback
+<pre><code class="language-lua">rollback show upgrade status POST https:///api/cluster/rollback /bootstrap/install.sh --rollback</code></pre>
 
 To monitor the progress of the rollback, enter the following command:
 
-show upgrade status
-
-1 show upgrade status
+<pre><code class="language-lua">rollback show upgrade status POST https:///api/cluster/rollback /bootstrap/install.sh --rollback</code></pre>
 
 This command lists the steps being performed for the rollback and the progress of each step.
 
 ### API
 
 To roll back the system, use the following command:
-POST https:///api/cluster/rollback
-
-1 POST https : ///api/cluster/rollback
+<pre><code class="language-lua">rollback show upgrade status POST https:///api/cluster/rollback /bootstrap/install.sh --rollback</code></pre>
 
 ## 16.1.x
 
@@ -42,9 +36,7 @@ Prior to 16.2, rollback is not supported using the API.
 Instead, use the following procedure:
 
 1. Enter the following command separately on each Avi Controller node in the cluster:
-/bootstrap/install.sh --rollback
-
-1 / bootstrap / install . sh  -- rollback
+<pre><code class="language-lua">rollback show upgrade status POST https:///api/cluster/rollback /bootstrap/install.sh --rollback</code></pre>
 1. Reboot each of the Avi Controller nodes in the cluster.
 1. After reboot, verify that the cluster comes up running the previous version.
 

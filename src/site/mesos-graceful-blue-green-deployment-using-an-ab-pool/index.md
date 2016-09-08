@@ -21,28 +21,99 @@ The following JSON files create two virtual service configurations:
 
 * ap-green: Creates the B pool. The proxy_listener label is set to "no."
 * app-blue: Creates the virtual service. Use the following syntax for the pool definition:
-
-\"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", \"ratio\": 10}}
+<code><br> \"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", \"ratio\": 10}}<br> </code>
 
 In this example, the A/B pool feature is enabled. The B pool is "app-green-pool-80," and 10 percent of the application's traffic will be sent to this pool. The other 90 percent of the traffic will be sent to the A pool.
 
 ### Creating the 'B' Pool
 
 This JSON file creates the pool.
-{ "id": "app-green", "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, **"labels": { "proxy_listener": "no"** }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+{
+  "id": "app-green",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+<strong> "labels": { "proxy_listener": "no"</strong>
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
+</code></pre>
 
 ### Creating the Virtual Service (application)
 
 This JSON file creates the application, and refers to the B pool.
-{ "id": "app-blue", "cpus": 0.5, "mem": 64.0, "instances": 2, "container": { "type": "DOCKER", "docker": { "image": "avinetworks/server", "network": "BRIDGE", "portMappings": [ { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" } ] } }, "labels": { "FE-Proxy": "yes", "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true}, **\"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", \"ratio\": 10}}**}" }, "healthChecks": [ { "protocol": "HTTP", "portIndex": 0, "path": "/", "gracePeriodSeconds": 5, "intervalSeconds": 20, "maxConsecutiveFailures": 3 } ] }
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+{
+  "id": "app-blue",
+  "cpus": 0.5,
+  "mem": 64.0,
+  "instances": 2,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "avinetworks/server",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 0, "servicePort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true}, <strong>\"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", \"ratio\": 10}}</strong>}"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 5,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}
+</code></pre>
 
 ### Changing the A/B Ratio
 
 Once the B pool has passed all tests and is deemed satisfactory, update the ratio in the ab_pool object (in app-blue) to 100 to direct 100 percent of the traffic to app-green. (For brevity, only the labels section is shown in the example.)
-"labels": { "FE-Proxy": "yes", "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true}, \"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", **\"ratio\": 100}}**}"
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code> 
+
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true}, \"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", <strong>\"ratio\": 100}}</strong>}"
+
+</code></pre>
 
 After a sufficient time (at least a few minutes to allow time for HTTP connections to close), app-blue can be scaled down to 0.
 
-"labels": { "FE-Proxy": "yes", "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true}, \"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", **\"ratio\": 0}}**}"
+<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+
+  "labels": {
+    "FE-Proxy": "yes",
+    "avi_proxy": "{\"virtualservice\": {\"services\": [{\"port\": 80}], \"auto_allocate_ip\": true}, \"pool\": {\"ab_pool\": {\"pool_ref\": \"/api/pool/?name=app-green-pool-80\", <strong>\"ratio\": 0}}</strong>}"
+
+</code></pre>
 
 For the next testing or upgrade cycle, the newer application software version can be deployed on app-blue and the ab_pool ratio can be updated in app-blue to pass an initial 10 percent of the traffic to app-blue, then updated to 100 percent of traffic to app-blue.

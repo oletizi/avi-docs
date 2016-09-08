@@ -75,64 +75,67 @@ After configuring the SE group for legacy HA, virtual services can be placed on 
 This example configures a pair of SEs (10.10.22.80 and 10.10.22.123) for legacy HA.
 
 The following comamnds create a new SE group for the pair of SEs:
-: &gt; configure serviceenginegroup NewGroup3 : serviceenginegroup&gt; ha_mode ha_mode_legacy_active_standby : serviceenginegroup&gt; floating_intf_ip 10.10.1.100 : serviceenginegroup&gt; : serviceenginegroup&gt; save
-
-1
-
-2
-3
-
-4
-5 :  & gt ;  configure serviceenginegroup NewGroup3
-
-:  serviceenginegroup & gt ;  ha_mode ha_mode_legacy_active_standby
-:  serviceenginegroup & gt ;  floating_intf _ip  10.10.1.100
-
-:  serviceenginegroup & gt ;
-:  serviceenginegroup & gt ;  save
-  The following commands add the SEs to the new SE group:
-: &gt; configure serviceengine 10.10.22.123 10.10.22.80 : &gt; configure serviceengine 10.10.22.123 : serviceengine&gt; se_group_ref NewGroup2 : serviceengine&gt; save
-
-1
-
-2
-3
-
-4
-5 :  & gt ;  configure serviceengine
-
-               10.10.22.123    10.10.22.80
-:  & gt ;  configure serviceengine  10.10.22.123
-
-:  serviceengine & gt ;  se_group_ref NewGroup2
-:  serviceengine & gt ;  save
-  Note: If Vantage was deployed in full access mode, these commands add both SEs to the group. If Avi Vantage was installed in no access mode, additional commands are needed to add the second SE to the group:
-: &gt; configure serviceengine 10.10.22.123 10.10.22.80 : &gt; configure serviceengine 10.10.22.80 : serviceengine&gt; se_group_ref NewGroup2 : serviceengine&gt; save
-
-1
-
-2
-3
-
-4
-5 :  & gt ;  configure serviceengine
-
-               10.10.22.123    10.10.22.80
-:  & gt ;  configure serviceengine  10.10.22.80
-
-:  serviceengine & gt ;  se_group_ref NewGroup2
-:  serviceengine & gt ;  save
-  The following commands configure a virtual service vs1 with VIP 10.10.1.99 on the SE group:
-: &gt; configure virtualservice vs1 : virtualservice&gt; address 10.10.1.99 : virtualservice&gt; se_group_ref NewGroup2 : virtualservice&gt; save
-
-1
-
-2
-3
-
-4 :  & gt ;  configure virtualservice vs1
-
-:  virtualservice & gt ;  address    10.10.1.99
-:  virtualservice & gt ;  se_group_ref NewGroup2
-
-:  virtualservice & gt ;  save
+<pre><code class="language-lua">: &gt; configure serviceenginegroup NewGroup3
+: serviceenginegroup&gt; ha_mode ha_mode_legacy_active_standby
+: serviceenginegroup&gt; floating_intf_ip 10.10.1.100
+: serviceenginegroup&gt; 
+: serviceenginegroup&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.123
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.80
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure virtualservice vs1
+: virtualservice&gt; address  10.10.1.99
+: virtualservice&gt; se_group_ref NewGroup2
+: virtualservice&gt; save</code></pre>  The following commands add the SEs to the new SE group:
+<pre><code class="language-lua">: &gt; configure serviceenginegroup NewGroup3
+: serviceenginegroup&gt; ha_mode ha_mode_legacy_active_standby
+: serviceenginegroup&gt; floating_intf_ip 10.10.1.100
+: serviceenginegroup&gt; 
+: serviceenginegroup&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.123
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.80
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure virtualservice vs1
+: virtualservice&gt; address  10.10.1.99
+: virtualservice&gt; se_group_ref NewGroup2
+: virtualservice&gt; save</code></pre>  Note: If Vantage was deployed in full access mode, these commands add both SEs to the group. If Avi Vantage was installed in no access mode, additional commands are needed to add the second SE to the group:
+<pre><code class="language-lua">: &gt; configure serviceenginegroup NewGroup3
+: serviceenginegroup&gt; ha_mode ha_mode_legacy_active_standby
+: serviceenginegroup&gt; floating_intf_ip 10.10.1.100
+: serviceenginegroup&gt; 
+: serviceenginegroup&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.123
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.80
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure virtualservice vs1
+: virtualservice&gt; address  10.10.1.99
+: virtualservice&gt; se_group_ref NewGroup2
+: virtualservice&gt; save</code></pre>  The following commands configure a virtual service vs1 with VIP 10.10.1.99 on the SE group:
+<pre><code class="language-lua">: &gt; configure serviceenginegroup NewGroup3
+: serviceenginegroup&gt; ha_mode ha_mode_legacy_active_standby
+: serviceenginegroup&gt; floating_intf_ip 10.10.1.100
+: serviceenginegroup&gt; 
+: serviceenginegroup&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.123
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure serviceengine
+              10.10.22.123  10.10.22.80
+: &gt; configure serviceengine 10.10.22.80
+: serviceengine&gt; se_group_ref NewGroup2
+: serviceengine&gt; save : &gt; configure virtualservice vs1
+: virtualservice&gt; address  10.10.1.99
+: virtualservice&gt; se_group_ref NewGroup2
+: virtualservice&gt; save</code></pre>

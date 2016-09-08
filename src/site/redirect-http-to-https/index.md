@@ -19,14 +19,8 @@ For more granularity, use an HTTP Request Policy. Navigate to the Edit Virtual S
 ### DataScript
 
 For maximum granularity and reusability, use a DataScript to specify the redirect behavior. While using DataScript may be overkill for basic requirements, it's always good to have for thornier requirements. Navigate to Edit Virtual Service > Rules > DataScript > Create DataScript (from within the pull-down menu). Provide a name for the script, then paste the following text into the Request Event Script box and save:
-if avi.vs.port() ~= "443" then avi.http.redirect("https://" .. avi.http.hostname() .. avi.http.get_uri()) end
-
-1
-
-2
-3 if  avi . vs . port ( )  ~ =  "443"  then
-
-   avi . http . redirect ( "https://"  . .  avi . http . hostname ( )  . .  avi . http . get_uri ( ) )
-end
+<pre><code class="language-lua">if avi.vs.port() ~= "443" then
+   avi.http.redirect("https://" .. avi.http.hostname() .. avi.http.get_uri())
+end</code></pre>
 
 Feel free to experiment with more elaborate logic or see the DataScript documentation for more verbose help and examples.

@@ -14,7 +14,40 @@ The setup process consists of the following tasks:
 ## Create a Role in IAM
 
 Use the following JSON file to create a role in IAM. Use the following name for the file: avicontroller-role-ipam-policy.json
-{ "Version": "2012-10-17", "Statement": [ { "Sid": "Stmt1450393199000", "Effect": "Allow", "Action": [ "ec2:AssignPrivateIpAddresses", "ec2:CreateNetworkInterface", "ec2:CreateTags", "ec2:DeleteNetworkInterface", "ec2:DeleteTags", "ec2:DescribeAddresses", "ec2:DescribeInstanceAttribute", "ec2:DescribeInstanceStatus", "ec2:DescribeInstances", "ec2:DescribeNetworkInterfaceAttribute", "ec2:DescribeNetworkInterfaces", "ec2:DescribeRegions", "ec2:DescribeRouteTables", "ec2:DescribeSubnets", "ec2:DescribeTags", "ec2:DescribeVpcs", "ec2:ModifyNetworkInterfaceAttribute", "ec2:ResetNetworkInterfaceAttribute", "ec2:UnassignPrivateIpAddresses" ], "Resource": [ "/*" ] } ] }
+<pre crayon="false">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1450393199000",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:CreateNetworkInterface",
+                "ec2:CreateTags",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DeleteTags",
+                "ec2:DescribeAddresses",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeInstances",
+                "ec2:DescribeNetworkInterfaceAttribute",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeRegions",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeTags",
+                "ec2:DescribeVpcs",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:ResetNetworkInterfaceAttribute",
+                "ec2:UnassignPrivateIpAddresses"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
+</pre>
 
 ## Launch and Finish with the Setup Wizard
 
@@ -67,8 +100,17 @@ Note: If no host has any vNICs on the pool subnet(s), enable the the following o
 If deploying in no-access mode, some configuration in the Vantage CLI also is required.
 
 Enter the following commands to let the Avi Controller connect to SE nodes without attempting to use SSH for authentication:
-: > configure controller properties : controllerproperties> allow_unauthenticated_nodes : controllerproperties> save
+<pre crayon="false">: &gt; configure controller properties 
+: controllerproperties&gt; allow_unauthenticated_nodes 
+: controllerproperties&gt; save
+</pre>
 
 Enter the following commands to enable tunneling support for Avi SEs:
 
-: > configure serviceengineproperties : seproperties> se_bootup_properties : seproperties:se_bootup_properties> se_ip_encap_ipc 1 : seproperties:se_bootup_properties> se_tunnel_mode 1 : seproperties:se_bootup_properties> save : seproperties> save
+<pre crayon="false" class="">: &gt; configure serviceengineproperties 
+: seproperties&gt; se_bootup_properties 
+: seproperties:se_bootup_properties&gt; se_ip_encap_ipc 1
+: seproperties:se_bootup_properties&gt; se_tunnel_mode 1
+: seproperties:se_bootup_properties&gt; save
+: seproperties&gt; save
+</pre>

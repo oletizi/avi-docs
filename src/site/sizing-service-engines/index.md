@@ -3,7 +3,38 @@ title: Sizing Service Engines
 layout: default
 ---
 Avi publishes *minimum* and *recommended* resource requirements for new Avi Service Engines.  These are somewhat abstract numbers though, as network and application traffic may vary dramatically.  This guide provides some guidance on sizing.  Avi recommends consulting with your local Avi sales engineer for more recommendation that is tailored to the exact requirements.
-1 CPU core Throughput 4 Gb/s Connections/s 40k SSL Tput 1 Gb/s SSL TPS (RSA) 500 SSL TPS (ECC) 2000
+<table dir="ltr" border="1" cellspacing="0" cellpadding="0"> 
+ <colgroup> 
+  <col width="122"> 
+  <col width="100"> 
+ </colgroup> 
+ <tbody> 
+  <tr> 
+   <td></td> 
+   <td>1 CPU core</td> 
+  </tr> 
+  <tr> 
+   <td>Throughput</td> 
+   <td>4 Gb/s</td> 
+  </tr> 
+  <tr> 
+   <td>Connections/s</td> 
+   <td>40k</td> 
+  </tr> 
+  <tr> 
+   <td>SSL Tput</td> 
+   <td>1 Gb/s</td> 
+  </tr> 
+  <tr> 
+   <td>SSL TPS (RSA)</td> 
+   <td>500</td> 
+  </tr> 
+  <tr> 
+   <td>SSL TPS (ECC)</td> 
+   <td>2000</td> 
+  </tr> 
+ </tbody> 
+</table>
 
  
 

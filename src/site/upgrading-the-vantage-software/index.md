@@ -38,11 +38,13 @@ This section shows an example of the steps for upgrading from 15.x to 16.1.
 1. If there are any firewalls in the environment, configure them to allow TCP port 8443 between SE nodes and Avi Controller nodes. (<a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">List of firewall ports to leave open.</a>)
 1. Using SCP, copy controller.pkg to /tmp on the Avi Controller node. If running a 3-node cluster, copy the file only to the primary/leader node.
 
-1. Using SSH, access the Avi Controller's CLI using SSH and enter the **shell** command: 
-ssh admin@<IP-of-Avi-Controller> shell The shell login username is "admin".
+1. Using SSH, access the Avi Controller's CLI using SSH and enter the **shell** command: <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>ssh admin@&lt;IP-of-Avi-Controller&gt;
+shell
+The shell login username is "admin".
+</code>
+</pre>
 
-1. At the Avi shell prompt, enter a command such as the following. Replace "/tmp/controller.pkg" with the full path to the file (controller.pkg) you downloaded. 
-upgrade system image_path /tmp/controller.pkg
+1. At the Avi shell prompt, enter a command such as the following. Replace "/tmp/controller.pkg" with the full path to the file (controller.pkg) you downloaded. <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>upgrade system image_path /tmp/controller.pkg</code></pre>
 
  
 

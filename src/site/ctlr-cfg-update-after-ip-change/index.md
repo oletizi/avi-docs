@@ -42,11 +42,11 @@ To update Avi Controller IP information for a single-node deployment, use a comm
 
 **Example:**
 This command is run on node 10.10.25.81. Since no other nodes are specified, this is assumed to be a single-node cluster (just this Avi Controller).
-change_ip.py -i 10.10.25.81
+<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>change_ip.py -i 10.10.25.81</code></pre>
 
 In the following example, the node's default gateway also has changed:
 
-change_ip.py -i 10.10.25.81 -g 10.10.10.1
+<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>change_ip.py -i 10.10.25.81 -g 10.10.10.1</code></pre>
 
 ### Updating IP Information for an Avi Controller Cluster
 
@@ -55,9 +55,9 @@ To update Avi Controller IP information for a cluster, use a command string such
 **change_ip.py -i***ipaddr* **-o** *ipaddr* **-o** *ipaddr*
 
 **Example:**
-change_ip.py -i 10.10.25.81 -o 10.10.25.82 -o 10.10.25.83
+<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>change_ip.py -i 10.10.25.81 -o 10.10.25.82 -o 10.10.25.83</code></pre>
 
 This command is run on node 10.10.25.81, which is a member of a 3-node cluster that also contains nodes 10.10.25.82 and 10.10.25.83.
 
 The script can be run on any of the nodes in the cluster. The following example is run on node 10.10.25.82:
-change_ip.py -i 10.10.25.82 -o 10.10.25.81 -o 10.10.25.83
+<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>change_ip.py -i 10.10.25.82 -o 10.10.25.81 -o 10.10.25.83</code></pre>

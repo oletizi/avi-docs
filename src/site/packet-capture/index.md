@@ -48,37 +48,100 @@ Once a traffic capture has completed, it will show in the Completed Captures tab
 ### Packet Capture Via CLI
 
 To capture packets via the CLI, log into the Vantage CLI shell, then enter the packet capture sub-mode for the desired virtual service:
-debug virtualservice Test-virtual service Updating an existing object. Currently, the object is: +-------+--------------------+ | Field | Value | +-------+--------------------+ | uuid | virtualservice-0-1 | | name | Test-virtual service | +-------+--------------------+  
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>debug virtualservice Test-virtual service
+Updating an existing object. Currently, the object is:
++-------+--------------------+
+| Field | Value              |
++-------+--------------------+
+| uuid  | virtualservice-0-1 |
+| name  | Test-virtual service            |
++-------+--------------------+
+&nbsp;</code></pre>
 
 Parameters may be defined for the packet capture. By default, the capture is performed within the context of the selected virtual service. It is also performed on all Avi SEs that are handling the virtual service traffic, and includes the packets from the client and server side of the Avi SE.
 
-capture_params duration
- Time, in minutes. Default is unlimited. capture_params num_pkts
- Maximum number of packets to collect. Default is unlimited. capture_params pkt_size
- Packet size, or snap length, to capture. Default is unlimited. debug_ip addrs
- IPv4 Address format debug_ip prefixes
- IPv4 Prefix format <x.x.x.x/x> debug_virtual service_hm_include
- Include health monitor packets in the capture debug_virtual service_hm_none
- Omit health monitor packets from the capture (the default) debug_virtual service_hm_only
- Capture only health monitor packets
+<table class="table table-hover"> 
+ <thead> 
+  <tr> 
+   <th></th> 
+   <th></th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td><code>capture_params duration</code></td> 
+   <td>Time, in minutes. Default is unlimited.</td> 
+  </tr> 
+  <tr> 
+   <td><code>capture_params num_pkts</code></td> 
+   <td>Maximum number of packets to collect. Default is unlimited.</td> 
+  </tr> 
+  <tr> 
+   <td><code>capture_params pkt_size</code></td> 
+   <td>Packet size, or snap length, to capture. Default is unlimited.</td> 
+  </tr> 
+  <tr> 
+   <td><code>debug_ip addrs</code></td> 
+   <td>IPv4 Address format</td> 
+  </tr> 
+  <tr> 
+   <td><code>debug_ip prefixes</code></td> 
+   <td>IPv4 Prefix format &lt;x.x.x.x/x&gt;</td> 
+  </tr> 
+  <tr> 
+   <td><code>debug_virtual service_hm_include</code></td> 
+   <td>Include health monitor packets in the capture</td> 
+  </tr> 
+  <tr> 
+   <td><code>debug_virtual service_hm_none</code></td> 
+   <td>Omit health monitor packets from the capture (the default)</td> 
+  </tr> 
+  <tr> 
+   <td><code>debug_virtual service_hm_only</code></td> 
+   <td>Capture only health monitor packets</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The *debug_ip* command enters a sub-mode. This allows multiple IP addresses or IP subnets to be entered. (Omit the *debug_ip* option for for subsequent entries.) Save to commit the desired IPs and return to the previous menu.
 
 **Warning**:  By default, no maximum packets or duration of time to be captured are defined. It is recommended to include a maximum packet capture as shown in the following example. Without a limit, the capture will run until filling the Avi SE drive, potentially disrupting service.
 
 Specify parameters, including the maximum number of packets to capture:
-debugvirtualservice> capture_params num_pkts 1000 debugvirtualservice> debug_ip addrs 10.10.10.10 debugvirtualservice:debug_ip> save  
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-99"><code>debugvirtualservice&gt; capture_params num_pkts 1000
+debugvirtualservice&gt; debug_ip addrs 10.10.10.10
+debugvirtualservice:debug_ip&gt; save
+&nbsp;</code></pre>
 
 Begin capturing based on the previously configured parameters:
 
-debugvirtualservice> capture debugvirtualservice> save +----------------+--------------------+ | Field | Value | +----------------+--------------------+ | uuid | virtualservice-0-1 | | name | Test-VS | | debug_ip | | | addrs[1] | 10.10.10.10 | | capture | True | | capture_params | | | duration | 0 mins | | num_pkts | 1000 | +----------------+--------------------+  
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="3-99"><code>debugvirtualservice&gt; capture
+debugvirtualservice&gt; save
++----------------+--------------------+
+| Field          | Value              |
++----------------+--------------------+
+| uuid           | virtualservice-0-1 |
+| name           | Test-VS            |
+| debug_ip       |                    |
+|   addrs[1]     | 10.10.10.10        |
+| capture        | True               |
+| capture_params |                    |
+|   duration     | 0 mins             |
+|   num_pkts     | 1000               |
++----------------+--------------------+
+&nbsp;</code></pre>
 
 Re-enter the packet capture sub-mode and stop an ongoing packet capture:
 
-debug virtualservice Test-virtual service debugvirtualservice> no capture debugvirtualservice> save  
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-99"><code>debug virtualservice Test-virtual service
+debugvirtualservice&gt; no capture
+debugvirtualservice&gt; save
+&nbsp;</code></pre>
 
 Export the packet capture to a remote system that can view it via a tool such as TCPdump or Wireshark:
 
-show debug virtualservice Test-virtual service capture Please specify the destination directory: /tmp Downloaded the attachment to /tmp/virtual service_virtualservice.20141205_192033.pcap bash  
- 
-scp /tmp/virtual service_virtualservice.192033.pcap user@10.1.1.1:/tmp
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-99"><code>show debug virtualservice Test-virtual service capture
+Please specify the destination directory: /tmp
+Downloaded the attachment to /tmp/virtual service_virtualservice.20141205_192033.pcap
+bash
+&nbsp;</code></pre> <pre crayon="false" class="command-line language-bash" data-prompt="root@avi-CTRL:~#"><code>scp /tmp/virtual service_virtualservice.192033.pcap user@10.1.1.1:/tmp</code></pre>

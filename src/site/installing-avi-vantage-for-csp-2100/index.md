@@ -13,7 +13,46 @@ The topology shown below consists of an Avi Controller and some Avi Service Engi
 ## Networking Interfaces for CSP-2100
 
 The following table shows the names of physical interfaces (pNICs) on the CSP-2100, along with their supported speeds.
-Name Speed enp1s0f0 1 Gbps enp1s0f1 1 Gbps enp4s0f0 1 Gbp enp4s0f1 1 Gbps enp4s0f2 1 Gbps enp4s0f3 1 Gbps enp7s0f0 10 Gbps enp7s0f1 10 Gbps
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Name</th> 
+   <th width="50%">Speed</th> 
+  </tr> 
+  <tr> 
+   <td>enp1s0f0</td> 
+   <td>1 Gbps</td> 
+  </tr> 
+  <tr> 
+   <td>enp1s0f1</td> 
+   <td>1 Gbps</td> 
+  </tr> 
+  <tr> 
+   <td>enp4s0f0</td> 
+   <td>1 Gbp</td> 
+  </tr> 
+  <tr> 
+   <td>enp4s0f1</td> 
+   <td>1 Gbps</td> 
+  </tr> 
+  <tr> 
+   <td>enp4s0f2</td> 
+   <td>1 Gbps</td> 
+  </tr> 
+  <tr> 
+   <td>enp4s0f3</td> 
+   <td>1 Gbps</td> 
+  </tr> 
+  <tr> 
+   <td>enp7s0f0</td> 
+   <td>10 Gbps</td> 
+  </tr> 
+  <tr> 
+   <td>enp7s0f1</td> 
+   <td>10 Gbps</td> 
+  </tr> 
+ </tbody> 
+</table>
 
  
 
@@ -52,73 +91,118 @@ Use the following steps to deploy the Avi Controller using the CSP UI:
 ### Deploy Using REST API
 
 CSP uses basic authentication for the REST API. Use the following **curl** command to create the Controller service:
-curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{ "service":{ "disk_size": "70", "name": "Controller", "power": "on", "iso_name": "controller.qcow2", "numcpu": 4, "memory": 12288, "vnics": { "vnic": [ { "nic":"0", "type":"access", "tagged":"false", "network_name":"enp1s0f0" } ] } } }' "https:///api/running/services/"
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-10
-11
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20
-21
-
-22  
-
-curl  - X  POST  -- user csp - username : csp - password  - H  "Content-Type: application/json"  - d  '{
-    "service":{
-
-      "disk_size": "70",
-      "name": "Controller",
-
-      "power": "on",
-      "iso_name": "controller.qcow2",
-
-      "numcpu": 4,
-      "memory": 12288,
-
-      "vnics": {
-        "vnic": [
-
-                {
-                    "nic":"0",
-
-                    "type":"access",
-                    "tagged":"false",
-
-                    "network_name":"enp1s0f0"
-                }
-
-        ]
-      }
-
-    }
-}'  "https:///api/running/services/"
-
- 
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 
 ### Controller IP Address
 
@@ -140,43 +224,118 @@ If DHCP is not configured on the management network, configure a static IP addre
 
 1. From the console, log in using the default credentials (admin/admin).
 1. Edit the /etc/network/interfaces file to read as shown below. (Make sure to use the IP addresses that apply to your deployment. These addresses are only an example.)
-sudo vi /etc/network/interfaces auto lo iface lo inet loopback auto eth0 iface eth0 inet static address 10.128.2.20 netmask 255.255.255.0 gateway 10.128.2.1 netserver 8.8.8.8
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12 sudo vi  / etc / network / interfaces
-
- 
 auto lo
-
 iface lo inet loopback
- 
 
 auto eth0
 iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-             address  10.128.2.20
-netmask  255.255.255.0
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-gateway  10.128.2.1
-             netserver  8.8.8.8
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
- 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
+
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 1. Save and exit.
 1. Reboot the Avi Controller.
 
@@ -241,197 +400,683 @@ This section walks through the workflow for deploying a Linux host on CSP, with 
 
 1. Login to the Linux host from the console (credentials root/default).
 1. List the interfaces.
-[root@centos-host ~]/# ip a
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1 [ root @ centos - host  ~ ] /# ip a
-  eth0 is the management interface and ens3 is the data interface.
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
+
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
+
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>  eth0 is the management interface and ens3 is the data interface.
 1. Edit/create the config file for the management interface to read as below:
-[root@centos-host ~]/# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0 DEVICE="eth0" BOOTPROTO="static" ONBOOT="yes" TYPE="Ethernet" USERCTL="yes" PEERDNS="yes" IPV6INIT="no" PERSISTENT_DHCLIENT="1" IPADDR=10.128.2.18 NETMASK=255.255.255.0 GATEWAY=10.128.2.1
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-10
-11
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-12
-13
-
-14 [ root @ centos - host  ~ ] /# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
-
- 
-DEVICE = "eth0"
-
-BOOTPROTO = "static"
-ONBOOT = "yes"
-
-TYPE = "Ethernet"
-USERCTL = "yes"
-
-PEERDNS = "yes"
-IPV6INIT = "no"
-
-PERSISTENT_DHCLIENT = "1"
-IPADDR = 10.128.2.18
-
-NETMASK = 255.255.255.0
-GATEWAY = 10.128.2.1
-
- 
-  In above example, 10.128.2.18 is the management IP and 10.128.2.1 is the gateway IP.
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>  In above example, 10.128.2.18 is the management IP and 10.128.2.1 is the gateway IP.
 1. Edit/create the config file for the data interface to read as below:
-[root@centos-host ~]/# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3 DEVICE="ens3" BOOTPROTO="static" ONBOOT="yes" TYPE="Ethernet" USERCTL="yes" PEERDNS="yes" IPV6INIT="no" PERSISTENT_DHCLIENT="1" IPADDR=10.128.12.62 NETMASK=255.255.255.0
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-10
-11
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-12
-13 [ root @ centos - host  ~ ] /# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
-
- 
-DEVICE = "ens3"
-
-BOOTPROTO = "static"
-ONBOOT = "yes"
-
-TYPE = "Ethernet"
-USERCTL = "yes"
-
-PEERDNS = "yes"
-IPV6INIT = "no"
-
-PERSISTENT_DHCLIENT = "1"
-IPADDR = 10.128.12.62
-
-NETMASK = 255.255.255.0
- 
-  In above example 10.128.12.62 is the data interface IP. Do not configure the gateway IP; this will be configured from the Controller UI.
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>  In above example 10.128.12.62 is the data interface IP. Do not configure the gateway IP; this will be configured from the Controller UI.
 1. Restart network for the configuration to take effect. This may take some time.
-[root@centos-host ~]/#  sudo systemctl network restart
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1 [ root @ centos - host  ~ ] /#  sudo systemctl network restart
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
+
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
+
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 1. Check if default gateway is configured correctly. (E.g., 10.128.2.1 is the management default gateway in the below output.)
-[root@centos-host ~]/# routel|grep default        default         10.128.2.1                                      eth0        default        unreachable                   kernel              lo unspec        default        unreachable                   kernel              lo unspec
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6 [ root @ centos - host  ~ ] /# routel|grep default
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
- 
-        default          10.128.2.1                                         eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-        default         unreachable                    kernel               lo unspec
-        default         unreachable                    kernel               lo unspec
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
- 
-  Note: If the gateway is not configured, restart network again.
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>  Note: If the gateway is not configured, restart network again.
 1. List the interfaces and check the IPs.
-[root@centos-host ~]/# ip a 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00    inet 127.0.0.1/8 scope host lo       valid_lft forever preferred_lft forever    inet6 ::1/128 scope host       valid_lft forever preferred_lft forever 2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000    link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff    inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0       valid_lft forever preferred_lft forever    inet6 fe80::4a:80ff:fe02:104a/64 scope link       valid_lft forever preferred_lft forever 3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000    link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff    inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3       valid_lft forever preferred_lft forever    inet6 fe80::92e2:baff:feac:1291/64 scope link       valid_lft forever preferred_lft forever 4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN    link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff    inet 172.17.0.1/16 scope global docker0       valid_lft forever preferred_lft forever
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-10
-11
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-12
-13
-
-14
-15
-
-16
-17
-
-18
-19
-
-20
-21
-
-22
-23
-
-24
-25 [ root @ centos - host  ~ ] /# ip a
-
- 
-1 :  lo :  & lt ; LOOPBACK , UP , LOWER_UP & gt ;  mtu  65536  qdisc noqueue state UNKNOWN
-
-    link / loopback  00 : 00 : 00 : 00 : 00 : 00  brd  00 : 00 : 00 : 00 : 00 : 00
-    inet  127.0.0.1 / 8  scope host lo
-
-       valid_lft forever preferred_lft forever
-    inet6  :: 1 / 128  scope host
-
-       valid_lft forever preferred_lft forever
-2 :  eth0 :  & lt ; BROADCAST , MULTICAST , UP , LOWER_UP & gt ;  mtu  1500  qdisc pfifo_fast state UP qlen  1000
-
-    link / ether  02 : 4a : 80 : 02 : 10 : 4a  brd ff : ff : ff : ff : ff : ff
-    inet  10.128.2.18 / 24  brd  10.128.2.255  scope global  eth0
-
-       valid_lft forever preferred_lft forever
-    inet6 fe80 :: 4a : 80ff : fe02 : 104a / 64  scope link
-
-       valid_lft forever preferred_lft forever
-3 :  ens3 :  & lt ; BROADCAST , MULTICAST , UP , LOWER_UP & gt ;  mtu  1500  qdisc mq state UP qlen  1000
-
-    link / ether  90 : e2 : ba : ac : 12 : 91  brd ff : ff : ff : ff : ff : ff
-    inet  10.128.12.62 / 24  brd  10.128.12.255  scope global  ens3
-
-       valid_lft forever preferred_lft forever
-    inet6 fe80 :: 92e2 : baff : feac : 1291 / 64  scope link
-
-       valid_lft forever preferred_lft forever
-4 :  docker0 :  & lt ; NO - CARRIER , BROADCAST , MULTICAST , UP & gt ;  mtu  1500  qdisc noqueue state DOWN
-
-    link / ether  02 : 42 : 23 : fb : 10 : cb brd ff : ff : ff : ff : ff : ff
-    inet  172.17.0.1 / 16  scope global  docker0
-
-       valid_lft forever preferred_lft forever
- 
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 
 ## Install Docker
 
@@ -441,150 +1086,371 @@ Avi Vantage for Linux server cloud is distributed as a Docker image. If Docker i
 
 1. Log in to the Linux host.
 1. Update yum packages:
-sudo yum update -y
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update -y</code></pre>
 1. Add the yum repo:
-sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF' [dockerrepo] name=Docker Repository baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/ enabled=1 gpgcheck=1 gpgkey=https://yum.dockerproject.org/gpg EOF
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9 sudo tee  / etc / yum . repos . d / docker . repo  & lt ; & lt ; - 'EOF'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-[ dockerrepo ]
-name = Docker Repository
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-baseurl = https : //yum.dockerproject.org/repo/main/centos/$releasever/
-enabled = 1
-
-gpgcheck = 1
-gpgkey = https : //yum.dockerproject.org/gpg
-
-EOF
- 
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 1. Install Docker:
-sudo yum install -y docker-engine
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install -y docker-engine</code></pre>
 1. Start Docker:
-sudo service docker start
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo service docker start</code></pre>
 1. To start Docker on boot, run the following command:
-sudo systemctl enable docker
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable docker</code></pre>
 1. Enter the **docker version** command to verify the Docker version that is installed and running.
-docker version Client: Version: 1.11.1 API version: 1.23 Go version: go1.5.4 Git commit: 5604cbe Built: Wed Apr 27 00:34:42 2016 OS/Arch: linux/amd64 Server: Version: 1.11.1 API version: 1.23 Go version: go1.5.4 Git commit: 5604cbe Built: Wed Apr 27 00:34:42 2016 OS/Arch: linux/amd64
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-10
-11
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-12
-13
-
-14
-15
-
-16
-17 docker version
-
-             Client :
-Version :        1.11.1
-
-API version :    1.23
-Go version :    go1 . 5.4
-
-Git commit :    5604cbe
-Built :          Wed Apr  27  00 : 34 : 42  2016
-
-OS / Arch :        linux / amd64
- 
-
-Server :
-Version :        1.11.1
-
-API version :    1.23
-Go version :    go1 . 5.4
-
-Git commit :    5604cbe
-Built :          Wed Apr  27  00 : 34 : 42  2016
-
-OS / Arch :        linux / amd64
- 
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 
 For the latest Docker installation instructions, please refer to <a href="https://docs.docker.com/engine/installation/linux/centos/">https://docs.docker.com/engine/installation/linux/centos/</a>.
 
 ### Red Hat Enterprise Linux 7
 
 1. Register the Linux server with Red Hat:
-subscription-manager register
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
 1. Enable the repository for extra services:
-subscription-manager –enable=rhel-7-server-extras-rpms
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager –enable=rhel-7-server-extras-rpms</code></pre>
 1. Install updates to Red Hat:
-sudo yum update
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
 1. Run the following command to add Docker to the yum repository:
-cat >/etc/um.respos.d/docker.repo <
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cat &gt;/etc/um.respos.d/docker.repo &lt;</code></pre>
 1. Install Docker:
-sudo yum install -y docker-engine
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install -y docker-engine</code></pre>
 1. Start Docker services:
-sudo systemctl start docker
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start docker</code></pre>
 1. Enable Docker services:
-sudo systemctl enable docker
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable docker</code></pre>
 1. Enter the **docker version** command to verify the Docker version that is installed and running. In this example, the version is 1.8.1:
-docker version Client: Version: 1.8.1 API version: 1.20 Go version: go1.4.2 Git commit: d12ea79 Built: Thu Aug 13 02:35:49 UTC 2015 OS/Arch: linux/amd64 Server: Version: 1.8.1 API version: 1.20
+<pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
+    "service":{
+      "disk_size": "70",
+      "name": "Controller",
+      "power": "on",
+      "iso_name": "controller.qcow2",
+      "numcpu": 4,
+      "memory": 12288,
+      "vnics": {
+        "vnic": [
+                {
+                    "nic":"0",
+                    "type":"access",
+                    "tagged":"false",
+                    "network_name":"enp1s0f0"
+                }
+        ]
+      }
+    }
+}' "https:///api/running/services/" sudo vi /etc/network/interfaces
 
-1
+auto lo
+iface lo inet loopback
 
-2
-3
+auto eth0
+iface eth0 inet static
+            address 10.128.2.20
+	netmask 255.255.255.0
+	gateway 10.128.2.1
+            netserver 8.8.8.8 [root@centos-host ~]# ip a [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
-4
-5
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.2.18
+NETMASK=255.255.255.0
+GATEWAY=10.128.2.1 [root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
-6
-7
+DEVICE="ens3"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+PERSISTENT_DHCLIENT="1"
+IPADDR=10.128.12.62
+NETMASK=255.255.255.0 [root@centos-host ~]# &nbsp;sudo systemctl network restart [root@centos-host ~]# routel|grep default
 
-8
-9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.128.2.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unreachable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kernel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lo unspec [root@centos-host ~]# ip a
 
-10
-11
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+&nbsp;&nbsp;&nbsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+&nbsp;&nbsp;&nbsp;inet 127.0.0.1/8 scope host lo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 ::1/128 scope host
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 02:4a:80:02:10:4a brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.2.18/24 brd 10.128.2.255 scope global eth0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::4a:80ff:fe02:104a/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+3: ens3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+&nbsp;&nbsp;&nbsp;link/ether 90:e2:ba:ac:12:91 brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 10.128.12.62/24 brd 10.128.12.255 scope global ens3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+&nbsp;&nbsp;&nbsp;inet6 fe80::92e2:baff:feac:1291/64 scope link
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN
+&nbsp;&nbsp;&nbsp;link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
+&nbsp;&nbsp;&nbsp;inet 172.17.0.1/16 scope global docker0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid_lft forever preferred_lft forever sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF docker version
+             Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64
 
-12 docker version
-
-             Client :
-             Version :        1.8.1
-
-             API version :    1.20
-             Go version :    go1 . 4.2
-
-             Git commit :    d12ea79
-             Built :          Thu Aug  13  02 : 35 : 49  UTC  2015
-
-             OS / Arch :        linux / amd64
-             Server :
-
-             Version :        1.8.1
-             API version :    1.20
-
- 
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Wed Apr 27 00:34:42 2016
+ OS/Arch:      linux/amd64 docker version
+             Client:
+             Version:      1.8.1
+             API version:  1.20
+             Go version:   go1.4.2
+             Git commit:   d12ea79
+             Built:        Thu Aug 13 02:35:49 UTC 2015
+             OS/Arch:      linux/amd64
+             Server:
+             Version:      1.8.1
+             API version:  1.20</code></pre>
 
 Note: The latest installation instructions can be found at <a href="https://docs.docker.com/v1.8/installation/rhel/">https://docs.docker.com/v1.8/installation/rhel/</a>.
 
@@ -622,11 +1488,11 @@ The public key created in the section above needs to be copied to each Linux hos
 
 1. Log into the Linux host as root.
 1. Create the .ssh directory and change to it.
-mkdir .ssh && chmod 700 .ssh && cd .ssh
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre>
 1. Add the Avi Controller’s public key to the authorized key file by pasting the key obtained in the above section into the following command line:
-echo "paste-key-string-copied-from-Controller" > ./authorized_keys
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-string-copied-from-Controller" &gt; ./authorized_keys</code></pre>
 1. Set the proper permissions for the key file:
-chmod 644 authorized_keys
+<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>chmod 644 authorized_keys</code></pre>
 
 Repeat these steps on each Linux host.
 

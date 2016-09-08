@@ -45,7 +45,58 @@ Vantage can be deployed into an OpenStack cloud in one of the following modes. T
 Note: The Avi-managed LBaaS option is recommended for its ease of use and advanced feature accessibility.
 
 The following table compares each deployment mode:
-Single-tenant Mode Avi-managed LBaaS Mode OpenStack-managed LBaaS Mode Administrator privileges for cloud required No Yes Yes Managed by tenant user No Yes Yes Automated tenant creation N/A Yes Yes Advanced load-balancing features Yes Yes Limited Analytics service Yes Yes Yes Avi LBaaS driver install required No No Yes Avi extension for Horizon dashboard required No No Yes (required for SSL offload and analytics)
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%"></th> 
+   <th>Single-tenant Mode</th> 
+   <th>Avi-managed LBaaS Mode</th> 
+   <th>OpenStack-managed LBaaS Mode</th> 
+  </tr> 
+  <tr> 
+   <td>Administrator privileges for cloud required</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Managed by tenant user</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Automated tenant creation</td> 
+   <td>N/A</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Advanced load-balancing features</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Limited</td> 
+  </tr> 
+  <tr> 
+   <td>Analytics service</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Avi LBaaS driver install required</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes</td> 
+  </tr> 
+  <tr> 
+   <td>Avi extension for Horizon dashboard required</td> 
+   <td>No</td> 
+   <td>No</td> 
+   <td>Yes (required for SSL offload and analytics)</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ## Deployment Prerequisites
 
@@ -54,7 +105,28 @@ The physical and software requirements differ depending on the deployment mode.
 ### Virtual Machine Requirements
 
 The following table lists the minimum requirements for the VMs on which the Avi Controller and SEs are installed.
-Component Memory vCPUs HD Avi Controller 24 GB 8 64 GB Service Engine 2 GB 2 10 GB
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th width="60%">Component</th> 
+   <th>Memory</th> 
+   <th>vCPUs</th> 
+   <th>HD</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>24 GB</td> 
+   <td>8</td> 
+   <td>64 GB</td> 
+  </tr> 
+  <tr> 
+   <td>Service Engine</td> 
+   <td>2 GB</td> 
+   <td>2</td> 
+   <td>10 GB</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Add 3 GB for each additional vCPU in a Controller.
 Add 1GB for each additional vCPU in an SE.
@@ -64,7 +136,34 @@ If you allocate more than the minimum number of vCPUs required, make sure to als
 ### Software Requirements
 
 The following table lists the software requirements.
-Software Version Avi Controller 16.2 OpenStack (and Neutron service) One of the following: Havana, Icehouse, Juno, Kilo, or Liberty Neutron extension for allowed-address-pair Avi LBaaS driver 16.2 Avi SSL extension for OpenStack Horizon 16.2
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Software</th> 
+   <th width="60%">Version</th> 
+  </tr> 
+  <tr> 
+   <td>Avi Controller</td> 
+   <td>16.2</td> 
+  </tr> 
+  <tr> 
+   <td>OpenStack (and Neutron service)</td> 
+   <td>One of the following: Havana, Icehouse, Juno, Kilo, or Liberty</td> 
+  </tr> 
+  <tr> 
+   <td>Neutron extension for allowed-address-pair</td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td>Avi LBaaS driver</td> 
+   <td>16.2</td> 
+  </tr> 
+  <tr> 
+   <td>Avi SSL extension for OpenStack Horizon</td> 
+   <td>16.2</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 The Avi Vantage image is available as a QCOW2 or raw image of the Controller and SEs. The SE software is embedded in the Controller image and does require separate installation.
 
@@ -75,14 +174,37 @@ Note: Installation of Avi Vantage into DevStack is supported only if the DevStac
 ### Protocol Ports Used by Avi Vantage for Management Communication
 
 In an OpenStack deployment, the Avi Controller and Avi Service Engines use the following ports for management. The firewall should allow traffic for these ports.
-Traffic Source Traffic Destination Ports To Allow Avi Controller Avi Controller TCP 22 (SSH)
-TCP 8443
-TCP 5054 Avi Service Engine TCP 22 Management Net *See section below the table.* Avi Service Engine Avi Controller TCP 22
-TCP 8443
-UDP 123 Management Net TCP 22
-TCP 80 *(optional)*
-TCP 443
-TCP 5054 *(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)*
+<table class="table"> 
+ <tbody> 
+  <tr> 
+   <th>Traffic Source</th> 
+   <th>Traffic Destination</th> 
+   <th width="60%">Ports To Allow</th> 
+  </tr> 
+  <tr> 
+   <td rowspan="3">Avi Controller</td> 
+   <td>Avi Controller</td> 
+   <td>TCP 22 (SSH)<br> TCP 8443<br> TCP 5054</td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td>TCP 22</td> 
+  </tr> 
+  <tr> 
+   <td>Management&nbsp;Net</td> 
+   <td><em>See section below the table.</em></td> 
+  </tr> 
+  <tr> 
+   <td>Avi Service Engine</td> 
+   <td rowspan="2">Avi Controller</td> 
+   <td>TCP 22<br> TCP 8443<br> UDP 123</td> 
+  </tr> 
+  <tr> 
+   <td>Management&nbsp;Net</td> 
+   <td>TCP 22<br> TCP 80 <em>(optional)</em><br> TCP 443<br> TCP 5054 <em>(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em></td> 
+  </tr> 
+ </tbody> 
+</table>
 
 ### Ports Used by Controller for Network Services
 
@@ -99,76 +221,66 @@ The firewall also should allow traffic from the Controller to these ports.
 ## Importing User Accounts from Keystone
 
 Using the Avi REST API, user roles can be exported from Keystone into the Avi Controller and directly mapped to role names in the Controller. The accounts do not need to be recreated on the Controller. Here is an example:
-"openstack_configuration": { .... "role_mapping": [ {"os_role": "admin", "avi_role": "Tenant-Admin"}, {"os_role": "_member_", "avi_role": "Tenant-Admin"}, {"os_role": "/*", "avi_role": "Application-Operator"} ], .... }
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10
-11
-
-12
-13 "openstack_configuration" :
-
+<pre><code class="language-lua">"openstack_configuration": 
 {
-     . . . .
-
-     "role_mapping" :  [
-       { "os_role" :  "admin" ,
-
-         "avi_role" :  "Tenant-Admin" } ,
-       { "os_role" :  "_member_" ,
-
-         "avi_role" :  "Tenant-Admin" } ,
-       { "os_role" :  "/*" ,
-
-         "avi_role" :  "Application-Operator" }
-     ] ,
-
-     . . . .
-}
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+} "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} import avidashboard.enabled           
+INSTALLED_APPS = list(INSTALLED_APPS)  # Make sure it's mutable
+settings.update_dashboards([
+  openstack_dashboard.enabled,
+  openstack_dashboard.local.enabled,
+  avidashboard.enabled                 
+], HORIZON_CONFIG, INSTALLED_APPS) AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net", 
+                  "RegionB": "regionb.avi-lbaas.example.net", }</code></pre>
 
 The role_mapping parameter is an ordered list, where each item specifies how a Keystone role (os_role) maps to a role in the Controller (avi_role). A default mapping can be defined for any Keystone role by specifying the “ /* ” wildcard for the os_role field. In the above example, roles admin and _member_ from Keystone are mapped to the role Tenant-Admin in the Controller. Further, any other role from Keystone is mapped to role Application-Operator on the Controller.
 
 In the following example, only users with role lbaas_project_admin are allowed to access the Controller:
-"openstack_configuration": { .... "role_mapping": [ {"os_role": "lbaas_project_admin", "avi_role": "Tenant-Admin"} ], .... }
-
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9 "openstack_configuration" :
-
+<pre><code class="language-lua">"openstack_configuration": 
 {
-     . . . .
-
-     "role_mapping" :  [
-       { "os_role" :  "lbaas_project_admin" ,
-
-         "avi_role" :  "Tenant-Admin" }
-     ] ,
-
-     . . . .
-}
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+} "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} import avidashboard.enabled           
+INSTALLED_APPS = list(INSTALLED_APPS)  # Make sure it's mutable
+settings.update_dashboards([
+  openstack_dashboard.enabled,
+  openstack_dashboard.local.enabled,
+  avidashboard.enabled                 
+], HORIZON_CONFIG, INSTALLED_APPS) AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net", 
+                  "RegionB": "regionb.avi-lbaas.example.net", }</code></pre>
 
 ## Deploying Single-tenant Mode
 
@@ -442,63 +554,82 @@ To begin, perform all the steps in <a href="#Deploying_Avi-managed_LBaaS_Mode">D
 
 This part of the installation requires an account for access to the OpenStack Horizon server. The Git and pip utilities also are required.
 
-1. Log into the OpenStack Horizon server, and locally clone the Avi SSL enhancement repository: 
-git clone https://github.com/avinetworks/avi-horizon-dashboard
-1. Switch to the Icehouse, Juno, or Kilo branch: 
-cd avi-horizon-dashboard; git checkout icehouse
-1. Create a pip package: 
-python setup.py sdist
+1. Log into the OpenStack Horizon server, and locally clone the Avi SSL enhancement repository: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>git clone https://github.com/avinetworks/avi-horizon-dashboard</code></pre>
+1. Switch to the Icehouse, Juno, or Kilo branch: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd avi-horizon-dashboard; git checkout icehouse</code></pre>
+1. Create a pip package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>python setup.py sdist</code></pre>
 1. This step creates the following pip package in the dist/ directory: avidashboard-0.2.1.dev39.tar.gz
 1. Copy the pip package to the Horizon servers.
-1. Install the pip package: 
-pip install ./avidashboard-0.2.1.dev39.tar.gz
+1. Install the pip package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>pip install ./avidashboard-0.2.1.dev39.tar.gz</code></pre>
 1. Update the Horizon setting files to enable Avi SSL and Analytics tabs on the Horizon dashboard:
 
 1. Modify the Horizon settings file to add the Avi dashboard by inserting two highlighted linesin the following snippet. Usually, the Horizon settings file is located here: /usr/share/openstack_dashboard/openstack_dashboard/settings.py.
-import avidashboard.enabled INSTALLED_APPS = list(INSTALLED_APPS) /# Make sure it's mutable settings.update_dashboards([ openstack_dashboard.enabled, openstack_dashboard.local.enabled, avidashboard.enabled ], HORIZON_CONFIG, INSTALLED_APPS)
-
-1
-
-2
-3
-
-4
-5
-
-6
-7 import avidashboard.enabled          
-
-INSTALLED_APPS = list(INSTALLED_APPS)  /# Make sure it's mutable
+<pre><code class="language-lua">"openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+} "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} import avidashboard.enabled           
+INSTALLED_APPS = list(INSTALLED_APPS)  # Make sure it's mutable
 settings.update_dashboards([
-
-  openstack_dashboard.enabled,
-  openstack_dashboard.local.enabled,
-
-  avidashboard.enabled                
-], HORIZON_CONFIG, INSTALLED_APPS)
+  openstack_dashboard.enabled,
+  openstack_dashboard.local.enabled,
+  avidashboard.enabled                 
+], HORIZON_CONFIG, INSTALLED_APPS) AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net", 
+                  "RegionB": "regionb.avi-lbaas.example.net", }</code></pre>
 
 1. Add the IP address of the Avi Controller to the Horizon local_settings file. Usually, this file is located here: /etc/openstack_dashboard/local_settings.py
-AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net", "RegionB": "regionb.avi-lbaas.example.net", }
+<pre><code class="language-lua">"openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "admin",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "_member_",
+        "avi_role": "Tenant-Admin"},
+       {"os_role": "*",
+        "avi_role": "Application-Operator"}
+    ],
+    ....
+} "openstack_configuration": 
+{
+    ....
+    "role_mapping": [
+       {"os_role": "lbaas_project_admin",
+        "avi_role": "Tenant-Admin"}
+    ],
+    ....
+} import avidashboard.enabled           
+INSTALLED_APPS = list(INSTALLED_APPS)  # Make sure it's mutable
+settings.update_dashboards([
+  openstack_dashboard.enabled,
+  openstack_dashboard.local.enabled,
+  avidashboard.enabled                 
+], HORIZON_CONFIG, INSTALLED_APPS) AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net", 
+                  "RegionB": "regionb.avi-lbaas.example.net", }</code></pre>
 
-1
+1. *(Optional)* Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre>
 
-2 AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net",
-
-                  "RegionB": "regionb.avi-lbaas.example.net", }
-
-1. *(Optional)* Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) 
-AVI_ANALYTICS_TAB_ENABLED = True
-
-1. *(Optional)* Enable the full LBaaS panel to be the Vantage web interface by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) 
-AVI_LBAAS_FULL_UI = True
- Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo version</a>. The _tab_group.html file is located in one of the following directories:
+1. *(Optional)* Enable the full LBaaS panel to be the Vantage web interface by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo version</a>. The _tab_group.html file is located in one of the following directories:
 
 * **Red Hat:** /usr/lib/python2.7/site-packages/horizon/templates/horizon/common/_tab_group.html
 * **Ubuntu:** /usr/lib/python2.7/dist-packages/horizon/templates/horizon/common/_tab_group.html
 
-1. Restart horizon. For example: 
-apache2ctl restart
- Important! Restarting Horizon is required to complete this procedure.
+1. Restart horizon. For example: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>apache2ctl restart</code></pre> Important! Restarting Horizon is required to complete this procedure.
 
 ### New Horizon Tabs for Vantage
 

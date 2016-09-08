@@ -16,4 +16,61 @@ Vantage may be deployed in a number of different environments, both with or with
 **Write Access Mode:**  This mode grants Vantage full write access to the orchestrator. Vantage can automatically create, modify, and remove SEs and other resources as needed to adapt to changing traffic needs. This is the recommended deployment mode when available for a cloud environment. Password access is required to the orchestrator. (An exception is Amazon Web Services [AWS]. AWS requires an access key ID and secret access key, or a preconfigured role for access.)
 
 The following table shows the access modes available for each supported cloud environment.
-**None** **Read** **Write** vCenter Y Y Y vCenter w APIC   Y OpenStack Y  Y CloudStack Y  Y AWS Y  Y Mesos   Y Bare Metal Y
+<table dir="ltr" border="1" cellspacing="0" cellpadding="0"> 
+ <colgroup> 
+  <col width="100"> 
+  <col width="56"> 
+  <col width="55"> 
+  <col width="56"> 
+ </colgroup> 
+ <tbody> 
+  <tr> 
+   <td> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;None&quot;]"> <strong>None</strong> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Read&quot;]"> <strong>Read</strong> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Write&quot;]"> <strong>Write</strong> </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;vCenter&quot;]"> vCenter </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;vCenter w APIC&quot;]"> vCenter w APIC </td> 
+   <td> </td> 
+   <td> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;OpenStack&quot;]"> OpenStack </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+   <td> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;CloudStack&quot;]"> CloudStack </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+   <td> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;AWS&quot;]"> AWS </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+   <td> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;Mesos&quot;]"> Mesos </td> 
+   <td> </td> 
+   <td> </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+  </tr> 
+  <tr> 
+   <td data-sheets-value="[null,2,&quot;Bare Metal&quot;]"> Bare Metal </td> 
+   <td style="text-align: center;" data-sheets-value="[null,2,&quot;Y&quot;]"> Y </td> 
+   <td> </td> 
+   <td> </td> 
+  </tr> 
+ </tbody> 
+</table>

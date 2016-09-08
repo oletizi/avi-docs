@@ -21,4 +21,6 @@ If DNS resolves to multiple IP addresses, the list below the VIP field will incl
 The Controller will periodically recheck with DNS to see whether the name resolution has changed. If the resolution comes back with a different address, the Controller will update/change the VIP address.
 
 The default DNS refresh time is 60 minutes. This may be changed using the following CLI command:
-: > configure controller properties dns_refresh_period 50 : > save
+<pre crayon="false" class="">: &gt; configure controller properties dns_refresh_period 50
+
+: &gt; save</pre>

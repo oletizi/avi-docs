@@ -29,4 +29,5 @@ The names of Vantage user accounts that are maintained locally, in the Controlle
 User accounts created through Keystone or LDAP / AD have the same limitations as other user accounts in those authentication systems.
 * 
 Vantage user names that include any of the supported special characters ( . @ + - _ ) can access Vantage through the web interface, API, or CLI. However, these accounts cannot access the Controller's Linux shell. For example:
-: > shell Shell access not allowed for this user
+<pre crayon="false" class="">: &gt; shell
+      Shell access not allowed for this user</pre>

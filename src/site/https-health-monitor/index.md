@@ -40,12 +40,7 @@ The following options are available for the HTTPS health monitor:
 
 * GET /index.htm
 * POST /upload.asp HTTP/1.0\r\nHost: www.site.com\r\nContent-Length: 10\r\nABCDE12345
-* **Path**:  The path may include the URI and query, such as
-
-/index.htm?user=test
-. If no path is specified, Vantage will use
-
-/
+* **Path**:  The path may include the URI and query, such as <code>/index.htm?user=test</code>. If no path is specified, Vantage will use <code>/</code>
 * **Version**:  The HTTP version can be 1.0 or 1.1. If no version is specified, Vantage will use 1.0.
 * **Host**:  If no Host header is specified, Vantage includes a host header populated with the server's name.  HTTP 1.1 servers expect a Host header to be included in the request.
 * **Carriage Return**:  By default, Vantage will add a carriage return line feed to the end of the send string in the form of \r\n.  For HTTP 1.0, and additional \r\n may be required.  For send strings that require multiple lines of data, such as headers, the carriage returns may need to be added, such as in the POST example above.
@@ -69,53 +64,35 @@ Sample HTTPS health monitor config:
 <a href="img/HTTPmonitor.png"><img src="img/HTTPmonitor.png" alt="HTTPmonitor" width="474" height="172"></a>
 
 Sample HTTPS health check send string:
-GET /health/local HTTP/1.0 User-Agent: avi/1.0 Host: 10.10.10.3 Accept: /*//*
+<pre><code class="language-lua">GET /health/local HTTP/1.0
+User-Agent: avi/1.0
+Host: 10.10.10.3
+Accept: */* HTTP/1.0 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Content-Type: text/plain
+Content-Length: 15
+Date: Fri, 20 May 2016 18:23:05 GMT
+Connection: close
 
-1
-
-2
-3
-
-4 GET  / health / local HTTP / 1.0
-
-User - Agent :  avi / 1.0
-Host :  10.10.10.3
-
-Accept :  /* / /*
+Health Check Ok</code></pre>
 
 Sample server response:
 
-HTTP/1.0 200 OK Server: Apache-Coyote/1.1 Cache-Control: no-cache, no-store Pragma: no-cache Content-Type: text/plain Content-Length: 15 Date: Fri, 20 May 2016 18:23:05 GMT Connection: close Health Check Ok
+<pre><code class="language-lua">GET /health/local HTTP/1.0
+User-Agent: avi/1.0
+Host: 10.10.10.3
+Accept: */* HTTP/1.0 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Content-Type: text/plain
+Content-Length: 15
+Date: Fri, 20 May 2016 18:23:05 GMT
+Connection: close
 
-1
-
-2
-3
-
-4
-5
-
-6
-7
-
-8
-9
-
-10 HTTP / 1.0  200  OK
-
-Server :  Apache - Coyote / 1.1
-Cache - Control :  no - cache ,  no - store
-
-Pragma :  no - cache
-Content - Type :  text / plain
-
-Content - Length :  15
-Date :  Fri ,  20  May  2016  18 : 23 : 05  GMT
-
-Connection :  close
- 
-
-Health Check Ok
+Health Check Ok</code></pre>
 
 The server response includes both the Response Code: *200*, and the Server Response Data: *Health Check ok*. Therefore this server will be marked up.
 Notice that Avi automatically includes additional headers in the send string, including User-Agent, Host, and Accept to ensure the server receives a fully formed request.

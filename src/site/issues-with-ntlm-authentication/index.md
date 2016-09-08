@@ -13,21 +13,15 @@ Avi Vantage has connection multiplexing enabled by default within the HTTP appli
 NTLM authenticated applications may require the HTTP health monitor to validate via NTLM for the check to succeed. This will require a custom, external monitor, such as the example below.
 
 *Script*
-/#!/bin/bash /#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L > /run/hmuser/$HM_NAME.out 2>/dev/null curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L | grep "200 OK”
-
-1
-
-2
-3 /#!/bin/bash
-
-/#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L > /run/hmuser/$HM_NAME.out 2>/dev/null
-curl http : //$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L  | grep "200 OK”
+<pre><code class="language-lua">#!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L  | grep "200 OK” USER='foo\administrator' PASS=foo123</code></pre>
 
 *Script Variables*
 
-USER='foo\administrator' PASS=foo123
-
-1 USER = 'foo\administrator'  PASS = foo123
+<pre><code class="language-lua">#!/bin/bash
+#curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L &gt; /run/hmuser/$HM_NAME.out 2&gt;/dev/null
+curl http://$IP:$PORT/Shared%20Documents/10m.dat -I -L --ntlm -u $USER:$PASS -I -L  | grep "200 OK” USER='foo\administrator' PASS=foo123</code></pre>
 
 ### 401 Unauthorized Errors
 

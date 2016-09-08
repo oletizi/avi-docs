@@ -78,10 +78,95 @@ Problem severities are defined below.  It is Avi Networks’ policy to work wit
 ### C.   RESPONSE AND ESCALATION
 
 1. Avi Networks will provide responses to problem reports, ongoing updates, and resolutions according to the following table:
-**Severity** **Initial Response** **Ongoing Updates** **Time to Provide Fix/Workaround** **S1** 30 mins Every Hour 4 hours **S2** 1 Hour Every 2 Hours 24 hours **S3** 4 Hours Every 1 Business Day 5 Business Days **S4** 24 Hours Every 3 Business Days 10 Business Days
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td bgcolor="ff7500" width="85"><strong><span style="color: white;">Severity</span></strong></td> 
+   <td bgcolor="ff7500"><strong><span style="color: white;">Initial Response</span></strong></td> 
+   <td bgcolor="ff7500"><strong><span style="color: white;">Ongoing Updates</span></strong></td> 
+   <td bgcolor="ff7500"><strong><span style="color: white;">Time to Provide Fix/Workaround</span></strong></td> 
+  </tr> 
+  <tr> 
+   <td width="85"><strong>S1</strong></td> 
+   <td>30 mins</td> 
+   <td>Every Hour</td> 
+   <td>4 hours</td> 
+  </tr> 
+  <tr> 
+   <td width="85"><strong>S2</strong></td> 
+   <td>1 Hour</td> 
+   <td>Every 2 Hours</td> 
+   <td>24 hours</td> 
+  </tr> 
+  <tr> 
+   <td width="85"><strong>S3</strong></td> 
+   <td>4 Hours</td> 
+   <td>Every 1 Business Day</td> 
+   <td>5 Business Days</td> 
+  </tr> 
+  <tr> 
+   <td width="85"><strong>S4</strong></td> 
+   <td>24 Hours</td> 
+   <td>Every 3 Business Days</td> 
+   <td>10 Business Days</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 1. Avi Networks will escalate unresolved problems according to the table below. Severity 1 problem escalation times are measured in Support Hours. Escalation times for all other Severity levels shall be measured only during Business Days, where a Business Day shall be measured from the time of the triggering event on the first Business Day to the same time on the next Business Day.
-**Elapsed Time** **Severity 1** **Severity 2** **Severity 3** **Severity 4** **1 Hour** Support Group Lead **4 Hour** Support Director Support Group Lead **24 Hour** VP Engineering Support Director **48 Hour** President (CEO) VP Engineering **72 Hour**   Support Group Lead **96 Hour**  President (CEO) Support Director Support Group Lead
+<table class="table table-hover"> 
+ <tbody> 
+  <tr> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Elapsed Time</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Severity 1</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Severity 2</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Severity 3</span></b></td> 
+   <td bgcolor="ff7500"><b><span style="color: white;">Severity 4</span></b></td> 
+  </tr> 
+  <tr> 
+   <td><b>1 Hour</b></td> 
+   <td>Support Group Lead</td> 
+   <td></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td><b>4 Hour</b></td> 
+   <td>Support Director</td> 
+   <td>Support Group Lead</td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td><b>24 Hour</b></td> 
+   <td>VP Engineering</td> 
+   <td>Support Director</td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td><b>48 Hour</b></td> 
+   <td>President (CEO)</td> 
+   <td>VP Engineering</td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td><b>72 Hour</b></td> 
+   <td></td> 
+   <td></td> 
+   <td>Support Group Lead</td> 
+   <td></td> 
+  </tr> 
+  <tr> 
+   <td><b>96 Hour</b></td> 
+   <td></td> 
+   <td>President (CEO)</td> 
+   <td>Support Director</td> 
+   <td>Support Group Lead</td> 
+  </tr> 
+ </tbody> 
+</table>
 
 Avi Networks will make contact information for the roles in the table above as necessary over the course of an escalation process.  Any changes to the initial contacts shall be communicated to the appropriate party as soon as reasonably possible, and/or incorporated into any applicable standard operating procedure document.
 

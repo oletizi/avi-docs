@@ -26,27 +26,25 @@ If creating a new user:
 ### Preparing SE hosts
 
 To prepare a host where Service Engines are launched, login to the host as a user that has sudo privileges and run the following command:
-curl -ks https://<controller-ip>/api/linux_host_install?username=<username> | sudo bash
-
-1 curl  - ks https : //<controller-ip>/api/linux_host_install?username=<username> | sudo bash
+<pre><code class="language-lua">curl -ks https://
+   
+  <controller-ip>
+    /api/linux_host_install?username= 
+   <username>
+     | sudo bash user@machine:~$&nbsp;curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration 
+   </username> 
+  </controller-ip></code></pre>
 
 This command invokes an API to download a script that has the public key credentials of the user associated with the cloud and the necessary steps to set up the user in this host. The output of the script is piped to "sudo bash" that then executes these steps.
 
-user@machine:~$ curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration
-
-1
-
-2
-3
-
-4
-5 user @ machine : ~ $  curl – ks https : //10.10.25.46/api/linux_host_install?username=newuser | sudo bash
-
-Updating the authorized keys under  / etc / ssh / authorized_keys_newuser
-Checking settings for  key - based login . . .
-
-PubKeyAuthentication based login is  already set up .
-Finished configuration
+<pre><code class="language-lua">curl -ks https://
+   
+  <controller-ip>
+    /api/linux_host_install?username= 
+   <username>
+     | sudo bash user@machine:~$&nbsp;curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration 
+   </username> 
+  </controller-ip></code></pre>
 
 ### Verify that the SE hosts have been setup
 

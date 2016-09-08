@@ -35,12 +35,38 @@ Note: Only an account that has the System Administrator role may change this set
 ### Enabling Strong Password Enforcement
 
 Strong password enforcement may be enabled using the CLI commands shown below.
-bash/# **shell** : > **configure systemconfiguration** : systemconfiguration> **portal_configuration** : systemconfiguration:portal_configuration> **password_strength_check** Overwriting the previously entered value for password_strength_check : systemconfiguration:portal_configuration> **exit** : systemconfiguration> **exit**
+<pre crayon="false">bash# <b><i>shell</i></b>
+: &gt; <b><i>configure systemconfiguration</i></b>
+: systemconfiguration&gt; <b><i>portal_configuration</i></b>
+: systemconfiguration:portal_configuration&gt; <b><i>password_strength_check</i></b>
+Overwriting the previously entered value for password_strength_check
+: systemconfiguration:portal_configuration&gt; <b><i>exit</i></b>
+: systemconfiguration&gt; <b><i>exit</i></b>
+</pre>
 
 Truncated view of the results:
 
-+-------------------------------------+----------------------------------+ | Field | Value | +-------------------------------------+----------------------------------+ | uuid | default | | portal_configuration | | | enable_https | True | | redirect_to_https | True | | enable_http | True | | enable_clickjacking_protection | True | | allow_basic_authentication | False | | **password_strength_check** | **True** | +-------------------------------------+----------------------------------+
+<pre crayon="false">+-------------------------------------+----------------------------------+
+| Field                               | Value                            |
++-------------------------------------+----------------------------------+
+| uuid                                | default                          |
+| portal_configuration                |                                  |
+|   enable_https                      | True                             |
+|   redirect_to_https                 | True                             |
+|   enable_http                       | True                             |
+|   enable_clickjacking_protection    | True                             |
+|   allow_basic_authentication        | False                            |
+|   <b>password_strength_check</b>           | <b>True</b>                             |
++-------------------------------------+----------------------------------+
+</pre>
 
 ### Disabling Strong Password Enforcement
 
-bash/# **shell** : > **configure systemconfiguration** : systemconfiguration> **portal_configuration** : systemconfiguration:portal_configuration> **no password_strength_check** Overwriting the previously entered value for password_strength_check : systemconfiguration:portal_configuration> **exit** : systemconfiguration> **exit**
+<pre crayon="false">bash# <b><i>shell</i></b>
+: &gt; <b><i>configure systemconfiguration</i></b>
+: systemconfiguration&gt; <b><i>portal_configuration</i></b>
+: systemconfiguration:portal_configuration&gt; <b><i>no password_strength_check</i></b>
+Overwriting the previously entered value for password_strength_check
+: systemconfiguration:portal_configuration&gt; <b><i>exit</i></b>
+: systemconfiguration&gt; <b><i>exit</i></b>
+</pre>
