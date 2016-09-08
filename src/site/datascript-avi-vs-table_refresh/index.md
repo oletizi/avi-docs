@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.table_refresh
+title: DataScript&#58; avi.vs.table_refresh
 layout: default
 ---
 <table class="table table-hover"> 

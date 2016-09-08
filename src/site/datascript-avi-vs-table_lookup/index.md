@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.table_lookup
+title: DataScript&#58; avi.vs.table_lookup
 layout: default
 ---
 <table class="table table-hover"> 

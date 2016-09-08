@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.set_userid
+title: DataScript&#58; avi.http.set_userid
 layout: default
 ---
 <table class="table table-hover"> 
@@ -33,7 +33,7 @@ layout: default
    else avi.http.set_userid("Unknown")
    end
 end</code></pre> 
-    <!-- [Format Time: 0.0040 seconds] --> </td> 
+    <!-- [Format Time: 0.0042 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

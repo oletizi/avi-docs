@@ -511,8 +511,7 @@ Avi Networks YouTube Channel video, Swapnil Raut, 20Oct2015, 8:57
 <a href="/migrating-virtual-services/">/migrating-virtual-services/</a>
 1. Installing Avi Vantage for OpenStack (16.2)
 <a href="/installing-avi-vantage-for-openstack-16-2/">/installing-avi-vantage-for-openstack-16-2/</a>
-1. 
-Installing Avi Vantage with Mesosphere DC/OS (16.2)
+1. Installing Avi Vantage with Mesosphere DC/OS (16.2)
 <a href="/installing-avi-vantage-with-mesosphere-dcos-16-2/">/installing-avi-vantage-with-mesosphere-dcos-16-2/</a>
 1. Installing Avi Vantage in Amazon Web Services (16.2)
 <a href="/installing-avi-vantage-in-amazon-web-services-16-2/">/installing-avi-vantage-in-amazon-web-services-16-2/</a>

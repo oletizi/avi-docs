@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.ssl.cipher
+title: DataScript&#58; avi.ssl.cipher
 layout: default
 ---
 <table class="table table-hover"> 
@@ -40,7 +40,7 @@ kx = string.match(cipher, "Kx=(%w+)")
 if kx then
    avi.http.add_header("X-­KeyExchange", kx)
 end</code></pre> 
-    <!-- [Format Time: 0.0025 seconds] --> </td> 
+    <!-- [Format Time: 0.0021 seconds] --> </td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Example 2</strong></font> </td> 
@@ -58,7 +58,7 @@ kx = string.match(cipher, "Kx=(%w+)")
 if kx then
    avi.http.add_header("X-­KeyExchange", kx)
 end</code></pre> 
-    <!-- [Format Time: 0.0024 seconds] --> </td> 
+    <!-- [Format Time: 0.0022 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

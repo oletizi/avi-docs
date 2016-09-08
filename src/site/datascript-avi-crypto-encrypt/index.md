@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.crypto.encrypt
+title: DataScript&#58; avi.crypto.encrypt
 layout: default
 ---
 <table class="table table-hover"> 
@@ -39,7 +39,7 @@ if path == "/app_1/" then
    encrypted_value = avi.crypto.encrypt(value, key)
    avi.http.add_header("X-Token", encrypted_value)
 end</code></pre> 
-    <!-- [Format Time: 0.0041 seconds] --> </td> 
+    <!-- [Format Time: 0.0033 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

@@ -12,10 +12,8 @@ This scope of this document covers integration of Avi Vantage with F5 GTM. Insta
 
 This document assumes that:
 
-* 
-Avi Vantage is installed in two or more data centers.
-* 
-F5’s BIG-IP GTM is installed.
+* Avi Vantage is installed in two or more data centers.
+* F5’s BIG-IP GTM is installed.
 
 GTM may or may not be installed in the same data centers where Vantage will be providing local application delivery services.
 
@@ -25,80 +23,49 @@ No special configuration is required for virtual services advertised by Vantage 
 
 ### Add Avi Service Engine to GTM
 
-1. 
-From within the GTM GUI, navigate to DNS > GSLB > Server.
-1. 
-Configure the following information:
+1. From within the GTM GUI, navigate to DNS > GSLB > Server.
+1. Configure the following information:
 
-* 
-Create Server Object: Generic Load balancer
-* 
-Name: Unique Avi Service Engine (SE), for example "Avi_DC1"
-* 
-Address: Avi Controller’s cluster IP address
-* 
-Translation: Firewall/NAT public routable IP address of the Controller cluster IP
-* 
-Data Center: configured GTM data center object, for example "DC1"
-* 
-Health Monitor: Gateway_icmp
-* 
-Click on Create to finish.
+* Create Server Object: Generic Load balancer
+* Name: Unique Avi Service Engine (SE), for example "Avi_DC1"
+* Address: Avi Controller’s cluster IP address
+* Translation: Firewall/NAT public routable IP address of the Controller cluster IP
+* Data Center: configured GTM data center object, for example "DC1"
+* Health Monitor: Gateway_icmp
+* Click on Create to finish.
 
 ### Create Avi Virtual Service as GTM VS Object
 
-1. 
-Click Add. Enter the following information:
+1. Click Add. Enter the following information:
 
-* 
-Name: Avi Controller
-* 
-Address: Avi virtual service IP (VIP) address
-* 
-Service Port: 80
-* 
-Health Monitor: HTTP or TCP
-* 
-Dependency List: Select Avi_Controller virtual server object
+* Name: Avi Controller
+* Address: Avi virtual service IP (VIP) address
+* Service Port: 80
+* Health Monitor: HTTP or TCP
+* Dependency List: Select Avi_Controller virtual server object
 
 Note: For HTTP virtual services, HTTP health checks are recommended. To be successful, an HTTP health check must include sending a valid HTTP request to the server, and receiving a valid HTTP response. For other types of virtual services, TCP health checks are recommended.
-* 
-Add to Dependency List.
-* 
-Click on Create to finish.
-* 
-*(Optional)* Create additional Avi virtual services from different data center, if needed.
+* Add to Dependency List.
+* Click on Create to finish.
+* *(Optional)* Create additional Avi virtual services from different data center, if needed.
 
 ### Create GTM Pool
 
-1. 
-Navigate to DNS > GSLB > Pool.
-1. 
-Click on Create. Enter the following information:
+1. Navigate to DNS > GSLB > Pool.
+1. Click on Create. Enter the following information:
 
-* 
-Name: enter a name for the GTM pool.
-* 
-Health check: leave empty (none).
-* 
-Member list: select Avi Virtual Service Objects from the list and click Add.
-* 
-Click on Finish.
+* Name: enter a name for the GTM pool.
+* Health check: leave empty (none).
+* Member list: select Avi Virtual Service Objects from the list and click Add.
+* Click on Finish.
 
 ### Create GTM WideIP for Load Balancing
 
-1. 
-Navigate to DNS > GSLB > WideIP.
-1. 
-Click on Create. Add the following information:
+1. Navigate to DNS > GSLB > WideIP.
+1. Click on Create. Add the following information:
 
-* 
-Name: enter the FQDN of the application.
-* 
-LB Selection Log: select Pool and Member selection log.
-* 
-LB Method: select desired load balancing method.
-* 
-Pool List: add the GTM pool to the list.
-* 
-Click on Finish to complete the integration.
+* Name: enter the FQDN of the application.
+* LB Selection Log: select Pool and Member selection log.
+* LB Method: select desired load balancing method.
+* Pool List: add the GTM pool to the list.
+* Click on Finish to complete the integration.

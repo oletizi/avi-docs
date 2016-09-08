@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.ip
+title: DataScript&#58; avi.vs.ip
 layout: default
 ---
 <table class="table table-hover"> 
@@ -28,7 +28,7 @@ layout: default
    <td width="100"><span style="font-size: medium;"><strong>Example</strong></span></td> 
    <td width="600">Insert a header informing the server which VS traffic originated from.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.add_header("VS_IP", avi.vs.ip())</code></pre> 
-    <!-- [Format Time: 0.0010 seconds] --> </td> 
+    <!-- [Format Time: 0.0015 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

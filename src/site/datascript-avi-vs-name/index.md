@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.name
+title: DataScript&#58; avi.vs.name
 layout: default
 ---
 <table class="table table-hover"> 

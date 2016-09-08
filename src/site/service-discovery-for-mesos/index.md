@@ -12,37 +12,25 @@ To enable service discovery for Mesos, configure an IP address management (IPAM)
 
 ### Notes
 
-* 
-This procedure assumes the Mesos cloud configuration has already been created on the Controller.
-* 
-This procedure assumes the Mesos cloud has already been set up. Any applications that already exist in the Mesos cloud before service discovery is enabled will not be associated with DNS.
+* This procedure assumes the Mesos cloud configuration has already been created on the Controller.
+* This procedure assumes the Mesos cloud has already been set up. Any applications that already exist in the Mesos cloud before service discovery is enabled will not be associated with DNS.
 
 ### Configuration Steps
 
-1. 
-Navigate to Templates > Profiles.
-1. 
-Click IPAM Profile.
+1. Navigate to Templates > Profiles.
+1. Click IPAM Profile.
 
 <a href="img/mesos-service-disc1.png"><img src="img/mesos-service-disc1.png" alt="mesos-service-disc1" width="586" height="146"></a>
-1. 
-Click Create and select Internal as the type.
-1. 
-Enter a name the Name field.
-1. 
-In the Service Domain field, enter the domain name for the Mesos cluster. (For example, "mycompany-mesos".) All applications using this IPAM profile will have DNS records with FQDN *app-name*.mycompany-mesos.
-1. 
-Click Save. The profile appears in the list.
-1. 
-Navigate to Infrastructure > Clouds, and click on the edit icon <img src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"> next to the cloud name. (This may be "Default-Cloud" if the Mesos cloud was the first one created.)
-1. 
-After configuring other cloud settings, click Applications.
-1. 
-Scroll down to the IPAM Profile section and select the IPAM profile from the pull-down list.
+1. Click Create and select Internal as the type.
+1. Enter a name the Name field.
+1. In the Service Domain field, enter the domain name for the Mesos cluster. (For example, "mycompany-mesos".) All applications using this IPAM profile will have DNS records with FQDN *app-name*.mycompany-mesos.
+1. Click Save. The profile appears in the list.
+1. Navigate to Infrastructure > Clouds, and click on the edit icon <img src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"> next to the cloud name. (This may be "Default-Cloud" if the Mesos cloud was the first one created.)
+1. After configuring other cloud settings, click Applications.
+1. Scroll down to the IPAM Profile section and select the IPAM profile from the pull-down list.
 
 <a href="img/mesos-service-disc4.png"><img src="img/mesos-service-disc4.png" alt="mesos-service-disc4" width="586" height="356"></a>
-1. 
-Click Save.
+1. Click Save.
 
 Next, create a virtual service (sample-app) in Marathon using the avi_proxy label. (No change is needed here for service discovery.)
 
@@ -58,21 +46,15 @@ East-West applications and North-South applications can use static networking. N
 
 ### Notes
 
-* 
-This procedure assumes the Mesos cloud configuration has already been created on the Controller.
-* 
-If the static IP address pool is empty, no virtual services that use this address allocation scheme will be created.
+* This procedure assumes the Mesos cloud configuration has already been created on the Controller.
+* If the static IP address pool is empty, no virtual services that use this address allocation scheme will be created.
 
 ### Configuration Steps
 
-1. 
-Navigate to Infrastructure > Clouds.
-1. 
-Click on Mesos-Cloud > Network > Create.
-1. 
-Enter a name for the network (IPAM-Network-1).
-1. 
-Add the networks to use for IP allocation:
+1. Navigate to Infrastructure > Clouds.
+1. Click on Mesos-Cloud > Network > Create.
+1. Enter a name for the network (IPAM-Network-1).
+1. Add the networks to use for IP allocation:
 
 a. Click Add Subnet.
 
@@ -89,8 +71,7 @@ d. Click Save.
 <a href="img/mesos-service-disc7.png"><img src="img/mesos-service-disc7.png" alt="mesos-service-disc7" width="587" height="360"></a>
 
 e. Repeat for each network to be used for IP address allocation.
-1. 
-Click Save.
+1. Click Save.
 
 <a href="img/mesos-service-disc8.png"><img src="img/mesos-service-disc8.png" alt="mesos-service-disc8" width="675" height="184"></a>
 

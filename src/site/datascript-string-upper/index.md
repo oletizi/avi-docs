@@ -1,5 +1,5 @@
 ---
-title: DataScript: string.upper
+title: DataScript&#58; string.upper
 layout: default
 ---
 <table class="table table-hover"> 

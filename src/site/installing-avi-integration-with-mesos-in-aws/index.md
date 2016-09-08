@@ -136,9 +136,7 @@ To begin, log in to your AWS account using an Internet browser.
 1. Copy the Mesos master’s IP address.
 <a href="img/aws-mesos-install-awsconsole8.png"><img src="img/aws-mesos-install-awsconsole8.png" alt="aws-mesos-install-awsconsole8" width="646" height="360"></a>
 1. Open a new browser window and type the URL of the Mesos master. The URL should look be like this: https://*mesos-master-ip*:9443
-1. Accept the security warning to proceed to the login page for the Avi Controller's web interface. Log in to the Avi Controller with username and password admin, admin.
-
-<a href="img/aws-mesos-install-awsconsole9.png"><img src="img/aws-mesos-install-awsconsole9.png" alt="aws-mesos-install-awsconsole9" width="631" height="398"></a>
+1. Accept the security warning to proceed to the login page for the Avi Controller's web interface. Log in to the Avi Controller with username and password admin, admin. <a href="img/aws-mesos-install-awsconsole9.png"><img src="img/aws-mesos-install-awsconsole9.png" alt="aws-mesos-install-awsconsole9" width="631" height="398"></a>
 
 ### Application Creation in Marathon
 
@@ -164,9 +162,7 @@ To begin, log in to your AWS account using an Internet browser.
 
 1. Verify the application port from the Avi Controller web interface. Select the application and hover near the name.
 <a href="img/aws-mesos-install-awsconsole13.png"><img src="img/aws-mesos-install-awsconsole13.png" alt="aws-mesos-install-awsconsole13" width="678" height="345"></a>
-1. Click on Listener and edit ELB Listener to change the HTTP listener to the service (application) port number.
-
-<a href="img/aws-mesos-install-awsconsole14.png"><img src="img/aws-mesos-install-awsconsole14.png" alt="aws-mesos-install-awsconsole14" width="676" height="338"></a>
+1. Click on Listener and edit ELB Listener to change the HTTP listener to the service (application) port number. <a href="img/aws-mesos-install-awsconsole14.png"><img src="img/aws-mesos-install-awsconsole14.png" alt="aws-mesos-install-awsconsole14" width="676" height="338"></a>
 1. Click on Health Check and edit ELB health Check to the application port number.<a href="img/aws-mesos-install-awsconsole15.png"><img src="img/aws-mesos-install-awsconsole15.png" alt="aws-mesos-install-awsconsole15" width="674" height="383"></a>
 1. Click on the Description tab for the same ELB instance. Copy the DNS name and paste it into a new browser tab.
 <a href="img/aws-mesos-install-awsconsole16.png"><img src="img/aws-mesos-install-awsconsole16.png" alt="aws-mesos-install-awsconsole16" width="646" height="329"></a>

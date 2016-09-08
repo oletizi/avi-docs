@@ -1,5 +1,5 @@
 ---
-title: DataScript: Events
+title: DataScript&#58; Events
 layout: default
 ---
 ### About Events

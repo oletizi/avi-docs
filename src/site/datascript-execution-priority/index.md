@@ -1,5 +1,5 @@
 ---
-title: DataScript: Execution Priority
+title: DataScript&#58; Execution Priority
 layout: default
 ---
 Many DataScript capabilities can be performed via policies or standard features. It is important to understand the order of precedence, as the execution priority will dictate the order that various features, policies, and DataScripts will occur.  For instance, if a policy decides to discard a connection while a DataScript decides to redirect the client, the order of execution is critical to ensuring the intended behavior occurs.

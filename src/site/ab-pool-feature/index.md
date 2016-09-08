@@ -14,17 +14,12 @@ To perform the next upgrade, the process can be reversed. After upgrading pool A
 
 ### Operational Notes
 
-* 
-Setting the A/B percentage to 0 sends all traffic to the primary pool (A).
-* 
-For each of the pools, normal load balancing is performed. After Vantage selects a pool for a new session, the load balancing method configured for that pool is used to select a server.
-* 
-The A/B setting does not affect existing sessions. For example, setting the percentage sent to B to 100 percent does not cause existing sessions on pool A to move to B. Likewise, A/B pool settings do not affect persistence configurations.
-* 
-The <a href="/docs/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions.
+* Setting the A/B percentage to 0 sends all traffic to the primary pool (A).
+* For each of the pools, normal load balancing is performed. After Vantage selects a pool for a new session, the load balancing method configured for that pool is used to select a server.
+* The A/B setting does not affect existing sessions. For example, setting the percentage sent to B to 100 percent does not cause existing sessions on pool A to move to B. Likewise, A/B pool settings do not affect persistence configurations.
+* The <a href="/docs/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions. 
 In the current release, the backup pool action is not supported for either pool in an A/B pair.
-* 
-A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.
+* A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.
 
 This behavior ensures that a failure in the selected pool is brought to the attention of the Vantage user, rather than masked by a silent failover to the other pool.
 
@@ -36,18 +31,12 @@ The following sections show how to configure the A/B pool feature using the web 
 
 First configure the B pool, if not already configured. Then use these steps to configure the A/B settings within the A pool.
 
-1. 
-Navigate to Applications > Pools.
-1. 
-Click the edit icon in the row for the pool name.
-1. 
-Click Advanced.
-1. 
-In the Pool A/B Testing Settings section, select the B pool from the A/B Test pool pull-down list.
-1. 
-In the Percentage of Requests field, enter the percentage of new sessions to send to pool B instead of pool A. (Existing sessions on pool A are not affected.)
-1. 
-Click Save.
+1. Navigate to Applications > Pools.
+1. Click the edit icon in the row for the pool name.
+1. Click Advanced.
+1. In the Pool A/B Testing Settings section, select the B pool from the A/B Test pool pull-down list.
+1. In the Percentage of Requests field, enter the percentage of new sessions to send to pool B instead of pool A. (Existing sessions on pool A are not affected.)
+1. Click Save.
 
 <a href="img/a-b-pool.png"><img src="img/a-b-pool.png" alt="a-b-pool" width="624" height="227"></a>
 

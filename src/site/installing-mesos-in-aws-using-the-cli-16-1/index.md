@@ -169,9 +169,7 @@ After initial setup is completed using the wizard, the option to make service po
 ### APPLICATION CREATION IN MARATHON
 
 1. Download Docker.json from <a href="https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json">https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json</a>. Save the file in Downloads.
-1. Open an SSH session to the Mesos master’s IP address, and post the application:
-
-<pre><code class="language-lua">[Unit]
+1. Open an SSH session to the Mesos master’s IP address, and post the application:  <pre><code class="language-lua">[Unit]
 Description=AviController
 After=docker.service
 Requires=docker.service

@@ -1,14 +1,12 @@
 ---
-title: API: Determine Virtual Service Throughput
+title: API&#58; Determine Virtual Service Throughput
 layout: default
 ---
 You can use the Avi Vantage API to access throughput data and other metrics for a virtual service. API calls to /API/analytics/metrics can be used to get all metric-related data. The following example shows a query for the throughput of a virtual service for a 24-hour period:
 <pre crayon="false">https://&lt;Controller VIP&gt;/api/analytics/metrics/virtualservice/virtualservice-&lt;VS UUID&gt;?metric_id=l4_client.avg_bandwidth &amp;step=86400&amp;limit=7&amp;start=2015-11-17T00:00:00.000Z</pre>
 
-* 
-**Controller VIP**:  Replace with the IP address of your Avi Controller or the cluster IP address assigned to the cluster of redundant Avi Controllers.
-* 
-**VS UUID**:  Universally Unique ID (UUID) of the virtual service. Since virtual service names may not be unique across multiple tenants, API queries are recommended to include the virtual service's UUID.
+* **Controller VIP**:  Replace with the IP address of your Avi Controller or the cluster IP address assigned to the cluster of redundant Avi Controllers.
+* **VS UUID**:  Universally Unique ID (UUID) of the virtual service. Since virtual service names may not be unique across multiple tenants, API queries are recommended to include the virtual service's UUID.
 
 A quick way to find a virtual service's UUID is to view the virtual service in the Avi Controller's web interface, and capture the UUID from the browser URI.  (See the following link to <a href="/2015/12/02/find-virtual-service-uuid/">find virtual service UUIDs</a>.)
 

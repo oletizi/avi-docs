@@ -10,26 +10,17 @@ More than one DataScript may be applied to a single Virtual Service. The order o
 
 **Client Request:**
 
-* 
-TCP Setup
-* 
-Network Security Policy
-* 
-SSL Handshake
-* 
-HTTP Security Policy
-* 
-HTTP Request Policy
-* 
-DataScript Request Event
-* 
-Normal VS/Pool/Profile Processing
+* TCP Setup
+* Network Security Policy
+* SSL Handshake
+* HTTP Security Policy
+* HTTP Request Policy
+* DataScript Request Event
+* Normal VS/Pool/Profile Processing
 
 **Server Response:**
 
-* 
-DataScript Response Event
-* 
-HTTP Response Policy
+* DataScript Response Event
+* HTTP Response Policy
 
 In the order of precedence, individual features may be inserted at different points based on the functionality of the feature. For instance, connection throttling will occur during step 1 of the client request, not step 7.

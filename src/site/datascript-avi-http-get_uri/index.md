@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.get_uri
+title: DataScript&#58; avi.http.get_uri
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
    avi.vs.log("Probable Double Encoding attack, conn closed.")
    avi.http.close_conn()
 end</code></pre> 
-    <!-- [Format Time: 0.0018 seconds] --> </td> 
+    <!-- [Format Time: 0.0030 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

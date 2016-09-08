@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.log
+title: DataScript&#58; avi.vs.log
 layout: default
 ---
 <table class="table table-hover"> 
@@ -29,7 +29,7 @@ layout: default
    <td width="600">&nbsp;From DataScript "Log1" HTTP_REQ event:<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log("Hello World!") num = 2
 avi.vs.log("Hello " .. num .. " You!")</code></pre> 
-    <!-- [Format Time: 0.0006 seconds] --> From DataScript "Log2" HTTP_RESP event:<br> 
+    <!-- [Format Time: 0.0012 seconds] --> From DataScript "Log2" HTTP_RESP event:<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log("Hello World!") num = 2
 avi.vs.log("Hello " .. num .. " You!")</code></pre> 
     <!-- [Format Time: 0.0018 seconds] --> Output from the client log:<p></p> <pre crayon="false" class="">DataScript Log: [string "Log1"]:1:&nbsp;Hello World!

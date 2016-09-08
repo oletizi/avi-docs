@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.get_cookie_names
+title: DataScript&#58; avi.http.get_cookie_names
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
 if count == 0 then
    -- No cookies found, do something
 end</code></pre> 
-    <!-- [Format Time: 0.0022 seconds] --> </td> 
+    <!-- [Format Time: 0.0018 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

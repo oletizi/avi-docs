@@ -6,21 +6,17 @@ Vantage provides extensive logging options for virtual service traffic. Among th
 
 ### Notes
 
-* 
-In Avi Vantage versions prior to 16.1, the option to log all headers applies only to client-to-server traffic but not to server-to-client traffic. In 16.1 and later, the option to log all headers applies to both traffic directions.
-* 
-Client logging can be enabled without defining individual log filters. This logs all the virtual service's traffic. As a best practice, use log filters to narrow the scope of the logs to capture, or leave logging of all traffic enabled only temporarily while troubleshooting.
+* In Avi Vantage versions prior to 16.1, the option to log all headers applies only to client-to-server traffic but not to server-to-client traffic. In 16.1 and later, the option to log all headers applies to both traffic directions.
+* Client logging can be enabled without defining individual log filters. This logs all the virtual service's traffic. As a best practice, use log filters to narrow the scope of the logs to capture, or leave logging of all traffic enabled only temporarily while troubleshooting.
 
 ## Enabling All Header Logging
 
 Within a virtual service's configuration, logging of all headers can be enabled in the following places:
 
-* 
-**Rule tab:** On the Rule tab of a virtual service's configuration, logging can be enabled individually for the virtual service's HTTP security policy, HTTP request policy, and HTTP response policy. Click Log with headers. The option applies to all packets that match the policy.
+* **Rule tab:** On the Rule tab of a virtual service's configuration, logging can be enabled individually for the virtual service's HTTP security policy, HTTP request policy, and HTTP response policy. Click Log with headers. The option applies to all packets that match the policy.
 
 <a href="img/log-with-headers-http-policies-1.png"><img src="img/log-with-headers-http-policies-1.png" alt="log-with-headers-http-policies" width="1010" height="603"></a>
-* 
-**Analytics tab:** On the Analytics tab of a virtual service's configuration, log filters can be defined, and the option to include all headers can be enabled. Click Add Client Log Filter, and check (enable) Log all headers. The option applies to all packets that match any of the client log filters defined on the tab. If no log filters are defined on the tab, the option applies to all packets for the virtual service.
+* **Analytics tab:** On the Analytics tab of a virtual service's configuration, log filters can be defined, and the option to include all headers can be enabled. Click Add Client Log Filter, and check (enable) Log all headers. The option applies to all packets that match any of the client log filters defined on the tab. If no log filters are defined on the tab, the option applies to all packets for the virtual service.
 
 <a href="img/log-with-headers-analytics2.png"><img src="img/log-with-headers-analytics2.png" alt="log-with-headers-analytics2" width="1012" height="603"></a>
 
@@ -32,13 +28,8 @@ All the logs can be viewed in the same place, on the Analytics page for the clie
 
 To view client logs:
 
-1. 
-Navigate to Applications > Dashboard.
-1. 
-Click on the icon for the virtual service.
-1. 
-Click Logs.
-1. 
-*(optional)* Select the time period of logs to display from the Displaying pull-down menu.
-1. 
-To display details for a log, click on the plus sign next to the log entry.
+1. Navigate to Applications > Dashboard.
+1. Click on the icon for the virtual service.
+1. Click Logs.
+1. *(optional)* Select the time period of logs to display from the Displaying pull-down menu.
+1. To display details for a log, click on the plus sign next to the log entry.

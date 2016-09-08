@@ -1,15 +1,13 @@
 ---
-title: CLI: Virtual Service and Pool Creation
+title: CLI&#58; Virtual Service and Pool Creation
 layout: default
 ---
 During virtual service creation, the virtual service will need to point to a pool, which the system expects to exist already.
 
 From the CLI, this configuration can be performed as two tasks:
 
-1. 
-Create the pool.
-1. 
-Create the virtual service.
+1. Create the pool.
+1. Create the virtual service.
 
 ### Pool Creation
 

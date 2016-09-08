@@ -1,5 +1,5 @@
 ---
-title: DataScript: string.contains
+title: DataScript&#58; string.contains
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
 if string.contains(path, "/finance/") then
    avi.http.response(401)
 end</code></pre> 
-    <!-- [Format Time: 0.0019 seconds] --> </td> 
+    <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

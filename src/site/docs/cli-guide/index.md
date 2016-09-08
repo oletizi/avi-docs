@@ -42,12 +42,9 @@ Completed writing the export configuration to mybackup &nbsp; &nbsp;
 
 Other navigational commands:
 
-* 
-Use the up arrow key to cycle through and reuse previously executed commands.
-* 
-To see the commands in a list format, use the <code>history</code> command.
-* 
-Pipe can be used to filter results, such as <code>| grep address</code> or <code>| more</code>. Useful with the <code>watch</code> command.
+* Use the up arrow key to cycle through and reuse previously executed commands.
+* To see the commands in a list format, use the <code>history</code> command.
+* Pipe can be used to filter results, such as <code>| grep address</code> or <code>| more</code>. Useful with the <code>watch</code> command.
 
 ### Sub-Mode Navigation
 

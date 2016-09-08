@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.cookie_exists
+title: DataScript&#58; avi.http.cookie_exists
 layout: default
 ---
 <table class="table table-hover"> 
@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.cookie_exists("ServerIP") then
    avi.pool.select("Pool1", avi.http.get_cookie("ServerIP"))
 end</code></pre> 
-    <!-- [Format Time: 0.0033 seconds] --> </td> 
+    <!-- [Format Time: 0.0021 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

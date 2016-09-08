@@ -1,5 +1,5 @@
 ---
-title: Mesos: Use of SE Groups based on Application Resource Needs
+title: Mesos&#58; Use of SE Groups based on Application Resource Needs
 layout: default
 ---
 For optimal performance, it is sometimes necessary to create different "types" of Avi Service Engines (SEs) with different resource allocations within a Mesos cluster.
@@ -17,12 +17,8 @@ Creating the SE group is performed using the Avi Controller's web interface. Cre
 Note: This procedure assumes that Vantage is installed and the Mesos cloud has already been configured.
 
 1. Navigate to Infrastructure > Clouds.
-1. Click on the Mesos cloud name, select Service Engine Group, and click Create Service Engine Group.
-
-<a href="img/segroup2-2.png"><img src="img/segroup2-2.png" alt="segroup2" width="1918" height="334"></a>
-1. Set the service engine parameters based on the application's requirements, such as additional CPU cores. Enter host attribute key and value pairs to specify where the SEs should be created.
-
-<a href="img/segroup3.png"><img src="img/segroup3.png" alt="segroup3" width="1440" height="797"></a>
+1. Click on the Mesos cloud name, select Service Engine Group, and click Create Service Engine Group. <a href="img/segroup2-2.png"><img src="img/segroup2-2.png" alt="segroup2" width="1918" height="334"></a>
+1. Set the service engine parameters based on the application's requirements, such as additional CPU cores. Enter host attribute key and value pairs to specify where the SEs should be created. <a href="img/segroup3.png"><img src="img/segroup3.png" alt="segroup3" width="1440" height="797"></a>
 1. Click Save.
 
 ### Creating a Virtual Service and Assigning it to the Custom SE Group

@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.get_cookie
+title: DataScript&#58; avi.http.get_cookie
 layout: default
 ---
 <table class="table table-hover"> 
@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.get_cookie("foo") ~= "bar" then
    -- do something with the cookie header
 end</code></pre> 
-    <!-- [Format Time: 0.0012 seconds] --> </td> 
+    <!-- [Format Time: 0.0011 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

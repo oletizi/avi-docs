@@ -168,9 +168,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
 * Administrator account
 * DNS and NTP server information
 <img src="img/Ctlr-install-wizard-adminacct.png" alt="" align="left"> <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6">
-* Set the infrustructure type to VMware:
-
-<img src="img/vmware-ctlr-setup-infra-161.png" alt="vmware-ctlr-setup-infra-161" width="264" height="415">
+* Set the infrustructure type to VMware: <img src="img/vmware-ctlr-setup-infra-161.png" alt="vmware-ctlr-setup-infra-161" width="264" height="415">
 * Enter vCenter settings:
 
 * vCenter IP address
@@ -189,9 +187,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
 One of the SE's 10 vNICs is be connected to the management network. The other vNICs are data vNICs. For the IP allocation method, if static address assignment is used, enter a subnet address and a range of host addresses within the subnet. Vantage assigns addresses from this range to the SE data interfaces.
 
 <img title="Image call" src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-multtenantsbox.png" alt="VMware-deploy-Ctlr-setup-multtenants">
-* To verify installation, navigate to Infrastructure > Clouds, click Default-Clouds, then click the Status button. If the status is green, installation is a success.
-
-<a href="img/vmware-deploy3-6.png"><img src="img/vmware-deploy3-6.png" alt="vmware-deploy3" width="859" height="398"></a>
+* To verify installation, navigate to Infrastructure > Clouds, click Default-Clouds, then click the Status button. If the status is green, installation is a success. <a href="img/vmware-deploy3-6.png"><img src="img/vmware-deploy3-6.png" alt="vmware-deploy3" width="859" height="398"></a>
 
 If the management and pool networks use DHCP, the deployment procedure is complete. If static address allocation is used, an additional set of steps is required: <a href="#staticIPass">configure IP address pools for networks</a>.
 
@@ -302,9 +298,7 @@ Note: By default, deployment requires a minimum of two SEs. One SE actively rece
 1. Copy the authentication token. <img title="Image call" src="img/security-copy-token.png" alt="security-copy-token">
 1. Paste the authentication token key into the Authentication Token for Avi field.
 1. Specify the management IP address and default gateway. Or, leave them empty if using DHCP. <a href="img/vmware-deploy7.png"><img src="img/vmware-deploy7.png" alt="vmware-deploy7" width="528" height="499"></a>
-1. On the VM Properties menu, connect the SE data vNICs to the port groups needed to reach a virtual service network and pool network.
-
-Note: Leave any unused vNICs disconnected.
+1. On the VM Properties menu, connect the SE data vNICs to the port groups needed to reach a virtual service network and pool network. Note: Leave any unused vNICs disconnected.
 1. *(no access mode only)* Write down the following information:
 
 * MAC addresses of the vNICs

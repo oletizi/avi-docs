@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.redirect
+title: DataScript&#58; avi.http.redirect
 layout: default
 ---
 <table class="table table-hover"> 
@@ -35,7 +35,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.vs.port() ~= "443" then
    avi.http.redirect("https://" .. avi.vs.host() .. avi.http.get_uri())
 end</code></pre> 
-    <!-- [Format Time: 0.0023 seconds] --> </td> 
+    <!-- [Format Time: 0.0022 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

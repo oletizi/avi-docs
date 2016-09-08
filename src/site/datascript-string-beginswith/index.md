@@ -1,5 +1,5 @@
 ---
-title: DataScript: string.beginswith
+title: DataScript&#58; string.beginswith
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
 if string.beginswith(path, "/sales/") then
    avi.http.redirect("http://sales.test.com/index.html")
 end</code></pre> 
-    <!-- [Format Time: 0.0017 seconds] --> </td> 
+    <!-- [Format Time: 0.0022 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

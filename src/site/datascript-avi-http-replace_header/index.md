@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.replace_header
+title: DataScript&#58; avi.http.replace_header
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
 if xff then
    avi.http.replace_header("X-Forwarded-For", xff ..", ".. avi.vs_ip())
 end</code></pre> 
-    <!-- [Format Time: 0.0031 seconds] --> </td> 
+    <!-- [Format Time: 0.0033 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

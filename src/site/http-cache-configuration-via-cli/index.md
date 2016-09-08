@@ -1,5 +1,5 @@
 ---
-title: CLI: HTTP Cache Configuration
+title: CLI&#58; HTTP Cache Configuration
 layout: default
 ---
 This article describes the CLI commands that are most commonly used for configuring the HTTP cache.  

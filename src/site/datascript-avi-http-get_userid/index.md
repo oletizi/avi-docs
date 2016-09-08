@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.get_userid
+title: DataScript&#58; avi.http.get_userid
 layout: default
 ---
 <table class="table table-hover"> 
@@ -35,7 +35,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if not avi.http.get_userid() then
    avi.http.redirect("http://login.foo.com")
 end</code></pre> 
-    <!-- [Format Time: 0.0012 seconds] --> </td> 
+    <!-- [Format Time: 0.0013 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

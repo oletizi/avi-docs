@@ -4,12 +4,9 @@ layout: default
 ---
 Avi Vantage uses "groups" to separate long lists from the complexity of the feature they may be applied against. This is particularly useful for simplifying the automation of API calls. This article describes the following types of groups:
 
-* 
-IP group: named set of IP addresses
-* 
-String group: named set of string values
-* 
-MicroService group: named set of microservices
+* IP group: named set of IP addresses
+* String group: named set of string values
+* MicroService group: named set of microservices
 
 You may change the contents of these types of groups at any time while the system is running without interrupting existing traffic. Objects that reference the group will use the updated version for subsequent queries they perform against it.
 
@@ -17,34 +14,24 @@ You may change the contents of these types of groups at any time while the syste
 
 IP groups are comma-separated lists of IP addresses that may be referenced by profiles, policies, and logs. IP groups may contain the following types of entries:
 
-* 
-IPv4 address
-* 
-IP range
-* 
-IP/Mask
-* 
-Country code
-* 
-End-point group
+* IPv4 address
+* IP range
+* IP/Mask
+* Country code
+* End-point group
 
 The following are examples of IP groups used elsewhere within the Vantage configuration:
 
-* 
-Network security policy: may be configured to drop any clients coming from a blacklist of IP addresses. Rather than maintain a long list within the policy, Vantage maintains the rule logic of that policy separately from the list of addresses, which are kept in the IP group. A user can be granted a role that allows them to update the list of IP addresses without being able to change the policy itself.
-* 
-Logs: classify clients by their IP address and match them against an included geographic country location database. You may override this database by using an IP group to create specific mappings such as internal IP addresses. For instance, LA_Office may contain 10.1.0.0/16, while NY_Office contains 10.2.0.0/16. Logs will show these clients as originating from these locations. Logs searches may also be performed on the group name such as LA_Office.
+* Network security policy: may be configured to drop any clients coming from a blacklist of IP addresses. Rather than maintain a long list within the policy, Vantage maintains the rule logic of that policy separately from the list of addresses, which are kept in the IP group. A user can be granted a role that allows them to update the list of IP addresses without being able to change the policy itself.
+* Logs: classify clients by their IP address and match them against an included geographic country location database. You may override this database by using an IP group to create specific mappings such as internal IP addresses. For instance, LA_Office may contain 10.1.0.0/16, while NY_Office contains 10.2.0.0/16. Logs will show these clients as originating from these locations. Logs searches may also be performed on the group name such as LA_Office.
 
 The table on this tab contains the following information for each IP group:
 
 <img src="img/template_groups_ip.jpg" alt="">
 
-* 
-**Name:** Name of the IP group.
-* 
-**IP Address or Ranges:** Number of IP address, networks, or address ranges.
-* 
-**Country Code or EPG:** Any configured country codes or end point groups are listed.
+* **Name:** Name of the IP group.
+* **IP Address or Ranges:** Number of IP address, networks, or address ranges.
+* **Country Code or EPG:** Any configured country codes or end point groups are listed.
 
 ### Create an IP Group
 
@@ -73,10 +60,8 @@ The table on this tab contains the following information for each string group:
 
 <img src="img/template_groups_string_tab.jpg" alt="">
 
-* 
-**Name:** Name of the string group.
-* 
-**Number of Strings:** Number of strings within a string group.
+* **Name:** Name of the string group.
+* **Number of Strings:** Number of strings within a string group.
 
 ### Create a String Group
 
@@ -86,15 +71,11 @@ The Create String Group and Edit String Group popups share the same interface.
 
 To create or edit a string group:
 
-* 
-**Name:** Enter a unique name for the String Group in the Name field.
-* 
-**Strings:** Add one or more text strings to the list. You may use any combination of the following methods:
+* **Name:** Enter a unique name for the String Group in the Name field.
+* **Strings:** Add one or more text strings to the list. You may use any combination of the following methods:
 
-* 
-**String:** Enter any text in the field, and then click the + String button to add.
-* 
-**Upload File:** Click the Upload File button on the right to navigate to and upload a comma separated value (CSV) file that contains text.
+* **String:** Enter any text in the field, and then click the + String button to add.
+* **Upload File:** Click the Upload File button on the right to navigate to and upload a comma separated value (CSV) file that contains text.
 
 ### MicroService Group
 

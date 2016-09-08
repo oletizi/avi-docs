@@ -1,5 +1,5 @@
 ---
-title: CLI: Back Up the Configuration
+title: CLI&#58; Back Up the Configuration
 layout: default
 ---
 The Avi Controller maintains a local database to store its configuration information. This includes all configuration related to tenants, virtual services, pools, policies and accounts. The Controller configuration can be exported as a JSON file. The JSON file provides a backup for the Controller. Portions of a Controller's exported configuration also can be migrated into the configurations of other Controllers.
@@ -8,12 +8,9 @@ All or portions of a Controller configuration may be backed up or moved to anoth
 
 The scope of the exported configuration can be one of the following:
 
-* 
-Entire system configuration
-* 
-Subset based on the access rights of the current user and tenant of the administrator
-* 
-Single virtual service and its child properties
+* Entire system configuration
+* Subset based on the access rights of the current user and tenant of the administrator
+* Single virtual service and its child properties
 
 ## Exporting a Configuration
 
@@ -50,11 +47,8 @@ The configuration information can be restored to an existing (deployed) Avi Cont
 
 Use the following steps to restore a backed up configuration (JSON file) to a new Avi Controller. (Also make sure to see the deployment documentation for your cloud infrastructure for more in-depth installation help.)
 
-* 
-Deploy 3 new Controller nodes. (The image type (OVA, qcow2, ami) should match that of the original Controller node from which the configuration was exported.)
-* 
-Choose one Controller as a leader and use the initial setup wizard to configure the initial setup information, including the information for the Controller cluster.
-* 
-Use the CLI or API to import the saved configuration file onto the new Controller.
+* Deploy 3 new Controller nodes. (The image type (OVA, qcow2, ami) should match that of the original Controller node from which the configuration was exported.)
+* Choose one Controller as a leader and use the initial setup wizard to configure the initial setup information, including the information for the Controller cluster.
+* Use the CLI or API to import the saved configuration file onto the new Controller.
 
 Note: If Avi Vantage is deployed in no access mode, the administrator may still be required to manually create Service Engines. Otherwise, the cluster will return to the same state it was in prior to backing up the configuration.  

@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.remove_cookie
+title: DataScript&#58; avi.http.remove_cookie
 layout: default
 ---
 <table class="table table-hover"> 
@@ -28,7 +28,7 @@ layout: default
    <td width="100"><span style="font-size: medium;"><strong>Example</strong></span></td> 
    <td width="600">Remove two cookies from the request or response.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.remove( "jsessionid", "lang" )</code></pre> 
-    <!-- [Format Time: 0.0008 seconds] --> </td> 
+    <!-- [Format Time: 0.0015 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

@@ -17,16 +17,11 @@ The following example is from a deployment that uses a single Controller:
 
 The Controller table contains the following information:
 
-* 
-**Name:** Name or IP address of the Avi Controller.
-* 
-**Management IP Address:** Management IP address of the individual Avi Controller node in the cluster. Each Avi Controller in the cluster will have its own management address.
-* 
-**Cluster IP:** The shared management IP address for the cluster, owned by the current leader Avi Controller.
-* 
-**Role:** Shows which Avi Controller is the primary, or leader of the cluster.
-* 
-**State:** The Avi Controller status, such as "Cluster Active."
+* **Name:** Name or IP address of the Avi Controller.
+* **Management IP Address:** Management IP address of the individual Avi Controller node in the cluster. Each Avi Controller in the cluster will have its own management address.
+* **Cluster IP:** The shared management IP address for the cluster, owned by the current leader Avi Controller.
+* **Role:** Shows which Avi Controller is the primary, or leader of the cluster.
+* **State:** The Avi Controller status, such as "Cluster Active."
 
 ## Controller Analytics
 
@@ -38,15 +33,11 @@ If deploying a 3-node cluster, all fields are applicable:
 
 * **Controller Cluster IP:** The shared management IP address for the cluster.
 
-* 
-**Management IP:**
+* **Management IP:**
 
-* 
-**Controller Node-1:** Management IP address of node 1. This IP interface belongs only to this Avi Controller node and is not shared by the cluster.
-* 
-**Controller Node-2:** Management IP address of node 2. This IP interface belongs only to this Avi Controller node and is not shared by the cluster.
-* 
-**Controller Node-3:** Management IP address of node 3. This IP interface belongs only to this Avi Controller node and is not shared by the cluster.
+* **Controller Node-1:** Management IP address of node 1. This IP interface belongs only to this Avi Controller node and is not shared by the cluster.
+* **Controller Node-2:** Management IP address of node 2. This IP interface belongs only to this Avi Controller node and is not shared by the cluster.
+* **Controller Node-3:** Management IP address of node 3. This IP interface belongs only to this Avi Controller node and is not shared by the cluster.
 
 See the following for more information on Avi Controller cluster deployment and management:
 

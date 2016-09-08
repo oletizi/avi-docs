@@ -1,5 +1,5 @@
 ---
-title: DataScript: string.len
+title: DataScript&#58; string.len
 layout: default
 ---
 <table class="table table-hover"> 
@@ -28,7 +28,7 @@ layout: default
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
    <td width="600">Log the number of characters from&nbsp;the path of the client's request<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log(string.len(avi.http.get_path()))</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> </td> 
+    <!-- [Format Time: 0.0018 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

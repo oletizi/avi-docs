@@ -12,27 +12,19 @@ The role, in combination with the <a href="/tenants">tenant </a>(optional), comp
 
 For each Vantage system area, the role can be one of the following:
 
-* 
-**Write:** User has full access to create, read, modify, and delete items. For example, the user may be able to create a virtual service, modify its properties, view its health and metrics, and later delete that virtual service.
-* 
-**Read:** User may only read the existing configuration of the item. For example, the user may see how a virtual service is configured while being unable to view the current metrics, modify, or delete that virtual service.
-* 
-**No Access:** User can neither see nor to modify this section of Vantage. For example, the user would be prohibited from creating, modifying, deleting, or even viewing (reading) any virtual services at all.
+* **Write:** User has full access to create, read, modify, and delete items. For example, the user may be able to create a virtual service, modify its properties, view its health and metrics, and later delete that virtual service.
+* **Read:** User may only read the existing configuration of the item. For example, the user may see how a virtual service is configured while being unable to view the current metrics, modify, or delete that virtual service.
+* **No Access:** User can neither see nor to modify this section of Vantage. For example, the user would be prohibited from creating, modifying, deleting, or even viewing (reading) any virtual services at all.
 
 ## Pre-defined Vantage User Roles
 
 Vantage comes with the following pre-defined roles:
 
-* 
-**Application-Admin:** User has Write access to the Application and Profiles sections of Avi Vantage, Read access to the Infrastructure settings, and No Access to the Account or System sections.
-* 
-**Application-Operator:** User has Read access to the Application and Profiles sections of Avi Vantage, and No Access to the Infrastructure, Account, and System sections.
-* 
-**Security-Admin:** User has Read/Write access only to the Templates > Security section.
-* 
-**System-Admin:** User has Write access to all sections of Avi Vantage.
-* 
-**Tenant-Admin:** User has Write access to all sections of Avi Vantage except the System section, for which the user has No Access.
+* **Application-Admin:** User has Write access to the Application and Profiles sections of Avi Vantage, Read access to the Infrastructure settings, and No Access to the Account or System sections.
+* **Application-Operator:** User has Read access to the Application and Profiles sections of Avi Vantage, and No Access to the Infrastructure, Account, and System sections.
+* **Security-Admin:** User has Read/Write access only to the Templates > Security section.
+* **System-Admin:** User has Write access to all sections of Avi Vantage.
+* **Tenant-Admin:** User has Write access to all sections of Avi Vantage except the System section, for which the user has No Access.
 
 To display a detailed list of the access settings for a role, click on the table row for that role. Here is an example of the detailed information for the Application-Admin role. (The example is truncated on the right side in this example but the information will display in full in the web interface.)
 

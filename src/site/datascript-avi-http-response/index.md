@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.response
+title: DataScript&#58; avi.http.response
 layout: default
 ---
 <table class="table table-hover"> 
@@ -38,7 +38,7 @@ for k, v in pairs(h) do
       "Blocking Shellshock Attack!")
    end
 end</code></pre> 
-    <!-- [Format Time: 0.0034 seconds] --> </td> 
+    <!-- [Format Time: 0.0057 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

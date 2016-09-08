@@ -37,26 +37,18 @@ For an average request size of 2 KB per request, setting the queue length to 128
 
 If the queue length is changed, the change goes into effect immediately.
 
-* 
-Increasing the queue length allows more requests to be queued while the server is saturated.
-* 
-If the queue length is decreased and the new size is smaller than the number of requests that are currently in the queue, Vantage immediately drops the extra requests from the queue, beginning with the oldest one (first queued). For example, if the queue length is 128 and the queue is full, reducing the queue length to 64 results in the immediate drop of the 64 oldest requests from the queue.
+* Increasing the queue length allows more requests to be queued while the server is saturated.
+* If the queue length is decreased and the new size is smaller than the number of requests that are currently in the queue, Vantage immediately drops the extra requests from the queue, beginning with the oldest one (first queued). For example, if the queue length is 128 and the queue is full, reducing the queue length to 64 results in the immediate drop of the 64 oldest requests from the queue.
 
 ## Configuring HTTP Request Queuing
 
 To enable request queuing for a pool:
 
-1. 
-Navigate to Applications > Pools.
-1. 
-Click Create (if creating a new pool) or click the edit icon next to the pool name.
-1. 
-Go to the Advanced tab. (If a new pool, enter a name, then click Next twice.)
-1. 
-In the Pool Full Settings section, select Enabled next to Request Queuing.
-1. 
-(optional) To change the queue size, edit the number in the Queue Length field. There is no specific maximum length value. In this case, the amount of memory available on the SE for queuing presents the practical limit.
-1. 
-If configuring a new pool, finish configuring any other pool settings, then click Save.
+1. Navigate to Applications > Pools.
+1. Click Create (if creating a new pool) or click the edit icon next to the pool name.
+1. Go to the Advanced tab. (If a new pool, enter a name, then click Next twice.)
+1. In the Pool Full Settings section, select Enabled next to Request Queuing.
+1. (optional) To change the queue size, edit the number in the Queue Length field. There is no specific maximum length value. In this case, the amount of memory available on the SE for queuing presents the practical limit.
+1. If configuring a new pool, finish configuring any other pool settings, then click Save.
 
 <a href="img/pool-rqst-queuing.png"><img src="img/pool-rqst-queuing.png" alt="pool-rqst-queuing" width="805" height="267"></a>

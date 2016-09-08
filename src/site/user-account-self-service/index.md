@@ -16,23 +16,17 @@ To manage your Vantage user account:
 
 Users can modify the following account information for their own user account:
 
-* 
-**Name:** Your full name.
-* 
-**Password:** To change your password, enter a new password in the New Password and Confirm New Password fields. (Passwords are case sensitive.)
-* 
-**Email:** Your email address. This is the address that Avi Vantage will use when you request a password recovery.
+* **Name:** Your full name.
+* **Password:** To change your password, enter a new password in the New Password and Confirm New Password fields. (Passwords are case sensitive.)
+* **Email:** Your email address. This is the address that Avi Vantage will use when you request a password recovery.
 
 ### Display Settings
 
 Users can modify the following display settings for their own user account:
 
-* 
-**Time:** Format for timestamps, such as those that appear in logs or analytics metrics. The format can be Universal Time Coordinated (UTC) or Local Time. In either case, Avi Vantage obtains the time from the specified NTP server.
-* 
-**Default Timeframe:** Select the time period over which to display information. See Display Time. (link)
-* 
-**Metric Value:** Change the view of pages such as the Analytics tab of the Virtual Services Details page, to show data points such as the End to End Timing chart as either an Average of the metrics data for the timeframe selected or the most Current data point.
+* **Time:** Format for timestamps, such as those that appear in logs or analytics metrics. The format can be Universal Time Coordinated (UTC) or Local Time. In either case, Avi Vantage obtains the time from the specified NTP server.
+* **Default Timeframe:** Select the time period over which to display information. See Display Time. (link)
+* **Metric Value:** Change the view of pages such as the Analytics tab of the Virtual Services Details page, to show data points such as the End to End Timing chart as either an Average of the metrics data for the timeframe selected or the most Current data point.
 
 ### Controller Settings
 

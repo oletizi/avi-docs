@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.set_query
+title: DataScript&#58; avi.http.set_query
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
    avi.http.set_path("/")
    avi.http.set_query("sales=true")
 end</code></pre> 
-    <!-- [Format Time: 0.0030 seconds] --> </td> 
+    <!-- [Format Time: 0.0028 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

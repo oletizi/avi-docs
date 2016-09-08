@@ -1,5 +1,5 @@
 ---
-title: CLI: Reset to Factory Defaults
+title: CLI&#58; Reset to Factory Defaults
 layout: default
 ---
 In some scenarios, it may be useful to reset Avi Vantage to its factory default settings. With a few exceptions, this will wipe out all configuration information and is equivalent to completely reinstalling a fresh deployment.

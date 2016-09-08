@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.get_path
+title: DataScript&#58; avi.http.get_path
 layout: default
 ---
 <table class="table table-hover"> 
@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if string.endswith(avi.http.get_path(), ".php") then
    avi.http.close_conn(true)
 end</code></pre> 
-    <!-- [Format Time: 0.0016 seconds] --> </td> 
+    <!-- [Format Time: 0.0015 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

@@ -9,14 +9,11 @@ For HTTP traffic, Vantage can be configured to insert an X-Forwarded-For (XFF) h
 
 To include the client's original IP address in HTTP traffic logs, enable Vantage to insert an XFF header into the client traffic destined for the server. XFF insertion can be enabled in the HTTP application profile that is attached to the virtual service.
 
-1. 
-Navigate to Template > HTTP Application Profile. 
-1. 
-Within the General tab, select the X-Forwarded-For check box. 
+1. Navigate to Template > HTTP Application Profile. 
+1. Within the General tab, select the X-Forwarded-For check box. 
 
 Note: Optionally the header can be renamed using the XFF Alternate Name field.
-1. 
-When finished changing the profile, click Save.
+1. When finished changing the profile, click Save.
 
 <a href="img/XFF-Policy.png"><img src="img/XFF-Policy.png" alt="XFF Policy" width="722" height="223"></a>  
 

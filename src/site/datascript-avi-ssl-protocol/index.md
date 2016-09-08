@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.ssl.protocol
+title: DataScript&#58; avi.ssl.protocol
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
    avi.http.response(404, {content_type="text/html"},
    "Your browser's SSL version, <b>" .. avi.ssl.protocol() .. "</b> is old. Upgrade your browser and try again.")
 end</code></pre> 
-    <!-- [Format Time: 0.0032 seconds] --> </td> 
+    <!-- [Format Time: 0.0041 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

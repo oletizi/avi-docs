@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.set_path
+title: DataScript&#58; avi.http.set_path
 layout: default
 ---
 <table class="table table-hover"> 
@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.get_path() == nil then
    avi.http.set_path("/")
 end</code></pre> 
-    <!-- [Format Time: 0.0023 seconds] --> </td> 
+    <!-- [Format Time: 0.0021 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

@@ -4,12 +4,9 @@ layout: default
 ---
 <img src="img/Disabled1.png" alt="Disabled1" width="302" height="104">A virtual service may be manually disabled by an administrator or an automated script.  While disabled, the virtual service is unattached from the Service Engines that were hosting it. Likewise:
 
-* 
-Existing connections are immediately terminated.
-* 
-The pool is placed in a grey ('unused') state and is eligible to be used by another virtual service.
-* 
-No health monitors are sent to the pool's servers while the virtual service is disabled.
+* Existing connections are immediately terminated.
+* The pool is placed in a grey ('unused') state and is eligible to be used by another virtual service.
+* No health monitors are sent to the pool's servers while the virtual service is disabled.
 
 If a virtual IP needs to be disabled, each virtual service must first be disabled. Once all virtual services using the VIP have been disabled, Avi SEs will no longer respond to ARPs or network requests for the VIP.
 

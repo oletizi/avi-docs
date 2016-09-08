@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.secure
+title: DataScript&#58; avi.http.secure
 layout: default
 ---
 <table class="table table-hover"> 
@@ -32,7 +32,7 @@ layout: default
    avi.http.hostname() ..
    avi.http.get_uri())
 end</code></pre> 
-    <!-- [Format Time: 0.0031 seconds] --> </td> 
+    <!-- [Format Time: 0.0023 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

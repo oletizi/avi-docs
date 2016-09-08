@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.get_query
+title: DataScript&#58; avi.http.get_query
 layout: default
 ---
 <table class="table table-hover"> 
@@ -46,7 +46,7 @@ for k, v in pairs(qa) do
    end
 end
 avi.http.response(200, {}, resp)</code></pre> 
-    <!-- [Format Time: 0.0021 seconds] --> </td> 
+    <!-- [Format Time: 0.0027 seconds] --> </td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Example 2</strong></span></td> 
@@ -64,7 +64,7 @@ for k, v in pairs(qa) do
    end
 end
 avi.http.response(200, {}, resp)</code></pre> 
-    <!-- [Format Time: 0.0060 seconds] --> For request: https://demo.avinetworks.com/path1/index.html?a=b&amp;c=&amp;d=e<br> The following is returned: a:b, d:e, c:,</td> 
+    <!-- [Format Time: 0.0088 seconds] --> For request: https://demo.avinetworks.com/path1/index.html?a=b&amp;c=&amp;d=e<br> The following is returned: a:b, d:e, c:,</td> 
   </tr> 
  </tbody> 
 </table>

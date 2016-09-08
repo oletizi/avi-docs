@@ -1,5 +1,5 @@
 ---
-title: DataScript : HTTP Cookie Encryption Gateway
+title: DataScript &#58; HTTP Cookie Encryption Gateway
 layout: default
 ---
 The following DataScript will encrypt the contents of a cookie going to a client, and decrypt the content before returning the cookie to the server.

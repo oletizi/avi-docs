@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.table_insert
+title: DataScript&#58; avi.vs.table_insert
 layout: default
 ---
 <table class="table table-hover"> 

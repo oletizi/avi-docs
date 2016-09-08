@@ -4,10 +4,8 @@ layout: default
 ---
 Avi Vantage uses virtual services and Virtual IP Addresses (VIPs). These are related but separate things.
 
-* 
-**Virtual IP (VIP):** a single IP address owned and advertised by a Service Engine (SE).
-* 
-**Virtual Service:** a VIP plus a specific Layer 4 protocol port (or ports) that are used to proxy an application. A single VIP can have multiple virtual services. As an example, all the following virtual services can exist on a single VIP:
+* **Virtual IP (VIP):** a single IP address owned and advertised by a Service Engine (SE).
+* **Virtual Service:** a VIP plus a specific Layer 4 protocol port (or ports) that are used to proxy an application. A single VIP can have multiple virtual services. As an example, all the following virtual services can exist on a single VIP:
 
 * 192.168.1.1:80,443  (HTTP/S)
 * 192.168.1.1:20,21  (FTP)

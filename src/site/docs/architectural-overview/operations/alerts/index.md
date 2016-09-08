@@ -32,31 +32,21 @@ Alerts filter events to highlight important information. Avi Vantage includes a 
 
 The Alert Config page has the following options:
 
-* 
-**Search:** Search against the alert names in the table.
-* 
-**Create:** Opens the New Alert Config popup.
-* 
-**Edit:** Opens the Edit Alert Config popup.
-* 
-**Delete:** Remove the selected Alert configuration.
+* **Search:** Search against the alert names in the table.
+* **Create:** Opens the New Alert Config popup.
+* **Edit:** Opens the Edit Alert Config popup.
+* **Delete:** Remove the selected Alert configuration.
 
 The table on this page contains the following information for each Alert:
 
 <a href="img/ops_alert_config_page-1.jpg"><img src="img/ops_alert_config_page-1.jpg" alt="ops_alert_config_page" width="1321" height="190"></a>
 
-* 
-**Name:** Name of the Alert.
-* 
-**Alert Level:** Level, or severity, of the Alert (Low, Medium, or High).
-* 
-**Alert Action:** Specifies the alert action that is triggered when the Alert is generated.
-* 
-**Type:** Whether the Alert is Real Time (5-second window) or Rolling Window (5-minute window).
-* 
-**Alert Group:** Whether the Alert applies to applications (App Log), client connections (Conn Logs), or Events (Event Logs)
-* 
-**Enabled:** Whether the Alert is enabled or disabled.
+* **Name:** Name of the Alert.
+* **Alert Level:** Level, or severity, of the Alert (Low, Medium, or High).
+* **Alert Action:** Specifies the alert action that is triggered when the Alert is generated.
+* **Type:** Whether the Alert is Real Time (5-second window) or Rolling Window (5-minute window).
+* **Alert Group:** Whether the Alert applies to applications (App Log), client connections (Conn Logs), or Events (Event Logs)
+* **Enabled:** Whether the Alert is enabled or disabled.
 
 ### Create Alert Configuration
 

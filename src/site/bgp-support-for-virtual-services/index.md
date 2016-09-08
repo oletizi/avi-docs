@@ -28,12 +28,9 @@ If the Avi SE fails, the BGP peers withdraw the routes that were advertised to t
 
 Prior to Avi Vantage 16.2.2, any operation that modified/added/deleted the BGP peer configuration in the BGP profile would disrupt traffic because it would take effect only if the virtual service was disabled and re-enabled. As of 16.2.2, BGP peer changes are handled gracefully.
 
-* 
-If a new peer is added to the BGP profile, the virtual service IP is advertised to the new BGP peer router without needing to disable/enable the VS.
-* 
-If a BGP peer is deleted from the BGP profile, any VS IPs that had been advertised to the BGP peer will be withdrawn.
-* 
-When a BGP peer IP is updated, it is handled as an add/delete of the BGP peer.
+* If a new peer is added to the BGP profile, the virtual service IP is advertised to the new BGP peer router without needing to disable/enable the VS.
+* If a BGP peer is deleted from the BGP profile, any VS IPs that had been advertised to the BGP peer will be withdrawn.
+* When a BGP peer IP is updated, it is handled as an add/delete of the BGP peer.
 
 ## SE-Router Link Types Supported with BGP
 

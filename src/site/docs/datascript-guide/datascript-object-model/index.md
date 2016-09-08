@@ -1,5 +1,5 @@
 ---
-title: DataScript: Object Model
+title: DataScript&#58; Object Model
 layout: default
 ---
 DataScripts are attached to Virtual Services. Each DataScript will executed when an event is triggered, such as an HTTP request or HTTP response is received by the Virtual Service. Each DataScript objects will include at least one, and potentially more events.

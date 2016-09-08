@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.ssl.client_cert
+title: DataScript&#58; avi.ssl.client_cert
 layout: default
 ---
 <table class="table table-hover"> 
@@ -36,7 +36,7 @@ end if avi.http.secure() then -- test if the connection is secure
    fingerprint = avi.ssl.client_cert(avi.CLIENT_CERT_FINGERPRINT)
    avi.vs.log(fingerprint)
 end</code></pre> 
-    <!-- [Format Time: 0.0037 seconds] --> </td> 
+    <!-- [Format Time: 0.0038 seconds] --> </td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Example 2</strong></font> </td> 
@@ -50,7 +50,7 @@ end if avi.http.secure() then -- test if the connection is secure
    fingerprint = avi.ssl.client_cert(avi.CLIENT_CERT_FINGERPRINT)
    avi.vs.log(fingerprint)
 end</code></pre> 
-    <!-- [Format Time: 0.0031 seconds] --> </td> 
+    <!-- [Format Time: 0.0020 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

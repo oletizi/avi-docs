@@ -1,5 +1,5 @@
 ---
-title: DataScript: string.sub
+title: DataScript&#58; string.sub
 layout: default
 ---
 <table class="table table-hover"> 
@@ -37,7 +37,7 @@ for key,val in pairs(headers) do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avi.http.close_conn()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- close the TCP connection
 &nbsp;&nbsp; end
 end</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> DataScript Log: [string "Test-Rule"]:2: <strong>bcd</strong></td> 
+    <!-- [Format Time: 0.0015 seconds] --> DataScript Log: [string "Test-Rule"]:2: <strong>bcd</strong></td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Example 2</strong></span></td> 
@@ -52,7 +52,7 @@ for key,val in pairs(headers) do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avi.http.close_conn()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- close the TCP connection
 &nbsp;&nbsp; end
 end</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> DataScript Log: [string "Test-Rule"]:2: <strong>abcde</strong></td> 
+    <!-- [Format Time: 0.0020 seconds] --> DataScript Log: [string "Test-Rule"]:2: <strong>abcde</strong></td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Example 3</strong></span></td> 
@@ -82,7 +82,7 @@ for key,val in pairs(headers) do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avi.http.close_conn()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- close the TCP connection
 &nbsp;&nbsp; end
 end</code></pre> 
-    <!-- [Format Time: 0.0037 seconds] --> </td> 
+    <!-- [Format Time: 0.0036 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

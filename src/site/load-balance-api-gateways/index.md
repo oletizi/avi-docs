@@ -18,32 +18,19 @@ Often, API response time directly impacts the end-user experience; therefore, it
 
 Avi Vantage provides the following out-of-box benefits when deployed to load balance API gateways:
 
-* 
-**API versioning through easy-to-use Layer 7 policy**
+* **API versioning through easy-to-use Layer 7 policy**
 
-* 
-Route API calls to different pools based on version information
-* 
-Redirect API calls to the default API version pool
-* 
-**API quality monitoring with full visibility**
+* Route API calls to different pools based on version information
+* Redirect API calls to the default API version pool
+* **API quality monitoring with full visibility**
 
-* 
-Score API quality based on response time, response code error ratio, and resource utilization
-* 
-Pinpoint API bottlenecks: are they in the client-facing network? Data center network? API gateway itself?
-* 
-Full API transaction logs per client IP, device type, and so on: <a href="img/API-Gateway2.png"><img src="img/API-Gateway2.png" alt="API Gateway2" width="622" height="133"></a>
-* 
-**Secure API with access control**
+* Score API quality based on response time, response code error ratio, and resource utilization
+* Pinpoint API bottlenecks: are they in the client-facing network? Data center network? API gateway itself?
+* Full API transaction logs per client IP, device type, and so on: <a href="img/API-Gateway2.png"><img src="img/API-Gateway2.png" alt="API Gateway2" width="622" height="133"></a>
+* **Secure API with access control**
 
-* 
-End-to-end encryption with client certificate authentication
-* 
-Redirect for non-secure APIs to secure APIs
-* 
-Block/allow API calls based on custom IP groups
-* 
-Per-client rate limiting
-* 
-DDoS attack mitigation with detailed attack information (example: Top-*N* attackers)    
+* End-to-end encryption with client certificate authentication
+* Redirect for non-secure APIs to secure APIs
+* Block/allow API calls based on custom IP groups
+* Per-client rate limiting
+* DDoS attack mitigation with detailed attack information (example: Top-*N* attackers)    

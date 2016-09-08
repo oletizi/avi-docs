@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.pool.select
+title: DataScript&#58; avi.pool.select
 layout: default
 ---
 <table class="table table-hover"> 
@@ -42,7 +42,7 @@ elseif avi.http.get_path () == "/engineering/" then
 elseif avi.http.get_path () == "/marketing/" then
    avi.pool.select("marketing", "10.10.31.201")
 end avi.pool.select(avi.http.get_path_tokens(1, 1))</code></pre> 
-    <!-- [Format Time: 0.0060 seconds] --> </td> 
+    <!-- [Format Time: 0.0056 seconds] --> </td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Example 2</strong></span></td> 
@@ -54,7 +54,7 @@ elseif avi.http.get_path () == "/engineering/" then
 elseif avi.http.get_path () == "/marketing/" then
    avi.pool.select("marketing", "10.10.31.201")
 end avi.pool.select(avi.http.get_path_tokens(1, 1))</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> </td> 
+    <!-- [Format Time: 0.0016 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

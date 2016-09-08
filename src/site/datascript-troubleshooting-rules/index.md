@@ -1,5 +1,5 @@
 ---
-title: DataScript: Troubleshooting Rules
+title: DataScript&#58; Troubleshooting Rules
 layout: default
 ---
 DataScripts may fail in one of the following two ways.

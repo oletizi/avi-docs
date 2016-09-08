@@ -1,5 +1,5 @@
 ---
-title: DataScript: string.endswith
+title: DataScript&#58; string.endswith
 layout: default
 ---
 <table class="table table-hover"> 
@@ -31,7 +31,7 @@ layout: default
 if string.endswith(path, "/secure/") then
    avi.http.response(403)
 end</code></pre> 
-    <!-- [Format Time: 0.0021 seconds] --> </td> 
+    <!-- [Format Time: 0.0027 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

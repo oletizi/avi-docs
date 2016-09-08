@@ -18,12 +18,9 @@ vCenter has no concept of anti-affinity, so the task is handled by the Vantage C
 
 If the SE group is set to one of the following high availability modes, the Controller will create the SEs on different ESX hosts:
 
-* 
-Active/Active
-* 
-Active/Standby
-* 
-Dedicated
+* Active/Active
+* Active/Standby
+* Dedicated
 
 If a virtual service is scaled out across multiple SEs, anti-affinity will be taken into account to determine which SEs to utilize.
 

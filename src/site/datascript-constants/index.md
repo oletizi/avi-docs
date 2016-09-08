@@ -1,5 +1,5 @@
 ---
-title: DataScript: Constants
+title: DataScript&#58; Constants
 layout: default
 ---
 Constants are static strings that can be used to get or set information from the data path. For instance, a constant could be used to return an HTTP 403 message to a client request that did not have valid credentials. The following constants are available:

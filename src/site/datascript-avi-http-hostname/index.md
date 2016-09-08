@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.hostname
+title: DataScript&#58; avi.http.hostname
 layout: default
 ---
 <table class="table table-hover"> 
@@ -36,7 +36,7 @@ layout: default
 if not host then
    avi.http.close_conn()
 end</code></pre> 
-    <!-- [Format Time: 0.0019 seconds] --> </td> 
+    <!-- [Format Time: 0.0014 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

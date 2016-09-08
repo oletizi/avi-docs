@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.vs.port
+title: DataScript&#58; avi.vs.port
 layout: default
 ---
 <table class="table table-hover"> 
@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.vs.port() ~= "443" then
    avi.http.close_conn()
 end</code></pre> 
-    <!-- [Format Time: 0.0016 seconds] --> </td> 
+    <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

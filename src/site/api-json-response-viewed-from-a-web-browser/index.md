@@ -1,5 +1,5 @@
 ---
-title: API: JSON Response Viewed in a Web Browser
+title: API&#58; JSON Response Viewed in a Web Browser
 layout: default
 ---
 API responses from the Avi Controller are formatted as JSON. When viewed from within a web browser, the responses look like endless run-on sentences:

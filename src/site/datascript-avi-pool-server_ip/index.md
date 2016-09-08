@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.pool.server_ip
+title: DataScript&#58; avi.pool.server_ip
 layout: default
 ---
 <table class="table table-hover"> 

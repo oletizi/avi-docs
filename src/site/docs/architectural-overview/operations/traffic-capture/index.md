@@ -10,14 +10,10 @@ The Capture Configuration section shows the parameters defined for any captures 
 
 <img src="img/ops_traffic_capture.jpg" alt="">
 
-* 
-**Select Virtual Service:** The capture is executed against traffic for a virtual service. The capture includes both the client-to-SE and SE-to-server sides of the connection. It will automatically be performed on all SEs handling traffic for the virtual service.
-* 
-**All Traffic:** By default, all traffic is captured. Adding an optional filter will enable IP based filtering based on a single IP address 10.1.1.1, a space separated list, a range 10.1.1.1-10.1.1.255, or a subnet mask 10.1.1.1/24. This IP could be either the client or the server of the connection.
-* 
-**Number of Packets / Duration:** It is highly recommended to set a limit to the duration of the capture. This limit may be either the max number of packets to receive, or the duration of time, in minutes. Once the limit has been reached, the capture will terminate and be sent to the Controller for processing and should be available shortly after.
-* 
-**Size of Packets:** Set the number of bytes to capture per packet. This is similar to the snaplen option in TCPdump.
+* **Select Virtual Service:** The capture is executed against traffic for a virtual service. The capture includes both the client-to-SE and SE-to-server sides of the connection. It will automatically be performed on all SEs handling traffic for the virtual service.
+* **All Traffic:** By default, all traffic is captured. Adding an optional filter will enable IP based filtering based on a single IP address 10.1.1.1, a space separated list, a range 10.1.1.1-10.1.1.255, or a subnet mask 10.1.1.1/24. This IP could be either the client or the server of the connection.
+* **Number of Packets / Duration:** It is highly recommended to set a limit to the duration of the capture. This limit may be either the max number of packets to receive, or the duration of time, in minutes. Once the limit has been reached, the capture will terminate and be sent to the Controller for processing and should be available shortly after.
+* **Size of Packets:** Set the number of bytes to capture per packet. This is similar to the snaplen option in TCPdump.
 
 When the capture is started, the Capture Configuration section indicates the progress of the capture. Once the capture is complete, it may still take a few minutes for the new capture to show up in the Completed Captures, as the Controller may need to collate data from multiple SEs and format the data, which is output as a pcap file.
 
