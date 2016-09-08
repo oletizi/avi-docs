@@ -9,15 +9,15 @@ Vantage may be managed via GUI, API, or CLI. Both the GUI and CLI are built on t
 ### How to Access the CLI
 
 To access the command line interface, either SSH to the Vantage Controller or access the Controller via the console from an orchestrator such as vCenter. Some user accounts may default into Linux bash. For these accounts, enter the Vantage shell by typing: <code>shell</code>
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>shell</code></pre>
+<pre class="command-line language-bash" data-prompt="username@avi:~$"><code>shell</code></pre>
 
 Similarly, to exit the Vantage shell into Linux, type: <code>bash</code>
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>bash</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>bash</code></pre>
 
 When jumping from Linux bash to the Vantage shell, or from the Vantage shell to Linux bash, you may return to the previous mode by typing: <code>exit</code>
 
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>exit</code></pre> 
+<pre class="command-line language-bash" data-prompt="username@avi:~$"><code>exit</code></pre> 
 **Note:** While it is possible to directly access the CLI of a Service Engine, it is not recommended, and may only be used for basic troubleshooting. All configuration management must be done from the Controller.
 
 ### Navigation and Help
@@ -25,7 +25,7 @@ When jumping from Linux bash to the Vantage shell, or from the Vantage shell to 
 Dropping into the CLI leaves the administrator at a blank command prompt. To see a list of available commands, press the tab key twice. The commands shown are relative to the current location within the CLI hierarchy.
 
 While typing a command, tab will autocomplete the command. Double tab will return a list of available options for the command in the left column. Most options include a brief help description, which is shown in the right column.
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>export configuration
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>export configuration
 export configuration serviceengine
 export serviceengine ova file from controller virtualservice
 export virtual service &nbsp; &nbsp;
@@ -33,7 +33,7 @@ export virtual service &nbsp; &nbsp;
 
 Commands or parameters may require multiple words or options. If there is only a single word or option, pressing tab will auto complete the next word in the command:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="3,5"><code>export configuration [tab]
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="3,5"><code>export configuration [tab]
 export configuration file [tab]
 WORD (required)
 export configuration file mybackup
@@ -49,21 +49,21 @@ Other navigational commands:
 ### Sub-Mode Navigation
 
 Many areas of the CLI contain sub-modes, which are nested sub-sections pertaining to the current command. To enter the sub-mode, enter the relevant command. Within the context of a sub-mode, changes are not committed until explicitly saved. Type save to exit the sub-mode while committing changes. To exit the sub-mode without saving changes, type cancel. When in a sub-mode, or a nested sub-mode, the command prompt will change to reflect the current sub-mode.
-<pre crayon="false" class="command-line language-bash" data-prompt="2,4|debugvertualservice>;3|debugvirtualservice:debug_ip>"><code>debug virtualservice Test-VS
+<pre class="command-line language-bash" data-prompt="2,4|debugvertualservice>;3|debugvirtualservice:debug_ip>"><code>debug virtualservice Test-VS
 debug_ip
 cancel
 cancel</code></pre>
 
 It is possible to enter a command which enters a sub-mode, while also adding applicable flags. This will simultaneously navigate into the sub-mode and execute the command. Subsequent commands within the sub-mode do not use the initial sub-mode command.
 
-<pre crayon="false" class="command-line language-bash" data-prompt="1,4|debugvirtualservice> ;2-3|debugvirtualservice:debug_ip> "><code><strong>debug_ip addrs 10.1.1.1</strong>
+<pre class="command-line language-bash" data-prompt="1,4|debugvirtualservice> ;2-3|debugvirtualservice:debug_ip> "><code><strong>debug_ip addrs 10.1.1.1</strong>
 <strong>addrs 10.1.1.2</strong>
 <strong>save</strong></code></pre>
 
 ### Where
 
 When operating within a sub-mode, multiple changes can be made to parameters. To see the current status of the configured parameters, use the <code>where</code> command.
-<pre crayon="false" class="command-line language-bash" data-prompt="1|debugvirtualservice> ;2-4,13|debugvirtualservice:debug_ip> " data-output="5-12"><code><strong>debug_ip addrs 10.1.1.1</strong>
+<pre class="command-line language-bash" data-prompt="1|debugvirtualservice> ;2-4,13|debugvirtualservice:debug_ip> " data-output="5-12"><code><strong>debug_ip addrs 10.1.1.1</strong>
 <strong>addrs 10.1.1.2</strong>
 <strong>addrs 10.1.1.3</strong>
 <strong>where</strong>
@@ -79,7 +79,7 @@ Tenant: admin
 ### API
 
 When executing any CLI command, it may include the <code>--api-detail</code> flag. This flag will echo the API call the Vantage CLI is performing, and the command executes as it would without this flag. This can be useful when building API driven automation scripts.
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>show serviceengine --api-detail
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>show serviceengine --api-detail
 REST API Request
 API: /api/serviceengine?owned_by_controller=True&amp;join_subresources=runtime
 &nbsp;</code></pre>
