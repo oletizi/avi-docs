@@ -152,34 +152,34 @@ Avi Vantage for Linux server cloud is distributed as a Docker image. If Docker i
 
 ### Install Docker onto Oracle Linux
 
-1. Install updates to Oracle Linux (OEL): <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>yum update</code></pre>
-1. Download and install the latest version of Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>wget –qO- https://get.docker.com/ | sh</code></pre>
-1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
-1. Enable Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
+1. Install updates to Oracle Linux (OEL): <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>yum update</code></pre>
+1. Download and install the latest version of Docker: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>wget –qO- https://get.docker.com/ | sh</code></pre>
+1. Start Docker services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
+1. Enable Docker services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Install Docker onto Red Hat Linux
 
-1. Register the Linux server with Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
-1. Enable the repository for extra services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager repos --enable=rhel-7-server-extras-rpms</code></pre>
-1. Install updates to Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
-1. Install Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install docker</code></pre>
-1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
-1. Enable Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
+1. Register the Linux server with Red Hat: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
+1. Enable the repository for extra services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager repos --enable=rhel-7-server-extras-rpms</code></pre>
+1. Install updates to Red Hat: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
+1. Install Docker: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install docker</code></pre>
+1. Start Docker services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
+1. Enable Docker services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Install Docker onto CentOS
 
-1. Install updates to CentOS: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
-1. Install Docker: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install docker</code></pre>
-1. Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
-1. Enable Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
+1. Install updates to CentOS: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
+1. Install Docker: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install docker</code></pre>
+1. Start Docker services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start&nbsp;docker</code></pre>
+1. Enable Docker services: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable&nbsp;docker</code></pre>
 1. If deploying on more than one host, repeat the steps above on each host.
 
 ### Verify Docker Installation and Version
 
 Enter the **docker version** command to verify the Docker version that is installed and running. In this example, the version is 1.8.1.:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-15"><code>docker version
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-15"><code>docker version
 Client:
 Version: 1.8.1
 API version: 1.20
@@ -197,18 +197,18 @@ OS/Arch: linux/amd64</code></pre>
 
 ### 2. Install Avi Controller Image
 
-1. Use SCP to copy the .tgz package onto the Linux server that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre>
-1. Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh root@Host-IP</code></pre>
-1. Change to the /tmp directory: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd /tmp/</code></pre>
-1. Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo tar -xvf docker_install.tar.gz</code></pre>
+1. Use SCP to copy the .tgz package onto the Linux server that will host the Avi Controller: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre>
+1. Use SSH to log into the host: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh root@Host-IP</code></pre>
+1. Change to the /tmp directory: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd /tmp/</code></pre>
+1. Unzip the .tgz package: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo tar -xvf docker_install.tar.gz</code></pre>
 
 1. Run the setup.py script. The setup script can be run in interactive mode or as a single command string.
 
 * If entered as a command string, the script sets the options that are included in the command string to the specified values, and leaves the other values set to their defaults. Go to Step 6.
 * In interactive mode, the script displays a prompt for configuring each option. Go to Step 7.
 
-1. To run the setup script as a single command, enter a command string such as the following: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>./avi_baremetal_setup.py -c -cc 8 -cm 24 -i 10.120.0.39 -m 10.120.0.39</code></pre> The options are explained in the CLI help:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-20"><code>avi_baremetal_setup.py [-h] [-d] [-s] [-sc SE_CORES] [-sm SE_MEMORY_MB] [-c] [-cc CON_CORES] [-cm CON_MEMORY_GB] -i CONTROLLER_IP -m MASTER_CTL_IP-h, --help show this help message and exit
+1. To run the setup script as a single command, enter a command string such as the following: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>./avi_baremetal_setup.py -c -cc 8 -cm 24 -i 10.120.0.39 -m 10.120.0.39</code></pre> The options are explained in the CLI help:
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-20"><code>avi_baremetal_setup.py [-h] [-d] [-s] [-sc SE_CORES] [-sm SE_MEMORY_MB] [-c] [-cc CON_CORES] [-cm CON_MEMORY_GB] -i CONTROLLER_IP -m MASTER_CTL_IP-h, --help show this help message and exit
 -d, --dpdk_mode Run SE in DPDK Mode. Default is False
 -s, --run_se Run SE locally. Default is False
 -sc SE_CORES, --se_cores SE_CORES
@@ -225,7 +225,7 @@ Controller IP Address
 -m MASTER_CTL_IP, --master_ctl_ip MASTER_CTL_IP
 Master controller IP Address</code></pre>
 
-1. To run in interactive mode, start by entering "avi_baremetal_setup.py". Here is an example:<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>./avi_baremetal_setup.pyWelcome to AVI Initialization ScriptDPDK Mode:
+1. To run in interactive mode, start by entering "avi_baremetal_setup.py". Here is an example:<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>./avi_baremetal_setup.pyWelcome to AVI Initialization ScriptDPDK Mode:
 Pre-requisites(DPDK): This script assumes the below utilities are installed:
 docker (yum -y install docker)
 Supported Nics(DPDK): Intel 82599/82598 Series of Ethernet Controllers
@@ -250,7 +250,7 @@ Controller IP : 10.120.0.39Disabling AVI Services...
 Loading AVI CONTROLLER Image. Please Wait..
 kernel.core_pattern = /var/crash/%e.%p.%t.coreInstallation Successful. Starting Services...</code></pre>
 
-1. Start Avi Controller on the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo&nbsp;systemctl start avicontroller</code></pre>
+1. Start Avi Controller on the host to complete installation: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo&nbsp;systemctl start avicontroller</code></pre>
 
 1. If deploying a 3-host cluster, repeat the steps above on the hosts for each of the other 2 Controllers.
 
@@ -301,18 +301,18 @@ Note: If the wizard has timed out or you have decided to click through the rest 
 Leaving the wizard open, use another window or device to open a CLI session in the Linux shell on one of the Avi SE hosts.
 
 1. Log into the Linux shell on the Avi SE host (in this example, 10.130.164.76):
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2"><code>ssh avi@10.130.164.76
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2"><code>ssh avi@10.130.164.76
 password:</code></pre>
 
-1. Prepare the Avi SE host for adding the key from the Avi Controller:<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre>
+1. Prepare the Avi SE host for adding the key from the Avi Controller:<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre>
 
-1. Add the Avi Controller's public key to the authorized key file by pasting the key <a href="#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line:<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+1. Add the Avi Controller's public key to the authorized key file by pasting the key <a href="#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line:<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
 chmod 644 authorized_keys</code></pre>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
 
 1. Repeat these steps on each Avi SE host.
 
 **Example:**
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
 echo "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmizdHAyNTYAAAAlbmlzdHAyNTYAAABBBAHjOSUo8AVTISniFZ05UwOsce8/CxMhZ0myWFeRJJSnEC/T09EwOj+z6uMbnTEC+AHrYAEMgVCkdlhYfmWlrCg=root@Avi-Controller" &gt; .ssh/authorized_keys
 chmod 644 authorized_keys</code></pre>
 

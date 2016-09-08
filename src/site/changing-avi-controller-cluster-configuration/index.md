@@ -37,7 +37,7 @@ On the Avi Controller node that will be the leader:
 Login to the CLI (or CLI shell) and enter the commands shown in the following example.
 
 Note: Make sure to enter the host IP addresses of your Avi Controller nodes instead of the IP addresses shown in the example.
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
 Updating an existing object. Currently, the object is:
 +---------------+----------------------------------------------+
 | Field | Value |
@@ -80,7 +80,7 @@ Controller is ready.</code></pre> <a name="removebothfollowers"></a>
 Login to the CLI (or CLI shell) and enter the commands shown in the following example.
 
 Note: Make sure to enter the host IP addresses of your Avi Controller nodes instead of the IP addresses shown in the example.
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
 Updating an existing object. Currently, the object is:
 +---------------+----------------------------------------------+
 | Field | Value |
@@ -148,7 +148,7 @@ Note: If the node will be removed and replaced with a different node (different 
 Login to the CLI (or CLI shell) and enter the commands shown in the following example.
 
 Note: Make sure to enter the host IP addresses of your Avi Controller nodes instead of the IP addresses shown in the example.
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-26"><code>configure cluster
 Updating an existing object. Currently, the object is:
 +---------------+----------------------------------------------+
 | Field | Value |

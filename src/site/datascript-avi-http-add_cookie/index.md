@@ -38,7 +38,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.add_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> <p> Example method 2: &nbsp;Add two cookies: jsessionid=123 and lang=en</p> 
+    <!-- [Format Time: 0.0021 seconds] --> <p> Example method 2: &nbsp;Add two cookies: jsessionid=123 and lang=en</p> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.add_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
@@ -54,11 +54,11 @@ avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "/
      <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.add_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-     <!-- [Format Time: 0.0011 seconds] --> <span style="font-weight: 400;">If expires and max-age attributes are not desired, values&nbsp;0 are passed as argument.<br> 
+     <!-- [Format Time: 0.0016 seconds] --> <span style="font-weight: 400;">If expires and max-age attributes are not desired, values&nbsp;0 are passed as argument.<br> 
       <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.add_cookie( cookie_table ) avi.http.add_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.add_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-      <!-- [Format Time: 0.0015 seconds] --> </span></span></td> 
+      <!-- [Format Time: 0.0019 seconds] --> </span></span></td> 
   </tr> 
  </tbody> 
 </table>

@@ -9,7 +9,7 @@ To configure the Avi Controller cluster using the API, use the following API com
 ### Getting the Avi Controller Cluster Configuration
 
 To get the existing cluster configuration, send an API request such as the following:
-<pre crayon="false">
+<pre>
 API: GET https:///api/cluster
 An example output for this command is:
 {
@@ -42,7 +42,7 @@ In this example, the cluster contains only a single member. When Vantage is inst
 To create a 3-node cluster, send a request such as the following to add 2 more Avi Controller nodes to the cluster.
 
 For controller-ip, specify the management IP address of the individual Avi Controller node, not the IP address to be assigned to the cluster. The cluster IP is specified under virtual_ip.
-<pre crayon="false">
+<pre>
 API: PUT https:///api/cluster
 Data:
 {
@@ -83,7 +83,7 @@ Data:
 ### Removing Avi Controller Nodes from the Cluster
 
 To remove Avi Controller nodes from the cluster, use a request such as the following.
-<pre crayon="false">
+<pre>
 API: PUT api/cluster
 Data:
 {
@@ -110,7 +110,7 @@ Data:
 The following request gets runtime information for the cluster.
 
 The cluster is ready for operation when the cluster_state is CLUSTER_UP_HA_ACTIVE (for a 3-node cluster) or CLUSTER_UP_NO_HA (for a 1-node cluster). This example shows CLUSTER_UP_HA_ACTIVE. (See bottom of output.)
-<pre crayon="false">
+<pre>
 API: GET https:///api/cluster/runtime
 Example output is:
 

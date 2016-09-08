@@ -17,12 +17,12 @@ If a virtual IP needs to be disabled, each virtual service must first be disable
 ### CLI
 
 To enable a virtual service from the CLI:
-<pre crayon="false">: &gt; configure virtualservice Test-VS enabled
+<pre>: &gt; configure virtualservice Test-VS enabled
 : &gt; save</pre>
 
 To disable a virtual service from the CLI:
 
-<pre crayon="false">: &gt; configure virtualservice Test-VS no enabled
+<pre>: &gt; configure virtualservice Test-VS no enabled
 : &gt; save</pre>
 
  

@@ -26,7 +26,7 @@ Once a traffic capture has completed, it will show in the Completed Captures tab
 ### Traffic Capture Via CLI
 
 To provide packet captures via the CLI, log into the Vantage shell as normal. Then enter the packet capture sub-mode for the desired virtual service:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-8"><code><strong>debug virtualservice Test-VS</strong>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-8"><code><strong>debug virtualservice Test-VS</strong>
 Updating an existing object. Currently, the object is:
 +-------+--------------------+
 | Field | Value              |
@@ -94,13 +94,13 @@ The <code>debug_ip</code> command enters a sub-mode. This allows multiple IP add
 
 Specify parameters, including the max number of packets to capture:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=": debugvirtualservice>"><code><strong>capture_params num_pkts 1000</strong>
+<pre class="command-line language-bash" data-prompt=": debugvirtualservice>"><code><strong>capture_params num_pkts 1000</strong>
 <strong>debug_ip addrs 10.10.10.10</strong>
 debug_ip &gt; <strong>save</strong></code></pre>
 
 Begin capturing based on the previously configured parameters:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=": debugvirtualservice>" data-output="3-14"><code>capture
+<pre class="command-line language-bash" data-prompt=": debugvirtualservice>" data-output="3-14"><code>capture
 save
 +----------------+--------------------+
 | Field          | Value              |
@@ -117,13 +117,13 @@ save
 
 Re-enter the packet capture sub-mode and stop an ongoing packet capture:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code><strong>debug virtualservice Test-VS</strong>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code><strong>debug virtualservice Test-VS</strong>
 debugvirtualservice&gt; <strong>no capture</strong>
 debugvirtualservice&gt; <strong>save</strong></code></pre>
 
 Export the packet capture to a remote system that can view it via a tool such as TCPdump or Wireshark:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-3"><code><strong>show debug virtualservice Test-VS capture</strong>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-3"><code><strong>show debug virtualservice Test-VS capture</strong>
 Please specify the destination directory: <strong>/tmp</strong>
 Downloaded the attachment to /tmp/vs_virtualservice.20141205_192033.pcap
 <strong>bash</strong>

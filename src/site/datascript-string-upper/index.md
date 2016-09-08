@@ -29,7 +29,7 @@ layout: default
    <td width="600">Evaluate the client's path as upper case characters. Client may have sent /Sales, /sales, or /SaLeS. &nbsp;All would be marked true.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if string.upper(avi.http.get_path() == "/SALES" then
    ...</code></pre> 
-    <!-- [Format Time: 0.0012 seconds] --> </td> 
+    <!-- [Format Time: 0.0019 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

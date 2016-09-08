@@ -13,13 +13,13 @@ Ensure the DC/OS CLI package is installed. (See a <a href="https://docs.mesosphe
 ### Using the DC/OS CLI
 
 To view the options available during installation:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package describe avi</code></pre>
+<pre pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package describe avi</code></pre>
 
 **Example:**
 <a href="img/dcos13.jpg"><img src="img/dcos13.jpg" alt="dcos13" width="1020" height="648"></a>
 To begin installation:
 
-<pre crayon="false" pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package install avi</code></pre>
+<pre pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package install avi</code></pre>
 
 **Example:**
 <a href="img/dcos1.jpg"><img src="img/dcos1.jpg" alt="dcos1" width="922" height="100"></a>
@@ -27,7 +27,7 @@ To begin installation:
 ### Advanced Installation Options
 
 To view all configuration options:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package describe avi --config --render</code></pre>
+<pre pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package describe avi --config --render</code></pre>
 
 **Example:**
 <a href="img/dcos14.jpg"><img src="img/dcos14.jpg" alt="dcos14" width="924" height="1097"></a>
@@ -69,7 +69,7 @@ Vantage discovers the new applications and creates a virtual service configurati
 If Vantage needs to be uninstalled, use the following CLI command.
 
 Note: Package un-installation is currently available only via the DC/OS CLI.
-<pre crayon="false" pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package uninstall avi</code></pre>
+<pre pre="" class="command-line language-bash" data-output="2-100" data-user="root" data-host="dcos ~"><code>dcos package uninstall avi</code></pre>
 
 **Example:**
 <a href="img/dcos2.jpg"><img src="img/dcos2.jpg" alt="dcos2" width="836" height="68"></a>

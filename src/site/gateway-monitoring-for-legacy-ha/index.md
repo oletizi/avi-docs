@@ -25,7 +25,7 @@ Gateway health monitoring is part of the cloud configuration. If and when an IP
 ### CLI
 
 Use the following commands to configure monitoring for a gateway:
-<pre crayon="false">: &gt; configure vrfcontext global
+<pre>: &gt; configure vrfcontext global
 vrfcontext&gt; gateway_mon 192.168.1.10
 </pre>
 

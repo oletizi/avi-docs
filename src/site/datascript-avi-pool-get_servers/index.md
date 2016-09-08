@@ -31,7 +31,7 @@ layout: default
    if servers_up == 0 then
    avi.http.response(503)
 end</code></pre> 
-    <!-- [Format Time: 0.0027 seconds] --> </td> 
+    <!-- [Format Time: 0.0018 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

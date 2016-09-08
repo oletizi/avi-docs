@@ -8,7 +8,7 @@ Operators compare or contrast sets of data, and will return as true or false. Da
 
 ### Arithmetic Operators
 
-<pre crayon="false">
+<pre>
   + -- Addition 
   - -- Subtraction 
   * -- Multiplication 
@@ -17,7 +17,7 @@ Operators compare or contrast sets of data, and will return as true or false. Da
 
 ### Relational Operators
 
-<pre crayon="false">
+<pre>
   &gt; -- Greater than 
   &lt; -- Less than 
   &gt;= -- Greater than or equal 
@@ -27,7 +27,7 @@ Operators compare or contrast sets of data, and will return as true or false. Da
 
 ### Logical Operators
 
-<pre crayon="false">
+<pre>
   and 
   or 
   not 

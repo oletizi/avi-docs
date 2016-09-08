@@ -28,7 +28,7 @@ layout: default
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
    <td width="600"> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.add_header("Server", avi.pool.server_ip())</code></pre> 
-    <!-- [Format Time: 0.0010 seconds] --> </td> 
+    <!-- [Format Time: 0.0014 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

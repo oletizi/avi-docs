@@ -39,7 +39,7 @@ For version v15.3 and older, Avi only supports Passive FTP in non scaled out hig
 ### Active FTP
 
 Active FTP requires support for Service Engines to be the server's default gateway.  Until this support is available, active FTP is not supported.  Avi recommends use of passive FTP as a workaround.
-<pre crayon="false">&gt; <strong>ftp  ftp.test.com</strong>
+<pre>&gt; <strong>ftp  ftp.test.com</strong>
 Connected to ftp.test.com.
 ftp.test.com FTP server ready.
 Name (test:user): <strong>anonymous</strong>

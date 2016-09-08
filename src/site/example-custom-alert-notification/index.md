@@ -70,7 +70,7 @@ For SNMP, choose a name. Then define by IP address (or hostname) and community a
 For ControlScript, either upload a text file with your Python code or enter it directly into the provided scrolling window.<a href="img/python-scropt.png"><img src="img/python-scropt.png" alt="python scropt" width="598" height="298"></a>
 
 The window size in the above screenshot is too small to show the entire ControlScript, which is as follows. It simply prints the parameters passed to the ControlScript.
-<pre crayon="false"> #!/usr/bin/python
+<pre> #!/usr/bin/python
  import os
  import sys
  import json

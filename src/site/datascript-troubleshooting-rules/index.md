@@ -22,7 +22,7 @@ ghi abc
    avi.close_conn()
 end</code></pre>
 
-<pre crayon="false" class=""><span style="color: #ff0000;">Failed to compile the datascript "Drop_Client_on_http_req.ds": luac: Drop_Client_on_http_req.ds:3: '=' expected near 'avi'</span></pre>
+<pre class=""><span style="color: #ff0000;">Failed to compile the datascript "Drop_Client_on_http_req.ds": luac: Drop_Client_on_http_req.ds:3: '=' expected near 'avi'</span></pre>
 
 There are three syntax errors in the rule above, but only the first error encountered will be reported.  In this example, abc is an undeclared variable, but the determination that it is noticed until reading the next line.  Hence, the error is reported on line 3, not line 2:  *http_req.ds:**3*** and the error location is reported *near '**avi**'*.  DataScripts are very tolerant of spaces and carriage returns.  The variable declaration *abc = 2* is valid.
 
@@ -50,7 +50,7 @@ ghi abc
    avi.close_conn()
 end</code></pre>
 
-<pre crayon="false" class=""><span style="color: #ff0000;">Failed to compile the datascript "Drop_Client_on_http_req.ds": luac: Drop_Client_on_http_req.ds:1: 'end' expected near '&lt;eof&gt;'</span></pre>
+<pre class=""><span style="color: #ff0000;">Failed to compile the datascript "Drop_Client_on_http_req.ds": luac: Drop_Client_on_http_req.ds:1: 'end' expected near '&lt;eof&gt;'</span></pre>
 
  
 
@@ -59,16 +59,16 @@ end</code></pre>
 Even though a DataScript may be saved without error, it may still have logic or other issues that may pop up later.  When a DataScript execution encounters a failure, the script execution aborts for that request or response.  An HTTP 500 Internal Server Error is sent to the client.  A client log is generated with the stack trace of the aborted script to aid in debugging.
 
 Use the following Virtual Service > Logs filter to search for client's that encountered a DataScript error.
-<pre crayon="false" class="">significance="Request ended abnormally: Datascript failed to execute"</pre>
+<pre class="">significance="Request ended abnormally: Datascript failed to execute"</pre>
 
 Open a client log and click *All Headers* to see the more info about the error.  The following is an example of an error from the logs:
 
 **Datascript Error**
-<pre crayon="false" class="ng-binding">[string "Drop Client"]:2: attempt to call field 'close_conn' (a nil value)</pre>
+<pre class="ng-binding">[string "Drop Client"]:2: attempt to call field 'close_conn' (a nil value)</pre>
 
 **Datascript Error Stack Trace**
 
-<pre crayon="false" class="ng-binding">stack traceback:
+<pre class="ng-binding">stack traceback:
 coroutine 0:
 	[string "Drop Client"]:2: in function &lt;[string "Drop Client"]:1&gt;</pre>
 

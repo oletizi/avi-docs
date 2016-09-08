@@ -43,7 +43,7 @@ The AWS CLI will need to be run from the same directory where you save the files
 
 At the command prompt, enter the following AWS CLI commands.
 **Note: Do not use the commands to create and attach the AviController-R53-Policy unless the AWS DNS service (R53) will be used.**
-<pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100"><code>
+<pre pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100"><code>
 aws iam create-role --role-name vmimport --assume-role-policy-document file://vmimport-role-trust.json
 aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://vmimport-role-policy.json
 aws iam create-role --role-name AviController-Refined-Role --assume-role-policy-document file://avicontroller-role-trust.json

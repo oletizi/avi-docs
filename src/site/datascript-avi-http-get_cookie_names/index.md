@@ -31,7 +31,7 @@ layout: default
 if count == 0 then
    -- No cookies found, do something
 end</code></pre> 
-    <!-- [Format Time: 0.0018 seconds] --> </td> 
+    <!-- [Format Time: 0.0014 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

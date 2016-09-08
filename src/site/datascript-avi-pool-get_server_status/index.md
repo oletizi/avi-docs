@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.pool.get_server_status("web-pool", "10.1.1.1", "80") == 0 then
    avi.http.redirect("backupsite.com" .. avi.http.get_uri())
  end</code></pre> 
-    <!-- [Format Time: 0.0023 seconds] --> </td> 
+    <!-- [Format Time: 0.0033 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

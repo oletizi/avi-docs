@@ -16,6 +16,6 @@ To be able to assign VIPs using DNS, the Controller must be configured to use a 
 The Controller will periodically recheck with DNS to see whether the name resolution has changed. If the resolution comes back with a different address, the Controller will update/change the VIP address.
 
 The default DNS refresh time is 60 minutes. This may be changed using the following CLI command:
-<pre crayon="false" class="">: &gt; configure controller properties dns_refresh_period 50
+<pre class="">: &gt; configure controller properties dns_refresh_period 50
 
 : &gt; save</pre>

@@ -36,7 +36,7 @@ layout: default
 if not host then
    avi.http.close_conn()
 end</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> </td> 
+    <!-- [Format Time: 0.0022 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

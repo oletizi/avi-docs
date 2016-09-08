@@ -43,7 +43,7 @@ First configure the B pool, if not already configured. Then use these steps to c
 ### CLI
 
 The commands in this example edit the configuration of pool-1 to enable the A/B pool feature, using pool-2 as the B pool:
-<pre crayon="false" <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     ratio 10
@@ -54,7 +54,7 @@ The commands in this example edit the configuration of pool-1 to enable the A/B 
 The **ratio** *percent* command sets the percentage of traffic to be diverted to pool B to 10 percent. After this configuration change, 10 percent of new sessions will be sent to pool-2 (the B pool). Sessions that are already on pool-1 (the A pool) when the change is made are not affected by the change.
 
 The following commands edit the configuration to send 100 percent of the traffic to the B pool:
-<pre crayon="false" <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     ratio 100
@@ -64,7 +64,7 @@ The following commands edit the configuration to send 100 percent of the traffic
 
 The following commands reduce the percentage of traffic diverted to the B pool to 90 percent:
 
-<pre crayon="false" <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     ratio 90
@@ -74,7 +74,7 @@ The following commands reduce the percentage of traffic diverted to the B pool t
 
 The following commands send all the traffic back to pool-1 (the A pool):
 
-<pre crayon="false" <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     no ratio

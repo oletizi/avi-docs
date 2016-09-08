@@ -1086,7 +1086,7 @@ Avi Vantage for Linux server cloud is distributed as a Docker image. If Docker i
 
 1. Log in to the Linux host.
 1. Update yum packages:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update -y</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update -y</code></pre>
 1. Add the yum repo:
 <pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
     "service":{
@@ -1201,11 +1201,11 @@ Server:
              Version:      1.8.1
              API version:  1.20</code></pre>
 1. Install Docker:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install -y docker-engine</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install -y docker-engine</code></pre>
 1. Start Docker:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo service docker start</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo service docker start</code></pre>
 1. To start Docker on boot, run the following command:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable docker</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable docker</code></pre>
 1. Enter the **docker version** command to verify the Docker version that is installed and running.
 <pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
     "service":{
@@ -1325,19 +1325,19 @@ For the latest Docker installation instructions, please refer to <a href="https:
 ### Red Hat Enterprise Linux 7
 
 1. Register the Linux server with Red Hat:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager register</code></pre>
 1. Enable the repository for extra services:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager –enable=rhel-7-server-extras-rpms</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>subscription-manager –enable=rhel-7-server-extras-rpms</code></pre>
 1. Install updates to Red Hat:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum update</code></pre>
 1. Run the following command to add Docker to the yum repository:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cat &gt;/etc/um.respos.d/docker.repo &lt;</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>cat &gt;/etc/um.respos.d/docker.repo &lt;</code></pre>
 1. Install Docker:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install -y docker-engine</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo yum install -y docker-engine</code></pre>
 1. Start Docker services:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start docker</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl start docker</code></pre>
 1. Enable Docker services:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable docker</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable docker</code></pre>
 1. Enter the **docker version** command to verify the Docker version that is installed and running. In this example, the version is 1.8.1:
 <pre><code class="language-lua">curl -X POST --user csp-username:csp-password -H "Content-Type: application/json" -d '{
     "service":{
@@ -1488,11 +1488,11 @@ The public key created in the section above needs to be copied to each Linux hos
 
 1. Log into the Linux host as root.
 1. Create the .ssh directory and change to it.
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre>
 1. Add the Avi Controller’s public key to the authorized key file by pasting the key obtained in the above section into the following command line:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-string-copied-from-Controller" &gt; ./authorized_keys</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-string-copied-from-Controller" &gt; ./authorized_keys</code></pre>
 1. Set the proper permissions for the key file:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>chmod 644 authorized_keys</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>chmod 644 authorized_keys</code></pre>
 
 Repeat these steps on each Linux host.
 

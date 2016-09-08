@@ -11,7 +11,7 @@ From the CLI, this configuration can be performed as two tasks:
 
 ### Pool Creation
 
-<pre crayon="false">: &gt; configure pool Test
+<pre>: &gt; configure pool Test
 : pool&gt; servers ip 10.1.1.100 port 80
 : pool:servers&gt; save
 : pool&gt; servers ip 10.1.1.101 port 80
@@ -36,7 +36,7 @@ Tenant: admin
 ### Virtual Service Creation
 
 Once the pool is created, the next step is to create the virtual service:
-<pre crayon="false">: &gt; configure virtualservice Test_VS
+<pre>: &gt; configure virtualservice Test_VS
 : virtualservice&gt; address 10.10.10.10
 : virtualservice&gt; services port 80
 : virtualservice&gt; pool_ref Test</pre>

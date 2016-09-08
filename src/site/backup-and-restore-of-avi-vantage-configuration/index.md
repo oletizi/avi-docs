@@ -21,7 +21,7 @@ Beginning in Vantage 16.1.3, a passphrase can be used to encrypt the sensitive f
 ### CLI
 
 To back up the Vantage configuration, use the following CLI command:
-<pre crayon="false" class="">: &gt; export configuration file /tmp/avi_config.json full_system
+<pre class="">: &gt; export configuration file /tmp/avi_config.json full_system
 Please enter the passphrase to encrypt configuration: 
 Downloaded the attachment to /tmp/avi_config.json
 Completed writing the export configuration to /tmp/avi_config.json</pre>
@@ -29,18 +29,18 @@ Completed writing the export configuration to /tmp/avi_config.json</pre>
 ### API
 
 To back up the Vantage configuration, use the following API request:
-<pre crayon="false">GET https://&lt;controller-ip&gt;/api/configuration/export?full_system=true
+<pre>GET https://&lt;controller-ip&gt;/api/configuration/export?full_system=true
 </pre>
 
 To also include a passphrase, use one of the following options:
 
 In versions 16.1.3 and above:
-<pre crayon="false" class="">GET https://&lt;controller-ip&gt;/api/configuration/export?full_system=true&amp;passphrase=&lt;passphrase&gt;
+<pre class="">GET https://&lt;controller-ip&gt;/api/configuration/export?full_system=true&amp;passphrase=&lt;passphrase&gt;
 </pre>
 
 In versions 16.2 and above, use the following POST method and include passphrase in the JSON data:
 
-<pre crayon="false" class="">POST https://&lt;controller-ip&gt;/api/configuration/export?full_system=true
+<pre class="">POST https://&lt;controller-ip&gt;/api/configuration/export?full_system=true
 JSON data: {"passphrase":"&lt;passphrase&gt;"}</pre>
 
 Make sure to replace *Avi-Controller-IP* with the IP address of the Avi Controller (if using a single Avi Controller node), or the IP address of the Avi Controller cluster.
@@ -48,7 +48,7 @@ Make sure to replace *Avi-Controller-IP* with the IP address of the Avi Controll
 ## Restoring the Vantage Configuration
 
 If the unlikely should occur and a disaster completely destroys the Avi Controller (or entire cluster), the following script can be used to automate the configuration recovery process:
-<pre crayon="false">/opt/avi/scripts/restore_config.py
+<pre>/opt/avi/scripts/restore_config.py
 </pre>
 
 Note: If running a Vantage version earlier than 16.2, please contact Avi Networks support for help restoring the configuration.
@@ -59,7 +59,7 @@ This script imports the backup configuration onto the Avi Controller. If restori
 1. Log onto one of the Avi Controller node using SSH or SCP. Use the default credentials admin, admin.
 1. Run the restore command or script:
 
-* If using SCP: <pre crayon="false">scp /var/backup/avi_config.json admin@&lt;controller-ip&gt;://tmp/avi_config.json
+* If using SCP: <pre>scp /var/backup/avi_config.json admin@&lt;controller-ip&gt;://tmp/avi_config.json
 </pre>
-* If using SSH: <pre crayon="false">/opt/avi/scripts/restore_config.py --config /tmp/avi_config.json --passphrase &lt;passphrase&gt; --username &lt;admin&gt; --password &lt;admin password&gt; 
+* If using SSH: <pre>/opt/avi/scripts/restore_config.py --config /tmp/avi_config.json --passphrase &lt;passphrase&gt; --username &lt;admin&gt; --password &lt;admin password&gt; 
 </pre>

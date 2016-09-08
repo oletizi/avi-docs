@@ -36,15 +36,15 @@ For deployment of SEs, the following system-level software is required:
 To install the Avi Controller:
 
 1. Copy the .tgz package onto the OpenShift slave node that will host the Avi Controller leader (for controller cluster two followers run on separate nodes):
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:~/</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:~/</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
 1. Log onto the OpenShift node:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@remotehost.com</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@remotehost.com</code></pre>
 1. Load the Avi Controller image into the host's local Docker repository:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo docker load &lt; controller_docker.tgz</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo docker load &lt; controller_docker.tgz</code></pre>
 1. As a best practice, clean up any data that may be lingering from a previous run:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo rm -rf /var/lib/controller/*</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo rm -rf /var/lib/controller/*</code></pre>
 1. Use the vi editor to create a new file for spawning the Avi Controller service:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
 1. Copy the following lines into the file:
 
  
@@ -71,7 +71,7 @@ ExecStop=/usr/bin/docker stop avicontroller
 
 [Install]
 WantedBy=multi-user.target</code></pre> 
-    <!-- [Format Time: 0.0053 seconds] --> </td> 
+    <!-- [Format Time: 0.0095 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -90,7 +90,7 @@ WantedBy=multi-user.target</code></pre>
 
 To start the Avi Controller, enter the following command on the node on which you created the Avi Controller:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
 
 Initial startup and full system initialization takes around 10 minutes.
 
@@ -238,11 +238,11 @@ The Avi Controller needs to be configured with the same private key which is use
 
 * SSH to Master node.
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@os_master_ip</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@os_master_ip</code></pre>
 
 * Run below command and copy the contents of key file (id_rsa)
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>cat ~/.ssh/id_rsa</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>cat ~/.ssh/id_rsa</code></pre>
 
 * On Avi Controller, navigate to Administration > Settings > SSH Key Settings and click Create.
 * Enter the SSH username.
@@ -254,7 +254,7 @@ The Avi Controller needs to be configured with the same private key which is use
 
 * Use SCP to copy OpenShift certificate files form the master node
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp username@os_master_ip:/etc/origin/master/admin.crt
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp username@os_master_ip:/etc/origin/master/admin.crt
 scp username@os_master_ip:/etc/origin/master/admin.key
 scp username@os_master_ip:/etc/origin/master/ca.crt .</code></pre>
 

@@ -35,7 +35,7 @@ Note: Only an account that has the System Administrator role may change this set
 ### Enabling Strong Password Enforcement
 
 Strong password enforcement may be enabled using the CLI commands shown below.
-<pre crayon="false">bash# <b><i>shell</i></b>
+<pre>bash# <b><i>shell</i></b>
 : &gt; <b><i>configure systemconfiguration</i></b>
 : systemconfiguration&gt; <b><i>portal_configuration</i></b>
 : systemconfiguration:portal_configuration&gt; <b><i>password_strength_check</i></b>
@@ -46,7 +46,7 @@ Overwriting the previously entered value for password_strength_check
 
 Truncated view of the results:
 
-<pre crayon="false">+-------------------------------------+----------------------------------+
+<pre>+-------------------------------------+----------------------------------+
 | Field                               | Value                            |
 +-------------------------------------+----------------------------------+
 | uuid                                | default                          |
@@ -62,7 +62,7 @@ Truncated view of the results:
 
 ### Disabling Strong Password Enforcement
 
-<pre crayon="false">bash# <b><i>shell</i></b>
+<pre>bash# <b><i>shell</i></b>
 : &gt; <b><i>configure systemconfiguration</i></b>
 : systemconfiguration&gt; <b><i>portal_configuration</i></b>
 : systemconfiguration:portal_configuration&gt; <b><i>no password_strength_check</i></b>

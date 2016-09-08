@@ -39,7 +39,7 @@ if path == "/app_1/" then
    encrypted_value = avi.crypto.encrypt(value, key)
    avi.http.add_header("X-Token", encrypted_value)
 end</code></pre> 
-    <!-- [Format Time: 0.0033 seconds] --> </td> 
+    <!-- [Format Time: 0.0032 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

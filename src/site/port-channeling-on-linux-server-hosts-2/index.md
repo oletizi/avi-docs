@@ -38,7 +38,7 @@ The configuration for interface bond0.652 does use the MASTER or SLAVE options, 
 * VLAN=yes
 
 **Interface bond0's Configuration:**
-<pre crayon="false">DEVICE=bond0
+<pre>DEVICE=bond0
 IPADDR=10.124.251.101
 NETMASK=255.255.255.0
 ONBOOT=yes
@@ -50,7 +50,7 @@ BONDING_OPTS="mode=4 miimon=100 xmit_hash_policy=layer3+4 use_carrier=1"
 
 **Interface ens1f0's Configuration:**
 
-<pre crayon="false">DEVICE=ens1f0
+<pre>DEVICE=ens1f0
 BOOTPROTO=none
 ONBOOT=yes
 MASTER=bond0
@@ -61,7 +61,7 @@ NM_CONTROLLED=no
 
 **Interface ens1f1's Configuration:**
 
-<pre crayon="false">DEVICE=ens1f1
+<pre>DEVICE=ens1f1
 BOOTPROTO=none
 ONBOOT=yes
 MASTER=bond0
@@ -72,7 +72,7 @@ NM_CONTROLLED=no
 
 **Interface bond0.652's Configuration:**
 
-<pre crayon="false">DEVICE=bond0.652
+<pre>DEVICE=bond0.652
 BOOTPROTO=none
 ONBOOT=yes
 IPADDR=10.124.252.101

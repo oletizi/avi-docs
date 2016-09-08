@@ -3,7 +3,7 @@ title: CLI&#58; HTTP Cache Configuration
 layout: default
 ---
 This article describes the CLI commands that are most commonly used for configuring the HTTP cache.  
-<pre crayon="false" class="">:&nbsp;&gt;&nbsp;show&nbsp;applicationprofile&nbsp;System‐HTTP &nbsp;&nbsp;&nbsp;&nbsp;
+<pre class="">:&nbsp;&gt;&nbsp;show&nbsp;applicationprofile&nbsp;System‐HTTP &nbsp;&nbsp;&nbsp;&nbsp;
 
 +‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
 |&nbsp;Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
@@ -83,7 +83,7 @@ False = disable True = enable
 
 ### Show Cached Objects from the Pool's Cache
 
-<pre crayon="false" class="">: &gt; show pool prod-l7-pool httpcache
+<pre class="">: &gt; show pool prod-l7-pool httpcache
 
 Config: enabled=True min_object_size=0 max_object_size=0 max_cache_size=33363600 default_expire=600
   age_header=True xcache_header=True heuristic_expire=0 date_header=True query_cacheable=0 aggressive=0
@@ -116,7 +116,7 @@ URI: /test.js
 
 ### Show Cache Statistics
 
-<pre crayon="false">: &gt; show pool prod-l7-pool httpcachestats
+<pre>: &gt; show pool prod-l7-pool httpcachestats
 
 +-------------------+----------------+
 | Field             | Value          |
@@ -138,19 +138,19 @@ URI: /test.js
 
 ### Clear Cache Objects
 
-<pre crayon="false">: &gt; clear pool prod‐l7‐pool httpcache</pre>
+<pre>: &gt; clear pool prod‐l7‐pool httpcache</pre>
 
  
 
 ### Clear Cache Statistics
 
-<pre crayon="false">: &gt; clear pool prod‐l7‐pool httpcachestats</pre>
+<pre>: &gt; clear pool prod‐l7‐pool httpcachestats</pre>
 
  
 
 ### Filter Cache Objects
 
-<pre crayon="false">: &gt; show pool prod-l7-pool httpcache filter resource_type html
+<pre>: &gt; show pool prod-l7-pool httpcache filter resource_type html
 
 +----------------------------------------------------------------
 URI: /boxtv.cms
@@ -169,7 +169,7 @@ key_extn:
  
 
 Here is another example.
-<pre crayon="false">: &gt; show virtualservice prod-l7 httpstats
+<pre>: &gt; show virtualservice prod-l7 httpstats
 
 +---------------------+--------+
 | Field               | Value  |

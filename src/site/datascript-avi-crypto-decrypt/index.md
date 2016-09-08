@@ -38,7 +38,7 @@ end if avi.http.get_header("User")
    decrypt = avi.crypto.decrypt(avi.http.get_header("User"), key)
    avi.http.replace_header("User", decrypt)
 end</code></pre> 
-    <!-- [Format Time: 0.0034 seconds] --> During the HTTP Request event, check for a header then decrypt its value.<br> 
+    <!-- [Format Time: 0.0021 seconds] --> During the HTTP Request event, check for a header then decrypt its value.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.get_header("User")
    encrypt = avi.crypto.encrypt(avi.http.get_header("User"), key)
    avi.http.replace_header("User", encrypt)
@@ -46,7 +46,7 @@ end if avi.http.get_header("User")
    decrypt = avi.crypto.decrypt(avi.http.get_header("User"), key)
    avi.http.replace_header("User", decrypt)
 end</code></pre> 
-    <!-- [Format Time: 0.0036 seconds] --> </td> 
+    <!-- [Format Time: 0.0023 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

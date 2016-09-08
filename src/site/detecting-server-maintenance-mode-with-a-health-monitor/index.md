@@ -64,7 +64,7 @@ The health monitor is used only for the pools the monitor is attached to. To att
 ### CLI
 
 The following commands configure an HTTP health monitor to filter for the string "under construction" in health-check responses from servers:
-<pre crayon="false" class="">: &gt; configure healthmonitor System-HTTP
+<pre class="">: &gt; configure healthmonitor System-HTTP
 : healthmonitor&gt; http_monitor
 : healthmonitor:http_monitor&gt; maintenance_response "under construction"
 : healthmonitor:http_monitor&gt; save
@@ -74,7 +74,7 @@ The following commands configure an HTTP health monitor to filter for the string
 The following commands configure the same HTTP health monitor to filter for response codes 500 and 501 in health-check responses from servers:
 The following commands configure an HTTP health monitor to filter for the string "under construction" in health-check responses from servers:
 
-<pre crayon="false" class="">: &gt; configure healthmonitor System-HTTP
+<pre class="">: &gt; configure healthmonitor System-HTTP
 : healthmonitor&gt; http_monitor
 : healthmonitor:http_monitor&gt; maintenance_code 500
 : healthmonitor:http_monitor&gt; maintenance_code 501
@@ -84,7 +84,7 @@ The following commands configure an HTTP health monitor to filter for the string
 
 The following commands edit the health monitor's configuration to remove the filter a response string:
 
-<pre crayon="false" class="">: &gt; configure healthmonitor System-HTTP
+<pre class="">: &gt; configure healthmonitor System-HTTP
 : healthmonitor&gt; http_monitor
 : healthmonitor:http_monitor&gt; no maintenance_response
 : healthmonitor:th&gt; save

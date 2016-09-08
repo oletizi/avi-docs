@@ -31,7 +31,7 @@ layout: default
 if string.beginswith(path, "/sales/") then
    avi.http.redirect("http://sales.test.com/index.html")
 end</code></pre> 
-    <!-- [Format Time: 0.0022 seconds] --> </td> 
+    <!-- [Format Time: 0.0025 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

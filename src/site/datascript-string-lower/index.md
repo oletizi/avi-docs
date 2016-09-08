@@ -29,7 +29,7 @@ layout: default
    <td width="600">Evaluate a string from the HTTP path as all lower case characters.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if string.lower(avi.http.get_path() == "/sales" then
    ...</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> </td> 
+    <!-- [Format Time: 0.0012 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

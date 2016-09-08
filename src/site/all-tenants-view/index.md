@@ -21,7 +21,7 @@ To switch the focus of the management session to the All Tenants view, use any o
 ### CLI
 
 Enter the following command:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2"><code>switchto tenant *
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2"><code>switchto tenant *
 Switching to tenant *
 &nbsp;</code></pre>
 

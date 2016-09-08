@@ -28,15 +28,15 @@ layout: default
    <td width="100"><span style="font-size: medium;"><strong>Example</strong></span></td> 
    <td width="600">Example: <em>https://www.avinetworks.com<strong>/a/b/c/d/e.htm</strong></em><p></p> <p>Returns a table which is an array with values ‘a’, ‘b’, ‘c’, ‘d’, ‘e.htm’. All tokens are returned.<br> 
      <!-- Crayon Syntax Highlighter v2.7.1 --> </p><pre><code class="language-lua">avi.http.get_path_tokens() avi.http.get_path_tokens(1) avi.http.get_path_tokens(3) avi.http.get_path_tokens(2,3) avi.http.get_path_tokens(7)</code></pre> 
-    <!-- [Format Time: 0.0007 seconds] --> Returns ‘a/b/c/d/e.htm’<br> 
+    <!-- [Format Time: 0.0015 seconds] --> Returns ‘a/b/c/d/e.htm’<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_path_tokens() avi.http.get_path_tokens(1) avi.http.get_path_tokens(3) avi.http.get_path_tokens(2,3) avi.http.get_path_tokens(7)</code></pre> 
-    <!-- [Format Time: 0.0009 seconds] --> Returns ‘c/d/e.htm’<br> 
+    <!-- [Format Time: 0.0010 seconds] --> Returns ‘c/d/e.htm’<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_path_tokens() avi.http.get_path_tokens(1) avi.http.get_path_tokens(3) avi.http.get_path_tokens(2,3) avi.http.get_path_tokens(7)</code></pre> 
-    <!-- [Format Time: 0.0008 seconds] --> Returns ‘b/c’<br> 
+    <!-- [Format Time: 0.0019 seconds] --> Returns ‘b/c’<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_path_tokens() avi.http.get_path_tokens(1) avi.http.get_path_tokens(3) avi.http.get_path_tokens(2,3) avi.http.get_path_tokens(7)</code></pre> 
-    <!-- [Format Time: 0.0007 seconds] --> Returns ‘nil’<br> 
+    <!-- [Format Time: 0.0012 seconds] --> Returns ‘nil’<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_path_tokens() avi.http.get_path_tokens(1) avi.http.get_path_tokens(3) avi.http.get_path_tokens(2,3) avi.http.get_path_tokens(7)</code></pre> 
-    <!-- [Format Time: 0.0009 seconds] --> </td> 
+    <!-- [Format Time: 0.0010 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

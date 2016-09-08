@@ -78,14 +78,14 @@ e. Repeat for each network to be used for IP address allocation.
 ## Creating a Virtual Service Using avi_proxy Labels
 
 The following set of avi_proxy labels configures a virtual service, and enables auto-allocation of IP addresses from subnet 20.20.20.0/24. This is the subnet containing the IP address pool that was added to the cloud in the previous section:
-<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+<pre class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"auto_allocate_ip\": true, \"subnet\": \"20.20.20.0/24\"}}"
   
 </code></pre>
 
 If the subnet is not specified in the label, as in the following example, Vantage will choose from one of the network subnets configured in the network object of the Mesos cloud on the Controller.
 
-<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+<pre class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"auto_allocate_ip\": true}}"
   
 </code></pre>
@@ -101,7 +101,7 @@ If the Controller and Mesos-DNS are running on the same machine, it is required 
 
 ### DNS Query Code Example (python)
 
-<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+<pre class="command-line language-bash" data-output="1-100"><code>
 from dns import resolver
 
 def get_avi_controller_ip():
@@ -135,14 +135,14 @@ def sample_dns_request(app_fqdn):
 
 ### Sample Request
 
-<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+<pre class="command-line language-bash" data-output="1-100"><code>
 sample_dns_request("my-app.my-company-avi-mesos") #Application's (my-app) FQDN with domain as my-company-avi-mesos configured in Avi’s IPAM Profile.
 
 </code></pre>
 
 ### Sample Output
 
-<pre crayon="false" class="command-line language-bash" data-output="1-100"><code>
+<pre class="command-line language-bash" data-output="1-100"><code>
 my-app.my-company-avi-mesos, A record:
 10.10.10.102
 My-app.my-company-avi-mesos, SRV records:

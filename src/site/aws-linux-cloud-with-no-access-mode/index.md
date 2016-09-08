@@ -14,7 +14,7 @@ The setup process consists of the following tasks:
 ## Create a Role in IAM
 
 Use the following JSON file to create a role in IAM. Use the following name for the file: avicontroller-role-ipam-policy.json
-<pre crayon="false">{
+<pre>{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -100,14 +100,14 @@ Note: If no host has any vNICs on the pool subnet(s), enable the the following o
 If deploying in no-access mode, some configuration in the Vantage CLI also is required.
 
 Enter the following commands to let the Avi Controller connect to SE nodes without attempting to use SSH for authentication:
-<pre crayon="false">: &gt; configure controller properties 
+<pre>: &gt; configure controller properties 
 : controllerproperties&gt; allow_unauthenticated_nodes 
 : controllerproperties&gt; save
 </pre>
 
 Enter the following commands to enable tunneling support for Avi SEs:
 
-<pre crayon="false" class="">: &gt; configure serviceengineproperties 
+<pre class="">: &gt; configure serviceengineproperties 
 : seproperties&gt; se_bootup_properties 
 : seproperties:se_bootup_properties&gt; se_ip_encap_ipc 1
 : seproperties:se_bootup_properties&gt; se_tunnel_mode 1

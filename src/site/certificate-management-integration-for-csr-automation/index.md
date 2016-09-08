@@ -27,7 +27,7 @@ To configure certificate management integration:
 ### Prepare the Script
 
 The script must use the def certificate_request command. The following example could be adapted:
-<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+<pre class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
 def certificate_request(csr, common_name, args_dict):
     """
     Check if a token exists that can be used:

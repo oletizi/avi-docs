@@ -7,7 +7,7 @@ layout: default
 <img src="img/Display.png" alt="Display" width="199" height="35">
 
 Within an object such as a Service Engine (SE), virtual service, pool, or server, the display time pull-down menu allows for displaying metrics in real time. However, the graphs may update only every few minutes, resulting in five-minute blocks of averaged data.  
-<pre crayon="false"><a href="img/Metrics2.png"><img src="img/Metrics2.png" alt="Metrics2" width="600" height="224">
+<pre><a href="img/Metrics2.png"><img src="img/Metrics2.png" alt="Metrics2" width="600" height="224">
 </a>Table 1: Metrics Real Time <strong>disabled</strong></pre>
 
 ### The Reason

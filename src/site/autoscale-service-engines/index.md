@@ -93,7 +93,7 @@ In addition to scaling, a virtual service may also be migrated to a different SE
 ### Changing Scaling Options Using the CLI
 
 Use the following commands to configure an SE group's scaling options using the CLI.
-<pre crayon="false" br=""></pre> <pre crayon="false" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure serviceenginegroup Default-Group
+<pre br=""></pre> <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure serviceenginegroup Default-Group
     
      : serviceenginegroup&gt; auto_rebalance           (Enable auto rebalancing)
     

@@ -13,7 +13,7 @@ See <a href="/overview-of-server-persistence/">Overview of Server Persistence</a
 ### Cookie Format
 
 The following is an example of an HTTP session-persistence cookie created by Vantage.
-<pre crayon="false">Set-Cookie: AVI_COOKIE=026cc2fffb-b95b-41-dxgObfTEe_IrnYmysot-VOVY1_EEW55HqmENnvC; path=/</pre>
+<pre>Set-Cookie: AVI_COOKIE=026cc2fffb-b95b-41-dxgObfTEe_IrnYmysot-VOVY1_EEW55HqmENnvC; path=/</pre>
 
 The cookie payload contains the back-end server IP address and port.
 
@@ -63,9 +63,9 @@ HTTP cookie persistence leverages a session-based cookie, which is valid as long
 1. Create a virtual service and attach the pool to the virtual service. On the Analytics page of the virtual service, enable collection for non-significant logs. Then create a client log filter that matches on client IP address, and select Log all headers option. This enables logging for 2*xx* requests, so that the request and response headers can be viewed in the log.
 <a href="img/cookie-persist-encryptedcookie2.png"><img src="img/cookie-persist-encryptedcookie2.png" alt="cookie-persist-encryptedcookie2" width="969" height="768"></a>
 1. On a client (host) that can reach the VIP, generate traffic to the VIP and dump the output to a file. For example, enter a curl command such as the following:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>curl -vvv http://ourcorp.example.com/ &gt; outfile</code></pre> Examine the output file. It should have a Set-Cookie header such as the following:
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>curl -vvv http://ourcorp.example.com/ &gt; outfile</code></pre> Examine the output file. It should have a Set-Cookie header such as the following:
 
-<pre crayon="false">
+<pre>
 Set-Cookie: CORP_COOKIE=026cc2fffb-b95b-41-dxgObfTEe_Irn<br>Ymysot-VOVY1_EEW55HqmENnvCj9PWn8glWNNDQc3YMmuVHhbOI9E; path=/
 </pre>
 1. The client should store the cookie and include it in subsequent requests to the VIP. To verify correct operation of the feature, send several requests to the VIP.

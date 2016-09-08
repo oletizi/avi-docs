@@ -43,7 +43,7 @@ The bundle must be named “thales.tar” and can be prepared using the followin
 1. Copy the following tar files from the DVD into any given directory (e.g., "thales_pkg").
 
 2. Change directory (cd) to the given directory, and enter the following commands:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>cd thales_pkg
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>cd thales_pkg
 cp /Dvd/linux/libc6_3/amd64/nfast/ctls/agg.tar agg.tar
 cp /Dvd/linux/libc6_3/amd64/nfast/hwcrhk/user.tar user.tar
 cp /Dvd/linux/libc6_3/amd64/nfast/hwsp/agg.tar agg2.tar
@@ -51,12 +51,12 @@ tar -cvf thales.tar agg.tar agg2.tar user.tar</code></pre>
 
 3. In Vantage 16.1, HSM package upload is supported only through the CLI. You can use the following command in the Controller CLI shell to upload the HSM package:
 
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>: &gt; upload hsmpackage filename /tmp/thales_pkg/thales.tar</code></pre>
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>: &gt; upload hsmpackage filename /tmp/thales_pkg/thales.tar</code></pre>
 
 This command uploads the packages and installs them on the Controllers. (If the Controller is deployed as a 3-node cluster, the command installs the packages on all 3 nodes.) Upon completion, the following message should appear: *The HSM Package uploaded successfully*
 
 4. SEs in an SE group that refers to a HSM group need a one-time reboot for auto-installation of the HSM packages. To reboot an SE, you can issue the following command in the CLI shell:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>: &gt; reboot serviceengine Avi-se-ksueq</code></pre>
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>: &gt; reboot serviceengine Avi-se-ksueq</code></pre>
 
 In this example, the SE name is "Avi-se-ksueq".
 
@@ -79,16 +79,16 @@ For example, if a module in the HSM group has Electronic Serial Number (ESN) 580
 These files are used by Thales software when generating private keys, self-signed certificates, and certificate signing requests (CSRs). All these files must be packaged as “thales_security_world.tar”.
 
 The Security World package can be created to include all the module and world files, in the following way:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>tar -cvf thales_security_world.tar /opt/nfast/kmdata/local/module_* /opt/nfast/kmdata/local/world</code></pre>
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>tar -cvf thales_security_world.tar /opt/nfast/kmdata/local/module_* /opt/nfast/kmdata/local/world</code></pre>
 
 Note: This assumes there is a bash shell on a Unix/Linux system on the RFS.
 
 Optionally, if the HSM group has been configured to use only specific nShields, the Security World package can be created in the following way:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>tar -cvf thales_security_world.tar /opt/nfast/kmdata/local/module_580A-F79E-BCD9 /opt/nfast/kmdata/local/module_63E7-F6E1-A1AA /opt/nfast/kmdata/local/world</code></pre>
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>tar -cvf thales_security_world.tar /opt/nfast/kmdata/local/module_580A-F79E-BCD9 /opt/nfast/kmdata/local/module_63E7-F6E1-A1AA /opt/nfast/kmdata/local/world</code></pre>
 
 Then:
 
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>upload hsmpackage filename /tmp/thales_pkg/thales_security_world.tar</code></pre>
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>upload hsmpackage filename /tmp/thales_pkg/thales_security_world.tar</code></pre>
 
 In this example, the HSM group has been configured to use only the nShield modules with ESN 63E7-F6E1-A1AA and ESN 580A-F79E-BCD9, from among the many available at the RFS.
 
@@ -157,7 +157,7 @@ The HSM group must be added to the SE group that will be used by the virtual ser
 7. Click Save.
 
 **Note:** If the infrastructure type selected during cloud creation was No Orchestrator, adding the HSM group to the SE group is not supported in the web interface. To work around this, the following command can be entered in the Controller CLI shell:
-<pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>: &gt; configure serviceenginegroup Default-Group hardwaresecuritymodulegroup_ref thales-hsm-1</code></pre>
+<pre pre="" class="command-line language-bash" data-output="1-100"><code>: &gt; configure serviceenginegroup Default-Group hardwaresecuritymodulegroup_ref thales-hsm-1</code></pre>
 
 Replace *thales-hsm-1* with the name you used when creating the HSM group.
 

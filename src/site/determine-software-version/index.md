@@ -7,7 +7,7 @@ To determine the specific Avi Vantage software version running on the Avi Contro
 ### CLI
 
 From the Controller shell, enter this command:
-<pre crayon="false" class="">: &gt; show version controller
+<pre class="">: &gt; show version controller
 +-----------------+--------------------------------------+
 | Controller Name | Version                              |
 +-----------------+--------------------------------------+

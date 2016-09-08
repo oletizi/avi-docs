@@ -31,7 +31,7 @@ The following commands are entered in an SSH session with Marathon to create a t
 
 1. Download Docker.json (<a href="https://s3uswest1.amazonaws.com/avitm/Docker.json">https://s3uswest1.amazonaws.com/avitm/Docker.json</a>) and save it in the /Downloads directory.
 1. Create a Docker image file such as the following for the application:
-<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+<pre class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
 {
   "id": "webapp-ew1",
   "cpus": 0.5,
@@ -62,7 +62,7 @@ The following commands are entered in an SSH session with Marathon to create a t
 }
 </code></pre>
 
-1. Start the application to create a virtual service for it: <pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost"><code>curl -H "Content­Type: application/json" -X POST -d@Downloads/Docker.json&nbsp;http://marathon-ip-or-hostname:8080/v2/apps</code></pre>
+1. Start the application to create a virtual service for it: <pre class="command-line language-bash" data-user="aviuser" data-host="avihost"><code>curl -H "Content­Type: application/json" -X POST -d@Downloads/Docker.json&nbsp;http://marathon-ip-or-hostname:8080/v2/apps</code></pre>
 
 The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
 

@@ -107,7 +107,7 @@ A floating interface IP needs to be provisioned in order to provide adjacency to
 ### Using the CLI
 
 The following commands add SNAT IP address 10.200.1.1 to Virtual Service 1:
-<pre crayon="false">: &gt; configure virtualservice Virtual Service 1
+<pre>: &gt; configure virtualservice Virtual Service 1
 ...
 
 : snat_ip 10.200.1.1

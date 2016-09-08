@@ -28,7 +28,7 @@ In this example, the A/B pool feature is enabled. The B pool is "app-green-pool-
 ### Creating the 'B' Pool
 
 This JSON file creates the pool.
-<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+<pre class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
 {
   "id": "app-green",
   "cpus": 0.5,
@@ -62,7 +62,7 @@ This JSON file creates the pool.
 ### Creating the Virtual Service (application)
 
 This JSON file creates the application, and refers to the B pool.
-<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+<pre class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
 {
   "id": "app-blue",
   "cpus": 0.5,
@@ -98,7 +98,7 @@ This JSON file creates the application, and refers to the B pool.
 ### Changing the A/B Ratio
 
 Once the B pool has passed all tests and is deemed satisfactory, update the ratio in the ab_pool object (in app-blue) to 100 to direct 100 percent of the traffic to app-green. (For brevity, only the labels section is shown in the example.)
-<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code> 
+<pre class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code> 
 
   "labels": {
     "FE-Proxy": "yes",
@@ -108,7 +108,7 @@ Once the B pool has passed all tests and is deemed satisfactory, update the rati
 
 After a sufficient time (at least a few minutes to allow time for HTTP connections to close), app-blue can be scaled down to 0.
 
-<pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
+<pre class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="1-100" white-space="pre"><code>
 
   "labels": {
     "FE-Proxy": "yes",

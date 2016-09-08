@@ -34,7 +34,7 @@ Before using Vantage with SafeNet Network HSM, the following are required:
 2)  Be able to reach the HSM at ports 22 and 1792 through Avi Controller, SE management, or SE data path interface.
 
 Note: Starting with 16.2.2, the SSL handshake-related communication between Avi SE and the HSM can also be performed by SE data path interfaces. As shown below, this can be accomplished in the CLI by setting the use_data_network to TRUE in the hardwaresecuritymodulegroup object.
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$" data-output="1-1,3-7, 10-10, 13-22"><code><span style="font-weight: 400;"> : &gt; configure hardwaresecuritymodulegroup TestHSM Updating an existing object. Currently, the object is: +--------------------+------------------------------------------------------------------+ | &nbsp;Object settings that would normally appear here have been | &nbsp;edited out to keep this screen display short in this KB article. +--------------------+------------------------------------------------------------------+ : hardwaresecuritymodulegroup&gt; hsm : hardwaresecuritymodulegroup:hsm&gt; use_data_network Overwriting the previously entered value for use_data_network : hardwaresecuritymodulegroup:hsm&gt; save : hardwaresecuritymodulegroup&gt; save +--------------------+------------------------------------------------------------------+ | | &nbsp;Most of the object settings that would normally appear here | &nbsp;have been edited out to keep this screen display short in this | &nbsp;KB article. Immediately below is the output of greatest | &nbsp;interest for readers of this KB article. | | &nbsp; use_data_network | True &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | | tenant_ref &nbsp; &nbsp; &nbsp; &nbsp; | admin &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| +--------------------+------------------------------------------------------------------+ : &gt;</span></code></pre>
+<pre class="command-line language-bash" data-prompt="username@avi:~$" data-output="1-1,3-7, 10-10, 13-22"><code><span style="font-weight: 400;"> : &gt; configure hardwaresecuritymodulegroup TestHSM Updating an existing object. Currently, the object is: +--------------------+------------------------------------------------------------------+ | &nbsp;Object settings that would normally appear here have been | &nbsp;edited out to keep this screen display short in this KB article. +--------------------+------------------------------------------------------------------+ : hardwaresecuritymodulegroup&gt; hsm : hardwaresecuritymodulegroup:hsm&gt; use_data_network Overwriting the previously entered value for use_data_network : hardwaresecuritymodulegroup:hsm&gt; save : hardwaresecuritymodulegroup&gt; save +--------------------+------------------------------------------------------------------+ | | &nbsp;Most of the object settings that would normally appear here | &nbsp;have been edited out to keep this screen display short in this | &nbsp;KB article. Immediately below is the output of greatest | &nbsp;interest for readers of this KB article. | | &nbsp; use_data_network | True &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | | tenant_ref &nbsp; &nbsp; &nbsp; &nbsp; | admin &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| +--------------------+------------------------------------------------------------------+ : &gt;</span></code></pre>
 
 Download:
 
@@ -51,7 +51,7 @@ To enable support for SafeNet Network HSM, the downloaded SafeNet client softwar
 
 * Copy files from the downloaded software into any given directory (e.g., safenet_pkg).
 * Change directory (cd) to that directory, and enter the following **cp** commands:
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>cd safenet_pkg</code></pre> <pre crayon="false" class="command-line language-bash" data-prompt="username@avi/safenet_pkg:~$"><code>cp 610-012382-008_revC/linux/64/configurator-5.4.1-2.x86_64.rpm configurator-5.4.1-2.x86_64.rpm
+<pre class="command-line language-bash" data-prompt="username@avi:~$"><code>cd safenet_pkg</code></pre> <pre class="command-line language-bash" data-prompt="username@avi/safenet_pkg:~$"><code>cp 610-012382-008_revC/linux/64/configurator-5.4.1-2.x86_64.rpm configurator-5.4.1-2.x86_64.rpm
 cp 610-012382-008_revC/linux/64/libcryptoki-5.4.1-2.x86_64.rpm libcryptoki-5.4.1-2.x86_64.rpm
 cp 610-012382-008_revC/linux/64/vtl-5.4.1-2.x86_64.rpm vtl-5.4.1-2.x86_64.rpm
 cp 610-012382-008_revC/linux/64/lunacmu-5.4.1-2.x86_64.rpm lunacmu-5.4.1-2.x86_64.rpm
@@ -62,13 +62,13 @@ cp 610-012382-008_revC/linux/64/lunacm-5.4.1-2.x86_64.rpm lunacm-5.4.1-2.x86_64.
 tar -cvf safenet.tar configurator-5.4.1-2.x86_64.rpm libcryptoki-5.4.1-2.x86_64.rpm vtl-5.4.1-2.x86_64.rpm lunacmu-5.4.1-2.x86_64.rpm cklog-5.4.1-2.x86_64.rpm multitoken-5.4.1-2.x86_64.rpm ckdemo-5.4.1-2.x86_64.rpm lunacm-5.4.1-2.x86_64.rpm</code></pre>
 
 * In Vantage 16.2, HSM package upload is supported only through the CLI. You can use the following command in the Avi Controller CLI shell to upload the HSM package:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>upload hsmpackage filename /tmp/safenet_pkg/safenet.tar
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>upload hsmpackage filename /tmp/safenet_pkg/safenet.tar
 HSM Package uploaded successfully</code></pre>
 
 This command uploads the packages and installs them on the Avi Controller or Avi Controllers (if clustered). If the Controller is deployed as a 3-node cluster, the command installs the packages on all 3 nodes. Upon completion, "HSM Package uploaded successfully" should appear as shown above.
 
 * Avi SEs in an SE group referring to an HSM group need a one-time reboot for auto-installation of the HSM packages. To reboot an Avi SE, issue the following CLI shell command:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>"><code>reboot serviceengine Avi-se-ksueq</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>reboot serviceengine Avi-se-ksueq</code></pre>
 
 * To allow Avi Controllers to talk to SafeNet HSM, the SafeNet client software bundle distributed with the product must be uploaded to Avi Vantage. The software bundle preparation and upload is described above. In this example, note that the Avi SE name is "Avi-se-ksueq."
 
@@ -88,7 +88,7 @@ Detailed steps are provided in the following sections.
 ### Step 1: Create the HSM group and Add the HSM Devices to it.
 
 To begin, use the following commands on controller bash shell to fetch the certificates of the HSM servers. The example below fetches certificates from two servers 1.1.1.11 and 1.1.1.13
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:$"><code>sudo scp admin@1.1.1.11:server.pem hsmserver11.pem
+<pre class="command-line language-bash" data-prompt="username@avi:$"><code>sudo scp admin@1.1.1.11:server.pem hsmserver11.pem
 sudo scp admin@1.1.1.13:server.pem hsmserver13.pem</code></pre>
 
 The contents of these certificates are used while creating the HSM Group.
@@ -98,7 +98,7 @@ Next, create the HSM group. From the GUI, navigate to Templates > Security > HSM
 <img src="img/Screen-Shot-2016-06-25-at-3.03.14-PM-3.png" alt="Screen Shot 2016-05-13 at 6.32.52 PM" width="1392" height="1592">
 
 This can also be configured using the Controller CLI shell:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>configure hardwaresecuritymodulegroup safenet-network-hsm-1
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>configure hardwaresecuritymodulegroup safenet-network-hsm-1
 hardwaresecuritymodulegroup &gt; hsm type hsm_type_safenet_luna
 hardwaresecuritymodulegroup:hsm &gt;sluna
 hardwaresecuritymodulegroup:hsm:sluna &gt;server
@@ -169,8 +169,8 @@ In the above and below example, "my_partition_password" use the password provide
 
 Follow these steps:
 
-1. From the controller bash shell, copy the client certificate file (under /etc/luna/cert/client/aviClient.pem) to all the HSM devices.<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$"><code>scp aviClient.pem admin@1.1.1.11:</code></pre>
-1. Register the client on the HSM.<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-99"><code>ssh admin@1.1.1.11
+1. From the controller bash shell, copy the client certificate file (under /etc/luna/cert/client/aviClient.pem) to all the HSM devices.<pre class="command-line language-bash" data-prompt="username@avi:~$"><code>scp aviClient.pem admin@1.1.1.11:</code></pre>
+1. Register the client on the HSM.<pre class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-99"><code>ssh admin@1.1.1.11
 admin@1.1.1.11's password:
 Last login: Thu May 12 19:52:00 2016 from 12.97.16.194
 Luna SA 5.4.7-1 Command Line Shell - Copyright (c) 2001-2014 SafeNet, Inc. All rights reserved.
@@ -178,7 +178,7 @@ Luna SA 5.4.7-1 Command Line Shell - Copyright (c) 2001-2014 SafeNet, Inc. All r
 [1.1.1.11] lunash: client assignPartition -c aviClient -p par43 'client assignPartition' successful. Command Result : 0 (Success)
 [1.1.1.11] lunash: exit</code></pre>
 1. Perform the above steps (1) and (2) for all HSM devices.
-1. On the Avi Controller bash shell, the application ID must be opened before the Avi SE can communicate with the HSM. This can be done using the following command which will automatically be replicated to each Avi Controller in the cluster:<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/etc/luna/bin/sautil -v -s 1 -i 1792:1793 -o -p my_partition_password"</span>
+1. On the Avi Controller bash shell, the application ID must be opened before the Avi SE can communicate with the HSM. This can be done using the following command which will automatically be replicated to each Avi Controller in the cluster:<pre class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/etc/luna/bin/sautil -v -s 1 -i 1792:1793 -o -p my_partition_password"</span>
 Copyright (C) 2009 SafeNet, Inc. All rights reserved.
 sautilis the property of SafeNet, Inc. and is provided to our customers for
 the purpose of diagnostic and development only. &nbsp;Any re-distribution of this
@@ -194,7 +194,7 @@ remain open until all sessions associated with this Application Id are
 closed or until the access is explicitly closed.</code></pre>
 
 Note: In the step above, if an error message appears stating that the application is already open, you can close it using the following command. After closing it, reopen the application.
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "</span>/etc/luna/bin/sautil -v -s 1 -i 1792:1793 -c"
+<pre class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "</span>/etc/luna/bin/sautil -v -s 1 -i 1792:1793 -c"
 Copyright (C) 2009 SafeNet, Inc. All rights reserved.
 sautilis the property of SafeNet, Inc. and is provided to our customers for
 the purpose of diagnostic and development only. &nbsp;Any re-distribution of this
@@ -211,7 +211,7 @@ The **haAdmin**subcommand under the **vtl**command provides these options.
 Once an HA group is created, additional members can be added using the **addMember**command, by providing the group number. The group number can be queried using **vtl haAdmin show**. Also note there are subsequent configuration options for **haAdmin**.
 
 More details about each of these commands can be found in the SafeNet documentation.
-<pre crayon="false" class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-13, 16-40"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "</span>/usr/safenet/lunaclient/bin/vtl listSlots"
+<pre class="command-line language-bash" data-prompt="username@avi:~$" data-output="2-13, 16-40"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "</span>/usr/safenet/lunaclient/bin/vtl listSlots"
 Number of slots: 5
 
 The following slots were found:
@@ -258,7 +258,7 @@ sudo /opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/usr/safenet/lunac
 
 Once HA has been set up, update the configuration to reflect this change. From the Avi Controller shell run the following commands.  This will be automatically synced to each Controller in the cluster:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>configure hardwaresecuritymodulegroup safenet-network-hsm-1
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>configure hardwaresecuritymodulegroup safenet-network-hsm-1
 hardwaresecuritymodulegroup &gt; hsm type hsm_type_safenet_luna
 hardwaresecuritymodulegroup:hsm &gt;sluna
 hardwaresecuritymodulegroup:hsm:sluna &gt;is_ha
@@ -277,7 +277,7 @@ Navigate to Infrastructure > Cloud > Default-Cloud > Service Engine Group > Def
 <a href="img/Screen-Shot-2016-05-13-at-6.39.48-PM.png"><img src="img/Screen-Shot-2016-05-13-at-6.39.48-PM.png" alt="Screen Shot 2016-05-13 at 6.39.48 PM" width="593" height="260"></a>
 
 This also can be configured using the Avi Controller CLI shell:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>configure serviceenginegroup Default-Group hardwaresecuritymodulegroup_ref safenet-network-hsm-1</code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>configure serviceenginegroup Default-Group hardwaresecuritymodulegroup_ref safenet-network-hsm-1</code></pre>
 
 In the above, replace "safenet" with the name you used when creating the HSM group.
 
@@ -317,22 +317,22 @@ The virtual service is now ready to handle SSL/TLS traffic using the encryption/
 As an alternative to using the web interface, the CLI can be used to create a public/private key pair on the HSM and sign certificates.
 
 To generate 2048-bit RSA keys:
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/usr/safenet/lunaclient/bin/cmu generatekeypair -slot 1 -keyType RSA -modulusBits=2048 -publicExp=65537 -labelPublic=my-public-key -labelPrivate=my-private-key -sign=True -verify=True -encrypt=True -decrypt=True -wrap=False -unwrap=False -extractable=False -modifiable=False"</span></code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/usr/safenet/lunaclient/bin/cmu generatekeypair -slot 1 -keyType RSA -modulusBits=2048 -publicExp=65537 -labelPublic=my-public-key -labelPrivate=my-private-key -sign=True -verify=True -encrypt=True -decrypt=True -wrap=False -unwrap=False -extractable=False -modifiable=False"</span></code></pre>
 
 To download the fake private key:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/etc/luna/bin/sautil -s 1 -i 1792:1793 -a 0:RSA -f /tmp/my-pkey.pem"</span></code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/etc/luna/bin/sautil -s 1 -i 1792:1793 -a 0:RSA -f /tmp/my-pkey.pem"</span></code></pre>
 
 To generate a self-signed certificate:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "openssl req -engine gem -key /tmp/my-pkey.pem -new -x509 -days 365 -out /tmp/my-cert.crt"</span></code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "openssl req -engine gem -key /tmp/my-pkey.pem -new -x509 -days 365 -out /tmp/my-cert.crt"</span></code></pre>
 
 To generate ECDSA keys:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "openssl ecparam -out ecparam.pem -name prime256v1" </span></code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "openssl ecparam -out ecparam.pem -name prime256v1" </span></code></pre>
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/etc/luna/bin/sautil -v -s 1 -i 1792:1793 -m OID_:ecparam.pem -f my-ecdsa-key.pem"</span></code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "/etc/luna/bin/sautil -v -s 1 -i 1792:1793 -m OID_:ecparam.pem -f my-ecdsa-key.pem"</span></code></pre>
 
 To generate a self-signed certificate:
 
-<pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "openssl req -engine gem -key my-ecdsa-key.pem -new -x509 -days 365 -out my-cert-1.crt"</span></code></pre>
+<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code><span style="font-weight: 400;">/opt/avi/scripts/safenet.py -p SafeNet-Network-HSM-1 -c "openssl req -engine gem -key my-ecdsa-key.pem -new -x509 -days 365 -out my-cert-1.crt"</span></code></pre>

@@ -17,7 +17,7 @@ Note: Vantage works only with OSs that have systemctl support. Currently, this a
 
 <a href="img/rancher-integration0.png"><img src="img/rancher-integration0.png" alt="rancher-integration0" width="608" height="565"></a>
 
-* The Avi Controller must be configured with a link-local subnet, to use for allocating IP addresses for east-west applications. In this article, we will use subnet of 169.254.0.0/24. To create a link-local subnet using the Vantage CLI, log onto the Avi Controller through SSH or the CLI shell, and use the following commands: <pre crayon="false" class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-5"><code>: &gt; configure serviceengineproperties
+* The Avi Controller must be configured with a link-local subnet, to use for allocating IP addresses for east-west applications. In this article, we will use subnet of 169.254.0.0/24. To create a link-local subnet using the Vantage CLI, log onto the Avi Controller through SSH or the CLI shell, and use the following commands: <pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-5"><code>: &gt; configure serviceengineproperties
 seproperties&gt; se_runtime_properties
 seproperties:se_runtime_properties&gt; service_ip_subnets 169.254.0.0/24
 seproperties:se_runtime_properties&gt; save
