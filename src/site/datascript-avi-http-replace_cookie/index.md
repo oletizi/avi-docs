@@ -38,11 +38,11 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.replace_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> <p> Example method 2: &nbsp;Replace two cookies: jsessionid=123 and lang=en</p> 
+    <!-- [Format Time: 0.0015 seconds] --> <p> Example method 2: &nbsp;Replace two cookies: jsessionid=123 and lang=en</p> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.replace_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-    <!-- [Format Time: 0.0016 seconds] --> <p> </p></td> 
+    <!-- [Format Time: 0.0010 seconds] --> <p> </p></td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>HTTP Response Example</strong></font> </td> 
@@ -54,11 +54,11 @@ avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "
      <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.replace_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-     <!-- [Format Time: 0.0012 seconds] --> <span style="font-weight: 400;">If expires and max-age attributes are not desired, values&nbsp;0 are passed as argument.<br> 
+     <!-- [Format Time: 0.0016 seconds] --> <span style="font-weight: 400;">If expires and max-age attributes are not desired, values&nbsp;0 are passed as argument.<br> 
       <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">cookie_table = {jsessionid="123", lang="en"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "lang", "en" ) cookie_table = {jsessionid="123", path="/", domain="www.avinetworks.com"}
 avi.http.replace_cookie( cookie_table ) avi.http.replace_cookie( "jsessionid", "123", "/", "www.avinetworks.com" ) avi.http.replace_cookie( "jsessionid", "123", "/", "a.b.c", 0, 0, true, true})</code></pre> 
-      <!-- [Format Time: 0.0016 seconds] --> </span></span></td> 
+      <!-- [Format Time: 0.0022 seconds] --> </span></span></td> 
   </tr> 
  </tbody> 
 </table>

@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.get_cookie("foo") ~= "bar" then
    -- do something with the cookie header
 end</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> </td> 
+    <!-- [Format Time: 0.0013 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

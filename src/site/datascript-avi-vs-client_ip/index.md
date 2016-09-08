@@ -28,7 +28,7 @@ layout: default
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
    <td width="600">Insert the source IP address of a client into an HTTP header.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.add_header("XFF", avi.vs.client_ip())</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> </td> 
+    <!-- [Format Time: 0.0023 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

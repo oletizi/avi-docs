@@ -31,7 +31,7 @@ layout: default
    avi.pool.select("Pool1")
 else avi.pool.select("Pool2")
 end</code></pre> 
-    <!-- [Format Time: 0.0033 seconds] --> </td> 
+    <!-- [Format Time: 0.0024 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

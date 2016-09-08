@@ -31,7 +31,7 @@ layout: default
 if method ~= "GET" or method ~= "POST" then
    avi.http.response("403")
 end</code></pre> 
-    <!-- [Format Time: 0.0028 seconds] --> </td> 
+    <!-- [Format Time: 0.0019 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

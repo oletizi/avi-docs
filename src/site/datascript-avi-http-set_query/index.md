@@ -31,7 +31,7 @@ layout: default
    avi.http.set_path("/")
    avi.http.set_query("sales=true")
 end</code></pre> 
-    <!-- [Format Time: 0.0016 seconds] --> </td> 
+    <!-- [Format Time: 0.0026 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

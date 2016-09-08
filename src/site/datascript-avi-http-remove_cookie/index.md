@@ -28,7 +28,7 @@ layout: default
    <td width="100"><span style="font-size: medium;"><strong>Example</strong></span></td> 
    <td width="600">Remove two cookies from the request or response.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.remove( "jsessionid", "lang" )</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> </td> 
+    <!-- [Format Time: 0.0013 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

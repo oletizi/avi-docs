@@ -31,7 +31,7 @@ layout: default
 if string.endswith(path, "/secure/") then
    avi.http.response(403)
 end</code></pre> 
-    <!-- [Format Time: 0.0019 seconds] --> </td> 
+    <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

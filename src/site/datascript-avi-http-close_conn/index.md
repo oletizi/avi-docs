@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.vs.client_ip() == "10.1.1.1" then
    avi.http.close_conn()
 end</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> </td> 
+    <!-- [Format Time: 0.0020 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

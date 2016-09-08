@@ -35,7 +35,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if not avi.http.get_userid() then
    avi.http.redirect("http://login.foo.com")
 end</code></pre> 
-    <!-- [Format Time: 0.0019 seconds] --> </td> 
+    <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

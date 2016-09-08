@@ -42,7 +42,7 @@ elseif avi.http.get_path () == "/engineering/" then
 elseif avi.http.get_path () == "/marketing/" then
    avi.pool.select("marketing", "10.10.31.201")
 end avi.pool.select(avi.http.get_path_tokens(1, 1))</code></pre> 
-    <!-- [Format Time: 0.0044 seconds] --> </td> 
+    <!-- [Format Time: 0.0053 seconds] --> </td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Example 2</strong></span></td> 
@@ -54,7 +54,7 @@ elseif avi.http.get_path () == "/engineering/" then
 elseif avi.http.get_path () == "/marketing/" then
    avi.pool.select("marketing", "10.10.31.201")
 end avi.pool.select(avi.http.get_path_tokens(1, 1))</code></pre> 
-    <!-- [Format Time: 0.0010 seconds] --> </td> 
+    <!-- [Format Time: 0.0011 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

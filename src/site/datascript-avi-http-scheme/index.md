@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.hostname() ~= "test.com" then
    avi.http.redirect(avi.http.scheme() .. "test.com" .. avi.http.get_uri())
 end</code></pre> 
-    <!-- [Format Time: 0.0038 seconds] --> </td> 
+    <!-- [Format Time: 0.0034 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

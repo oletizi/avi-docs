@@ -29,10 +29,10 @@ layout: default
    <td width="600">&nbsp;From DataScript "Log1" HTTP_REQ event:<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log("Hello World!") num = 2
 avi.vs.log("Hello " .. num .. " You!")</code></pre> 
-    <!-- [Format Time: 0.0008 seconds] --> From DataScript "Log2" HTTP_RESP event:<br> 
+    <!-- [Format Time: 0.0010 seconds] --> From DataScript "Log2" HTTP_RESP event:<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log("Hello World!") num = 2
 avi.vs.log("Hello " .. num .. " You!")</code></pre> 
-    <!-- [Format Time: 0.0015 seconds] --> Output from the client log:<p></p> <pre crayon="false" class="">DataScript Log: [string "Log1"]:1:&nbsp;Hello World!
+    <!-- [Format Time: 0.0022 seconds] --> Output from the client log:<p></p> <pre crayon="false" class="">DataScript Log: [string "Log1"]:1:&nbsp;Hello World!
 
 DataScript Log: [string "Log2"]:1: Hello 2 You!</pre> </td> 
   </tr> 

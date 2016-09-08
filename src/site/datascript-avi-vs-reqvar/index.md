@@ -15,7 +15,7 @@ layout: default
 if var == 1 then ... avi.vs.reqvar.foo = 10 if avi.vs.reqvar.foo == 10 then
    avi.vs.log("Foo=" .. avi.vs.reqvar.foo)
 end</code></pre> 
-    <!-- [Format Time: 0.0021 seconds] --> For variable data that needs to be saved across connections or mirrored to other Service Engines for the virtual service use <a href="/datascript-avi-vs-table_insert/">avi.vs.table_insert()</a></td> 
+    <!-- [Format Time: 0.0015 seconds] --> For variable data that needs to be saved across connections or mirrored to other Service Engines for the virtual service use <a href="/datascript-avi-vs-table_insert/">avi.vs.table_insert()</a></td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Events</strong></span></td> 
@@ -41,7 +41,7 @@ end</code></pre>
 if var == 1 then ... avi.vs.reqvar.foo = 10 if avi.vs.reqvar.foo == 10 then
    avi.vs.log("Foo=" .. avi.vs.reqvar.foo)
 end</code></pre> 
-    <!-- [Format Time: 0.0027 seconds] --> </td> 
+    <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>
