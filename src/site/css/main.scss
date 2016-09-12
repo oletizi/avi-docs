@@ -15,7 +15,7 @@ $footer-background-color: green;
 $brand-color: #ff4b00;
 
 $grey-color: #ccc;
-$grey-color-light: lighten($grey-color, 40%);
+$grey-color-light: #ddd;
 $grey-color-dark: darken($grey-color, 25%);
 
 $blue-color: #22a4e6;
@@ -140,6 +140,10 @@ a, a:hover, a:visited {
   }
 }
 
+/**
+* Sidebar
+*/
+
 .sidebar {
   background-color: $sidebar-background-color;
   a {
@@ -211,13 +215,33 @@ a, a:hover, a:visited {
 
   ul#expandable-nav {
     list-style: none;
-    padding: 0;
-    li {
-      padding-top: $spacing-unit / 2;
-    }
+    padding: $spacing-unit / 2 0 0 0;
+    //li {
+    //  padding-top: $spacing-unit / 4;
+    //  padding-bottom: $spacing-unit / 4;
+    //}
     ul {
       padding-left: $spacing-unit / 2;
       list-style: none;
+    }
+    a {
+      display: block;
+      padding-top: $spacing-unit / 4;
+      padding-bottom: $spacing-unit / 4;
+    }
+    .toggle:after {
+      /* symbol for "opening" panels */
+      font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+      float: right; /* adjust as needed */
+      color: grey; /* adjust as needed */
+    }
+    .toggle.collapsed:after {
+      /* symbol for "collapsed" panels */
+      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+    }
+    .collapse.in {
+      border-left: 2px solid $grey-color-light;
     }
   }
 }
