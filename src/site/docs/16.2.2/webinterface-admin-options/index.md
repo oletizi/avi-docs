@@ -1,7 +1,7 @@
 <html>
  <head></head> 
  <body>
-   --- title: Administration layout: default --- The administration section of the web interface governs the following system-level resources: * ** 
+   --- title: Web Interface - Administration Options layout: default --- The administration section of the web interface governs the following system-level resources: * ** 
   <a href="/user-accounts">Accounts</a>:** Configure and manage user accounts, roles, and tenants. * ** 
   <a href="/docs/latest">Settings</a>:** Configure management access resources. * **Controller:** Configure 
   <a href="/docs/latest">Avi Controller management addresses</a>, and view Avi Controller-related 

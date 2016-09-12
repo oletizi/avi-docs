@@ -28,7 +28,7 @@
             Algorithms</a></li>
         </ul>
       </li>
-      <li title="Persistence" cookiename="nav-features-lb-persistence">
+      <li title="Persistence">
         <a href="#" data-toggle="collapse" data-target="#collapse-features-persistence">Persistence</a>
         <ul id="collapse-features-persistence" class="collapse ">
           <li><a href="/overview-of-server-persistence/">Overview</a></li>
@@ -40,6 +40,363 @@
           <li><a href="/custom-persistence-with-datascript/">Custom DataScript</a></li>
         </ul>
       </li>
+      <li><a href="/server-autoscale/">Server Autoscale</a></li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-server-autoscale">Health Monitoring</a>
+        <ul id="collapse-features-server-autoscale">
+          <li><a href="/overview-of-health-monitors/">Overview of Health Monitors</a></li>
+          <li><a href="/https-health-monitor/">HTTPS Health Monitor</a></li>
+          <li><a href="/ping-health-monitor/">Ping Health Monitor</a></li>
+          <li><a href="/tcp-health-monitor/">TCP Health Monitor</a></li>
+          <li><a href="/udp-health-monitor/">UDP Health Monitor</a></li>
+          <li><a href="/dns-health-monitor/">DNS Health Monitor</a></li>
+          <li><a href="/external-health-monitor/">External Health Monitor</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/health-monitor-profile/">Health Monitor
+            Profile</a></li>
+          <li><a href="/docs/configuration-guide/applications/virtual-services/vs-health/">Virtual Service
+            Health</a></li>
+          <li><a href="/servers-flapping-up-down/">Server Flapping</a></li>
+          <li><a href="/why-is-a-server-marked-down/">Marking a Server Down</a></li>
+          <li><a href="/health-monitor-troubleshooting/">Health Monitor Troubleshooting</a></li>
+          <li><a href="/gateway-monitoring-for-legacy-ha/">Gateway Monitoring for Legacy HA</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-high-availability">High Availability</a>
+        <ul id="collapse-features-high-availability">
+          <li><a href="/overview-of-vantage-high-availability/">Overview</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-high-availability-control-pane">Control
+            Plane</a>
+            <ul id="collapse-features-high-availability-control-pane">
+              <li><a href="/ha-for-avi-controllers/">Overview</a></li>
+              <li><a href="/impact-of-a-controller-failure/">Impact of Controller Failure</a></li>
+              <li><a href="/clustering-controllers-from-different-networks/">Clustering Controllers in Different
+                Networks</a></li>
+              <li><a href="/backup-the-configuration/">Configuration Backup and Restore</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-high-availability-data-plane">Data
+            Plane</a>
+            <ul id="collapse-features-high-availability-data-plane">
+              <li><a href="/overview-of-vantage-high-availability/">Overview</a></li>
+              <li><a href="/elastic-ha-for-avi-service-engines-16-2/">Elastic HA</a></li>
+              <li><a href="/legacy-ha-for-avi-service-engines/">Legacy HA</a></li>
+              <li><a href="/anti-affinity-for-service-engine-placement/">Anti-affinity for SE Placement</a></li>
+              <li><a href="/gateway-monitoring-for-legacy-ha/">Gateway Monitoring for Legacy HA</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security">Security</a>
+        <ul id="collapse-features-security">
+          <li><a href="/overview-of-vantage-security/">Overview</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-ssl">SSL</a>
+            <ul id="collapse-features-security-ssl">
+              <li><a href="/docs/configuration-guide/applications/virtual-services/vs-security/">Virtual Service
+                Security</a></li>
+              <li><a href="/ssl-visibility-and-troubleshooting/">SSL Visibility and Troubleshooting</a></li>
+              <li><a href="/redirect-http-to-https/">Redirect HTTP to HTTPS</a></li>
+              <li><a href="/overview-of-ssl-termination/">SSL/TLS Termination</a></li>
+              <li><a href="/ssl-tls-version-support/">SSL/TLS Version Support</a></li>
+              <li><a href="/app-transport-security/">App Transport Security (ATS)</a></li>
+              <li><a href="/ssl-tls-profile/">SSL/TLS Profile</a></li>
+              <li><a href="/ssl-everywhere/">SSL Everywhere</a></li>
+              <li><a href="/ssl-performance/">SSL Performance</a></li>
+              <li><a href="/multi-level-domain-support-for-ssl/">Multi-level Domain Support</a></li>
+              <li><a href="/client-ssl-certificate-validation/">Client SSL Cert Validation</a></li>
+              <li><a href="/physical-security-for-ssl-keys/">Physical Security for SSL Keys</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-sni">Server Name
+            Indication</a>
+            <ul id="collapse-features-security-sni">
+              <li><a href="/server-name-indication/">Overview</a></li>
+              <li><a href="/wildcard-sni-matching-for-virtual-hosting/">Wildcard SNI Matching</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-rep">RSA, ECC, PFS</a>
+            <ul id="collapse-features-security-rep">
+              <li><a href="/ecc-versus-rsa-certificate-priority/">EC versus RSA Cert Priority</a></li>
+              <li><a href="/app-transport-security/">App Transport Security (ATS)</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-cert-management">Cert
+            Management</a>
+            <ul id="collapse-features-security-cert-management">
+              <li><a href="/notification-of-ssl-certificate-expiration/">Notification of SSL Certification</a>
+              </li>
+              <li><a href="/upload-hsm-pkg/">CSR Automation</a></li>
+              <li><a href="/crl-validation-options/">Full-Chain CRL Checking</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-hsm">HSM Support</a>
+            <ul id="collapse-features-security-hsm">
+              <li><a href="/avi-vantage-integration-with-safenet-network-hsm/">SafeNet Network HSM</a></li>
+              <li><a href="/thales-nshield-integration-2/">Thales nShield HSM</a></li>
+              <li><a href="/upload-hsm-pkg/">Package Upload</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-dos">Denial of Service</a>
+            <ul id="collapse-features-security-dos">
+              <li><a href="/distributed-denial-of-service/">DDoS</a></li>
+              <li><a href="/ddos-attacks-mitigated/">DDoS Attacks Mitigated</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-policies">Policies</a>
+            <ul id="collapse-features-security-policies">
+              <li><a href="/application-profile/#HTTP_app_profile_security_tab">HTTP App Profile Security Tab</a>
+              </li>
+              <li><a href="/auth-profile/">Auth Profile</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-acl">User Access Controls</a>
+            <ul id="collapse-features-security-acl">
+              <li><a href="/user-accounts/">User Accounts</a></li>
+              <li><a href="/user-account-roles/">User Account Roles</a></li>
+              <li><a href="/super-user-accounts/">Super User Accounts</a></li>
+              <li><a href="/remote-users-authen-authrz/">Authentication and Authorization</a></li>
+              <li><a href="/ldap-authentication/">LDAP Authentication</a></li>
+              <li><a href="/tacacs-for-avi-vantage-users/">TACACS+</a></li>
+              <li><a href="/securing-management-ip-access/">Securing Management IP Access</a></li>
+              <li><a href="/strong-password-enforcement/">Strong Password Enforcement</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-security-isolation">App
+            Isolation/Micro-Segmentation</a>
+            <ul id="collapse-features-security-isolation">
+              <li><a href="Tenancy /tenants/">Tenancy</a></li>
+              <li><a href="/all-tenants-view/">All Tenants View</a></li>
+              <li><a href="/switch-between-tenants/">Switching Between Tenants</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/rate-shaping-and-throttling-options/">Rate Shaping and Throttling</a></li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-acceleration">Acceleration</a>
+        <ul id="collapse-features-acceleration">
+          <li><a href="/application-profile/#HTTP_acceleration">HTTP Acceleration</a></li>
+          <li><a href="/overview-of-http-cache/">Overview of HTTP Cache </a></li>
+          <li><a href="/docs/latest/configuration-guide/templates/profiles/application-profile/#HTTP_compression/">Compression</a>
+          </li>
+          <li>
+            <a href="/docs/latest/configuration-guide/templates/profiles/application-profile/#connection_multiplexing/">Connection
+              Multiplexing</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-analytics">Analytics</a>
+        <ul id="collapse-features-analytics">
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-analytics-alerts">Alerts</a>
+            <ul id="collapse-features-analytics-alerts">
+              <li><a href="/notifications-overview/">Notifications Overview</a></li>
+              <li><a href="/events-overview/">Events Overview</a></li>
+              <li><a href="/events-list/">Events List</a></li>
+              <li><a href="/alerts-overview/">Alerts Overview</a></li>
+              <li><a href="/alert-config/">Alert Config</a></li>
+              <li><a href="/avi-controller-alerts-log/">Avi Controller Alerts Log</a></li>
+              <li><a href="#">Example Controller Alerts Log</a></li>
+              <li><a href="/snmp-support-in-avi-vantage/">SNMP Support in Avi Vantage</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-analytics-logs">Logs</a>
+            <ul id="collapse-features-analytics-logs">
+              <li><a href="/avi-controller-events-log/">Avi Controller Events Log</a></li>
+              <li><a href="/configuration-guide/applications/virtual-services/vs-logs/">Virtual Service Logs</a>
+              </li>
+              <li><a href="/events-that-trigger-significant-logs/">Significant Logs</a></li>
+              <li><a href="/avi-controller-alerts-log/">Avi Controller Alerts Log</a></li>
+              <li><a href="/client-log-levels/">Client Log Levels</a></li>
+              <li><a href="/logging-all-headers-in-client-server-http-traffic/">Logging All Headers in HTTP
+                Traffic</a></li>
+              <li><a href="/excluding-unwanted-messages-from-client-logs/">Excluding Unwanted Client Log
+                Entries </a></li>
+              <li><a href="/save-log-searches/">Saving Log Searches</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-analytics-metrics">Metrics</a>
+            <ul>
+              <li><a href="/metrics-list/">Metrics List</a></li>
+              <li><a href="/metrics-retention-period/">Metrics Retention Period</a></li>
+              <li><a href="/metrics-used-for-auto-scaling-service-engines/">Metrics for Autoscaling SEs</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-analytics-rtv">Real-Time Visibility and
+            Traffic Inspection</a>
+            <ul id="collapse-features-analytics-rtv">
+              <li><a href="/docs/configuration-guide/applications/virtual-services/vs-clients/">VS Client
+                Information</a></li>
+              <li><a href="/enable-client-insights-navigation-timing/">Navigation Timing for Client Insights</a>
+              </li>
+              <li><a href="/geo-location-database/">Geo Location Database</a></li>
+              <li>
+                <a href="/docs/configuration-guide/applications/virtual-services/vs-security/#view_security_insights">
+                  View Security Insights </a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-ecosystem">Ecosystem Integration</a>
+        <ul id="collapse-features-ecosystem">
+          <li><a href="/orchestrator-access-modes/">Orchestrator Access Modes</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-features-admin">Administration</a>
+        <ul id="collapse-features-admin">
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-admin-uam">User Acct Mgmt</a>
+            <ul id="collapse-features-admin-uam">
+              <li><a href="/user-account-self-service/">User Account Self-Service</a></li>
+              <li><a href="/user-accounts/">User Accounts</a></li>
+              <li><a href="/super-user-accounts/">Super User</a></li>
+              <li><a href="/remote-users-authen-authrz/">Authentication and Authorization</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-admin-multitenancy">Multitenancy</a>
+            <ul id="collapse-features-admin-multitenancy">
+              <li><a href="/tenants/">Tenants</a></li>
+              <li><a href="/all-tenants-view/">All Tenants View</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-admin-roles">Roles</a>
+            <ul id="collapse-features-admin-roles">
+              <li><a href="/user-account-roles/">User Account Roles</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-features-admin-templates">Templates</a>
+            <ul id="collapse-features-admin-templates">
+              <li><a href="/docs/configuration-guide/templates/profiles/">Profiles</a></li>
+              <li><a href="/docs/configuration-guide/templates/groups/">Groups</a></li>
+              <li><a href="/docs/configuration-guide/templates/security/">Security</a></li>
+              <li><a href="/docs/configuration-guide/templates/scripts/">Scripts</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" data-toggle="collapse" data-target="#collapse-guides">Guides</a>
+    <ul id="collapse-guides">
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-installation">Installation Guides</a>
+        <ul id="collapse-guides-installation">
+          <li><a href="/docs/installation-guides/">Installation Guides Overview</a></li>
+          <li><a href="/installing-avi-vantage-for-vmware-vcenter-16-2">Installing for VMware vCenter</a></li>
+          <li><a href="/installing-avi-vantage-for-openstack-16-2">Installing for OpenStack</a></li>
+          <li><a href="/installing-avi-vantage-for-a-linux-server-cloud-16-2">Installing on Bare Metal</a></li>
+          <li><a href="/installing-avi-vantage-in-amazon-web-services-16-2">Installing for AWS</a></li>
+          <li><a href="/installing-avi-vantage-with-mesosphere-dcos-16-2">Installing for Mesosphere DC/OS</a></li>
+          <li><a href="/installing-avi-vantage-for-csp-2100">Installing for Cisco CSP-2100</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-configuration">Configuration</a>
+        <ul id="collapse-guides-configuration">
+          <li><a href="/docs/configuration-guide/applications/">Applications Overview</a></li>
+          <li><a href="/docs/configuration-guide/applications/virtual-services/">Virtual Services</a></li>
+          <li><a href="/docs/configuration-guide/applications/vs-scaling/">Virtual Services Scaling</a></li>
+          <li><a href="/docs/configuration-guide/applications/vs-policies/">Virtual Services Policies</a></li>
+          <li><a href="/docs/configuration-guide/applications/pools/">Pools</a></li>
+          <li><a href="/docs/configuration-guide/applications/servers/">Servers</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-operations">Operations</a>
+        <ul id="collapse-guides-operations">
+          <li><a href="/docs/configuration-guide/operations/">Operations Overview</a></li>
+          <li><a href="/docs/configuration-guide/operations/alerts/">Alerts</a></li>
+          <li><a href="/docs/configuration-guide/operations/events/">Events</a></li>
+          <li><a href="/docs/configuration-guide/operations/services/">Services</a></li>
+          <li><a href="/docs/configuration-guide/operations/traffic-capture/">Traffic Capture</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-templates">Templates</a>
+        <ul id="collapse-guides-templates">
+          <li><a href="/docs/configuration-guide/templates/">Templates Overview</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/">Profiles</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/application-profile/">Application</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/tcpudp-profile/">TCP/UDP</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/persistence-profile/">Persistence</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/health-monitor-profile/">Health
+            Monitor</a></li>
+          <li><a href="/docs/configuration-guide/templates/profiles/analytics-profile/">Analytics</a></li>
+          <li><a href="/docs/configuration-guide/templates/groups/">Groups</a></li>
+          <li><a href="/docs/configuration-guide/templates/security/">Security</a></li>
+          <li><a href="/docs/configuration-guide/templates/scripts/">Scripts</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-infrastructure">Infrastructure</a>
+        <ul id="collapse-guides-infrastructure">
+          <li><a href="/docs/configuration-guide/infrastructure/">Infrastructure Overview</a></li>
+          <li><a href="/docs/configuration-guide/infrastructure/#dashboard/">Dashboard</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-infrastructure-clouds">Clouds</a>
+            <ul id="collapse-guides-infrastructure-clouds">
+              <li><a href="/docs/configuration-guide/infrastructure/#clouds/">Clouds Overview</a></li>
+              <li><a href="/docs/configuration-guide/infrastructure/#cloud_creation/">Cloud Creation</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-infrastructure-se">Service Engies</a>
+            <ul id="collapse-guides-infrastructure-se">
+              <li><a href="/docs/configuration-guide/infrastructure/#service-engines/">Service Engines
+                Overview</a></li>
+              <li><a href="/docs/configuration-guide/infrastructure/#service-engine-detail/">SE Quick Info
+                Popup</a>
+              </li>
+              <li><a href="/docs/configuration-guide/infrastructure/#create-service-engine/">Create an SE</a>
+              </li>
+              <li><a href="/docs/configuration-guide/infrastructure/#delete-service-engine/">Delete an SE</a>
+              </li>
+              <li><a href="/docs/configuration-guide/applications/servers/">Servers</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-administration">Administration</a>
+            <ul id="collapse-guides-administration">
+              <li><a href="/docs/configuration-guide/administration/">Administration Overview</a></li>
+              <li><a href="/user-accounts/">User Accounts</a></li>
+              <li><a href="/remote-users-authen-authrz/">User Authentication & Authorization</a></li>
+              <li><a href="/administrative-settings/">Controller Administrative Settings</a></li>
+              <li><a href="//upgrading-the-vantage-software/">Upgrading Avi Vantage</a></li>
+              <li><a href="/docs/configuration-guide/applications/servers/">Servers</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/docs/cli-guide">CLI Guide</a></li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-datascript">DataScript Guide</a>
+        <ul id="collapse-guides-datascript">
+          <li><a href="/docs/datascript-guide/">Overview</a></li>
+          <li><a href="/docs/datascript-guide/datascript-object-model/">Object Model</a></li>
+          <li><a href="/docs/datascript-guide/datascript-constructs/">Constructs</a></li>
+          <li><a href="/docs/datascript-guide/datascript-precedence/">Precedence</a></li>
+          <li><a href="/docs/datascript-guide/datascript-samples/">Samples</a></li>
+          <li><a href="/datascript-functions/">Functions</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-toggle="collapse" data-target="#collapse-guides-api">API Guides</a>
+        <ul id="collapse-guides-api">
+          <li><a href="/docs/latest/api-guide/">API Guide v16.2.2</a></li>
+          <li><a href="/docs/16.1/api-guide/">API Guide v16.1</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" data-toggle="collapse" data-target="#collapse-release-notes">Release Notes</a>
+    <ul id="collapse-release-notes">
+      <li><a href="/avi-vantage-16-2-2-release-notes/">Latest (16.2.2)</a></li>
+      <li><a href="/avi-vantage-16-2-1-release-notes/">16.2.1</a></li>
+      <li><a href="/avi-vantage-release-notes/">All</a></li>
+    </ul>
+  </li>
+  <li><a href="#" data-toggle="collapse" data-target="#collapse-support">Support</a>
+    <ul id="collapse-support">
+      <li><a href="/where-can-i-download-avi-vantage/">Customer Download</a></li>
+      <li><a href="/upgrading-the-vantage-software/">Upgrade</a></li>
+      <li><a href="/support-terms-and-conditions/">Terms and Conditions</a></li>
+      <li><a href="/access-to-avi-portal/">Customer Portal</a></li>
+      <li><a href="/terms-of-avi-vantage-license/">License</a></li>
+      <li><a href="/notification-of-vantage-license-expiration/">License Expiration</a></li>
+      <li><a href="/backup-and-restore-of-avi-vantage-configuration/">Configuration Backup and Restore</a></li>
+      <li><a href="/rolling-back-the-system/">Rollback</a></li>
+      <li><a href="/collecting-tech-support-logs/">Collecting Logs</a></li>
+      <li><a href="/install-vantage-on-laptop-with-fusion/">Laptop Installation with VMware Fusion</a></li>
+    </ul>
+  </li>
+  <li><a href="#" data-toggle="collapse" data-target="#collapse-feedback">Feedback/Questions</a>
+    <ul id="collapse-feedback">
+      <li><a href="mailto:docs@avinetworks.com">Email feedback to Avi Docs</a></li>
+      <li><a href="mailto:support@avinetworks.com">Email questions to Avi Support</a></li>
     </ul>
   </li>
 </ul>
@@ -50,7 +407,7 @@
     console.log("Expandable nav cookie: " + expanded);
     if (Array.isArray(expanded)) {
       $("#expandable-nav .collapse").removeClass('in');
-      for (var i=0; i<expanded.length; i++) {
+      for (var i = 0; i < expanded.length; i++) {
         $(expanded[i]).collapse("show");
       }
     }
