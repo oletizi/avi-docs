@@ -8,7 +8,7 @@ root=`pwd`
 docroot=$root/src/site
 libroot=$root/lib/java/
 
-jar=$libroot/avi-docs-snarfer-1.0.1-jar-with-dependencies.jar
+jar=$libroot/avi-docs-snarfer-1.0.2-jar-with-dependencies.jar
 class=com.avinetworks.docs.Mover
 
 cd $docroot

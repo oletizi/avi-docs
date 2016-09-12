@@ -1,0 +1,26 @@
+# __MOVER_START__
+Redirect 301 /cluster-operational-changes /docs/latest/cluster-operational-changes
+Redirect 301 /client-log-levels /docs/latest/client-log-levels
+Redirect 301 /client-ssl-certificate-validation /docs/latest/client-ssl-certificate-validation
+Redirect 301 /client-ip-persistence /docs/latest/client-ip-persistence
+Redirect 301 /client-ip-address-and-the-x-forwarded-for-header /docs/latest/client-ip-address-and-the-x-forwarded-for-header
+Redirect 301 /clickjacking-protection /docs/latest/clickjacking-protection
+Redirect 301 /backup-the-configuration /docs/latest/backup-the-configuration
+Redirect 301 /cli-installing-the-cli-shell /docs/latest/cli-installing-the-cli-shell
+Redirect 301 /cli-access /docs/latest/cli-access
+Redirect 301 /changing-avi-controller-cluster-configuration /docs/latest/changing-avi-controller-cluster-configuration
+Redirect 301 /certificate-management-integration-for-csr-automation /docs/latest/certificate-management-integration-for-csr-automation
+Redirect 301 /block-an-ip-address-to-a-virtual-service /docs/latest/block-an-ip-address-to-a-virtual-service
+Redirect 301 /bgp-support-for-virtual-services /docs/latest/bgp-support-for-virtual-services
+Redirect 301 /backup-and-restore-of-avi-vantage-configuration /docs/latest/backup-and-restore-of-avi-vantage-configuration
+Redirect 301 /aws-linux-cloud-with-no-access-mode /docs/latest/aws-linux-cloud-with-no-access-mode
+Redirect 301 /avi-vantage-openshift-installation-guide /docs/latest/avi-vantage-openshift-installation-guide
+Redirect 301 /avi-vantage-license-management /docs/latest/avi-vantage-license-management
+Redirect 301 /avi-vantage-integration-with-safenet-network-hsm /docs/latest/avi-vantage-integration-with-safenet-network-hsm
+Redirect 301 /avi-vantage-integration-with-rancheros /docs/latest/avi-vantage-integration-with-rancheros
+Redirect 301 /avi-service-engine-group-options /docs/latest/avi-service-engine-group-options
+Redirect 301 /avi-se-behavior-on-gateway-monitor-failure /docs/latest/avi-se-behavior-on-gateway-monitor-failure
+Redirect 301 /avi-networks-eula /docs/latest/avi-networks-eula
+Redirect 301 /avi-networks-education-references /docs/latest/avi-networks-education-references
+Redirect 301 /avi-controller-sizing /docs/latest/avi-controller-sizing
+# __MOVER_STOP__
