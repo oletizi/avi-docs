@@ -31,7 +31,7 @@ To prepare a host where Service Engines are launched, login to the host as a use
   <controller-ip>
     /api/linux_host_install?username= 
    <username>
-     | sudo bash user@machine:~$&nbsp;curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration 
+     | sudo bash user@machine:~$ curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration 
    </username> 
   </controller-ip></code></pre>
 
@@ -42,7 +42,7 @@ This command invokes an API to download a script that has the public key credent
   <controller-ip>
     /api/linux_host_install?username= 
    <username>
-     | sudo bash user@machine:~$&nbsp;curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration 
+     | sudo bash user@machine:~$ curl –ks https://10.10.25.46/api/linux_host_install?username=newuser | sudo bash Updating the authorized keys under /etc/ssh/authorized_keys_newuser Checking settings for key-based login... PubKeyAuthentication based login is already set up. Finished configuration 
    </username> 
   </controller-ip></code></pre>
 

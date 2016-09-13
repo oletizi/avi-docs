@@ -11,43 +11,43 @@ The following table lists the increments in which metrics data can be displayed 
  <tbody> 
   <tr> 
    <th>Metric Increments</th> 
-   <th>&nbsp;Data Granularity</th> 
-   <th>&nbsp;Retention Period</th> 
+   <th> Data Granularity</th> 
+   <th> Retention Period</th> 
   </tr> 
   <tr> 
    <td>Real time*</td> 
-   <td style="text-align: left;">&nbsp; &nbsp;5 seconds</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 hour</td> 
+   <td style="text-align: left;">   5 seconds</td> 
+   <td>     1 hour</td> 
   </tr> 
   <tr> 
    <td>Past 6 hours</td> 
-   <td>&nbsp; &nbsp;5 minutes</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 day</td> 
+   <td>   5 minutes</td> 
+   <td>     1 day</td> 
   </tr> 
   <tr> 
    <td>Past day</td> 
-   <td>&nbsp; &nbsp;5 minutes</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 day</td> 
+   <td>   5 minutes</td> 
+   <td>     1 day</td> 
   </tr> 
   <tr> 
    <td>Past week</td> 
-   <td>&nbsp; &nbsp;1 per hour</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 week</td> 
+   <td>   1 per hour</td> 
+   <td>     1 week</td> 
   </tr> 
   <tr> 
    <td>Past Month</td> 
-   <td>&nbsp; &nbsp;1 per day</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 year</td> 
+   <td>   1 per day</td> 
+   <td>     1 year</td> 
   </tr> 
   <tr> 
    <td>Past quarter</td> 
-   <td>&nbsp; &nbsp;1 per day</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 year</td> 
+   <td>   1 per day</td> 
+   <td>     1 year</td> 
   </tr> 
   <tr> 
    <td>Past year</td> 
-   <td>&nbsp; &nbsp;1 per day</td> 
-   <td>&nbsp; &nbsp; &nbsp;1 per year</td> 
+   <td>   1 per day</td> 
+   <td>     1 per year</td> 
   </tr> 
  </tbody> 
 </table>

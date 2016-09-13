@@ -18,7 +18,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Parameter</strong></span></td> 
-   <td width="600">Looks up the key in the default VS table, unless another table name is specified via the optional <strong><em>table_name</em></strong>.<p></p> <p>The <strong>key</strong>&nbsp;is used to search for the desired table entry.</p> <p>The optional <em><strong>lifetime_exten</strong></em>, a positive integer, is the value in seconds by which to extend the lifetime of the entry in the key/value store. When it is not specified, the default value of 300 seconds is used to extend the lifetime of the entry.</p></td> 
+   <td width="600">Looks up the key in the default VS table, unless another table name is specified via the optional <strong><em>table_name</em></strong>.<p></p> <p>The <strong>key</strong> is used to search for the desired table entry.</p> <p>The optional <em><strong>lifetime_exten</strong></em>, a positive integer, is the value in seconds by which to extend the lifetime of the entry in the key/value store. When it is not specified, the default value of 300 seconds is used to extend the lifetime of the entry.</p></td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Returns</strong></span></td> 

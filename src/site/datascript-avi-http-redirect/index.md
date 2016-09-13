@@ -20,9 +20,9 @@ layout: default
    <td width="100"><span style="font-size: medium;"><strong>Parameter</strong></span></td> 
    <td width="600"><strong><em>uri</em> </strong>is a string which will be the new URI to redirect the current request to.<p></p> <p>Optional <em><strong>status</strong> </em>code is a number for the redirect status code. Use either the status code number or the constant string. Supported status codes are:</p> 
     <ul> 
-     <li>&nbsp;301 avi.HTTP_MOVED_PERMANENTLY</li> 
-     <li>&nbsp;302 avi.HTTP_MOVED_TEMPORARILY</li> 
-     <li>&nbsp;307 avi.HTTP_TEMPORARY_REDIRECT</li> 
+     <li> 301 avi.HTTP_MOVED_PERMANENTLY</li> 
+     <li> 302 avi.HTTP_MOVED_TEMPORARILY</li> 
+     <li> 307 avi.HTTP_TEMPORARY_REDIRECT</li> 
     </ul> <p>When no status code is provided, the default is 302.</p></td> 
   </tr> 
   <tr> 
@@ -35,7 +35,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.vs.port() ~= "443" then
    avi.http.redirect("https://" .. avi.vs.host() .. avi.http.get_uri())
 end</code></pre> 
-    <!-- [Format Time: 0.0022 seconds] --> </td> 
+    <!-- [Format Time: 0.0034 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

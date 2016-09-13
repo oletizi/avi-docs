@@ -142,7 +142,7 @@ To begin, log in to your AWS account using an Internet browser.
 
 1. Download Docker.json from <a href="https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json">https://s3-us-west-1.amazonaws.com/avi-tm/Docker.json</a>. Save the file in Downloads.
 1. Open an SSH session to the Mesos master's IP address, and post the application:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>curl -H "Content-Type: application/json" -X POST -d@Downloads/Docker.json http://:8080/v2/apps</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>curl -H "Content-Type: application/json" -X POST -d@Downloads/Docker.json http://:8080/v2/apps</code></pre>
 
 ### Application Verification
 

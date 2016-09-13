@@ -31,22 +31,22 @@ layout: default
 if domain ~= "avinetworks.com" then
    avi.http.redirect("new.avinetworks.com")
 end</code></pre> 
-    <!-- [Format Time: 0.0011 seconds] --> Returns ‘avinetworks’<br> 
+    <!-- [Format Time: 0.0006 seconds] --> Returns ‘avinetworks’<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_host_tokens(1) avi.http.get_host_tokens(2,2) avi.http.get_host_tokens(6) domain = avi.http.get_host_tokens(2, 3)
 if domain ~= "avinetworks.com" then
    avi.http.redirect("new.avinetworks.com")
 end</code></pre> 
-    <!-- [Format Time: 0.0014 seconds] --> Returns ‘nil’<br> 
+    <!-- [Format Time: 0.0007 seconds] --> Returns ‘nil’<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_host_tokens(1) avi.http.get_host_tokens(2,2) avi.http.get_host_tokens(6) domain = avi.http.get_host_tokens(2, 3)
 if domain ~= "avinetworks.com" then
    avi.http.redirect("new.avinetworks.com")
 end</code></pre> 
-    <!-- [Format Time: 0.0011 seconds] --> Validate the second and third fields of the hostname are ‘avinetworks.com’.<br> 
+    <!-- [Format Time: 0.0007 seconds] --> Validate the second and third fields of the hostname are ‘avinetworks.com’.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_host_tokens(1) avi.http.get_host_tokens(2,2) avi.http.get_host_tokens(6) domain = avi.http.get_host_tokens(2, 3)
 if domain ~= "avinetworks.com" then
    avi.http.redirect("new.avinetworks.com")
 end</code></pre> 
-    <!-- [Format Time: 0.0040 seconds] --> </td> 
+    <!-- [Format Time: 0.0018 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

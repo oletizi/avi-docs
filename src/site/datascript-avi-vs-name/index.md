@@ -28,7 +28,7 @@ layout: default
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
    <td width="600">Insert a header in traffic sent to the server:<br> X-Source: www.avi.com-10.1.1.1<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.add_header("X-Source", avi.vs.name() .. "-" .. avi.vs.ip())</code></pre> 
-    <!-- [Format Time: 0.0020 seconds] --> </td> 
+    <!-- [Format Time: 0.0027 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

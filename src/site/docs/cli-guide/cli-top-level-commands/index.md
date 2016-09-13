@@ -67,7 +67,7 @@ The following are top-level commands shown when pressing tab twice from the shel
   </tr> 
   <tr> 
    <td>rebalance</td> 
-   <td>Realign the SEs handing virtual services&nbsp;within an SE group.</td> 
+   <td>Realign the SEs handing virtual services within an SE group.</td> 
   </tr> 
   <tr> 
    <td>reboot</td> 

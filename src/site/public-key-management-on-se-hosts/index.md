@@ -41,7 +41,7 @@ password:
 1. Prepare the Avi SE host for adding the key from the Avi Controller: <pre pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
 </code></pre>
 
-1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:<pre class="command-line language-bash" data-prompt=": >"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
 chmod 644 authorized_keys</code></pre>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
 
 1. Repeat these steps on each Avi SE host.
@@ -67,10 +67,10 @@ password:
 1. Prepare the Avi SE host for adding the key from the Avi Controller: <pre pre="" class="command-line language-bash" data-user="aviuser" data-host="localhost ~"><code>mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh
 </code></pre>
 
-1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+1. Add the Avi Controller's public key to the authorized key file by pasting the key copied from the Avi Controller by clicking Copy to clipboard into the following command line:<pre class="command-line language-bash" data-prompt=": >"><code>echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
 chmod 644 authorized_keys</code></pre>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)
 
-1. Enable sudo password-less login for the SSH user:<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo echo "avise ALL=(ALL) NOPASSWD:ALL" &gt;&gt; /etc/sudoer</code></pre>Where the example shows "avise," make sure to type the SSH user name created above.
+1. Enable sudo password-less login for the SSH user:<pre class="command-line language-bash" data-prompt=": >"><code>sudo echo "avise ALL=(ALL) NOPASSWD:ALL" &gt;&gt; /etc/sudoer</code></pre>Where the example shows "avise," make sure to type the SSH user name created above.
 
 1. Repeat these steps on each Avi SE host.
 

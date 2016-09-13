@@ -10,7 +10,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Description</strong></font> </td> 
-   <td width="600">Returns the number of characters of&nbsp;the source&nbsp;string.</td> 
+   <td width="600">Returns the number of characters of the source string.</td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Events</strong></font> </td> 
@@ -26,7 +26,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
-   <td width="600">Log the number of characters from&nbsp;the path of the client's request<br> 
+   <td width="600">Log the number of characters from the path of the client's request<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log(string.len(avi.http.get_path()))</code></pre> 
     <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 

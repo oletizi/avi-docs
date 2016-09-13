@@ -10,7 +10,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Description</strong></font> </td> 
-   <td width="600">Returns all the cookies present in the HTTP request or response, determined by the context flag. &nbsp;When context is not specified, the context is chosen based on the event which executed the DataScript.</td> 
+   <td width="600">Returns all the cookies present in the HTTP request or response, determined by the context flag.  When context is not specified, the context is chosen based on the event which executed the DataScript.</td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Events</strong></font> </td> 
@@ -31,7 +31,7 @@ layout: default
 if count == 0 then
    -- No cookies found, do something
 end</code></pre> 
-    <!-- [Format Time: 0.0020 seconds] --> </td> 
+    <!-- [Format Time: 0.0014 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

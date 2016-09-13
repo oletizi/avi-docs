@@ -32,7 +32,7 @@ i,j = string.find(ua, "Mozilla")
 if i then
    avi.http.add_header("X-Foo", "Bar")
 end</code></pre> 
-    <!-- [Format Time: 0.0043 seconds] --> </td> 
+    <!-- [Format Time: 0.0029 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

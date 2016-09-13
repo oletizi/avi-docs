@@ -18,7 +18,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Parameter</strong></font> </td> 
-   <td width="600">Specify the <strong><em>name</em> </strong>of the cookie to inspect.<br> Rather than inspect the cookie from the current event context, specify the context of either <strong><em>avi.HTTP_REQUEST</em></strong> or <strong><em>avi.HTTP_RESPONSE</em></strong> to inspect cookies from those events.&nbsp; For instance, during an HTTP response event, check for a cookie sent by the client during the request event.</td> 
+   <td width="600">Specify the <strong><em>name</em> </strong>of the cookie to inspect.<br> Rather than inspect the cookie from the current event context, specify the context of either <strong><em>avi.HTTP_REQUEST</em></strong> or <strong><em>avi.HTTP_RESPONSE</em></strong> to inspect cookies from those events.  For instance, during an HTTP response event, check for a cookie sent by the client during the request event.</td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Returns</strong></font> </td> 
@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.get_cookie("foo") ~= "bar" then
    -- do something with the cookie header
 end</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> </td> 
+    <!-- [Format Time: 0.0017 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

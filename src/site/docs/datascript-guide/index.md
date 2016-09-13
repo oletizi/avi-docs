@@ -22,6 +22,6 @@ end</code></pre>
 
 * <a href="/2015/12/14/datascript-events/">Events</a>:  Each DataScript will executed when an event is triggered, such as when an HTTP request or HTTP response is received by the virtual service. A DataScript must be executed within one or more events.
 * <a href="/2015/12/14/datascript-operators/">Operators</a>:  DataScripts may make use of operators, which may be relational, logical, or arithmetic.
-* <a href="/2015/12/13/datascript-functions/">Functions:&nbsp;</a> Functions are Avi specific commands, such as HTTP redirects or closing a client connection.
+* <a href="/2015/12/13/datascript-functions/">Functions: </a> Functions are Avi specific commands, such as HTTP redirects or closing a client connection.
 * <a href="/2015/12/14/datascript-execution-priority/">Execution Priority</a>:  DataScripts have a complex relationship with other features within Avi Vantage, and it is important to understand the order of execution priority when multiple DataScripts are attached to a virtual service, or Policies and other features conflict with the DataScripts.
 * <a href="/2015/12/14/datascript-troubleshooting-rules/">Troubleshooting</a>:  DataScript's may fail to save / load at time of configuration, or they may be created without issue but fail to execute when applied to traffic.    

@@ -20,7 +20,7 @@ The popup for testing an LDAP authentication profile requires some information t
 
 If the LDAP authentication profile is configured to use anonymous binding for authentication requests, the popup for testing the profile prompts for the LDAP user's username and password. Testing whether a user can bind successfully verifies that the LDAP authentication profile is configured correctly to authenticate users with the same user DN pattern.
 
-### <a href="img/Screen-Shot-2016-08-03-at-2.55.24-PM.png">&nbsp; &nbsp;</a><a href="img/Screen-Shot-2016-08-03-at-2.55.24-PM.png"><img src="img/Screen-Shot-2016-08-03-at-2.55.24-PM.png" alt="Screen Shot 2016-08-03 at 2.55.24 PM" width="650" height="453"></a><a href="img/Screen-Shot-2016-08-03-at-2.55.43-PM.png">&nbsp; <img src="img/Screen-Shot-2016-08-03-at-2.55.43-PM.png" alt="Screen Shot 2016-08-03 at 2.55.43 PM" width="650" height="451"></a>
+### <a href="img/Screen-Shot-2016-08-03-at-2.55.24-PM.png">   </a><a href="img/Screen-Shot-2016-08-03-at-2.55.24-PM.png"><img src="img/Screen-Shot-2016-08-03-at-2.55.24-PM.png" alt="Screen Shot 2016-08-03 at 2.55.24 PM" width="650" height="453"></a><a href="img/Screen-Shot-2016-08-03-at-2.55.43-PM.png">  <img src="img/Screen-Shot-2016-08-03-at-2.55.43-PM.png" alt="Screen Shot 2016-08-03 at 2.55.43 PM" width="650" height="451"></a>
 
  
 

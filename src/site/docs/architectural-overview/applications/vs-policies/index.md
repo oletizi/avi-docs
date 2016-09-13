@@ -169,7 +169,7 @@ Example 1
  <table class="table table-hover"> 
  <tbody> 
   <tr> 
-   <td>Original request&nbsp;URL:</td> 
+   <td>Original request URL:</td> 
    <td>support</td> 
    <td>avinetworks</td> 
    <td>com</td> 

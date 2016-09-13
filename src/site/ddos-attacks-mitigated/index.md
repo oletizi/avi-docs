@@ -42,12 +42,12 @@ Avi Vantage is the last line of defense for most applications. In most deploymen
   <tr> 
    <td rowspan="12"><strong>Layer 4</strong></td> 
    <td><span style="font-weight: 400;">SYN flood</span></td> 
-   <td><span style="font-weight: 400;">Send TCP SYNs without acknowledging SYN acks; the victim’s TCP &nbsp;table will grow rapidly</span></td> 
+   <td><span style="font-weight: 400;">Send TCP SYNs without acknowledging SYN acks; the victim’s TCP  table will grow rapidly</span></td> 
    <td><span style="font-weight: 400;">If the TCP table is being filled with half connections (uncompleted TCP 3-way handshakes), begin using SYN cookies.</span></td> 
   </tr> 
   <tr> 
    <td><span style="font-weight: 400;">LAND</span></td> 
-   <td><span style="font-weight: 400;">Same as SYN&nbsp;flood except the source and dest IP addresses are identical</span></td> 
+   <td><span style="font-weight: 400;">Same as SYN flood except the source and dest IP addresses are identical</span></td> 
    <td><span style="font-weight: 400;">Packets are dropped at the dispatcher layer,</span></td> 
   </tr> 
   <tr> 
@@ -58,7 +58,7 @@ Avi Vantage is the last line of defense for most applications. In most deploymen
   <tr> 
    <td><span style="font-weight: 400;">X-mas tree</span></td> 
    <td><span style="font-weight: 400;">TCP packets with all the flags set to various values to overwhelm the victim’s TCP stack</span></td> 
-   <td><span style="font-weight: 400;">Packets are dropped in the protocol stack of&nbsp;the SE.</span></td> 
+   <td><span style="font-weight: 400;">Packets are dropped in the protocol stack of the SE.</span></td> 
   </tr> 
   <tr> 
    <td><span style="font-weight: 400;">Bad RST flood</span></td> 
@@ -119,17 +119,17 @@ Avi Vantage is the last line of defense for most applications. In most deploymen
   <tr> 
    <td><span style="font-weight: 400;">SlowLoris / SlowPost</span></td> 
    <td><span style="font-weight: 400;">Opening multiple connections to the victim by sending partial HTTP requests</span></td> 
-   <td><span style="font-weight: 400;">The header and body timeouts configured&nbsp;in the application profile are used.&nbsp;</span></td> 
+   <td><span style="font-weight: 400;">The header and body timeouts configured in the application profile are used. </span></td> 
   </tr> 
   <tr> 
    <td><span style="font-weight: 400;">Invalid requests</span></td> 
    <td><span style="font-weight: 400;">Invalid header, body, or entity in HTTP request</span></td> 
-   <td><span style="font-weight: 400;">The URI length, header length, and body length limits&nbsp;configured&nbsp;in the application profile are used.&nbsp;</span></td> 
+   <td><span style="font-weight: 400;">The URI length, header length, and body length limits configured in the application profile are used. </span></td> 
   </tr> 
   <tr> 
    <td><span style="font-weight: 400;">Rate limiting RPS per client IP</span></td> 
    <td>Request flood</td> 
-   <td>The limit configured in the application profile is used. (App Profile - DDoS - Rate Limit HTTP TCP)<p></p> <p>&nbsp;</p> <p>&nbsp;</p></td> 
+   <td>The limit configured in the application profile is used. (App Profile - DDoS - Rate Limit HTTP TCP)<p></p> <p> </p> <p> </p></td> 
   </tr> 
   <tr> 
    <td><span style="font-weight: 400;">Rate limiting RPS per URL</span></td> 

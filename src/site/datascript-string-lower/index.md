@@ -10,7 +10,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Description</strong></font> </td> 
-   <td width="600">Converts the source string to all lowercase characters. &nbsp;Avi operators are case sensitive, so "a" does not equal "A".</td> 
+   <td width="600">Converts the source string to all lowercase characters.  Avi operators are case sensitive, so "a" does not equal "A".</td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Events</strong></font> </td> 
@@ -18,7 +18,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Parameter</strong></font> </td> 
-   <td width="600"><strong><em>source</em> </strong>is the string to be&nbsp;converted</td> 
+   <td width="600"><strong><em>source</em> </strong>is the string to be converted</td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Returns</strong></font> </td> 

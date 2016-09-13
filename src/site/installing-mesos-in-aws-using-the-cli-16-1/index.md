@@ -46,16 +46,16 @@ For deployment of SEs, the following system-level software is required:
 
 To install the Avi Controller:
 
-1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
+1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre class="command-line language-bash" data-prompt=": >"><code>scp controller_docker.tgz username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
 1. Log onto the Mesos node:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>ssh username@remotehost.com</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>ssh username@remotehost.com</code></pre>
 1. Unzip the Avi Controller image:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>gunzip controller.tgz</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>gunzip controller.tgz</code></pre>
 1. Load the Avi Controller image into the host's local docker repository:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo docker load -i controller_docker.tar</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>sudo docker load -i controller_docker.tar</code></pre>
 1. As a best practice, clean up any data that may be lingering from a previous run
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo rm -rf /var/lib/controller/*</code></pre>
-1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>sudo rm -rf /var/lib/controller/*</code></pre>
+1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre class="command-line language-bash" data-prompt=": >"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
 1. Copy the following lines into the file:
 <pre><code class="language-lua">[Unit]
 Description=AviController
@@ -89,7 +89,7 @@ WantedBy=multi-user.target curl -H <span class="token string">"Content-Type: app
 ### Starting the Avi Controller Service
 
 To start the Avi Controller, enter the following command at the OS shell prompt on the node where you installed the Avi Controller service:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
 
 Initial startup and full system initialization takes around 5 minutes.
 
@@ -98,7 +98,7 @@ Initial startup and full system initialization takes around 5 minutes.
 Note: Avi Controller UI listens on ports 9080 & 9443. Allow 9080 & 9443 ports in the security group of the AWS instance where Avi Controller is running.
 
 To access the Avi Controller web interface, navigate to the following URL:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>https://mesos-ip-or-hostname:9443</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>https://mesos-ip-or-hostname:9443</code></pre>
 
 The following section provides steps for initial configuration of the Avi Controller.
 

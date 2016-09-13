@@ -26,7 +26,7 @@ Here is the list of providers and supported functionalities for IPAM and DNS:
    <th width="60%">Support / Provider Profile</th> 
    <th>Infoblox</th> 
    <th>Internal</th> 
-   <th>&nbsp;AWS/OpenStack</th> 
+   <th> AWS/OpenStack</th> 
   </tr> 
   <tr> 
    <td>IPAM only</td> 

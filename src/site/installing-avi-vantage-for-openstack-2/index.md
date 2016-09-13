@@ -496,7 +496,7 @@ Note: An account with root privileges for the Neutron API server is required. Th
 1. Copy the package onto the OpenStack Neutron API host.
 1. Log into the Neutron API server.
 1. On the OpenStack Neutron API server, back up neutron.conf.
-1. Unzip and untar the driver package: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>tar -xzf avi_openstack_package.tar.gz</code></pre>
+1. Unzip and untar the driver package: <pre class="command-line language-bash" data-prompt=": >"><code>tar -xzf avi_openstack_package.tar.gz</code></pre>
 1. Run the Avi LBaaS installation script.In the following example, 10.114.214.250 is the IP address for the Avi Controller cluster. The login credentials for the Controller are admin, avinetworks. Make sure to replace the IP address in the example with the cluster IP address.
 <pre><code class="language-lua">"openstack_configuration": 
 {

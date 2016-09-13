@@ -27,7 +27,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Returns</strong></font> </td> 
-   <td width="600">String of the hostname requested by the client.&nbsp; It does not include the port.</td> 
+   <td width="600">String of the hostname requested by the client.  It does not include the port.</td> 
   </tr> 
   <tr> 
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
@@ -36,7 +36,7 @@ layout: default
 if not host then
    avi.http.close_conn()
 end</code></pre> 
-    <!-- [Format Time: 0.0017 seconds] --> </td> 
+    <!-- [Format Time: 0.0013 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

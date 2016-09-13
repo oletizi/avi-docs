@@ -16,8 +16,8 @@ Connection multiplexing, configured via the *Templates > Profiles > HTTP applica
    <td><a href="img/Multiplex-2.png"><img src="img/Multiplex-2.png" alt="Multiplex-2" width="300" height="94"></a></td> 
   </tr> 
   <tr> 
-   <td width="300">Without multiplexing: &nbsp;Request&nbsp;distribution from traffic originating from one client connection</td> 
-   <td width="300">With multiplexing: &nbsp;Request&nbsp;distribution from traffic originating from one client connection</td> 
+   <td width="300">Without multiplexing:  Request distribution from traffic originating from one client connection</td> 
+   <td width="300">With multiplexing:  Request distribution from traffic originating from one client connection</td> 
   </tr> 
  </tbody> 
 </table>
@@ -39,7 +39,7 @@ HTTP/2 uses a different connection methodology and does not utilize or require t
 Multiplexing often distorts the expected view of an administrator's world.  For instance, viewing connection counts from clients and to servers is typically very different.  Static load balancing algorithms such as round robin or least connections may exhibit different behavior.
 
 * **Preserve Source IP**:  Multiplexing explicitly decouples the client connection from the equation when sending traffic to destination servers.  When Preserve Source IP is enabled in conjunction with using the Service Engine as a default gateway of the servers, HTTP traffic cannot be multiplexed.
-* **NTLM**:  NTLM authentication is generally incompatible with multiplexing. Applications that rely on NTLM, such as SharePoint or StoreFront should be configured with connection multiplexing disabled.  See the <a href="/issues-with-ntlm-authentication/">Issues with NTLM Authentication KB&nbsp;</a>for more help on this.
+* **NTLM**:  NTLM authentication is generally incompatible with multiplexing. Applications that rely on NTLM, such as SharePoint or StoreFront should be configured with connection multiplexing disabled.  See the <a href="/issues-with-ntlm-authentication/">Issues with NTLM Authentication KB </a>for more help on this.
 * **Persistence**:  Persistence has a significant role to play in the behavior of multiplexing, described below.
 
 ### Multiplex Plus Persistence

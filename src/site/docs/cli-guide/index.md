@@ -13,7 +13,7 @@ To access the command line interface, either SSH to the Vantage Controller or ac
 
 Similarly, to exit the Vantage shell into Linux, type: <code>bash</code>
 
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>bash</code></pre>
+<pre class="command-line language-bash" data-prompt=": >"><code>bash</code></pre>
 
 When jumping from Linux bash to the Vantage shell, or from the Vantage shell to Linux bash, you may return to the previous mode by typing: <code>exit</code>
 
@@ -25,20 +25,20 @@ When jumping from Linux bash to the Vantage shell, or from the Vantage shell to 
 Dropping into the CLI leaves the administrator at a blank command prompt. To see a list of available commands, press the tab key twice. The commands shown are relative to the current location within the CLI hierarchy.
 
 While typing a command, tab will autocomplete the command. Double tab will return a list of available options for the command in the left column. Most options include a brief help description, which is shown in the right column.
-<pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>export configuration
+<pre class="command-line language-bash" data-prompt=": >"><code>export configuration
 export configuration serviceengine
 export serviceengine ova file from controller virtualservice
-export virtual service &nbsp; &nbsp;
-&nbsp;</code></pre>
+export virtual service    
+ </code></pre>
 
 Commands or parameters may require multiple words or options. If there is only a single word or option, pressing tab will auto complete the next word in the command:
 
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="3,5"><code>export configuration [tab]
+<pre class="command-line language-bash" data-prompt=": >" data-output="3,5"><code>export configuration [tab]
 export configuration file [tab]
 WORD (required)
 export configuration file mybackup
-Completed writing the export configuration to mybackup &nbsp; &nbsp;
-&nbsp;</code></pre>
+Completed writing the export configuration to mybackup    
+ </code></pre>
 
 Other navigational commands:
 
@@ -79,9 +79,9 @@ Tenant: admin
 ### API
 
 When executing any CLI command, it may include the <code>--api-detail</code> flag. This flag will echo the API call the Vantage CLI is performing, and the command executes as it would without this flag. This can be useful when building API driven automation scripts.
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="2-99"><code>show serviceengine --api-detail
+<pre class="command-line language-bash" data-prompt=": >" data-output="2-99"><code>show serviceengine --api-detail
 REST API Request
 API: /api/serviceengine?owned_by_controller=True&amp;join_subresources=runtime
-&nbsp;</code></pre>
+ </code></pre>
 
 API echoed output may be enabled for every command executed during a single CLI session via terminal <code>display_api_details</code>.

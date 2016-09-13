@@ -28,7 +28,7 @@ layout: default
    <td width="100"> <font size="3"><strong>Example</strong></font> </td> 
    <td width="600">Insert a header declaring the SNI name requested by the client.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.add_header("X-SNI ", avi.ssl.server_name())</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> </td> 
+    <!-- [Format Time: 0.0020 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

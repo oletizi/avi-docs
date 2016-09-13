@@ -20,21 +20,21 @@ Here is the current Version Support Period for Avi Vantage software:
   <tr> 
    <td style="text-align: center;">15.2</td> 
    <td style="text-align: center;">Aug 28, 2015</td> 
-   <td style="text-align: center;">Feb&nbsp;28,&nbsp;2017</td> 
+   <td style="text-align: center;">Feb 28, 2017</td> 
   </tr> 
   <tr> 
    <td style="text-align: center;">15.3</td> 
-   <td style="text-align: center;">Dec&nbsp;23, 2015</td> 
+   <td style="text-align: center;">Dec 23, 2015</td> 
    <td style="text-align: center;">Jun 23, 2017</td> 
   </tr> 
   <tr> 
    <td style="text-align: center;">16.1</td> 
-   <td style="text-align: center;">Mar 13,&nbsp;2016</td> 
+   <td style="text-align: center;">Mar 13, 2016</td> 
    <td style="text-align: center;">Sep 13, 2017</td> 
   </tr> 
   <tr> 
    <td style="text-align: center;">16.2</td> 
-   <td style="text-align: center;">Jul 19,&nbsp;2016</td> 
+   <td style="text-align: center;">Jul 19, 2016</td> 
    <td style="text-align: center;">Jan 19, 2018</td> 
   </tr> 
  </tbody> 

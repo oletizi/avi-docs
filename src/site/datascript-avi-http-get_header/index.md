@@ -33,7 +33,7 @@ for key,val in pairs(headers) do               -- iterate through all headers
       avi.http.close_conn()                    -- reset the TCP connection
    end
 end</code></pre> 
-    <!-- [Format Time: 0.0049 seconds] --> </td> 
+    <!-- [Format Time: 0.0040 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

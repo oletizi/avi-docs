@@ -47,15 +47,15 @@ For deployment of SEs, the following system-level software is required:
 
 To install the Avi Controller:
 
-1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>scp controller_docker.tgz&nbsp;username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
+1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>scp controller_docker.tgz username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
 1. Log onto the Mesos node:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ssh username@remotehost.com</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ssh username@remotehost.com</code></pre>
 1. Unzip the Avi Controller image:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>gunzip controller.tgz</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>gunzip controller.tgz</code></pre>
 1. Load the Avi Controller image into the host's local Docker repository:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo docker load -i controller_docker.tar</code></pre>
-1. As a best practice, clean up any data that may be lingering from a previous run: <pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo rm -rf /var/lib/controller/*</code></pre>
-1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker load -i controller_docker.tar</code></pre>
+1. As a best practice, clean up any data that may be lingering from a previous run: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo rm -rf /var/lib/controller/*</code></pre>
+1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
 1. Copy the following lines into the file:
 <pre><code class="language-lua">[Unit]
 Description=AviController
@@ -175,14 +175,14 @@ WantedBy=multi-user.target {
 ### Starting the Avi Controller Service
 
 To start the Avi Controller, enter the following command at the OS shell prompt on the node where you installed the Avi Controller service:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre>
 
 Initial startup and full system initialization takes around 5 minutes.
 
 ### Accessing the Avi Controller Web Interface
 
 To access the Avi Controller web interface, navigate to the following URL:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>https://mesos-ip-or-hostname:9443</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>https://mesos-ip-or-hostname:9443</code></pre>
 
 The following section provides steps for initial configuration of the Avi Controller.
 
@@ -366,14 +366,14 @@ WantedBy=multi-user.target {
 }</code></pre>
 
 1. Start the application to create a virtual service for it in Vantage:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
 
 1. Start a client container on the VM:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo docker run -d --name=aviclient avinetworks/server</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker run -d --name=aviclient avinetworks/server</code></pre>
 1. Connect to the client container that you just started:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>sudo docker exec -it aviclient bash</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker exec -it aviclient bash</code></pre>
 1. Generate test traffic:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ab -n 100 http://172.17.0.1:10001/100kb.txt</code></pre> This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://172.17.0.1:10001/100kb.txt</code></pre> This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.
 To view the service port number for the application, select the Configuration tab in the Marathon web interface. The virtual service service port number is specified in the Docker file by the servicePort parameter: <a href="img/marathon-app-panel-2.png"><img src="img/marathon-app-panel-2.png" alt="marathon-app-panel" width="400" height="424"></a>
 
 ### North-south Application with Inside VIP
@@ -488,10 +488,10 @@ WantedBy=multi-user.target {
 }</code></pre>
 
 1. Start the application to create a virtual service for it in Avi Vantage:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
 
 1. To generate traffic to the application, open an SSH ssh connection to another VM that is located in the same network as the host, and enter the following command:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ab -n 100 http://10.10.10.100/100kb.txt</code></pre>
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://10.10.10.100/100kb.txt</code></pre>
 
 This command sends 100 requests for the specified file to the application VIP (10.10.10.100 in this example).
 
@@ -607,17 +607,17 @@ WantedBy=multi-user.target {
 }</code></pre>
 
 1. Start the application to create a virtual service for it in Avi Vantage:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-­hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-­hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.
 
 1. To generate traffic to the application:
 
 1. Open an SSH ssh connection to another VM that is located in the same network as the host.
 1. Add a static host route that forwards traffic addressed to the VIP to the VM IP address:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ip route add 20.20.20.20/32 via 
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ip route add 20.20.20.20/32 via 
        
   <vm-ip></vm-ip></code></pre>
 1. Generate traffic:
-<pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>ab -n 100 http://20.20.20.20/100kb.txt</code></pre> This command sends 100 requests for the specified file to the application VIP (20.20.20.20 in this example).
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://20.20.20.20/100kb.txt</code></pre> This command sends 100 requests for the specified file to the application VIP (20.20.20.20 in this example).
 
 ## Creating Virtual Services (applications)
 

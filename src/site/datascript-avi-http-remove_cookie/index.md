@@ -10,7 +10,7 @@ layout: default
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Description</strong></span></td> 
-   <td width="600"><span style="font-weight: 400;">Removes the given cookie(s) from either in the HTTP&nbsp;request or response based on the&nbsp;<span style="font-family: inherit; font-size: inherit; line-height: 1.42857;">current context the function&nbsp;was executed from within.</span></span></td> 
+   <td width="600"><span style="font-weight: 400;">Removes the given cookie(s) from either in the HTTP request or response based on the <span style="font-family: inherit; font-size: inherit; line-height: 1.42857;">current context the function was executed from within.</span></span></td> 
   </tr> 
   <tr> 
    <td width="100"><span style="font-size: medium;"><strong>Events</strong></span></td> 
@@ -28,7 +28,7 @@ layout: default
    <td width="100"><span style="font-size: medium;"><strong>Example</strong></span></td> 
    <td width="600">Remove two cookies from the request or response.<br> 
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.remove( "jsessionid", "lang" )</code></pre> 
-    <!-- [Format Time: 0.0013 seconds] --> </td> 
+    <!-- [Format Time: 0.0008 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

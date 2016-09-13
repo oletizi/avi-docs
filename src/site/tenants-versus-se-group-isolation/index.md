@@ -14,22 +14,22 @@ There are multiple ways to create isolation within Avi Vantage.  This article e
  </colgroup> 
  <tbody> 
   <tr> 
-   <td data-sheets-value="[null,2,&quot;Isolation&quot;]"><strong>&nbsp;Isolation</strong></td> 
-   <td data-sheets-value="[null,2,&quot;Tenant: \nProvider Context&quot;]"><strong>&nbsp;Tenant: </strong><br> <strong>&nbsp;Provider Context</strong></td> 
-   <td data-sheets-value="[null,2,&quot;Tenant: \nTenant Context&quot;]"><strong>&nbsp;Tenant: </strong><br> <strong>&nbsp;Tenant Context</strong></td> 
-   <td data-sheets-value="[null,2,&quot;SE Group&quot;]"><strong>&nbsp;SE Group</strong></td> 
+   <td data-sheets-value="[null,2,&quot;Isolation&quot;]"><strong> Isolation</strong></td> 
+   <td data-sheets-value="[null,2,&quot;Tenant: \nProvider Context&quot;]"><strong> Tenant: </strong><br> <strong> Provider Context</strong></td> 
+   <td data-sheets-value="[null,2,&quot;Tenant: \nTenant Context&quot;]"><strong> Tenant: </strong><br> <strong> Tenant Context</strong></td> 
+   <td data-sheets-value="[null,2,&quot;SE Group&quot;]"><strong> SE Group</strong></td> 
   </tr> 
   <tr> 
-   <td data-sheets-value="[null,2,&quot;Control Plane&quot;]">&nbsp;Control Plane</td> 
-   <td data-sheets-value="[null,2,&quot;Yes&quot;]">&nbsp;Yes</td> 
-   <td data-sheets-value="[null,2,&quot;Yes&quot;]">&nbsp;Yes</td> 
-   <td data-sheets-value="[null,2,&quot;No&quot;]">&nbsp;No</td> 
+   <td data-sheets-value="[null,2,&quot;Control Plane&quot;]"> Control Plane</td> 
+   <td data-sheets-value="[null,2,&quot;Yes&quot;]"> Yes</td> 
+   <td data-sheets-value="[null,2,&quot;Yes&quot;]"> Yes</td> 
+   <td data-sheets-value="[null,2,&quot;No&quot;]"> No</td> 
   </tr> 
   <tr> 
-   <td data-sheets-value="[null,2,&quot;Data Plane&quot;]">&nbsp;Data Plane</td> 
-   <td data-sheets-value="[null,2,&quot;No&quot;]">&nbsp;No</td> 
-   <td data-sheets-value="[null,2,&quot;Yes&quot;]">&nbsp;Yes</td> 
-   <td data-sheets-value="[null,2,&quot;Yes&quot;]">&nbsp;Yes</td> 
+   <td data-sheets-value="[null,2,&quot;Data Plane&quot;]"> Data Plane</td> 
+   <td data-sheets-value="[null,2,&quot;No&quot;]"> No</td> 
+   <td data-sheets-value="[null,2,&quot;Yes&quot;]"> Yes</td> 
+   <td data-sheets-value="[null,2,&quot;Yes&quot;]"> Yes</td> 
   </tr> 
  </tbody> 
 </table>

@@ -496,7 +496,7 @@ Avi Networks provides a script for installing or upgrading the LBaaS plugin driv
 1. Copy the package onto the OpenStack Neutron API host.
 1. Log into the Neutron API server.
 1. On the OpenStack Neutron API server, back up neutron.conf.
-1. Unzip and untar the driver package: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>tar -xzf avi_openstack_package.tar.gz</code></pre>
+1. Unzip and untar the driver package: <pre class="command-line language-bash" data-prompt=": >"><code>tar -xzf avi_openstack_package.tar.gz</code></pre>
 1. Run the Avi LBaaS installation script.In the following example, 10.114.214.250 is the IP address for the Avi Controller cluster. The login credentials for the Controller are admin, avinetworks. Make sure to replace the IP address in the example with the cluster IP address.
 **Note:** If installing only the driver without the virtual environment files, see the README file in the **avi_openstack_package.tar.gz** on the Avi Networks portal.
 <pre>cd ./openstack_lbplugin
@@ -513,15 +513,15 @@ Avi Networks provides a script for installing or upgrading the LBaaS plugin driv
 
 This part of the installation requires an account for access to the OpenStack Horizon server. The Git and pip utilities also are required.
 
-1. Log into the OpenStack Horizon server, and locally clone the Avi SSL enhancement repository: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>git clone https://github.com/avinetworks/avi-horizon-dashboard</code></pre>
-1. Switch to the Icehouse, Juno, or Kilo branch: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>cd avi-horizon-dashboard; git checkout icehouse</code></pre>
-1. Create a pip package: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>python setup.py sdist</code></pre>
+1. Log into the OpenStack Horizon server, and locally clone the Avi SSL enhancement repository: <pre class="command-line language-bash" data-prompt=": >"><code>git clone https://github.com/avinetworks/avi-horizon-dashboard</code></pre>
+1. Switch to the Icehouse, Juno, or Kilo branch: <pre class="command-line language-bash" data-prompt=": >"><code>cd avi-horizon-dashboard; git checkout icehouse</code></pre>
+1. Create a pip package: <pre class="command-line language-bash" data-prompt=": >"><code>python setup.py sdist</code></pre>
 1. This step creates the following pip package in the dist/ directory: avidashboard-0.2.1.dev39.tar.gz
 1. Copy the pip package to the Horizon servers.
-1. Install the pip package: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>pip install ./avidashboard-0.2.1.dev39.tar.gz</code></pre>
+1. Install the pip package: <pre class="command-line language-bash" data-prompt=": >"><code>pip install ./avidashboard-0.2.1.dev39.tar.gz</code></pre>
 1. Update the Horizon setting files to enable Avi SSL and Analytics tabs on the Horizon dashboard:
 
-1. Modify the Horizon settings file to add the Avi dashboard. Usually, the Horizon settings file is located here: /usr/share/openstack_dashboard/openstack_dashboard/settings.py <pre class="command-line language-bash" data-prompt=":&nbsp;>" data-output="1-100"><code>import avidashboard.enabled # ADD THIS LINE</code></pre> <pre>
+1. Modify the Horizon settings file to add the Avi dashboard. Usually, the Horizon settings file is located here: /usr/share/openstack_dashboard/openstack_dashboard/settings.py <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>import avidashboard.enabled # ADD THIS LINE</code></pre> <pre>
 INSTALLED_APPS = list(INSTALLED_APPS)  # Make sure it's mutable
 settings.update_dashboards([
   openstack_dashboard.enabled,
@@ -537,14 +537,14 @@ AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net",
 
 </pre>
 
-1. *(Optional)* Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre>
+1. *(Optional)* Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) <pre class="command-line language-bash" data-prompt=": >"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre>
 
-1. *(Optional)* Enable the full LBaaS panel to be the Vantage web interface by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo version</a>. The _tab_group.html file is located in one of the following directories:
+1. *(Optional)* Enable the full LBaaS panel to be the Vantage web interface by setting the following in your local settings file. (<a href="/2016/03/11/clickjacking-protection/">Click-jacking protection</a> must be **disabled** on the Controller.) <pre class="command-line language-bash" data-prompt=": >"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo version</a>. The _tab_group.html file is located in one of the following directories:
 
 * **Red Hat:** /usr/lib/python2.7/site-packages/horizon/templates/horizon/common/_tab_group.html
 * **Ubuntu:** /usr/lib/python2.7/dist-packages/horizon/templates/horizon/common/_tab_group.html
 
-1. Restart horizon. For example: <pre class="command-line language-bash" data-prompt=":&nbsp;>"><code>apache2ctl restart</code></pre> Important! Restarting Horizon is required to complete this procedure.
+1. Restart horizon. For example: <pre class="command-line language-bash" data-prompt=": >"><code>apache2ctl restart</code></pre> Important! Restarting Horizon is required to complete this procedure.
 
 ### New Horizon Tabs for Vantage
 

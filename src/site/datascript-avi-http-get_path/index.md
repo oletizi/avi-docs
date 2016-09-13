@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if string.endswith(avi.http.get_path(), ".php") then
    avi.http.close_conn(true)
 end</code></pre> 
-    <!-- [Format Time: 0.0021 seconds] --> </td> 
+    <!-- [Format Time: 0.0025 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

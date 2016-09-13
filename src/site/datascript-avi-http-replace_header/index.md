@@ -31,7 +31,7 @@ layout: default
 if xff then
    avi.http.replace_header("X-Forwarded-For", xff ..", ".. avi.vs_ip())
 end</code></pre> 
-    <!-- [Format Time: 0.0027 seconds] --> </td> 
+    <!-- [Format Time: 0.0034 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>

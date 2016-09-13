@@ -30,7 +30,7 @@ layout: default
     <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.http.status() == "400" then
    avi.http.response("404")
 end</code></pre> 
-    <!-- [Format Time: 0.0020 seconds] --> </td> 
+    <!-- [Format Time: 0.0021 seconds] --> </td> 
   </tr> 
  </tbody> 
 </table>
