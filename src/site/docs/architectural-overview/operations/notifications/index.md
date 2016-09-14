@@ -4,7 +4,7 @@ layout: default
 ---
 Alert actions may be configured to proactively send notifications to an administrator using the methods available on the Notifications page (email, syslog, SNMP).
 
-Before creating an alert action, the notification destinations must be configured. These can be syslog servers, email servers and addresses, and SNMP trap servers. Starting with Avi Vantage 16.2.2, one can <a href="/verifying-notification-settings/">verify notification settings in advance</a> of triggering them. In addition to notifications, an alert action also can include running a ControlScript. Notifications need to be configured only if they are going to be used for an alert action.
+Before creating an alert action, the notification destinations must be configured. These can be syslog servers, email servers and addresses, and SNMP trap servers. Starting with Avi Vantage 16.2.2, one can <a href="/docs/latest/verifying-notification-settings">verify notification settings in advance</a> of triggering them. In addition to notifications, an alert action also can include running a ControlScript. Notifications need to be configured only if they are going to be used for an alert action.
 
 <img src="img/Notification.png" alt="Notification" width="600" height="150">
 
@@ -16,7 +16,7 @@ Configuring Syslog notifications pushes alerts to Syslog servers. It does not ex
 
 ### Syslog Notifications Settings
 
-Select Administration > Notifications > Syslog to open the Syslog Notifications tab. This tab includes the following functions:
+Select Administration &gt; Notifications &gt; Syslog to open the Syslog Notifications tab. This tab includes the following functions:
 
 * **Search:** Search through the configure list of Syslog entries.
 * **Create:** Opens the Create Syslog Notification popup.
@@ -45,11 +45,11 @@ To create or edit a system log notification:
 
 ### Email
 
-Alert Actions may be configured to send alerts to administrators via email. These emails could be sent directly to administrators or to reporting systems that accept email. Either option requires the Vantage Controller to have a valid DNS and default gateway configured so it can resolve the destination and properly forward the messages.
+Alert Actions may be configured to send alerts to administrators via email. These emails could be sent directly to administrators or to reporting systems that accept email. Either option requires the Vantage Controller to have a valid DNS and default gateway configured so it can resolve the destination and properly forward the messages.
 
-Information regarding the SMTP server and the sender must be configured in the Administration > Settings > Email/SMTP page.
+Information regarding the SMTP server and the sender must be configured in the Administration &gt; Settings &gt; Email/SMTP page.
 
-Select Operations > Services > Email to open the Email tab. This tab includes the following functions:
+Select Operations &gt; Services &gt; Email to open the Email tab. This tab includes the following functions:
 
 * **Search:** Search through this list of email notification names.
 * **Create:** Opens the Create/Edit Email Notification popup.
@@ -70,7 +70,7 @@ Alerts may be sent via SNMP Traps using SNMP v2c.
 
 ### SNMP Trap Settings
 
-Select Operations > Services > SNMP Trap to open the SNMP tab. This tab includes the following functions:
+Select Operations &gt; Services &gt; SNMP Trap to open the SNMP tab. This tab includes the following functions:
 
 * **Search:** Search through this list of SNMP Trap server names.
 * **Create:** Opens the Create/Edit SNMP Trap popup.

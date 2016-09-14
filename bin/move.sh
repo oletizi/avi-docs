@@ -9,12 +9,12 @@ docroot=$root/src/site
 libroot=$root/lib/java/
 
 jar=$libroot/avi-docs-snarfer-1.0.2-jar-with-dependencies.jar
-class=com.avinetworks.docs.Mover
+class=com.avinetworks.docs.structure.Mover
 
 cd $docroot
 
 cmd="java -Ddocroot=$docroot -cp $jar $class $1 $2"
 #echo "docroot: $docroot"
 #echo "cwd: " . `pwd`
-#echo "command: $cmd"
+echo "command: $cmd"
 exec $cmd

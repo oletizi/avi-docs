@@ -9,7 +9,7 @@ Since each cloud is its own environment, networking and Avi Service Engine (SE) 
 
 ## Dashboard
 
-The default landing page for the Infrastructure section shows the dashboard for SEs. The SE dashboard display is similar to the one for virtual services (Applications > Dashboard), but shows only SEs.
+The default landing page for the Infrastructure section shows the dashboard for SEs. The SE dashboard display is similar to the one for virtual services (Applications &gt; Dashboard), but shows only SEs.
 
 <a href="img/infra-dashboard-1.png"><img src="img/infra-dashboard-1.png" alt="infra-dashboard" width="919" height="294"></a>
 
@@ -73,7 +73,7 @@ The Service Engines page lists the SEs that are currently configured in Vantage.
 
 <a href="img/se-list.png"><img src="img/se-list.png" alt="se-list" width="919" height="434"></a>
 
-To display the SE list for a cloud, select Infrastructure > Clouds, click on a cloud name, and click Service Engines.
+To display the SE list for a cloud, select Infrastructure &gt; Clouds, click on a cloud name, and click Service Engines.
 
 This page includes the following functions:
 
@@ -380,7 +380,7 @@ Creating a new SE when the Avi Controller has Read or no access to the virtualiz
 
 ### Edit a Service Engine
 
-The Edit Service Engine popup allows an administrator to modify the network settings for the SE. To edit an SE, select Infrastructure > Service Engines and click on the SE name or on the edit icon.
+The Edit Service Engine popup allows an administrator to modify the network settings for the SE. To edit an SE, select Infrastructure &gt; Service Engines and click on the SE name or on the edit icon.
 
 <a href="img/se-edit.png"><img src="img/se-edit.png" alt="se-edit" width="745" height="588"></a>
 **Note:** Properties such as hardware resources and VLAN placement are configured within the SE group.
@@ -430,24 +430,24 @@ The table on this page contains the following information for each SE group:
 * **/# Virtual Services:** Shows the number of virtual services currently assigned to the SE group. If the value is non-zero, clicking the row on the table will show an expanded view with the names of virtual services.
 * **HA Mode:** High availability mode configured for the group.
 
-To delete an SE group, click the box at the far left of its row. A Delete button will appear. Click Delete to delete the SE groups whose rows have been checked.
+To delete an SE group, click the box at the far left of its row. A Delete button will appear. Click Delete to delete the SE groups whose rows have been checked.
 
-**Note:** Only unused SE groups may deleted. If the SE group is in use by a virtual service, a popup will warn that dependent virtual services must first be deleted or migrated to other SE groups via the Virtual Service > Edit > Advanced properties tab. A tenant must always have a minimum of one configured SE group. The default SE group may be modified, but not deleted.
+**Note:** Only unused SE groups may deleted. If the SE group is in use by a virtual service, a popup will warn that dependent virtual services must first be deleted or migrated to other SE groups via the Virtual Service &gt; Edit &gt; Advanced properties tab. A tenant must always have a minimum of one configured SE group. The default SE group may be modified, but not deleted.
 
 ### Create a Service Engine Group
 
 To create or edit an SE group:
 
-1. Select Infrastructure > Clouds and click on the cloud name (for example, Default-Cloud).
+1. Select Infrastructure &gt; Clouds and click on the cloud name (for example, Default-Cloud).
 1. Select Service Engine Group to open the Service Engine Groups page, which lists the SE groups currently configured in Vantage.
-1. Click New Service Engine Group or click on an SE group name in the table.
+1. Click New Service Engine Group or click on an SE group name in the table.
 
 The create and edit popups for SE groups have identical properties. This popup includes the following tabs:
 
-* Basic Settings Tab
+* Basic Settings Tab
 * Advanced Tab
 
-Basic Settings Tab
+Basic Settings Tab
 
 Click New in the Edit Service Engine Group popup to open the High Availability tab.
 
@@ -465,7 +465,7 @@ The availability of a virtual service after an SE failure is governed by setting
 
 To gain an understanding of the three HA modes defined by Vantage, refer to these articles:
 
-* <a href="/legacy-ha-for-avi-service-engines/">Legacy HA</a>
+* <a href="/docs/latest/legacy-ha-for-avi-service-engines">Legacy HA</a>
 * <a href="/cluster-ha-for-avi-service-engines/">Elastic HA</a>
 
 ### Service Engine Capacity and Limit Settings
@@ -512,7 +512,7 @@ The Networks tab presents the list of discovered and manually configured network
 * **IP Address Allocation:** Vantage requires IP addresses for a SE to communicate on any desired network. By default, a SE requires one IP address for the management network to communicate with the Controller, and a separate IP address for each data network used by its virtual services or pool servers. If the management network and data network are the same, then the SE will still require two IP addresses. You can allocate IP addresses on either a per-SE basis or via the Networks tab.
 * **Network versus Service Engine:** Many network related settings may be configured within both the Network tab and the Service Engine Edit popup. Configurations made within the Network tab will be applied to any new SE created via write access mode. Changes made via the Service Engine Edit popup will only be applied to the specific SE modified.
 
-Select Infrastructure > Networks to open the Networks tab.
+Select Infrastructure &gt; Networks to open the Networks tab.
 
 The table on this tab provides the following information for each network:
 
@@ -546,7 +546,7 @@ A static route may also be set as the default gateway. Default gateways may also
 
 ### Static Routes Tab
 
-Select Infrastructure > Networks > Static Routes to open the Static Routes tab. This tab includes the following functions:
+Select Infrastructure &gt; Networks &gt; Static Routes to open the Static Routes tab. This tab includes the following functions:
 
 * **Search:** Search through the list of routes.
 * **Create:** Opens the Create Static Route popup.
