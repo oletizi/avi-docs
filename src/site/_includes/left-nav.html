@@ -416,7 +416,7 @@
   //when a group is shown, save it in the set of expanded groups
   $("[data-toggle='collapse']").on("click", function () {
     var dataTarget = this.attributes['data-target'].value;
-    var tmp = Cookies.getJSON('expandable-nav');
+    var tmp = Cookies.getJSON('expandable-nav-v1.1');
     var expanded;
     if (!Array.isArray(tmp)) {
       expanded = [];

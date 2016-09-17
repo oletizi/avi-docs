@@ -25,23 +25,39 @@ api-configuring-a-controller-cluster
 api-guide
     OK
 api-http-patch-support
-
+    OK
 api-json-response-viewed-from-a-web-browser
+    OK
 app-cookie-persistence
+    TODO: Figure out what's up with the URL in blockquotes. What is that for?
 app-transport-security
+    OK
 application-profile
+    TODO: Fix some of the list item spacing when the dust settles
 auth-profile
+    OK
 authorization-tenant-and-role-mapping-examples
+    TODO: Double-check that heading-based TOC indentation works
 autoscale-service-engines
+    OK
 avi-controller-alerts-log
+    OK
 avi-controller-analytics-page
+    OK
 avi-controller-events-log
+    OK
 avi-controller-sizing
+    OK
 avi-networks-education-references
+    OK
 avi-networks-eula
+    TODO: Special-case format the EULA
 avi-se-behavior-on-gateway-monitor-failure
+    OK
 avi-service-engine-group-options
+    TODO: Fix nested lists
 avi-vantage-16-1-1-release-notes
+
 avi-vantage-16-1-2-release-notes
 avi-vantage-16-1-3-release-notes
 avi-vantage-16-1-4-release-notes
