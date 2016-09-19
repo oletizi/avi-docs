@@ -82,23 +82,39 @@ avi-vantage-release-notes
 aws-linux-cloud-with-no-access-mode
     TODO: Unmangle CLI prompts
 backup-and-restore-of-avi-vantage-configuration
-
+    OK
 backup-the-configuration
+    OK
 bgp-support-for-virtual-services
+    OK
 block-an-ip-address-to-a-virtual-service
+    OK
 certificate-management-integration-for-csr-automation
+    OK
 changing-avi-controller-cluster-configuration
+    OK
 cli-access
+    OK
 cli-installing-the-cli-shell
+    TODO: Fix the CLI prompts
 clickjacking-protection
+    OK
 client-ip-address-and-the-x-forwarded-for-header
+    OK
 client-ip-persistence
+    OK
 client-log-levels
+    OK
 client-ssl-certificate-validation
+    OK
 cluster-operational-changes
+    OK
 clustering-controllers-from-different-networks
+    OK
 collecting-tech-support-logs
+    OK
 comparing-past-and-present-se-group-ha-modes
+    OK
 configure-controller-ha-cluster
 configure-stronger-ssl-cipher-strength
 configuring-a-tag-for-auto-created-ses-in-aws
