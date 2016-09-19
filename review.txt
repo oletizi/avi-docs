@@ -116,8 +116,11 @@ collecting-tech-support-logs
 comparing-past-and-present-se-group-ha-modes
     OK
 configure-controller-ha-cluster
+    OK
 configure-stronger-ssl-cipher-strength
+    OK
 configuring-a-tag-for-auto-created-ses-in-aws
+
 configuring-ansible-for-avi-vantage
 connection-multiplex
 controller-cluster-ip
