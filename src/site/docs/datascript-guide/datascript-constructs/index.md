@@ -13,7 +13,7 @@ Operators compare or contrast sets of data, and will return as true or false. Da
   - -- Subtraction 
   * -- Multiplication 
   / -- Division
-</pre>
+</pre> 
 
 ### Relational Operators
 
@@ -23,7 +23,7 @@ Operators compare or contrast sets of data, and will return as true or false. Da
   &gt;= -- Greater than or equal 
   &lt;= -- Less than or equal 
   == -- Equal ~= -- Not equal
-</pre>
+</pre> 
 
 ### Logical Operators
 
@@ -32,4 +32,4 @@ Operators compare or contrast sets of data, and will return as true or false. Da
   or 
   not 
   string.find -- Used to search for a string within another string.
-</pre>
+</pre>  

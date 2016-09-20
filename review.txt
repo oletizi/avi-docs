@@ -120,12 +120,17 @@ configure-controller-ha-cluster
 configure-stronger-ssl-cipher-strength
     OK
 configuring-a-tag-for-auto-created-ses-in-aws
-
+    OK
 configuring-ansible-for-avi-vantage
+    OK
 connection-multiplex
+    OK
 controller-cluster-ip
+    OK
 controller-to-service-engine-communication
+    OK
 creating-applications-in-mesos-with-marathon-labels
+    TODO: Fix erroneously formatted code blocks
 crl-validation-options
 ctlr-cfg-update-after-ip-change
 custom-http-header-persistence

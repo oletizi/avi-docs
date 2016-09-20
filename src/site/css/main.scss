@@ -102,6 +102,10 @@ img.aligncenter {
   margin: 0 auto 0 auto;
 }
 
+img.alignleft {
+  float: left;
+  padding-right: $spacing-unit / 2;
+}
 .main-content {
   img {
     // TODO: make this responsive

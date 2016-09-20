@@ -11,4 +11,4 @@ Avi Vantage uses the following types of templates:
 * <a href="./profiles">Profiles ›</a>
 * <a href="./groups">Groups ›</a>
 * <a href="./security">Security ›</a>
-* <a href="./scripts">Scripts ›</a>
+* <a href="./scripts">Scripts ›</a>  

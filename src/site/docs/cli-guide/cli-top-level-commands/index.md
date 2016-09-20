@@ -118,7 +118,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Updates the result of a command such as show every few seconds.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### attach
 
@@ -151,7 +151,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Attach to a Service Engine shell.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### configure
 
@@ -312,7 +312,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Create or modify a VS DataScript Set</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### convert
 
@@ -357,7 +357,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Convert virtualserver. Name is of the form /partition/virtualservername</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### copy
 
@@ -390,7 +390,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>The destination of the new file and path</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### debug
 
@@ -427,7 +427,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Virtual Service specific debug options, including packet capture.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### delete
 
@@ -572,7 +572,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Delete VS DataScript Set</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### do
 
@@ -601,7 +601,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Show detailed information and stats for any Avi object.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### export
 
@@ -638,7 +638,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Export a specific Virtual Service configuration file including child objects.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### import
 
@@ -663,7 +663,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td></td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### initialplacement
 
@@ -692,7 +692,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Specify the name of the Service Engine to receive the VS.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### migrate
 
@@ -733,7 +733,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Migrate to a specific existing SE.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### purge
 
@@ -758,7 +758,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td></td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### rebalance
 
@@ -791,7 +791,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>The name of the SE group to alter.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### reboot
 
@@ -828,7 +828,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Reboot a specific Service Engine. VS disruption will depend on the high availability settings for the SE group.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### rediscover
 
@@ -853,7 +853,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td></td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### restart
 
@@ -878,7 +878,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td></td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### scalein
 
@@ -911,7 +911,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Migrate from the primary SE and discontinue use of the SE for this VS.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### scaleout
 
@@ -948,7 +948,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Scale out to an existing SE.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### show
 
@@ -1225,7 +1225,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Show info on the VS DataScript Set</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### switchto
 
@@ -1250,7 +1250,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td></td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### terminal
 
@@ -1291,7 +1291,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Commands show additional, flags. Not recommended for casual use.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### upgrade
 
@@ -1324,7 +1324,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Upgrade the Avi UI.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### upload
 
@@ -1361,7 +1361,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Include (non-significant) logs may be stored on the SEs.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### verifylogin
 
@@ -1398,7 +1398,7 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Verify access to a VMware vCenter controller.</td> 
   </tr> 
  </tbody> 
-</table>
+</table> 
 
 ### watch
 
@@ -1427,4 +1427,4 @@ The following are top-level commands shown when pressing tab twice from the shel
    <td>Select a valid <code>show</code> command syntax to update.</td> 
   </tr> 
  </tbody> 
-</table>
+</table>  

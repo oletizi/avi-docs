@@ -9,6 +9,7 @@ Check if the host name begins with “www.avi.”, then get the ccTLD from the h
 Form the beginning part of the new query using the ccTLD map table to get the value of the query argument “mandate”.
 Append the old query, if it exists, to the new query.
 Generate the HTTP redirect to the new URL using the domain “www.avi.com” and the new query.
+
 <pre>
 local ccTLD_map = {es="01345F", fi="5146FF", cn="45DFX", io="123456", ly="ABC123"}
 host = avi.http.host()
@@ -28,4 +29,4 @@ elseif string.sub(host, 1, #"www.avi.") == "www.avi." then
       avi.http.get_path() ..
       new_query, 302)
 end
-</pre>
+</pre>  

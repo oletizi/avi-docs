@@ -11,9 +11,10 @@ DataScripts are a powerful mechanism for customizing the behavior of Avi Vantage
 One or more DataScripts may be attached to the rules section of a virtual service.
 
 Scripts may be uploaded or copy/pasted into either the Request Event Script or Response Event Script section. For instance, to restrict access to the secure directory, the following text would be pasted into the Request Event Script section.
+
 <pre><code class="language-lua">if avi.http.uri == "/secure/" then
    avi.http.send(403)
-end</code></pre>
+end</code></pre>  
 
 See the <a href="/docs/datascript-guide">Avi DataScript Guide</a> for complete documentation of commands and example DataScripts.
 
@@ -26,3 +27,4 @@ To create or edit a ControlScript, select create and paste the new script into t
 Once the ControlScript is uploaded to Vantage, apply the script via Operations > Alert > Alert Action page.
 
 ControlScripts are executed with limited privileges within the Linux subsystem of the Avi Controller. See standard Python documentation for examples and definitions of Python commands. Vantage configuration changes may be made by API calls from Linux to Avi Vantage via standard API mechanisms.
+ 
