@@ -93,19 +93,20 @@ blockquote {
   font: inherit;
 }
 
-img.alignright {
+.alignright {
   float: right;
   padding-left: $spacing-unit / 2;
 }
-img.aligncenter {
+.aligncenter {
   display: block;
   margin: 0 auto 0 auto;
 }
 
-img.alignleft {
+.alignleft {
   float: left;
   padding-right: $spacing-unit / 2;
 }
+
 .main-content {
   img {
     // TODO: make this responsive
@@ -124,7 +125,8 @@ img.alignleft {
 
 code {
   font-size: $font-size-normal - 2;
-
+  color: dimgray;
+  background-color: transparent;
 }
 
 /**
@@ -143,11 +145,10 @@ figure {
   }
 }
 
-figcapture {
+figcapture, figcaption, figcaption.caption {
   padding: $spacing-unit / 4;
   background-color: $blue-color;//$highlight-color;
   color: white;
-  width: 100%;
   display: block;
 }
 

@@ -132,11 +132,17 @@ controller-to-service-engine-communication
 creating-applications-in-mesos-with-marathon-labels
     TODO: Fix erroneously formatted code blocks
 crl-validation-options
+    OK
 ctlr-cfg-update-after-ip-change
+    OK
 custom-http-header-persistence
+    OK
 custom-persistence-with-datascript
+    OK
 cve-2015-7547
+    OK
 cve-2016-0728
+    OK
 datascript-avi-crypto-decrypt
 datascript-avi-crypto-encrypt
 datascript-avi-http-add_cookie
@@ -200,24 +206,43 @@ datascript-string-lower
 datascript-string-sub
 datascript-string-upper
 datascript-troubleshooting-rules
+    TODO: *** figure out how to encapsulate the datascript tables
 ddos-attacks-mitigated
+    OK
 definition-of-throughput
+    OK
 deploy-ses-in-different-data-centers-from-controllers
+    OK
 deploy-vantage-with-lync-2013
+    OK
 deploying-avi-vantage-for-vmware-vcenter-2
+    TODO: Fix image layout and list nesting
 detecting-server-maintenance-mode-with-a-health-monitor
+    TODO: Fix CLI stuff
 determine-software-version
+    TODO: Fix CLI
 determine-vs-throughput-from-the-api
+    TODO: What's up with the "metric id" list?
 determine-when-an-object-was-created-modified-deleted
+    OK
 difference-between-virtual-service-and-virtual-ip
+    OK
 disable-a-virtual-service
+    TODO: Fix CLI
 disable-se
+    OK
 disabling-back-end-servers-for-maintenance
+    OK
 distributed-denial-of-service
+    OK
 dns-health-monitor
+    OK
 dns-ntp-settings
+    OK
 ecc-versus-rsa-certificate-priority
+    OK
 elastic-ha-for-avi-service-engines-16-2
+    TODO: Figure out figure caption width
 email-smtp
 enable-client-insights-navigation-timing
 end-of-support-schedule
@@ -229,52 +254,88 @@ excluding-unwanted-messages-from-client-logs
 explanation-of-avi-vantage-version-numbers
 external-health-monitor
 find-virtual-service-uuid
+    TODO: Fix CLI
 gateway-monitoring-for-legacy-ha
+    TODO: Fix CLI
 geo-location-database
 graphs-do-not-load-in-gui
 gslb-integration-with-f5-gtm
+    TODO: Fix list nesting
 ha-for-avi-controllers
+    TODO: Fix list nesting
 health-monitor-troubleshooting
 http-basic-auth-for-api-queries
+    TODO: Fix CLI
 http-cache-configuration-via-cli
+    TODO: Fix CLI
 http-cookie-encryption-gateway
 http-cookie-persistence
+    TODO: Fix CLI
 http-health-monitor
 http-request-policy
+    TODO: Fix tables
 http-request-queuing
+    OK
 http-response-policy
+    TODO: Fix formatting in tables
 http-security-policy
+    TODO: Fix formatting in tables
 http-server-reselect
+    TODO: Fix broken image
 https-health-monitor
 https-responses-not-served-from-cache
 hypervisor-reports-high-cpu-utilization-of-service-engine
 iam-role-setup-for-installation-into-aws
+    TODO: Fix CLI
 impact-of-a-controller-failure
 impact-of-license-expiration
 install-vantage-on-laptop-with-fusion
 installing-avi-integration-with-mesos-in-aws
+    TODO: Fix code blocks; rework without insane nested lists
 installing-avi-vantage-for-a-linux-server-cloud
+    TODO: Fix code blocks; figure out multi-code-block in lists
 installing-avi-vantage-for-a-linux-server-cloud-16-2
+    TODO: Fix code blocks; figure out multi-code-blocks in lists; fix image layout; fix ordered list numbering
 installing-avi-vantage-for-cisco-apic-16-2
+    TODO: Double check list nesting. Consider unwinding the crazy nested lists
 installing-avi-vantage-for-cisco-application-policy-infrastructure
+    TODO: Fix crazy nested lists; Fix the "NEXT TOPIC" thing at the bottom
 installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1
+    TODO: Fix crazy lists.
 installing-avi-vantage-for-csp-2100
+    TODO: Fix goofy image layout; This should be broken up into multiple documents with a landing page and nav
 installing-avi-vantage-for-openstack-16-1
+    TODO: Manually fix this. It's a complete mess
 installing-avi-vantage-for-openstack-16-2
+    TODO: Manually fix this. It's a mess
 installing-avi-vantage-for-openstack-2
+    TODO: Manually fix this. Which of these three is the latest?
 installing-avi-vantage-for-vmware-vcenter-16-2
+    TODO: Manually fix. Ugh.
 installing-avi-vantage-for-vmware-vcenter-16-2-1
+    TODO: Manually fix. Ugh.
 installing-avi-vantage-for-vmware-vcenter_16_1
+    TODO: Manually fix. Ugh.
 installing-avi-vantage-in-amazon-web-services
+    TODO: Fix image layout
 installing-avi-vantage-in-amazon-web-services-16-2
+    OK
 installing-avi-vantage-in-an-aws-hosted-mesos-cluster
+    OK
 installing-avi-vantage-on-bare-metal-2
+    TODO: Fix CLI
 installing-avi-vantage-with-mesosphere-dcos-16-2
+    TODO: Fix CLI; make sure the backslashes in the labels section of the docker image file at the end are supposed to be there.
 installing-avi-vantage-with-mesosphere-dcos-on-premises
+    TODO: Fix CLI
 installing-avi-vantage-with-open-dcos-or-enterprise-dcos
+    TODO: Fix broken img
 installing-mesos-in-aws-using-the-cli-16-1
+    TODO: Fix CLI
 installing-the-lbaas-driver-cli-shell-openstack
+    OK
 ipam-and-dns-16-2-x
+    OK
 ipam-and-dns-provider-avi-vantage
 ipam-and-dns-provider-aws
 ipam-and-dns-provider-infoblox
@@ -282,20 +343,26 @@ ipam-and-dns-provider-openstack
 issues-with-ntlm-authentication
 issues-with-round-robin-lb
 layer-4-ssl-support
+    TODO: Fix captions
 ldap-auth-profile-test
+    TODO: Fix borken images
 ldap-authentication
 ldap-configuration-examples
 legacy-ha-for-avi-service-engines
+    TODO: Fix double h3 after "Using the Web Interface"; Fix CLI
 load-balance-api-gateways
 load-balance-ftp
+    TODO: Fix manual indentation
 load-balancing-algorithms
 logging-all-headers-in-client-server-http-traffic
 login-banner-and-message-of-the-day
 manually-validate-server-health
+    TODO: Escape HTML in <pre> block and restore stripped html
 mesos-graceful-app-migration-in-dcos-cluster
 mesos-graceful-blue-green-deployment-using-an-ab-pool
 mesos-in-aws-deploying-a-north-south-service
 mesos-service-engine-group-for-front-end-applications
+    TODO: Fix CLI
 metrics-list
 metrics-retention-period
 microsoft-azure-support
@@ -305,10 +372,12 @@ modify-network-security-acl-via-api
 multi-level-domain-support-for-ssl
 network-reachability
 new-connections-metric
+    TODO: Put "New Connections" in quotes in the title
 notification-of-ssl-certificate-expiration
 notification-of-vantage-license-expiration
 notifications-overview
 openstack-forcing-deletion-of-virtual-service-ports-in-neutron
+    TODO: Fix CLI
 openstack-version-support
 orchestrator-access-modes
 overview-of-controller-cluster
