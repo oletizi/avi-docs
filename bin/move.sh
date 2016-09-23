@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 
-
 dir=`dirname $0`
 cd $dir
-cd ..
-root=`pwd`
-docroot=$root/src/site
-libroot=$root/lib/java/
 
-jar=$libroot/avi-docs-snarfer-1.0.2-jar-with-dependencies.jar
+. $dir/config.sh
+
 class=com.avinetworks.docs.structure.Mover
 
 cd $docroot
 
-cmd="java -Ddocroot=$docroot -cp $jar $class $1 $2"
+cmd="java -Ddocroot=$docroot -cp $snarfjar $class $1 $2"
 #echo "docroot: $docroot"
 #echo "cwd: " . `pwd`
 echo "command: $cmd"
