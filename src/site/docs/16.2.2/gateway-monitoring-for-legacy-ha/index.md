@@ -14,19 +14,23 @@ Gateway health monitoring is part of the cloud configuration. If and when an IP
 
 ### Web Interface
 
-1. Navigate to Infrastructure > Clouds.
-1. Click the edit icon next to the name of the cloud to modify (for example, Default-Cloud).
-1. Click Gateway Monitor.
-1. Click Create.
-1. Enter the gateway information, including IP address, and click Save.
+<ol> 
+ <li>Navigate to Infrastructure &gt; Clouds.</li> 
+ <li>Click the edit icon next to the name of the cloud to modify (for example, Default-Cloud).</li> 
+ <li>Click Gateway Monitor.</li> 
+ <li>Click Create.</li> 
+ <li>Enter the gateway information, including IP address, and click Save.</li> 
+</ol> 
 
-<a href="img/gateway-monitor.png"><img src="img/gateway-monitor.png" alt="gateway-monitor" width="525" height="232"></a>
+<a href="img/gateway-monitor.png"><img class="alignnone size-full wp-image-9712" src="img/gateway-monitor.png" alt="gateway-monitor" width="525" height="232"></a>
 
 ### CLI
 
 Use the following commands to configure monitoring for a gateway:
+
 <pre>: &gt; configure vrfcontext global
 vrfcontext&gt; gateway_mon 192.168.1.10
-</pre>
+</pre> 
 
 Make sure to use the IP address of the gateway where this example shows "192.168.1.10."
+

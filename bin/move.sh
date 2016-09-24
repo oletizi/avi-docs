@@ -2,7 +2,7 @@
 
 dir=`dirname $0`
 cd $dir
-
+dir=`pwd`
 . $dir/config.sh
 
 class=com.avinetworks.docs.structure.Mover

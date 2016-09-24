@@ -7,12 +7,13 @@ To determine the specific Avi Vantage software version running on the Avi Contro
 ### CLI
 
 From the Controller shell, enter this command:
+
 <pre class="">: &gt; show version controller
 +-----------------+--------------------------------------+
 | Controller Name | Version                              |
 +-----------------+--------------------------------------+
 | 10.130.162.14   | 15.2.4(9007) 2015-10-17 01:43:38 UTC |
-+-----------------+--------------------------------------+</pre>
++-----------------+--------------------------------------+</pre> 
 
 Alternatively, from bash, run this command:
 
@@ -22,8 +23,8 @@ Alternatively, from bash, run this command:
 
 From the top right corner of the Controller web interface, select *user-name* > About Avi Vantage.
 
-<img src="img/AboutMenu.png" alt="AboutMenu" width="96" height="139">
+<img class=" wp-image-127 alignright" src="img/AboutMenu.png" alt="AboutMenu" width="96" height="139">
 
-<a href="img/About.png"><img src="img/About.png" alt="About" width="315" height="235"></a>
+<a href="img/About.png"><img class=" wp-image-128 alignleft" src="img/About.png" alt="About" width="315" height="235"></a> 
 
                

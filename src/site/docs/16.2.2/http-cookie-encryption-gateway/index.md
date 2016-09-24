@@ -14,13 +14,7 @@ if avi.http.cookie_exists(cookie) then
    value = avi.http.get_cookie(cookie)
    encrypted_value = avi.crypto.encrypt(key, value)
    avi.http.replace_cookie( cookie, encrypted_value )
-end cookie = "my_cookie"
-if avi.http.cookie_exists(cookie) then
-   key = "01234567890123456789012345678901"
-   value = avi.http.get_cookie(cookie)
-   decrypted_value = avi.crypto.decrypt(key, value)
-   avi.http.replace_cookie( cookie, encrypted_value )
-end</code></pre>
+end</code></pre>  
 
  
 
@@ -30,14 +24,9 @@ end</code></pre>
 if avi.http.cookie_exists(cookie) then
    key = "01234567890123456789012345678901"
    value = avi.http.get_cookie(cookie)
-   encrypted_value = avi.crypto.encrypt(key, value)
-   avi.http.replace_cookie( cookie, encrypted_value )
-end cookie = "my_cookie"
-if avi.http.cookie_exists(cookie) then
-   key = "01234567890123456789012345678901"
-   value = avi.http.get_cookie(cookie)
    decrypted_value = avi.crypto.decrypt(key, value)
    avi.http.replace_cookie( cookie, encrypted_value )
-end</code></pre>
+end</code></pre>  
 
  
+

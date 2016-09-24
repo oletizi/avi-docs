@@ -2,7 +2,7 @@
 title: Super User Accounts
 layout: default
 ---
-Vantage user accounts can be enabled for super user access. Super user access provides write access to all resources within Vantage, and also automatically provides access to all tenants.
+Vantage user accounts can be enabled for super user access. Super user access provides write access to all resources within Vantage, and also automatically provides access to all tenants. 
 
 The ***admin*** account that is created during installation of the Avi Controller automatically has super user access enabled.
 
@@ -10,6 +10,6 @@ Optionally, super user access can be enabled in other user accounts, on an indiv
 
 To enable super access for a Vantage user account, select the Super User checkbox in the account configuration:
 
-<a href="img/user-account-superuser.png"><img src="img/user-account-superuser.png" alt="user-account-superuser" width="792" height="403"></a>
+<a href="img/user-account-superuser.png"><img src="img/user-account-superuser.png" alt="user-account-superuser" width="792" height="403" class="alignnone size-full wp-image-10430"></a>
 
-For detailed information about configuring user accounts, <a href="/docs/latest/user-accounts">click here</a>.
+For detailed information about configuring user accounts, <a href="/docs/16.2.2/user-accounts">click here</a>.

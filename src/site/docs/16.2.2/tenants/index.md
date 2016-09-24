@@ -6,7 +6,7 @@ A tenant is an isolated instance of Avi Vantage. Each Vantage user account is as
 
 If a user is associated with multiple tenants, each tenant still isolates the resources that belong to that tenant from the resources in other tenants. To access resources in another tenant, the user must switch the focus of the management session to that other tenant.
 
-Note: For information on switching a management session from one tenant to another, <a href="/docs/latest/switch-between-tenants">click here</a>.
+Note: For information on switching a management session from one tenant to another, <a href="/docs/16.2.2/switch-between-tenants">click here</a>.
 
 ### Default Tenant
 
@@ -28,44 +28,42 @@ If a single role is mapped to all tenants, the default tenant for that user must
 
 Vantage user accounts that are enabled for super user access automatically have access to a special read-only tenant: All Tenants. The All Tenants view provides read-only access to all resources within Avi Vantage.
 
-The <a href="/docs/latest/all-tenants-view">All Tenants</a> tenant cannot be mapped to any roles within a user account. The All Tenants tenant is automatically made available to all super user accounts.
+The <a href="/docs/16.2.2/all-tenants-view">All Tenants</a> tenant cannot be mapped to any roles within a user account. The All Tenants tenant is automatically made available to all super user accounts.
 
 ## Create a Tenant
 
 To create a tenant:
-
-1. Navigate to Administration &gt; Tenants, and click Create.
-1. Enter a name for the new tenant.
-1. Enter a description.
-1. Click Save.
+<ol> 
+ <li>Navigate to Administration &gt; Tenants, and click Create.</li> 
+ <li>Enter a name for the new tenant.</li> 
+ <li>Optionally, enter a description.</li> 
+ <li>Click Save.</li> 
+</ol> 
 
 The new tenant appears in the tenant table.
 
-<a href="img/new-tenant-intable.png"><img src="img/new-tenant-intable.png" alt="new-tenant-intable" width="1044" height="244"></a>
+<a href="img/new-tenant-intable.png"><img class="alignnone size-full wp-image-10461" src="img/new-tenant-intable.png" alt="new-tenant-intable" width="1044" height="244"></a>
 
 The *admin* account is automatically added to each new tenant.
 
 ## Add an Existing User to a Tenant
 
 To add a user to a tenant:
-
-1. Navigate to Administration &gt; Users.
-1. Click on the edit icon next to the user name.
-1. Click Add Tenant and select the new tenant. (If the new tenant does not exist yet, click Create Tenant.) A new set of mapping fields appears.
-<a href="img/tenant-select.png"><img src="img/tenant-select.png" alt="tenant-select" width="796" height="396"></a>
-1. Select the role from the Role pull-down list. <a href="img/tenant-select2.png"><img src="img/tenant-select2.png" alt="tenant-select2" width="796" height="412"></a>
-1. Click the minus sign next to any mappings that are no longer needed.
-<a href="img/tenant-select3-3.png"><img src="img/tenant-select3-3.png" alt="tenant-select3" width="796" height="402"></a>
-After the unneeded mapping is deleted:
-<a href="img/tenant-select4.png"><img src="img/tenant-select4.png" alt="tenant-select4" width="796" height="397"></a>
-1. Click Save.
+<ol> 
+ <li>Navigate to Administration &gt; Users.</li> 
+ <li>Click on the edit icon next to the user name.</li> 
+ <li>Click Add Tenant and select the new tenant. (If the new tenant does not exist yet, click Create Tenant.) A new set of mapping fields appears.<br> <a href="img/tenant-select.png"><img class="alignnone size-full wp-image-10454" src="img/tenant-select.png" alt="tenant-select" width="796" height="396"></a></li> 
+ <li>Select the role from the Role pull-down list. <a href="img/tenant-select2.png"><img class="alignnone size-full wp-image-10455" src="img/tenant-select2.png" alt="tenant-select2" width="796" height="412"></a></li> 
+ <li>Click the minus sign next to any mappings that are no longer needed.<br> <a href="img/tenant-select3-3.png"><img class="alignnone size-full wp-image-10466" src="img/tenant-select3-3.png" alt="tenant-select3" width="796" height="402"></a><br> After the unneeded mapping is deleted:<br> <a href="img/tenant-select4.png"><img class="alignnone size-full wp-image-10457" src="img/tenant-select4.png" alt="tenant-select4" width="796" height="397"></a></li> 
+ <li>Click Save.</li> 
+</ol> 
 
 The tenants table reappears, showing the change.
-<a href="img/tenant-select5.png"><img src="img/tenant-select5.png" alt="tenant-select5" width="1040" height="280"></a>
+<a href="img/tenant-select5.png"><img class="alignnone size-full wp-image-10458" src="img/tenant-select5.png" alt="tenant-select5" width="1040" height="280"></a>
 
 ### Single Role for All Tenants
 
 This option allows the user account to access any tenant from the same role. In this case, the default tenant must be selected. The default tenant is the one into which the user is placed after logging in.
 
 In the following example, a user is allowed to access all tenants, and will automatically be placed into tenant cust1-tenant after login.
-<a href="img/tenant-select6.png"><img src="img/tenant-select6.png" alt="tenant-select6" width="796" height="400"></a>
+<a href="img/tenant-select6.png"><img class="alignnone size-full wp-image-10459" src="img/tenant-select6.png" alt="tenant-select6" width="796" height="400"></a>

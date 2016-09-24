@@ -2,7 +2,7 @@
 title: Overview of Controller Cluster
 layout: default
 ---
-<a href="img/Controller-3-node.png"><img src="img/Controller-3-node.png" alt="Controller-3-node" width="150" height="152"></a>Avi Controllers can be deployed as a single node (one instance of the Avi Controller) or as a 3-node cluster. This article answers basic questions about Avi Controller clusters.
+<a href="img/Controller-3-node.png"><img class="size-full wp-image-11811 alignright" src="img/Controller-3-node.png" alt="Controller-3-node" width="150" height="152"></a>Avi Controllers can be deployed as a single node (one instance of the Avi Controller) or as a 3-node cluster. This article answers basic questions about Avi Controller clusters.
 
 ### How many nodes are supported in an Avi Controller cluster?
 
@@ -36,15 +36,15 @@ During the time the cluster is non-operational, the Avi Service Engines (SEs) co
 
 ### Recover a non-operational cluster where two of the three nodes are permanently down and not recoverable
 
-Please click <a href="/docs/latest/recover-a-non-operational-controller-cluster">here</a>.
+Please click <a href="/docs/16.2.2/recover-a-non-operational-controller-cluster">here</a>.
 
 ### Recover the system if all 3 Avi Controller nodes are permanently down and not recoverable
 
-Please click <a href="/docs/latest/backup-and-restore-of-avi-vantage-configuration">here</a>.
+Please click <a href="/docs/16.2.2/backup-and-restore-of-avi-vantage-configuration">here</a>.
 
 ### Reconfigure the Avi Controller cluster membership
 
-Please click <a href="/docs/latest/changing-avi-controller-cluster-configuration">here</a>.
+Please click <a href="/docs/16.2.2/changing-avi-controller-cluster-configuration">here</a>.
 
 ### Can the Avi Controller nodes in a cluster have different resource allocations (memory, CPU, and drive space)?
 
@@ -68,7 +68,7 @@ Avi Controllers participate in election of their leader, and automatically decid
 
 * **Leader failure:** If the leader Avi Controller of the cluster fails, this triggers an internal warm restart of the Avi Controller processes. Typically, this takes around 2-3 minutes after it is detected that the leader has failed.
 * **Graceful reboot of leader:** Failure detection is almost instantaneous in cases of a graceful reboot.
-* **Ungraceful power-off of leader:** In the case of an ungraceful power-off of the leader, it may take up to 30 seconds to detect that the leader has failed.
+* **Ungraceful power-off of leader:** In the case of an ungraceful power-off of the leader, it may take up to 30 seconds to detect that the leader has failed. 
 
 These timers have been tuned based on testing but are not configurable.
 
@@ -79,8 +79,8 @@ Yes. Nearly any configuration changes can be made on any of the Avi Controller n
 Exceptions:
 
 * Configuration of the cluster itself (node IP addresses and cluster address)
-* Upgrade, which can be performed only on the leader node
+* Upgrade, which can be performed only on the leader node 
 
 ### What is the recommended cluster deployment option for multiple data centers in different regions?
 
-Avi recommends deploying the Avi Controller cluster only within a single region. However, the member nodes can be deployed across multiple availability zones within the region. If there are multiple regions, it is recommended to deploy one Avi Controller cluster per region. (For more information, <a href="/docs/latest/clustering-controllers-from-different-networks">click here</a>.)
+Avi recommends deploying the Avi Controller cluster only within a single region. However, the member nodes can be deployed across multiple availability zones within the region. If there are multiple regions, it is recommended to deploy one Avi Controller cluster per region. (For more information, <a href="/docs/16.2.2/clustering-controllers-from-different-networks">click here</a>.)

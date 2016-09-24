@@ -3,10 +3,10 @@ title: API&#58; Determine Virtual Service Throughput
 layout: default
 ---
 You can use the Avi Vantage API to access throughput data and other metrics for a virtual service. API calls to /API/analytics/metrics can be used to get all metric-related data. The following example shows a query for the throughput of a virtual service for a 24-hour period:
-<pre>https://&lt;Controller VIP&gt;/api/analytics/metrics/virtualservice/virtualservice-&lt;VS UUID&gt;?metric_id=l4_client.avg_bandwidth &amp;step=86400&amp;limit=7&amp;start=2015-11-17T00:00:00.000Z</pre>
 
-* **Controller VIP**:  Replace with the IP address of your Avi Controller or the cluster IP address assigned to the cluster of redundant Avi Controllers.
-* **VS UUID**:  Universally Unique ID (UUID) of the virtual service. Since virtual service names may not be unique across multiple tenants, API queries are recommended to include the virtual service's UUID.
+<pre>https://&lt;Controller VIP&gt;/api/analytics/metrics/virtualservice/virtualservice-&lt;VS UUID&gt;?metric_id=l4_client.avg_bandwidth &amp;step=86400&amp;limit=7&amp;start=2015-11-17T00:00:00.000Z</pre> 
+* **Controller VIP**:  Replace with the IP address of your Avi Controller or the cluster IP address assigned to the cluster of redundant Avi Controllers. 
+* **VS UUID**:  Universally Unique ID (UUID) of the virtual service. Since virtual service names may not be unique across multiple tenants, API queries are recommended to include the virtual service's UUID.  
 
 A quick way to find a virtual service's UUID is to view the virtual service in the Avi Controller's web interface, and capture the UUID from the browser URI.  (See the following link to <a href="/2015/12/02/find-virtual-service-uuid/">find virtual service UUIDs</a>.)
 
@@ -19,6 +19,7 @@ A quick way to find a virtual service's UUID is to view the virtual service in t
 **metric_id**: Metric to be queried. Here are the metric IDs for some commonly queried metrics: /* l4_client.avg_total_rtt /* l4_server.avg_total_rtt /* l4_client.avg_bandwidth /* l4_client.max_open_conns /* l4_client.avg_complete_conns /* l4_client.avg_lossy_connections /* l4_client.avg_errored_connections /* l4_client.pct_connection_errors /* l7_client.avg_complete_responses /* l7_server.avg_resp_4xx_errors /* l7_server.avg_resp_5xx_errors /* l7_client.avg_resp_4xx_avi_errors /* l7_client.avg_resp_5xx_avi_errors /* l7_client.pct_response_errors /* l7_server.avg_application_response_time /* l7_client.avg_client_data_transfer_time
 
 Here is an example of the data returned by the Avi Controller in response to an API query for l4_client.avg_bandwidth:
+
 <pre><code class="language-lua">{
 "entity_uuid": "virtualservice-9062c630-a835-4c22-8596-dfa625b9697d", 
 "limit": 365, 
@@ -85,4 +86,4 @@ Here is an example of the data returned by the Avi Controller in response to an 
 "start": "2015-11-17T00:00:00.000Z", 
 "step": 86400, 
 "stop": "2015-11-23T00:00:00+00:00"
-}</code></pre>
+}</code></pre>  

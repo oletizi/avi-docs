@@ -6,7 +6,7 @@ The TLS mode of persistence may be applied to any virtual service configured to 
 
 Note:  This persistence method is often confused for an older, broken method of persistence called SSL Session ID. While both are used for secure connections, these methods are unrelated.
 
-See also <a href="/docs/latest/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
+See also <a href="/docs/16.2.2/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 
 ### Persist Table
 
@@ -19,7 +19,6 @@ As with any SSL/TLS concurrency, additional memory is beneficial for increasing 
 * **Name**:  A unique name for the persistence profile.
 * **Description**:  An optional, custom description for the profile.
 * **Type**:  TLS.  Changing the type will change the profile to another persistence method.
-* **Select New Server When Persistent Server Down: ** If a server is marked down, such as by a health monitor or when it has reached a connection limit, should existing persisted users continue to be sent to the server, or load balanced to a new server?
-
-* **Immediate:**  Vantage will immediately select a new server to replace the one marked down and switch the persistence entry to the new server.
-* **Never:**  No replacement server will be selected. Persistent entries will be required to expire normally based upon the persistence type
+* **Select New Server When Persistent Server Down: ** If a server is marked down, such as by a health monitor or when it has reached a connection limit, should existing persisted users continue to be sent to the server, or load balanced to a new server?  
+    * **Immediate:**  Vantage will immediately select a new server to replace the one marked down and switch the persistence entry to the new server.
+    * **Never:**  No replacement server will be selected. Persistent entries will be required to expire normally based upon the persistence type 

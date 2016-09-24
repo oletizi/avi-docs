@@ -16,8 +16,10 @@ To remove the OpenStack cloud connector for the default cloud, use the following
 
 ### Steps for Resetting the Default Cloud
 
-1. Delete all virtual services and pools from the cloud. The cloud cannot be deleted if it still contains any of these resources.
-1. Connect to the Avi Controller through SSH or the console.
-1. Connect to the CLI shell: **shell**
-1. Run this command: **exec cloud Default-Cloud gc force cleanup**
-1. Exit the shell.
+<ol> 
+ <li>Delete all virtual services and pools from the cloud. The cloud cannot be deleted if it still contains any of these resources.</li> 
+ <li>Connect to the Avi Controller through SSH or the console.</li> 
+ <li>Connect to the CLI shell: <strong>shell</strong></li> 
+ <li>Run this command: <strong>exec cloud Default-Cloud gc force cleanup</strong></li> 
+ <li>Exit the shell.</li> 
+</ol> 

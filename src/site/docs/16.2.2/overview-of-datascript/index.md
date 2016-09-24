@@ -11,14 +11,15 @@ The DataScript scripting language is built upon an embedded Lua interpreter, wit
 DataScripts are executed within the data plane on the Avi Service Engines hosting the virtual service to which the DataScript has been attached. DataScript is different than ControlScript, which is a Python-based scripting tool for automation of the control plane and executed from the Avi Controller.
 
 A typical DataScript will typically be in some form of if / then logic, similar to a policy's match / action logic.
+
 <pre><code class="language-lua">path = avi.http.get_path()
 if string.beginswith(path, "/docs/") then
    avi.redirect("http://docs.avinetworks.com/index.html")
-end</code></pre>
+end</code></pre>  
 
  
 
-### <img src="img/Pool_Down.png" alt="Pool_Down" width="269" height="211">Assigning to a Virtual Service
+### <img class=" wp-image-802 alignright" src="img/Pool_Down.png" alt="Pool_Down" width="269" height="211">Assigning to a Virtual Service
 
 DataScripts are reusable objects that are maintained within: *Templates > Scripts > DataScripts*.  They are attached to a virtual service by editing a VS and navigating to: *Virtual Service Edit > Rules > DataScript* and select *New DataScript* to choose an existing DataScript or create a new one*.*  A virtual service may have multiple DataScripts.  Also, a DataScript may be used by multiple virtual services.  The exception is when a DataScript references a specific pool, such as the example shown, in which case the DataScript may only be used by one virtual service at a time.
 
@@ -30,7 +31,7 @@ DataScripts are reusable objects that are maintained within: *Templates > Scrip
 * <a href="/2015/12/14/datascript-operators/">Operators</a>:  DataScripts may make use of operators, which may be relational, logical, or arithmetic.
 * <a href="/2015/12/13/datascript-functions/">Functions: </a> Functions are Avi-specific commands, such as HTTP redirects or closing a client connection.
 * <a href="/2015/12/14/datascript-execution-priority/">Execution Priority</a>:  DataScripts have a complex relationship with other features within Avi Vantage, and it is important to understand the order of execution priority when multiple DataScripts are attached to a virtual service, or Policies and other features conflict with the DataScripts.
-* <a href="/2015/12/14/datascript-troubleshooting-rules/">Troubleshooting</a>:  DataScripts may fail to save / load at time of configuration, or they may be created without issue but fail to execute when applied to traffic.
+* <a href="/2015/12/14/datascript-troubleshooting-rules/">Troubleshooting</a>:  DataScripts may fail to save / load at time of configuration, or they may be created without issue but fail to execute when applied to traffic. 
 
  
 

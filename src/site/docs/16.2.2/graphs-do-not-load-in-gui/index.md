@@ -8,4 +8,4 @@ If this does not resolve the issue, contact Avi Support for additional assistanc
 
  
 
-<a href="img/APICallBlocked.png"><img src="img/APICallBlocked.png" alt="APICallBlocked" width="743" height="444"></a>
+<a href="img/APICallBlocked.png"><img class="alignnone wp-image-12065" src="img/APICallBlocked.png" alt="APICallBlocked" width="743" height="444"></a>

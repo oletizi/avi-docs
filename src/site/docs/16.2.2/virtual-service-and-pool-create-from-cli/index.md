@@ -5,9 +5,10 @@ layout: default
 During virtual service creation, the virtual service will need to point to a pool, which the system expects to exist already.
 
 From the CLI, this configuration can be performed as two tasks:
-
-1. Create the pool.
-1. Create the virtual service.
+<ol> 
+ <li> <p>Create the pool.</p> </li> 
+ <li> <p>Create the virtual service.</p> </li> 
+</ol> 
 
 ### Pool Creation
 
@@ -29,17 +30,18 @@ Tenant: admin
 | ip         | 10.1.1.101 |
 | port       | 80         |
 +------------+------------+
-: pool&gt; save</pre>
+: pool&gt; save</pre> 
 
  
 
 ### Virtual Service Creation
 
 Once the pool is created, the next step is to create the virtual service:
+
 <pre>: &gt; configure virtualservice Test_VS
 : virtualservice&gt; address 10.10.10.10
 : virtualservice&gt; services port 80
-: virtualservice&gt; pool_ref Test</pre>
+: virtualservice&gt; pool_ref Test</pre> 
 
      
 

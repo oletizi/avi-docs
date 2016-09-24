@@ -21,13 +21,12 @@ If a Controller is still online, but merely has lost contact with the other Cont
 ### Replacing a Failed Controller
 
 If Controller failure is a permanent state, take the following actions to remove the Controller and restore full high availability to the cluster.
-
-1. If the Controller was in a virtual machine, delete the VM from the cloud orchestrator.
-1. From another (still up) Controller's web interface, delete the failed Controller's IP address. Navigate to Administration > Controller.
-1. Install a new Controller.
-
-Note: Do not log into the new Controller's web interface. Only perform initial setup (such as selecting the cloud orchestrator).
-1. From the existing Controller, add the IP address of the new Controller. After a few minutes, the status of the cluster should turn green.  
+<ol> 
+ <li> <p>If the Controller was in a virtual machine, delete the VM from the cloud orchestrator.</p> </li> 
+ <li> <p>From another (still up) Controller's web interface, delete the failed Controller's IP address. Navigate to Administration &gt; Controller.</p> </li> 
+ <li> <p>Install a new Controller.</p> <p>Note: Do not log into the new Controller's web interface. Only perform initial setup (such as selecting the cloud orchestrator).</p> </li> 
+ <li> <p>From the existing Controller, add the IP address of the new Controller. After a few minutes, the status of the cluster should turn green.  </p> </li> 
+</ol> 
 
 ### Standalone Controller
 

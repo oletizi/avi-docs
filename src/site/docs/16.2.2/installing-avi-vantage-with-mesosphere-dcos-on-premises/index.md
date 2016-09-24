@@ -9,13 +9,13 @@ Avi Vantage integrates with Mesos and Marathon to provide the following services
 * Full-featured service proxy (distributed load balancing)
 * Service discovery
 * Autoscaling
-* Application map and visibility
+* Application map and visibility 
 
 Note: This guide applies to installation within an on-premises cloud. If you are deploying into a Mesos cluster within Amazon Web Services (AWS), go <a href="/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/">here</a> instead.
 
 Here is how Avi Vantage integrates into a Mesos cloud:
 
-<a href="img/mesos-aws-deploy-nat-topo-1.png"><img src="img/mesos-aws-deploy-nat-topo-1.png" alt="mesos-aws-deploy-nat-topo" width="528" height="300"></a>
+<a href="img/mesos-aws-deploy-nat-topo-1.png"><img class="alignnone size-full wp-image-3993" src="img/mesos-aws-deploy-nat-topo-1.png" alt="mesos-aws-deploy-nat-topo" width="528" height="300"></a>
 
 As shown here, Avi Vantage consists of the Avi Controller cluster and multiple Service Engines (SEs). The Avi Controller analyzes traffic and can request spin-up/spin-down of SEs to load balance traffic. In a Mesos deployment, the Avi Controller works with Marathon to spin up/down SEs.
 
@@ -27,7 +27,7 @@ The main components of the Avi Vantage solution, Avi Controllers and Service Eng
 
 * 8 vCPUs
 * 24 GB memory
-* 64 GB disk space
+* 64 GB disk space 
 
 ### System Time (NTP) Requirement
 
@@ -38,23 +38,21 @@ The system time on all nodes must be synchronized. Use of a Network Time Protoco
 For deployment of SEs, the following system-level software is required:
 
 * Each node host OS must be a Linux distribution running systemd.
-* One of the following is required for SE spin up/down:
-
-* Fleet: Optional cluster management service for Mesos. If Fleet is installed, the Avi Controller can use it to schedule spin-up and spin­-down of SEs based on service health.
-* SSH: The Avi Controller uses passwordless sudo SSH to access all the Mesos nodes in the cluster and create SEs on those nodes. The SSH user must have passwordless sudo access to all the Mesos nodes in the Avi Vantage cluster. The SSH method requires a public-private key pair.You can import an existing private key onto the Avi Controller or generate a new key pair. In either case, the public key must be in the “/home/ssh_user/.ssh/authorized_keys” file, where ssh_user is the SSH username on all Mesos nodes. The Avi Controller setup wizard automatically stores the private key on the Avi Controller node when you import or generate the key.
+* One of the following is required for SE spin up/down:  
+    * Fleet: Optional cluster management service for Mesos. If Fleet is installed, the Avi Controller can use it to schedule spin-up and spin­-down of SEs based on service health.
+    * SSH: The Avi Controller uses passwordless sudo SSH to access all the Mesos nodes in the cluster and create SEs on those nodes. The SSH user must have passwordless sudo access to all the Mesos nodes in the Avi Vantage cluster. The SSH method requires a public-private key pair.You can import an existing private key onto the Avi Controller or generate a new key pair. In either case, the public key must be in the “/home/ssh_user/.ssh/authorized_keys” file, where ssh_user is the SSH username on all Mesos nodes. The Avi Controller setup wizard automatically stores the private key on the Avi Controller node when you import or generate the key. 
 
 ## Installing the Avi Controller
 
 To install the Avi Controller:
-
-1. Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>scp controller_docker.tgz username@remotehost.com:/some/local/directory</code></pre> Note: Replace *username*@*remotehost.com* with your write-access username and password and the IP address or hostname for the host node.
-1. Log onto the Mesos node: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ssh username@remotehost.com</code></pre>
-1. Unzip the Avi Controller image: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>gunzip controller_docker.tgz</code></pre>
-1. Load the Avi Controller image into the host's local Docker repository: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker load -i controller_docker.tar</code></pre>
-1. As a best practice, clean up any data that may be lingering from a previous run: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo rm -rf /var/lib/controller/*</code></pre>
-1. Use the vi editor to create a new file for spawning the Avi Controller service: <pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre>
-1. Copy the following lines into the file:
-<pre pre="" class="command-line language-bash" data-output="1-100"><code>[Unit]
+<ol class="md-ignore"> 
+ <li>Copy the .tgz package onto the Mesos node that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>scp controller_docker.tgz username@remotehost.com:/some/local/directory</code></pre> Note: Replace <em>username</em>@<em>remotehost.com</em> with your write-access username and password and the IP address or hostname for the host node.</li> 
+ <li>Log onto the Mesos node: <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ssh username@remotehost.com</code></pre></li> 
+ <li>Unzip the Avi Controller image: <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>gunzip controller_docker.tgz</code></pre></li> 
+ <li>Load the Avi Controller image into the host's local Docker repository: <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker load -i controller_docker.tar</code></pre></li> 
+ <li>As a best practice, clean up any data that may be lingering from a previous run: <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo rm -rf /var/lib/controller/*</code></pre></li> 
+ <li>Use the vi editor to create a new file for spawning the Avi Controller service: <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre></li> 
+ <li>Copy the following lines into the file: <pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>[Unit]
 Description=AviController
 After=docker.service
 Requires=docker.service
@@ -73,28 +71,31 @@ ExecStop=/usr/bin/docker stop avicontroller
 
 [Install]
 WantedBy=multi-user.target
-</code></pre>
-
-1. Edit the following values in the file:
-
-* NUM_CPU: Sets the number of CPU cores/threads used by the Controller (8 in this example).
-* NUM_MEMG: Sets the memory allocation (24 GB in this example).
-* DISK_GB: Sets the disk allocation (80 GB in this example).
-* $interface: Name of the default Ethernet interface. For example, for CoreOS, replace “eth0” with "ens03."
-* $tag: Tag value of the Avi Vantage image in the Docker repository. For example, “16.1-5000-20160212.235510”.
-* Save and close the file.
+</code></pre> </li> 
+ <li>Edit the following values in the file: 
+  <ul> 
+   <li>NUM_CPU: Sets the number of CPU cores/threads used by the Controller (8 in this example).</li> 
+   <li>NUM_MEMG: Sets the memory allocation (24 GB in this example).</li> 
+   <li>DISK_GB: Sets the disk allocation (80 GB in this example).</li> 
+   <li>$interface: Name of the default Ethernet interface. For example, for CoreOS, replace “eth0” with "ens03."</li> 
+   <li>$tag: Tag value of the Avi Vantage image in the Docker repository. For example, “16.1-5000-20160212.235510”.</li> 
+  </ul> </li> 
+ <li>Save and close the file.</li> 
+</ol> 
 
 ### Starting the Avi Controller Service
 
 To start the Avi Controller, enter the following command at the OS shell prompt on the node where you installed the Avi Controller service:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo systemctl start avicontroller</code></pre>
+
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo systemctl start avicontroller</code></pre> 
 
 Initial startup and full system initialization takes around 5 minutes.
 
 ### Accessing the Avi Controller Web Interface
 
 To access the Avi Controller web interface, navigate to the following URL:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>https://mesos-ip-or-hostname:9443</code></pre>
+
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>https://mesos-ip-or-hostname:9443</code></pre> 
 
 The following section provides steps for initial configuration of the Avi Controller.
 
@@ -104,49 +105,68 @@ This section shows how to perform initial configuration of the Avi Controller us
 
 ### Setup Parameters
 
-1. Administrator account: Initial configuration of the Avi Controller begins with creation of an administrator account.
-1. DNS and NTP servers:
-
-* DNS: If your deployment uses Mesos DNS, set the Avi Controller to use the Mesos Master as its DNS server. Otherwise, set the Avi Controller to use your network’s DNS.
-* NTP: Can use the default or your local NTP server. The Avi Controller does not require use of the Mesos Master for network time.
-* Infrastructure settings for the Mesos cloud, and configuration settings for SEs:
-
-* Mesos URL: IP address or hostname of the Mesos Master.
-* Marathon URL: IP address or hostname of the Marathon instance in DCOS.
-* Marathon username and password.
-* SE creation settings: Fleet or SSH. (See Software Infrastructure Requirements.)
-* Docker registry for SE creation: Access information for the Docker Registry. Enter the IP address or hostname, and the access credentials. You can use either Docker Hub or your cloud’s private Docker Registry. You can change or customize settings following initial deployment using the Avi Controller’s web interface.
+<ol class="md-ignore"> 
+ <li>Administrator account: Initial configuration of the Avi Controller begins with creation of an administrator account.</li> 
+ <li>DNS and NTP servers: 
+  <ul> 
+   <li>DNS: If your deployment uses Mesos DNS, set the Avi Controller to use the Mesos Master as its DNS server. Otherwise, set the Avi Controller to use your network’s DNS.</li> 
+   <li>NTP: Can use the default or your local NTP server. The Avi Controller does not require use of the Mesos Master for network time.</li> 
+  </ul> </li> 
+ <li>Infrastructure settings for the Mesos cloud, and configuration settings for SEs: 
+  <ul> 
+   <li>Mesos URL: IP address or hostname of the Mesos Master.</li> 
+   <li>Marathon URL: IP address or hostname of the Marathon instance in DCOS.</li> 
+   <li>Marathon username and password.</li> 
+  </ul> </li> 
+ <li>SE creation settings: Fleet or SSH. (See Software Infrastructure Requirements.)</li> 
+ <li>Docker registry for SE creation: Access information for the Docker Registry. Enter the IP address or hostname, and the access credentials. You can use either Docker Hub or your cloud’s private Docker Registry. You can change or customize settings following initial deployment using the Avi Controller’s web interface.</li> 
+</ol>  
 
 ### Setup Procedure
 
 To start, use a browser to navigate to the Avi Controller.
-
-1. Configure basic system settings:
-
-* Administrator account
-* DNS and NTP server information
-<img src="img/Ctlr-install-wizard-adminacct-4.png" alt="" width="275" height="399" align="left" hspace="0&quot;" vspace="6"> <img src="img/gui1st-time1b.png" alt="" width="275" height="353" align="left" hspace="12" vspace="6">
-* Select Mesos as the infrastructure type:<img src="img/Ctlr-install-wizard-infra-161-mesos.png" alt="Ctlr-install-wizard-infra-161-mesos" width="275" height="435">
-* Configure Mesos infrastructure settings:
-
-* Mesos URL: IP address or hostname of the Mesos Master
-* Marathon URL: IP address or hostname of the Marathon instance in DCOS
-* Marathon username and password
-* Configure settings for SE deployment.
-
-* If using Fleet:
-<img src="img/se-dep-fleet.png" alt="" width="275" height="168" align="left" hspace="0" vspace="6">
-
-* If using SSH:
-<img src="img/SEcreation-setupwizard-mesosinstall.png" alt="" width="275" height="236" align="left" hspace="0" vspace="6">
-
-Note: The Avi Controller requires root access to the OS on the SE node in order to start the SE process on the node.
-
-* If the key pair already exists, use Import Private Key to import the private key for each SE node into the Avi Controller.
-* To instead generate a new key pair for SE creation, select Generate SSH Key Pair. Click Copy to clipboard, then copy the public key generated by the option into the following file on each of the SE nodes: /home/ssh_user/.ssh/authorized_keys
-* Configure Docker registry settings:
-
-<img src="img/gui1st-time5.png" alt="" width="275" height="207" align="left" hspace="0" vspace="6">
+<ol class="md-ignore"> 
+ <li>Configure basic system settings: 
+  <ul> 
+   <li>Administrator account</li> 
+   <li>DNS and NTP server information</li> 
+  </ul> 
+  <div> 
+   <p> <img src="img/Ctlr-install-wizard-adminacct-4.png" alt="" width="275" height="399" align="left" hspace="0&quot;" vspace="6"> <img src="img/gui1st-time1b.png" alt="" width="275" height="353" align="left" hspace="12" vspace="6"></p> 
+   <p style="clear: both;"> </p> 
+  </div> </li> 
+ <li>Select Mesos as the infrastructure type:<img class="alignnone size-full wp-image-6059" src="img/Ctlr-install-wizard-infra-161-mesos.png" alt="Ctlr-install-wizard-infra-161-mesos" width="275" height="435"></li> 
+ <li>Configure Mesos infrastructure settings: 
+  <ul> 
+   <li>Mesos URL: IP address or hostname of the Mesos Master</li> 
+   <li>Marathon URL: IP address or hostname of the Marathon instance in DCOS</li> 
+   <li>Marathon username and password</li> 
+  </ul> </li> 
+ <li>Configure settings for SE deployment. 
+  <ul> 
+   <li>If using Fleet:</li> 
+  </ul> 
+  <div> 
+   <p> <img src="img/se-dep-fleet.png" alt="" width="275" height="168" align="left" hspace="0" vspace="6"></p> 
+   <p style="clear: both;"> </p> 
+  </div> 
+  <ul> 
+   <li>If using SSH:</li> 
+  </ul> 
+  <div> 
+   <p> <img src="img/SEcreation-setupwizard-mesosinstall.png" alt="" width="275" height="236" align="left" hspace="0" vspace="6"></p> 
+   <p style="clear: both;"> </p> 
+  </div> <p> Note: The Avi Controller requires root access to the OS on the SE node in order to start the SE process on the node.</p> 
+  <ul> 
+   <li>If the key pair already exists, use Import Private Key to import the private key for each SE node into the Avi Controller.</li> 
+   <li>To instead generate a new key pair for SE creation, select Generate SSH Key Pair. Click Copy to clipboard, then copy the public key generated by the option into the following file on each of the SE nodes: /home/ssh_user/.ssh/authorized_keys</li> 
+  </ul> </li> 
+ <li>Configure Docker registry settings: 
+  <div> 
+   <p> <img src="img/gui1st-time5.png" alt="" width="275" height="207" align="left" hspace="0" vspace="6"></p> 
+   <p style="clear: both;"> </p> 
+  </div> </li> 
+</ol> 
 
 After you click Next, your Mesos deployment and initial Avi Controller configuration are complete.
 
@@ -156,22 +176,25 @@ This section provides steps for creating and testing virtual services for the fo
 
 * East-west: VIP and client are both in the same Mesos cluster.
 * North-south with inside VIP: VIP is in the Mesos host network but client is outside the network.
-* North-south with outside VIP: VIP and client are both outside the Mesos host network.
+* North-south with outside VIP: VIP and client are both outside the Mesos host network. 
 
 For each deployment scenario, the process is the same:
 
-1. Create a Docker image file for the application.
-1. Start the application.
-1. Generate traffic.
+<ol> 
+ <li>Create a Docker image file for the application.</li> 
+ <li>Start the application.</li> 
+ <li>Generate traffic.</li> 
+</ol> 
 
 The details for each deployment differ slightly, mainly in regard to network address information.
 
 ### East-west Application
 
 Use these steps if the VIP and the client are both in the same Mesos cluster.
-
-1. Create a Docker image file such as the following for the application:
-<pre pre="" class="command-line language-bash" data-output="1-100"><code>
+<ol> 
+ <li>Create a Docker image file such as the following for the application: 
+  <div style="margin-left: 40px;"> 
+   <pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>
 {
   "id": "webappew1",
   "cpus": 0.5,
@@ -201,25 +224,24 @@ Use these steps if the VIP and the client are both in the same Mesos cluster.
    }
   ]
 }
-</code></pre>
+</code></pre> 
+   <p></p> 
+  </div> </li> 
+ <li>Start the application to create a virtual service for it in Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.</li> 
+ <li>Start a client container on the VM:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker run -d --name=aviclient avinetworks/server</code></pre></li> 
+ <li>Connect to the client container that you just started:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker exec -it aviclient bash</code></pre></li> 
+ <li>Generate test traffic:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://172.17.0.1:10001/100kb.txt</code></pre>This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.</li> 
+</ol> 
 
-1. Start the application to create a virtual service for it in Vantage:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
-
-1. Start a client container on the VM:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker run -d --name=aviclient avinetworks/server</code></pre>
-1. Connect to the client container that you just started:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker exec -it aviclient bash</code></pre>
-1. Generate test traffic:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://172.17.0.1:10001/100kb.txt</code></pre>This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.
-To view the service port number for the application, select the Configuration tab in the Marathon web interface. The virtual service service port number is specified in the Docker file by the servicePort parameter: <a href="img/marathon-app-panel-2.png"><img src="img/marathon-app-panel-2.png" alt="marathon-app-panel" width="400" height="424"></a>
+To view the service port number for the application, select the Configuration tab in the Marathon web interface. The virtual service service port number is specified in the Docker file by the servicePort parameter: <a href="img/marathon-app-panel-2.png"><img class="alignnone size-full wp-image-3517" src="img/marathon-app-panel-2.png" alt="marathon-app-panel" width="400" height="424"></a> 
 
 ### North-south Application with Inside VIP
 
 Use these steps if the VIP is in the same Mesos cluster as the application but the client is outside the cluster. In this example, the Mesos host and the VIP (10.10.10.100) are both in subnet 10.10.10.0/24.
-
-1. Create a Docker image file such as the following for the application. In the file, edit the FE-Proxy­VIP to match the address of your VIP.
-<pre pre="" class="command-line language-bash" data-output="1-100"><code>
+<ol class="md-ignore"> 
+ <li>Create a Docker image file such as the following for the application. In the file, edit the FE-Proxy­VIP to match the address of your VIP. 
+  <div style="margin-left: 40px;"> 
+   <pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>
 {
   "id": "webapp",
   "cpus": 0.5,
@@ -249,22 +271,21 @@ Use these steps if the VIP is in the same Mesos cluster as the application but t
       "maxConsecutiveFailures": 3
     }
   ]
-}</code></pre>
-
-1. Start the application to create a virtual service for it in Avi Vantage:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.
-
-1. To generate traffic to the application, open an SSH connection to another VM that is located in the same network as the host, and enter the following command:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://10.10.10.100/100kb.txt</code></pre>
+}</code></pre> 
+  </div> </li> 
+ <li>Start the application to create a virtual service for it in Avi Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.</li> 
+ <li>To generate traffic to the application, open an SSH connection to another VM that is located in the same network as the host, and enter the following command:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://10.10.10.100/100kb.txt</code></pre></li> 
+</ol> 
 
 This command sends 100 requests for the specified file to the application VIP (10.10.10.100 in this example).
 
 ### North-south Application with Outside VIP
 
 Use these steps if neither the VIP nor the client is in the same Mesos cluster as the application. In this example, the VIP is 20.20.20.20.
-
-1. Create a Docker image file such as the following for the application. In the file, edit the FE-Proxy­VIP to match the address of your VIP.
-<pre pre="" class="command-line language-bash" data-output="1-100"><code>
+<ol class="md-ignore"> 
+ <li>Create a Docker image file such as the following for the application. In the file, edit the FE-Proxy­VIP to match the address of your VIP. 
+  <div style="margin-left: 40px;"> 
+   <pre crayon="false" pre="" class="command-line language-bash" data-output="1-100"><code>
 {
   "id": "webapp",
   "cpus": 0.5,
@@ -294,24 +315,22 @@ Use these steps if neither the VIP nor the client is in the same Mesos cluster a
       "maxConsecutiveFailures": 3
     }
   ]
-}</code></pre>
-
-1. Start the application to create a virtual service for it in Avi Vantage:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.
-
-1. To generate traffic to the application:
-
-1. Open an SSH ssh connection to another VM that is located in the same network as the host.
-1. Add a static host route that forwards traffic addressed to the VIP to the VM IP address:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ip route add 20.20.20.20/32 via 
+}</code></pre> 
+  </div> </li> 
+ <li>Start the application to create a virtual service for it in Avi Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.</li> 
+ <li>To generate traffic to the application: 
+  <ol> 
+   <li>Open an SSH ssh connection to another VM that is located in the same network as the host.</li> 
+   <li>Add a static host route that forwards traffic addressed to the VIP to the VM IP address:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ip route add 20.20.20.20/32 via 
        
-  <vm-ip></vm-ip></code></pre>
-1. Generate traffic:
-<pre class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://20.20.20.20/100kb.txt</code></pre> This command sends 100 requests for the specified file to the application VIP (20.20.20.20 in this example).
+      <vm-ip></vm-ip></code></pre></li> 
+   <li>Generate traffic:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://20.20.20.20/100kb.txt</code></pre> This command sends 100 requests for the specified file to the application VIP (20.20.20.20 in this example).</li> 
+  </ol> </li> 
+</ol> 
 
 ## Creating Virtual Services (applications)
 
 After Avi Vantage is installed, virtual services (applications) can be created. For information:
 
-* <a href="/docs/latest/creating-applications-in-mesos-with-marathon-labels">Creating Applications with Mesos / Marathon Labels</a>
-* <a href="/docs/latest/service-discovery-for-mesos">DNS-based Service Discovery for Mesos</a>
+* <a href="/docs/16.2.2/creating-applications-in-mesos-with-marathon-labels">Creating Applications with Mesos / Marathon Labels</a>
+* <a href="/docs/16.2.2/service-discovery-for-mesos">DNS-based Service Discovery for Mesos</a> 

@@ -18,11 +18,12 @@ See articles on scaling for more insight into how the CPU metric is incorporated
 
 ### View CPU Utilization
 
-<a href="img/CPU.png"><img src="img/CPU.png" alt="CPU" width="229" height="71"></a>
+<a href="img/CPU.png"><img class="size-full wp-image-246 alignright" src="img/CPU.png" alt="CPU" width="229" height="71"></a>
 
 To see the effective CPU utilization of an SE:
-
-1. Navigate to Infrastructure > Clouds.
-1. Select the cloud from the Clouds table.
-1. Select the SE.
-1. Select the CPU.
+<ol> 
+ <li>Navigate to Infrastructure &gt; Clouds.</li> 
+ <li>Select the cloud from the Clouds table.</li> 
+ <li>Select the SE.</li> 
+ <li>Select the CPU.</li> 
+</ol> 

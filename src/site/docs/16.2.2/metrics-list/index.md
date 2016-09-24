@@ -2,7 +2,7 @@
 title: Metrics List
 layout: default
 ---
-Avi Networks continuously adds additional metrics to Avi Vantage. They are used to trigger alerts, notify administrators of important information, and are the building blocks of much of the configuration automation. See <a href="/docs/latest/events-overview">Events Overview</a>, <a href="/docs/latest/alerts-overview">Alerts Overview</a>, and <a href="/docs/latest/notifications-overview">Notifications Overview</a> for a larger view of how the event component is used for alerting and automation.
+Avi Networks continuously adds additional metrics to Avi Vantage. They are used to trigger alerts, notify administrators of important information, and are the building blocks of much of the configuration automation. See <a href="/docs/16.2.2/events-overview">Events Overview</a>, <a href="/docs/16.2.2/alerts-overview">Alerts Overview</a>, and <a href="/docs/16.2.2/notifications-overview">Notifications Overview</a> for a larger view of how the event component is used for alerting and automation.
 
 ### Object Types
 
@@ -10,7 +10,7 @@ At the end of each metric's description below, the types of objects to which the
 
 * VS: Metric applies to virtual services.
 * SE: Metric applies to Service Engines.
-* P: Metric applies to pools.
+* P: Metric applies to pools. 
 
 ### Layer 4 Metrics
 
@@ -67,7 +67,7 @@ At the end of each metric's description below, the types of objects to which the
 * **l4_server.sum_finished_conns:** Total number of completed connections to a server. (VS, P)
 * **l4_server.sum_health_check_failures:** Total number of times a server was marked down by health monitors. (VS, P)
 * **l4_server.sum_lossy_connections:** Total number of network connections to a server that were classified as lossy. (VS, P)
-* **l4_server.sum_lossy_req:** Total number of HTTP requests that were classified as lossy due to high packet retransmissions. (VS, P)
+* **l4_server.sum_lossy_req:** Total number of HTTP requests that were classified as lossy due to high packet retransmissions. (VS, P) 
 
 ### Layer 7 Metrics
 
@@ -140,7 +140,7 @@ At the end of each metric's description below, the types of objects to which the
 * **l7_server.sum_get_reqs:** Total number of HTTP GET requests received by servers. (VS, P)
 * **l7_server.sum_other_reqs:** Total number of HTTP requests that are not GET or POST request received by servers. (VS, P)
 * **l7_server.sum_post_reqs:** Total number of HTTP POST requests received by servers. (VS, P)
-* **l7_server.sum_total_responses:** Total number of HTTP responses sent from servers. (VS, P)
+* **l7_server.sum_total_responses:** Total number of HTTP responses sent from servers. (VS, P) 
 
 ### Service Engine Metrics
 
@@ -190,7 +190,7 @@ At the end of each metric's description below, the types of objects to which the
 * **se_stats.pct_connections_dropped:** Percent of Service Engine connections dropped. (VS, SE)
 * **se_stats.pct_rx_bytes_dropped:** Percent of Service Engine bytes dropped. (VS, SE)
 * **se_stats.pct_rx_pkts_dropped:** Percent of Service Engine packets dropped. (VS, SE)
-* **se_stats.pct_syn_cache_usage:** Percent of SYN cache used. Higher usage indicates too many incomplete open connection attempts. (VS, SE)
+* **se_stats.pct_syn_cache_usage:** Percent of SYN cache used. Higher usage indicates too many incomplete open connection attempts. (VS, SE) 
 
 ### Insight Metrics
 
@@ -203,7 +203,7 @@ At the end of each metric's description below, the types of objects to which the
 * **source_insights.avg_http_timeout:** Rate of HTTP timeouts per second. (VS)
 * **source_insights.avg_policy_drops:** Rate of connections per second dropped by policies. (VS)
 * **source_insights.avg_total_requests:** Rate of HTTP requests per second. (VS)
-* **source_insights.max_open_conns:** Maximum number of concurrent open connections. (VS)
+* **source_insights.max_open_conns:** Maximum number of concurrent open connections. (VS) 
 
 ### VMware Metrics
 
@@ -225,4 +225,4 @@ At the end of each metric's description below, the types of objects to which the
 * **vm_stats.avg_net_usage:** Transmit plus receive network bandwidth for the virtual machine. (VS, SE)
 * **vm_stats.avg_port_usage:** Percent of high ports used. (VS, SE)
 * **vm_stats.avg_uptime:** Percent of time virtual machine was up during a time interval. (VS, SE)
-* **vm_stats.avg_virtual_disk_commands_aborted:** Number of SCSI commands that were aborted. (VS, SE)
+* **vm_stats.avg_virtual_disk_commands_aborted:** Number of SCSI commands that were aborted. (VS, SE) 

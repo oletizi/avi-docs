@@ -12,18 +12,20 @@ To switch the focus of the management session to the All Tenants view, use any o
 
 ### Web Interface
 
-1. From the user administration menu (next to the Help button on the top menu of the web interface), select Tenant View.
+**Step One:** From the user administration menu (next to the Help button on the top menu of the web interface), select Tenant View.
 
-<a href="img/all-tenants1.png"><img src="img/all-tenants1.png" alt="all-tenants1" width="218" height="178"></a>
-1. Select All Tenants.
-<a href="img/all-tenants2.png"><img src="img/all-tenants2.png" alt="all-tenants2" width="450" height="305"></a>
+<a href="img/all-tenants1.png"><img src="img/all-tenants1.png" alt="all-tenants1" width="218" height="178" class="alignnone size-full wp-image-10418"></a>
+
+**Step Two:** Select All Tenants.
+<a href="img/all-tenants2.png"><img src="img/all-tenants2.png" alt="all-tenants2" width="450" height="305" class="alignnone size-full wp-image-10419"></a> 
 
 ### CLI
 
 Enter the following command:
+
 <pre class="command-line language-bash" data-prompt=": >" data-output="2"><code>switchto tenant *
 Switching to tenant *
- </code></pre>
+ </code></pre> 
 
 Specifying /* (wildcard) instead of a tenant name gives access to objects across all tenants.
 

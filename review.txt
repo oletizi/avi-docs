@@ -388,28 +388,39 @@ overview-of-server-persistence
 overview-of-ssl-termination
 overview-of-vantage-high-availability
 overview-of-vantage-security
+    OK
 packet-capture
+    TODO: Fix CLI
 password-recovery
 physical-security-for-ssl-keys
 ping-health-monitor
 port-channeling-on-linux-server-hosts-2
+    OK
 protocol-ports-used-by-avi-vantage-for-management-communication
 proxy-protocol-support
+    TODO: Figure out why the content is duplicated; fix CLI
 public-key-management-on-se-hosts
+    TODO: Fix CLI
 public-key-management-on-se-hosts-16-2-2
 purge-an-object-from-http-cache
 rate-shaping-and-throttling-options
 real-time-metrics-update
+    OK
 recover-a-non-operational-controller-cluster
 redirect-http-to-https
 remote-users-authen-authrz
+    TODO: NOT FOUND
 replace-kube-proxy-in-openshift-environment-with-avi-vantage
+    TODO: Fix CLI
 reset-an-openstack-default-cloud
 reset-to-factory-defaults
 rolling-back-the-system
+    TODO: Fix CLI
 save-log-searches
 se-memory-consumption
+    TODO: Fix CLI
 search-engine-group
+    OK
 securing-management-ip-access
 security-advisory-notice
 select-servers-by-network
@@ -418,11 +429,14 @@ server-name-indication
 server-requires-original-client-source-ip-address
 servers-flapping-up-down
 service-discovery-for-mesos
+    TODO: Fix CLI
 service-engine-group-pre-16-2-1
 sizing-service-engines
+    OK
 snat-source-port-exhuastion
 snmp-support-in-avi-vantage
 source-nat-for-application-identification
+    TODO: Fix CLI
 ssh-users-and-keys
 ssl-certificates
 ssl-everywhere
@@ -430,18 +444,24 @@ ssl-performance
 ssl-tls-profile
 ssl-tls-version-support
 ssl-visibility-and-troubleshooting
+    OK
 static-route-support-for-vip-and-snat-ip-reachability
+    TODO: Fix CLI
 string-group
 strong-password-enforcement
+    TODO: Fix CLI
 super-user-accounts
 support-for-sni-extension-in-tls-handshakes-to-pool-servers
 support-terms-and-conditions
+    TODO: Double-check accuracy. Fix table headings
 switch-between-tenants
 system-cleanup-following-uninstall-from-mesos-dcos
 system-requirements-ecosystem
 system-requirements-hardware
+    OK
 tacacs-authentication
 tacacs-configuration-examples
+    TODO: This doc is a bit of a mess
 tcp-health-monitor
 tcp-transparent-proxy-support
 templates-groups-ip-group
@@ -449,7 +469,9 @@ tenants
 tenants-versus-se-group-isolation
 terms-of-avi-vantage-license
 thales-nshield-integration-2
+    TODO: Fix CLI; Fix emboldened step 10
 tls-persistence
+    OK
 traffic-capture-with-scaled-out-service-engines
 troubleshooting-vantage-integration-with-cisco-aci
 troubleshooting-vmware-deployment
@@ -459,15 +481,21 @@ upload-hsm-pkg
 user-account-roles
 user-account-self-service
 user-accounts
+    TODO: Make sure this is renamed to managing-local-user-accounts
 vantage-global-load-balancer-beta
+    TODO: This should probably be removed
 vantage-installation-guides
+    TODO: Put this in the right version location
 vantage-installation-on-nutanix-acropolis-hypervisor
 vantage-interaction-with-vcenter
 vantage-web-app-firewall-beta
+    TODO: Figure out if this should be removed
 verifying-notification-settings
 vip-allocation-using-ipam-or-dns
 virtual-server-using-dns-for-vip-address
+    TODO: Fix CLI
 virtual-service-and-pool-create-from-cli
+    TODO: Fix CLI
 virtual-service-create-apic
 virtual-service-creation-vmware
 virtual-service-logs-page-reports-missing-logs
@@ -478,6 +506,7 @@ vs-migration-impact-on-existing-connections
 web-interface-access-settings
 webinterface-admin-options
 where-can-i-download-avi-vantage
+    TODO: Should this be removed or updated?
 why-is-a-server-marked-down
 wildcard-sni-matching-for-virtual-hosting
 x-forwarded-for-header-insertion

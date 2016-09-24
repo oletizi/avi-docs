@@ -8,37 +8,39 @@ The File Transfer Protocol comes in two flavors, active and passive.  In both c
 
 Avi Vantage supports passive FTP via the following configuration.
 
-<a href="img/FTP-Ports.png"><img src="img/FTP-Ports.png" alt="FTP Ports" width="322" height="131"></a>
+<a href="img/FTP-Ports.png"><img class="size-full wp-image-195 alignright" src="img/FTP-Ports.png" alt="FTP Ports" width="322" height="131"></a>
 
-**Virtual Service Settings**:
+**Virtual Service Settings**: 
 
-**Application Profile**: L4
+**Application Profile**: L4 
 
-**TCP/UDP Profile**: TCP-proxy
+**TCP/UDP Profile**: TCP-proxy 
 
-**Service Ports**:  Set to Advanced via GUI
+**Service Ports**:  Set to Advanced via GUI 
 
-**Port**: 21 to 21
+**Port**: 21 to 21 
 
-**Port**: 1024 to 65534
+**Port**: 1024 to 65534 
 
-**Pool Settings**:
+**Pool Settings**: 
 
-**Load Balance Algorithm**:  Least Connections
+**Load Balance Algorithm**:  Least Connections 
 
-**Persistence**:  Client IP
+**Persistence**:  Client IP 
 
-**Health Monitor**:  TCP
+**Health Monitor**:  TCP 
 
-**Health Monitor Port**:  21
+**Health Monitor Port**:  21 
 
-**Port Translation**: Disable
+**Port Translation**: Disable 
 
 For version v15.3 and older, Avi only supports Passive FTP in non scaled out high availability modes. If Service Engine scaling is required, please contact Avi for early access to functionality that will enable FTP in a scaled out environment.
+
 
 ### Active FTP
 
 Active FTP requires support for Service Engines to be the server's default gateway.  Until this support is available, active FTP is not supported.  Avi recommends use of passive FTP as a workaround.
+
 <pre>&gt; <strong>ftp  ftp.test.com</strong>
 Connected to ftp.test.com.
 ftp.test.com FTP server ready.
@@ -49,4 +51,4 @@ User anonymous logged in.
 Remote system type is UNIX.
 Using binary mode to transfer files.
 ftp&gt; <strong>passive</strong>
-Passive mode on.</pre>
+Passive mode on.</pre> 

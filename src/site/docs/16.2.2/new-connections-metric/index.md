@@ -2,7 +2,7 @@
 title: How the New Connections Metric Is Calculated
 layout: default
 ---
-<a href="img/NewConnections.png"><img src="img/NewConnections.png" alt="NewConnections" width="263" height="108"></a>
+<a href="img/NewConnections.png"><img class="size-full wp-image-230 alignright" src="img/NewConnections.png" alt="NewConnections" width="263" height="108"></a>
 
 While the name of the metric used in virtual services, pools, and servers is *New Connections* per second, the metric is technically recording the number of *closed connections* per second. This is done so the metric can include an important sub-metric, *errors*. Errors can include incomplete connection establishment, unexpected RST, general high latency, or out of order packets.
 

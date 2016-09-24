@@ -31,53 +31,50 @@ Note: Port channeling is supported only through configuration of the feature in 
 The configurations for ens1f0 and ens1f1 each include the following options, identifying the intefecs as secondary members of a logical interface whose primary member is bond0:
 
 * MASTER=bond0
-* SLAVE=yes
+* SLAVE=yes 
 
 The configuration for interface bond0.652 does use the MASTER or SLAVE options, but does use the following option:
 
-* VLAN=yes
+* VLAN=yes 
 
-**Interface bond0's Configuration:**
-<pre>DEVICE=bond0
+**Interface bond0's Configuration file: /etc/sysconfig/network-scripts/ifcfg-bond0**
+
+<pre><code class="language-lua">DEVICE=bond0
 IPADDR=10.124.251.101
 NETMASK=255.255.255.0
 ONBOOT=yes
 BOOTPROTO=none
 USERCTL=no
 NM_CONTROLLED=no
-BONDING_OPTS="mode=4 miimon=100 xmit_hash_policy=layer3+4 use_carrier=1"
-</pre>
+BONDING_OPTS="mode=4 miimon=100 xmit_hash_policy=layer3+4 use_carrier=1"</code></pre>  
 
-**Interface ens1f0's Configuration:**
+**Interface ens1f0's Configuration file: /etc/sysconfig/network-scripts/ifcfg-ens1f0**
 
-<pre>DEVICE=ens1f0
+<pre><code class="language-lua">DEVICE=ens1f0
 BOOTPROTO=none
 ONBOOT=yes
 MASTER=bond0
 SLAVE=yes
 USERCTL=no
-NM_CONTROLLED=no
-</pre>
+NM_CONTROLLED=no</code></pre>  
 
-**Interface ens1f1's Configuration:**
+**Interface ens1f1's Configuration file: /etc/sysconfig/network-scripts/ifcfg-ens1f1**
 
-<pre>DEVICE=ens1f1
+<pre><code class="language-lua">DEVICE=ens1f1
 BOOTPROTO=none
 ONBOOT=yes
 MASTER=bond0
 SLAVE=yes
 USERCTL=no
-NM_CONTROLLED=no
-</pre>
+NM_CONTROLLED=no</code></pre>  
 
-**Interface bond0.652's Configuration:**
+**Configuring VLAN on bond0 interface:**
 
-<pre>DEVICE=bond0.652
-BOOTPROTO=none
-ONBOOT=yes
-IPADDR=10.124.252.101
-NETMASK=255.255.255.0
-USERCTL=no
-NM_CONTROLLED=no
-VLAN=yes
-</pre>
+<ol> 
+ <li>Navigate to Infrastructure, and click on the Service Engine (SE) where the VLAN interface is to be created.</li> 
+ <li>Click the Edit button, and the following pop-up window appears.<a href="img/Screen-Shot-2016-09-07-at-1.24.59-PM.png"><img class="alignnone wp-image-13671 " src="img/Screen-Shot-2016-09-07-at-1.24.59-PM.png" width="598" height="389"></a></li> 
+ <li>Click Create VLAN Interface.</li> 
+ <li>Select the parent interface from the drop-down list, and fill in the VLAN and IP Address fields, then click Save. <a href="img/Screen-Shot-2016-09-07-at-1.29.05-PM.png"><img class="alignnone wp-image-13673 " src="img/Screen-Shot-2016-09-07-at-1.29.05-PM.png" width="604" height="391"></a></li> 
+ <li>The VLAN interface appears on the Service Engine Edit page.<a href="img/Screen-Shot-2016-09-07-at-1.29.27-PM-1.png"><img class="alignnone wp-image-13677 " src="img/Screen-Shot-2016-09-07-at-1.29.27-PM-1.png" width="606" height="393"></a></li> 
+ <li>Click Save again to commit the change.</li> 
+</ol> 

@@ -4,13 +4,13 @@ layout: default
 ---
 In order for a virtual service to be placed on a Service Engine, the Controller first looks for SEs with available capacity and network reachability to make a virtual service placement decision.  Reachability means the Service Engine has access to the networks required per the configuration of the virtual service and its pool members.
 
-<a href="img/VSobjectModel.png"><img src="img/VSobjectModel.png" alt="VSobjectModel" width="642" height="205"></a>
+<a href="img/VSobjectModel.png"><img class="alignnone wp-image-491" src="img/VSobjectModel.png" alt="VSobjectModel" width="642" height="205"></a>
 
 In the example above, a Service Engine is required to have access to the following networks:
 
 * 20.1.1.x - VIP network
 * 10.1.1.x - Pool-1 and Pool-3 network
-* 192.168.1.x - Pool-2 network
+* 192.168.1.x - Pool-2 network 
 
 For the first network, 20.1.1.x, the Service Engine is required to have an interface in this layer 2 network.  It will need to be able to send gratuitous ARPs for the VIP.  The Service Engine will also need an IP address of its own within the network.
 
@@ -20,7 +20,7 @@ If no SEs exist that meet the available capacity and network reachability requir
 
 * An existing SE must have its network properties update (for reachability)
 * Virtual services scaled or migrated (to create capacity)
-* Or a new Service Engine created
+* Or a new Service Engine created 
 
 If the Controller has Write Access mode enabled, it will determine the proper action to ensure the virtual service is deployed.  If the Avi Vantage is deployed in Read or No Access modes, an administrator may be required to make the necessary changes.
 

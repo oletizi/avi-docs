@@ -3,6 +3,7 @@ title: CLI&#58; HTTP Cache Configuration
 layout: default
 ---
 This article describes the CLI commands that are most commonly used for configuring the HTTP cache.  
+
 <pre class="">: &gt; show applicationprofile System‐HTTP     
 
 +‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
@@ -27,57 +28,57 @@ This article describes the CLI commands that are most commonly used for configur
 |     mime_types_group_refs[1]      | System‐Cacheable‐Resource‐Types   |
 |     aggressive                    | False                             |
 +‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐+
-</pre>
+</pre> 
 
 **enabled** ­ Enable/disable HTTP object caching.
 
-False = disable True = enable
+False = disable True = enable 
 
 **xcache_header** ­ Enable/disable adding an X-Cache header to content served from the cache, which indicates to the client that the object was served from an intermediate cache.
 
-False = disable True = enable
+False = disable True = enable 
 
 **age_header** ­ Enable/disable adding an Age header to content served from the cache, to indicate to the client the number of seconds the object has been in the cache.
 
-False = disable True = enable
+False = disable True = enable 
 
 **date_header** ­ If a Date header was not added by the server, add a Date header to the object served from the cache. This indicates to the client when the object was originally sent by the server to the cache.
 
-False = disable True = enable
+False = disable True = enable 
 
 **query_cacheable** ­ Allow caching of objects whose URI included a query argument. When disabled, these objects are not cached. When enabled, the request must match the URI query to be considered a hit.
 
-False = disable True = enable
+False = disable True = enable 
 
 **default_expire** ­ Default expiration time of cache objects received from the server without a Cache­Control expiration header. This value may be overwritten by the Heuristic Expire setting heuristic_expire.­ If a response object from the server does not include the Cache-Control header, but does include a Last-Modified header, the system will use this time to calculate the Cache-Control expiration. If unable to solicit a Last-Modified header, then the system will fall back to the Cache Expire Time value.
 
-False = disable True = enable
+False = disable True = enable 
 
 **min_object_size** ­ Minimum size object to store in the cache.
 
-False = disable True = enable
+False = disable True = enable 
 
 **max_object_size** ­ Maximum size object to store in the cache.
 
-False = disable True = enable
+False = disable True = enable 
 
-**max_cache_size** ­ Maximum size, in bytes, of the cache. The default (zero) indicates auto configuration.
+**max_cache_size** ­ Maximum size, in bytes, of the cache. The default (zero) indicates auto configuration. 
 
 **mime_types_list** ­ Whitelist cacheable mime types. If both the Cacheable Mime Types string list and string group are empty, this defaults to the following: /*//*
 
-text//*, images//*
+text//*, images//* 
 
 **mime_types_black_list** ­ Blacklist non­-cacheable mime types.
 
-text/css, text/blah
+text/css, text/blah 
 
-**mime_types_group_uuids** ­ Whitelist string group of cacheable mime types.
+**mime_types_group_uuids** ­ Whitelist string group of cacheable mime types. 
 
-**mime_types_black_group_uuids** ­ Blacklist string group of non­cacheable mime types.
+**mime_types_black_group_uuids** ­ Blacklist string group of non­cacheable mime types. 
 
 **aggressive** ­ Enable/disable caching objects without Cache­Control headers.
 
-False = disable True = enable
+False = disable True = enable 
 
  
 
@@ -110,7 +111,7 @@ URI: /test.js
   mcache_out: has_vary: True no_exp_info: exp_age_hrt: is_expired:
   is_purged: no_txm: proxy_reval: must_reval: reval:
   ae_type_bm: 0xb (IGD) ce_type_bm: ce_top: is_chunked:
---------------------------------------------------------------------------------</pre>
+--------------------------------------------------------------------------------</pre> 
 
  
 
@@ -132,19 +133,19 @@ URI: /test.js
 | deletions         | 16             |
 | out_of_mem_evicts | 0              |
 | served_bytes      | 1706           |
-+-------------------+----------------+</pre>
++-------------------+----------------+</pre> 
 
  
 
 ### Clear Cache Objects
 
-<pre>: &gt; clear pool prod‐l7‐pool httpcache</pre>
+<pre>: &gt; clear pool prod‐l7‐pool httpcache</pre> 
 
  
 
 ### Clear Cache Statistics
 
-<pre>: &gt; clear pool prod‐l7‐pool httpcachestats</pre>
+<pre>: &gt; clear pool prod‐l7‐pool httpcachestats</pre> 
 
  
 
@@ -164,11 +165,12 @@ key_extn:
   in_time: 1410026396        exp_age: 13283
     (Sat Sep 6 17:59:56 2014)  (Sat Sep 6 21:41:19 2014)
 ...
------------------------------------------------------------------</pre>
+-----------------------------------------------------------------</pre> 
 
  
 
 Here is another example.
+
 <pre>: &gt; show virtualservice prod-l7 httpstats
 
 +---------------------+--------+
@@ -177,4 +179,4 @@ Here is another example.
 | ...                          |
 | cache_hits          | 83     |
 | cache_bytes         | 713364 |
-+---------------------+--------+</pre>
++---------------------+--------+</pre> 

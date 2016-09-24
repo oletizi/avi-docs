@@ -3,533 +3,273 @@ title: Avi Networks Education References
 layout: default
 ---
 Avi Networks courseware references these resources by number and title. Most are Avi Knowledge Base articles. They appear in order of their addition to this list. Please report any broken links to <a href="mailto:education@avinetworks.com">education@avinetworks.com</a>.
-
-1. Avi Vantage Platform: Architecture
-<a href="http://cdn2.hubspot.net/hubfs/443964/Avi_Website_Resource_Center/White_Paper___Avi_Vantage_Platform_Architecture.pdf?submissionGuid=1abca48c-1f8f-44b6-baf2-3604e78f8a54">http://cdn2.hubspot.net/hubfs/443964/Avi_Website_Resource_Center/White_Paper___Avi_Vantage_Platform_Architecture.pdf?submissionGuid=1abca48c-1f8f-44b6-baf2-3604e78f8a54</a>
-Whitepaper
-1. Application Delivery in OpenStack with Avi Networks Application Delivery Controller
-<a href="https://avinetworks.com/media/pdfs/Avi_Networks_Solution_Brief_OpenStack.pdf">https://avinetworks.com/media/pdfs/Avi_Networks_Solution_Brief_OpenStack.pdf</a>
-Solution Brief
-1. Multitenancy
-<a href="https://blog.avinetworks.com/knowledgebase/multi-tenancy">https://blog.avinetworks.com/knowledgebase/multi-tenancy</a>
-Blog entry
-1. Introduction to Virtual Service High Availability
-<a href="https://blog.avinetworks.com/knowledgebase/introduction-to-virtual-service-high-availability">https://blog.avinetworks.com/knowledgebase/introduction-to-virtual-service-high-availability</a>
-Blog entry
-1. Enable End-to-End SSL for Your OpenStack VMs
-<a href="https://blog.avinetworks.com/enable-end-to-end-ssl-for-your-openstack-vms">https://blog.avinetworks.com/enable-end-to-end-ssl-for-your-openstack-vms</a>
-Blog entry
-1. The Hardware Load Balancer Bubble
-<a href="https://blog.avinetworks.com/the-hardware-load-balancer-bubble">https://blog.avinetworks.com/the-hardware-load-balancer-bubble</a>
-Blog entry
-1. Avi CLI Guide
-<a href="/docs/cli-guide/">/docs/cli-guide/</a>
-1. KVM Performance Guide on Avi’s internal Wiki (and eventually on Customer Portal, per Ashish:
-<a href="https://drive.google.com/open?id=0BwnRttbMEdp-Tmg0WkxiUmMwNzg">https://drive.google.com/open?id=0BwnRttbMEdp-Tmg0WkxiUmMwNzg</a>
-1. Avi Vantage API Guide
-<a href="/docs/api-guide/">/docs/api-guide/</a>
-1. Continuous Security Insights (CSI) see DDOS attacks in real time
-<a href="https://youtu.be/PlfGr93cvng">https://youtu.be/PlfGr93cvng</a>
-Avi Networks YouTube Channel video, Nathan McMahon, 29Sep2015, 4:02
-1. Could They Do It? Real User Monitoring: Chapter 10 – Complete Web Monitoring
-<a href="http://archive.oreilly.com/pub/a/web-development/excerpts/9780596155131/chapter-10.html">http://archive.oreilly.com/pub/a/web-development/excerpts/9780596155131/chapter-10.html</a>
-A chapter excerpted from O’Reilly’s <a href="http://shop.oreilly.com/product/9780596155148.do">Complete Web Monitoring</a>.
-1. Denial-of-service attack
-<a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">https://en.wikipedia.org/wiki/Denial-of-service_attack</a>
-Wikipedia article
-1. HTTP Strict Transport Security
-<a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</a>
-Wikipedia article
-1. Forward secrecy
-<a href="https://en.wikipedia.org/wiki/Forward_secrecy">https://en.wikipedia.org/wiki/Forward_secrecy</a>
-Wikipedia article
-1. Building Multi-tenant Application Delivery Solutions for Cloud Service Providers
-<a href="https://avinetworks.com/media/pdfs/Application_Delivery_Solutions_for_Cloud_Service_Providers.pdf">https://avinetworks.com/media/pdfs/Application_Delivery_Solutions_for_Cloud_Service_Providers.pdf</a>
-Intel® Network Builders Solution Brief
-1. Perfect Forward Secrecy for iOS9
-<a href="https://www.youtube.com/watch?v=5yeZ3h7i4p4">https://www.youtube.com/watch?v=5yeZ3h7i4p4</a>
-Avi Networks YouTube Channel video, Nathan McMahon, 7Oct2015, 20:21
-1. Webinar: Elastic L4 - L7 Network Services for OpenStack Private Cloud
-<a href="https://www.youtube.com/watch?v=ryxWZTuqGjo">https://www.youtube.com/watch?v=ryxWZTuqGjo</a>
-Avi Networks YouTube Channel video, Praveen Yalangandula, OpenStack Architect, 7May2015, 37:10
-1. Webinar: SSL Everywhere
-<a href="https://www.youtube.com/watch?v=0Jtpq36-O-Y">https://www.youtube.com/watch?v=0Jtpq36-O-Y</a>
-Avi Networks YouTube Channel video, Nathan McMahon, 7May2015, 29:36
-1. Webinar: Poor Application Performance is not a Network Issue
-<a href="https://www.youtube.com/watch?v=sZ2Xe33yetY">https://www.youtube.com/watch?v=sZ2Xe33yetY</a>
-Avi Networks YouTube Channel video, Ashish Shah, 7May2015
-1. SSL Everywhere
-<a href="http://info.avinetworks.com/ssl-everywhere-tn">http://info.avinetworks.com/ssl-everywhere-tn</a>
-Avi Networks Tech Note
-1. Avi Vantage Platform Software-defined Application Services datasheet
-<a href="http://info.avinetworks.com/software-load-balancer-datasheet">http://info.avinetworks.com/software-load-balancer-datasheet</a>
-Data sheet
-1. gzip
-<a href="https://en.wikipedia.org/wiki/Gzip">https://en.wikipedia.org/wiki/Gzip</a>
-Wikipedia article
-1. Web cache
-<a href="https://en.wikipedia.org/wiki/Web_cache">https://en.wikipedia.org/wiki/Web_cache</a>
-Wikipedia article
-1. Web Caching website
-<a href="http://www.web-caching.com/welcome.html">http://www.web-caching.com/welcome.html</a>
-Site dedicated to providing a comprehensive guide to the resources about and in support of caching and content delivery on the World Wide Web
-1. Difference Between Virtual Service and Virtual IP
-<a href="/docs/latest/difference-between-virtual-service-and-virtual-ip">/difference-between-virtual-service-and-virtual-ip/</a>
-1. Why Hypervisor Reports High CPU Utilization of Service Engine
-<a href="/docs/latest/hypervisor-reports-high-cpu-utilization-of-service-engine">/hypervisor-reports-high-cpu-utilization-of-service-engine/</a>
-1. Real Time Metrics Not Updating Frequently
-<a href="/real-time-metrics-not-updating-frequently/">/real-time-metrics-not-updating-frequently/</a>
-1. How the New Connections Metric Is Calculated
-<a href="/docs/latest/new-connections-metric">/new-connections-metric/</a>
-1. Enable Navigation Timing for Client Insights
-<a href="/docs/latest/enable-client-insights-navigation-timing">/enable-client-insights-navigation-timing/</a>
-1. Determine VS Throughput from the API
-<a href="/docs/latest/determine-vs-throughput-from-the-api">/determine-vs-throughput-from-the-api/</a>
-1. Disable a Virtual Service
-<a href="/docs/latest/disable-a-virtual-service">/disable-a-virtual-service/</a>
-1. Rate Shaping and Throttling Options
-<a href="/docs/latest/rate-shaping-and-throttling-options">/rate-shaping-and-throttling-options/</a>
-1. Geo Location Database
-<a href="/docs/latest/geo-location-database">/geo-location-database/</a>
-1. Overview of HTTP Cache
-<a href="/docs/latest/overview-of-http-cache">/overview-of-http-cache/</a>
-1. DDoS Attack Mitigation: What Vantage Protects Against
-<a href="/docs/latest/ddos-attacks-mitigated">/ddos-attacks-mitigated/</a>
-1. Block an IP Address From Access to a Virtual Service
-<a href="/docs/latest/block-an-ip-address-to-a-virtual-service">/block-an-ip-address-to-a-virtual-service/</a>
-1. SNAT Source Port Exhaustion
-<a href="/snat-source-port-exhaustion/">/snat-source-port-exhaustion/</a>
-1. How a “Network DVR” Can Simplify Troubleshooting
-<a href="https://blog.avinetworks.com/troubleshooting-application-problems-by-looking-at-network-traffic">https://blog.avinetworks.com/troubleshooting-application-problems-by-looking-at-network-traffic</a>
-Blog entry
-1. Avi Networks Configuration Guide
-<a href="/docs/configuration-guide/">/docs/configuration-guide/</a>
-Configuration guide on Avi Networks Knowledge Base
-1. Events That Trigger Significant Logs
-<a href="/docs/latest/events-that-trigger-significant-logs">/events-that-trigger-significant-logs/</a>
-Knowledge Base article
-1. Avi Networks Demo: End to End Timing and Anomaly Detection
-<a href="https://www.youtube.com/watch?v=dyZcKdcnh0U">https://www.youtube.com/watch?v=dyZcKdcnh0U</a>
-Avi Networks YouTube Channel video, Nathan McMahon, 10Dec2014, 2:42
-1. Avi Networks DataScript Guide
-<a href="/docs/datascript-guide/">/docs/datascript-guide/</a>
-1. Overview of DataScript
-<a href="/docs/latest/overview-of-datascript">/overview-of-datascript/</a>
-1. DataScript: Troubleshooting Rules
-<a href="/docs/latest/datascript-troubleshooting-rules">/datascript-troubleshooting-rules/</a>
-1. DataScript: Execution Priority
-<a href="/docs/latest/datascript-execution-priority">/datascript-execution-priority/</a>
-1. Create a Virtual Service
-<a href="/docs/configuration-guide/applications/virtual-services/create-virtual-service/">/docs/configuration-guide/applications/virtual-services/create-virtual-service/</a>
-1. DataScript: Functions
-<a href="/docs/latest/datascript-functions">/datascript-functions/</a>
-1. DataScript: Events
-<a href="/docs/latest/datascript-events">/datascript-events/</a>
-1. DataScript: Constants
-<a href="/docs/latest/datascript-constants">/datascript-constants/</a>
-1. DataScript: Operators
-<a href="/docs/latest/datascript-operators">/datascript-operators/</a>
-1. DataScript: Precedence
-<a href="/docs/datascript-guide/datascript-precedence/">/docs/datascript-guide/datascript-precedence/</a>
-1. DataScript: Constructs
-<a href="/docs/datascript-guide/datascript-constructs/">/docs/datascript-guide/datascript-constructs/</a>
-1. App Transport Security
-<a href="/docs/latest/app-transport-security">/app-transport-security/</a>
-1. Notification of SSL Certificate Expiration
-<a href="/docs/latest/notification-of-ssl-certificate-expiration">/notification-of-ssl-certificate-expiration/</a>
-1. Configure Stronger SSL Cipher Strength
-<a href="/docs/latest/configure-stronger-ssl-cipher-strength">/configure-stronger-ssl-cipher-strength/</a>
-1. Rewinding Network Events to Detect Anomalies
-<a href="https://blog.avinetworks.com/network-anomaly-detection-blog">https://blog.avinetworks.com/network-anomaly-detection-blog</a>
-Blog entry
-1. Operations &gt; Alerts &gt; Alert Actions
-<a href="/docs/latest/alert-actions">/alert-actions/</a>
-1. Installing the LBaaS Driver CLI Shell (OpenStack with Keystone)
-<a href="/docs/latest/installing-the-lbaas-driver-cli-shell-openstack">/installing-the-lbaas-driver-cli-shell-openstack/</a>
-1. Avi Networks Software Load Balancers and Cisco ACI
-<a href="https://avinetworks.com/media/pdfs/Avi-Networks-Software-Load-Balancers.pdf">https://avinetworks.com/media/pdfs/Avi-Networks-Software-Load-Balancers.pdf</a>
-Avi Networks Marketing “2-pager”
-1. Self-Service, Multi-Tenant, L2-L7 Networks with Cisco ACI/APIC and Avi Networks
-<a href="https://avinetworks.com/media/pdfs/Application_Delivery_for_Cisco_ACI.pdf">https://avinetworks.com/media/pdfs/Application_Delivery_for_Cisco_ACI.pdf</a>
-Avi Networks Solution Brief
-1. Avi Networks Cloud Application Delivery Platform Integration with Cisco Application Centric Infrastructure
-<a href="https://avinetworks.com/media/pdfs/Avi_Networks_CADP_Cisco_ACI_TB.pdf">https://avinetworks.com/media/pdfs/Avi_Networks_CADP_Cisco_ACI_TB.pdf</a>
-Avi Networks Technical Brief
-1. Avi Vantage 15.3 for Cisco Application Policy Infrastructure Installation Guide
-<a href="https://avinetworks.com/media/pdfs/Avi_Vantage_Installation_Guide_Cisco_APIC_v15.3.pdf">https://avinetworks.com/media/pdfs/Avi_Vantage_Installation_Guide_Cisco_APIC_v15.3.pdf</a>
-Avi Networks Installation Guide
-1. Autoscale Service Engineshttps://kb.avinetworks.com/autoscale-service-engines/
-1. Overview of Vantage Security
-<a href="/docs/latest/overview-of-vantage-security">/overview-of-vantage-security/</a>
-1. Impact of a Controller Failure
-<a href="/docs/latest/impact-of-a-controller-failure">/impact-of-a-controller-failure/</a>
-1. Controller-to-Service-Engine Communication
-<a href="/docs/latest/controller-to-service-engine-communication">/controller-to-service-engine-communication/</a>
-1. Controller Cluster iP
-<a href="/2015/11/28/controller-cluster-ip/">/controller-cluster-ip/</a>
-1. Back Up the Configuration
-<a href="/docs/latest/backup-the-configuration">/backup-the-configuration/</a>
-1. Anti-Affinity for Service Engine Placement
-<a href="/docs/latest/anti-affinity-for-service-engine-placement">/anti-affinity-for-service-engine-placement/</a>
-1. Definition of Throughput
-<a href="/docs/latest/definition-of-throughput">/definition-of-throughput/</a>
-1. Servers Flapping Up/Down
-<a href="/docs/latest/servers-flapping-up-down">/servers-flapping-up-down/</a>
-1. Orchestrator Access Modes
-<a href="/docs/latest/orchestrator-access-modes">/orchestrator-access-modes/</a>
-1. Deploy SEs in Different Data Centers From Controllers
-<a href="/docs/latest/deploy-ses-in-different-data-centers-from-controllers">/deploy-ses-in-different-data-centers-from-controllers/</a>
-1. Events List<a href="/docs/latest/events-list">/events-list</a>
-1. Metrics List<a href="/docs/latest/metrics-list">/metrics-list</a>
-1. Metrics Retention Period
-<a href="/docs/latest/metrics-retention-period">/metrics-retention-period/</a>
-1. Why Real-time Metrics Updates Slow Down After Deployment
-<a href="/docs/latest/real-time-metrics-update">/real-time-metrics-update/</a>
-1. How the New Connections Metric Is Calculated
-<a href="/docs/latest/new-connections-metric">/new-connections-metric/</a>
-1. Software-Defined Application Services – Autoscale
-<a href="https://www.youtube.com/watch?v=4BAkRkMTydk">https://www.youtube.com/watch?v=4BAkRkMTydk</a>
-Avi Networks YouTube channel video
-1. Load Balancing Needs a New Architecture
-<a href="https://www.youtube.com/watch?v=o3n0pbgeDv8">https://www.youtube.com/watch?v=o3n0pbgeDv8</a>
-Avi Networks YouTube channel video
-1. Building Application Services for Containers
-<a href="https://www.youtube.com/watch?v=1shr0I0UxAY">https://www.youtube.com/watch?v=1shr0I0UxAY</a>
-Avi Networks YouTube channel video
-1. Software-Defined Application Services – Autoscale
-<a href="https://www.youtube.com/watch?v=4BAkRkMTydk">https://www.youtube.com/watch?v=4BAkRkMTydk</a>
-Avi Networks YouTube channel video
-1. EC Versus RSA Certificate Priority
-<a href="/docs/latest/ecc-versus-rsa-certificate-priority">/ecc-versus-rsa-certificate-priority/</a>
-1. Purge an Object From HTTP Cache
-<a href="/docs/latest/purge-an-object-from-http-cache">/purge-an-object-from-http-cache/</a>
-1. HTTP Response Policy
-<a href="/docs/latest/http-response-policy">/http-response-policy/</a>
-1. HTTP Request Policy
-<a href="/docs/latest/http-request-policy">/http-request-policy/</a>
-1. HTTP Security Policy
-<a href="/docs/latest/http-security-policy">/http-security-policy/</a>
-1. Select Servers by Network
-<a href="/docs/latest/select-servers-by-network">/select-servers-by-network/</a>
-1. Reasons Servers Can Be Marked Down
-<a href="/docs/latest/why-is-a-server-marked-down">/why-is-a-server-marked-down/</a>
-1. Health Monitor Profile
-<a href="/docs/configuration-guide/templates/profiles/health-monitor-profile/">/docs/configuration-guide/templates/profiles/health-monitor-profile/</a>
-1. Virtual Service Scaling
-<a href="/docs/configuration-guide/applications/vs-scaling/">/docs/configuration-guide/applications/vs-scaling/</a>
-1. All Tenants View
-<a href="/docs/latest/all-tenants-view">/all-tenants-view/</a>
-1. Avi Vantage Installation on Nutanix Acropolis Hypervisor
-<a href="/docs/latest/vantage-installation-on-nutanix-acropolis-hypervisor">/vantage-installation-on-nutanix-acropolis-hypervisor/</a>
-1. Clickjacking Protection
-<a href="/docs/latest/clickjacking-protection">/clickjacking-protection/</a>
-1. VRF Support for vCenter Deployments
-<a href="/docs/latest/vrf-support-for-vcenter-deployments">/vrf-support-for-vcenter-deployments/</a>
-1. Installing Avi Vantage for a Linux Server Cloud
-<a href="/docs/latest/installing-avi-vantage-for-a-linux-server-cloud">/installing-avi-vantage-for-a-linux-server-cloud/</a>
-1. Install Avi Vantage on Laptop with Fusion
-<a href="/docs/latest/install-vantage-on-laptop-with-fusion">/install-vantage-on-laptop-with-fusion/</a>
-1. Logging All Headers in Client-Server HTTP Traffic
-<a href="/docs/latest/logging-all-headers-in-client-server-http-traffic">/logging-all-headers-in-client-server-http-traffic/</a>
-1. LDAP Authentication Profile Testing
-<a href="/docs/latest/ldap-auth-profile-test">/ldap-auth-profile-test/</a>
-1. VLAN Configuration on Bare Metal
-<a href="/docs/latest/vlan-configuration-on-bare-metal">/vlan-configuration-on-bare-metal/</a>
-1. Upgrading the Vantage Software
-<a href="/docs/latest/upgrading-the-vantage-software">/upgrading-the-vantage-software/</a>
-1. Mesos: Use of SE Groups Based on Application Resource Needs
-<a href="/docs/latest/mesos-service-engine-group-for-front-end-applications">/mesos-service-engine-group-for-front-end-applications/</a>
-1. DNS-Based Service Discovery for Mesos
-<a href="/docs/latest/service-discovery-for-mesos">/service-discovery-for-mesos/</a>
-1. BGP Support for Virtual Services
-<a href="/docs/latest/bgp-support-for-virtual-services">/bgp-support-for-virtual-services/</a>
-1. A/B Test Pool Feature
-<a href="/docs/latest/ab-pool-feature">/ab-pool-feature/</a>
-1. Installing Avi Vantage with Mesosphere DCOS (On-Premises)
-<a href="/docs/latest/installing-avi-vantage-with-mesosphere-dcos-on-premises">/installing-avi-vantage-with-mesosphere-dcos-on-premises/</a>
-1. Installing Mesos in AWS Using the CLI
-<a href="/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/">/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/</a>
-1. Installing Avi Vantage for OpenStack
-<a href="/docs/latest/installing-avi-vantage-for-openstack-16-1">/installing-avi-vantage-for-openstack-16-1/</a>
-1. Installing Avi Vantage for Cisco Application Policy Infrastructure
-<a href="/docs/latest/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1">/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1/</a>
-1. Installing Avi Vantage for VMware vCenter
-<a href="/docs/latest/installing-avi-vantage-for-vmware-vcenter_16_1">/installing-avi-vantage-for-vmware-vcenter_16_1/</a>
-1. Full-Chain CRL Checking for Client Certificate Validation
-<a href="/docs/latest/crl-validation-options">/crl-validation-options/</a>
-1. HTTP Request Queuing
-<a href="/docs/latest/http-request-queuing">/http-request-queuing/</a>
-1. HTTP Basic Auth for API Queries
-<a href="/docs/latest/http-basic-auth-for-api-queries">/http-basic-auth-for-api-queries/</a>
-1. Installing the Vantage CLI Shell
-<a href="/docs/latest/cli-installing-the-cli-shell">/cli-installing-the-cli-shell/</a>
-1. Public Key Management on SE Hosts
-<a href="/docs/latest/public-key-management-on-se-hosts">/public-key-management-on-se-hosts/</a>
-1. Mesos in AWS: Deploying a North-South Application
-<a href="/2016/02/16/mesos-in-aws-deploying-a-north-south-service/">/2016/02/16/mesos-in-aws-deploying-a-north-south-service/</a>
-1. Installing Mesos in AWS with a CloudFormation Template
-<a href="/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/">/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/</a>
-1. Creating Applications with Mesos / Marathon Labels
-<a href="/docs/latest/creating-applications-in-mesos-with-marathon-labels">/creating-applications-in-mesos-with-marathon-labels/</a>
-1. GSLB Integration with F5 GTM
-<a href="/docs/latest/gslb-integration-with-f5-gtm">/gslb-integration-with-f5-gtm/</a>
-1. Installing Avi Vantage in an AWS-hosted Mesos Cluster
-<a href="/docs/latest/installing-avi-vantage-in-an-aws-hosted-mesos-cluster">/installing-avi-vantage-in-an-aws-hosted-mesos-cluster/</a>
-1. Avi Vantage Interaction with vCenter
-<a href="/docs/latest/vantage-interaction-with-vcenter">/vantage-interaction-with-vcenter/</a>
-1. Reset an OpenStack Default Cloud
-<a href="/docs/latest/reset-an-openstack-default-cloud">/reset-an-openstack-default-cloud/</a>
-1. Strong Password Enforcement
-<a href="/docs/latest/strong-password-enforcement">/strong-password-enforcement/</a>
-1. Non-Uniform Round-Robin Traffic Distribution
-<a href="/docs/latest/issues-with-round-robin-lb">/issues-with-round-robin-lb/</a>
-1. Support Terms and Conditions
-<a href="/docs/latest/support-terms-and-conditions">/support-terms-and-conditions/</a>
-1. Server Name Indication
-<a href="/docs/latest/server-name-indication">/server-name-indication/</a>
-1. Issues With NTLM Authentication
-<a href="/docs/latest/issues-with-ntlm-authentication">/issues-with-ntlm-authentication/</a>
-1. Clustering Controllers From Different Networks
-<a href="/docs/latest/clustering-controllers-from-different-networks">/clustering-controllers-from-different-networks/</a>
-1. Network Reachability
-<a href="/docs/latest/network-reachability">/network-reachability/</a>
-1. Analytics Profile
-<a href="/docs/configuration-guide/templates/profiles/analytics-profile/">/docs/configuration-guide/templates/profiles/analytics-profile/</a>
-1. Navigation Timing
-<a href="https://www.w3.org/TR/navigation-timing/">https://www.w3.org/TR/navigation-timing/</a>
-This specification defines an interface for web applications to access timing information related to navigation and elements.
-1. Virtual Service Client Information
-<a href="/docs/configuration-guide/applications/virtual-services/vs-clients/">/docs/configuration-guide/applications/virtual-services/vs-clients/</a>
-1. Redirect HTTP to HTTPS
-<a href="/docs/latest/redirect-http-to-https">/redirect-http-to-https/</a>
-1. Distributed Denial of Service
-<a href="/docs/latest/distributed-denial-of-service">https://kb.avinetworks.com/distributed-denial-of-service/</a>
-1. Alerts Overview
-<a href="/docs/latest/alerts-overview">/alerts-overview/</a>
-1. Example Custom Alert Notification
-<a href="/docs/latest/example-custom-alert-notification">/example-custom-alert-notification/</a>
-1. API – Configuring the Avi Controller Cluster
-<a href="/docs/latest/api-configuring-a-controller-cluster">/api-configuring-a-controller-cluster/</a>
-1. Realtime Screaming Metrics
-<a href="https://blog.avinetworks.com/tech/screaming-metrics">https://blog.avinetworks.com/tech/screaming-metrics</a>
-Avi Networks blog entry
-1. SE Memory Consumption
-<a href="/docs/latest/se-memory-consumption">/se-memory-consumption/</a>
-1. Events Overview
-https://kb.avinetworks.com/events-overview/
-1. Notifications Overview
-https://kb.avinetworks.com/notifications-overview/
-1. Alert Config
-<a href="/docs/latest/alert-config">/alert-config/</a>
-1. Mesos – Graceful Blue-Green Deployment Using an A/B Pool
-<a href="/docs/latest/mesos-graceful-blue-green-deployment-using-an-ab-pool">/mesos-graceful-blue-green-deployment-using-an-ab-pool/</a>
-1. Rethinking Application Security with Microservices Architectures by Ranga Rajagopalan
-<a href="http://www.darkreading.com/endpoint/rethinking-application-security-with-microservices-architectures-/a/d-id/1325155">http://www.darkreading.com/endpoint/rethinking-application-security-with-microservices-architectures-/a/d-id/1325155</a>
-InformationWeek DARKReading article, 15Apr2016
-1. End of Support Schedule
-<a href="/docs/latest/end-of-support-schedule">/end-of-support-schedule/</a>
-1. Tenants Versus SE Group Isolation
-<a href="/docs/latest/tenants-versus-se-group-isolation">/tenants-versus-se-group-isolation/</a>
-1. Sizing Service Engines
-<a href="/docs/latest/sizing-service-engines">/sizing-service-engines/</a>
-1. Virtual Service Migration Impact on Existing Connections
-<a href="/docs/latest/vs-migration-impact-on-existing-connections">/vs-migration-impact-on-existing-connections/</a>
-1. Server Requires Original Client Source IP Address
-<a href="/docs/latest/server-requires-original-client-source-ip-address">/server-requires-original-client-source-ip-address/</a>
-1. API – HTTP Patch Support
-<a href="/docs/latest/api-http-patch-support">/api-http-patch-support/</a>
-1. CLI: Virtual Service and Pool Creation
-<a href="/docs/latest/virtual-service-and-pool-create-from-cli">/virtual-service-and-pool-create-from-cli/</a>
-1. IP Address Management / VIP Auto-Allocation in Linux Server Cloud or No Orchestrator Clouds
-<a href="/ip-auto-allocation-for-vips-and-applications-linux-server-no-access/">/ip-auto-allocation-for-vips-and-applications-linux-server-no-access/</a>
-1. Creating Applications With Mesos / Marathon Labels
-<a href="/docs/latest/creating-applications-in-mesos-with-marathon-labels">/creating-applications-in-mesos-with-marathon-labels/</a>
-1. Add Servers to Pool by DNS
-<a href="/docs/latest/add-servers-to-pool-by-dns">/add-servers-to-pool-by-dns/</a>
-1. Assign / Update VIP Using DNS
-<a href="/docs/latest/virtual-server-using-dns-for-vip-address">/virtual-server-using-dns-for-vip-address/</a>
-1. Troubleshooting Avi Vantage Deployment Into VMware
-<a href="/docs/latest/troubleshooting-vmware-deployment">/troubleshooting-vmware-deployment/</a>
-1. Overview of SSL Termination
-avinetworks.com/overview-of-ssl-termination/
-1. SSL/TLS Profile
-<a href="/docs/latest/ssl-tls-profile">/ssl-tls-profile/</a>
-1. SSL Certificates
-<a href="/docs/latest/ssl-certificates">/ssl-certificates/</a>
-1. Client SSL Certificate Validation
-<a href="/docs/latest/client-ssl-certificate-validation">/client-ssl-certificate-validation/</a>
-1. Physical Security for SSL Keys
-<a href="/docs/latest/physical-security-for-ssl-keys">/physical-security-for-ssl-keys/</a>
-1. SSL Performance
-<a href="/docs/latest/ssl-performance">/ssl-performance/</a>
-1. SSL Everywhere
-<a href="/docs/latest/ssl-everywhere">/ssl-everywhere/</a>
-1. SSL Visibility and Troubleshooting
-<a href="/docs/latest/ssl-visibility-and-troubleshooting">/ssl-visibility-and-troubleshooting/</a>
-1. Certificate Management Integration for CSR Automation
-<a href="/docs/latest/certificate-management-integration-for-csr-automation">/certificate-management-integration-for-csr-automation/</a>
-1. Overview of Server Persistence
-<a href="/docs/latest/overview-of-server-persistence">/overview-of-server-persistence</a>
-1. HTTP Cookie Persistence
-<a href="/docs/latest/http-cookie-persistence">/http-cookie-persistence/</a>
-1. Client IP Persistence
-<a href="/docs/latest/client-ip-persistence">/client-ip-persistence/</a>
-1. Custom HTTP Header Persistence
-<a href="/docs/latest/custom-http-header-persistence">/custom-http-header-persistence/</a>
-1. TLS Persistence
-<a href="/docs/latest/tls-persistence">/tls-persistence/</a>
-1. App Cookie Persistence
-<a href="/docs/latest/app-cookie-persistence">/app-cookie-persistence/</a>
-1. Protocol Ports Used by Vantage for Management Communication
-<a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication">/protocol-ports-used-by-avi-vantage-for-management-communication/</a>
-1. IAM Role Setup for Installation into AWS
-<a href="/docs/latest/iam-role-setup-for-installation-into-aws">/iam-role-setup-for-installation-into-aws/</a>
-1. DC/OS and Avi Vantage: An Operating System and Application Services at the Scale of the Data Center
-<a href="https://blog.avinetworks.com/dcos-and-application-services-at-the-scale-of-the-data-center">https://blog.avinetworks.com/dcos-and-application-services-at-the-scale-of-the-data-center</a>
-Avi Networks blog entry
-1. Avi Integration with Mesosphere [AWS CloudFormation] <a href="https://youtu.be/4p4L5dtgRis">https://youtu.be/4p4L5dtgRis</a>
-Avi Networks YouTube Channel video, Swapnil Raut, 20Oct2015, 8:57
-1. SNMP Support in Avi Vantage
-<a href="/docs/latest/snmp-support-in-avi-vantage">/snmp-support-in-avi-vantage/</a>
-1. Securing Management IP Access
-<a href="/docs/latest/securing-management-ip-access">/securing-management-ip-access/</a>
-1. Mesos – Graceful App Migration in DC/OS Cluster
-<a href="/docs/latest/mesos-graceful-app-migration-in-dcos-cluster">/mesos-graceful-app-migration-in-dcos-cluster/</a>
-1. Custom Persistence with DataScript
-<a href="/docs/latest/custom-persistence-with-datascript">/custom-persistence-with-datascript/</a>
-1. Terms of Avi Vantage Software License
-<a href="/docs/latest/terms-of-avi-vantage-license">/terms-of-avi-vantage-license/</a>
-1. Legacy HA for Avi Service Engines
-<a href="/docs/latest/legacy-ha-for-avi-service-engines">https://kb.avinetworks.com/legacy-ha-for-avi-service-engines/</a>
-1. Static Route Support for VIP and SNAT IP Reachability
-<a href="/docs/latest/static-route-support-for-vip-and-snat-ip-reachability">/static-route-support-for-vip-and-snat-ip-reachability/</a>
-1. TACACS+ for Avi Vantage Users
-<a href="/tacacs-for-avi-vantage-users/">/tacacs-for-avi-vantage-users/</a>
-1. Installing Avi Vantage for CSP-2100
-<a href="/docs/latest/installing-avi-vantage-for-csp-2100">/installing-avi-vantage-for-csp-2100/</a>
-1. Excluding NTLM-generated '401 Unauthorized' Messages from Client Logs
-<a href="/excluding-401-unauthorized-messages-from-ntlm-logs/">/excluding-401-unauthorized-messages-from-ntlm-logs/</a>
-1. Avi Vantage Integration With SafeNet Network HSM
-<a href="/docs/latest/avi-vantage-integration-with-safenet-network-hsm">/avi-vantage-integration-with-safenet-network-hsm/</a>
-1. Avi Networks SDK
-<a href="https://github.com/avinetworks/sdk">https://github.com/avinetworks/sdk</a>
-1. Avi Integration with Rancher OS
-<a href="/docs/latest/avi-vantage-integration-with-rancheros">/avi-vantage-integration-with-rancheros/</a>
-1. Wildcard SNI Matching for Virtual Hosting
-<a href="/docs/latest/wildcard-sni-matching-for-virtual-hosting">/wildcard-sni-matching-for-virtual-hosting/</a>
-1. Overview of Health Monitors
-<a href="/docs/latest/overview-of-health-monitors">/overview-of-health-monitors/</a>
-1. UDP Health Monitor
-<a href="/docs/latest/udp-health-monitor">/udp-health-monitor/</a>
-1. TCP Health Monitor
-<a href="/docs/latest/tcp-health-monitor">/tcp-health-monitor/</a>
-1. External Health Monitor
-<a href="/docs/latest/external-health-monitor">/external-health-monitor/</a>
-1. Ping Health Monitor
-<a href="/docs/latest/ping-health-monitor">/ping-health-monitor/</a>
-1. DNS Health Monitor
-<a href="/docs/latest/dns-health-monitor">/dns-health-monitor/</a>
-1. HTTP Health Monitor
-<a href="/docs/latest/http-health-monitor">/http-health-monitor/</a>
-1. HTTPS Health Monitor
-<a href="/docs/latest/https-health-monitor">/https-health-monitor/</a>
-1. Health Monitor Troubleshooting
-<a href="/docs/latest/health-monitor-troubleshooting">/health-monitor-troubleshooting/</a>
-1. Disable SE
-<a href="/docs/latest/disable-se">/disable-se/</a>
-1. Manually Validate Server Health
-<a href="/docs/latest/manually-validate-server-health">/manually-validate-server-health/</a>
-1. Packet Capture
-<a href="/docs/latest/packet-capture">/packet-capture/</a>
-1. Configure Controller HA Cluster
-<a href="/docs/latest/configure-controller-ha-cluster">/configure-controller-ha-cluster/</a>
-1. AWS Linux Cloud With No-access Mode
-<a href="/docs/latest/aws-linux-cloud-with-no-access-mode">/aws-linux-cloud-with-no-access-mode/</a>
-1. Installing Avi Vantage With Open DC/OS or Enterprise DC/OS
-<a href="/docs/latest/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">/installing-avi-vantage-with-open-dcos-or-enterprise-dcos/</a>
-1. Gateway Monitoring for Legacy HA
-<a href="/docs/latest/gateway-monitoring-for-legacy-ha">/gateway-monitoring-for-legacy-ha/</a>
-1. Overview of Vantage High Availability
-<a href="/docs/latest/overview-of-vantage-high-availability">/overview-of-vantage-high-availability/</a>
-1. Elastic HA for Avi Service Engines
-<a href="/cluster-ha-for-avi-service-engines/">/cluster-ha-for-avi-service-engines/</a>
-1. Avi Service Engine Group Options
-<a href="/docs/latest/avi-service-engine-group-options">/avi-service-engine-group-options/</a>
-1. Collecting Tech Support Logs
-<a href="/docs/latest/collecting-tech-support-logs">/collecting-tech-support-logs/</a>
-1. Cluster Changes Following Avi Controller Reboot
-<a href="/docs/latest/cluster-operational-changes">/cluster-operational-changes/</a>
-1. Changing Avi Controller Cluster Configuration
-<a href="/docs/latest/changing-avi-controller-cluster-configuration">/changing-avi-controller-cluster-configuration/</a>
-1. Auth Profile
-<a href="/docs/latest/auth-profile">/auth-profile/</a>
-1. Server Autoscale
-<a href="/docs/latest/server-autoscale">/server-autoscale/<br> </a>
-1. Troubleshooting Avi Vantage Integration with Cisco ACI
-<a href="/docs/latest/troubleshooting-vantage-integration-with-cisco-aci">/troubleshooting-vantage-integration-with-cisco-aci/</a>
-1. Support for SNI Extension in TLS Handshakes to Pool Servers
-<a href="/docs/latest/support-for-sni-extension-in-tls-handshakes-to-pool-servers">/support-for-sni-extension-in-tls-handshakes-to-pool-servers/</a>
-1. Configuring a Tag for Auto-created SEs in AWS
-<a href="/docs/latest/configuring-a-tag-for-auto-created-ses-in-aws">/configuring-a-tag-for-auto-created-ses-in-aws/</a>
-1. Layer 4 SSL Support
-<a href="/docs/latest/layer-4-ssl-support">/layer-4-ssl-support/</a>
-1. PROXY Protocol Support
-<a href="http://proxy-protocol-support/">/proxy-protocol-support/</a>
-1. Multi-level Domain Support for SSL
-<a href="/docs/latest/multi-level-domain-support-for-ssl">/multi-level-domain-support-for-ssl/</a>
-1. Updating the Configuration Following Avi Controller IP Address Change
-<a href="/docs/latest/ctlr-cfg-update-after-ip-change">/ctlr-cfg-update-after-ip-change/</a>
-1. Avi Controller Analytics Page
-<a href="/docs/latest/avi-controller-analytics-page">/avi-controller-analytics-page/</a>
-1. Web Interface Access Settings
-<a href="/docs/latest/web-interface-access-settings">/web-interface-access-settings/</a>
-1. SSH Users and Keys
-<a href="/docs/latest/ssh-users-and-keys">/ssh-users-and-keys/</a>
-1. Email / SMTP Settings
-<a href="/docs/latest/email-smtp">/email-smtp/</a>
-1. DNS / NTP Settings
-<a href="/docs/latest/dns-ntp-settings">/dns-ntp-settings/</a>
-1. Hardware Security Module Package Upload
-<a href="/docs/latest/upload-hsm-pkg">/upload-hsm-pkg/</a>
-1. Login Banner and Message of the Day
-<a href="/docs/latest/login-banner-and-message-of-the-day">/login-banner-and-message-of-the-day/</a>
-1. User Roles
-<a href="/docs/latest/user-account-roles">/user-account-roles/</a>
-1. Tenants
-<a href="/docs/latest/tenants">/tenants/</a>
-1. User Accounts
-<a href="http://user-accounts/">/user-accounts/</a>
-1. Super User Accounts
-<a href="/docs/latest/super-user-accounts">/super-user-accounts/</a>
-1. Switch Between Tenants
-<a href="/docs/latest/switch-between-tenants">/switch-between-tenants/</a>
-1. User Account Self Service
-<a href="/docs/latest/user-account-self-service">/user-account-self-service/</a>
-1. OpenStack/AWS - Forcing Deletion of Virtual Service Ports in Neutron
-<a href="/docs/latest/openstack-forcing-deletion-of-virtual-service-ports-in-neutron">/openstack-forcing-deletion-of-virtual-service-ports-in-neutron/</a>
-1. Migrating Virtual Services
-<a href="/docs/latest/migrating-virtual-services">/migrating-virtual-services/</a>
-1. Installing Avi Vantage for OpenStack (16.2)
-<a href="/docs/latest/installing-avi-vantage-for-openstack-16-2">/installing-avi-vantage-for-openstack-16-2/</a>
-1. Installing Avi Vantage with Mesosphere DC/OS (16.2)
-<a href="/docs/latest/installing-avi-vantage-with-mesosphere-dcos-16-2">/installing-avi-vantage-with-mesosphere-dcos-16-2/</a>
-1. Installing Avi Vantage in Amazon Web Services (16.2)
-<a href="/docs/latest/installing-avi-vantage-in-amazon-web-services-16-2">/installing-avi-vantage-in-amazon-web-services-16-2/</a>
-1. Avi Controller Cluster FAQ
-<a href="/avi-controller-cluster-faq/">/avi-controller-cluster-faq/</a>
-1. Detecting Server Maintenance Mode with a Health Monitor
-<a href="/docs/latest/detecting-server-maintenance-mode-with-a-health-monitor">/detecting-server-maintenance-mode-with-a-health-monitor/</a>
-1. Disabling Back-end Servers for Maintenance
-<a href="/docs/latest/disabling-back-end-servers-for-maintenance">/disabling-back-end-servers-for-maintenance/</a>
-1. Rolling Back the System
-<a href="/docs/latest/rolling-back-the-system">/rolling-back-the-system/</a>
-1. IPAM and DNS Support
-<a href="/docs/latest/vip-allocation-using-ipam-or-dns">/vip-allocation-using-ipam-or-dns/</a>
-1. Backup and Restore of Avi Vantage Configuration
-<a href="/docs/latest/backup-and-restore-of-avi-vantage-configuration">/backup-and-restore-of-avi-vantage-configuration/</a>
-1. Avi Vantage License Management
-<a href="/docs/latest/avi-vantage-license-management">/avi-vantage-license-management/</a>
-1. Avi SE Behavior on Gateway Monitor Failure
-<a href="/docs/latest/avi-se-behavior-on-gateway-monitor-failure">/avi-se-behavior-on-gateway-monitor-failure/</a>
-1. Comparing Past and Present SE Group HA Modes
-<a href="/docs/latest/comparing-past-and-present-se-group-ha-modes">/comparing-past-and-present-se-group-ha-modes/</a>
+<ol> 
+ <li>Avi Vantage Platform: Architecture<br> <a href="http://cdn2.hubspot.net/hubfs/443964/Avi_Website_Resource_Center/White_Paper___Avi_Vantage_Platform_Architecture.pdf?submissionGuid=1abca48c-1f8f-44b6-baf2-3604e78f8a54">http://cdn2.hubspot.net/hubfs/443964/Avi_Website_Resource_Center/White_Paper___Avi_Vantage_Platform_Architecture.pdf?submissionGuid=1abca48c-1f8f-44b6-baf2-3604e78f8a54</a><br> Whitepaper</li> 
+ <li>Application Delivery in OpenStack with Avi Networks Application Delivery Controller<br> <a href="https://avinetworks.com/media/pdfs/Avi_Networks_Solution_Brief_OpenStack.pdf">https://avinetworks.com/media/pdfs/Avi_Networks_Solution_Brief_OpenStack.pdf</a><br> Solution Brief</li> 
+ <li>Multitenancy<br> <a href="https://blog.avinetworks.com/knowledgebase/multi-tenancy">https://blog.avinetworks.com/knowledgebase/multi-tenancy</a><br> Blog entry</li> 
+ <li>Introduction to Virtual Service High Availability<br> <a href="https://blog.avinetworks.com/knowledgebase/introduction-to-virtual-service-high-availability">https://blog.avinetworks.com/knowledgebase/introduction-to-virtual-service-high-availability</a><br> Blog entry</li> 
+ <li>Enable End-to-End SSL for Your OpenStack VMs<br> <a href="https://blog.avinetworks.com/enable-end-to-end-ssl-for-your-openstack-vms">https://blog.avinetworks.com/enable-end-to-end-ssl-for-your-openstack-vms</a><br> Blog entry</li> 
+ <li>The Hardware Load Balancer Bubble<br> <a href="https://blog.avinetworks.com/the-hardware-load-balancer-bubble">https://blog.avinetworks.com/the-hardware-load-balancer-bubble</a><br> Blog entry</li> 
+ <li>Avi CLI Guide<br> <a href="/docs/cli-guide/">/docs/cli-guide/</a></li> 
+ <li>KVM Performance Guide on Avi’s internal Wiki (and eventually on Customer Portal, per Ashish:<br> <a href="https://drive.google.com/open?id=0BwnRttbMEdp-Tmg0WkxiUmMwNzg">https://drive.google.com/open?id=0BwnRttbMEdp-Tmg0WkxiUmMwNzg</a></li> 
+ <li>Avi Vantage API Guide<br> <a href="/docs/api-guide/">/docs/api-guide/</a></li> 
+ <li>Continuous Security Insights (CSI) see DDOS attacks in real time<br> <a href="https://youtu.be/PlfGr93cvng">https://youtu.be/PlfGr93cvng</a><br> Avi Networks YouTube Channel video, Nathan McMahon, 29Sep2015, 4:02</li> 
+ <li>Could They Do It? Real User Monitoring: Chapter 10 – Complete Web Monitoring<br> <a href="http://archive.oreilly.com/pub/a/web-development/excerpts/9780596155131/chapter-10.html">http://archive.oreilly.com/pub/a/web-development/excerpts/9780596155131/chapter-10.html</a><br> A chapter excerpted from O’Reilly’s <a href="http://shop.oreilly.com/product/9780596155148.do">Complete Web Monitoring</a>.</li> 
+ <li>Denial-of-service attack<br> <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">https://en.wikipedia.org/wiki/Denial-of-service_attack</a><br> Wikipedia article</li> 
+ <li>HTTP Strict Transport Security<br> <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</a><br> Wikipedia article</li> 
+ <li>Forward secrecy<br> <a href="https://en.wikipedia.org/wiki/Forward_secrecy">https://en.wikipedia.org/wiki/Forward_secrecy</a><br> Wikipedia article</li> 
+ <li>Building Multi-tenant Application Delivery Solutions for Cloud Service Providers<br> <a href="https://avinetworks.com/media/pdfs/Application_Delivery_Solutions_for_Cloud_Service_Providers.pdf">https://avinetworks.com/media/pdfs/Application_Delivery_Solutions_for_Cloud_Service_Providers.pdf</a><br> Intel® Network Builders Solution Brief</li> 
+ <li>Perfect Forward Secrecy for iOS9<br> <a href="https://www.youtube.com/watch?v=5yeZ3h7i4p4">https://www.youtube.com/watch?v=5yeZ3h7i4p4</a><br> Avi Networks YouTube Channel video, Nathan McMahon, 7Oct2015, 20:21</li> 
+ <li>Webinar: Elastic L4 - L7 Network Services for OpenStack Private Cloud<br> <a href="https://www.youtube.com/watch?v=ryxWZTuqGjo">https://www.youtube.com/watch?v=ryxWZTuqGjo</a><br> Avi Networks YouTube Channel video, Praveen Yalangandula, OpenStack Architect, 7May2015, 37:10</li> 
+ <li>Webinar: SSL Everywhere<br> <a href="https://www.youtube.com/watch?v=0Jtpq36-O-Y">https://www.youtube.com/watch?v=0Jtpq36-O-Y</a><br> Avi Networks YouTube Channel video, Nathan McMahon, 7May2015, 29:36</li> 
+ <li>Webinar: Poor Application Performance is not a Network Issue<br> <a href="https://www.youtube.com/watch?v=sZ2Xe33yetY">https://www.youtube.com/watch?v=sZ2Xe33yetY</a><br> Avi Networks YouTube Channel video, Ashish Shah, 7May2015</li> 
+ <li>SSL Everywhere<br> <a href="http://info.avinetworks.com/ssl-everywhere-tn">http://info.avinetworks.com/ssl-everywhere-tn</a><br> Avi Networks Tech Note</li> 
+ <li>Avi Vantage Platform Software-defined Application Services datasheet<br> <a href="http://info.avinetworks.com/software-load-balancer-datasheet">http://info.avinetworks.com/software-load-balancer-datasheet</a><br> Data sheet</li> 
+ <li>gzip<br> <a href="https://en.wikipedia.org/wiki/Gzip">https://en.wikipedia.org/wiki/Gzip</a><br> Wikipedia article</li> 
+ <li>Web cache<br> <a href="https://en.wikipedia.org/wiki/Web_cache">https://en.wikipedia.org/wiki/Web_cache</a><br> Wikipedia article</li> 
+ <li>Web Caching website<br> <a href="http://www.web-caching.com/welcome.html">http://www.web-caching.com/welcome.html</a><br> Site dedicated to providing a comprehensive guide to the resources about and in support of caching and content delivery on the World Wide Web</li> 
+ <li>Difference Between Virtual Service and Virtual IP<br> <a href="/docs/16.2.2/difference-between-virtual-service-and-virtual-ip">/difference-between-virtual-service-and-virtual-ip/</a></li> 
+ <li>Why Hypervisor Reports High CPU Utilization of Service Engine<br> <a href="/docs/16.2.2/hypervisor-reports-high-cpu-utilization-of-service-engine">/hypervisor-reports-high-cpu-utilization-of-service-engine/</a></li> 
+ <li>Real Time Metrics Not Updating Frequently<br> <a href="/real-time-metrics-not-updating-frequently/">/real-time-metrics-not-updating-frequently/</a></li> 
+ <li>How the New Connections Metric Is Calculated<br> <a href="/docs/16.2.2/new-connections-metric">/new-connections-metric/</a></li> 
+ <li>Enable Navigation Timing for Client Insights<br> <a href="/docs/16.2.2/enable-client-insights-navigation-timing">/enable-client-insights-navigation-timing/</a></li> 
+ <li>Determine VS Throughput from the API<br> <a href="/docs/16.2.2/determine-vs-throughput-from-the-api">/determine-vs-throughput-from-the-api/</a></li> 
+ <li>Disable a Virtual Service<br> <a href="/docs/16.2.2/disable-a-virtual-service">/disable-a-virtual-service/</a></li> 
+ <li>Rate Shaping and Throttling Options<br> <a href="/docs/16.2.2/rate-shaping-and-throttling-options">/rate-shaping-and-throttling-options/</a></li> 
+ <li>Geo Location Database<br> <a href="/docs/16.2.2/geo-location-database">/geo-location-database/</a></li> 
+ <li>Overview of HTTP Cache<br> <a href="/docs/16.2.2/overview-of-http-cache">/overview-of-http-cache/</a></li> 
+ <li>DDoS Attack Mitigation: What Vantage Protects Against<br> <a href="/docs/16.2.2/ddos-attacks-mitigated">/ddos-attacks-mitigated/</a></li> 
+ <li>Block an IP Address From Access to a Virtual Service<br> <a href="/docs/16.2.2/block-an-ip-address-to-a-virtual-service">/block-an-ip-address-to-a-virtual-service/</a></li> 
+ <li>SNAT Source Port Exhaustion<br> <a href="/snat-source-port-exhaustion/">/snat-source-port-exhaustion/</a></li> 
+ <li>How a “Network DVR” Can Simplify Troubleshooting<br> <a href="https://blog.avinetworks.com/troubleshooting-application-problems-by-looking-at-network-traffic">https://blog.avinetworks.com/troubleshooting-application-problems-by-looking-at-network-traffic</a><br> Blog entry</li> 
+ <li>Avi Networks Configuration Guide<br> <a href="/docs/16.2.2/configuration-guide">/docs/configuration-guide/</a><br> Configuration guide on Avi Networks Knowledge Base</li> 
+ <li>Events That Trigger Significant Logs<br> <a href="/docs/16.2.2/events-that-trigger-significant-logs">/events-that-trigger-significant-logs/</a><br> Knowledge Base article</li> 
+ <li>Avi Networks Demo: End to End Timing and Anomaly Detection<br> <a href="https://www.youtube.com/watch?v=dyZcKdcnh0U">https://www.youtube.com/watch?v=dyZcKdcnh0U</a><br> Avi Networks YouTube Channel video, Nathan McMahon, 10Dec2014, 2:42</li> 
+ <li>Avi Networks DataScript Guide<br> <a href="/docs/datascript-guide/">/docs/datascript-guide/</a></li> 
+ <li>Overview of DataScript<br> <a href="/docs/16.2.2/overview-of-datascript">/overview-of-datascript/</a></li> 
+ <li>DataScript: Troubleshooting Rules<br> <a href="/docs/16.2.2/datascript-troubleshooting-rules">/datascript-troubleshooting-rules/</a></li> 
+ <li>DataScript: Execution Priority<br> <a href="/docs/16.2.2/datascript-execution-priority">/datascript-execution-priority/</a></li> 
+ <li>Create a Virtual Service<br> <a href="/docs/configuration-guide/applications/virtual-services/create-virtual-service/">/docs/configuration-guide/applications/virtual-services/create-virtual-service/</a></li> 
+ <li>DataScript: Functions<br> <a href="/docs/16.2.2/datascript-functions">/datascript-functions/</a></li> 
+ <li>DataScript: Events<br> <a href="/docs/16.2.2/datascript-events">/datascript-events/</a></li> 
+ <li>DataScript: Constants<br> <a href="/docs/16.2.2/datascript-constants">/datascript-constants/</a></li> 
+ <li>DataScript: Operators<br> <a href="/docs/16.2.2/datascript-operators">/datascript-operators/</a></li> 
+ <li>DataScript: Precedence<br> <a href="/docs/datascript-guide/datascript-precedence/">/docs/datascript-guide/datascript-precedence/</a></li> 
+ <li>DataScript: Constructs<br> <a href="/docs/datascript-guide/datascript-constructs/">/docs/datascript-guide/datascript-constructs/</a></li> 
+ <li>App Transport Security<br> <a href="/docs/16.2.2/app-transport-security">/app-transport-security/</a></li> 
+ <li>Notification of SSL Certificate Expiration<br> <a href="/docs/16.2.2/notification-of-ssl-certificate-expiration">/notification-of-ssl-certificate-expiration/</a></li> 
+ <li>Configure Stronger SSL Cipher Strength<br> <a href="/docs/16.2.2/configure-stronger-ssl-cipher-strength">/configure-stronger-ssl-cipher-strength/</a></li> 
+ <li>Rewinding Network Events to Detect Anomalies<br> <a href="https://blog.avinetworks.com/network-anomaly-detection-blog">https://blog.avinetworks.com/network-anomaly-detection-blog</a><br> Blog entry</li> 
+ <li>Operations &gt; Alerts &gt; Alert Actions<br> <a href="/docs/16.2.2/alert-actions">/alert-actions/</a></li> 
+ <li>Installing the LBaaS Driver CLI Shell (OpenStack with Keystone)<br> <a href="/docs/16.2.2/installing-the-lbaas-driver-cli-shell-openstack">/installing-the-lbaas-driver-cli-shell-openstack/</a></li> 
+ <li>Avi Networks Software Load Balancers and Cisco ACI<br> <a href="https://avinetworks.com/media/pdfs/Avi-Networks-Software-Load-Balancers.pdf">https://avinetworks.com/media/pdfs/Avi-Networks-Software-Load-Balancers.pdf</a><br> Avi Networks Marketing “2-pager”</li> 
+ <li>Self-Service, Multi-Tenant, L2-L7 Networks with Cisco ACI/APIC and Avi Networks<br> <a href="https://avinetworks.com/media/pdfs/Application_Delivery_for_Cisco_ACI.pdf">https://avinetworks.com/media/pdfs/Application_Delivery_for_Cisco_ACI.pdf</a><br> Avi Networks Solution Brief</li> 
+ <li>Avi Networks Cloud Application Delivery Platform Integration with Cisco Application Centric Infrastructure<br> <a href="https://avinetworks.com/media/pdfs/Avi_Networks_CADP_Cisco_ACI_TB.pdf">https://avinetworks.com/media/pdfs/Avi_Networks_CADP_Cisco_ACI_TB.pdf</a><br> Avi Networks Technical Brief</li> 
+ <li>Avi Vantage 15.3 for Cisco Application Policy Infrastructure Installation Guide<br> <a href="https://avinetworks.com/media/pdfs/Avi_Vantage_Installation_Guide_Cisco_APIC_v15.3.pdf">https://avinetworks.com/media/pdfs/Avi_Vantage_Installation_Guide_Cisco_APIC_v15.3.pdf</a><br> Avi Networks Installation Guide</li> 
+ <li>Autoscale Service Engines<u><br> </u><u>https://kb.avinetworks.com/autoscale-service-engines/</u></li> 
+ <li>Overview of Vantage Security<br> <a href="/docs/16.2.2/overview-of-vantage-security">/overview-of-vantage-security/</a></li> 
+ <li>Impact of a Controller Failure<br> <a href="/docs/16.2.2/impact-of-a-controller-failure">/impact-of-a-controller-failure/</a></li> 
+ <li>Controller-to-Service-Engine Communication<br> <a href="/docs/16.2.2/controller-to-service-engine-communication">/controller-to-service-engine-communication/</a></li> 
+ <li>Controller Cluster iP<br> <a href="/2015/11/28/controller-cluster-ip/">/controller-cluster-ip/</a></li> 
+ <li>Back Up the Configuration<br> <a href="/docs/16.2.2/backup-the-configuration">/backup-the-configuration/</a></li> 
+ <li>Anti-Affinity for Service Engine Placement<br> <a href="/docs/16.2.2/anti-affinity-for-service-engine-placement">/anti-affinity-for-service-engine-placement/</a></li> 
+ <li>Definition of Throughput<br> <a href="/docs/16.2.2/definition-of-throughput">/definition-of-throughput/</a></li> 
+ <li>Servers Flapping Up/Down<br> <a href="/docs/16.2.2/servers-flapping-up-down">/servers-flapping-up-down/</a></li> 
+ <li>Orchestrator Access Modes<br> <a href="/docs/16.2.2/orchestrator-access-modes">/orchestrator-access-modes/</a></li> 
+ <li>Deploy SEs in Different Data Centers From Controllers<br> <a href="/docs/16.2.2/deploy-ses-in-different-data-centers-from-controllers">/deploy-ses-in-different-data-centers-from-controllers/</a></li> 
+ <li>Events List<u><br> </u><a href="/docs/16.2.2/events-list">/events-list</a></li> 
+ <li>Metrics List<u><br> </u><a href="/docs/16.2.2/metrics-list">/metrics-list</a></li> 
+ <li>Metrics Retention Period<br> <a href="/docs/16.2.2/metrics-retention-period">/metrics-retention-period/</a></li> 
+ <li>Why Real-time Metrics Updates Slow Down After Deployment<br> <a href="/docs/16.2.2/real-time-metrics-update">/real-time-metrics-update/</a></li> 
+ <li>How the New Connections Metric Is Calculated<br> <a href="/docs/16.2.2/new-connections-metric">/new-connections-metric/</a></li> 
+ <li>Software-Defined Application Services – Autoscale<br> <a href="https://www.youtube.com/watch?v=4BAkRkMTydk">https://www.youtube.com/watch?v=4BAkRkMTydk</a><br> Avi Networks YouTube channel video</li> 
+ <li>Load Balancing Needs a New Architecture<br> <a href="https://www.youtube.com/watch?v=o3n0pbgeDv8">https://www.youtube.com/watch?v=o3n0pbgeDv8</a><br> Avi Networks YouTube channel video</li> 
+ <li>Building Application Services for Containers<br> <a href="https://www.youtube.com/watch?v=1shr0I0UxAY">https://www.youtube.com/watch?v=1shr0I0UxAY</a><br> Avi Networks YouTube channel video</li> 
+ <li>Software-Defined Application Services – Autoscale<br> <a href="https://www.youtube.com/watch?v=4BAkRkMTydk">https://www.youtube.com/watch?v=4BAkRkMTydk</a><br> Avi Networks YouTube channel video</li> 
+ <li>EC Versus RSA Certificate Priority<br> <a href="/docs/16.2.2/ecc-versus-rsa-certificate-priority">/ecc-versus-rsa-certificate-priority/</a></li> 
+ <li>Purge an Object From HTTP Cache<br> <a href="/docs/16.2.2/purge-an-object-from-http-cache">/purge-an-object-from-http-cache/</a></li> 
+ <li>HTTP Response Policy<br> <a href="/docs/16.2.2/http-response-policy">/http-response-policy/</a></li> 
+ <li>HTTP Request Policy<br> <a href="/docs/16.2.2/http-request-policy">/http-request-policy/</a></li> 
+ <li>HTTP Security Policy<br> <a href="/docs/16.2.2/http-security-policy">/http-security-policy/</a></li> 
+ <li>Select Servers by Network<br> <a href="/docs/16.2.2/select-servers-by-network">/select-servers-by-network/</a></li> 
+ <li>Reasons Servers Can Be Marked Down<br> <a href="/docs/16.2.2/why-is-a-server-marked-down">/why-is-a-server-marked-down/</a></li> 
+ <li>Health Monitor Profile<br> <a href="/docs/configuration-guide/templates/profiles/health-monitor-profile/">/docs/configuration-guide/templates/profiles/health-monitor-profile/</a></li> 
+ <li>Virtual Service Scaling<br> <a href="/docs/configuration-guide/applications/vs-scaling/">/docs/configuration-guide/applications/vs-scaling/</a></li> 
+ <li>All Tenants View<br> <a href="/docs/16.2.2/all-tenants-view">/all-tenants-view/</a></li> 
+ <li>Avi Vantage Installation on Nutanix Acropolis Hypervisor<br> <a href="/docs/16.2.2/vantage-installation-on-nutanix-acropolis-hypervisor">/vantage-installation-on-nutanix-acropolis-hypervisor/</a></li> 
+ <li>Clickjacking Protection<br> <a href="/docs/16.2.2/clickjacking-protection">/clickjacking-protection/</a></li> 
+ <li>VRF Support for vCenter Deployments<br> <a href="/docs/16.2.2/vrf-support-for-vcenter-deployments">/vrf-support-for-vcenter-deployments/</a></li> 
+ <li>Installing Avi Vantage for a Linux Server Cloud<br> <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud">/installing-avi-vantage-for-a-linux-server-cloud/</a></li> 
+ <li>Install Avi Vantage on Laptop with Fusion<br> <a href="/docs/16.2.2/install-vantage-on-laptop-with-fusion">/install-vantage-on-laptop-with-fusion/</a></li> 
+ <li>Logging All Headers in Client-Server HTTP Traffic<br> <a href="/docs/16.2.2/logging-all-headers-in-client-server-http-traffic">/logging-all-headers-in-client-server-http-traffic/</a></li> 
+ <li>LDAP Authentication Profile Testing<br> <a href="/docs/16.2.2/ldap-auth-profile-test">/ldap-auth-profile-test/</a></li> 
+ <li>VLAN Configuration on Bare Metal<br> <a href="/docs/16.2.2/vlan-configuration-on-bare-metal">/vlan-configuration-on-bare-metal/</a></li> 
+ <li>Upgrading the Vantage Software<br> <a href="/docs/16.2.2/upgrading-the-vantage-software">/upgrading-the-vantage-software/</a></li> 
+ <li>Mesos: Use of SE Groups Based on Application Resource Needs<br> <a href="/docs/16.2.2/mesos-service-engine-group-for-front-end-applications">/mesos-service-engine-group-for-front-end-applications/</a></li> 
+ <li>DNS-Based Service Discovery for Mesos<br> <a href="/docs/16.2.2/service-discovery-for-mesos">/service-discovery-for-mesos/</a></li> 
+ <li>BGP Support for Virtual Services<br> <a href="/docs/16.2.2/bgp-support-for-virtual-services">/bgp-support-for-virtual-services/</a></li> 
+ <li>A/B Test Pool Feature<br> <a href="/docs/16.2.2/ab-pool-feature">/ab-pool-feature/</a></li> 
+ <li>Installing Avi Vantage with Mesosphere DCOS (On-Premises)<br> <a href="/docs/16.2.2/installing-avi-vantage-with-mesosphere-dcos-on-premises">/installing-avi-vantage-with-mesosphere-dcos-on-premises/</a></li> 
+ <li>Installing Mesos in AWS Using the CLI<br> <a href="/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/">/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/</a></li> 
+ <li>Installing Avi Vantage for OpenStack<br> <a href="/docs/16.2.2/installing-avi-vantage-for-openstack-16-1">/installing-avi-vantage-for-openstack-16-1/</a></li> 
+ <li>Installing Avi Vantage for Cisco Application Policy Infrastructure<br> <a href="/docs/16.2.2/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1">/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1/</a></li> 
+ <li>Installing Avi Vantage for VMware vCenter<br> <a href="/docs/16.2.2/installing-avi-vantage-for-vmware-vcenter_16_1">/installing-avi-vantage-for-vmware-vcenter_16_1/</a></li> 
+ <li>Full-Chain CRL Checking for Client Certificate Validation<br> <a href="/docs/16.2.2/crl-validation-options">/crl-validation-options/</a></li> 
+ <li>HTTP Request Queuing<br> <a href="/docs/16.2.2/http-request-queuing">/http-request-queuing/</a></li> 
+ <li>HTTP Basic Auth for API Queries<br> <a href="/docs/16.2.2/http-basic-auth-for-api-queries">/http-basic-auth-for-api-queries/</a></li> 
+ <li>Installing the Vantage CLI Shell<br> <a href="/docs/16.2.2/cli-installing-the-cli-shell">/cli-installing-the-cli-shell/</a></li> 
+ <li>Public Key Management on SE Hosts ... also see resource #256 for a release 16.2.2-specific article<br> <a href="/docs/16.2.2/public-key-management-on-se-hosts">/public-key-management-on-se-hosts/</a></li> 
+ <li>Mesos in AWS: Deploying a North-South Application<br> <a href="/2016/02/16/mesos-in-aws-deploying-a-north-south-service/">/2016/02/16/mesos-in-aws-deploying-a-north-south-service/</a></li> 
+ <li>Installing Mesos in AWS with a CloudFormation Template<br> <a href="/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/">/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/</a></li> 
+ <li>Creating Applications with Mesos / Marathon Labels<br> <a href="/docs/16.2.2/creating-applications-in-mesos-with-marathon-labels">/creating-applications-in-mesos-with-marathon-labels/</a></li> 
+ <li>GSLB Integration with F5 GTM<br> <a href="/docs/16.2.2/gslb-integration-with-f5-gtm">/gslb-integration-with-f5-gtm/</a></li> 
+ <li>Installing Avi Vantage in an AWS-hosted Mesos Cluster<br> <a href="/docs/16.2.2/installing-avi-vantage-in-an-aws-hosted-mesos-cluster">/installing-avi-vantage-in-an-aws-hosted-mesos-cluster/</a></li> 
+ <li>Avi Vantage Interaction with vCenter<br> <a href="/docs/16.2.2/vantage-interaction-with-vcenter">/vantage-interaction-with-vcenter/</a></li> 
+ <li>Reset an OpenStack Default Cloud<br> <a href="/docs/16.2.2/reset-an-openstack-default-cloud">/reset-an-openstack-default-cloud/</a></li> 
+ <li>Strong Password Enforcement<br> <a href="/docs/16.2.2/strong-password-enforcement">/strong-password-enforcement/</a></li> 
+ <li>Non-Uniform Round-Robin Traffic Distribution<br> <a href="/docs/16.2.2/issues-with-round-robin-lb">/issues-with-round-robin-lb/</a></li> 
+ <li>Support Terms and Conditions<br> <a href="/docs/16.2.2/support-terms-and-conditions">/support-terms-and-conditions/</a></li> 
+ <li>Server Name Indication<br> <a href="/docs/16.2.2/server-name-indication">/server-name-indication/</a></li> 
+ <li>Issues With NTLM Authentication<br> <a href="/docs/16.2.2/issues-with-ntlm-authentication">/issues-with-ntlm-authentication/</a></li> 
+ <li>Clustering Controllers From Different Networks<br> <a href="/docs/16.2.2/clustering-controllers-from-different-networks">/clustering-controllers-from-different-networks/</a></li> 
+ <li>Network Reachability<br> <a href="/docs/16.2.2/network-reachability">/network-reachability/</a></li> 
+ <li>Analytics Profile<br> <a href="/docs/configuration-guide/templates/profiles/analytics-profile/">/docs/configuration-guide/templates/profiles/analytics-profile/</a></li> 
+ <li>Navigation Timing<br> <a href="https://www.w3.org/TR/navigation-timing/">https://www.w3.org/TR/navigation-timing/</a><br> This specification defines an interface for web applications to access timing information related to navigation and elements.</li> 
+ <li>Virtual Service Client Information<br> <a href="/docs/configuration-guide/applications/virtual-services/vs-clients/">/docs/configuration-guide/applications/virtual-services/vs-clients/</a></li> 
+ <li>Redirect HTTP to HTTPS<br> <a href="/docs/16.2.2/redirect-http-to-https">/redirect-http-to-https/</a></li> 
+ <li>Distributed Denial of Service<br> <a href="/docs/16.2.2/distributed-denial-of-service">https://kb.avinetworks.com/distributed-denial-of-service/</a></li> 
+ <li>Alerts Overview<br> <a href="/docs/16.2.2/alerts-overview">/alerts-overview/</a></li> 
+ <li>Example Custom Alert Notification<br> <a href="/docs/16.2.2/example-custom-alert-notification">/example-custom-alert-notification/</a></li> 
+ <li>API – Configuring the Avi Controller Cluster<br> <a href="/docs/16.2.2/api-configuring-a-controller-cluster">/api-configuring-a-controller-cluster/</a></li> 
+ <li>Realtime Screaming Metrics<br> <a href="https://blog.avinetworks.com/tech/screaming-metrics">https://blog.avinetworks.com/tech/screaming-metrics</a><br> Avi Networks blog entry</li> 
+ <li>SE Memory Consumption<br> <a href="/docs/16.2.2/se-memory-consumption">/se-memory-consumption/</a></li> 
+ <li>Events Overview<br> <u>https://kb.avinetworks.com/events-overview/</u></li> 
+ <li>Notifications Overview<br> <u>https://kb.avinetworks.com/notifications-overview/</u></li> 
+ <li>Alert Config<br> <a href="/docs/16.2.2/alert-config">/alert-config/</a></li> 
+ <li>Mesos – Graceful Blue-Green Deployment Using an A/B Pool<br> <a href="/docs/16.2.2/mesos-graceful-blue-green-deployment-using-an-ab-pool">/mesos-graceful-blue-green-deployment-using-an-ab-pool/</a></li> 
+ <li>Rethinking Application Security with Microservices Architectures by Ranga Rajagopalan<br> <a href="http://www.darkreading.com/endpoint/rethinking-application-security-with-microservices-architectures-/a/d-id/1325155">http://www.darkreading.com/endpoint/rethinking-application-security-with-microservices-architectures-/a/d-id/1325155</a><br> InformationWeek DARKReading article, 15Apr2016</li> 
+ <li>End of Support Schedule<br> <a href="/docs/16.2.2/end-of-support-schedule">/end-of-support-schedule/</a></li> 
+ <li>Tenants Versus SE Group Isolation<br> <a href="/docs/16.2.2/tenants-versus-se-group-isolation">/tenants-versus-se-group-isolation/</a></li> 
+ <li>Sizing Service Engines<br> <a href="/docs/16.2.2/sizing-service-engines">/sizing-service-engines/</a></li> 
+ <li>Virtual Service Migration Impact on Existing Connections<br> <a href="/docs/16.2.2/vs-migration-impact-on-existing-connections">/vs-migration-impact-on-existing-connections/</a></li> 
+ <li>Server Requires Original Client Source IP Address<br> <a href="/docs/16.2.2/server-requires-original-client-source-ip-address">/server-requires-original-client-source-ip-address/</a></li> 
+ <li>API – HTTP Patch Support<br> <a href="/docs/16.2.2/api-http-patch-support">/api-http-patch-support/</a></li> 
+ <li>CLI: Virtual Service and Pool Creation<br> <a href="/docs/16.2.2/virtual-service-and-pool-create-from-cli">/virtual-service-and-pool-create-from-cli/</a></li> 
+ <li>IP Address Management / VIP Auto-Allocation in Linux Server Cloud or No Orchestrator Clouds<br> <a href="/ip-auto-allocation-for-vips-and-applications-linux-server-no-access/">/ip-auto-allocation-for-vips-and-applications-linux-server-no-access/</a></li> 
+ <li>Creating Applications With Mesos / Marathon Labels<br> <a href="/docs/16.2.2/creating-applications-in-mesos-with-marathon-labels">/creating-applications-in-mesos-with-marathon-labels/</a></li> 
+ <li>Add Servers to Pool by DNS<br> <a href="/docs/16.2.2/add-servers-to-pool-by-dns">/add-servers-to-pool-by-dns/</a></li> 
+ <li>Assign / Update VIP Using DNS<br> <a href="/docs/16.2.2/virtual-server-using-dns-for-vip-address">/virtual-server-using-dns-for-vip-address/</a></li> 
+ <li>Troubleshooting Avi Vantage Deployment Into VMware<br> <a href="/docs/16.2.2/troubleshooting-vmware-deployment">/troubleshooting-vmware-deployment/</a></li> 
+ <li>Overview of SSL Termination<br> <u>avinetworks.com/overview-of-ssl-termination/</u></li> 
+ <li>SSL/TLS Profile<br> <a href="/docs/16.2.2/ssl-tls-profile">/ssl-tls-profile/</a></li> 
+ <li>SSL Certificates<br> <a href="/docs/16.2.2/ssl-certificates">/ssl-certificates/</a></li> 
+ <li>Client SSL Certificate Validation<br> <a href="/docs/16.2.2/client-ssl-certificate-validation">/client-ssl-certificate-validation/</a></li> 
+ <li>Physical Security for SSL Keys<br> <a href="/docs/16.2.2/physical-security-for-ssl-keys">/physical-security-for-ssl-keys/</a></li> 
+ <li>SSL Performance<br> <a href="/docs/16.2.2/ssl-performance">/ssl-performance/</a></li> 
+ <li>SSL Everywhere<br> <a href="/docs/16.2.2/ssl-everywhere">/ssl-everywhere/</a></li> 
+ <li>SSL Visibility and Troubleshooting<br> <a href="/docs/16.2.2/ssl-visibility-and-troubleshooting">/ssl-visibility-and-troubleshooting/</a></li> 
+ <li>Certificate Management Integration for CSR Automation<br> <a href="/docs/16.2.2/certificate-management-integration-for-csr-automation">/certificate-management-integration-for-csr-automation/</a></li> 
+ <li>Overview of Server Persistence<br> <a href="/docs/16.2.2/overview-of-server-persistence">/overview-of-server-persistence</a></li> 
+ <li>HTTP Cookie Persistence<br> <a href="/docs/16.2.2/http-cookie-persistence">/http-cookie-persistence/</a></li> 
+ <li>Client IP Persistence<br> <a href="/docs/16.2.2/client-ip-persistence">/client-ip-persistence/</a></li> 
+ <li>Custom HTTP Header Persistence<br> <a href="/docs/16.2.2/custom-http-header-persistence">/custom-http-header-persistence/</a></li> 
+ <li>TLS Persistence<br> <a href="/docs/16.2.2/tls-persistence">/tls-persistence/</a></li> 
+ <li>App Cookie Persistence<br> <a href="/docs/16.2.2/app-cookie-persistence">/app-cookie-persistence/</a></li> 
+ <li>Protocol Ports Used by Vantage for Management Communication<br> <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication">/protocol-ports-used-by-avi-vantage-for-management-communication/</a></li> 
+ <li>IAM Role Setup for Installation into AWS<br> <a href="/docs/16.2.2/iam-role-setup-for-installation-into-aws">/iam-role-setup-for-installation-into-aws/</a></li> 
+ <li>DC/OS and Avi Vantage: An Operating System and Application Services at the Scale of the Data Center<br> <a href="https://blog.avinetworks.com/dcos-and-application-services-at-the-scale-of-the-data-center">https://blog.avinetworks.com/dcos-and-application-services-at-the-scale-of-the-data-center</a><br> Avi Networks blog entry</li> 
+ <li>Avi Integration with Mesosphere [AWS CloudFormation] <a href="https://youtu.be/4p4L5dtgRis">https://youtu.be/4p4L5dtgRis</a><br> Avi Networks YouTube Channel video, Swapnil Raut, 20Oct2015, 8:57</li> 
+ <li>SNMP Support in Avi Vantage<br> <a href="/docs/16.2.2/snmp-support-in-avi-vantage">/snmp-support-in-avi-vantage/</a></li> 
+ <li>Securing Management IP Access<br> <a href="/docs/16.2.2/securing-management-ip-access">/securing-management-ip-access/</a></li> 
+ <li>Mesos – Graceful App Migration in DC/OS Cluster<br> <a href="/docs/16.2.2/mesos-graceful-app-migration-in-dcos-cluster">/mesos-graceful-app-migration-in-dcos-cluster/</a></li> 
+ <li>Custom Persistence with DataScript<br> <a href="/docs/16.2.2/custom-persistence-with-datascript">/custom-persistence-with-datascript/</a></li> 
+ <li>Terms of Avi Vantage Software License<br> <a href="/docs/16.2.2/terms-of-avi-vantage-license">/terms-of-avi-vantage-license/</a></li> 
+ <li>Legacy HA for Avi Service Engines<br> <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">https://kb.avinetworks.com/legacy-ha-for-avi-service-engines/</a></li> 
+ <li>Static Route Support for VIP and SNAT IP Reachability<br> <a href="/docs/16.2.2/static-route-support-for-vip-and-snat-ip-reachability">/static-route-support-for-vip-and-snat-ip-reachability/</a></li> 
+ <li>TACACS+ for Avi Vantage Users<br> <a href="/docs/latest/tacacs-for-avi-vantage-users">/tacacs-for-avi-vantage-users/</a></li> 
+ <li>Installing Avi Vantage for CSP-2100<br> <a href="/docs/16.2.2/installing-avi-vantage-for-csp-2100">/installing-avi-vantage-for-csp-2100/</a></li> 
+ <li>Excluding NTLM-generated '401 Unauthorized' Messages from Client Logs<br> <a href="/excluding-401-unauthorized-messages-from-ntlm-logs/">/excluding-401-unauthorized-messages-from-ntlm-logs/</a></li> 
+ <li>Avi Vantage Integration With SafeNet Network HSM (16.2)<br> <a href="/avi-vantage-integration-with-safenet-network-hsm-16-2/">/avi-vantage-integration-with-safenet-network-hsm-16-2/</a></li> 
+ <li>Avi Networks SDK<br> <a href="https://github.com/avinetworks/sdk">https://github.com/avinetworks/sdk</a></li> 
+ <li>Avi Integration with Rancher OS<br> <a href="/docs/16.2.2/avi-vantage-integration-with-rancheros">/avi-vantage-integration-with-rancheros/</a></li> 
+ <li>Wildcard SNI Matching for Virtual Hosting<br> <a href="/docs/16.2.2/wildcard-sni-matching-for-virtual-hosting">/wildcard-sni-matching-for-virtual-hosting/</a></li> 
+ <li>Overview of Health Monitors<br> <a href="/docs/16.2.2/overview-of-health-monitors">/overview-of-health-monitors/</a></li> 
+ <li>UDP Health Monitor<br> <a href="/docs/16.2.2/udp-health-monitor">/udp-health-monitor/</a></li> 
+ <li>TCP Health Monitor<br> <a href="/docs/16.2.2/tcp-health-monitor">/tcp-health-monitor/</a></li> 
+ <li>External Health Monitor<br> <a href="/docs/16.2.2/external-health-monitor">/external-health-monitor/</a></li> 
+ <li>Ping Health Monitor<br> <a href="/docs/16.2.2/ping-health-monitor">/ping-health-monitor/</a></li> 
+ <li>DNS Health Monitor<br> <a href="/docs/16.2.2/dns-health-monitor">/dns-health-monitor/</a></li> 
+ <li>HTTP Health Monitor<br> <a href="/docs/16.2.2/http-health-monitor">/http-health-monitor/</a></li> 
+ <li>HTTPS Health Monitor<br> <a href="/docs/16.2.2/https-health-monitor">/https-health-monitor/</a></li> 
+ <li>Health Monitor Troubleshooting<br> <a href="/docs/16.2.2/health-monitor-troubleshooting">/health-monitor-troubleshooting/</a></li> 
+ <li>Disable SE<br> <a href="/docs/16.2.2/disable-se">/disable-se/</a></li> 
+ <li>Manually Validate Server Health<br> <a href="/docs/16.2.2/manually-validate-server-health">/manually-validate-server-health/</a></li> 
+ <li>Packet Capture<br> <a href="/docs/16.2.2/packet-capture">/packet-capture/</a></li> 
+ <li>Configure Controller HA Cluster<br> <a href="/docs/16.2.2/configure-controller-ha-cluster">/configure-controller-ha-cluster/</a></li> 
+ <li>AWS Linux Cloud With No-access Mode<br> <a href="/docs/16.2.2/aws-linux-cloud-with-no-access-mode">/aws-linux-cloud-with-no-access-mode/</a></li> 
+ <li>Installing Avi Vantage With Open DC/OS or Enterprise DC/OS<br> <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">/installing-avi-vantage-with-open-dcos-or-enterprise-dcos/</a></li> 
+ <li>Gateway Monitoring for Legacy HA<br> <a href="/docs/16.2.2/gateway-monitoring-for-legacy-ha">/gateway-monitoring-for-legacy-ha/</a></li> 
+ <li>Overview of Vantage High Availability<br> <a href="/docs/16.2.2/overview-of-vantage-high-availability">/overview-of-vantage-high-availability/</a></li> 
+ <li>Elastic HA for Avi Service Engines<br> <a href="/cluster-ha-for-avi-service-engines/">/cluster-ha-for-avi-service-engines/</a></li> 
+ <li>Avi Service Engine Group Options<br> <a href="/docs/16.2.2/avi-service-engine-group-options">/avi-service-engine-group-options/</a></li> 
+ <li>Collecting Tech Support Logs<br> <a href="/docs/16.2.2/collecting-tech-support-logs">/collecting-tech-support-logs/</a></li> 
+ <li>Cluster Changes Following Avi Controller Reboot<br> <a href="/docs/16.2.2/cluster-operational-changes">/cluster-operational-changes/</a></li> 
+ <li>Changing Avi Controller Cluster Configuration<br> <a href="/docs/16.2.2/changing-avi-controller-cluster-configuration">/changing-avi-controller-cluster-configuration/</a></li> 
+ <li>Auth Profile<br> <a href="/docs/16.2.2/auth-profile">/auth-profile/</a></li> 
+ <li>Server Autoscale<br> <a href="/docs/16.2.2/server-autoscale">/server-autoscale/<br> </a></li> 
+ <li>Troubleshooting Avi Vantage Integration with Cisco ACI<br> <a href="/docs/16.2.2/troubleshooting-vantage-integration-with-cisco-aci">/troubleshooting-vantage-integration-with-cisco-aci/</a></li> 
+ <li>Support for SNI Extension in TLS Handshakes to Pool Servers<br> <a href="/docs/16.2.2/support-for-sni-extension-in-tls-handshakes-to-pool-servers">/support-for-sni-extension-in-tls-handshakes-to-pool-servers/</a></li> 
+ <li>Configuring a Tag for Auto-created SEs in AWS<br> <a href="/docs/16.2.2/configuring-a-tag-for-auto-created-ses-in-aws">/configuring-a-tag-for-auto-created-ses-in-aws/</a></li> 
+ <li>Layer 4 SSL Support<br> <a href="/docs/16.2.2/layer-4-ssl-support">/layer-4-ssl-support/</a></li> 
+ <li>PROXY Protocol Support<br> <a href="http://proxy-protocol-support/">/proxy-protocol-support/</a></li> 
+ <li>Multi-level Domain Support for SSL<br> <a href="/docs/16.2.2/multi-level-domain-support-for-ssl">/multi-level-domain-support-for-ssl/</a></li> 
+ <li>Updating the Configuration Following Avi Controller IP Address Change<br> <a href="/docs/16.2.2/ctlr-cfg-update-after-ip-change">/ctlr-cfg-update-after-ip-change/</a></li> 
+ <li>Avi Controller Analytics Page<br> <a href="/docs/16.2.2/avi-controller-analytics-page">/avi-controller-analytics-page/</a></li> 
+ <li>Web Interface Access Settings<br> <a href="/docs/16.2.2/web-interface-access-settings">/web-interface-access-settings/</a></li> 
+ <li>SSH Users and Keys<br> <a href="/docs/16.2.2/ssh-users-and-keys">/ssh-users-and-keys/</a></li> 
+ <li>Email / SMTP Settings<br> <a href="/docs/16.2.2/email-smtp">/email-smtp/</a></li> 
+ <li>DNS / NTP Settings<br> <a href="/docs/16.2.2/dns-ntp-settings">/dns-ntp-settings/</a></li> 
+ <li>Hardware Security Module Package Upload<br> <a href="/docs/16.2.2/upload-hsm-pkg">/upload-hsm-pkg/</a></li> 
+ <li>Login Banner and Message of the Day<br> <a href="/docs/16.2.2/login-banner-and-message-of-the-day">/login-banner-and-message-of-the-day/</a></li> 
+ <li>User Roles<br> <a href="/docs/16.2.2/user-account-roles">/user-account-roles/</a></li> 
+ <li>Tenants<br> <a href="/docs/16.2.2/tenants">/tenants/</a></li> 
+ <li>User Accounts<br> <a href="http://user-accounts/">/user-accounts/</a></li> 
+ <li>Super User Accounts<br> <a href="/docs/16.2.2/super-user-accounts">/super-user-accounts/</a></li> 
+ <li>Switch Between Tenants<br> <a href="/docs/16.2.2/switch-between-tenants">/switch-between-tenants/</a></li> 
+ <li>User Account Self Service<br> <a href="/docs/16.2.2/user-account-self-service">/user-account-self-service/</a></li> 
+ <li>OpenStack/AWS - Forcing Deletion of Virtual Service Ports in Neutron<br> <a href="/docs/16.2.2/openstack-forcing-deletion-of-virtual-service-ports-in-neutron">/openstack-forcing-deletion-of-virtual-service-ports-in-neutron/</a></li> 
+ <li>Migrating Virtual Services<br> <a href="/docs/16.2.2/migrating-virtual-services">/migrating-virtual-services/</a></li> 
+ <li>Installing Avi Vantage for OpenStack (16.2)<br> <a href="/docs/16.2.2/installing-avi-vantage-for-openstack-16-2">/installing-avi-vantage-for-openstack-16-2/</a></li> 
+ <li> <p class="faq-title">Installing Avi Vantage with Mesosphere DC/OS (16.2)<br> <a href="/docs/16.2.2/installing-avi-vantage-with-mesosphere-dcos-16-2">/installing-avi-vantage-with-mesosphere-dcos-16-2/</a></p> </li> 
+ <li>Installing Avi Vantage in Amazon Web Services (16.2)<br> <a href="/docs/16.2.2/installing-avi-vantage-in-amazon-web-services-16-2">/installing-avi-vantage-in-amazon-web-services-16-2/</a></li> 
+ <li>Avi Controller Cluster FAQ<br> <a href="/avi-controller-cluster-faq/">/avi-controller-cluster-faq/</a></li> 
+ <li>Detecting Server Maintenance Mode with a Health Monitor<br> <a href="/docs/16.2.2/detecting-server-maintenance-mode-with-a-health-monitor">/detecting-server-maintenance-mode-with-a-health-monitor/</a></li> 
+ <li>Disabling Back-end Servers for Maintenance<br> <a href="/docs/16.2.2/disabling-back-end-servers-for-maintenance">/disabling-back-end-servers-for-maintenance/</a></li> 
+ <li>Rolling Back the System<br> <a href="/docs/16.2.2/rolling-back-the-system">/rolling-back-the-system/</a></li> 
+ <li>IPAM and DNS Support<br> <a href="/docs/16.2.2/vip-allocation-using-ipam-or-dns">/vip-allocation-using-ipam-or-dns/</a></li> 
+ <li>Backup and Restore of Avi Vantage Configuration<br> <a href="/docs/16.2.2/backup-and-restore-of-avi-vantage-configuration">/backup-and-restore-of-avi-vantage-configuration/</a></li> 
+ <li>Avi Vantage License Management<br> <a href="/docs/16.2.2/avi-vantage-license-management">/avi-vantage-license-management/</a></li> 
+ <li>Avi SE Behavior on Gateway Monitor Failure<br> <a href="/docs/16.2.2/avi-se-behavior-on-gateway-monitor-failure">/avi-se-behavior-on-gateway-monitor-failure/</a></li> 
+ <li>Comparing Past and Present SE Group HA Modes<br> <a href="/docs/16.2.2/comparing-past-and-present-se-group-ha-modes">/comparing-past-and-present-se-group-ha-modes/</a></li> 
+ <li>Load Balancing Algorithms<br> <a href="/docs/16.2.2/load-balancing-algorithms">/load-balancing-algorithms/<br> </a></li> 
+ <li>Keystone Authentication<br> <a href="/docs/latest/keystone-authentication">/keystone-authentication/</a></li> 
+ <li>Overview of Account Management<br> <a href="/docs/latest/overview-of-account-management">/overview-of-account-management/</a></li> 
+ <li>Default System Accounts<br> <a href="/docs/latest/default-system-accounts">/default-system-accounts/</a></li> 
+ <li>CLI Access<br> <a href="/docs/16.2.2/cli-access">/cli-access/</a></li> 
+ <li>CLI Top-Level Commands<br> <a href="/docs/cli-guide/cli-top-level-commands/">/docs/cli-guide/cli-top-level-commands/</a></li> 
+ <li>Password Recovery<br> <a href="/docs/16.2.2/password-recovery">/password-recovery/</a></li> 
+ <li>Configuring Ansible for Avi Vantage<br> <a href="/docs/16.2.2/configuring-ansible-for-avi-vantage">/configuring-ansible-for-avi-vantage/</a></li> 
+ <li>Public Key Management on SE Hosts (16.2.2)<br> <a href="/docs/16.2.2/public-key-management-on-se-hosts-16-2-2">/public-key-management-on-se-hosts-16-2-2/</a></li> 
+ <li>Replace kube-proxy in OpenShift Environment with Avi Vantage<br> <a href="/docs/16.2.2/replace-kube-proxy-in-openshift-environment-with-avi-vantage">/replace-kube-proxy-in-openshift-environment-with-avi-vantage/</a></li> 
+ <li>Recover a Non-Operational Controller Cluster<br> <a href="/docs/16.2.2/recover-a-non-operational-controller-cluster">/recover-a-non-operational-controller-cluster/</a></li> 
+ <li>IPAM Provider (OpenStack)<br> <a href="/docs/16.2.2/ipam-and-dns-provider-openstack">/ipam-and-dns-provider-openstack/</a></li> 
+ <li>IPAM Provider (AWS)<br> <a href="/docs/16.2.2/ipam-and-dns-provider-aws">/ipam-and-dns-provider-aws/</a></li> 
+ <li>IPAM and DNS Provider (Infoblox)<br> <a href="/docs/16.2.2/ipam-and-dns-provider-infoblox">/ipam-and-dns-provider-infoblox/</a></li> 
+ <li>Service Discovery using Avi Vantage as IPAM and DNS Provider<br> <a href="/docs/16.2.2/ipam-and-dns-provider-avi-vantage">/ipam-and-dns-provider-avi-vantage/</a></li> 
+ <li>Avi Vantage OpenShift Installation Guide<br> <a href="/docs/16.2.2/avi-vantage-openshift-installation-guide">/avi-vantage-openshift-installation-guide/</a></li> 
+ <li>Deploy Vantage with Lync 2013<br> <a href="/docs/16.2.2/deploy-vantage-with-lync-2013">/deploy-vantage-with-lync-2013/</a></li> 
+ <li>TACACS+ Configuration Examples<br> <a href="/docs/16.2.2/tacacs-configuration-examples">/tacacs-configuration-examples/</a></li> 
+ <li>Connection Multiplexing<br> <a href="/docs/16.2.2/connection-multiplex">/connection-multiplex/</a></li> 
+ <li>HA for Avi Controllers<br> <a href="/docs/16.2.2/ha-for-avi-controllers">/ha-for-avi-controllers/</a></li> 
+ <li>Verifying Notification Settings<br> <a href="/docs/16.2.2/verifying-notification-settings">/verifying-notification-settings/</a></li> 
+</ol> 

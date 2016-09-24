@@ -8,7 +8,7 @@ Select Servers by Network is an alternative method of adding servers to a pool. 
 
 The option for adding servers to a virtual service / pool is only available if Avi Vantage has Read or Write access to VMware, AWS, or OpenStack.
 
-<a href="img/SelectbyNetwork.png"><img src="img/SelectbyNetwork.png" alt="SelectbyNetwork" width="553" height="303"></a>
+<a href="img/SelectbyNetwork.png"><img class="wp-image-876 aligncenter" src="img/SelectbyNetwork.png" alt="SelectbyNetwork" width="553" height="303"></a>
 
  
 

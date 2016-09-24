@@ -14,7 +14,7 @@ As the Controllers store the system configuration, including the private SSL key
 
 For administrators having full access to the certificates and keys, an attempt to export a private key will be noted in the Operations &gt; Events &gt; Config Audit log.  Using role-based access, export ability should be restricted to the fewest number of administrators possible.
 
-<a href="img/SSL-Export.png"><img src="img/SSL-Export.png" alt="SSL Export" width="849" height="73"></a>
+<a href="img/SSL-Export.png"><img class="size-full wp-image-7791 alignnone" src="img/SSL-Export.png" alt="SSL Export" width="849" height="73"></a>
 
 ### HSM &amp; Externally Stored Keys
 
@@ -22,9 +22,9 @@ To guarantee a higher level of physical security, Vantage supports the use of ex
 
 Vantage supports the following types of external key stores:
 
-* <a href="/docs/latest/thales-nshield-integration-2">Thales nShield</a>
-* <a href="/docs/latest/avi-vantage-integration-with-safenet-network-hsm">Gemalto (formerly SafeNet)</a>
-* OpenStack Barbican - coming in v17.1
+* <a href="/docs/16.2.2/thales-nshield-integration-2">Thales nShield</a>
+* <a href="/avi-vantage-integration-with-safenet-network-hsm/">Gemalto (formerly SafeNet)</a>
+* OpenStack Barbican - coming in v17.1 
 
  
 

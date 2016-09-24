@@ -9,10 +9,13 @@ To configure the Avi Controller cluster using the API, use the following API com
 ### Getting the Avi Controller Cluster Configuration
 
 To get the existing cluster configuration, send an API request such as the following:
+
+<code>GET /api/cluster</code>
+
+**Example Output**
+
 <pre>
-API: GET https:///api/cluster
-An example output for this command is:
-{
+<code class="language-json">{
     url: "https://10.10.5.27/api/cluster",
     uuid: "cluster-005056ac9e91",
     name: "cluster-0-1",
@@ -32,8 +35,8 @@ An example output for this command is:
             name: "10.10.5.16",
         }
     ]
-}
-</pre>
+}</code>
+</pre> 
 
 In this example, the cluster contains only a single member. When Vantage is installed, the Avi Controller created during installation is placed in a cluster, as the primary Avi Controller. The management IP address is configured as the cluster IP address.
 
@@ -42,10 +45,12 @@ In this example, the cluster contains only a single member. When Vantage is inst
 To create a 3-node cluster, send a request such as the following to add 2 more Avi Controller nodes to the cluster.
 
 For controller-ip, specify the management IP address of the individual Avi Controller node, not the IP address to be assigned to the cluster. The cluster IP is specified under virtual_ip.
-<pre>
-API: PUT https:///api/cluster
-Data:
-{
+
+<code>PUT /api/cluster</code>
+
+**Example PUT Data**
+
+<pre><code class="language-json">{
     uuid: "cluster-005056ac9e91",
     name: "cluster-0-1",
     virtual_ip: {
@@ -77,16 +82,19 @@ Data:
             name: "10.10.5.17",
         }
     ]
-}
-</pre>
+}</code>
+</pre> 
 
 ### Removing Avi Controller Nodes from the Cluster
 
 To remove Avi Controller nodes from the cluster, use a request such as the following.
+
+<code>PUT /api/cluster</code>
+
+**Example PUT Data**
+
 <pre>
-API: PUT api/cluster
-Data:
-{
+<code class="language-json">{
     uuid: "cluster-005056ac9e91",
     name: "cluster-0-1",
     virtual_ip: {
@@ -102,19 +110,21 @@ Data:
             name: "10.10.5.16",
         }
     ]
-}
-</pre>
+}</code>
+</pre> 
 
 ### Getting Runtime Information for the Cluster
 
 The following request gets runtime information for the cluster.
 
 The cluster is ready for operation when the cluster_state is CLUSTER_UP_HA_ACTIVE (for a 3-node cluster) or CLUSTER_UP_NO_HA (for a 1-node cluster). This example shows CLUSTER_UP_HA_ACTIVE. (See bottom of output.)
-<pre>
-API: GET https:///api/cluster/runtime
-Example output is:
 
-{
+<code>GET /api/cluster/runtime</code>
+
+**Example Output**
+
+<pre>
+<code class="language-json">{
     node_info: {
         uuid: "005056ac115e",
         mgmt_ip: "10.10.5.15",
@@ -150,5 +160,5 @@ Example output is:
         progress: 100,
         state: "CLUSTER_UP_HA_ACTIVE"
     }
-}
-</pre>
+}</code>
+</pre> 

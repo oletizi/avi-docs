@@ -14,13 +14,15 @@ Note: This profile setting will have no impact for virtual services if the VS do
 
 For more granularity, use an HTTP Request Policy. Navigate to the Edit Virtual Service > Rules > HTTP Request > New Rule button. The Match section can be left blank, or optionally you can add criteria to determine when to perform the redirect. In the Action section, select Redirect from the pull-down menu. Then set the protocol to HTTPS. This will set the redirect port to 443 and the redirect response code to 302 (temporary redirect).
 
-<a href="img/Policy1.png"><img src="img/Policy1.png" alt="Policy" width="480" height="68"></a> HTTP Request Policies are quick and easy to set up, and impact only a single virtual service at a time.
+<a href="img/Policy1.png"><img class="size-full wp-image-42 alignright" src="img/Policy1.png" alt="Policy" width="480" height="68"></a> HTTP Request Policies are quick and easy to set up, and impact only a single virtual service at a time.
 
 ### DataScript
 
 For maximum granularity and reusability, use a DataScript to specify the redirect behavior. While using DataScript may be overkill for basic requirements, it's always good to have for thornier requirements. Navigate to Edit Virtual Service > Rules > DataScript > Create DataScript (from within the pull-down menu). Provide a name for the script, then paste the following text into the Request Event Script box and save:
+
 <pre><code class="language-lua">if avi.vs.port() ~= "443" then
    avi.http.redirect("https://" .. avi.http.hostname() .. avi.http.get_uri())
-end</code></pre>
+end</code></pre>  
 
 Feel free to experiment with more elaborate logic or see the DataScript documentation for more verbose help and examples.
+

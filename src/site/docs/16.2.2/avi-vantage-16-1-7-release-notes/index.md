@@ -1,25 +1,24 @@
 ---
-title: Avi Vantage 16.1.7 Release Notes
+title: Avi Vantage 16&#46;1&#46;7 Release Notes
 layout: default
 ---
 This article describes the changes and fixes in Avi Vantage release 16.1 and its maintenance releases.
 
 See the following sections:
 
-* Release details:
-
-* <a href="#1617">Avi Vantage 16.1.7</a>
-* <a href="#1616">Avi Vantage 16.1.6</a>
-* <a href="#1615">Avi Vantage 16.1.5</a>
-* <a href="#1614">Avi Vantage 16.1.4</a>
-* <a href="#1613">Avi Vantage 16.1.3</a>
-* <a href="#1612">Avi Vantage 16.1.2</a>
-* <a href="#1611">Avi Vantage 16.1.1</a>
-* <a href="#161">Avi Vantage 16.1</a>
+* Release details:  
+    * <a href="#1617">Avi Vantage 16.1.7</a>
+    * <a href="#1616">Avi Vantage 16.1.6</a>
+    * <a href="#1615">Avi Vantage 16.1.5</a>
+    * <a href="#1614">Avi Vantage 16.1.4</a>
+    * <a href="#1613">Avi Vantage 16.1.3</a>
+    * <a href="#1612">Avi Vantage 16.1.2</a>
+    * <a href="#1611">Avi Vantage 16.1.1</a>
+    * <a href="#161">Avi Vantage 16.1</a>
 * <a href="#upgrade">Performing the Upgrade</a>
 * <a href="#sptdplatforms">Supported Platforms</a>
 * <a href="#otherdocs">Product Documentation</a>
-* <a href="#opensourceinfo">Open Source Package Information</a>
+* <a href="#opensourceinfo">Open Source Package Information</a> 
 
 <a name="1617"></a>
 
@@ -31,7 +30,7 @@ This release contains fixes but no new features.
 
 * AV-10806: VIP port numbers higher than 6000 did not work.
 * AV-10785: Avi Service Engine (SE) could fail if the X-Forwarded-For (XFF) field in the HTTP header of a packet was too long.
-* AV-10765: Following upgrade, the primary SE for a virtual service did not accept TCP connections.
+* AV-10765: Following upgrade, the primary SE for a virtual service did not accept TCP connections. 
 
 <a name="1616"></a>
 
@@ -43,7 +42,7 @@ This release contains fixes but no new features.
 
 * AV-10642: Avi Service Engines (SEs) did not correctly handle TCP out-of-band (OOB) data.
 * AV-10635: Packet buffer leak could occur when back-end UDP servers were down.
-* AV-10572: Configuration change to TCP/UDP profile could cause the ending port number of the virtual service port range to be incorrectly set to 0.
+* AV-10572: Configuration change to TCP/UDP profile could cause the ending port number of the virtual service port range to be incorrectly set to 0. 
 
 <a name="1615"></a>
 
@@ -53,7 +52,7 @@ This release contains a fix but no new features.
 
 ### Issues Resolved in 16.1.5
 
-* AV-10631: APIC: VRF associated with Bridge Domains was not updated in the Avi Controller upon upgrade.
+* AV-10631: APIC: VRF associated with Bridge Domains was not updated in the Avi Controller upon upgrade. 
 
 <a name="1614"></a>
 
@@ -64,7 +63,7 @@ This release contains fixes but no new features.
 ### Issues Resolved in 16.1.4
 
 * AV-10520: Postgres failure during Avi Controller upgrade causes the upgrade to be aborted.
-* AV-10362: APIC: Logical interface (LIf) sharing did not work across Virtual Routing Frameworks (VRFs) for APIC graph instances.
+* AV-10362: APIC: Logical interface (LIf) sharing did not work across Virtual Routing Frameworks (VRFs) for APIC graph instances. 
 
 <a name="1613"></a>
 
@@ -84,7 +83,7 @@ Note: In 16.1.3, this new option is supported only in the REST API.
 * AV-9315: IP forwarding for the Avi Controller was unnecessarily enabled in non-container infrastructures.
 * AV-9248: (OpenStack) If a project’s UUID changed (for example, because a project was recreated in Keystone), but an older tenant with the same UUID still existed in Vantage, this caused issues with logging into the newly created tenant.
 * AV-9022: If an Avi SE failed to reconnect following upgrade, the upgrade could take longer.
-* AV-9005: Long Certificate Revocation Lists (CRLs) could cause an Avi SE to stop working.
+* AV-9005: Long Certificate Revocation Lists (CRLs) could cause an Avi SE to stop working. 
 
 <a name="1612"></a>
 
@@ -100,7 +99,7 @@ This release contains fixes but no new features.
 * AV-8709 Vantage did not support TCP SYNs in which the Explicit Congestion Notification (ECN) or Congestion Window Reduced (CWR) features were enabled. SYNs in which either the ECN or CWR option was enabled were dropped.
 * AV-8701 OpenStack: If the management session was switched to a non-admin tenant, private SE group flavors did not appear in the SE group edit window.
 * AV-8614 Web interface: If the advanced workflow (Create Virtual Service > Advanced Setup) was used to create a virtual service for an OpenStack or AWS cloud, the configuration failed.
-* AV-8496 Upgrade: If the pool down action for a pool was set to local response, upgrade from a previous version to 16.1.x would fail. If this occurred, the following exception (error) message was generated: Enum POOL_DOWN_HTTP_STATUS_CODE_503 not found in enum type FailHttpStatusCode
+* AV-8496 Upgrade: If the pool down action for a pool was set to local response, upgrade from a previous version to 16.1.x would fail. If this occurred, the following exception (error) message was generated: Enum POOL_DOWN_HTTP_STATUS_CODE_503 not found in enum type FailHttpStatusCode 
 
 <a name="1611"></a>
 
@@ -116,7 +115,7 @@ Avi Vantage 16.1.1 adds support for Internet Explorer (IE) version 11, and conta
 * AV-8163 The Host header was mistakenly omitted from client logs.
 * AV-8086 SE could stop working during very heavy test load of SSL traffic.
 * AV-8071 The Controller allowed multiple instances of the same health monitor to be attached to the same pool, which is an invalid configuration.
-* AV-7924 Web interface: The port number not preserved when editing a pool. If the port number was edited and the field was then cleared again, the previous port number was not retained and had to be typed into the field.
+* AV-7924 Web interface: The port number not preserved when editing a pool. If the port number was edited and the field was then cleared again, the previous port number was not retained and had to be typed into the field. 
 
 <a name="161"></a>
 
@@ -124,44 +123,36 @@ Avi Vantage 16.1.1 adds support for Internet Explorer (IE) version 11, and conta
 
 This section summarizes the enhancements in Vantage 16.1. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
-* Linux server (bare metal) support enhancements
-
-* <a href="/2016/03/08/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
-* <a href="/2016/03/07/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
-* <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade support</a>
-* Networking features
-
-* <a href="/2016/03/07/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
-* <a href="/2016/03/09/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
-* Core ADC features
-
-* <a href="/2016/03/02/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
-* <a href="/2016/03/06/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
-* Dictionary/map support for HTTP policies:Policies can perform lookups against a list of items stored in a string group, and the lookup result can be used for the URL-rewrite action
-* Regular expression support for HTTP policies with RegEx match operations against a string list in a string group
-* <a href="/2016/03/08/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
-* SSL enhancements
-
-* <a href="/2016/03/10/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
-* <a href="/2016/03/02/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
-* <a href="/2016/03/03/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
-* Containers
-
-* <a href="/2016/03/07/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
-* <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
-* UI enhancements
-
-* <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade supported through web interface</a>
-* <a href="/2016/03/13/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
-* Ecosystem support
-
-* OpenStack Liberty
-* <a href="/2016/03/13/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
-* Other features
-
-* <a href="/2016/03/07/ldap-auth-profile-test/">LDAP authentication profile testing</a>
-* Python SDK
-* <a href="/2016/02/26/cli-installing-the-cli-shell/">Standalone CLI shell package</a>
+* Linux server (bare metal) support enhancements  
+    * <a href="/2016/03/08/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
+    * <a href="/2016/03/07/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
+    * <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade support</a>
+* Networking features  
+    * <a href="/2016/03/07/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
+    * <a href="/2016/03/09/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
+* Core ADC features  
+    * <a href="/2016/03/02/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
+    * <a href="/2016/03/06/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
+    * Dictionary/map support for HTTP policies:Policies can perform lookups against a list of items stored in a string group, and the lookup result can be used for the URL-rewrite action
+    * Regular expression support for HTTP policies with RegEx match operations against a string list in a string group
+    * <a href="/2016/03/08/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
+* SSL enhancements  
+    * <a href="/2016/03/10/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
+    * <a href="/2016/03/02/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
+    * <a href="/2016/03/03/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
+* Containers  
+    * <a href="/2016/03/07/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
+    * <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
+* UI enhancements  
+    * <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade supported through web interface</a>
+    * <a href="/2016/03/13/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
+* Ecosystem support  
+    * OpenStack Liberty
+    * <a href="/2016/03/13/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
+* Other features  
+    * <a href="/2016/03/07/ldap-auth-profile-test/">LDAP authentication profile testing</a>
+    * Python SDK
+    * <a href="/2016/02/26/cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
 
 ### Issues Resolved in 16.1
 
@@ -184,7 +175,7 @@ This section summarizes the enhancements in Vantage 16.1. For more information, 
 * AV-7310 SE names could not contain underscores.
 * AV-7261 [Enhancement] Support for multiple Syslog servers.
 * AV-3207 Client insights could show the incorrect protocol. For example, "http" could be listed as the protocol for an HTTPS-only port.
-* AV-700 OpenStack: Garbage collection could reduce Controller availability.
+* AV-700 OpenStack: Garbage collection could reduce Controller availability. 
 
 <a name="upgrade"></a>
 
@@ -193,30 +184,28 @@ This section summarizes the enhancements in Vantage 16.1. For more information, 
 Upgrade prerequisite: current version of Avi Controller must be 16.1.7.
 
 * <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+* <a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
 
 ## Supported Platforms
 
-* VMware
-
-* vCenter 5.1, 5.5, and 6.0
-* vCloud Air
-* vCO and vCAC
+* VMware  
+    * vCenter 5.1, 5.5, and 6.0
+    * vCloud Air
+    * vCO and vCAC
 * OpenStack Havana, Icehouse, Juno, Kilo, Liberty releases
 * Bare metal host running OEL7.0, 7.2, RHEL7.0, 7.2, and CentOS 7.2
 * Amazon Web Services (AWS)
 * Cisco APIC 1.0.3f and later
-* Containers
-
-* Docker UCP version 1.1.1
-* Rancher (Server/Agent): v1.0.0; Cattle: v0.159.2
-* Mesosphere DCOS 1.6
-* Mesos 0.23.0, 0.23.1, 0.24.0, 0.24.1, 0.25.0, 0.26.0, 0.27.0, and 0.27.1
-* Marathon 0.13.x, 0.14.x, 0.15.0, 0.15.1, 0.15.2, and 0.15.3
-* Fleet 0.10.5
-* Nutanix Acropolis 4.6
+* Containers  
+    * Docker UCP version 1.1.1
+    * Rancher (Server/Agent): v1.0.0; Cattle: v0.159.2
+    * Mesosphere DCOS 1.6
+    * Mesos 0.23.0, 0.23.1, 0.24.0, 0.24.1, 0.25.0, 0.26.0, 0.27.0, and 0.27.1
+    * Marathon 0.13.x, 0.14.x, 0.15.0, 0.15.1, 0.15.2, and 0.15.3
+    * Fleet 0.10.5
+* Nutanix Acropolis 4.6 
 
 <a name="otherdocs"></a>
 
@@ -226,13 +215,14 @@ For more information, please see the following documents, also available within 
 
 ### Installation Guides
 
-* <a href="/docs/installation-guides/">Avi Vantage Installation Guides</a>
+* <a href="/docs/installation-guides/">Avi Vantage Installation Guides</a> 
 
 <a name="opensourceinfo"></a>
 
 ## Open Source Package Information
 
 * Copyright Information [<a href="https://s3.amazonaws.com/aviopensource/16.1.3/copyrights.pdf">https://s3.amazonaws.com/aviopensource/16.1.3/copyrights.pdf</a>]
-* Packages used [<a href="https://s3.amazonaws.com/aviopensource/16.1.3/packages.pdf">https://s3.amazonaws.com/aviopensource/16.1.3/packages.pdf</a>]
+* Packages used [<a href="https://s3.amazonaws.com/aviopensource/16.1.3/packages.pdf">https://s3.amazonaws.com/aviopensource/16.1.3/packages.pdf</a>] 
 
 Avi Networks software, Copyright © 2013-2016 by Avi Networks, Inc. All rights reserved. The copyrights to certain works contained in this software are owned by other third parties and used and distributed under license. Certain components of this software are licensed under the GNU General Public License (GPL) version 2.0 or the GNU Lesser General Public License (LGPL) Version 2.1. A copy of each such license is available at <a href="http://www.opensource.org/licenses/gpl-2.0.php">http://www.opensource.org/licenses/gpl-2.0.php</a> and <a href="http://www.opensource.org/licenses/lgpl-2.1.php">http://www.opensource.org/licenses/lgpl-2.1.php</a>
+

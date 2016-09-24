@@ -19,7 +19,7 @@ The maintenance and support services (“Support Services”) provided by Avi Ne
 * Usage instruction
 * Instruction in installation of updates and patches
 * Remote diagnosis of issues
-* Bug and enhancement reporting
+* Bug and enhancement reporting 
 
 **Not Included:**
 
@@ -30,7 +30,7 @@ The maintenance and support services (“Support Services”) provided by Avi Ne
 * Integration of Avi Networks’ products with third-party products
 * System or network design
 * Hardware or environment support (EG power, cooling, etc.)
-* On-site assistance
+* On-site assistance 
 
 ### B.   SUPPORT LEVEL DEFINITIONS
 
@@ -38,12 +38,12 @@ The maintenance and support services (“Support Services”) provided by Avi Ne
 
 * Support through knowledge base, portal & customer community only.
 * Avi Networks makes no commitments of any kind with respect to Community Support, including without limitation any commitment regarding the provision of support from any member of Avi Networks’ support team.
-* Users of Avi Networks’ products rely on Community Support entirely at their own risk, even as to information which is or may appear to be provided by Avi personnel.
+* Users of Avi Networks’ products rely on Community Support entirely at their own risk, even as to information which is or may appear to be provided by Avi personnel. 
 
 **24x7 Support:**
 
 * Community Support
-* Plus access to support agents through Avi Networks’ support portal 24x7x365
+* Plus access to support agents through Avi Networks’ support portal 24x7x365 
 
 For 24x7 Support, support agents provide:
 
@@ -51,7 +51,7 @@ For 24x7 Support, support agents provide:
 * Ability to support problem isolation and product specification defect determination.
 * Ability to analyze traces of where the error occurred.
 * Fixing Product bugs/defects or generating work-arounds, including any security vulnerabilities identified by Avi Networks or any third party.
-* Troubleshooting bugs/defects that Level 2 support is unable to bring to resolution.
+* Troubleshooting bugs/defects that Level 2 support is unable to bring to resolution. 
 
  
 
@@ -77,96 +77,98 @@ Problem severities are defined below.  It is Avi Networks’ policy to work wit
 
 ### C.   RESPONSE AND ESCALATION
 
-1. Avi Networks will provide responses to problem reports, ongoing updates, and resolutions according to the following table:
-<table class="table table-hover"> 
- <tbody> 
-  <tr> 
-   <td bgcolor="ff7500" width="85"><strong><span style="color: white;">Severity</span></strong></td> 
-   <td bgcolor="ff7500"><strong><span style="color: white;">Initial Response</span></strong></td> 
-   <td bgcolor="ff7500"><strong><span style="color: white;">Ongoing Updates</span></strong></td> 
-   <td bgcolor="ff7500"><strong><span style="color: white;">Time to Provide Fix/Workaround</span></strong></td> 
-  </tr> 
-  <tr> 
-   <td width="85"><strong>S1</strong></td> 
-   <td>30 mins</td> 
-   <td>Every Hour</td> 
-   <td>4 hours</td> 
-  </tr> 
-  <tr> 
-   <td width="85"><strong>S2</strong></td> 
-   <td>1 Hour</td> 
-   <td>Every 2 Hours</td> 
-   <td>24 hours</td> 
-  </tr> 
-  <tr> 
-   <td width="85"><strong>S3</strong></td> 
-   <td>4 Hours</td> 
-   <td>Every 1 Business Day</td> 
-   <td>5 Business Days</td> 
-  </tr> 
-  <tr> 
-   <td width="85"><strong>S4</strong></td> 
-   <td>24 Hours</td> 
-   <td>Every 3 Business Days</td> 
-   <td>10 Business Days</td> 
-  </tr> 
- </tbody> 
-</table>
-
-1. Avi Networks will escalate unresolved problems according to the table below. Severity 1 problem escalation times are measured in Support Hours. Escalation times for all other Severity levels shall be measured only during Business Days, where a Business Day shall be measured from the time of the triggering event on the first Business Day to the same time on the next Business Day.
-<table class="table table-hover"> 
- <tbody> 
-  <tr> 
-   <td bgcolor="ff7500"><b><span style="color: white;">Elapsed Time</span></b></td> 
-   <td bgcolor="ff7500"><b><span style="color: white;">Severity 1</span></b></td> 
-   <td bgcolor="ff7500"><b><span style="color: white;">Severity 2</span></b></td> 
-   <td bgcolor="ff7500"><b><span style="color: white;">Severity 3</span></b></td> 
-   <td bgcolor="ff7500"><b><span style="color: white;">Severity 4</span></b></td> 
-  </tr> 
-  <tr> 
-   <td><b>1 Hour</b></td> 
-   <td>Support Group Lead</td> 
-   <td></td> 
-   <td></td> 
-   <td></td> 
-  </tr> 
-  <tr> 
-   <td><b>4 Hour</b></td> 
-   <td>Support Director</td> 
-   <td>Support Group Lead</td> 
-   <td></td> 
-   <td></td> 
-  </tr> 
-  <tr> 
-   <td><b>24 Hour</b></td> 
-   <td>VP Engineering</td> 
-   <td>Support Director</td> 
-   <td></td> 
-   <td></td> 
-  </tr> 
-  <tr> 
-   <td><b>48 Hour</b></td> 
-   <td>President (CEO)</td> 
-   <td>VP Engineering</td> 
-   <td></td> 
-   <td></td> 
-  </tr> 
-  <tr> 
-   <td><b>72 Hour</b></td> 
-   <td></td> 
-   <td></td> 
-   <td>Support Group Lead</td> 
-   <td></td> 
-  </tr> 
-  <tr> 
-   <td><b>96 Hour</b></td> 
-   <td></td> 
-   <td>President (CEO)</td> 
-   <td>Support Director</td> 
-   <td>Support Group Lead</td> 
-  </tr> 
- </tbody> 
-</table>
+<ol> 
+ <li>Avi Networks will provide responses to problem reports, ongoing updates, and resolutions according to the following table:</li> 
+</ol> 
+<table class="table table-hover table table-bordered table-hover">  
+<tbody>      
+<tr>     
+<td><strong><span style="color: white;">Severity</span></strong></td>
+<td><strong><span style="color: white;">Initial Response</span></strong></td>
+<td><strong><span style="color: white;">Ongoing Updates</span></strong></td>
+<td><strong><span style="color: white;">Time to Provide Fix/Workaround</span></strong></td>
+</tr>
+<tr>     
+<td><strong>S1</strong></td>
+<td>30 mins</td>
+<td>Every Hour</td>
+<td>4 hours</td>
+</tr>
+<tr>     
+<td><strong>S2</strong></td>
+<td>1 Hour</td>
+<td>Every 2 Hours</td>
+<td>24 hours</td>
+</tr>
+<tr>     
+<td><strong>S3</strong></td>
+<td>4 Hours</td>
+<td>Every 1 Business Day</td>
+<td>5 Business Days</td>
+</tr>
+<tr>     
+<td><strong>S4</strong></td>
+<td>24 Hours</td>
+<td>Every 3 Business Days</td>
+<td>10 Business Days</td>
+</tr>
+</tbody>
+</table> <ol start="2"> 
+ <li>Avi Networks will escalate unresolved problems according to the table below. Severity 1 problem escalation times are measured in Support Hours. Escalation times for all other Severity levels shall be measured only during Business Days, where a Business Day shall be measured from the time of the triggering event on the first Business Day to the same time on the next Business Day.</li> 
+</ol> 
+<table class="table table-hover table table-bordered table-hover">  
+<tbody>        
+<tr>      
+<td><b><span style="color: white;">Elapsed Time</span></b></td>
+<td><b><span style="color: white;">Severity 1</span></b></td>
+<td><b><span style="color: white;">Severity 2</span></b></td>
+<td><b><span style="color: white;">Severity 3</span></b></td>
+<td><b><span style="color: white;">Severity 4</span></b></td>
+</tr>
+<tr>      
+<td><b>1 Hour</b></td>
+<td>Support Group Lead</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>      
+<td><b>4 Hour</b></td>
+<td>Support Director</td>
+<td>Support Group Lead</td>
+<td></td>
+<td></td>
+</tr>
+<tr>      
+<td><b>24 Hour</b></td>
+<td>VP Engineering</td>
+<td>Support Director</td>
+<td></td>
+<td></td>
+</tr>
+<tr>      
+<td><b>48 Hour</b></td>
+<td>President (CEO)</td>
+<td>VP Engineering</td>
+<td></td>
+<td></td>
+</tr>
+<tr>      
+<td><b>72 Hour</b></td>
+<td></td>
+<td></td>
+<td>Support Group Lead</td>
+<td></td>
+</tr>
+<tr>      
+<td><b>96 Hour</b></td>
+<td></td>
+<td>President (CEO)</td>
+<td>Support Director</td>
+<td>Support Group Lead</td>
+</tr>
+</tbody>
+</table> 
 
 Avi Networks will make contact information for the roles in the table above as necessary over the course of an escalation process.  Any changes to the initial contacts shall be communicated to the appropriate party as soon as reasonably possible, and/or incorporated into any applicable standard operating procedure document.
 
@@ -199,7 +201,7 @@ Avi will support any major version release of the Licensed Products for a period
 * April 15, 2016:  version 16.1.2 released.
 * May 1, 2016: version 16.2 released,
 * September 1, 2017: Version Support Period ends for version 16.1, including all 16.1.x versions.
-* November 1, 2017: Version Support Period Ends for version 16.2, including all 16.2.x versions
+* November 1, 2017: Version Support Period Ends for version 16.2, including all 16.2.x versions 
 
  
 

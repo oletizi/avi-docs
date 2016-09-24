@@ -14,7 +14,7 @@ The pool configuration specifies the HTTP error response codes that will result 
 
 * Explicit code number(s): Enter one or more individual error codes (for example, 404).
 * Range of codes: Enter a range within 400-499 or 500-599 (for example, 501-503).
-* Entire block of codes: 4*xx* or 5*xx* (for example, 4*xx*).
+* Entire block of codes: 4*xx* or 5*xx* (for example, 4*xx*). 
 
 ### Maximum Retries
 
@@ -29,22 +29,25 @@ Currently, HTTP server reselect applies only to idempotent request methods, sinc
 ## Configuring HTTP Server Reselect
 
 HTTP server reselect can be enabled on the Advanced tab of the pool configuration.
-
-1. Navigate to Applications > Pools.
-1. Open the configuration popup for the pool:
-
-* If enabling the feature in an existing pool, click the edit icon next to the pool name.
-* If creating a new pool, click Create, then click on the cloud name and click Next. Enter a name for the pool on the Settings tab, then select the servers on the Servers tab.
-* Select Advanced to display the tab of advanced options.
-* Select (check) the HTTP Server Reselect checkbox.
-* Enter the error response codes that will trigger server reselection.
-* Save the changes:
-
-* If creating a new pool, click Next to review the settings, then click Save.
-* If editing an existing pool, click Save.
+<ol> 
+ <li>Navigate to Applications &gt; Pools.</li> 
+ <li>Open the configuration popup for the pool: 
+  <ul> 
+   <li>If enabling the feature in an existing pool, click the edit icon next to the pool name.</li> 
+   <li>If creating a new pool, click Create, then click on the cloud name and click Next. Enter a name for the pool on the Settings tab, then select the servers on the Servers tab.</li> 
+  </ul> </li> 
+ <li>Select Advanced to display the tab of advanced options.</li> 
+ <li>Select (check) the HTTP Server Reselect checkbox.</li> 
+ <li>Enter the error response codes that will trigger server reselection.</li> 
+ <li>Save the changes: 
+  <ul> 
+   <li>If creating a new pool, click Next to review the settings, then click Save.</li> 
+   <li>If editing an existing pool, click Save.</li> 
+  </ul> </li> 
+</ol> 
 
 The following example enables HTTP server reselection for all 4*xx* error codes:
 
-<a href="img/http-server-reselect-1.png"><img src="img/http-server-reselect-1.png" alt="http-server-reselect" width="814" height="644"></a>
+<a href="img/http-server-reselect-1.png"><img class="alignnone size-full wp-image-8756" src="img/http-server-reselect-1.png" alt="http-server-reselect" width="814" height="644"></a>
 
 Based on this configuration, if a server in this pool responds to a client request with a 4*xx* error code, Vantage retries the request by sending it to another server in the pool. Vantage will retry the request up to 4 times (to 4 different servers).

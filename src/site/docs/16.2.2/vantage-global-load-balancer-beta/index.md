@@ -10,6 +10,7 @@ This beta includes:
 * Active / Active datacenter traffic distribution
 * Geolocation database and location mapping
 * Datacenter persistence
-* Rich visibility and metrics for all transactions
+* Rich visibility and metrics for all transactions 
 
 Please contact support@avinetworks.com for more information regarding the beta program.
+

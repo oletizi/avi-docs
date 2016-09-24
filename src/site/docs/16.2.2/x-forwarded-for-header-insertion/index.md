@@ -8,14 +8,13 @@ Most application servers can leverage the XFF header as the source IP address fo
 For HTTP traffic, Vantage can be configured to insert an X-Forwarded-For (XFF) header in client-server requests, to include the original client IP addresses in the requests for logging.
 
 To include the client's original IP address in HTTP traffic logs, enable Vantage to insert an XFF header into the client traffic destined for the server. XFF insertion can be enabled in the HTTP application profile that is attached to the virtual service.
+<ol> 
+ <li> <p>Navigate to Template &gt; HTTP Application Profile. </p> </li> 
+ <li> <p>Within the General tab, select the X-Forwarded-For check box. </p> <p>Note: Optionally the header can be renamed using the XFF Alternate Name field.</p> </li> 
+ <li> <p>When finished changing the profile, click Save.</p> </li> 
+</ol> 
 
-1. Navigate to Template > HTTP Application Profile. 
-1. Within the General tab, select the X-Forwarded-For check box. 
-
-Note: Optionally the header can be renamed using the XFF Alternate Name field.
-1. When finished changing the profile, click Save.
-
-<a href="img/XFF-Policy.png"><img src="img/XFF-Policy.png" alt="XFF Policy" width="722" height="223"></a>  
+<a href="img/XFF-Policy.png"><img class="alignnone wp-image-254" src="img/XFF-Policy.png" alt="XFF Policy" width="722" height="223"></a>  
 
 The profile change affects any virtual services that use the same HTTP application profile.
 
@@ -26,6 +25,8 @@ When XFF header insertion is enabled, the SE checks the headers of client-server
 There are times when this behavior (removing pre-existing XFF headers) is not desired, such as when multiple proxies may be SNATing and inserting XFF headers. In this case, to insert an XFF header without removing pre-existing XFF headers, use either a DataScript or an HTTP Request Policy.
 
 Example: 
-<pre><code class="language-lua">avi.http.add_header("XFF", avi.vs.client_ip())</code></pre>
+
+<pre><code class="language-lua">avi.http.add_header("XFF", avi.vs.client_ip())</code></pre>  
 
    
+

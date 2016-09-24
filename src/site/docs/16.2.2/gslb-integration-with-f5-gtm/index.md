@@ -12,8 +12,8 @@ This scope of this document covers integration of Avi Vantage with F5 GTM. Insta
 
 This document assumes that:
 
-* Avi Vantage is installed in two or more data centers.
-* F5’s BIG-IP GTM is installed.
+* Avi Vantage is installed in two or more data centers. 
+* F5’s BIG-IP GTM is installed.  
 
 GTM may or may not be installed in the same data centers where Vantage will be providing local application delivery services.
 
@@ -23,49 +23,59 @@ No special configuration is required for virtual services advertised by Vantage 
 
 ### Add Avi Service Engine to GTM
 
-1. From within the GTM GUI, navigate to DNS > GSLB > Server.
-1. Configure the following information:
-
-* Create Server Object: Generic Load balancer
-* Name: Unique Avi Service Engine (SE), for example "Avi_DC1"
-* Address: Avi Controller’s cluster IP address
-* Translation: Firewall/NAT public routable IP address of the Controller cluster IP
-* Data Center: configured GTM data center object, for example "DC1"
-* Health Monitor: Gateway_icmp
-* Click on Create to finish.
+<ol> 
+ <li> <p>From within the GTM GUI, navigate to DNS &gt; GSLB &gt; Server.</p> </li> 
+ <li> <p>Configure the following information:</p> 
+  <ul> 
+   <li> <p>Create Server Object: Generic Load balancer</p> </li> 
+   <li> <p>Name: Unique Avi Service Engine (SE), for example "Avi_DC1"</p> </li> 
+   <li> <p>Address: Avi Controller’s cluster IP address</p> </li> 
+   <li> <p>Translation: Firewall/NAT public routable IP address of the Controller cluster IP</p> </li> 
+   <li> <p>Data Center: configured GTM data center object, for example "DC1"</p> </li> 
+   <li> <p>Health Monitor: Gateway_icmp</p> </li> 
+  </ul> </li> 
+ <li> <p>Click on Create to finish.</p> </li> 
+</ol> 
 
 ### Create Avi Virtual Service as GTM VS Object
 
-1. Click Add. Enter the following information:
-
-* Name: Avi Controller
-* Address: Avi virtual service IP (VIP) address
-* Service Port: 80
-* Health Monitor: HTTP or TCP
-* Dependency List: Select Avi_Controller virtual server object
-
-Note: For HTTP virtual services, HTTP health checks are recommended. To be successful, an HTTP health check must include sending a valid HTTP request to the server, and receiving a valid HTTP response. For other types of virtual services, TCP health checks are recommended.
-* Add to Dependency List.
-* Click on Create to finish.
-* *(Optional)* Create additional Avi virtual services from different data center, if needed.
+<ol> 
+ <li> <p>Click Add. Enter the following information:</p> 
+  <ul> 
+   <li> <p>Name: Avi Controller</p> </li> 
+   <li> <p>Address: Avi virtual service IP (VIP) address</p> </li> 
+   <li> <p>Service Port: 80</p> </li> 
+   <li> <p>Health Monitor: HTTP or TCP</p> </li> 
+   <li> <p>Dependency List: Select Avi_Controller virtual server object</p> <p>Note: For HTTP virtual services, HTTP health checks are recommended. To be successful, an HTTP health check must include sending a valid HTTP request to the server, and receiving a valid HTTP response. For other types of virtual services, TCP health checks are recommended.</p> </li> 
+  </ul> </li> 
+ <li> <p>Add to Dependency List.</p> </li> 
+ <li> <p>Click on Create to finish.</p> </li> 
+ <li> <p><em>(Optional)</em> Create additional Avi virtual services from different data center, if needed.</p> </li> 
+</ol> 
 
 ### Create GTM Pool
 
-1. Navigate to DNS > GSLB > Pool.
-1. Click on Create. Enter the following information:
-
-* Name: enter a name for the GTM pool.
-* Health check: leave empty (none).
-* Member list: select Avi Virtual Service Objects from the list and click Add.
-* Click on Finish.
+<ol> 
+ <li> <p>Navigate to DNS &gt; GSLB &gt; Pool.</p> </li> 
+ <li> <p>Click on Create. Enter the following information:</p> 
+  <ul> 
+   <li> <p>Name: enter a name for the GTM pool.</p> </li> 
+   <li> <p>Health check: leave empty (none).</p> </li> 
+   <li> <p>Member list: select Avi Virtual Service Objects from the list and click Add.</p> </li> 
+  </ul> </li> 
+ <li> <p>Click on Finish.</p> </li> 
+</ol> 
 
 ### Create GTM WideIP for Load Balancing
 
-1. Navigate to DNS > GSLB > WideIP.
-1. Click on Create. Add the following information:
-
-* Name: enter the FQDN of the application.
-* LB Selection Log: select Pool and Member selection log.
-* LB Method: select desired load balancing method.
-* Pool List: add the GTM pool to the list.
-* Click on Finish to complete the integration.
+<ol> 
+ <li> <p>Navigate to DNS &gt; GSLB &gt; WideIP.</p> </li> 
+ <li> <p>Click on Create. Add the following information:</p> 
+  <ul> 
+   <li> <p>Name: enter the FQDN of the application.</p> </li> 
+   <li> <p>LB Selection Log: select Pool and Member selection log.</p> </li> 
+   <li> <p>LB Method: select desired load balancing method.</p> </li> 
+   <li> <p>Pool List: add the GTM pool to the list.</p> </li> 
+  </ul> </li> 
+ <li> <p>Click on Finish to complete the integration.</p> </li> 
+</ol> 

@@ -8,14 +8,14 @@ Avi Vantage version 15.2 and higher supports the following:
 
 * TLS 1.0
 * TLS 1.1
-* TLS 1.2
+* TLS 1.2  
 
 Vantage version 15.1 and lower supports:
 
 * SSL v3
 * TLS 1.0
 * TLS 1.1
-* TLS 1.2
+* TLS 1.2  
 
 Support for SSL v2 and v3 is deprecated in Avi Vantage 15.2 and higher, since these protocols are highly insecure and have been deprecated.
 

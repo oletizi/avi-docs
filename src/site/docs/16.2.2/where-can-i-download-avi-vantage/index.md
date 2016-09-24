@@ -8,4 +8,4 @@ The portal requires an Avi Networks customer account, which may be obtained by s
 
 Once logged into the portal, download the latest version of the Controller from the Software tab. The Controller image includes an embedded Service Engine image. Documentation is included on this page for installation within the appropriate cloud environments.  
 
-<a href="img/avi-portal-download-code-1.png"><img src="img/avi-portal-download-code-1.png" alt="avi-portal-download-code" width="768" height="257"></a>
+<a href="img/avi-portal-download-code-1.png"><img src="img/avi-portal-download-code-1.png" alt="avi-portal-download-code" width="768" height="257" class="alignnone size-full wp-image-4124"></a>

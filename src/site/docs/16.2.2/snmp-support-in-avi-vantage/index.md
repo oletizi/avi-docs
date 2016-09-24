@@ -22,7 +22,7 @@ The following are the Avi Vantage configuration objects exposed through the AVI-
 
 * Avi Controller
 * Service Engine
-* Virtual Service
+* Virtual Service 
 
 ### Avi Controller
 
@@ -40,96 +40,11 @@ aviControllerName 	    : Name assigned to the Avi Controller (defaults
                           to the IP address of the Avi Controller)
 aviControllerAddr 	    : Management v4 IP address of the Avi
                           Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+aviControllerStatus 	: Runtime status of the Avi Controller</code></pre>   
 
 ### Service Engine
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
+<pre><code class="language-lua">AviServiceEngineEntry ::=
     SEQUENCE {
        	aviServiceEngineIndex      Integer32,
        	aviServiceEngineUUID       SnmpAdminString,
@@ -143,96 +58,11 @@ aviServiceEngineName	: Name of the Service Engine VM
                           assigned in the Virtual Infrastructure
 aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
                           Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+aviServiceEngineStatus 	: Runtime status of the Avi Service Engine</code></pre>   
 
 ### Virtual Service
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
+<pre><code class="language-lua">AviVirtualServiceEntry ::=
     SEQUENCE {
        	aviVirtualServiceIndex      Integer32,
        	aviVirtualServiceUUID       SnmpAdminString,
@@ -244,59 +74,14 @@ aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualSer
 aviVirtualService UUID	: Unique UUID of the virtual service
 aviVirtualServiceName	: Name assigned to the virtual service
 aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+aviVirtualServiceStatus : Runtime status of the virtual service</code></pre>    
 
 ## Notifications (traps)
 
 The Controller cluster leader can issue SNMP trap notifications based on system events. For SNMP trap notifications to reach an external SNMP server:
 
 * Since the leadership role can change from time to time, the external SNMP server should be configured to allow traffic from any one of the three Controllers in the cluster, i.e., all three addresses should be in the SNMP server's allowed-access list.
-* The firewall rules should be configured to allow UDP traffic destined to port 162 on the SNMP trap server from any of the three cluster member's IP addresses.
+* The firewall rules should be configured to allow UDP traffic destined to port 162 on the SNMP trap server from any of the three cluster member's IP addresses. 
 
 System events related to the Avi Controller cluster, Avi Service Engines, virtual services and SSL certification expiry can be classified into their respective SNMP traps. Other system events use the generic SNMP trap notification to generate traps.
 
@@ -306,53 +91,13 @@ Avi Controller supports the following SNMP notifications (traps).
 * aviServiceEngineStatusChanged
 * aviVirtualServiceStatusChanged
 * aviSSLCertificateExpired
-* aviSystemAlert
+* aviSystemAlert 
 
 Note: aviSystemAlert is a generic trap notification and can be associated with any of the system events generated by the Avi Controller.
 
 ### aviControllerStatusChanged
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
+<pre><code class="language-lua">aviControllerStatusChanged NOTIFICATION-TYPE
    	OBJECTS {
    	aviControllerStatus,
    	aviOperStatusReason
@@ -361,43 +106,7 @@ aviVirtualServiceStatus : Runtime status of the virtual service aviControllerSta
 	DESCRIPTION
 	"This alert is generated when controller status 
    	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+	::= { aviNotificationsObjects 1 }</code></pre>   
 
 This trap is generated when the Avi Controller status changes.
 
@@ -411,62 +120,13 @@ The following Controller-state-change system events can initiate the aviControll
 * License-Usage-Servers
 * License-Usage-Cores
 * License-Usage-Throughput
-* License-Usage-Vs
+* License-Usage-Vs 
 
 For each of the above Avi Controller status-change events, there is a default system alert configuration and for it a default alert action.
 
 ### aviServiceEngineStatusChanged
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
+<pre><code class="language-lua">aviServiceEngineStatusChanged NOTIFICATION-TYPE
    	OBJECTS {
    	aviObjectURL,
    	aviServiceEngineStatus,
@@ -476,33 +136,7 @@ aviVirtualServiceStatus : Runtime status of the virtual service aviControllerSta
    	DESCRIPTION
    	"This alert is generated when Service Engine status 
    	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+	::= { aviNotificationsObjects 2 }</code></pre>   
 
 This trap is generated when the Avi SE status changes.
 
@@ -513,72 +147,13 @@ The following Avi SE status-change events can initiate the aviServiceEngineStatu
 * Se-Vm-Deleted
 * Se-Powered-Down
 * Se-Rebooted
-* Se-Down
+* Se-Down 
 
 For each of the above Avi SE status-change events, there is a default system alert configuration.
 
 ### aviVirtualServiceStatusChanged
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
+<pre><code class="language-lua">aviVirtualServiceStatusChanged NOTIFICATION-TYPE
    	OBJECTS {
    	aviObjectURL,
    	aviVirtualServiceStatus,
@@ -588,105 +163,20 @@ aviVirtualServiceStatus : Runtime status of the virtual service aviControllerSta
    	DESCRIPTION
    	"This alert is generated when virtual service status 
    	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+   	::= { aviNotificationsObjects 3 }</code></pre>   
 
 This trap is generated when the virtual service status changes.
 
 The following virtual service status-change events can initiate the aviVirtualServiceStatusChanged trap:
 
 * Vs-Down
-* Vs-Up
+* Vs-Up 
 
 To configure SNMP traps for the Avi Controller status-change events, <a href="#event-based-trap">click here</a>.
 
 ### aviSSLCertificateExpired
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
+<pre><code class="language-lua">aviSSLCertificateExpired NOTIFICATION-TYPE
 	OBJECTS {
    	aviObjectURL,
    	aviSSLCertificateInfo
@@ -695,14 +185,7 @@ aviVirtualServiceStatus : Runtime status of the virtual service aviControllerSta
    	DESCRIPTION
    	"This alert is generated when SSL Certificate 
    	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
-	OBJECTS {
-   	aviSystemAlertInfoDesc
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+   	::= { aviNotificationsObjects 4 }</code></pre>   
 
 This trap is generated when an SSL certificate expires. The following virtual service status-change event(s) can initiate the aviVirtualServiceStatusChanged trap: Ssl-Cert-Expire
 
@@ -710,92 +193,14 @@ To configure SNMP traps for the Avi Controller status-change events, <a href="#e
 
 ### aviSystemAlert
 
-<pre><code class="language-lua">AviControllerEntry ::=
-   	SEQUENCE {
-     	aviControllerIndex      Integer32,
-       	aviControllerUUID       SnmpAdminString,
-       	aviControllerName       DisplayString,
-       	aviControllerAddrType   InetAddressType,
-      	aviControllerAddr       InetAddress,
-       	aviControllerStatus     INTEGER
-	}
-aviControllerUUID 	    : Unique UUID of the Avi Controller VM
-aviControllerName 	    : Name assigned to the Avi Controller (defaults
-                          to the IP address of the Avi Controller)
-aviControllerAddr 	    : Management v4 IP address of the Avi
-                          Controller
-aviControllerStatus 	: Runtime status of the Avi Controller AviServiceEngineEntry ::=
-    SEQUENCE {
-       	aviServiceEngineIndex      Integer32,
-       	aviServiceEngineUUID       SnmpAdminString,
-       	aviServiceEngineName       DisplayString,
-       	aviServiceEngineAddrType   InetAddressType,
-       	aviServiceEngineAddr       InetAddress,
-       	aviServiceEngineStatus     INTEGER
-    }
-aviServiceEngineUUID	: Unique UUID of the Avi Service Engine VM
-aviServiceEngineName	: Name of the Service Engine VM 
-                          assigned in the Virtual Infrastructure
-aviServiceEngineAddr	: Management v4 IP address of the Avi Service 
-                          Engine VM
-aviServiceEngineStatus 	: Runtime status of the Avi Service Engine AviVirtualServiceEntry ::=
-    SEQUENCE {
-       	aviVirtualServiceIndex      Integer32,
-       	aviVirtualServiceUUID       SnmpAdminString,
-       	aviVirtualServiceName       DisplayString,
-       	aviVirtualServiceAddrType   InetAddressType,
-       	aviVirtualServiceAddr       InetAddress,
-       	aviVirtualServiceStatus     INTEGER
-    }
-aviVirtualService UUID	: Unique UUID of the virtual service
-aviVirtualServiceName	: Name assigned to the virtual service
-aviVirtualServiceAddr	: Virtual IP (v4) address of the virtual service 
-aviVirtualServiceStatus : Runtime status of the virtual service aviControllerStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviControllerStatus,
-   	aviOperStatusReason
-   	}
-	STATUS     current
-	DESCRIPTION
-	"This alert is generated when controller status 
-   	Changes."
-	::= { aviNotificationsObjects 1 } aviServiceEngineStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviServiceEngineStatus,
-   	aviOperStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when Service Engine status 
-   	Changes."
-	::= { aviNotificationsObjects 2 } aviVirtualServiceStatusChanged NOTIFICATION-TYPE
-   	OBJECTS {
-   	aviObjectURL,
-   	aviVirtualServiceStatus,
-   	aviVirtualServiceStatusReason
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when virtual service status 
-   	changes."
-   	::= { aviNotificationsObjects 3 } aviSSLCertificateExpired NOTIFICATION-TYPE
-	OBJECTS {
-   	aviObjectURL,
-   	aviSSLCertificateInfo
-   	}
-   	STATUS     current
-   	DESCRIPTION
-   	"This alert is generated when SSL Certificate 
-   	Expires."
-   	::= { aviNotificationsObjects 4 } aviSystemAlert NOTIFICATION-TYPE
+<pre><code class="language-lua">aviSystemAlert NOTIFICATION-TYPE
 	OBJECTS {
    	aviSystemAlertInfoDesc
    	}
    	STATUS     current
    	DESCRIPTION
    	"This is a generic system alert"
-   	::= { aviNotificationsObjects 5 }</code></pre>
+   	::= { aviNotificationsObjects 5 }</code></pre>   
 
 This is a generic trap notification. It can be associated with any of the system events generated by the Avi Controller.
 <a name="event-based-trap"></a>
@@ -804,23 +209,23 @@ This is a generic trap notification. It can be associated with any of the system
 
 This section shows the configuration for generating an SNMP trap when a Vs-Down event occurs. The workflow is described here, and also shown here:
 
-<a href="img/Alert-Workflow-1.png"><img src="img/Alert-Workflow-1.png" alt="Alert-Workflow" width="600" height="116"></a>
+<a href="img/Alert-Workflow-1.png"><img class="alignnone wp-image-11327 size-full" src="img/Alert-Workflow-1.png" alt="Alert-Workflow" width="600" height="116"></a>
 
  
 
 In the following example from the Avi Controller web interface, the Vs-Down event is shown associated with a new alert action named "my-SNMP-alert-action." The default alert action System-Alert-Level-High could be modified instead. However, it is best practice to leave the system default alert action unchanged, and instead create a new, custom alert action.
 
-<a href="img/snmp-alertconfig-workflow2.png"><img src="img/snmp-alertconfig-workflow2.png" alt="snmp-alertconfig-workflow2" width="933" height="288"></a>
+<a href="img/snmp-alertconfig-workflow2.png"><img class="alignnone size-full wp-image-8366" src="img/snmp-alertconfig-workflow2.png" alt="snmp-alertconfig-workflow2" width="933" height="288"></a>
 
 In the Alert Configuration editor, the alert action is configured:
-<a href="img/snmp-alertconfig-workflow3.png"><img src="img/snmp-alertconfig-workflow3.png" alt="snmp-alertconfig-workflow3" width="435" height="700"></a>
+<a href="img/snmp-alertconfig-workflow3.png"><img class="alignnone size-full wp-image-8367" src="img/snmp-alertconfig-workflow3.png" alt="snmp-alertconfig-workflow3" width="435" height="700"></a>
 
 In the Alert Action editor, the named action is associated with just ***one*** type of notification, an SNMP trap. The notification is given the name “my-SNMP-trap-notification.”
-<a href="img/snmp-alertconfig-workflow4.png"><img src="img/snmp-alertconfig-workflow4.png" alt="snmp-alertconfig-workflow4" width="685" height="491"></a>
+<a href="img/snmp-alertconfig-workflow4.png"><img class="alignnone size-full wp-image-8368" src="img/snmp-alertconfig-workflow4.png" alt="snmp-alertconfig-workflow4" width="685" height="491"></a>
 
 The named notification is defined in the notification editor.
 
 Note: Multiple SNMP servers are supported. (Click on the green + box to add.)
-<a href="img/snmp-alertconfig-workflow5.png"><img src="img/snmp-alertconfig-workflow5.png" alt="snmp-alertconfig-workflow5" width="683" height="234"></a>
+<a href="img/snmp-alertconfig-workflow5.png"><img class="alignnone size-full wp-image-8369" src="img/snmp-alertconfig-workflow5.png" alt="snmp-alertconfig-workflow5" width="683" height="234"></a>
 To confirm that the SNMP trap notification is defined:
-<a href="img/snmp-alertconfig-workflow6.png"><img src="img/snmp-alertconfig-workflow6.png" alt="snmp-alertconfig-workflow6" width="600" height="252"></a>
+<a href="img/snmp-alertconfig-workflow6.png"><img class="alignnone size-full wp-image-8370" src="img/snmp-alertconfig-workflow6.png" alt="snmp-alertconfig-workflow6" width="600" height="252"></a>

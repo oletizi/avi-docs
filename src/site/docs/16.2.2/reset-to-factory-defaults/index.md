@@ -9,7 +9,8 @@ As part of the factory reset, the Controllers and Service Engines (SEs) will reb
 Following a factory reset, the next time a Vantage user logs onto the Controller through the web interface, the initial setup wizard starts. The Vantage user can then enter new configuration settings, including a new password.
 
 To reset to factory defaults, run the following command from the CLI:
-<pre class="command-line language-bash" data-prompt=": >"><code>reboot clean</code></pre>
+
+<pre class="command-line language-bash" data-prompt=": >"><code>reboot clean</code></pre> 
 
 Note: Upon reboot clean, a new self-signed certificate is generated for the portal. If you are logged in the UI, the browser may not redirect the page to login as it sees a certificate change. You will have to refresh the page in the browser to get back to login page.
 
@@ -17,7 +18,7 @@ Note: Upon reboot clean, a new self-signed certificate is generated for the port
 
 * SEs and Controllers
 * SE and Controller management networking properties such as IPs and default gateways
-* Licenses
+* Licenses 
 
 Note: In write access mode deployments, if an SE is not given a new configuration within a configured interval, it is deleted. (In the web interface, this interval is configurable on the Advanced tab for the SE group, in the Delete Unused SEs After field.)
 
@@ -28,4 +29,4 @@ Note: In write access mode deployments, if an SE is not given a new configuratio
 * SSL certificates, including certificates that may have been used for the Controller web interface
 * Backups of the configuration
 * Logs and metrics
-* RBAC, users, passwords
+* RBAC, users, passwords 

@@ -8,7 +8,7 @@ Avi Vantage supports deployment within the following OpenStack releases:
 * Icehouse
 * Juno
 * Kilo
-* Liberty
+* Liberty 
 
 Vantage supports integration through the Controller's management interfaces or through OpenStack LBaaS v1.  
 

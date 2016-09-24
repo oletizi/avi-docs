@@ -2,7 +2,7 @@
 title: Events that Trigger Significant Logs
 layout: default
 ---
-<a href="img/SignificantLog.png"><img src="img/SignificantLog.png" alt="SignificantLog" width="416" height="174"></a>Avi Vantage records the following Significant Log events types.  These errors are recorded in the virtual service > logs page when Significant Logs are enabled (the default).  A log may contain one or more of the following events listed below.
+<a href="img/SignificantLog.png"><img class="size-full wp-image-458 alignright" src="img/SignificantLog.png" alt="SignificantLog" width="416" height="174"></a>Avi Vantage records the following Significant Log events types.  These errors are recorded in the virtual service > logs page when Significant Logs are enabled (the default).  A log may contain one or more of the following events listed below.
 
 Errors that trigger significant events may be adjusted within the Analytics profile attached to the virtual service.  For instance, HTTP 4xx response codes or server RST packets may be omitted from being recorded as an error. The profile is also used to define a slow connection from a client or server.
 
@@ -15,7 +15,7 @@ Errors that trigger significant events may be adjusted within the Analytics prof
 * TCP three way handshake with the client timed out despite multiple retries.
 * TCP three way handshake with the server timed out despite multiple retries.
 * Avi Vantage was unable to complete the TCP three way handshake with the client due to an internal Avi Vantage error. This may be due to lack of memory or other resources.
-* Avi Vantage was unable to complete the TCP three way handshake with the server due to an internal Avi Vantage error. This may be due to lack of memory or other resources.
+* Avi Vantage was unable to complete the TCP three way handshake with the server due to an internal Avi Vantage error. This may be due to lack of memory or other resources. 
 
  
 
@@ -32,7 +32,7 @@ Errors that trigger significant events may be adjusted within the Analytics prof
 * The connection was closed due to internal error.
 * The established TCP connection was closed due to the TCP profile's idle timeout triggered.
 * The connection was dropped due to server side SSL handshake failure.
-* Validation of the server's x509 certificate failed.
+* Validation of the server's x509 certificate failed. 
 
  
 
@@ -47,13 +47,13 @@ Errors that trigger significant events may be adjusted within the Analytics prof
 *  The TCP connection completed gracefully, but there were a high number of retransmitted packets from Avi Vantage to the client. This may be due to a lossy or congested network.
 * The TCP connection completed gracefully, but there were a high number of retransmitted packets from Avi Vantage to the server. This may be due to a lossy or congested network.
 * The TCP connection completed gracefully, but Avi Vantage received a high number of out of order packets from the client. This is generally due to lossy or congested network or drops by Avi Vantage.
-* The TCP connection completed gracefully, but Avi Vantage received a high number of out of order packets from the client. This is generally due to lossy or congested network or drops by Avi Vantage.
+* The TCP connection completed gracefully, but Avi Vantage received a high number of out of order packets from the client. This is generally due to lossy or congested network or drops by Avi Vantage. 
 
  
 
 ### Connection Setup Failed
 
-* Connection setup failed: The connection was dropped due to bad packets received from client during TCP three way handshake.
+* Connection setup failed: The connection was dropped due to bad packets received from client during TCP three way handshake. 
 
  
 
@@ -62,20 +62,18 @@ Errors that trigger significant events may be adjusted within the Analytics prof
 * A 4xx 'client error' HTTP response code was sent to the client.
 * A 5xx 'server error' HTTP response code was sent to the client.
 * Client sent request with HTTP Protocol version 0.9.
-* The connection attempt was reset due to no servers available. This may be because the server connection limits setting was reached, or all servers are in a down state.
+* The connection attempt was reset due to no servers available. This may be because the server connection limits setting was reached, or all servers are in a down state. 
 
  
-
-###
 
 ### Request Abnormal Event
 
 * The response time was greater than the configured threshold.
 * Server response time greater the configured threshold.
-* The server this connection was persisted to is no longer a valid destination.
+* The server this connection was persisted to is no longer a valid destination. 
 
  
 
 ### Avi Rule Failed to Execute
 
-* The Avi Vantage Policy or DataScript failed to execute. For DataScript failures, the expanded log may have a "View All Headers" button, which brings up a modal containing the DataScript error and stacktrace.
+* The Avi Vantage Policy or DataScript failed to execute. For DataScript failures, the expanded log may have a "View All Headers" button, which brings up a modal containing the DataScript error and stacktrace. 

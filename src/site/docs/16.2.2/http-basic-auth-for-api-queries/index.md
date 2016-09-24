@@ -11,6 +11,7 @@ Prior to v15.3, both session based and HTTP basic auth could be used for API cal
 ### Enable via CLI
 
 HTTP Basic Authentication may be enabled via the following CLI commands.
+
 <pre>bash# shell
 : &gt; configure systemconfiguration
 : systemconfiguration&gt; portal_configuration
@@ -18,7 +19,7 @@ HTTP Basic Authentication may be enabled via the following CLI commands.
 Overwriting the previously entered value for allow_basic_authentication
 : systemconfiguration:portal_configuration&gt; exit
 : systemconfiguration&gt; exit
-</pre>
+</pre> 
 
 Truncated view of the results:
 
@@ -34,13 +35,14 @@ Truncated view of the results:
 |   <b>allow_basic_authentication</b>        | <b>True</b>                             |
 |   password_strength_check           | False                            |
 +-------------------------------------+----------------------------------+
-</pre>
+</pre> 
 
 ### Enable via API
 
 HTTP Basic Authentication method may be enabled by setting "allow_basic_authentication" = True in "/api/systemconfiguration" under "portal_configuration".
 
 Truncated view of the results:
+
 <pre>--snip--
     docker_mode: false,
     portal_configuration: 
@@ -59,4 +61,4 @@ Truncated view of the results:
         enable_http: false
     },
     --snip--
-</pre>
+</pre> 

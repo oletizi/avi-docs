@@ -4,7 +4,7 @@ layout: default
 ---
 Logs pages such as the pool and virtual service > logs show logs that are categorized as Non-Significant (green) and Significant (red).  At times the log histogram ribbon may show a yellow question mark, indicating logs are missing near that time frame.  There are a number of scenarios which may cause logs to be in a missing state.
 
-**<img src="img/MissingLogs.png" alt="MissingLogs" width="838" height="220">**
+**<img class="alignnone size-full wp-image-420" src="img/MissingLogs.png" alt="MissingLogs" width="838" height="220">**
 
  
 

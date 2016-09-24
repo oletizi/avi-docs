@@ -12,25 +12,23 @@ To enable service discovery for Mesos, configure an IP address management (IPAM)
 
 ### Notes
 
-* This procedure assumes the Mesos cloud configuration has already been created on the Controller.
-* This procedure assumes the Mesos cloud has already been set up. Any applications that already exist in the Mesos cloud before service discovery is enabled will not be associated with DNS.
+* This procedure assumes the Mesos cloud configuration has already been created on the Controller. 
+* This procedure assumes the Mesos cloud has already been set up. Any applications that already exist in the Mesos cloud before service discovery is enabled will not be associated with DNS.  
 
 ### Configuration Steps
 
-1. Navigate to Templates > Profiles.
-1. Click IPAM Profile.
-
-<a href="img/mesos-service-disc1.png"><img src="img/mesos-service-disc1.png" alt="mesos-service-disc1" width="586" height="146"></a>
-1. Click Create and select Internal as the type.
-1. Enter a name the Name field.
-1. In the Service Domain field, enter the domain name for the Mesos cluster. (For example, "mycompany-mesos".) All applications using this IPAM profile will have DNS records with FQDN *app-name*.mycompany-mesos.
-1. Click Save. The profile appears in the list.
-1. Navigate to Infrastructure > Clouds, and click on the edit icon <img src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"> next to the cloud name. (This may be "Default-Cloud" if the Mesos cloud was the first one created.)
-1. After configuring other cloud settings, click Applications.
-1. Scroll down to the IPAM Profile section and select the IPAM profile from the pull-down list.
-
-<a href="img/mesos-service-disc4.png"><img src="img/mesos-service-disc4.png" alt="mesos-service-disc4" width="586" height="356"></a>
-1. Click Save.
+<ol> 
+ <li> <p>Navigate to Templates &gt; Profiles.</p> </li> 
+ <li> <p>Click IPAM Profile.</p> <p><a href="img/mesos-service-disc1.png"><img src="img/mesos-service-disc1.png" alt="mesos-service-disc1" width="586" height="146" class="alignnone size-full wp-image-5800"></a></p> </li> 
+ <li> <p>Click Create and select Internal as the type.</p> </li> 
+ <li> <p>Enter a name the Name field.</p> </li> 
+ <li> <p>In the Service Domain field, enter the domain name for the Mesos cluster. (For example, "mycompany-mesos".) All applications using this IPAM profile will have DNS records with FQDN <em>app-name</em>.mycompany-mesos.</p> </li> 
+ <li> <p>Click Save. The profile appears in the list.</p> </li> 
+ <li> <p>Navigate to Infrastructure &gt; Clouds, and click on the edit icon <img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"> next to the cloud name. (This may be "Default-Cloud" if the Mesos cloud was the first one created.)</p> </li> 
+ <li> <p>After configuring other cloud settings, click Applications.</p> </li> 
+ <li> <p>Scroll down to the IPAM Profile section and select the IPAM profile from the pull-down list.</p> <p><a href="img/mesos-service-disc4.png"><img src="img/mesos-service-disc4.png" alt="mesos-service-disc4" width="586" height="356" class="alignnone size-full wp-image-5801"></a></p> </li> 
+ <li> <p>Click Save.</p> </li> 
+</ol> 
 
 Next, create a virtual service (sample-app) in Marathon using the avi_proxy label. (No change is needed here for service discovery.)
 
@@ -46,49 +44,34 @@ East-West applications and North-South applications can use static networking. N
 
 ### Notes
 
-* This procedure assumes the Mesos cloud configuration has already been created on the Controller.
-* If the static IP address pool is empty, no virtual services that use this address allocation scheme will be created.
+* This procedure assumes the Mesos cloud configuration has already been created on the Controller. 
+* If the static IP address pool is empty, no virtual services that use this address allocation scheme will be created.  
 
 ### Configuration Steps
 
-1. Navigate to Infrastructure > Clouds.
-1. Click on Mesos-Cloud > Network > Create.
-1. Enter a name for the network (IPAM-Network-1).
-1. Add the networks to use for IP allocation:
-
-a. Click Add Subnet.
-
-<a href="img/mesos-service-disc5.png"><img src="img/mesos-service-disc5.png" alt="mesos-service-disc5" width="585" height="217"></a>
-
-b. Enter the subnet address, in the following format: 20.20.20.0/24
-
-c. Click Add Static IP address pool. Vantage will allocate IP addresses from this pool.
-
-<a href="img/mesos-service-disc6-1.png"><img src="img/mesos-service-disc6-1.png" alt="mesos-service-disc6" width="585" height="289"></a>
-
-d. Click Save.
-
-<a href="img/mesos-service-disc7.png"><img src="img/mesos-service-disc7.png" alt="mesos-service-disc7" width="587" height="360"></a>
-
-e. Repeat for each network to be used for IP address allocation.
-1. Click Save.
-
-<a href="img/mesos-service-disc8.png"><img src="img/mesos-service-disc8.png" alt="mesos-service-disc8" width="675" height="184"></a>
+<ol> 
+ <li> <p>Navigate to Infrastructure &gt; Clouds.</p> </li> 
+ <li> <p>Click on Mesos-Cloud &gt; Network &gt; Create.</p> </li> 
+ <li> <p>Enter a name for the network (IPAM-Network-1).</p> </li> 
+ <li> <p>Add the networks to use for IP allocation:</p> <p>a. Click Add Subnet.</p> <p><a href="img/mesos-service-disc5.png"><img src="img/mesos-service-disc5.png" alt="mesos-service-disc5" width="585" height="217" class="alignnone size-full wp-image-5803"></a></p> <p>b. Enter the subnet address, in the following format: 20.20.20.0/24</p> <p>c. Click Add Static IP address pool. Vantage will allocate IP addresses from this pool.</p> <p><a href="img/mesos-service-disc6-1.png"><img src="img/mesos-service-disc6-1.png" alt="mesos-service-disc6" width="585" height="289" class="alignnone size-full wp-image-5839"></a></p> <p>d. Click Save.</p> <p><a href="img/mesos-service-disc7.png"><img src="img/mesos-service-disc7.png" alt="mesos-service-disc7" width="587" height="360" class="alignnone size-full wp-image-5805"></a></p> <p>e. Repeat for each network to be used for IP address allocation.</p> </li> 
+ <li> <p>Click Save.</p> <p><a href="img/mesos-service-disc8.png"><img src="img/mesos-service-disc8.png" alt="mesos-service-disc8" width="675" height="184" class="alignnone size-full wp-image-5806"></a></p> </li> 
+</ol>  
 
 ## Creating a Virtual Service Using avi_proxy Labels
 
 The following set of avi_proxy labels configures a virtual service, and enables auto-allocation of IP addresses from subnet 20.20.20.0/24. This is the subnet containing the IP address pool that was added to the cloud in the previous section:
+
 <pre class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"auto_allocate_ip\": true, \"subnet\": \"20.20.20.0/24\"}}"
   
-</code></pre>
+</code></pre> 
 
 If the subnet is not specified in the label, as in the following example, Vantage will choose from one of the network subnets configured in the network object of the Mesos cloud on the Controller.
 
 <pre class="command-line language-bash" data-output="1-100"><code>
 "avi_proxy": "{\"virtualservice\": {\"auto_allocate_ip\": true}}"
   
-</code></pre>
+</code></pre>  
 
 ## Setting Up a Common DNS Infrastructure in a Mesos Environment
 
@@ -97,7 +80,8 @@ The Controller's DNS is an authoritative DNS server, providing service discovery
 If the Controller and Mesos-DNS are on different machines, use a configuration such as the following sample DNS usage in python.
 
 Provide at least one recursive DNS server in Resolvers when setting up the Mesos Cluster. For example, if you want to resolve google.com, you need to direct it to your corporate DNS server, since Vantage handles only domains that it is authoritative for.
-If the Controller and Mesos-DNS are running on the same machine, it is required to run the Avi Controller on port 8053. Use dns_resolver.port = 8053 in the example below.
+> If the Controller and Mesos-DNS are running on the same machine, it is required to run the Avi Controller on port 8053. Use dns_resolver.port = 8053 in the example below.
+ 
 
 ### DNS Query Code Example (python)
 
@@ -131,14 +115,14 @@ def sample_dns_request(app_fqdn):
     for record in rsp:
         print record.port
   
-</code></pre>
+</code></pre> 
 
 ### Sample Request
 
 <pre class="command-line language-bash" data-output="1-100"><code>
 sample_dns_request("my-app.my-company-avi-mesos") #Application's (my-app) FQDN with domain as my-company-avi-mesos configured in Avi’s IPAM Profile.
 
-</code></pre>
+</code></pre> 
 
 ### Sample Output
 
@@ -148,4 +132,4 @@ my-app.my-company-avi-mesos, A record:
 My-app.my-company-avi-mesos, SRV records:
 10001
 10002
-</code></pre>
+</code></pre> 

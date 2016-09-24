@@ -10,6 +10,7 @@ This beta includes:
 * Blacklist signatures, compatibile with mod_security format
 * Geolocation correlation
 * OWASP top 10 attack mitigation
-* PCI compliance report
+* PCI compliance report 
 
 Please contact support@avinetworks.com for more information regarding the beta program.
+

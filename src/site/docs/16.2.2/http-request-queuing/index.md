@@ -15,9 +15,9 @@ Only GET requests can be queued. PUT requests are not queued.
 While the server is unable to accept new requests, Vantage queues the new requests, up to the maximum number of requests the queue can hold (the queue length). If the queue is full and the server is still unable to accept new requests, the queue is bypassed and Vantage begins applying the configured <a href="/docs/configuration-guide/applications/pools/#servers">pool down action</a> to new requests.
 
 When the server is able to accept new requests again, priority is given to new requests. New requests have priority over the queued requests and are sent to the server first. Only when there are no new requests to send to the server, does the SE send requests from its queue, beginning with the most recent (the last one queued).
-Sending the most recently queued requests instead of the oldest requests from the queue helps minimize impact on end-users, since some newer requests may be resends of older requests, or the client may have ended the unresponsive session.
-
-Sending a request to the queue because the server is full does not generate a failure event. If the queue also is full, then an event is generated.
+> Sending the most recently queued requests instead of the oldest requests from the queue helps minimize impact on end-users, since some newer requests may be resends of older requests, or the client may have ended the unresponsive session. 
+> Sending a request to the queue because the server is full does not generate a failure event. If the queue also is full, then an event is generated.
+ 
 
 ### Effect on Persistence
 
@@ -37,18 +37,20 @@ For an average request size of 2 KB per request, setting the queue length to 128
 
 If the queue length is changed, the change goes into effect immediately.
 
-* Increasing the queue length allows more requests to be queued while the server is saturated.
-* If the queue length is decreased and the new size is smaller than the number of requests that are currently in the queue, Vantage immediately drops the extra requests from the queue, beginning with the oldest one (first queued). For example, if the queue length is 128 and the queue is full, reducing the queue length to 64 results in the immediate drop of the 64 oldest requests from the queue.
+* Increasing the queue length allows more requests to be queued while the server is saturated. 
+* If the queue length is decreased and the new size is smaller than the number of requests that are currently in the queue, Vantage immediately drops the extra requests from the queue, beginning with the oldest one (first queued). For example, if the queue length is 128 and the queue is full, reducing the queue length to 64 results in the immediate drop of the 64 oldest requests from the queue.  
 
 ## Configuring HTTP Request Queuing
 
 To enable request queuing for a pool:
+<ol> 
+ <li> <p>Navigate to Applications &gt; Pools.</p> </li> 
+ <li> <p>Click Create (if creating a new pool) or click the edit icon next to the pool name.</p> </li> 
+ <li> <p>Go to the Advanced tab. (If a new pool, enter a name, then click Next twice.)</p> </li> 
+ <li> <p>In the Pool Full Settings section, select Enabled next to Request Queuing.</p> </li> 
+ <li> <p>(optional) To change the queue size, edit the number in the Queue Length field. There is no specific maximum length value. In this case, the amount of memory available on the SE for queuing presents the practical limit.</p> </li> 
+ <li> <p>If configuring a new pool, finish configuring any other pool settings, then click Save.</p> </li> 
+</ol> 
 
-1. Navigate to Applications > Pools.
-1. Click Create (if creating a new pool) or click the edit icon next to the pool name.
-1. Go to the Advanced tab. (If a new pool, enter a name, then click Next twice.)
-1. In the Pool Full Settings section, select Enabled next to Request Queuing.
-1. (optional) To change the queue size, edit the number in the Queue Length field. There is no specific maximum length value. In this case, the amount of memory available on the SE for queuing presents the practical limit.
-1. If configuring a new pool, finish configuring any other pool settings, then click Save.
+<a href="img/pool-rqst-queuing.png"><img src="img/pool-rqst-queuing.png" alt="pool-rqst-queuing" width="805" height="267" class="alignnone size-full wp-image-5660"></a>
 
-<a href="img/pool-rqst-queuing.png"><img src="img/pool-rqst-queuing.png" alt="pool-rqst-queuing" width="805" height="267"></a>

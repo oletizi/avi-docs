@@ -17,11 +17,13 @@ All events are able to be viewed view the *Operations > All Events* page.  This
 ### API
 
 CONFIG_CREATE API, looking back through the events for a period of one year.
+
 <pre class="">https://10.1.1.1/api/analytics/logs?type=2&amp;page_size=10000&amp;filter=co(all,%22<strong>config_create</strong>%22)&amp;filter=ne(internal,EVENT_INTERNAL)&amp;filter=co(event_pages,EVENT_PAGE_ALL)&amp;end=2015-11-17T02:29:13.073Z&amp;duration=31536000&amp;step=262800
-</pre>
+</pre> 
 
  
 
 CONFIG_DELETE API, looking back through the events for a period of one year.
+
 <pre class="">https://10.1.1.1/api/analytics/logs?type=2&amp;page_size=10000&amp;filter=co(all,%22<strong>config_delete</strong>%22)&amp;filter=ne(internal,EVENT_INTERNAL)&amp;filter=co(event_pages,EVENT_PAGE_ALL)&amp;end=2015-11-17T02:29:13.073Z&amp;duration=31536000&amp;step=262800
-</pre>
+</pre> 

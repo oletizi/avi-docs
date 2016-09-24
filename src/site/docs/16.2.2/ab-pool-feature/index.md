@@ -14,15 +14,15 @@ To perform the next upgrade, the process can be reversed. After upgrading pool A
 
 ### Operational Notes
 
-* Setting the A/B percentage to 0 sends all traffic to the primary pool (A).
-* For each of the pools, normal load balancing is performed. After Vantage selects a pool for a new session, the load balancing method configured for that pool is used to select a server.
-* The A/B setting does not affect existing sessions. For example, setting the percentage sent to B to 100 percent does not cause existing sessions on pool A to move to B. Likewise, A/B pool settings do not affect persistence configurations.
-* The <a href="/docs/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions. 
-In the current release, the backup pool action is not supported for either pool in an A/B pair.
-* A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.
-
-This behavior ensures that a failure in the selected pool is brought to the attention of the Vantage user, rather than masked by a silent failover to the other pool.
-
+* Setting the A/B percentage to 0 sends all traffic to the primary pool (A). 
+* For each of the pools, normal load balancing is performed. After Vantage selects a pool for a new session, the load balancing method configured for that pool is used to select a server. 
+* The A/B setting does not affect existing sessions. For example, setting the percentage sent to B to 100 percent does not cause existing sessions on pool A to move to B. Likewise, A/B pool settings do not affect persistence configurations. 
+* The <a href="/docs/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions. > In the current release, the backup pool action is not supported for either pool in an A/B pair.
+ 
+* A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.  
+    
+    This behavior ensures that a failure in the selected pool is brought to the attention of the Vantage user, rather than masked by a silent failover to the other pool.
+    
 ## Configuring the A/B Pool Feature
 
 The following sections show how to configure the A/B pool feature using the web interface or CLI.
@@ -30,54 +30,56 @@ The following sections show how to configure the A/B pool feature using the web 
 ### Web Interface
 
 First configure the B pool, if not already configured. Then use these steps to configure the A/B settings within the A pool.
+<ol> 
+ <li> <p>Navigate to Applications &gt; Pools.</p> </li> 
+ <li> <p>Click the edit icon in the row for the pool name.</p> </li> 
+ <li> <p>Click Advanced.</p> </li> 
+ <li> <p>In the Pool A/B Testing Settings section, select the B pool from the A/B Test pool pull-down list.</p> </li> 
+ <li> <p>In the Percentage of Requests field, enter the percentage of new sessions to send to pool B instead of pool A. (Existing sessions on pool A are not affected.)</p> </li> 
+ <li> <p>Click Save.</p> </li> 
+</ol> 
 
-1. Navigate to Applications > Pools.
-1. Click the edit icon in the row for the pool name.
-1. Click Advanced.
-1. In the Pool A/B Testing Settings section, select the B pool from the A/B Test pool pull-down list.
-1. In the Percentage of Requests field, enter the percentage of new sessions to send to pool B instead of pool A. (Existing sessions on pool A are not affected.)
-1. Click Save.
-
-<a href="img/a-b-pool.png"><img src="img/a-b-pool.png" alt="a-b-pool" width="624" height="227"></a>
+<a href="img/a-b-pool.png"><img src="img/a-b-pool.png" alt="a-b-pool" width="624" height="227" class="alignnone size-full wp-image-5785"></a>
 
 ### CLI
 
 The commands in this example edit the configuration of pool-1 to enable the A/B pool feature, using pool-2 as the B pool:
-<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
-: &gt;   ab_pool
-: &gt;     pool_ref pool-2 
-: &gt;     ratio 10
-: &gt;   save 
-: &gt; save 
-</code></pre>
+
+<pre class="command-line language-bash" data-prompt=": >"><code>configure pool pool-1
+   ab_pool
+     pool_ref pool-2
+     ratio 10
+   save
+ save</code></pre> 
 
 The **ratio** *percent* command sets the percentage of traffic to be diverted to pool B to 10 percent. After this configuration change, 10 percent of new sessions will be sent to pool-2 (the B pool). Sessions that are already on pool-1 (the A pool) when the change is made are not affected by the change.
 
 The following commands edit the configuration to send 100 percent of the traffic to the B pool:
-<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+
+<pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     ratio 100
 : &gt;   save 
 : &gt; save 
-</code></pre>
+</code></pre> 
 
 The following commands reduce the percentage of traffic diverted to the B pool to 90 percent:
 
-<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+<pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     ratio 90
 : &gt;   save 
 : &gt; save 
-</code></pre>
+</code></pre> 
 
 The following commands send all the traffic back to pool-1 (the A pool):
 
-<pre <pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
+<pre class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="1-100"><code>: &gt; configure pool pool-1 
 : &gt;   ab_pool
 : &gt;     pool_ref pool-2 
 : &gt;     no ratio
 : &gt;   save 
 : &gt; save 
-</code></pre>
+</code></pre> 

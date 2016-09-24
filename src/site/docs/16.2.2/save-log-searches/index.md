@@ -6,7 +6,7 @@ One of Vantage's usability features is the ability to save and reuse log searche
 
 ## Saving a Search
 
-<img src="img/SaveSearch.png" alt="SaveSearch" width="260" height="263">
+<img class="size-full wp-image-443 alignright" src="img/SaveSearch.png" alt="SaveSearch" width="260" height="263">
 
 To save a search, first enter at least one search parameter into the search bar. Icons appear on the right side of the bar, the star, the X, and the magnifying glass. Clicking the star will bring up a box to input a name for the saved search.  
 
