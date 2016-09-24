@@ -1,5 +1,5 @@
 ---
-title: DataScript: avi.http.redirect
+title: DataScript&#58; avi&#46;http&#46;redirect
 layout: default
 ---
 <table class="table table-hover table table-bordered table-hover">  
