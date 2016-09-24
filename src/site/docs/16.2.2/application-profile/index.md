@@ -188,7 +188,7 @@ Avi Vantage can cache HTTP content, thereby enabling faster page load times for 
 
 Enabling caching and compression allows Vantage to compress text-based objects and store both the compressed and original uncompressed versions in the cache. Subsequent requests from clients that support compression will be served from the cache, meaning that Vantage will need not compress every object every time, which greatly reduces the compression workload.
 
-**Note: Regardless of the configured caching policy, an object can be cached only if it is <a href="/2015/11/28/overview-of-http-cache/">eligible for caching</a>. Some objects may not be eligible for caching.**
+**Note: Regardless of the configured caching policy, an object can be cached only if it is <a href="/docs/latest/overview-of-http-cache/">eligible for caching</a>. Some objects may not be eligible for caching.**
 
 To enable caching, check the Caching checkbox.
 
