@@ -15,10 +15,10 @@ index.search(query, params)
  	var $displayList = $('#search-results');
     for (var i = 0; i < content.hits.length; ++i) {
  	  var hit = content.hits[i];
- 	  var snippet = hit.content;
- 	  $displayList.append("<li><a href=\"" + hit.permalink + "\">" 
- 	  + "<h2>" + hit.post_title + "</h2>"
- 	  + "<p class=\"link\">" + hit.permalink + "</p>"
+ 	  var snippet = hit.text;
+ 	  $displayList.append("<li><a href=\"" + hit.url + "\">" 
+ 	  + "<h2>" + hit.title + "</h2>"
+ 	  + "<p class=\"link\">" + hit.url + "</p>"
  	  + "<p class=\"snippet\">" + snippet + "</p>"
  	  + "</a></li>")
  	}

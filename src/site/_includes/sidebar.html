@@ -11,19 +11,19 @@
   </form>
   <script type="text/javascript">
     var client = algoliasearch('272ZBU7KSH', '6fc3a75f0821308178cd612cfd4f8d2e')
-    var index = client.initIndex('wp_searchable_posts');
+    var index = client.initIndex('{{ site.search.index }}');
     $('#search-input').autocomplete({hint: true}, [
       {
         source: $.fn.autocomplete.sources.hits(index, {hitsPerPage: 5}),
         displayKey: 'my_attribute',
         templates: {
           suggestion: function (suggestion) {
-            return "<a href=\"" + suggestion.permalink + "\">" + suggestion._highlightResult.post_title.value + "</a>";
+            return "<a href=\"" + suggestion.url + "\">HERE" + suggestion.title + "</a>";
           }
         }
       }
     ]).on('autocomplete:selected', function (event, suggestion, dataset) {
-      console.log(suggestion, dataset);
+      console.log("suggestion & dataset", suggestion, dataset);
     });
     $('#search-input').on('autocomplete:selected', function (event, suggestions, datasetName) {
       console.log("Autocomplete selected: " + event + ", suggestions: " + suggestions + ", dataset name: " + datasetName);

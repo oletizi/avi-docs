@@ -713,6 +713,8 @@ Redirect 301 /wildcard-sni-matching-for-virtual-hosting /docs/latest/wildcard-sn
 Redirect 301 /x-forwarded-for-header-insertion /docs/latest/x-forwarded-for-header-insertion
 Redirect 301 /x-forwarded-for-header-insertion /docs/latest/x-forwarded-for-header-insertion
 # __MOVER_STOP__
+
+Redirect 301  /datascript-avi-set_userid/ /docs/latest/datascript-avi-set_userid/
 Redirect 301  /docs/configuration-guide/  /docs/architectural-overview/
 Redirect 301  /metrics-used-for-auto-scaling-service-engines/ /autoscale-service-engines/#metrics_for_autoscaling_service_engines/
 

@@ -19,8 +19,16 @@ github_username:  avinetworks
 # Build settings
 markdown: kramdown
 
+gems:
+  - algoliasearch-jekyll
+
 # Search Settings
 search:
   applicationID: 272ZBU7KSH
   apiKey: 6fc3a75f0821308178cd612cfd4f8d2e
-  index: wp_searchable_posts
+  index: avi-docs
+  #index: wp_searchable_posts
+
+algolia:
+  application_id: 272ZBU7KSH
+  index_name:     'avi-docs'
