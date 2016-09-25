@@ -32,3 +32,4 @@ search:
 algolia:
   application_id: 272ZBU7KSH
   index_name:     'avi-docs'
+  record_css_selector: 'p,ul,ol,table'
