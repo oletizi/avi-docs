@@ -12,9 +12,9 @@ Enabling caching and compression allows Avi Vantage to compress text-based objec
 
 See also:
 
-* <a href="/docs/16.2.2/http-cache-configuration-via-cli">Configure HTTP Cache via the CLI</a>
-* <a href="/docs/16.2.2/purge-an-object-from-http-cache">Purge an Object from HTTP Cache</a>
-* <a href="/docs/16.2.2/https-responses-not-served-from-cache">HTTPS Responses Not Served from HTTP Cache</a> 
+* <a href="/docs/latest/http-cache-configuration-via-cli">Configure HTTP Cache via the CLI</a>
+* <a href="/docs/latest/purge-an-object-from-http-cache">Purge an Object from HTTP Cache</a>
+* <a href="/docs/latest/https-responses-not-served-from-cache">HTTPS Responses Not Served from HTTP Cache</a> 
 
 ## Responses Eligible for Caching
 

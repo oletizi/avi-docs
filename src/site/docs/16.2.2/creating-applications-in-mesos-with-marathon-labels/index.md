@@ -245,5 +245,5 @@ This example enables route health injection (RHI) on a virtual service.
 "avi_proxy": "{\"virtualservice\": {\"enable_rhi\": true, \"ip_address\": {\"addr\": \"10.250.1.100\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}]}}"
 </code></pre> 
 
-(For more information about using BGP RHI for virtual service scaling, <a href="/docs/16.2.2/bgp-support-for-virtual-services">click here</a>.)
+(For more information about using BGP RHI for virtual service scaling, <a href="/docs/latest/bgp-support-for-virtual-services">click here</a>.)
 

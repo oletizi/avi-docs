@@ -72,7 +72,7 @@ The following table lists the minimum requirements for the VMs on which the Avi 
 
  
 
-For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/16.2.2/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
+For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/latest/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
 
 Appropriate physical resources need to be present in the ESX Host. If appropriate resources are not present in the ESX host, SE creation will fail and manual intervention will be required. 
 

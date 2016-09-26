@@ -4,7 +4,7 @@ layout: default
 ---
 The Avi Controller cluster IP address is a single IP address shared by multiple Avi Controllers within a cluster. This is the address to which the web interface, CLI commands and REST API calls are directed. As a best practice, to access the Avi Controller, one logs onto the cluster IP address instead of the IP addresses of individual Avi Controller nodes.
 
-Note: If the IP address of an Avi Controller node has changed, a <a href="/docs/16.2.2/ctlr-cfg-update-after-ip-change">script </a>must be run to update the configuration. 
+Note: If the IP address of an Avi Controller node has changed, a <a href="/docs/latest/ctlr-cfg-update-after-ip-change">script </a>must be run to update the configuration. 
 
 ### Cluster IP Advertisement
 

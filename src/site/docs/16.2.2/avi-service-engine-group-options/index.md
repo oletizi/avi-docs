@@ -82,7 +82,7 @@ The HA options for Avi SEs are described below. See the following for more infor
 ### Service Engine Capacity and Limit Settings
 
 * **Max Number of Service Engines:** Defines the maximum number of SEs that may be created within the SE group. This number, combined with the virtual services per SE setting, dictates the maximum number of virtual services that can be created within an SE group. If this limit is reached, it is possible new virtual services may not be able to be deployed and will show a gray, undeployed status. This setting can be useful for limiting Vantage from consuming too many virtual machines.
-* **Per Application:** Limits per-SE placement of virtual services to a maximum of 2 virtual services per SE.Note: This option affects how vCPUS are counted for <a href="/docs/16.2.2/terms-of-avi-vantage-license">licensing</a> purposes.
+* **Per Application:** Limits per-SE placement of virtual services to a maximum of 2 virtual services per SE.Note: This option affects how vCPUS are counted for <a href="/docs/latest/terms-of-avi-vantage-license">licensing</a> purposes.
 * **Connection Memory Percentage:** Adjusts the relative allocation of memory resources for connections versus buffer space. 
 
 ### Virtual Service Placement Policy
@@ -110,5 +110,5 @@ Note: This tab appears only when Vantage is deployed in write access mode.
 This section of the Advanced tab has the following option:
 
 * **HSM Group:** Applies a template of hardware security module (HSM) settings to the SE group. For more information about HSM support:  
-    * <a href="/docs/16.2.2/thales-nshield-integration-2">Thales nShield Integration</a>
+    * <a href="/docs/latest/thales-nshield-integration-2">Thales nShield Integration</a>
     * <a href="/vantage-integration-with-safenet-network-hsm/">Avi Vantage Integration with SafeNet Network HSM</a> 

@@ -2,7 +2,7 @@
 title: Detecting Server Maintenance Mode with a Health Monitor
 layout: default
 ---
-Avi Vantage provides a way to actively <a href="/docs/16.2.2/disabling-back-end-servers-for-maintenance">disable back-end servers</a> for maintenance. 
+Avi Vantage provides a way to actively <a href="/docs/latest/disabling-back-end-servers-for-maintenance">disable back-end servers</a> for maintenance. 
 
 Vantage also can be configured to use information in the health-check responses from servers to detect when a server is in maintenance mode. Administrators and application developers can use information in the health-check responses from servers to detect when a server is in maintenance mode.
 

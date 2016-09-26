@@ -59,7 +59,7 @@ The VIP address is the IP address that DNS will return in responses to queries f
 
 ### SNAT IP Address
 
-When the SE forwards a request to a back-end server, the SE uses the SNAT IP address as the source address of the client request. In deployments that handle VIP traffic differently depending on the application, the <a href="/docs/16.2.2/source-nat-for-application-identification">source NAT</a> IP address provides a way to direct the traffic. The SNAT IP address also ensures that response traffic from the back-end servers goes back through the SE that forwarded the request.
+When the SE forwards a request to a back-end server, the SE uses the SNAT IP address as the source address of the client request. In deployments that handle VIP traffic differently depending on the application, the <a href="/docs/latest/source-nat-for-application-identification">source NAT</a> IP address provides a way to direct the traffic. The SNAT IP address also ensures that response traffic from the back-end servers goes back through the SE that forwarded the request.
 
 <a href="img/static-route-noha-snatipconfig-2.png"><img class="alignnone size-full wp-image-8343" src="img/static-route-noha-snatipconfig-2.png" alt="static-route-noha-snatipconfig" width="576" height="549"></a>
 

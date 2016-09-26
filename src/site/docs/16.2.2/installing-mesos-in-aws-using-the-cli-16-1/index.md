@@ -11,7 +11,7 @@ Avi Vantage integrates with Mesos or DC/OS and Marathon to provide the following
 * Autoscaling
 * Application map and visibility 
 
-Note: This guide applies to installation using the CLI. To install using the AWS web interface and a CloudFormation template from Avi Networks instead, go <a href="/docs/16.2.2/installing-avi-integration-with-mesos-in-aws">here</a>.
+Note: This guide applies to installation using the CLI. To install using the AWS web interface and a CloudFormation template from Avi Networks instead, go <a href="/docs/latest/installing-avi-integration-with-mesos-in-aws">here</a>.
 
 If you are installing into an on-premises Mesos or DC/OS cloud, go <a href="/docs/latest/installing-avi-vantage-with-mesosphere-dcos-on-premises-16-1/">here</a> instead.
 

@@ -36,5 +36,5 @@ When accessing the CLI on a system configured with remote authentication such as
 
 For Mac and Linux clients, an Avi CLI package may be installed on the local computer.
 
-* <a href="/docs/16.2.2/cli-installing-the-cli-shell">Installing the Avi Vantage CLI Shell</a>
-* <a href="/docs/16.2.2/installing-the-lbaas-driver-cli-shell-openstack">Installing the LBaaS CLI Shell (OpenStack with Keystone)</a> 
+* <a href="/docs/latest/cli-installing-the-cli-shell">Installing the Avi Vantage CLI Shell</a>
+* <a href="/docs/latest/installing-the-lbaas-driver-cli-shell-openstack">Installing the LBaaS CLI Shell (OpenStack with Keystone)</a> 

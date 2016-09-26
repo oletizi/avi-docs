@@ -9,7 +9,7 @@ The application profile types and their options are described in the following s
 * <a href="#http-profile">HTTP Profile</a>
 * <a href="#dns-profile">DNS Profile</a>
 * <a href="#l4-profile">Layer 4 Profile</a>
-* <a href="/docs/16.2.2/layer-4-ssl-support">SSL Profile</a>
+* <a href="/docs/latest/layer-4-ssl-support">SSL Profile</a>
 * <a href="#syslog-profile">Syslog Profile</a> 
 
 ## Dependency on TCP/UDP Profile

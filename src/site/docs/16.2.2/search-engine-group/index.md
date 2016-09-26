@@ -2,9 +2,9 @@
 title: Service Engine Group (16.2.1)
 layout: default
 ---
-Service Engines are created within a group, which contains the definition of how the SEs should be sized, placed, and made highly available. Each <a href="/docs/latest/architectural-overview/infrastructure/#Clouds">cloud</a> will have at least one SE group.  The options within an SE group may vary based on the type of cloud within which they exist and its settings, such as<a href="/docs/16.2.2/orchestrator-access-modes"><em> no access</em></a> versus <a href="/docs/16.2.2/orchestrator-access-modes"><em>write access</em></a> mode.  SEs may only exist within one group.  Each group acts as an isolation domain.  SE resources within an SE group may be moved around to accommodate virtual services, but SE resources are never shared between SE groups.
+Service Engines are created within a group, which contains the definition of how the SEs should be sized, placed, and made highly available. Each <a href="/docs/latest/architectural-overview/infrastructure/#Clouds">cloud</a> will have at least one SE group.  The options within an SE group may vary based on the type of cloud within which they exist and its settings, such as<a href="/docs/latest/orchestrator-access-modes"><em> no access</em></a> versus <a href="/docs/latest/orchestrator-access-modes"><em>write access</em></a> mode.  SEs may only exist within one group.  Each group acts as an isolation domain.  SE resources within an SE group may be moved around to accommodate virtual services, but SE resources are never shared between SE groups.
 
-Changes made to an SE group may be applied immediately, only applied to SEs created after the changes are made, or require existing SEs to first be <a href="/docs/16.2.2/disable-se">disabled</a> before the changes can take effect.
+Changes made to an SE group may be applied immediately, only applied to SEs created after the changes are made, or require existing SEs to first be <a href="/docs/latest/disable-se">disabled</a> before the changes can take effect.
 
 Multiple SE groups may exist within a cloud.  A newly created virtual service will be placed on the default SE group, though this can be changed via the VS &gt; Advanced page while creating a VS via the advanced wizard.  To move an existing virtual service from one SE group to another, the VS must first be disabled, moved, and then re-enabled.  SE groups provide data plane isolation, therefore moving a VS from one SE group to another is disruptive to existing connections through the virtual service.
 
@@ -18,7 +18,7 @@ To access the Service Engine group page, navigate to Infrastructure &gt; Clouds 
 
 <a href="img/SE-group-name-metric-update-frequency.png"><img class="alignnone wp-image-12358 size-full" src="img/SE-group-name-metric-update-frequency.png" alt="Avi SE group metrics update frequency" width="900" height="143"></a>
 
-At the top right of the Basic Settings tab you can turn on real-time metrics, which will cause SEs in the group to upload SE-related metrics to the Controller once every 5 seconds, as opposed to once per five minutes or longer. [<a href="/docs/16.2.2/metrics-retention-period">More info on metrics-upload intervals</a>.] After clicking the box, select the duration in minutes for real-time updating to last. A value of 0 is interpreted to mean "forever."
+At the top right of the Basic Settings tab you can turn on real-time metrics, which will cause SEs in the group to upload SE-related metrics to the Controller once every 5 seconds, as opposed to once per five minutes or longer. [<a href="/docs/latest/metrics-retention-period">More info on metrics-upload intervals</a>.] After clicking the box, select the duration in minutes for real-time updating to last. A value of 0 is interpreted to mean "forever."
 
  
 
@@ -32,7 +32,7 @@ The high availability mode of the SE group controls the behavior of the SE group
 * <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>:  This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
 * <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
 
-For additional considerations for SE high availability, including VS placement, see <a href="/docs/16.2.2/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>. To compare the above HA modes to those defined prior to Vantage 16.2, see <a href="/docs/16.2.2/comparing-past-and-present-se-group-ha-modes">Comparing Past and Present SE Group HA Modes</a>.
+For additional considerations for SE high availability, including VS placement, see <a href="/docs/latest/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>. To compare the above HA modes to those defined prior to Vantage 16.2, see <a href="/docs/latest/comparing-past-and-present-se-group-ha-modes">Comparing Past and Present SE Group HA Modes</a>.
 
 **VS Placement across SEs**: When placement is *compact* (previously referred to as "Compactor"), Vantage prefers to spin up and fill up the minimum number of SEs; it tries to place virtual services on SEs which are already running. When placement is *distributed*, Vantage maximizes VS performance by avoiding placements on existing SEs. Instead, it places virtual services on newly spun-up SEs, up to Max Number of Service Engines. By default, placement is compact for elastic HA N+M mode and legacy HA active/standby mode. By default, it is distributed for elastic HA active/active mode.
 
@@ -85,8 +85,8 @@ The advanced tab in the Service Engine group popup supports configuration of opt
 <a href="img/Screen-Shot-2016-08-25-at-8.04.06-PM.png"><img class="wp-image-12555 alignright" src="img/Screen-Shot-2016-08-25-at-8.04.06-PM.png" alt="Screen Shot 2016-08-25 at 8.04.06 PM" width="250" height="68"></a>
 * **CPU socket Affinity: **Selecting this option causes Vantage to allocate all cores for SE VMs on the same socket of a multi-socket CPU. The option is applicable only in vCenter environments. Appropriate physical resources need to be present in the ESX Host. If not, then SE creation will fail and manual intervention will be required.
 * **Dedicated dispatcher CPU:** Selecting this option dedicates the core that handles packet receive/transmit from/to the data network to just the dispatching function. This option makes most sense in a group whose SEs have three or more vCPUs.
-* **Override Management Network**:  If the SEs require a different network for management than the Controller, it must be specified here. The SEs will use their management route to establish communications with the Controllers.  See <a href="/docs/16.2.2/deploy-ses-in-different-data-centers-from-controllers">Deploy SEs in Different Datacenter from Controllers</a>. 
+* **Override Management Network**:  If the SEs require a different network for management than the Controller, it must be specified here. The SEs will use their management route to establish communications with the Controllers.  See <a href="/docs/latest/deploy-ses-in-different-data-centers-from-controllers">Deploy SEs in Different Datacenter from Controllers</a>. 
 
 ### SECURITY
 
-* **HSM Group**:  Hardware security modules may be configured within the Templates &gt; Security &gt; HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/docs/16.2.2/physical-security-for-ssl-keys">Physical Security for SSL Keys</a>.  
+* **HSM Group**:  Hardware security modules may be configured within the Templates &gt; Security &gt; HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/docs/latest/physical-security-for-ssl-keys">Physical Security for SSL Keys</a>.  

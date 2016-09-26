@@ -9,7 +9,7 @@ layout: default
 * Generate an SNMP trap
 * Execute a ControlScript for custom action 
 
-This article steps through the UI screens required to configure a custom alert notification.  See the <a href="/docs/16.2.2/alerts-overview">Alerts Overview</a> for a broader explanation of the alert process.
+This article steps through the UI screens required to configure a custom alert notification.  See the <a href="/docs/latest/alerts-overview">Alerts Overview</a> for a broader explanation of the alert process.
 
 ### Step One: Alert Config
 

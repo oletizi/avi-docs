@@ -72,7 +72,7 @@ The following table lists the minimum requirements for the VMs on which the Avi 
 
 Add 1 GB of RAM to the SE configuration for each additional vCPU. With 10 GB as an absolute minimum, set the disk value to at least (2 x RAM-size) + 5 GB.
 
-For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/16.2.2/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
+For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/latest/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
 
 ### Software Requirements
 

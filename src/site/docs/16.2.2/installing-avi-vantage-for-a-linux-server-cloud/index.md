@@ -301,7 +301,7 @@ Installation Successful. Starting Services..
  <li>After the wizard closes, see the following articles to complete the installation and create virtual services: 
   <ol> 
    <li><a href="/public-key-management-on-service-engine-host/">Public Key Management on Service Engine Hosts</a></li> 
-   <li><a href="/docs/16.2.2/adding-avi-service-engines-to-a-linux-server-cloud">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
+   <li><a href="/docs/latest/adding-avi-service-engines-to-a-linux-server-cloud">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
   </ol> </li> 
 </ol>  
 
@@ -371,5 +371,5 @@ If you clicked through the SSH or Avi SE host pages of the wizard, see the follo
 
 <ol> 
  <li><a href="/public-key-management-on-service-engine-host/">Public Key Management on Service Engine Hosts</a></li> 
- <li><a href="/docs/16.2.2/adding-avi-service-engines-to-a-linux-server-cloud">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
+ <li><a href="/docs/latest/adding-avi-service-engines-to-a-linux-server-cloud">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
 </ol> 

@@ -77,4 +77,4 @@ Note: Package un-installation is currently available only via the DC/OS CLI.
 **Example:**
 <a href="img/dcos2.jpg"><img class="alignnone size-full wp-image-9335" src="img/dcos2.jpg" alt="dcos2" width="836" height="68"></a>
 
-Note: Also <a href="/docs/16.2.2/system-cleanup-following-uninstall-from-mesos-dcos">click here</a> for post-uninstall cleanup instructions.
+Note: Also <a href="/docs/latest/system-cleanup-following-uninstall-from-mesos-dcos">click here</a> for post-uninstall cleanup instructions.

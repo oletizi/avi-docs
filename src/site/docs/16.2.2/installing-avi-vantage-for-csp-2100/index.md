@@ -3,7 +3,7 @@ title: Installing Avi Vantage for Cisco CSP-2100
 layout: default
 ---
 This article provides the steps for installing Avi Vantage on Cisco's CSP-2100.  Vantage may be deployed on CSP-2100 in either no orchestrator mode or Linux server cloud mode.  This article covers both. For documentation on installing Avi Vantage on Linux servers using non-CSP-2100 hardware, 
-<a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud">click here</a> instead.
+<a href="/docs/latest/installing-avi-vantage-for-a-linux-server-cloud">click here</a> instead.
 
 ## Topology
 
@@ -69,7 +69,7 @@ The pNIC named enp1s0f0 can be connected to the management network. This provide
 <ol> 
  <li> Log on to the CSP dashboard using a browser.</li> 
  <li> Navigate to Configuration &gt; Repository.<br> <a href="img/linux-server-cloud-csp2100.png"><img class="alignnone size-full wp-image-8622" src="img/linux-server-cloud-csp2100.png" alt="linux-server-cloud-csp2100" width="938" height="372"></a></li> 
- <li>Click on Select, and browse to and select the Avi Controller qcow2 image obtained from the <a href="/docs/16.2.2/access-to-avi-portal">avinetworks.com/portal</a> site. </li> 
+ <li>Click on Select, and browse to and select the Avi Controller qcow2 image obtained from the <a href="/docs/latest/access-to-avi-portal">avinetworks.com/portal</a> site. </li> 
  <li>Click Upload.</li> 
 </ol> 
 

@@ -2,13 +2,13 @@
 title: Reasons Servers Can Be Marked Down
 layout: default
 ---
-Servers within a pool may have a status of up, down, or disabled (administratively disabled by an administrator).  The status is determined by the associated <a href="/docs/16.2.2/overview-of-health-monitors">health monitors</a> applied to the server pool.
+Servers within a pool may have a status of up, down, or disabled (administratively disabled by an administrator).  The status is determined by the associated <a href="/docs/latest/overview-of-health-monitors">health monitors</a> applied to the server pool.
 
 Vantage may mark a server down for a number of reasons.  The reason a server is marked down may be accessed three different ways. All methods show roughly the same information.
 
 * **Down Health Score Icon**:  Hover the mouse over a server's red status icon in the UI. 
 <a href="img/MonitorResult.png"><img class="wp-image-9168 alignnone" src="img/MonitorResult.png" alt="MonitorResult" width="350" height="219"></a>
-* **Down Event**:  Navigate to the events for the server, the pool, the virtual service.  Expand the event to see full details.  This information can be used to automatically generate an alert and potentially make further system changes.  See the <a href="/docs/16.2.2/alerts-overview">alerts overview</a> for more info.
+* **Down Event**:  Navigate to the events for the server, the pool, the virtual service.  Expand the event to see full details.  This information can be used to automatically generate an alert and potentially make further system changes.  See the <a href="/docs/latest/alerts-overview">alerts overview</a> for more info.
 * **Server Page**:  Navigate to Applications &gt; Pools &gt; *pool-name* &gt; Servers &gt; *server-name*. This displays the analytics page for the server.<img class=" wp-image-398 alignnone" src="img/HealthMonitor2.png" alt="HealthMonitor2" width="620" height="262"> In this example, the "Down-HTTP" monitor is marking the server down, whereas the "System-HTTP" monitor is reporting the server as up. Note: The Passive monitor is a special type. A passive monitor will not mark a server down. Instead, if a passive monitor detects bad server-to-client responses, the monitor reduces the percentage of traffic load balanced to that server. Click the plus sign next to the health monitor to show additional information regarding the server's health status.
 
 ## Common Reasons a Server May Be Marked Down

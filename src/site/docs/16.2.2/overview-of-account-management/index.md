@@ -11,34 +11,34 @@ For SSH access, the Controller will also attempt to authenticate the user via th
 ### <a href="img/Login.png"><img class="size-full wp-image-13315 alignright" src="img/Login.png" alt="Login" width="245" height="235"></a>Local User Authentication
 
 * <a href="/docs/latest/manage-local-user-accounts">Manage Local User Accounts</a>
-* <a href="/docs/16.2.2/strong-password-enforcement">Strong Password Enforcement</a>
-* <a href="/docs/16.2.2/password-recovery">Recover Lost Password</a> 
+* <a href="/docs/latest/strong-password-enforcement">Strong Password Enforcement</a>
+* <a href="/docs/latest/password-recovery">Recover Lost Password</a> 
 
 ### Remote User Authentication
 
-* <a href="/docs/16.2.2/ldap-auth-profile-test">LDAP Authentication Profile Test</a>
-* <a href="/docs/16.2.2/ldap-configuration-examples">LDAP Configuration Examples</a>
-* <a href="/docs/16.2.2/tacacs-authentication">TACACS+ Authentication</a>
-* <a href="/docs/16.2.2/tacacs-configuration-examples">TACACS+ Configuration Examples</a>
+* <a href="/docs/latest/ldap-auth-profile-test">LDAP Authentication Profile Test</a>
+* <a href="/docs/latest/ldap-configuration-examples">LDAP Configuration Examples</a>
+* <a href="/docs/latest/tacacs-authentication">TACACS+ Authentication</a>
+* <a href="/docs/latest/tacacs-configuration-examples">TACACS+ Configuration Examples</a>
 * <a href="/docs/latest/keystone-authentication">Keystone Authentication</a>
-* <a href="/docs/16.2.2/cli-access">CLI Access and Remote Auth</a> 
+* <a href="/docs/latest/cli-access">CLI Access and Remote Auth</a> 
 
 ### Roles
 
-* <a href="/docs/16.2.2/user-account-roles">Roles</a> 
+* <a href="/docs/latest/user-account-roles">Roles</a> 
 
 ### Tenants
 
-* <a href="/docs/16.2.2/tenants">Tenants</a>
-* <a href="/docs/16.2.2/switch-between-tenants">Switch between Tenants</a>
-* <a href="/docs/16.2.2/authorization-tenant-and-role-mapping-examples">Authorization - Tenant and Role Mapping Examples</a>
-* <a href="/docs/16.2.2/all-tenants-view">All Tenants View</a> 
+* <a href="/docs/latest/tenants">Tenants</a>
+* <a href="/docs/latest/switch-between-tenants">Switch between Tenants</a>
+* <a href="/docs/latest/authorization-tenant-and-role-mapping-examples">Authorization - Tenant and Role Mapping Examples</a>
+* <a href="/docs/latest/all-tenants-view">All Tenants View</a> 
 
 ### Other
 
-* <a href="/docs/16.2.2/super-user-accounts">Super User Accounts</a>
+* <a href="/docs/latest/super-user-accounts">Super User Accounts</a>
 * <a href="/docs/latest/default-system-accounts">Default System Accounts</a>
-* <a href="/docs/16.2.2/user-account-self-service">User Account Self-Service</a> 
+* <a href="/docs/latest/user-account-self-service">User Account Self-Service</a> 
 
  
 

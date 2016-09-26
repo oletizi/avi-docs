@@ -15,7 +15,7 @@ Alerts are transient, and will only exist or be true for a defined period of tim
 <a href="img/Alert-Workflow.png"><img class="size-full wp-image-8402 aligncenter" src="img/Alert-Workflow.png" alt="Alert Workflow" width="559" height="103"></a>
 Configuring custom alerts requires walking through the workflow to build the alert config (the alert's trigger) based on one or more of 500+ events and metrics. When the alert configuration's conditions are met, Vantage processes an alert by referring to the associated alert action, which lists the notifications to be generated and potentially calls for further action, such as application autoscaling or execution of a ControlScript. The sections below provide a brief description of each component that plays a role in alerts.
 
-* <a href="/docs/16.2.2/example-custom-alert-notification">Example Custom Alert Notification</a> 
+* <a href="/docs/latest/example-custom-alert-notification">Example Custom Alert Notification</a> 
 
  
 
@@ -23,14 +23,14 @@ Configuring custom alerts requires walking through the workflow to build the ale
 
 Events are predefined objects within Vantage that may be triggered in various ways. For instance, an event is generated when a user account is created, when a user logs in, or when a user fails the login password check. Similar events are generated for server down, health score change, etc. See also:
 
-* <a href="/docs/16.2.2/events-list">Events List</a>
-* <a href="/docs/16.2.2/events-overview">Events Overview</a> 
+* <a href="/docs/latest/events-list">Events List</a>
+* <a href="/docs/latest/events-overview">Events Overview</a> 
 
 ### Metrics
 
 Metrics are raw data points, which may be similarly used as the basis of generating an alert. A metric may be something simple, such as the point in time a client sends a SYN to connect to a virtual service. An alert may be triggered though if the client sends more than 500 SYNs within a 5 minute window. With this example, an alert is triggered if the metric occurs more than X times in Y timeframe. See the metrics list for a complete view of the available metrics that may be used to generate an alert:
 
-* <a href="/docs/16.2.2/metrics-list">Metrics List</a> 
+* <a href="/docs/latest/metrics-list">Metrics List</a> 
 
 ### Alert Config
 
@@ -38,19 +38,19 @@ The Operations &gt; Alerts &gt; Alert Config page is used to define the triggers
 
 To create a new alert config, provide the basics, such as the config name and the trigger condition, which will be an event or a metric. Then choose an alert action to be executed when the alert config conditions are met.
 
-* <a href="/docs/16.2.2/alert-config">Alert Config</a> 
+* <a href="/docs/latest/alert-config">Alert Config</a> 
 
 ### Alert Action
 
 The Operations &gt; Alerts &gt; Alert Actions are called by an alert config when an alert has been triggered. This reusable object defines what should happen for the triggering alert. Alerts actions may be used to define the alert level, and to notify administrators via the Vantage UI (default), email, syslog or SNMP traps. The alert action may trigger a ControlScript or trigger an autoscale policy to scale the application in or out, and at what level (SEs in the SE group, members of a server pool).
 
-* <a href="/docs/16.2.2/alert-actions">Alert Action</a> 
+* <a href="/docs/latest/alert-actions">Alert Action</a> 
 
 ### Notifications
 
 <a href="img/AlertPopup.png"><img class="size-full wp-image-7346 alignright" src="img/AlertPopup.png" alt="AlertPopup" width="302" height="119"></a>Alerts can be sent to four notification destinations. The first is the local UI. These notifications show up as colored bell icons indicating in the Vantage UI that an alert has occurred. The other three notifications, email, syslog, and SNMP v2c traps can all be configured via the Operations &gt; Notifications page. See also:
 
-* <a href="/docs/16.2.2/notifications-overview">Notifications Overview</a> 
+* <a href="/docs/latest/notifications-overview">Notifications Overview</a> 
 
 ### ControlScript
 

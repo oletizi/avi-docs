@@ -332,5 +332,5 @@ Use these steps if neither the VIP nor the client is in the same Mesos cluster a
 
 After Avi Vantage is installed, virtual services (applications) can be created. For information:
 
-* <a href="/docs/16.2.2/creating-applications-in-mesos-with-marathon-labels">Creating Applications with Mesos / Marathon Labels</a>
-* <a href="/docs/16.2.2/service-discovery-for-mesos">DNS-based Service Discovery for Mesos</a> 
+* <a href="/docs/latest/creating-applications-in-mesos-with-marathon-labels">Creating Applications with Mesos / Marathon Labels</a>
+* <a href="/docs/latest/service-discovery-for-mesos">DNS-based Service Discovery for Mesos</a> 

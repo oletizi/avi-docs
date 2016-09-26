@@ -6,10 +6,10 @@ It is often helpful to validate the response of a server while troubleshooting r
 
 For more info on health monitoring servers see:
 
-* <a href="/docs/16.2.2/overview-of-health-monitors">Overview of Health Monitors</a>
-* <a href="/docs/16.2.2/why-is-a-server-marked-down">Reasons a Server Can Be Marked Down</a>
-* <a href="/docs/16.2.2/servers-flapping-up-down">Servers Flap Up / Down</a>
-* <a href="/docs/16.2.2/health-monitor-troubleshooting">Health Monitor Troubleshooting</a> 
+* <a href="/docs/latest/overview-of-health-monitors">Overview of Health Monitors</a>
+* <a href="/docs/latest/why-is-a-server-marked-down">Reasons a Server Can Be Marked Down</a>
+* <a href="/docs/latest/servers-flapping-up-down">Servers Flap Up / Down</a>
+* <a href="/docs/latest/health-monitor-troubleshooting">Health Monitor Troubleshooting</a> 
 
  
 

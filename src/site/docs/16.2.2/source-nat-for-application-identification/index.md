@@ -102,7 +102,7 @@ Here is an example topology with SNAT enabled in scale out HA mode with BGP enab
 Here is the SNAT configuration in the web interface for Virtual Service 1 in the example topology.
 
 <a href="img/L3-HA-Dynamic.png"><img class="alignnone size-full wp-image-8285" src="img/L3-HA-Dynamic.png" alt="L3-HA-Dynamic" width="1026" height="841"></a>
-For details on enabling BGP to advertise SNAT IP addresses, <a href="/docs/16.2.2/bgp-support-for-virtual-services">click here</a>.
+For details on enabling BGP to advertise SNAT IP addresses, <a href="/docs/latest/bgp-support-for-virtual-services">click here</a>.
 
 ### Layer 3: Legacy HA (A/S)
 

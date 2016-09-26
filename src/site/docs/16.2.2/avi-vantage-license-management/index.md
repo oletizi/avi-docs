@@ -2,7 +2,7 @@
 title: Avi Vantage License Management
 layout: default
 ---
-Avi Vantage software requires a <a href="/docs/16.2.2/terms-of-avi-vantage-license">license</a>. This article describes how to procure, install and manage Avi Vantage licenses.
+Avi Vantage software requires a <a href="/docs/latest/terms-of-avi-vantage-license">license</a>. This article describes how to procure, install and manage Avi Vantage licenses.
 
 ## Obtaining an Avi Vantage License
 
@@ -52,4 +52,4 @@ The events are included in the events table. (Navigate to Operations &gt; Events
 
 ### License Expiration Alerts
 
-Optionally, Avi Vantage can be configured to generate license-expiration <a href="/docs/16.2.2/alerts-overview">alerts</a>. Based on the alert configuration, the alerts are triggered by license expiration events and are manifested as emails, syslog messages, SNMP traps, and/or ControlScript executions.
+Optionally, Avi Vantage can be configured to generate license-expiration <a href="/docs/latest/alerts-overview">alerts</a>. Based on the alert configuration, the alerts are triggered by license expiration events and are manifested as emails, syslog messages, SNMP traps, and/or ControlScript executions.

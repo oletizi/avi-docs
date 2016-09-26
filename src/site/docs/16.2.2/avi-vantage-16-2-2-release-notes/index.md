@@ -11,10 +11,10 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 * <a href="/certificate-management-integration-for-csr-automation/#automated-CSR-workflow-for-HSM">Automated CSR workflow for SafeNet HSM</a>
 * <a href="/bgp-support-for-virtual-services/#BGP-profile-modifications">Ability to handle BGP peer changes gracefully</a>
 * <a href="/docs/latest/openstack-external-networks">In OpenStack, support for using an external network for Controller, virtual service and pool</a>
-* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify SNMP trap configuration</a>
-* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify syslog profile configuration</a>
-* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify email profile configuration</a>
-* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify SMTP configuration</a> 
+* <a href="/docs/latest/verifying-notification-settings">Ability to verify SNMP trap configuration</a>
+* <a href="/docs/latest/verifying-notification-settings">Ability to verify syslog profile configuration</a>
+* <a href="/docs/latest/verifying-notification-settings">Ability to verify email profile configuration</a>
+* <a href="/docs/latest/verifying-notification-settings">Ability to verify SMTP configuration</a> 
 
 ## Issues Resolved in 16.2.2
 

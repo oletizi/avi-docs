@@ -168,13 +168,13 @@ Sample Cloud Configuration with IPAM &amp; DNS from steps 1 through 9:
 
 Following sections provide information for each of the IPAM / DNS providers supported by Vantage.
 
-**Avi Vantage** -&gt; <a href="/docs/16.2.2/ipam-and-dns-provider-avi-vantage">https://kb.avinetworks.com/ipam-and-dns-provider-avi-vantage/</a>
+**Avi Vantage** -&gt; <a href="/docs/latest/ipam-and-dns-provider-avi-vantage">https://kb.avinetworks.com/ipam-and-dns-provider-avi-vantage/</a>
 
-**Infoblox** -&gt; <a href="/docs/16.2.2/ipam-and-dns-provider-infoblox">https://kb.avinetworks.com/ipam-and-dns-provider-infoblox/</a>
+**Infoblox** -&gt; <a href="/docs/latest/ipam-and-dns-provider-infoblox">https://kb.avinetworks.com/ipam-and-dns-provider-infoblox/</a>
 
-**AWS IPAM** -&gt; <a href="/docs/16.2.2/ipam-and-dns-provider-aws">https://kb.avinetworks.com/ipam-and-dns-provider-aws/</a>
+**AWS IPAM** -&gt; <a href="/docs/latest/ipam-and-dns-provider-aws">https://kb.avinetworks.com/ipam-and-dns-provider-aws/</a>
 
-**Openstack IPAM** -&gt; <a href="/docs/16.2.2/ipam-and-dns-provider-openstack">https://kb.avinetworks.com/ipam-and-dns-provider-openstack/</a>
+**Openstack IPAM** -&gt; <a href="/docs/latest/ipam-and-dns-provider-openstack">https://kb.avinetworks.com/ipam-and-dns-provider-openstack/</a>
 
  
 

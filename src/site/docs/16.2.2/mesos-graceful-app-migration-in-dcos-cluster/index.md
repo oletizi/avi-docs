@@ -21,7 +21,7 @@ A separate unattached pool may be created for version 3, but it is unused. Monit
 
 ## Initial Virtual Service Creation
 
-The following JSON file creates a north-south application. The Avi SE resources allocated for the application are 0.5 vCPU (fractional for <a href="/docs/16.2.2/terms-of-avi-vantage-license">licensing</a> purposes) and 64 GB memory. The SE group allows a maximum of 2 instances (2 SEs).
+The following JSON file creates a north-south application. The Avi SE resources allocated for the application are 0.5 vCPU (fractional for <a href="/docs/latest/terms-of-avi-vantage-license">licensing</a> purposes) and 64 GB memory. The SE group allows a maximum of 2 instances (2 SEs).
 
 In the labels section, the north-south proxy service is enabled (FE-proxy), and the virtual service is defined (avi_proxy). The following options define the virtual service:
 

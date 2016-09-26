@@ -6,9 +6,9 @@ This article describes the changes and fixes in Avi Vantage release 16.1.4.
 
 Note: For information about fixes and enhancements in earlier 16.*x* releases, see the following:
 
-* <a href="/docs/16.2.2/avi-vantage-16-1-3-release-notes">16.1.3 Release Notes</a>
-* <a href="/docs/16.2.2/avi-vantage-16-1-2-release-notes">16.1.2 Release Notes</a>
-* <a href="/docs/16.2.2/avi-vantage-16-1-1-release-notes">16.1.1 Release Notes</a> (also contains information for 16.1) 
+* <a href="/docs/latest/avi-vantage-16-1-3-release-notes">16.1.3 Release Notes</a>
+* <a href="/docs/latest/avi-vantage-16-1-2-release-notes">16.1.2 Release Notes</a>
+* <a href="/docs/latest/avi-vantage-16-1-1-release-notes">16.1.1 Release Notes</a> (also contains information for 16.1) 
 
 ## What’s New in 16.1.4
 
