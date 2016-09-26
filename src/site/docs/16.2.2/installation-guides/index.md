@@ -32,7 +32,7 @@ See the following guides to install Avi Vantage version 16.1.*x*:
 * <a href="/docs/latest/installing-avi-vantage-for-a-linux-server-cloud">Installing Avi Vantage for Linux Server Cloud (bare metal)</a>
 * <a href="/docs/latest/installing-avi-vantage-in-amazon-web-services">Installing Avi Vantage for AWS</a>
 * Mesos / Marathon  
-    * Private cloud: <a href="/installing-avi-vantage-with-mesosphere-dcos-on-premises-16-1/">Installing Avi Vantage with Mesosphere DCOS (on-premises)</a>
+    * Private cloud: <a href="/installing-avi-vantage-with-mesosphere-dcos-on-premises/">Installing Avi Vantage with Mesosphere DCOS (on-premises)</a>
     * Amazon Web Services (AWS): <a href="/docs/latest/installing-avi-integration-with-mesos-in-aws">Installing Avi Integration with Mesos in AWS</a> (<a href="https://s3-us-west-1.amazonaws.com/avi-tm/avi-mesos.cloudformation.json">CloudFormation Template</a>) 
 
 ### SDN Integration

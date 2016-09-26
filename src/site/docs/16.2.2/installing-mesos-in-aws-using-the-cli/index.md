@@ -13,7 +13,7 @@ Avi Vantage integrates with Mesos or DC/OS and Marathon to provide the following
 
 Note: This guide applies to installation using the CLI. To install using the AWS web interface and a CloudFormation template from Avi Networks instead, go <a href="/docs/latest/installing-avi-integration-with-mesos-in-aws">here</a>.
 
-If you are installing into an on-premises Mesos or DC/OS cloud, go <a href="/docs/latest/installing-avi-vantage-with-mesosphere-dcos-on-premises-16-1/">here</a> instead.
+If you are installing into an on-premises Mesos or DC/OS cloud, go <a href="/docs/latest/installing-avi-vantage-with-mesosphere-dcos-on-premises/">here</a> instead.
 
 Avi Vantage consists of the Avi Controller and multiple Service Engines (SEs). The Avi Controller analyzes traffic and can request spin-up/spin-down of SEs to load balance traffic. In an Mesos or DC/OS deployment, the Avi Controller works with Marathon to spin-up/spin-down SEs.
 

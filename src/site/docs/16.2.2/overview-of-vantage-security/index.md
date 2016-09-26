@@ -44,7 +44,7 @@ With a basic deployment of Avi Vantage, the system is secured and reasonably loc
 * <a href="/docs/latest/controller-to-service-engine-communication">Controller-to-SE Communication</a>
 * <a href="/docs/latest/strong-password-enforcement">Strong Password Enforcement</a>
 * <a href="/docs/latest/clickjacking-protection">Clickjacking Protection</a>
-* <a href="/docs/configuration-guide/administration/user-accounts/">Custom Roles and Users</a>
+* <a href="/docs/latest/configuration-guide/administration/user-accounts/">Custom Roles and Users</a>
 * <a href="/docs/latest/ldap-auth-profile-test">AAA via LDAP</a>
 * <a href="/docs/latest/securing-management-ip-access">Securing Management IP Access</a> 
 

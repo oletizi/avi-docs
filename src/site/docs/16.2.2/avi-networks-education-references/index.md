@@ -110,7 +110,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>BGP Support for Virtual Services<br> <a href="/docs/latest/bgp-support-for-virtual-services">/bgp-support-for-virtual-services/</a></li> 
  <li>A/B Test Pool Feature<br> <a href="/docs/latest/ab-pool-feature">/ab-pool-feature/</a></li> 
  <li>Installing Avi Vantage with Mesosphere DCOS (On-Premises)<br> <a href="/docs/latest/installing-avi-vantage-with-mesosphere-dcos-on-premises">/installing-avi-vantage-with-mesosphere-dcos-on-premises/</a></li> 
- <li>Installing Mesos in AWS Using the CLI<br> <a href="/docs/latest/installing-mesos-in-aws-using-the-cli-16-1/">/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/</a></li> 
+ <li>Installing Mesos in AWS Using the CLI<br> <a href="/docs/latest/installing-mesos-in-aws-using-the-cli/">/2016/03/05/installing-mesos-in-aws-using-the-cli/</a></li> 
  <li>Installing Avi Vantage for OpenStack<br> <a href="/docs/latest/installing-avi-vantage-for-openstack-16-1">/installing-avi-vantage-for-openstack-16-1/</a></li> 
  <li>Installing Avi Vantage for Cisco Application Policy Infrastructure<br> <a href="/docs/latest/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1">/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1/</a></li> 
  <li>Installing Avi Vantage for VMware vCenter<br> <a href="/docs/latest/installing-avi-vantage-for-vmware-vcenter_16_1">/installing-avi-vantage-for-vmware-vcenter_16_1/</a></li> 
