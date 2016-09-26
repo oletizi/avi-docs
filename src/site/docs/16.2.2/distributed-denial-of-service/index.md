@@ -32,7 +32,7 @@ Many predefined DoS detections are built into the system, but are easily configu
 
 <a href="img/DDoSclients.png"><img class="size-full wp-image-7277 alignright" src="img/DDoSclients.png" alt="DDoSclients" width="563" height="113"></a>Further customization may be done via Avi's <a href="/docs/configuration-guide/applications/vs-policies/">Policy Engine</a>, which allows point-and-click rule sets to be defined, such as blocking or throttling users from <a href="/docs/16.2.2/geo-location-database">specific countries</a>.
 
-For the highest level of customization, DataScripts may be used to identify suspicious traffic and take appropriate actions. <a href="/docs/datascript-guide/">DataScripts</a> are scripted rules based on Lua which may be used for higher layer DDoS mitigation, such as blocking brute force login attempts or just about any use case required.
+For the highest level of customization, DataScripts may be used to identify suspicious traffic and take appropriate actions. <a href="/docs/latest/datascript-guide/">DataScripts</a> are scripted rules based on Lua which may be used for higher layer DDoS mitigation, such as blocking brute force login attempts or just about any use case required.
 
 ### Attack Visibility
 

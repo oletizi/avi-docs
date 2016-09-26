@@ -53,5 +53,5 @@ and finally,
 > Placement Ready
  
 
-After the Placement Ready status appears for the Avi SE, virtual services can be <a href="/docs/configuration-guide/applications/virtual-services/create-virtual-service/">created</a> and placed on it.
+After the Placement Ready status appears for the Avi SE, virtual services can be <a href="/docs/latest/configuration-guide/applications/virtual-services/create-virtual-service/">created</a> and placed on it.
 

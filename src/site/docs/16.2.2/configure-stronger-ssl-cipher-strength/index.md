@@ -4,7 +4,7 @@ layout: default
 ---
 SSL ciphers are defined by the *Templates > Security > SSL/TLS Profile*. Within a profile, there are two modes for configuring ciphers, List view and String view.
 
-See also <a href="/2015/12/16/app-transport-security/">Apple's App Transport Security</a>
+See also <a href="/docs/latest/app-transport-security/">Apple's App Transport Security</a>
 
  
 

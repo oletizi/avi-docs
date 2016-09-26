@@ -2,7 +2,7 @@
 title: Service Engine Group (16.2.1)
 layout: default
 ---
-Service Engines are created within a group, which contains the definition of how the SEs should be sized, placed, and made highly available. Each <a href="/docs/architectural-overview/infrastructure/#Clouds">cloud</a> will have at least one SE group.  The options within an SE group may vary based on the type of cloud within which they exist and its settings, such as<a href="/docs/16.2.2/orchestrator-access-modes"><em> no access</em></a> versus <a href="/docs/16.2.2/orchestrator-access-modes"><em>write access</em></a> mode.  SEs may only exist within one group.  Each group acts as an isolation domain.  SE resources within an SE group may be moved around to accommodate virtual services, but SE resources are never shared between SE groups.
+Service Engines are created within a group, which contains the definition of how the SEs should be sized, placed, and made highly available. Each <a href="/docs/latest/architectural-overview/infrastructure/#Clouds">cloud</a> will have at least one SE group.  The options within an SE group may vary based on the type of cloud within which they exist and its settings, such as<a href="/docs/16.2.2/orchestrator-access-modes"><em> no access</em></a> versus <a href="/docs/16.2.2/orchestrator-access-modes"><em>write access</em></a> mode.  SEs may only exist within one group.  Each group acts as an isolation domain.  SE resources within an SE group may be moved around to accommodate virtual services, but SE resources are never shared between SE groups.
 
 Changes made to an SE group may be applied immediately, only applied to SEs created after the changes are made, or require existing SEs to first be <a href="/docs/16.2.2/disable-se">disabled</a> before the changes can take effect.
 
@@ -29,8 +29,8 @@ At the top right of the Basic Settings tab you can turn on real-time metrics, wh
 The high availability mode of the SE group controls the behavior of the SE group in the event of an SE failure.  It also controls how load is scaled across SEs. Selecting a particular HA mode will change the settings and options that are exposed in the UI. These modes span a spectrum, from use of the fewest virtual machine resources on one end to providing the best high availability on the other.
 
 * <a href="/legacy-ha/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, configured and ready to take over in case of a failure of the active SE.  There is no Service Engine scale out in this HA mode.
-* <a href="/cluster-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>:  This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
-* <a href="/cluster-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
+* <a href="/docs/latest/cluster-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>:  This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
+* <a href="/docs/latest/cluster-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
 
 For additional considerations for SE high availability, including VS placement, see <a href="/docs/16.2.2/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>. To compare the above HA modes to those defined prior to Vantage 16.2, see <a href="/docs/16.2.2/comparing-past-and-present-se-group-ha-modes">Comparing Past and Present SE Group HA Modes</a>.
 

@@ -59,7 +59,7 @@ In an AWS deployment, the Avi Controller and Avi Service Engines use the followi
 </tr>
 <tr>   
 <td>Management Net</td>
-<td>TCP 22<p></p> <p> TCP 80 <em>(optional)</em></p> <p> TCP 443</p> <p> TCP 5054 <em>(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote<br> management access)</em></p></td>
+<td>TCP 22<p></p> <p> TCP 80 <em>(optional)</em></p> <p> TCP 443</p> <p> TCP 5054 <em>(if using the optional <a href="/docs/latest/cli-installing-the-cli-shell/">CLI shell</a> for remote<br> management access)</em></p></td>
 </tr>
 </tbody>
 </table>  

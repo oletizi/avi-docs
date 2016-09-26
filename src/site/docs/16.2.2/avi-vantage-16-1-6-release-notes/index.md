@@ -26,8 +26,8 @@ This release contains fixes but no new features.
 
 Upgrade prerequisite: current version of Avi Controller must be 15.1.5.
 
-* <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/latest/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 ## Product Documentation
 
@@ -35,7 +35,7 @@ For more information, please see the following documents, also available within 
 
 ### Installation Guides
 
-* <a href="/docs/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
 
 ## Open Source Package Information
 

@@ -8,8 +8,8 @@ Avi Controller runs on Ubuntu Linux, which means there are two levels of CLI acc
 
 See also:
 
-* <a href="/docs/cli-guide/">CLI Guide</a>
-* <a href="/docs/cli-guide/cli-top-level-commands/">CLI Top-Level Commands</a> 
+* <a href="/docs/latest/cli-guide/">CLI Guide</a>
+* <a href="/docs/latest/cli-guide/cli-top-level-commands/">CLI Top-Level Commands</a> 
 
 ### Access the Controller CLI
 

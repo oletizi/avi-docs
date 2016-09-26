@@ -27,7 +27,7 @@ Note: If the cluster is already deployed and you want to modify its node members
 
 In describing this procedure, begin with a single Avi Controller that is already installed and will become the leader node.
 <ol> 
- <li><a href="/docs/installation-guides/">Install</a> 2 (two) new Avi Controller nodes. It is recommended that each Avi Controller should be on the same management network as the Avi Controller that was already installed. See<a href="/docs/16.2.2/clustering-controllers-from-different-networks"> Clustering Controllers from Different Networks</a> if they cannot be on the same management network. Do not perform any configuration on these newly installed Avi Controller nodes.</li> 
+ <li><a href="/docs/latest/installation-guides/">Install</a> 2 (two) new Avi Controller nodes. It is recommended that each Avi Controller should be on the same management network as the Avi Controller that was already installed. See<a href="/docs/16.2.2/clustering-controllers-from-different-networks"> Clustering Controllers from Different Networks</a> if they cannot be on the same management network. Do not perform any configuration on these newly installed Avi Controller nodes.</li> 
  <li><a href="/docs/16.2.2/controller-cluster-ip">Controller cluster IP</a>: Choose an IP address to use as the <a href="/docs/16.2.2/controller-cluster-ip">Cluster IP address</a>. 
   <ul> 
    <li>For OpenStack deployments, choose one of the following options: 

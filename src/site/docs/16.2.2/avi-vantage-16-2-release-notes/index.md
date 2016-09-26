@@ -24,7 +24,7 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
     * Support for SNI extension in TLS handshakes to pool servers: Vantage can be configured to send a TLS SNI extension to the server to request certificates for specific user-configurable domain name.
     * <a href="/docs/16.2.2/wildcard-sni-matching-for-virtual-hosting">Wildcard SNI matching for virtual hosting</a>: Wildcards can be used to match on the beginning or end of the domain field of a child VS configuration (SNI).
     * <a href="/docs/16.2.2/support-for-sni-extension-in-tls-handshakes-to-pool-servers">TLS SNI supported for connections to pool servers</a>: The SNI extension can be sent as part of the handshake. Optionally, a FQDN can be specified to be used in the extension.
-    * <a href="/avi-vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
+    * <a href="/vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
 * HA features  
     * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Legacy HA mode support</a>: An Active/Standby HA mode useful for migrating from hardware appliance-based solutions.  
         * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Single IP address for the active/standby SE pair</a>
@@ -81,7 +81,7 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
 
 Upgrade prerequisite: current version of Avi Controller must be 15.3.x or 16.1.x.
 
-* <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
 * <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
@@ -113,7 +113,7 @@ For more information, please see the following documents, also available within 
 
 ### INSTALLATION GUIDES
 
-* <a href="/docs/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
 
 <a name="opensourceinfo"></a>
 
@@ -146,7 +146,7 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
     * Support for SNI extension in TLS handshakes to pool servers: Vantage can be configured to send a TLS SNI extension to the server to request certificates for specific user-configurable domain name.
     * <a href="/docs/16.2.2/wildcard-sni-matching-for-virtual-hosting">Wildcard SNI matching for virtual hosting</a>: Wildcards can be used to match on the beginning or end of the domain field of a child VS configuration (SNI).
     * <a href="/docs/16.2.2/support-for-sni-extension-in-tls-handshakes-to-pool-servers">TLS SNI supported for connections to pool servers</a>: The SNI extension can be sent as part of the handshake. Optionally, a FQDN can be specified to be used in the extension.
-    * <a href="/avi-vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
+    * <a href="/vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
 * HA features  
     * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Legacy HA mode support</a>: An Active/Standby HA mode useful for migrating from hardware appliance-based solutions.  
         * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Single IP address for the active/standby SE pair</a>
@@ -203,7 +203,7 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
 
 Upgrade prerequisite: current version of Avi Controller must be 15.3.x or 16.1.x.
 
-* <a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
 * <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
@@ -235,7 +235,7 @@ For more information, please see the following documents, also available within 
 
 ### INSTALLATION GUIDES
 
-* <a href="/docs/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
 
 <a name="opensourceinfo"></a>
 

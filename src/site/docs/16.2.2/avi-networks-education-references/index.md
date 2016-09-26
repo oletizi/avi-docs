@@ -10,9 +10,9 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Introduction to Virtual Service High Availability<br> <a href="https://blog.avinetworks.com/knowledgebase/introduction-to-virtual-service-high-availability">https://blog.avinetworks.com/knowledgebase/introduction-to-virtual-service-high-availability</a><br> Blog entry</li> 
  <li>Enable End-to-End SSL for Your OpenStack VMs<br> <a href="https://blog.avinetworks.com/enable-end-to-end-ssl-for-your-openstack-vms">https://blog.avinetworks.com/enable-end-to-end-ssl-for-your-openstack-vms</a><br> Blog entry</li> 
  <li>The Hardware Load Balancer Bubble<br> <a href="https://blog.avinetworks.com/the-hardware-load-balancer-bubble">https://blog.avinetworks.com/the-hardware-load-balancer-bubble</a><br> Blog entry</li> 
- <li>Avi CLI Guide<br> <a href="/docs/cli-guide/">/docs/cli-guide/</a></li> 
+ <li>Avi CLI Guide<br> <a href="/docs/latest/cli-guide/">/docs/latest/cli-guide/</a></li> 
  <li>KVM Performance Guide on Avi’s internal Wiki (and eventually on Customer Portal, per Ashish:<br> <a href="https://drive.google.com/open?id=0BwnRttbMEdp-Tmg0WkxiUmMwNzg">https://drive.google.com/open?id=0BwnRttbMEdp-Tmg0WkxiUmMwNzg</a></li> 
- <li>Avi Vantage API Guide<br> <a href="/docs/api-guide/">/docs/api-guide/</a></li> 
+ <li>Avi Vantage API Guide<br> <a href="/docs/latest/api-guide/">/docs/latest/api-guide/</a></li> 
  <li>Continuous Security Insights (CSI) see DDOS attacks in real time<br> <a href="https://youtu.be/PlfGr93cvng">https://youtu.be/PlfGr93cvng</a><br> Avi Networks YouTube Channel video, Nathan McMahon, 29Sep2015, 4:02</li> 
  <li>Could They Do It? Real User Monitoring: Chapter 10 – Complete Web Monitoring<br> <a href="http://archive.oreilly.com/pub/a/web-development/excerpts/9780596155131/chapter-10.html">http://archive.oreilly.com/pub/a/web-development/excerpts/9780596155131/chapter-10.html</a><br> A chapter excerpted from O’Reilly’s <a href="http://shop.oreilly.com/product/9780596155148.do">Complete Web Monitoring</a>.</li> 
  <li>Denial-of-service attack<br> <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">https://en.wikipedia.org/wiki/Denial-of-service_attack</a><br> Wikipedia article</li> 
@@ -45,7 +45,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Avi Networks Configuration Guide<br> <a href="/docs/16.2.2/configuration-guide">/docs/configuration-guide/</a><br> Configuration guide on Avi Networks Knowledge Base</li> 
  <li>Events That Trigger Significant Logs<br> <a href="/docs/16.2.2/events-that-trigger-significant-logs">/events-that-trigger-significant-logs/</a><br> Knowledge Base article</li> 
  <li>Avi Networks Demo: End to End Timing and Anomaly Detection<br> <a href="https://www.youtube.com/watch?v=dyZcKdcnh0U">https://www.youtube.com/watch?v=dyZcKdcnh0U</a><br> Avi Networks YouTube Channel video, Nathan McMahon, 10Dec2014, 2:42</li> 
- <li>Avi Networks DataScript Guide<br> <a href="/docs/datascript-guide/">/docs/datascript-guide/</a></li> 
+ <li>Avi Networks DataScript Guide<br> <a href="/docs/latest/datascript-guide/">/docs/latest/datascript-guide/</a></li> 
  <li>Overview of DataScript<br> <a href="/docs/16.2.2/overview-of-datascript">/overview-of-datascript/</a></li> 
  <li>DataScript: Troubleshooting Rules<br> <a href="/docs/16.2.2/datascript-troubleshooting-rules">/datascript-troubleshooting-rules/</a></li> 
  <li>DataScript: Execution Priority<br> <a href="/docs/16.2.2/datascript-execution-priority">/datascript-execution-priority/</a></li> 
@@ -54,8 +54,8 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>DataScript: Events<br> <a href="/docs/16.2.2/datascript-events">/datascript-events/</a></li> 
  <li>DataScript: Constants<br> <a href="/docs/16.2.2/datascript-constants">/datascript-constants/</a></li> 
  <li>DataScript: Operators<br> <a href="/docs/16.2.2/datascript-operators">/datascript-operators/</a></li> 
- <li>DataScript: Precedence<br> <a href="/docs/datascript-guide/datascript-precedence/">/docs/datascript-guide/datascript-precedence/</a></li> 
- <li>DataScript: Constructs<br> <a href="/docs/datascript-guide/datascript-constructs/">/docs/datascript-guide/datascript-constructs/</a></li> 
+ <li>DataScript: Precedence<br> <a href="/docs/latest/datascript-guide/datascript-precedence/">/docs/latest/datascript-guide/datascript-precedence/</a></li> 
+ <li>DataScript: Constructs<br> <a href="/docs/latest/datascript-guide/datascript-constructs/">/docs/latest/datascript-guide/datascript-constructs/</a></li> 
  <li>App Transport Security<br> <a href="/docs/16.2.2/app-transport-security">/app-transport-security/</a></li> 
  <li>Notification of SSL Certificate Expiration<br> <a href="/docs/16.2.2/notification-of-ssl-certificate-expiration">/notification-of-ssl-certificate-expiration/</a></li> 
  <li>Configure Stronger SSL Cipher Strength<br> <a href="/docs/16.2.2/configure-stronger-ssl-cipher-strength">/configure-stronger-ssl-cipher-strength/</a></li> 
@@ -70,7 +70,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Overview of Vantage Security<br> <a href="/docs/16.2.2/overview-of-vantage-security">/overview-of-vantage-security/</a></li> 
  <li>Impact of a Controller Failure<br> <a href="/docs/16.2.2/impact-of-a-controller-failure">/impact-of-a-controller-failure/</a></li> 
  <li>Controller-to-Service-Engine Communication<br> <a href="/docs/16.2.2/controller-to-service-engine-communication">/controller-to-service-engine-communication/</a></li> 
- <li>Controller Cluster iP<br> <a href="/2015/11/28/controller-cluster-ip/">/controller-cluster-ip/</a></li> 
+ <li>Controller Cluster iP<br> <a href="/docs/latest/controller-cluster-ip/">/controller-cluster-ip/</a></li> 
  <li>Back Up the Configuration<br> <a href="/docs/16.2.2/backup-the-configuration">/backup-the-configuration/</a></li> 
  <li>Anti-Affinity for Service Engine Placement<br> <a href="/docs/16.2.2/anti-affinity-for-service-engine-placement">/anti-affinity-for-service-engine-placement/</a></li> 
  <li>Definition of Throughput<br> <a href="/docs/16.2.2/definition-of-throughput">/definition-of-throughput/</a></li> 
@@ -110,7 +110,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>BGP Support for Virtual Services<br> <a href="/docs/16.2.2/bgp-support-for-virtual-services">/bgp-support-for-virtual-services/</a></li> 
  <li>A/B Test Pool Feature<br> <a href="/docs/16.2.2/ab-pool-feature">/ab-pool-feature/</a></li> 
  <li>Installing Avi Vantage with Mesosphere DCOS (On-Premises)<br> <a href="/docs/16.2.2/installing-avi-vantage-with-mesosphere-dcos-on-premises">/installing-avi-vantage-with-mesosphere-dcos-on-premises/</a></li> 
- <li>Installing Mesos in AWS Using the CLI<br> <a href="/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/">/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/</a></li> 
+ <li>Installing Mesos in AWS Using the CLI<br> <a href="/docs/latest/installing-mesos-in-aws-using-the-cli-16-1/">/2016/03/05/installing-mesos-in-aws-using-the-cli-16-1/</a></li> 
  <li>Installing Avi Vantage for OpenStack<br> <a href="/docs/16.2.2/installing-avi-vantage-for-openstack-16-1">/installing-avi-vantage-for-openstack-16-1/</a></li> 
  <li>Installing Avi Vantage for Cisco Application Policy Infrastructure<br> <a href="/docs/16.2.2/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1">/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller-16-1/</a></li> 
  <li>Installing Avi Vantage for VMware vCenter<br> <a href="/docs/16.2.2/installing-avi-vantage-for-vmware-vcenter_16_1">/installing-avi-vantage-for-vmware-vcenter_16_1/</a></li> 
@@ -119,8 +119,8 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>HTTP Basic Auth for API Queries<br> <a href="/docs/16.2.2/http-basic-auth-for-api-queries">/http-basic-auth-for-api-queries/</a></li> 
  <li>Installing the Vantage CLI Shell<br> <a href="/docs/16.2.2/cli-installing-the-cli-shell">/cli-installing-the-cli-shell/</a></li> 
  <li>Public Key Management on SE Hosts ... also see resource #256 for a release 16.2.2-specific article<br> <a href="/docs/16.2.2/public-key-management-on-se-hosts">/public-key-management-on-se-hosts/</a></li> 
- <li>Mesos in AWS: Deploying a North-South Application<br> <a href="/2016/02/16/mesos-in-aws-deploying-a-north-south-service/">/2016/02/16/mesos-in-aws-deploying-a-north-south-service/</a></li> 
- <li>Installing Mesos in AWS with a CloudFormation Template<br> <a href="/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/">/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/</a></li> 
+ <li>Mesos in AWS: Deploying a North-South Application<br> <a href="/docs/latest/mesos-in-aws-deploying-a-north-south-service/">/2016/02/16/mesos-in-aws-deploying-a-north-south-service/</a></li> 
+ <li>Installing Mesos in AWS with a CloudFormation Template<br> <a href="/docs/latest/installing-mesos-aws-using-the-vantage-cloudformation-template/">/2016/02/15/installing-mesos-aws-using-the-vantage-cloudformation-template/</a></li> 
  <li>Creating Applications with Mesos / Marathon Labels<br> <a href="/docs/16.2.2/creating-applications-in-mesos-with-marathon-labels">/creating-applications-in-mesos-with-marathon-labels/</a></li> 
  <li>GSLB Integration with F5 GTM<br> <a href="/docs/16.2.2/gslb-integration-with-f5-gtm">/gslb-integration-with-f5-gtm/</a></li> 
  <li>Installing Avi Vantage in an AWS-hosted Mesos Cluster<br> <a href="/docs/16.2.2/installing-avi-vantage-in-an-aws-hosted-mesos-cluster">/installing-avi-vantage-in-an-aws-hosted-mesos-cluster/</a></li> 
@@ -210,7 +210,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Installing Avi Vantage With Open DC/OS or Enterprise DC/OS<br> <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">/installing-avi-vantage-with-open-dcos-or-enterprise-dcos/</a></li> 
  <li>Gateway Monitoring for Legacy HA<br> <a href="/docs/16.2.2/gateway-monitoring-for-legacy-ha">/gateway-monitoring-for-legacy-ha/</a></li> 
  <li>Overview of Vantage High Availability<br> <a href="/docs/16.2.2/overview-of-vantage-high-availability">/overview-of-vantage-high-availability/</a></li> 
- <li>Elastic HA for Avi Service Engines<br> <a href="/cluster-ha-for-avi-service-engines/">/cluster-ha-for-avi-service-engines/</a></li> 
+ <li>Elastic HA for Avi Service Engines<br> <a href="/docs/latest/cluster-ha-for-avi-service-engines/">/cluster-ha-for-avi-service-engines/</a></li> 
  <li>Avi Service Engine Group Options<br> <a href="/docs/16.2.2/avi-service-engine-group-options">/avi-service-engine-group-options/</a></li> 
  <li>Collecting Tech Support Logs<br> <a href="/docs/16.2.2/collecting-tech-support-logs">/collecting-tech-support-logs/</a></li> 
  <li>Cluster Changes Following Avi Controller Reboot<br> <a href="/docs/16.2.2/cluster-operational-changes">/cluster-operational-changes/</a></li> 
@@ -256,7 +256,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Overview of Account Management<br> <a href="/docs/latest/overview-of-account-management">/overview-of-account-management/</a></li> 
  <li>Default System Accounts<br> <a href="/docs/latest/default-system-accounts">/default-system-accounts/</a></li> 
  <li>CLI Access<br> <a href="/docs/16.2.2/cli-access">/cli-access/</a></li> 
- <li>CLI Top-Level Commands<br> <a href="/docs/cli-guide/cli-top-level-commands/">/docs/cli-guide/cli-top-level-commands/</a></li> 
+ <li>CLI Top-Level Commands<br> <a href="/docs/latest/cli-guide/cli-top-level-commands/">/docs/latest/cli-guide/cli-top-level-commands/</a></li> 
  <li>Password Recovery<br> <a href="/docs/16.2.2/password-recovery">/password-recovery/</a></li> 
  <li>Configuring Ansible for Avi Vantage<br> <a href="/docs/16.2.2/configuring-ansible-for-avi-vantage">/configuring-ansible-for-avi-vantage/</a></li> 
  <li>Public Key Management on SE Hosts (16.2.2)<br> <a href="/docs/16.2.2/public-key-management-on-se-hosts-16-2-2">/public-key-management-on-se-hosts-16-2-2/</a></li> 

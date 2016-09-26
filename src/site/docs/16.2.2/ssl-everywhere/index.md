@@ -4,7 +4,7 @@ layout: default
 ---
 The Templates &gt; Profiles &gt; HTTP application profile's security settings page affects how a virtual service should handle HTTPS. These settings provide a simple interface to enabling common HTTPS-related functionality. If the HTTP profile is attached to a virtual service that is only configured for HTTP, the HTTPS settings in this section will not apply. Only if the virtual service is configured for HTTPS, or HTTP and HTTPS within the same virtual service, will these settings take effect.
 
-More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies </a>or <a href="/docs/datascript-guide/">DataScripts</a>.
+More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies </a>or <a href="/docs/latest/datascript-guide/">DataScripts</a>.
 
 ### <a href="img/SSL-Everywhere1.png"><img class="size-full wp-image-7732 alignright" src="img/SSL-Everywhere1.png" alt="SSL Everywhere1" width="309" height="307"></a>SSL Everywhere
 

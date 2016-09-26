@@ -8,7 +8,7 @@ Policies are comprised of one or more rules, which are match/action pairs. A rul
 
 Policies are not shared; they are defined on a per virtual service basis. While powerful, policies are intended to be simple point and click functionality.
 
-For more advanced capabilities, see <a href="/2015/12/14/overview-of-datascript/">DataScripts</a>.
+For more advanced capabilities, see <a href="/docs/latest/overview-of-datascript/">DataScripts</a>.
 
 Policies are configured within the policy tab of the virtual service edit screen.
 
@@ -16,7 +16,7 @@ Policies are configured within the policy tab of the virtual service edit screen
 
 Policies may be used to recreate similar functionality found elsewhere within Vantage. For instance, a policy may be configured to generate an HTTP redirect from HTTP to HTTPS. This same functionality may be configured within the Secure-HTTP application profile. Because a policy is more specific than a general purpose profile, the policy will take precedence.
 
-If the profile is set to redirect HTTP to HTTPS via port 443, and the policy is set to redirect HTTP to HTTPS on port 8443, the client will be sent to port 8443. (See <a href="/2015/12/14/datascript-execution-priority/">Execution Priority</a> for more on this topic.)
+If the profile is set to redirect HTTP to HTTPS via port 443, and the policy is set to redirect HTTP to HTTPS on port 8443, the client will be sent to port 8443. (See <a href="/docs/latest/datascript-execution-priority/">Execution Priority</a> for more on this topic.)
 
 A virtual service may have multiple policies defined, one for each of the four types. Once defined, policies for the four types are implemented in the following order of priority.
 <ol> 

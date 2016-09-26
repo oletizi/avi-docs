@@ -23,7 +23,7 @@ To guarantee a higher level of physical security, Vantage supports the use of ex
 Vantage supports the following types of external key stores:
 
 * <a href="/docs/16.2.2/thales-nshield-integration-2">Thales nShield</a>
-* <a href="/avi-vantage-integration-with-safenet-network-hsm/">Gemalto (formerly SafeNet)</a>
+* <a href="/vantage-integration-with-safenet-network-hsm/">Gemalto (formerly SafeNet)</a>
 * OpenStack Barbican - coming in v17.1 
 
  

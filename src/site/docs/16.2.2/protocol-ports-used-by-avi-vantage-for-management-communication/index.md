@@ -29,7 +29,7 @@ The Avi Controller and Avi Service Engines use the following ports for managemen
 </tr>
 <tr>   
 <td>External Network Services</td>
-<td>TCP 22 (SSH)<br> TCP 80 (http) <em>(optional)</em><br> TCP 443 (https)<br> TCP 5054 (CLI Server) <em>(if using the optional <a href="/2016/02/26/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em><br> UDP 161 (SNMP)</td>
+<td>TCP 22 (SSH)<br> TCP 80 (http) <em>(optional)</em><br> TCP 443 (https)<br> TCP 5054 (CLI Server) <em>(if using the optional <a href="/docs/latest/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em><br> UDP 161 (SNMP)</td>
 </tr>
 </tbody>
 </table>  

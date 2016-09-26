@@ -51,7 +51,7 @@ The High Availability tab contains the HA option settings for the SE group.
 <a href="img/Elastic_HA_screenshot.png"><img class="alignnone size-full wp-image-10776" src="img/Elastic_HA_screenshot.png" alt="Elastic_HA_screenshot" width="930" height="1025"></a>
 The HA options for Avi SEs are described below. See the following for more information and deployment examples:
 
-* <a href="/cluster-ha-for-avi-service-engines/">Elastic HA</a>
+* <a href="/docs/latest/cluster-ha-for-avi-service-engines/">Elastic HA</a>
 * <a href="/legacy-ha/">Legacy HA</a> 
 
 ### Elastic HA Options
@@ -111,4 +111,4 @@ This section of the Advanced tab has the following option:
 
 * **HSM Group:** Applies a template of hardware security module (HSM) settings to the SE group. For more information about HSM support:  
     * <a href="/docs/16.2.2/thales-nshield-integration-2">Thales nShield Integration</a>
-    * <a href="/avi-vantage-integration-with-safenet-network-hsm/">Avi Vantage Integration with SafeNet Network HSM</a> 
+    * <a href="/vantage-integration-with-safenet-network-hsm/">Avi Vantage Integration with SafeNet Network HSM</a> 

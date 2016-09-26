@@ -87,13 +87,13 @@ The Virtual Service Details pages shows extensive information about a virtual 
 
 The details pages are a loose collection of a number of sub-pages under the umbrella of the virtual service.
 
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-analytics">Virtual Service Analytics Page</a>
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-logs">Virtual Service Logs Page</a>
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-health">Virtual Service Health Page</a>
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-clients">Virtual Service Clients Page</a>
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-security">Virtual Service Security Page</a>
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-events">Virtual Service Events Page</a>
-* <a href="/docs/configuration-guide/applications/virtual-services/vs-alerts">Virtual Service Alerts Page</a> 
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-analytics">Virtual Service Analytics Page</a>
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-logs">Virtual Service Logs Page</a>
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-health">Virtual Service Health Page</a>
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-clients">Virtual Service Clients Page</a>
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-security">Virtual Service Security Page</a>
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-events">Virtual Service Events Page</a>
+* <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-alerts">Virtual Service Alerts Page</a> 
 
 ### Virtual Service Quick Info Popup
 

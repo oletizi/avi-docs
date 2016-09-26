@@ -45,7 +45,7 @@ Vantage never caches HTTP objects for the following types of responses:
 
 ## Verify Object Served from Cache
 
-To validate that an object is successfully served from the cache, navigate to the virtual service's logs page.  Apply the following filter:  cache_hit="true"  This will filter all requests that were successfully served from cache.  When using logs, be sure to enable Non-Significant Logs to show non-error traffic, and ensure the logging engine is capturing the Non-Significant logs for the duration of the test.  See the <a href="/docs/architectural-overview/applications/virtual-services/vs-logs/">Logs KB</a> for additional help.
+To validate that an object is successfully served from the cache, navigate to the virtual service's logs page.  Apply the following filter:  cache_hit="true"  This will filter all requests that were successfully served from cache.  When using logs, be sure to enable Non-Significant Logs to show non-error traffic, and ensure the logging engine is capturing the Non-Significant logs for the duration of the test.  See the <a href="/docs/latest/architectural-overview/applications/virtual-services/vs-logs/">Logs KB</a> for additional help.
 
 ## Cache Size
 
