@@ -51,7 +51,7 @@ The High Availability tab contains the HA option settings for the SE group.
 <a href="img/Elastic_HA_screenshot.png"><img class="alignnone size-full wp-image-10776" src="img/Elastic_HA_screenshot.png" alt="Elastic_HA_screenshot" width="930" height="1025"></a>
 The HA options for Avi SEs are described below. See the following for more information and deployment examples:
 
-* <a href="/docs/latest/cluster-ha-for-avi-service-engines/">Elastic HA</a>
+* <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic HA</a>
 * <a href="/legacy-ha/">Legacy HA</a> 
 
 ### Elastic HA Options

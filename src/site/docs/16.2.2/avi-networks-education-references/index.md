@@ -210,7 +210,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Installing Avi Vantage With Open DC/OS or Enterprise DC/OS<br> <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">/installing-avi-vantage-with-open-dcos-or-enterprise-dcos/</a></li> 
  <li>Gateway Monitoring for Legacy HA<br> <a href="/docs/16.2.2/gateway-monitoring-for-legacy-ha">/gateway-monitoring-for-legacy-ha/</a></li> 
  <li>Overview of Vantage High Availability<br> <a href="/docs/16.2.2/overview-of-vantage-high-availability">/overview-of-vantage-high-availability/</a></li> 
- <li>Elastic HA for Avi Service Engines<br> <a href="/docs/latest/cluster-ha-for-avi-service-engines/">/cluster-ha-for-avi-service-engines/</a></li> 
+ <li>Elastic HA for Avi Service Engines<br> <a href="/docs/latest/elastic-ha-for-avi-service-engines/">/elastic-ha-for-avi-service-engines/</a></li> 
  <li>Avi Service Engine Group Options<br> <a href="/docs/16.2.2/avi-service-engine-group-options">/avi-service-engine-group-options/</a></li> 
  <li>Collecting Tech Support Logs<br> <a href="/docs/16.2.2/collecting-tech-support-logs">/collecting-tech-support-logs/</a></li> 
  <li>Cluster Changes Following Avi Controller Reboot<br> <a href="/docs/16.2.2/cluster-operational-changes">/cluster-operational-changes/</a></li> 
