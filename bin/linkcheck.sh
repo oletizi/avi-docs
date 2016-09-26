@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-host=docs.avinetworks.com
+#host=docs.avinetworks.com
+host=localhost:4000
 outdir=/tmp/linklint
 if [ -e $outdir ]; then
   echo "Removing old linklint report directory: $outdir"

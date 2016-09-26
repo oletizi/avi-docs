@@ -9,7 +9,7 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 * <a href="/vantage-integration-with-safenet-network-hsm/#use-data-network">Ability to perform HSM SSL handshake via data path or management path</a>
 * <a href="/vantage-integration-with-safenet-network-hsm/#multiple-HSM-profiles">Support for multiple SafeNet HSM Groups</a>
 * <a href="/certificate-management-integration-for-csr-automation/#automated-CSR-workflow-for-HSM">Automated CSR workflow for SafeNet HSM</a>
-* <a href="/bgp-support-for-virtual-services/#BGP-profile-modifications">Ability to handle BGP peer changes gracefully</a>
+* <a href="/docs/latest/bgp-support-for-virtual-services/#BGP-profile-modifications">Ability to handle BGP peer changes gracefully</a>
 * <a href="/docs/latest/openstack-external-networks">In OpenStack, support for using an external network for Controller, virtual service and pool</a>
 * <a href="/docs/latest/verifying-notification-settings">Ability to verify SNMP trap configuration</a>
 * <a href="/docs/latest/verifying-notification-settings">Ability to verify syslog profile configuration</a>
