@@ -23,7 +23,7 @@ Avi Vantage 16.1.1 adds support for Internet Explorer (IE) version 11.
 This section summarizes the enhancements in 16.1. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
 * Linux server (bare metal) support enhancements  
-    * <a href="/docs/latest/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
+    * <a href="/docs/16.1/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
     * <a href="/docs/latest/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
     * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade support</a>
 * Networking features  
