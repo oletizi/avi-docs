@@ -22,7 +22,7 @@ The article assumes the following:
    <li>DPDK: Yes if installing directly onto bare metal with an applicable Ethernet NIC; No if installing onto a virtual machine (VM) or a NIC not supported for DPDK</li> 
    <li>Number of Cores (CPUs)</li> 
    <li>Memory</li> 
-  </ul> <p>For information, <a href="/installing-avi-vantage-for-a-linux-server-cloud-revised/#linux-cloud-instrqmts">click here</a>.</p></li> 
+  </ul> <p>For information, <a href="/installing-avi-vantage-for-a-linux-server-cloud/#linux-cloud-instrqmts">click here</a>.</p></li> 
  <li>Click Complete.</li> 
 </ol> 
 

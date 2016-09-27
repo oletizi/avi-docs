@@ -184,7 +184,7 @@ This section summarizes the enhancements in Vantage 16.1. For more information, 
 Upgrade prerequisite: current version of Avi Controller must be 16.1.7.
 
 * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/docs/latest/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
 

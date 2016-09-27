@@ -40,7 +40,7 @@ See also:
 
 With a basic deployment of Avi Vantage, the system is secured and reasonably locked down. However, many administrators may wish to customize the security posture or further tighten policies regarding who can access Vantage. Avi strongly recommends thoroughly reviewing the choices for securing Vantage which are essential for guaranteeing the security of Vantage in production environments where the potential exposure to malicious attack is more severe.
 
-* <a href="/docs/latest/protocol-ports-used-by-vantage-for-management-communication/">Open Ports Used by Vantage</a>
+* <a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication/">Open Ports Used by Vantage</a>
 * <a href="/docs/latest/controller-to-service-engine-communication">Controller-to-SE Communication</a>
 * <a href="/docs/latest/strong-password-enforcement">Strong Password Enforcement</a>
 * <a href="/docs/latest/clickjacking-protection">Clickjacking Protection</a>

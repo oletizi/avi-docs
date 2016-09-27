@@ -33,7 +33,7 @@ To enable source NAT for a virtual service:
 
 ## High Availability Support for Source NAT
 
-Source NAT can be used with either of the high availability (HA) modes, cluster HA or <a href="/legacy-ha/">legacy HA</a>. The configuration requirements differ depending on whether the SE and back-end servers are in the same subnet (connected at Layer 2) or in different subnets (connected at Layer 3).
+Source NAT can be used with either of the high availability (HA) modes, cluster HA or <a href="/docs/latest/legacy-ha-for-avi-service-engines/">legacy HA</a>. The configuration requirements differ depending on whether the SE and back-end servers are in the same subnet (connected at Layer 2) or in different subnets (connected at Layer 3).
 
 <table class="table table table-bordered table-hover">  
 <tbody>      
@@ -68,7 +68,7 @@ Source NAT can be used with either of the high availability (HA) modes, cluster 
 
 Notes:
 
-* In Layer 3 HA, the upstream router is used to provide equal-cost multipath (<a href="/legacy-ha/">ECMP</a>) load balancing across the virtual service's SEs.
+* In Layer 3 HA, the upstream router is used to provide equal-cost multipath (<a href="/docs/latest/legacy-ha-for-avi-service-engines/">ECMP</a>) load balancing across the virtual service's SEs.
 * For Layer 3 HA, configuration may be required on the router between the SEs and the back-end servers, to enable return traffic from the server to reach the SEs.
 * In Layer 2 HA, scale out is not possible. 
 
@@ -108,7 +108,7 @@ For details on enabling BGP to advertise SNAT IP addresses, <a href="/docs/lates
 
 This mode requires only a single SNAT IP per virtual service, since scale out is not possible. The active SE carries all the traffic and owns the SNAT IP, while the standby SE remains idle. In the case of a failover, the standby SE takes over the traffic as well as ownership of the SNAT IP.
 
-A floating interface IP needs to be provisioned in order to provide adjacency to the upstream router, for the SNAT IP. For information, <a href="/legacy-ha/">click here</a>.
+A floating interface IP needs to be provisioned in order to provide adjacency to the upstream router, for the SNAT IP. For information, <a href="/docs/latest/legacy-ha-for-avi-service-engines/">click here</a>.
 
 ### Using the CLI
 

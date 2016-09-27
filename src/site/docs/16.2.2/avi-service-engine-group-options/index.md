@@ -52,7 +52,7 @@ The High Availability tab contains the HA option settings for the SE group.
 The HA options for Avi SEs are described below. See the following for more information and deployment examples:
 
 * <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic HA</a>
-* <a href="/legacy-ha/">Legacy HA</a> 
+* <a href="/docs/latest/legacy-ha-for-avi-service-engines/">Legacy HA</a> 
 
 ### Elastic HA Options
 

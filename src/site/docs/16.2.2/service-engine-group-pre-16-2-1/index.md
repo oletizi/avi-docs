@@ -8,7 +8,7 @@ Changes made to an SE group may be applied immediately, only applied to SEs crea
 
 Multiple SE groups may exist within a cloud.  A newly created virtual service will be placed on the default SE group, though this can be changed via the VS &gt; Advanced page while creating a VS via the advanced mode.  To move an existing virtual service from one SE group to another, the VS must first be disabled, moved, and then re-enabled.  SE groups provide data plane isolation, therefore moving a VS from one SE group to another is disruptive to existing connections through the virtual service.
 
-<a href="img/legacy-ha-gui1.png"><img class="alignnone size-full wp-image-8395" src="img/legacy-ha-gui1.png" alt="legacy-ha-gui1" width="916" height="426"></a>
+<a href="img/legacy-ha-gui1.png"><img class="alignnone size-full wp-image-8395" src="img/legacy-ha-gui1.png" alt="/docs/latest/legacy-ha-for-avi-service-engines-gui1" width="916" height="426"></a>
 
 ### SE Group — Basic Settings Tab
 
@@ -20,7 +20,7 @@ To access the Service Engine group page, navigate to Infrastructure &gt; Clouds 
 
 The high availability mode of the SE group controls the behavior of the SE group in the event of an SE failure.  It also controls how load is scaled across SEs. Selecting a particular HA mode will change the settings and options that are exposed in the UI. These modes span a spectrum, from use of the fewest virtual machine resources on one end to providing the best high availability on the other.
 
-* <a href="/legacy-ha/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, ready to take over in case of a failure of the active SE.  There is no Service Engine scale out.
+* <a href="/docs/latest/legacy-ha-for-avi-service-engines/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, ready to take over in case of a failure of the active SE.  There is no Service Engine scale out.
 * <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>: This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
 * <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
 

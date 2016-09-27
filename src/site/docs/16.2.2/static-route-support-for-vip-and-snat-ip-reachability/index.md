@@ -8,7 +8,7 @@ A static route is required on the next-hop router from the Avi SE to the pool, i
 
 * The virtual service's VIP address or SNAT addresses are not in any of SE interface subnets.
 * There is no HA requirement on the SE (because only a single SE is used).
-* <a href="/legacy-ha/">Legacy HA</a> mode is enabled. 
+* <a href="/docs/latest/legacy-ha-for-avi-service-engines/">Legacy HA</a> mode is enabled. 
 
 This article shows sample topologies that use static routing for server response traffic.
 
@@ -18,7 +18,7 @@ Provisioning load balancers without HA is in general not a recommended practice.
 
 Here is a sample topology without HA. The virtual service's VIP and SNAT IP addresses are not in any of the SE interface subnets. Thus, a static route is needed on the next-hop router from the back-end server back to the SE. 
 
-Static routes can be provisioned on the next-hop router to point to the interface IP of the Avi SE. However, it is recommended to configure a floating interface IP for the SE group, and to have the static route use the floating interface as the adjacency. This will allow smooth addition of a second Avi SE in the future if required, for HA purposes (using <a href="/legacy-ha/">legacy HA mode</a>).
+Static routes can be provisioned on the next-hop router to point to the interface IP of the Avi SE. However, it is recommended to configure a floating interface IP for the SE group, and to have the static route use the floating interface as the adjacency. This will allow smooth addition of a second Avi SE in the future if required, for HA purposes (using <a href="/docs/latest/legacy-ha-for-avi-service-engines/">legacy HA mode</a>).
 <a href="img/static-route-topo1.png"><img class="alignnone size-full wp-image-8299" src="img/static-route-topo1.png" alt="static-route-topo1" width="621" height="402"></a>
 Likewise, static routes or a default gateway also will need to be provisioned on the SE group, to enable reachability to servers and clients, which may not be Layer-2 adjacent. For information on provisioning a default gateway and static routes on an SE, <a href="/docs/configuration-guide/infrastructure/">click here</a>.
 

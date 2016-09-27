@@ -6,7 +6,7 @@ Avi Vantage supports health monitoring of the first-hop gateways connected to Av
 
 Gateway health monitoring is performed from both active and standby Avi SEs.
 
-Note: The current release supports gateway health monitoring only for Avi SEs configured for <a href="/legacy-ha/">legacy high availability (HA)</a>.
+Note: The current release supports gateway health monitoring only for Avi SEs configured for <a href="/docs/latest/legacy-ha-for-avi-service-engines/">legacy high availability (HA)</a>.
 
 ## Enabling Gateway Health Monitoring
 
