@@ -6,15 +6,15 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 
 ## What’s New in 16.2.2
 
-* <a href="/vantage-integration-with-safenet-network-hsm/#use-data-network">Ability to perform HSM SSL handshake via data path or management path</a>
-* <a href="/vantage-integration-with-safenet-network-hsm/#multiple-HSM-profiles">Support for multiple SafeNet HSM Groups</a>
-* <a href="/certificate-management-integration-for-csr-automation/#automated-CSR-workflow-for-HSM">Automated CSR workflow for SafeNet HSM</a>
-* <a href="/docs/latest/bgp-support-for-virtual-services/#BGP-profile-modifications">Ability to handle BGP peer changes gracefully</a>
-* <a href="/docs/latest/openstack-external-networks">In OpenStack, support for using an external network for Controller, virtual service and pool</a>
-* <a href="/docs/latest/verifying-notification-settings">Ability to verify SNMP trap configuration</a>
-* <a href="/docs/latest/verifying-notification-settings">Ability to verify syslog profile configuration</a>
-* <a href="/docs/latest/verifying-notification-settings">Ability to verify email profile configuration</a>
-* <a href="/docs/latest/verifying-notification-settings">Ability to verify SMTP configuration</a> 
+* <a href="/docs/16.2.2/avi-vantage-integration-with-safenet-network-hsm/#use-data-network">Ability to perform HSM SSL handshake via data path or management path</a>
+* <a href="/docs/16.2.2/avi-vantage-integration-with-safenet-network-hsm/#multiple-HSM-profiles">Support for multiple SafeNet HSM Groups</a>
+* <a href="/docs/16.2.2/certificate-management-integration-for-csr-automation/#automated-CSR-workflow-for-HSM">Automated CSR workflow for SafeNet HSM</a>
+* <a href="/docs/16.2.2/bgp-support-for-virtual-services/#BGP-profile-modifications">Ability to handle BGP peer changes gracefully</a>
+* <a href="/docs/16.2.2/openstack-external-networks">In OpenStack, support for using an external network for Controller, virtual service and pool</a>
+* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify SNMP trap configuration</a>
+* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify syslog profile configuration</a>
+* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify email profile configuration</a>
+* <a href="/docs/16.2.2/verifying-notification-settings">Ability to verify SMTP configuration</a> 
 
 ## Issues Resolved in 16.2.2
 
@@ -54,34 +54,34 @@ This section summarizes the enhancements in 16.2. For more information, click on
 
 * Linux server (bare metal) support enhancements  
     * <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
-    * <a href="/docs/latest/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
-    * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade support</a>
+    * <a href="/docs/16.2.2/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
+    * <a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade support</a>
 * Networking features  
-    * <a href="/docs/latest/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
-    * <a href="/docs/latest/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
+    * <a href="/docs/16.2.2/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
+    * <a href="/docs/16.2.2/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
 * Core ADC features  
-    * <a href="/docs/latest/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
-    * <a href="/docs/latest/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
+    * <a href="/docs/16.2.2/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
+    * <a href="/docs/16.2.2/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
     * Dictionary/map support for HTTP policies:Policies can perform lookups against a list of items stored in a string group, and the lookup result can be used for the URL-rewrite action
     * Regular expression support for HTTP policies with RegEx match operations against a string list in a string group
-    * <a href="/docs/latest/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
+    * <a href="/docs/16.2.2/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
 * SSL enhancements  
-    * <a href="/docs/latest/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
-    * <a href="/docs/latest/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
-    * <a href="/docs/latest/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
+    * <a href="/docs/16.2.2/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
+    * <a href="/docs/16.2.2/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
+    * <a href="/docs/16.2.2/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
 * Containers  
-    * <a href="/docs/latest/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
-    * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
+    * <a href="/docs/16.2.2/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
+    * <a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
 * UI enhancements  
-    * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade supported through web interface</a>
-    * <a href="/docs/latest/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
+    * <a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade supported through web interface</a>
+    * <a href="/docs/16.2.2/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
 * Ecosystem support  
     * OpenStack Liberty
-    * <a href="/docs/latest/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
+    * <a href="/docs/16.2.2/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
 * Other features  
-    * <a href="/docs/latest/ldap-auth-profile-test/">LDAP authentication profile testing</a>
+    * <a href="/docs/16.2.2/ldap-auth-profile-test/">LDAP authentication profile testing</a>
     * Python SDK
-    * <a href="/docs/latest/cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
+    * <a href="/docs/16.2.2/cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
 
 ## Issues Resolved in 16.2
 
@@ -102,9 +102,9 @@ This section summarizes the enhancements in 16.2. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 15.2 or later.
 
-<a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade Instructions</a>
 
-<a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ## Supported Platforms
 
@@ -131,7 +131,7 @@ For more information, please see the following documents, also available within 
 
 ### Installation Guides
 
-* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/16.2.2/installation-guides/">Avi Vantage Installation Guides</a> 
 
 ## Open Source Package Information
 

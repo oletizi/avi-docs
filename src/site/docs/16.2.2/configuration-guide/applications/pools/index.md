@@ -100,7 +100,7 @@ From left to right, this pane displays the following timing information:
 
 The sidebar metrics tiles contain the following metrics for the pool. Clicking any metric tile will change the main chart pane to show the chosen metric.
 
-* **<a href="img/infra-pool-metric1.jpg"><img class=" wp-image-1160 alignright" src="img/infra-pool-metric1.jpg" alt="infra-pool-metric1" width="174" height="60"></a>End to End Timing:** Shows the total time from the pool's End to End Timing graph. To see the complete end-to-end timing, including the client latency, see the <a href="/vs-analytics-page/">Analytics tab</a> of the Virtual Service Details page, which includes the client to Service Engine metric.
+* **<a href="img/infra-pool-metric1.jpg"><img class=" wp-image-1160 alignright" src="img/infra-pool-metric1.jpg" alt="infra-pool-metric1" width="174" height="60"></a>End to End Timing:** Shows the total time from the pool's End to End Timing graph. To see the complete end-to-end timing, including the client latency, see the <a href="../../../architectural-overview/applications/virtual-services/vs-analytics/">Analytics tab</a> of the Virtual Service Details page, which includes the client to Service Engine metric.
 * **<a href="img/infra-pool-metric2.jpg"><img class=" wp-image-1161 alignright" src="img/infra-pool-metric2.jpg" alt="infra-pool-metric2" width="174" height="60"></a>Open Connections:** The number of open (existing) connections during the selected time period.
 * **<a href="img/infra-pool-metric3.jpg"><img class="alignright wp-image-1162" src="img/infra-pool-metric3.jpg" alt="infra-pool-metric3" width="174" height="60"></a>New Connections:** The number of client connections that were completed or closed over the selected time period. See this <a href="/docs/latest/new-connections-metric/">article </a>for an explanation of new versus closed connections per second.
 * **<a href="img/infra-pool-metric4.jpg"><img class="alignright wp-image-1163" src="img/infra-pool-metric4.jpg" alt="infra-pool-metric4" width="174" height="60"></a>Throughput:** Total bandwidth passing between the virtual service and the servers assigned to the pool. This throughput number may be different than the virtual service throughput, which measures throughput between the client and the virtual service. Many features may affect these numbers between the client and server side of Vantage, such as caching, compression, SSL, and TCP multiplexing. Hovering your mouse cursor over this graph displays the throughput in Mbps for the selected time period.
@@ -223,7 +223,7 @@ Clicking the system events icon <a href="img/details_overlays_sys-events_6-d-e.j
 
 Client logs viewed from within a pool are identical to the logs shown within a virtual service, except they are filtered to only show log data specific to the pool.  For instance, information such as End to End Timing is only shown from the Service Engine to the servers, rather than from the clients to the servers. Viewing logs within a pool may be useful when a virtual service is performing content switching across multiple pools. It is still possible within the virtual service logs page to add a filter for a specific pool, which would then provide complete End to End Timing for connections or requests sent to the specified pool.
 
-For the complete descriptions of logs, see the <a href="/vs-logs-page/">VS logs page</a> help.
+For the complete descriptions of logs, see the <a href="../../../architectural-overview/applications/virtual-services/vs-logs/">VS logs page</a> help.
 
 <a name="health"></a>
 

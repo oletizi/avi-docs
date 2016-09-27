@@ -111,4 +111,4 @@ This section of the Advanced tab has the following option:
 
 * **HSM Group:** Applies a template of hardware security module (HSM) settings to the SE group. For more information about HSM support:  
     * <a href="/docs/latest/thales-nshield-integration-2">Thales nShield Integration</a>
-    * <a href="/vantage-integration-with-safenet-network-hsm/">Avi Vantage Integration with SafeNet Network HSM</a> 
+    * <a href="/docs/latest/avi-vantage-integration-with-safenet-network-hsm/">Avi Vantage Integration with SafeNet Network HSM</a> 

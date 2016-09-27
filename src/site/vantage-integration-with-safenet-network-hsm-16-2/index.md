@@ -1,56 +1,56 @@
 ---
-title: Vantage Integration with SafeNet Network HSM (16.2)
+title: Vantage Integration with SafeNet Network HSM (16&#46;2)
 layout: default
 ---
-**Note: Users of Vantage 16.2.2 should instead read <a href="/docs/latest">Vantage Integration with SafeNet Network HSM (16.2.2)</a>.**
+**Note: Users of Vantage 16.2.2 should instead read <a href="/avi-vantage-integration-with-safenet-network-hsm-16-2-2">Vantage Integration with SafeNet Network HSM (16.2.2)</a>.**
 
 ****
 
 ## Introduction
 
-Avi Vantage includes support for networked hardware security module (HSM) products, including SafeNet Network HSM and Thales nShield.
+Avi Vantage includes support for networked hardware security module (HSM) products, including SafeNet Network HSM and Thales nShield.
 
-This article covers the SafeNet Network HSM (formerly Luna SA) integration. For Thales nShield support, see <a href="/docs/latest/thales-nshield-integration-2">here</a>.
+This article covers the SafeNet Network HSM (formerly Luna SA) integration. For Thales nShield support, see <a href="/thales-nshield-integration-2/">here</a>.
 
-This article describes how to configure Vantage to use the key generation and encryption/decryption services provided by SafeNet Network HSM. This enables use of SafeNet Network HSM to store keys associated with SSL/TLS resources configured on a virtual service.
+This article describes how to configure Vantage to use the key generation and encryption/decryption services provided by SafeNet Network HSM. This enables use of SafeNet Network HSM to store keys associated with SSL/TLS resources configured on a virtual service.
 <a name="multiple-HSM-profiles"></a>
 
 ## Integration Support
 
-Avi Vantage release 16.2 uses SafeNet Network HSM Client Software Release 5.4.1 for 64-bit Linux.
+Avi Vantage release 16.2 uses SafeNet Network HSM Client Software Release 5.4.1 for 64-bit Linux.
 
 Vantage can be configured to support a cluster of HSM devices in high availability (HA) mode. Vantage support of HSM devices requires installation of the user's SafeNet Client Software bundle, which can be downloaded from the <a href="http://www.safenet-inc.com/">SafeNet</a>/Gemalto website.
 <a name="use-data-network"></a>
 
 ### Prerequisites
 
-Before using Vantage with SafeNet Network HSM, the following are required:
+Before using Vantage with SafeNet Network HSM, the following are required:
 
 * SafeNet devices are installed on your network.
 * SafeNet devices are reachable from the Avi Controller and Avi Service Engines.
 * SafeNet devices have a virtual HSM partition defined before installing the client software.
 * Each Avi Controller and Service Engine must:
     
-    1)  Have the client license from SafeNet to access the HSM.
+    1)  Have the client license from SafeNet to access the HSM.
     
-    2)  Be able to reach the HSM at ports 22 and 1792 through Avi Controller, or SE management interface.
+    2)  Be able to reach the HSM at ports 22 and 1792 through Avi Controller, or SE management interface.
        
 
 Download:
 
-* SafeNet Network HSM client software (Version 5.4)
-* SafeNet Network HSM customer documentation 
+* SafeNet Network HSM client software (Version 5.4)
+* SafeNet Network HSM customer documentation 
 
-### HSM Group Updates
+### HSM Group Updates
 
-Creation, update or deletion of an HSM group requires reloading of a new SafeNet configuration, which can only be achieved by restarting the Avi SEs. Restart of Avi SEs temporarily disrupts traffic.
+Creation, update or deletion of an HSM group requires reloading of a new SafeNet configuration, which can only be achieved by restarting the Avi SEs. Restart of Avi SEs temporarily disrupts traffic.
 
 ## SafeNet Software Import
 
-To enable support for SafeNet Network HSM, the downloaded SafeNet client software bundle must be uploaded to the Avi Controller. It must be named ***"safenet.tar"*** and can be prepared as follows:
+To enable support for SafeNet Network HSM, the downloaded SafeNet client software bundle must be uploaded to the Avi Controller. It must be named ***"safenet.tar"*** and can be prepared as follows:
 
 * Copy files from the downloaded software into any given directory (e.g., safenet_pkg).
-* Change directory (cd) to that directory, and enter the following **cp** commands: 
+* Change directory (cd) to that directory, and enter the following **cp** commands: 
 <pre class="command-line language-bash" data-prompt="username@avi:~$"><code>cd safenet_pkg</code></pre> 
 <pre class="command-line language-bash" data-prompt="username@avi/safenet_pkg:~$"><code>cp 610-012382-008_revC/linux/64/configurator-5.4.1-2.x86_64.rpm configurator-5.4.1-2.x86_64.rpm
 cp 610-012382-008_revC/linux/64/libcryptoki-5.4.1-2.x86_64.rpm libcryptoki-5.4.1-2.x86_64.rpm
@@ -69,11 +69,11 @@ This command uploads the packages and installs them on the Avi Controller or Avi
 
 * Avi SEs in an SE group referring to an HSM group need a one-time reboot for auto-installation of the HSM packages. To reboot an Avi SE, issue the following CLI shell command: 
 <pre class="command-line language-bash" data-prompt=": >"><code>reboot serviceengine Avi-se-ksueq</code></pre> 
-* To allow Avi Controllers to talk to SafeNet HSM, the SafeNet client software bundle distributed with the product must be uploaded to Avi Vantage. The software bundle preparation and upload is described above. In this example, note that the Avi SE name is "Avi-se-ksueq." 
+* To allow Avi Controllers to talk to SafeNet HSM, the SafeNet client software bundle distributed with the product must be uploaded to Avi Vantage. The software bundle preparation and upload is described above. In this example, note that the Avi SE name is "Avi-se-ksueq." 
 
-## Enabling HSM Support in Avi Vantage
+## Enabling HSM Support in Avi Vantage
 
-After using the above steps to install the SafeNet software bundle onto the Avi Controller, the Controller may be configured to secure virtual services with HSM certificates.
+After using the above steps to install the SafeNet software bundle onto the Avi Controller, the Controller may be configured to secure virtual services with HSM certificates.
 <ol> 
  <li>Create the HSM group and add the HSM devices to it.</li> 
  <li>Register the client with HSM devices.</li> 
@@ -94,7 +94,7 @@ sudo scp admin@1.1.1.13:server.pem hsmserver13.pem</code></pre>
 
 The contents of these certificates are used while creating the HSM Group.
 
-Next, create the HSM group. From the GUI, navigate to Templates &gt; Security &gt; HSM Groups.  Multiple HSMs may be included in the group via the green *Add Additional HSM* button.
+Next, create the HSM group. From the GUI, navigate to Templates > Security > HSM Groups.  Multiple HSMs may be included in the group via the green *Add Additional HSM* button.
 
 <img class="alignnone size-full wp-image-8818" src="img/Screen-Shot-2016-06-25-at-3.03.14-PM-3.png" alt="Screen Shot 2016-05-13 at 6.32.52 PM" width="1392" height="1592">
 
@@ -261,7 +261,7 @@ sudo /usr/safenet/lunaclient/bin/vtl haAdmin HAOnly -enable
 sudo /usr/safenet/lunaclient/bin/vtl haAdmin autorecovery -retry 500
 sudo /usr/safenet/lunaclient/bin/vtl haAdmin synchronize -group 1156908040</code></pre> 
 
-Once HA has been set up, update the configuration to reflect this change. From the Avi Controller shell run the following commands.  This will be automatically synced to each Controller in the cluster:
+Once HA has been set up, update the configuration to reflect this change. From the Avi Controller shell run the following commands.  This will be automatically synced to each Controller in the cluster:
 
 <pre class="command-line language-bash" data-prompt=": >" data-output="2-99"><code>configure hardwaresecuritymodulegroup safenet-network-hsm-1
 hardwaresecuritymodulegroup &gt; hsm type hsm_type_safenet_luna
@@ -277,7 +277,7 @@ Alternatively, this can also be done in the web interface by selecting the HSM g
 
 The HSM group must be added to the SE group that will be used by virtual service.
 
-Navigate to Infrastructure &gt; Cloud &gt; Default-Cloud &gt; Service Engine Group &gt; Default Group.
+Navigate to Infrastructure > Cloud > Default-Cloud > Service Engine Group > Default Group.
 
 <a href="img/Screen-Shot-2016-05-13-at-6.39.48-PM.png"><img class="alignnone wp-image-8827" src="img/Screen-Shot-2016-05-13-at-6.39.48-PM.png" alt="Screen Shot 2016-05-13 at 6.39.48 PM" width="593" height="260"></a>
 
@@ -289,7 +289,7 @@ In the above, replace "safenet" with the name you used when creating the HSM gro
 
 ### Step 5: Add the Application Certificates and Keys by Importing Them.
 
-Use a browser to navigate to the Avi Controller’s management IP address. If Vantage is deployed as a 3-node Controller cluster, navigate to the management IP address of the cluster. Use this procedure to import the private keys created using the SafeNet cmu/sautil utilities, and the associated certificates. More details about this can be found in the Appendix section of this KB.
+Use a browser to navigate to the Avi Controller’s management IP address. If Vantage is deployed as a 3-node Controller cluster, navigate to the management IP address of the cluster. Use this procedure to import the private keys created using the SafeNet cmu/sautil utilities, and the associated certificates. More details about this can be found in the Appendix section of this KB.
 <ol> 
  <li>Navigate to Templates &gt; Security &gt; SSL/TLS Certificates, and click Create &gt; Application Certificate.<a href="img/Screen-Shot-2016-05-14-at-10.02.49-AM.png"><img class="alignnone size-full wp-image-8832" src="img/Screen-Shot-2016-05-14-at-10.02.49-AM.png" alt="Screen Shot 2016-05-14 at 10.02.49 AM" width="2154" height="1438"></a></li> 
  <li>Enter a name for the certificate definition.</li> 

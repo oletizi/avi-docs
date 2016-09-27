@@ -9,54 +9,54 @@ This article describes the new features and fixes in Avi Vantage release 16.2. S
 This section summarizes the enhancements in Vantage 16.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
 * Core ADC features  
-    * <a href="/docs/latest/http-server-reselect">HTTP server reselect</a>: Vantage can be configured to retry an HTTP request that results in a 4*xx* or 5*xx* error code from the back-end server.
-    * <a href="/docs/latest/tcp-health-monitor">TCP health monitor with half open</a>: For applications that do not gracefully handle quick termination. The monitor sends a SYN and upon receipt of an ACK, the server is marked up and the monitor responds with a RST. By never completing the handshake, the application is not touched.
-    * <a href="/docs/latest/detecting-server-maintenance-mode-with-a-health-monitor">Health monitor - receive disable</a>: Health monitor uses information in the health-check response to detect when a server is in maintenance mode.
-    * <a href="/docs/latest/disabling-back-end-servers-for-maintenance">Graceful pool server disable with infinite timeout</a>: When a server is disabled for maintenance, an option has been added to wait for the existing sessions to end gracefully with no timeout.
-    * <a href="/docs/latest/http-cookie-persistence">User-configurable timeouts for cookie persistence</a>: Users can configure a persistence timeout, which sets the maximum amount of time a persistence cookie is valid.
-    * <a href="/docs/latest/http-cookie-persistence">Encrypt cookie used in cookie persistence</a>: Vantage encrypts the HTTP cookie with AES-256.
-    * <a href="/docs/latest/proxy-protocol-support">PROXY protocol support for L4 VS and L4 SSL VS</a>: For layer 4 applications, the PROXY protocol conveys original connection parameters to back-end servers.
+    * <a href="/docs/16.2.2/http-server-reselect">HTTP server reselect</a>: Vantage can be configured to retry an HTTP request that results in a 4*xx* or 5*xx* error code from the back-end server.
+    * <a href="/docs/16.2.2/tcp-health-monitor">TCP health monitor with half open</a>: For applications that do not gracefully handle quick termination. The monitor sends a SYN and upon receipt of an ACK, the server is marked up and the monitor responds with a RST. By never completing the handshake, the application is not touched.
+    * <a href="/docs/16.2.2/detecting-server-maintenance-mode-with-a-health-monitor">Health monitor - receive disable</a>: Health monitor uses information in the health-check response to detect when a server is in maintenance mode.
+    * <a href="/docs/16.2.2/disabling-back-end-servers-for-maintenance">Graceful pool server disable with infinite timeout</a>: When a server is disabled for maintenance, an option has been added to wait for the existing sessions to end gracefully with no timeout.
+    * <a href="/docs/16.2.2/http-cookie-persistence">User-configurable timeouts for cookie persistence</a>: Users can configure a persistence timeout, which sets the maximum amount of time a persistence cookie is valid.
+    * <a href="/docs/16.2.2/http-cookie-persistence">Encrypt cookie used in cookie persistence</a>: Vantage encrypts the HTTP cookie with AES-256.
+    * <a href="/docs/16.2.2/proxy-protocol-support">PROXY protocol support for L4 VS and L4 SSL VS</a>: For layer 4 applications, the PROXY protocol conveys original connection parameters to back-end servers.
 * SSL enhancements  
-    * <a href="/docs/latest/layer-4-ssl-support">Layer 4 SSL support</a>: SSL/TLS is now supported for layer 4 virtual services.
-    * <a href="/docs/latest/certificate-management-integration-for-csr-automation">Certificate management integration for CSR automation</a>: Automate request, renewal, and installation of a certificate signed by a certificate authority (CA).
-    * <a href="/docs/latest/multi-level-domain-support-for-ssl">Multi-level domain support for SSL</a>: Support for server certificate CN/SAN verification against a list of user-configurable domain names.
-    * <a href="/docs/latest/ssl-certificates">Subject alternate name support</a>: The Subject Alternate Name (SAN) lets you specify additional host names to be protected by a single SSL certificate, such as example.com and example.org.
+    * <a href="/docs/16.2.2/layer-4-ssl-support">Layer 4 SSL support</a>: SSL/TLS is now supported for layer 4 virtual services.
+    * <a href="/docs/16.2.2/certificate-management-integration-for-csr-automation">Certificate management integration for CSR automation</a>: Automate request, renewal, and installation of a certificate signed by a certificate authority (CA).
+    * <a href="/docs/16.2.2/multi-level-domain-support-for-ssl">Multi-level domain support for SSL</a>: Support for server certificate CN/SAN verification against a list of user-configurable domain names.
+    * <a href="/docs/16.2.2/ssl-certificates">Subject alternate name support</a>: The Subject Alternate Name (SAN) lets you specify additional host names to be protected by a single SSL certificate, such as example.com and example.org.
     * Support for SNI extension in TLS handshakes to pool servers: Vantage can be configured to send a TLS SNI extension to the server to request certificates for specific user-configurable domain name.
-    * <a href="/docs/latest/wildcard-sni-matching-for-virtual-hosting">Wildcard SNI matching for virtual hosting</a>: Wildcards can be used to match on the beginning or end of the domain field of a child VS configuration (SNI).
-    * <a href="/docs/latest/support-for-sni-extension-in-tls-handshakes-to-pool-servers">TLS SNI supported for connections to pool servers</a>: The SNI extension can be sent as part of the handshake. Optionally, a FQDN can be specified to be used in the extension.
-    * <a href="/vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
+    * <a href="/docs/16.2.2/wildcard-sni-matching-for-virtual-hosting">Wildcard SNI matching for virtual hosting</a>: Wildcards can be used to match on the beginning or end of the domain field of a child VS configuration (SNI).
+    * <a href="/docs/16.2.2/support-for-sni-extension-in-tls-handshakes-to-pool-servers">TLS SNI supported for connections to pool servers</a>: The SNI extension can be sent as part of the handshake. Optionally, a FQDN can be specified to be used in the extension.
+    * <a href="/docs/16.2/avi-vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
 * HA features  
-    * <a href="/docs/latest/legacy-ha-for-avi-service-engines">Legacy HA mode support</a>: An Active/Standby HA mode useful for migrating from hardware appliance-based solutions.  
-        * <a href="/docs/latest/legacy-ha-for-avi-service-engines">Single IP address for the active/standby SE pair</a>
-        * <a href="/docs/latest/gateway-monitoring-for-legacy-ha">Monitoring of default gateway for failover to standby</a>
+    * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Legacy HA mode support</a>: An Active/Standby HA mode useful for migrating from hardware appliance-based solutions.  
+        * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Single IP address for the active/standby SE pair</a>
+        * <a href="/docs/16.2.2/gateway-monitoring-for-legacy-ha">Monitoring of default gateway for failover to standby</a>
 * Networking features  
-    * <a href="/docs/latest/port-channeling-on-linux-server-hosts-2">Port channel (LACP) support for bare metal</a>
-    * <a href="/docs/latest/bgp-support-for-virtual-services">Support for 2 BGP router peers with different subnets</a>
-    * <a href="/docs/latest/source-nat-for-application-identification">SNAT IP ver VS</a> - Each virtual service can be configured with a unique SNAT IP address. SNAT IP can be advertised via BGP.
+    * <a href="/docs/16.2.2/port-channeling-on-linux-server-hosts-2">Port channel (LACP) support for bare metal</a>
+    * <a href="/docs/16.2.2/bgp-support-for-virtual-services">Support for 2 BGP router peers with different subnets</a>
+    * <a href="/docs/16.2.2/source-nat-for-application-identification">SNAT IP ver VS</a> - Each virtual service can be configured with a unique SNAT IP address. SNAT IP can be advertised via BGP.
 * IPAM/DNS  
-    * <a href="/docs/latest/vip-allocation-using-ipam-or-dns">Internal and external IPAM and DNS support for various clouds</a>
+    * <a href="/docs/16.2.2/vip-allocation-using-ipam-or-dns">Internal and external IPAM and DNS support for various clouds</a>
     * Support for multiple DNS Search domains
 * Security  
-    * <a href="/docs/latest/tacacs-for-avi-vantage-users">TACACS+ support for user login to Avi Controller</a>
-    * <a href="/docs/latest/remote-users-authen-authrz">Flexible tenant and role mapping for LDAP and TACACS+</a>
-    * <a href="/docs/latest/securing-management-ip-access">Security enhancements for Avi Controller</a>: Configure allowed IP list for SSH &amp; REST access to Avi Controller and customer cipher list for SSH
+    * <a href="/docs/16.2.2/tacacs-for-avi-vantage-users">TACACS+ support for user login to Avi Controller</a>
+    * <a href="/docs/16.2.2/remote-users-authen-authrz">Flexible tenant and role mapping for LDAP and TACACS+</a>
+    * <a href="/docs/16.2.2/securing-management-ip-access">Security enhancements for Avi Controller</a>: Configure allowed IP list for SSH &amp; REST access to Avi Controller and customer cipher list for SSH
 * Operations  
-    * <a href="/docs/latest/disable-se">Graceful SE disable for non-disruptively migrating virtual services to other SEs</a>
-    * <a href="/docs/latest/login-banner-and-message-of-the-day">Configurable "banner" at CLI/UI login</a>
-    * <a href="/docs/latest/rolling-back-the-system">Ability to rollback the system from the REST API</a>
-    * <a href="/docs/latest/installing-avi-vantage-for-a-linux-server-cloud-16-2">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
-    * <a href="/docs/latest/alert-config">Metrics based Alerts</a>: Generate alerts based on metrics hitting specific thresholds or ranges
-    * <a href="/docs/latest/terms-of-avi-vantage-license">Updated terms of Avi Vantage software license</a>
+    * <a href="/docs/16.2.2/disable-se">Graceful SE disable for non-disruptively migrating virtual services to other SEs</a>
+    * <a href="/docs/16.2.2/login-banner-and-message-of-the-day">Configurable "banner" at CLI/UI login</a>
+    * <a href="/docs/16.2.2/rolling-back-the-system">Ability to rollback the system from the REST API</a>
+    * <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud-16-2">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
+    * <a href="/docs/16.2.2/alert-config">Metrics based Alerts</a>: Generate alerts based on metrics hitting specific thresholds or ranges
+    * <a href="/docs/16.2.2/terms-of-avi-vantage-license">Updated terms of Avi Vantage software license</a>
 * Ecosystem support  
-    * <a href="/docs/latest/configuring-a-tag-for-auto-created-ses-in-aws">AWS: Support for custom tags for AWS SE instances</a>: useful for automatically passing AWS a single key-value pair to better control the instantiation of SEs in EC2.
-    * <a href="/docs/latest/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
+    * <a href="/docs/16.2.2/configuring-a-tag-for-auto-created-ses-in-aws">AWS: Support for custom tags for AWS SE instances</a>: useful for automatically passing AWS a single key-value pair to better control the instantiation of SEs in EC2.
+    * <a href="/docs/16.2.2/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
     * Juniper Contrail SDN support
-    * <a href="/docs/latest/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
+    * <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
 * UI enhancements  
     * Ability to choose metrics for display in virtual services list view
     * New design and navigation
 * API  
-    * <a href="/docs/latest/api-http-patch-support">Support for HTTP PATCH to update scalar fields and for adding/removing elements from a repeated list</a>
+    * <a href="/docs/16.2.2/api-http-patch-support">Support for HTTP PATCH to update scalar fields and for adding/removing elements from a repeated list</a>
 * Miscellaneous  
     * F5 configuration conversion tool, versions v10 and v11 
 
@@ -81,8 +81,8 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
 
 Upgrade prerequisite: current version of Avi Controller must be 15.3.x or 16.1.x.
 
-* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
 
@@ -113,7 +113,7 @@ For more information, please see the following documents, also available within 
 
 ### INSTALLATION GUIDES
 
-* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/16.2.2/installation-guides/">Avi Vantage Installation Guides</a> 
 
 <a name="opensourceinfo"></a>
 
@@ -131,54 +131,54 @@ Avi Networks software, Copyright © 2013-2016 by Avi Networks, Inc. All rights r
 This section summarizes the enhancements in Vantage 16.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
 * Core ADC features  
-    * <a href="/docs/latest/http-server-reselect">HTTP server reselect</a>: Vantage can be configured to retry an HTTP request that results in a 4*xx* or 5*xx* error code from the back-end server.
-    * <a href="/docs/latest/tcp-health-monitor">TCP health monitor with half open</a>: For applications that do not gracefully handle quick termination. The monitor sends a SYN and upon receipt of an ACK, the server is marked up and the monitor responds with a RST. By never completing the handshake, the application is not touched.
-    * <a href="/docs/latest/detecting-server-maintenance-mode-with-a-health-monitor">Health monitor - receive disable</a>: Health monitor uses information in the health-check response to detect when a server is in maintenance mode.
-    * <a href="/docs/latest/disabling-back-end-servers-for-maintenance">Graceful pool server disable with infinite timeout</a>: When a server is disabled for maintenance, an option has been added to wait for the existing sessions to end gracefully with no timeout.
-    * <a href="/docs/latest/http-cookie-persistence">User-configurable timeouts for cookie persistence</a>: Users can configure a persistence timeout, which sets the maximum amount of time a persistence cookie is valid.
-    * <a href="/docs/latest/http-cookie-persistence">Encrypt cookie used in cookie persistence</a>: Vantage encrypts the HTTP cookie with AES-256.
-    * <a href="/docs/latest/proxy-protocol-support">PROXY protocol support for L4 VS and L4 SSL VS</a>: For layer 4 applications, the PROXY protocol conveys original connection parameters to back-end servers.
+    * <a href="/docs/16.2.2/http-server-reselect">HTTP server reselect</a>: Vantage can be configured to retry an HTTP request that results in a 4*xx* or 5*xx* error code from the back-end server.
+    * <a href="/docs/16.2.2/tcp-health-monitor">TCP health monitor with half open</a>: For applications that do not gracefully handle quick termination. The monitor sends a SYN and upon receipt of an ACK, the server is marked up and the monitor responds with a RST. By never completing the handshake, the application is not touched.
+    * <a href="/docs/16.2.2/detecting-server-maintenance-mode-with-a-health-monitor">Health monitor - receive disable</a>: Health monitor uses information in the health-check response to detect when a server is in maintenance mode.
+    * <a href="/docs/16.2.2/disabling-back-end-servers-for-maintenance">Graceful pool server disable with infinite timeout</a>: When a server is disabled for maintenance, an option has been added to wait for the existing sessions to end gracefully with no timeout.
+    * <a href="/docs/16.2.2/http-cookie-persistence">User-configurable timeouts for cookie persistence</a>: Users can configure a persistence timeout, which sets the maximum amount of time a persistence cookie is valid.
+    * <a href="/docs/16.2.2/http-cookie-persistence">Encrypt cookie used in cookie persistence</a>: Vantage encrypts the HTTP cookie with AES-256.
+    * <a href="/docs/16.2.2/proxy-protocol-support">PROXY protocol support for L4 VS and L4 SSL VS</a>: For layer 4 applications, the PROXY protocol conveys original connection parameters to back-end servers.
 * SSL enhancements  
-    * <a href="/docs/latest/layer-4-ssl-support">Layer 4 SSL support</a>: SSL/TLS is now supported for layer 4 virtual services.
-    * <a href="/docs/latest/certificate-management-integration-for-csr-automation">Certificate management integration for CSR automation</a>: Automate request, renewal, and installation of a certificate signed by a certificate authority (CA).
-    * <a href="/docs/latest/multi-level-domain-support-for-ssl">Multi-level domain support for SSL</a>: Support for server certificate CN/SAN verification against a list of user-configurable domain names.
-    * <a href="/docs/latest/ssl-certificates">Subject alternate name support</a>: The Subject Alternate Name (SAN) lets you specify additional host names to be protected by a single SSL certificate, such as example.com and example.org.
+    * <a href="/docs/16.2.2/layer-4-ssl-support">Layer 4 SSL support</a>: SSL/TLS is now supported for layer 4 virtual services.
+    * <a href="/docs/16.2.2/certificate-management-integration-for-csr-automation">Certificate management integration for CSR automation</a>: Automate request, renewal, and installation of a certificate signed by a certificate authority (CA).
+    * <a href="/docs/16.2.2/multi-level-domain-support-for-ssl">Multi-level domain support for SSL</a>: Support for server certificate CN/SAN verification against a list of user-configurable domain names.
+    * <a href="/docs/16.2.2/ssl-certificates">Subject alternate name support</a>: The Subject Alternate Name (SAN) lets you specify additional host names to be protected by a single SSL certificate, such as example.com and example.org.
     * Support for SNI extension in TLS handshakes to pool servers: Vantage can be configured to send a TLS SNI extension to the server to request certificates for specific user-configurable domain name.
-    * <a href="/docs/latest/wildcard-sni-matching-for-virtual-hosting">Wildcard SNI matching for virtual hosting</a>: Wildcards can be used to match on the beginning or end of the domain field of a child VS configuration (SNI).
-    * <a href="/docs/latest/support-for-sni-extension-in-tls-handshakes-to-pool-servers">TLS SNI supported for connections to pool servers</a>: The SNI extension can be sent as part of the handshake. Optionally, a FQDN can be specified to be used in the extension.
-    * <a href="/vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
+    * <a href="/docs/16.2.2/wildcard-sni-matching-for-virtual-hosting">Wildcard SNI matching for virtual hosting</a>: Wildcards can be used to match on the beginning or end of the domain field of a child VS configuration (SNI).
+    * <a href="/docs/16.2.2/support-for-sni-extension-in-tls-handshakes-to-pool-servers">TLS SNI supported for connections to pool servers</a>: The SNI extension can be sent as part of the handshake. Optionally, a FQDN can be specified to be used in the extension.
+    * <a href="/docs/16.2.2/avi-vantage-integration-with-safenet-network-hsm/">SafeNet HSM support</a>: Vantage can use the key generation and encryption/decryption services provided by SafeNet Network HSM.
 * HA features  
-    * <a href="/docs/latest/legacy-ha-for-avi-service-engines">Legacy HA mode support</a>: An Active/Standby HA mode useful for migrating from hardware appliance-based solutions.  
-        * <a href="/docs/latest/legacy-ha-for-avi-service-engines">Single IP address for the active/standby SE pair</a>
-        * <a href="/docs/latest/gateway-monitoring-for-legacy-ha">Monitoring of default gateway for failover to standby</a>
+    * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Legacy HA mode support</a>: An Active/Standby HA mode useful for migrating from hardware appliance-based solutions.  
+        * <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Single IP address for the active/standby SE pair</a>
+        * <a href="/docs/16.2.2/gateway-monitoring-for-legacy-ha">Monitoring of default gateway for failover to standby</a>
 * Networking features  
-    * <a href="/docs/latest/port-channeling-on-linux-server-hosts-2">Port channel (LACP) support for bare metal</a>
-    * <a href="/docs/latest/bgp-support-for-virtual-services">Support for 2 BGP router peers with different subnets</a>
-    * <a href="/docs/latest/source-nat-for-application-identification">SNAT IP ver VS</a> - Each virtual service can be configured with a unique SNAT IP address. SNAT IP can be advertised via BGP.
+    * <a href="/docs/16.2.2/port-channeling-on-linux-server-hosts-2">Port channel (LACP) support for bare metal</a>
+    * <a href="/docs/16.2.2/bgp-support-for-virtual-services">Support for 2 BGP router peers with different subnets</a>
+    * <a href="/docs/16.2.2/source-nat-for-application-identification">SNAT IP ver VS</a> - Each virtual service can be configured with a unique SNAT IP address. SNAT IP can be advertised via BGP.
 * IPAM/DNS  
-    * <a href="/docs/latest/vip-allocation-using-ipam-or-dns">Internal and external IPAM and DNS support for various clouds</a>
+    * <a href="/docs/16.2.2/vip-allocation-using-ipam-or-dns">Internal and external IPAM and DNS support for various clouds</a>
     * Support for multiple DNS Search domains
 * Security  
-    * <a href="/docs/latest/tacacs-for-avi-vantage-users">TACACS+ support for user login to Avi Controller</a>
-    * <a href="/docs/latest/remote-users-authen-authrz">Flexible tenant and role mapping for LDAP and TACACS+</a>
-    * <a href="/docs/latest/securing-management-ip-access">Security enhancements for Avi Controller</a>: Configure allowed IP list for SSH &amp; REST access to Avi Controller and customer cipher list for SSH
+    * <a href="/docs/16.2.2/tacacs-for-avi-vantage-users">TACACS+ support for user login to Avi Controller</a>
+    * <a href="/docs/16.2.2/remote-users-authen-authrz">Flexible tenant and role mapping for LDAP and TACACS+</a>
+    * <a href="/docs/16.2.2/securing-management-ip-access">Security enhancements for Avi Controller</a>: Configure allowed IP list for SSH &amp; REST access to Avi Controller and customer cipher list for SSH
 * Operations  
-    * <a href="/docs/latest/disable-se">Graceful SE disable for non-disruptively migrating virtual services to other SEs</a>
-    * <a href="/docs/latest/login-banner-and-message-of-the-day">Configurable "banner" at CLI/UI login</a>
-    * <a href="/docs/latest/rolling-back-the-system">Ability to rollback the system from the REST API</a>
-    * <a href="/docs/latest/installing-avi-vantage-for-a-linux-server-cloud-16-2">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
-    * <a href="/docs/latest/alert-config">Metrics based Alerts</a>: Generate alerts based on metrics hitting specific thresholds or ranges
-    * <a href="/docs/latest/terms-of-avi-vantage-license">Updated terms of Avi Vantage software license</a>
+    * <a href="/docs/16.2.2/disable-se">Graceful SE disable for non-disruptively migrating virtual services to other SEs</a>
+    * <a href="/docs/16.2.2/login-banner-and-message-of-the-day">Configurable "banner" at CLI/UI login</a>
+    * <a href="/docs/16.2.2/rolling-back-the-system">Ability to rollback the system from the REST API</a>
+    * <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud-16-2">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
+    * <a href="/docs/16.2.2/alert-config">Metrics based Alerts</a>: Generate alerts based on metrics hitting specific thresholds or ranges
+    * <a href="/docs/16.2.2/terms-of-avi-vantage-license">Updated terms of Avi Vantage software license</a>
 * Ecosystem support  
-    * <a href="/docs/latest/configuring-a-tag-for-auto-created-ses-in-aws">AWS: Support for custom tags for AWS SE instances</a>: useful for automatically passing AWS a single key-value pair to better control the instantiation of SEs in EC2.
-    * <a href="/docs/latest/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
+    * <a href="/docs/16.2.2/configuring-a-tag-for-auto-created-ses-in-aws">AWS: Support for custom tags for AWS SE instances</a>: useful for automatically passing AWS a single key-value pair to better control the instantiation of SEs in EC2.
+    * <a href="/docs/16.2.2/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
     * Juniper Contrail SDN support
-    * <a href="/docs/latest/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
+    * <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
 * UI enhancements  
     * Ability to choose metrics for display in virtual services list view
     * New design and navigation
 * API  
-    * <a href="/docs/latest/api-http-patch-support">Support for HTTP PATCH to update scalar fields and for adding/removing elements from a repeated list</a>
+    * <a href="/docs/16.2.2/api-http-patch-support">Support for HTTP PATCH to update scalar fields and for adding/removing elements from a repeated list</a>
 * Miscellaneous  
     * F5 configuration conversion tool, versions v10 and v11 
 
@@ -203,8 +203,8 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
 
 Upgrade prerequisite: current version of Avi Controller must be 15.3.x or 16.1.x.
 
-* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
 
@@ -235,7 +235,7 @@ For more information, please see the following documents, also available within 
 
 ### INSTALLATION GUIDES
 
-* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/16.2.2/installation-guides/">Avi Vantage Installation Guides</a> 
 
 <a name="opensourceinfo"></a>
 
