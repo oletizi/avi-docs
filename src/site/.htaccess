@@ -718,24 +718,24 @@ Redirect 301 /README.md /
 Redirect 301 /readme.html /
 
 RedirectMatch 301 /try/ https://www.avinetworks.com/download
-RedirectMatch 301 /docs/latest/api_guide/scripts/.* /docs/latest/api-guide/api-guide-sdk/
+#RedirectMatch 301 /docs/latest/api_guide/scripts/.* /docs/latest/api-guide/api-guide-sdk/
 
-Redirect 301 /high-availability/ /overview-of-vantage-high-availability/
+#Redirect 301 /high-availability/ /overview-of-vantage-high-availability/
 
-Redirect 301 /2016/03/11/vantage-installation-guides-16-1-drafts/ /docs/latest/installation-guides/
-Redirect 301 /2016/02/01/configuring-a-virtual-service-for-vmware-basic /configuring-a-virtual-service-for-vmware-basic
+#Redirect 301 /2016/03/11/vantage-installation-guides-16-1-drafts/ /docs/latest/installation-guides/
+#Redirect 301 /2016/02/01/configuring-a-virtual-service-for-vmware-basic /configuring-a-virtual-service-for-vmware-basic
 
-Redirect 301 /metrics-based-alerts/ /metrics-list/
-Redirect 301 /event-based-alerts/ /events-list/
-Redirect 301 /vantage-installation-guides-16-1/ /docs/latest/installation-guides/
-Redirect 301 /2016/03/05/installing-avi-vantage-with-mesosphere-dcos-on-premises-16-1/ /installing-avi-vantage-with-mesosphere-dcos-on-premises/
-Redirect 301 /2016/01/27/deploying-avi-vantage-with-mesosphere-dcos-on-premises/ /installing-avi-vantage-with-mesosphere-dcos-on-premises/
+#Redirect 301 /metrics-based-alerts/ /metrics-list/
+#Redirect 301 /event-based-alerts/ /events-list/
+#Redirect 301 /vantage-installation-guides-16-1/ /docs/latest/installation-guides/
+#Redirect 301 /2016/03/05/installing-avi-vantage-with-mesosphere-dcos-on-premises-16-1/ /installing-avi-vantage-with-mesosphere-dcos-on-premises/
+#Redirect 301 /2016/01/27/deploying-avi-vantage-with-mesosphere-dcos-on-premises/ /installing-avi-vantage-with-mesosphere-dcos-on-premises/
 
 # Redirects for moving API Guide to GitHub source
-RedirectMatch 301 /docs/latest/api-guide/api-guide-other-objects/api-guide-(.*)/ /docs/latest/api-guide/$1.html
-Redirect 301 /docs/latest/api-guide/api-guide-other-objects/ /docs/latest/api-guide/other_objs.html
-Redirect 301 /docs/latest/api-guide/api-guide-macro-api/ /docs/latest/api-guide/macro.html
-Redirect 301 /docs/latest/api-guide/api-guide-traffic-logs-api/ /docs/latest/api-guide/logs.html
-Redirect 301 /docs/latest/api-guide/api-guide-object-model/ /docs/latest/api-guide/object_model.html
-Redirect 301 /docs/latest/api-guide/api-guide-metrics-query-api/ /docs/latest/api-guide/metrics_query.html
-RedirectMatch 301 /docs/latest/api-guide/api-guide-(.+)/ /docs/latest/api-guide/$1.html
+#RedirectMatch 301 /docs/latest/api-guide/api-guide-other-objects/api-guide-(.*)/ /docs/latest/api-guide/$1.html
+#Redirect 301 /docs/latest/api-guide/api-guide-other-objects/ /docs/latest/api-guide/other_objs.html
+#Redirect 301 /docs/latest/api-guide/api-guide-macro-api/ /docs/latest/api-guide/macro.html
+#Redirect 301 /docs/latest/api-guide/api-guide-traffic-logs-api/ /docs/latest/api-guide/logs.html
+#Redirect 301 /docs/latest/api-guide/api-guide-object-model/ /docs/latest/api-guide/object_model.html
+#Redirect 301 /docs/latest/api-guide/api-guide-metrics-query-api/ /docs/latest/api-guide/metrics_query.html
+#RedirectMatch 301 /docs/latest/api-guide/api-guide-(.+)/ /docs/latest/api-guide/$1.html
