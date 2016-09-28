@@ -15,6 +15,7 @@ url: "http://kb.avinetworks.com/docs/" # the base hostname & protocol for your s
 twitter_username: AviNetworks
 github_username:  avinetworks
 
+copyright: 2016
 
 # Build settings
 markdown: kramdown

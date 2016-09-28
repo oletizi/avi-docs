@@ -9,10 +9,10 @@
 //
 $font-color-normal: #555;
 $background-color: #fdfdfd;
-$header-background-color: rgb(42, 42, 45);
+$header-background-color: #2a2a2d;
 $sidebar-background-color: white;
 $main-content-background-color: white;
-$footer-background-color: green;
+$footer-background-color: #2a2a2d;
 $brand-color: #ff4b00;
 
 $grey-color: #ccc;
@@ -212,16 +212,40 @@ figcapture, figcaption, figcaption.caption {
       //top: 40px;
       padding-top: 40px;
       width: 220px;
-      background-color: #2a2a2d;
+      background-color: $header-background-color;
       text-transform: none;
       li {
         a {
-          color: #999;
+          color: white;
+          opacity: 0.6;
+          transition: all 0.5s;
         }
         a:hover {
-          background-color: #2a2a2d;
+          background-color: $header-background-color;
           color: $brand-color;
+          opacity: 1;
         }
+      }
+    }
+  }
+
+  .navbar-right {
+    // XXX: Hack: this should be inside the column
+    margin-right: 3px;
+    float: right !important;
+
+    .download-button {
+      float: right;
+      .btn-primary {
+        margin-top: 5px;
+        padding: 0 15px;
+        line-height: 40px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: background-color 0.3s, margin 0.3s;
+        border: 0;
+        background-color: $brand-color;
       }
     }
   }
@@ -338,7 +362,59 @@ figcapture, figcaption, figcaption.caption {
 }
 
 .footer {
+  padding: 50px 0 50px 0;
   background-color: $footer-background-color;
+  ul#menu-footer-menu {
+    padding: 0;
+    list-style: none;
+    li {
+      float: left;
+      margin-right: 20px;
+      min-width: 130px;
+      a {
+        text-transform: uppercase;
+        color: white;
+        font-size: 17px;
+        margin-bottom: 20px;
+        display: block;
+      }
+      ul.submenu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          float: none;
+          a {
+            margin-bottom: 5px;
+            display: block;
+            text-transform: none;
+            color: white;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            text-decoration: none;
+            font-size: $font-size-normal;
+          }
+          a:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .footer-right {
+    float: left;
+    ul.social {
+      margin-top: 92px;
+      list-style: none;
+      li {
+        float: left;
+      }
+    }
+  }
+  img.foot-logo {
+    width: 60px;
+    margin-right: 30px;
+  }
 }
 
 /**
