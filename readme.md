@@ -1,20 +1,12 @@
 # Avi Markdown-Based Documentation
 
-This is a test of using a Markdown-based system to write and publish documentation for Avi Networks.
+This is a port of the Avi knowledge base using a Markdown-based system to write and publish documentation for Avi Networks.
 
 It uses ruby and Jekyll to render Markdown to html at build time:
 
     https://jekyllrb.com/
 
 Jekyll ships with a continuous rendering server suitable for local development. It watches the directory that contains the markdown source files and renders the target html files on demand. It also provides a built-in http server that makes it trivial to view edits locally virtually in real time.
-
-**A Note About Content, Look-and-Feel, Layout, and Capabilities**
-
-This example site makes no attempt (yet) to recreate the current look-and-feel of [the Avi Knowledge Base](kb.avinetworks.com). It also doesn't have many of the layout features and capabilities currently available on the Knowledge Base. For example, there is no site search. Neither is there robust CLI formatting support.
-
-Fear not. What you see here is just a sample to get a feel for what it's like in general to edit documentation in markdown a la docs.docker.com.
- 
-If we decide to use this infrastructure, all of the look-and-feel and site features will be ported over and made available. I will also bulk-import all of the existing content, so we don't have to manually re-create it.
 
 [TOC levels=4]: # "## Contents"
 ## Contents
@@ -70,6 +62,10 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
 
     https://www.ruby-lang.org/en/documentation/installation/#homebrew
 
+* Install the "Bundler" gem:
+
+    sudo gem install bundler
+
 * Install Jekyll
 
     sudo gem install jekyll
@@ -88,6 +84,10 @@ If we decide to use this infrastructure, all of the look-and-feel and site featu
 
     sudo apt-get install ruby ruby-dev
 
+* Install the "Bundler" gem:
+
+    sudo gem install bundler
+    
 * Install Jekyll:
 
     sudo gem install jekyll
