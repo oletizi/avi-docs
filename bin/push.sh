@@ -18,9 +18,9 @@ destinations="${prod1} ${prod2}"
 if [ -z $1 ]; then
     echo "Pushing to production"
     options="-e ${ssh} ${options}"
-elif [ "dev" = $1 ]; then
-    echo "Pushing to local development site: $1";
+elif [ "local" = $1 ]; then
     destinations="${HOME}/.avi-docs-site/"
+    echo "Pushing to local site: ${destination}";
     if [ ! -e $destinations ]; then
         echo "Creating local dev site directory: ${destinations}"
         mkdir $destinations
