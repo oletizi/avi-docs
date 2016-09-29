@@ -58,6 +58,10 @@ Jekyll ships with a continuous rendering server suitable for local development. 
 
 ### Prepare Toolkit for Mac OS
 
+* Clone this repository:
+
+    `git clone git@github.com:oletizi/avi-docs.git`
+
 * If ruby isn't already installed, install ruby:
 
     https://www.ruby-lang.org/en/documentation/installation/#homebrew
@@ -66,9 +70,10 @@ Jekyll ships with a continuous rendering server suitable for local development. 
 
     sudo gem install bundler
 
-* Install Jekyll
+* Run `bundle install` from the `src/site` directory in the project directory:
 
-    sudo gem install jekyll
+    cd avi-docs/src/site
+    bundle install
 
   I you have trouble installing the jekyll gem, see this troubleshooting advice:
 
@@ -80,21 +85,32 @@ Jekyll ships with a continuous rendering server suitable for local development. 
 
 ### Prepare Toolkit for Ubuntu Desktop
 
+* Install git:
+
+    sudo apt-get install git
+  
+* Clone this repository:
+
+    `git clone git@github.com:oletizi/avi-docs.git`
+    
 * Install ruby (plus the ruby development package):
 
     sudo apt-get install ruby ruby-dev
+
+* Install zlib:
+
+    sudo apt-get install zlib1g-dev
 
 * Install the "Bundler" gem:
 
     sudo gem install bundler
     
-* Install Jekyll:
+* Run `bundle install` from the `src/site` directory in the project directory:
 
-    sudo gem install jekyll
+    cd avi-docs/src/site
+    bundle install
+    
 
-* Install git:
-
-    sudo apt-get install git
     
 #### Special Instructions for Ubuntu 14.x
 
