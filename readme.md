@@ -126,9 +126,7 @@ Ranga reported the following steps were necessary to get ruby, gem, and jekyll i
 
 ### Prepare Toolkit for Windows
 
-Ugh. Seriously? Ideally, you'd be using a real development platform. But, if you really need it, I'll figure it out. Most of it is probably pretty straightforward except the stuff that uses a CLI. Windows CLI interaction is always a giant pain, although it can usually be done with Cygwin.
-
-If you need to try this on Windows, the first thing you should do is install Cygwin. Then, let's talk.
+Stay tuned.
 
 ### Post Toolkit Installation
 
