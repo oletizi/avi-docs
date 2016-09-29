@@ -1,38 +1,86 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+<div class="row">
+    <div class="col-xs-12 clearfix">
+        <ul id="menu-footer-menu" class="footer_menu">
+            <li class="dropdown menu-solution"><a
+                    href="https://www.avinetworks.com/software-load-balancer-for-any-cloud">Solution</a>
+                <ul class="submenu">
+                    <li class="menu-any-cloud"><a
+                            href="https://www.avinetworks.com/software-load-balancer-for-any-cloud">Any Cloud</a></li>
+                    <li class="menu-openstack"><a
+                            href="https://www.avinetworks.com/load-balancing-as-a-service-for-openstack">Openstack</a>
+                    </li>
+                    <li class="menu-sdn"><a href="https://www.avinetworks.com/application-services-for-sdn">SDN</a></li>
+                    <li class="menu-microservices"><a
+                            href="https://www.avinetworks.com/container-services-fabric-for-microservices-apps">Microservices</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown menu-product"><a href="https://www.avinetworks.com/product">Product</a>
+                <ul class="submenu">
+                    <li class="menu-overview"><a href="https://www.avinetworks.com/product">Overview</a></li>
+                    <li class="menu-architecture"><a href="https://www.avinetworks.com/product-architecture">Architecture</a>
+                    </li>
+                    <li class="menu-benefits"><a href="https://www.avinetworks.com/product-benefits">Benefits</a></li>
+                </ul>
+            </li>
+            <li class="dropdown menu-customers"><a href="https://www.avinetworks.com/customers">Customers</a>
+                <ul class="submenu">
+                    <li class="menu-overview"><a href="https://www.avinetworks.com/customers">Overview</a></li>
+                </ul>
+            </li>
+            <li class="dropdown menu-partners"><a href="https://www.avinetworks.com/partners">Partners</a>
+                <ul class="submenu">
+                    <li class="menu-technology-partners"><a href="https://www.avinetworks.com/partners">Technology
+                        Partners</a></li>
+                    <li class="menu-channel-partners"><a href="https://www.avinetworks.com/channel-partners">Channel
+                        Partners</a></li>
+                </ul>
+            </li>
+            <li class="dropdown menu-resources"><a href="https://www.avinetworks.com/resources">Resources</a>
+                <ul class="submenu">
+                    <li class="menu-resource-center"><a href="https://www.avinetworks.com/resources">Resource Center</a>
+                    </li>
+                    <li class="menu-webinars"><a href="https://www.avinetworks.com/webinars">Webinars</a></li>
+                    <li class="menu-knowledge-base"><a href="/">Knowledge Base</a></li>
+                    <li class="menu-community"><a href="http://info.avinetworks.com/community">Community</a></li>
+                </ul>
+            </li>
+            <li class="dropdown menu-company"><a href="https://www.avinetworks.com/about-us">Company</a>
+                <ul class="submenu">
+                    <li class="menu-about-us"><a href="https://avinetworks.com/about-us">About Us</a></li>
+                    <li class="menu-management"><a href="https://avinetworks.com/management">Management</a></li>
+                    <li class="menu-news"><a href="https://avinetworks.com/news">News</a></li>
+                    <li class="menu-events"><a href="https://www.avinetworks.com/events">Events</a></li>
+                    <li class="menu-careers"><a href="https://www.avinetworks.com/careers">Careers</a></li>
+                    <li class="menu-contact-us"><a href="https://www.avinetworks.com/contact-us">Contact Us</a></li>
+                    <li class="menu-blog"><a href="https://blog.avinetworks.com/">Blog</a></li>
+                </ul>
+            </li>
         </ul>
-      </div>
+        <div class="footer-right clearfix">
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
+            <ul class="social">
+                <li><a href="https://twitter.com/AviNetworks" target="_blank"><img
+                        src="https://avinetworks.com/client/s2.png?89422d04ce55ab4fbc551b350301fb40" alt="ss"></a></li>
+                <li><a href="https://www.linkedin.com/company/avi-networks-inc/" target="_blank"><img
+                        src="https://avinetworks.com/client/s3.png?9cfe2fb324a650a508672567111627bf" alt="ss"></a></li>
+                <li><a href="https://plus.google.com/104472305577528346993" target="_blank"><img
+                        src="https://avinetworks.com/client/s4.png?417ad5e01fe57c547c4fa97c04cf2fd5" alt="ss"></a></li>
+                <li><a href="https://www.facebook.com/Avi-Networks-454887554580101/" target="_blank"><img
+                        src="https://avinetworks.com/client/s5.png?ab5977728cb4c37649b5ae3644a2d1e6" alt="ss"></a></li>
+            </ul>
+        </div>
     </div>
-
-  </div>
-
-</footer>
+</div>
+<div class="copyright-wrapper row">
+    <div class="col-xs-12">
+        <p>
+            <a href="https://avinetworks.com/">
+                <img src="/img/logo.png" alt="foot-logo"
+                     class="foot-logo">
+            </a>
+            Copyright &copy; 2016 Avi Networks.
+            All rights reserved.
+        </p>
+    </div>
+</div>

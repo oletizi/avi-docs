@@ -1,14 +1,30 @@
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+<meta name="description"
+      content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=lua&skin=sunburst"></script>
-  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<script src="/js/jquery-3.1.0.js"></script>
+<script src="/js/toc.min.js"></script>
+<script src="/js/js.cookie.js"></script>
+<script src="/js/bootstrap.js"></script>
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="/js/prism-dev.js"></script>
+<link href="/css/prism.css" rel="stylesheet" type="text/css" rel="stylesheet">
+<link href="/css/themes/prism-duotone-light.css" type="text/css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
+<script src="/js/site.js"></script>
+<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=lua&skin=sunburst"></script>
+<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+  $(document).ready(function () {
+    document.title = document.title.replace(/&#58;/g, ":");
+    document.title = document.title.replace(/&#46;/g, ".");
+  })
+</script>

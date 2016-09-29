@@ -1,56 +1,478 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
+@import "bootstrap";
 
+//
+// Colors
+//
+$font-color-normal: #555;
+$background-color: #fdfdfd;
+$header-background-color: #2a2a2d;
+$sidebar-background-color: white;
+$main-content-background-color: white;
+$footer-background-color: #2a2a2d;
+$brand-color: #ff4b00;
 
+$grey-color: #ccc;
+$grey-color-light: #ddd;
+$grey-color-dark: darken($grey-color, 25%);
 
-// Our variables
-//$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-root:        "/static/fonts/";
-$base-font-family: brandon-regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$blue-color: #22a4e6;
+
+$highlight-color: rgb(245, 245, 245);
+
+$border-color: $grey-color;
+
+//
+// Typography
+//
+$font-root: "/static/fonts/";
+$font-family-normal: brandon-regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-normal: 14px;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
+$font-size-small: $font-size-normal * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
-
-$text-color:       #333;
-$background-color: #fdfdfd;
-$brand-color:      #ff4b00;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+@mixin font-face($family-name, $filename) {
+  @font-face {
+    font-family: $family-name;
+    src: url(quote($font-root + $filename + ".eot")); /* IE9 Compat Modes */
+    src: url(quote($font-root + $filename + ".eot?#iefix")) format('embedded-opentype'), /* IE6-IE8 */
+      //url(quote($font-root + $font-root + $filename +".woff2")) format('woff2'), /* Super Modern Browsers */
+    url(quote($font-root + $filename + ".woff")) format('woff'), /* Pretty Modern Browsers */
+    url(quote($font-root + $filename + ".ttf")) format('truetype'), /* Safari, Android, iOS */
+    url(quote($font-root + $filename + ".svg#svgFontName")) format('svg'); /* Legacy iOS */
+  }
 }
 
+@include font-face ("brandon-black", "brandontext-black-webfont");
+@include font-face ("brandon-bold-italic", "brandontext-bolditalic-webfont");
+@include font-face ("brandon-light-italic", "brandontext-lightitalic-webfont");
+@include font-face ("brandon-medium", "brandontext-medium-webfont");
+@include font-face ("brandon-medium-italic", "brandontext-mediumitalic-webfont");
+@include font-face ("brandon-regular-italic", "brandontext-regularitalic-webfont");
+@include font-face ("brandon-regular", "hvdfonts-brandontext-regular");
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: brandon-medium, sans-serif;
+  color: #2A2A2C;
+}
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "fonts",
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+//
+// Spacing
+//
+$spacing-unit: 30px;
+
+h1 {
+  //margin-top: 0;//$spacing-unit/2;
+  margin-top: $spacing-unit / 2;
+}
+
+/**
+* Base
+*/
+
+body {
+  font: $font-size-normal $font-family-normal;
+  background-color: $background-color;
+  color: $font-color-normal;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: $blue-color;
+}
+
+b, strong {
+  font-family: brandon-medium, sans-serif;
+}
+
+blockquote {
+  font: inherit;
+}
+
+.alignright {
+  float: right;
+  padding-left: $spacing-unit / 2;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+.alignleft {
+  float: left;
+  padding-right: $spacing-unit / 2;
+}
+
+.main-content {
+  img {
+    // TODO: make this responsive
+    max-width: 700px;
+    height: auto;
+    display: block;
+  }
+}
+
+.table {
+  th {
+    color: white;
+    background-color: $grey-color-dark;
+  }
+}
+
+code {
+  font-size: $font-size-normal - 2;
+  color: dimgray;
+  background-color: transparent;
+}
+
+/**
+* Layout
+*/
+
+figure {
+  //padding: $spacing-unit / 4;
+  margin: $spacing-unit / 2 0 $spacing-unit /2 0;
+  padding-bottom: 0;
+  border: 1px solid $blue-color; //$grey-color;
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  img {
+    padding: $spacing-unit / 4;
+  }
+}
+
+figcapture, figcaption, figcaption.caption {
+  padding: $spacing-unit / 4;
+  background-color: $blue-color; //$highlight-color;
+  color: white;
+  display: block;
+}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.content-container {
+  padding: 0 $spacing-unit 0 $spacing-unit;
+}
+
+.header {
+  padding-top: 12px;
+  padding-bottom: 10px;
+  background-color: $header-background-color;
+  color: white;
+
+  #logo {
+    float: left;
+    a {
+      h2 {
+        color: $brand-color;
+        margin: 0;
+        padding-top: 5px;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  #top-nav {
+    float: left;
+    padding-top: 25px;
+  }
+  #top-nav > li {
+    float: left;
+    position: relative;
+    font-family: brandon-medium, sans-serif;
+    text-transform: uppercase;
+    padding: 0 $spacing-unit / 2 0 $spacing-unit / 2;
+
+    a, a:visited {
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown-menu {
+      @include border-top-radius(4px);
+      @include border-bottom-radius(4px);
+      //top: 40px;
+      padding-top: 40px;
+      width: 220px;
+      background-color: $header-background-color;
+      text-transform: none;
+      li {
+        a {
+          color: white;
+          opacity: 0.6;
+          transition: all 0.5s;
+        }
+        a:hover {
+          background-color: $header-background-color;
+          color: $brand-color;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .navbar-right {
+    // XXX: Hack: this should be inside the column
+    margin-right: 3px;
+    float: right !important;
+
+    .download-button {
+      float: right;
+      .btn-primary {
+        margin-top: 5px;
+        padding: 0 15px;
+        line-height: 40px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: background-color 0.3s, margin 0.3s;
+        border: 0;
+        background-color: $brand-color;
+      }
+    }
+  }
+}
+
+/**
+* Sidebar
+*/
+
+.sidebar {
+  background-color: $sidebar-background-color;
+  a {
+    color: $font-color-normal;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .search-wrapper {
+    margin-left: 10px;
+  }
+  .search-field-wrapper {
+    padding: 0;
+  }
+  .algolia-autocomplete {
+    border: 1px solid $border-color;
+    margin: 0;
+    padding: 0;
+    height: $spacing-unit;
+    width: 100%;
+  }
+
+  /**
+  * Default Algolia style
+  */
+  .algolia-autocomplete {
+    width: 100%;
+  }
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 100%;
+  }
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-top: none;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #B2D7FF;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .search-field {
+    border: 0;
+    margin: 0;
+    padding: 0 10px 0 10px;
+    width: 100%;
+    height: $spacing-unit - 2px;
+  }
+  .search-button {
+    border: 1px solid $border-color;
+    background-color: $background-color;
+    background-image: url("/img/search-icon.png");
+    height: $spacing-unit;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  ul#expandable-nav {
+    list-style: none;
+    padding: $spacing-unit / 2 0 0 0;
+    //li {
+    //  padding-top: $spacing-unit / 4;
+    //  padding-bottom: $spacing-unit / 4;
+    //}
+    ul {
+      padding-left: $spacing-unit / 2;
+      list-style: none;
+    }
+    a {
+      display: block;
+      padding-top: $spacing-unit / 4;
+      padding-bottom: $spacing-unit / 4;
+    }
+    .toggle:after {
+      /* symbol for "opening" panels */
+      font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+      float: right; /* adjust as needed */
+      color: grey; /* adjust as needed */
+    }
+    .toggle.collapsed:after {
+      /* symbol for "collapsed" panels */
+      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+    }
+    .collapse.in {
+      border-left: 2px solid $grey-color-light;
+    }
+  }
+}
+
+.main-content {
+  background-color: $main-content-background-color;
+}
+
+.footer {
+  padding: 50px 0 50px 0;
+  background-color: $footer-background-color;
+  ul#menu-footer-menu {
+    padding: 0;
+    list-style: none;
+    li {
+      float: left;
+      margin-right: 20px;
+      min-width: 130px;
+      a {
+        text-transform: uppercase;
+        color: white;
+        font-size: 17px;
+        margin-bottom: 20px;
+        display: block;
+      }
+      ul.submenu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          float: none;
+          a {
+            margin-bottom: 5px;
+            display: block;
+            text-transform: none;
+            color: white;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            text-decoration: none;
+            font-size: $font-size-normal;
+          }
+          a:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .footer-right {
+    float: left;
+    ul.social {
+      margin-top: 92px;
+      list-style: none;
+      li {
+        float: left;
+      }
+    }
+  }
+  img.foot-logo {
+    width: 60px;
+    margin-right: 30px;
+  }
+}
+
+/**
+* Table of Contents
+*/
+.toc {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  #toc-title {
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+    //height: $spacing-unit;
+    //border: 1px solid $border-color;
+    //background-color: $highlight-color;
+    background-color: #ddd;
+    color: #999;
+    font: $font-size-normal * 1.5 brandon-medium, sans-serif;
+  }
+  #toc {
+    padding: 5px 5px 5px 20px;
+    //border: 1px solid $border-color;
+    background-color: $highlight-color;
+    li {
+      padding: 10px 0;
+    }
+  }
+}
+
+/**
+* Search Results
+*/
+#search-results {
+
+  li {
+    margin: 0;
+    padding: 5px 0;
+    a {
+      color: $font-color-normal;
+    }
+    h2 {
+      color: $brand-color;
+      font-size: $font-size-normal * 1.2;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    .link {
+      color: $blue-color;
+    }
+  }
+  li:hover {
+    background-color: $highlight-color;
+    border-left: 2px solid $border-color;
+    padding: 5px;
+  }
+
+}
