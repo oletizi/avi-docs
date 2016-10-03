@@ -21,7 +21,7 @@ $grey-color-dark: darken($grey-color, 25%);
 
 $blue-color: #22a4e6;
 
-$highlight-color: rgb(245, 245, 245);
+$highlight-color: #f5f5f5;
 
 $border-color: $grey-color;
 
@@ -367,9 +367,70 @@ figcapture, figcaption, figcaption.caption {
   }
 }
 
+/**
+* Table of Contents
+**/
+$toc-indent: 20px;
+
+.toc-wrapper {
+  .toc {
+    top: 0;
+    min-width: 235px;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    #toc-title {
+      margin: 0;
+      padding: 0 $toc-indent 0 $toc-indent;
+      //height: $spacing-unit;
+      //border: 1px solid $border-color;
+      //background-color: $highlight-color;
+      background-color: #ddd;
+      color: #999;
+      font: $font-size-normal * 1.5 brandon-medium, sans-serif;
+    }
+    #toc {
+      background-color: $highlight-color;
+
+      li {
+        a {
+          display: block;
+          padding-top: $toc-indent / 2;
+          padding-bottom: $toc-indent / 2;
+        }
+      }
+      .toc-h1 {
+        padding-left: $toc-indent;
+      }
+      .toc-h2 {
+        padding-left: $toc-indent + $toc-indent / 2;
+      }
+      .toc-h3 {
+        padding-left: $toc-indent + $toc-indent;
+      }
+      .toc-active {
+        background-color: $grey-color-dark;
+        a {
+          color: white;
+          font-family: brandon-medium, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+/**
+* Main Content
+*/
+
 .main-content {
   background-color: $main-content-background-color;
 }
+
+/**
+* Footer
+*/
 
 .footer {
   padding: 50px 0 50px 0;
@@ -424,34 +485,6 @@ figcapture, figcaption, figcaption.caption {
   img.foot-logo {
     width: 60px;
     margin-right: 30px;
-  }
-}
-
-/**
-* Table of Contents
-*/
-.toc {
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  #toc-title {
-    margin: 0;
-    padding: 10px 20px 10px 20px;
-    //height: $spacing-unit;
-    //border: 1px solid $border-color;
-    //background-color: $highlight-color;
-    background-color: #ddd;
-    color: #999;
-    font: $font-size-normal * 1.5 brandon-medium, sans-serif;
-  }
-  #toc {
-    padding: 5px 5px 5px 20px;
-    //border: 1px solid $border-color;
-    background-color: $highlight-color;
-    li {
-      padding: 10px 0;
-    }
   }
 }
 
