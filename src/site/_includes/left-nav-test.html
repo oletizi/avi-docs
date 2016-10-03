@@ -510,6 +510,16 @@
     $(document).ready(function () {
         var cookieName = 'expandable-nav-v1.1';
 
+        function setActive() {
+            var url = window.location;
+            var parser = document.createElement('a');
+            parser.href = url;
+            console.log("URL: " + url);
+            console.log("PATH: " + parser.pathname);
+            $('ul#expandable-nav a[href="'+ parser.pathname +'"]').parent().addClass('active');
+        }
+
+
         function getExpanded() {
             var tmp = Cookies.getJSON(cookieName);
             var expanded;
@@ -540,6 +550,8 @@
                 $(expanded[i]).collapse("show");
             }
         }
+
+        setActive();
 
         $("[data-toggle='collapse']").on("click", function () {
             var dataTarget = this.attributes['data-target'].value;

@@ -510,6 +510,17 @@
   $(document).ready(function () {
     var cookieName = 'expandable-nav-v1.1';
 
+    function setActive() {
+      var url = window.location;
+      var parser = document.createElement('a');
+      parser.href = url;
+      var fullPath = parser.pathname;
+      var shortPath = fullPath.replace(/\/$/, "");;
+
+      $('ul#expandable-nav a[href="'+ fullPath +'"]').parent().addClass('active');
+      $('ul#expandable-nav a[href="'+ shortPath +'"]').parent().addClass('active');
+    }
+
     function getExpanded() {
       var tmp = Cookies.getJSON(cookieName);
       var expanded;
@@ -530,6 +541,8 @@
       }
       return false;
     }
+
+    setActive();
 
     var expanded = getExpanded();
     console.log("Expanded: " + expanded);
