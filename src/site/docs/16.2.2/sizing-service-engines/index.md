@@ -45,7 +45,7 @@ CPU scales very linearly as more cores are added.  Avi does not use hyperthreadi
 
 ### Memory
 
-Memory scales near linearly.  It is used for concurrent connections and HTTP caching.  Doubling the memory will double the ability of the Avi Service Engine to perform these tasks.  The default is 2 GB memory, reserved within the hypervisor for VMware clouds.  See also <a href="/docs/latest/se-memory-consumption">SE Memory Consumption</a>.
+Memory scales near linearly.  It is used for concurrent connections and HTTP caching.  Doubling the memory will double the ability of the Avi Service Engine to perform these tasks.  The default is 2 GB memory, reserved within the hypervisor for VMware clouds.  See also <a href="se-memory-consumption">SE Memory Consumption</a>.
 
 ### PPS
 

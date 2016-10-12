@@ -4,7 +4,7 @@ layout: default
 ---
 ### High Availability Modes
 
-Avi Vantage supports two Avi Service Engine (SE) elastic HA modes which combine scale-out performance as well as high availability: N+M mode (the default) and active/active. Vantage also provides a third alternative, <a href="/docs/latest/legacy-ha-for-avi-service-engines">legacy HA</a> mode, which enables a smooth migration from legacy appliance-based load balancers.
+Avi Vantage supports two Avi Service Engine (SE) elastic HA modes which combine scale-out performance as well as high availability: N+M mode (the default) and active/active. Vantage also provides a third alternative, <a href="legacy-ha-for-avi-service-engines">legacy HA</a> mode, which enables a smooth migration from legacy appliance-based load balancers.
 
 ### Elastic HA N+M Mode
 
@@ -38,7 +38,7 @@ The right side of figure 2 shows the SE group just after SE2 has failed. The 5 v
 </figcapture>
 </figure> 
 
-As shown in figure 3, with only 4 slots remaining just after the 5 re-placements, if Vantage’s <a href="/docs/latest/orchestrator-access-modes">orchestrator mode is set to write access</a>, Vantage spins up SE5 to meet the M=1 condition, which in this case requires at least 8 slots available for re-placements.
+As shown in figure 3, with only 4 slots remaining just after the 5 re-placements, if Vantage’s <a href="orchestrator-access-modes">orchestrator mode is set to write access</a>, Vantage spins up SE5 to meet the M=1 condition, which in this case requires at least 8 slots available for re-placements.
 
 The imbalance in loading disappears over time if one or both of two things happens:
 <ol> 
@@ -55,7 +55,7 @@ If an N+M group has scaled out to Max Number of Service Engines and N *x* Virtua
 In active/active mode, Vantage places each virtual service on more than one Avi SE, as specified by "Minimum Scale per Virtual Service" parameter (labeled B in the figures) — the default minimum is 2. If an SE in the group fails, then
 
 * Virtual services that had been running are not interrupted. They continue to run on other SEs with degraded capacity until they can be placed once again.
-* If Vantage’s <a href="/docs/latest/orchestrator-access-modes">orchestrator mode is set to write access</a>, a new SE is automatically deployed to bring the SE group back to its previous capacity. After waiting for the new SE to spin up, the Avi Controller places on it the virtual services that had been running on the failed SE. 
+* If Vantage’s <a href="orchestrator-access-modes">orchestrator mode is set to write access</a>, a new SE is automatically deployed to bring the SE group back to its previous capacity. After waiting for the new SE to spin up, the Avi Controller places on it the virtual services that had been running on the failed SE. 
 <figure class="thumbnail wp-caption aligncenter"> <a href="img/Screen-Shot-2016-07-06-at-5.54.29-PM.png"><img class="wp-image-10717" src="img/Screen-Shot-2016-07-06-at-5.54.29-PM.png" width="600" height="382"></a>  
 <figcapture> Figure 4. SE editor settings with elastic HA active/active mode selected. 
 </figcapture>

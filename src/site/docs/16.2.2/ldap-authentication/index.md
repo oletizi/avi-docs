@@ -66,15 +66,15 @@ Anonymous bind parameters:
 * User Token: token to be replaced by users' login name.
 * User ID attribute: attribute that uniquely identifies the User's login name. 
 
-<a href="/docs/latest/ldap-configuration-examples"><img class="alignnone size-full wp-image-11261" src="img/Screen-Shot-2016-08-03-at-2.22.51-PM.png" alt="LDAP Anonymous Bind settings" width="831" height="199"></a>
+<a href="ldap-configuration-examples"><img class="alignnone size-full wp-image-11261" src="img/Screen-Shot-2016-08-03-at-2.22.51-PM.png" alt="LDAP Anonymous Bind settings" width="831" height="199"></a>
 
  
 
 **HTTP authentication** options can be ignored for user logins to Avi Vantage. It is only useful when LDAP authentication profile is configured for Basic Authentication in a Virtual Service
 
-LDAP Auth Profile settings can be verified after the profile is created by using <a href="/docs/latest/ldap-auth-profile-test">the test page</a>.
+LDAP Auth Profile settings can be verified after the profile is created by using <a href="ldap-auth-profile-test">the test page</a>.
 
-More configuration examples are presented <a href="/docs/latest/ldap-configuration-examples">in this page</a>.
+More configuration examples are presented <a href="ldap-configuration-examples">in this page</a>.
 
 ## LDAP AAA Settings
 

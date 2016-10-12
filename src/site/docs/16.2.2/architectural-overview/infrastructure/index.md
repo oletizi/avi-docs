@@ -456,8 +456,8 @@ The availability of a virtual service after an SE failure is governed by setting
 
 To gain an understanding of the three HA modes defined by Vantage, refer to these articles:
 
-* <a href="/docs/latest/legacy-ha-for-avi-service-engines">Legacy HA</a>
-* <a href="/docs/latest/elastic-ha-for-avi-service-engines/">Elastic HA</a> 
+* <a href="legacy-ha-for-avi-service-engines">Legacy HA</a>
+* <a href="elastic-ha-for-avi-service-engines/">Elastic HA</a> 
 
 ### Service Engine Capacity and Limit Settings
 

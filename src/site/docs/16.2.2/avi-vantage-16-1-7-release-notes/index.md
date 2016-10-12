@@ -125,34 +125,34 @@ This section summarizes the enhancements in Vantage 16.1. For more information, 
 
 * Linux server (bare metal) support enhancements  
     * <a href="/docs/16.1/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
-    * <a href="/docs/latest/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
-    * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade support</a>
+    * <a href="vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
+    * <a href="upgrading-the-vantage-software/">Upgrade support</a>
 * Networking features  
-    * <a href="/docs/latest/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
-    * <a href="/docs/latest/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
+    * <a href="bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
+    * <a href="vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
 * Core ADC features  
-    * <a href="/docs/latest/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
-    * <a href="/docs/latest/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
+    * <a href="http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
+    * <a href="ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
     * Dictionary/map support for HTTP policies:Policies can perform lookups against a list of items stored in a string group, and the lookup result can be used for the URL-rewrite action
     * Regular expression support for HTTP policies with RegEx match operations against a string list in a string group
-    * <a href="/docs/latest/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
+    * <a href="logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
 * SSL enhancements  
-    * <a href="/docs/latest/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
-    * <a href="/docs/latest/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
-    * <a href="/docs/latest/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
+    * <a href="datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
+    * <a href="crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
+    * <a href="thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
 * Containers  
-    * <a href="/docs/latest/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
-    * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
+    * <a href="service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
+    * <a href="upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
 * UI enhancements  
-    * <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade supported through web interface</a>
-    * <a href="/docs/latest/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
+    * <a href="upgrading-the-vantage-software/">Upgrade supported through web interface</a>
+    * <a href="all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
 * Ecosystem support  
     * OpenStack Liberty
-    * <a href="/docs/latest/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
+    * <a href="vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
 * Other features  
-    * <a href="/docs/latest/ldap-auth-profile-test/">LDAP authentication profile testing</a>
+    * <a href="ldap-auth-profile-test/">LDAP authentication profile testing</a>
     * Python SDK
-    * <a href="/docs/latest/cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
+    * <a href="cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
 
 ### Issues Resolved in 16.1
 
@@ -183,8 +183,8 @@ This section summarizes the enhancements in Vantage 16.1. For more information, 
 
 Upgrade prerequisite: current version of Avi Controller must be 16.1.7.
 
-* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 <a name="sptdplatforms"></a>
 
@@ -215,7 +215,7 @@ For more information, please see the following documents, also available within 
 
 ### Installation Guides
 
-* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="installation-guides/">Avi Vantage Installation Guides</a> 
 
 <a name="opensourceinfo"></a>
 

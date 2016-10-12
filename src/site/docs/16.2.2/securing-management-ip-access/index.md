@@ -16,7 +16,7 @@ Separate IP access lists can be configured for each of the following management 
 
 * REST API / Web interface (or any script or other means of automation that uses the REST API)
 * SSH daemon
-* CLI Shell (allows <a href="/docs/latest/cli-installing-the-cli-shell">remote CLI access</a>)
+* CLI Shell (allows <a href="cli-installing-the-cli-shell">remote CLI access</a>)
 * SNMP 
 
 Here is a logical view of the management interfaces.

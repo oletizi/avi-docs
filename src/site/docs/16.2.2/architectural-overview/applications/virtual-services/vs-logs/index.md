@@ -6,7 +6,7 @@ Virtual services and pools are able to log client-to-application interactions fo
 
 ## Enabling Logs
 
-See the <a href="/docs/latest/architectural-overview/applications/virtual-services/vs-analytics/">Analytics tab</a> of the Create Virtual Service popup for configuring, enabling, filtering, and/or disabling client logs.
+See the <a href="architectural-overview/applications/virtual-services/vs-analytics/">Analytics tab</a> of the Create Virtual Service popup for configuring, enabling, filtering, and/or disabling client logs.
 
 ## Significant Logs
 

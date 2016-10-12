@@ -8,7 +8,7 @@ This article describes how to change node membership or node IP address in an Av
 * <a href="#removebothfollowers">Removing Both Followers</a>
 * <a href="#changefollower">Changing a Follower Node</a>
 * <a href="#replaceleader">Replacing the Leader Node</a>
-* <a href="#replacefollower">Replacing a Follower Node with a New Node</a> &gt; Note: If the IP address of an Avi Controller node has changed, a script must be run to update the configuration. <a href="/docs/latest/ctlr-cfg-update-after-ip-change">Click here </a>for information.
+* <a href="#replacefollower">Replacing a Follower Node with a New Node</a> &gt; Note: If the IP address of an Avi Controller node has changed, a script must be run to update the configuration. <a href="ctlr-cfg-update-after-ip-change">Click here </a>for information.
  
 
 <a name="deploynewcluster"></a>
@@ -17,14 +17,14 @@ This article describes how to change node membership or node IP address in an Av
 
 This section shows the web interface popup and CLI commands for deploying an Avi Controller cluster.
 
-To deploy an Avi Controller cluster, first deploy a single Avi Controller node (the leader), then add the follower nodes to the leader. (After using the setup wizard to install Avi Vantage on the follower nodes, do not make any other configuration changes on these nodes.) For more in-depth information about initial cluster deployment, click <a href="/docs/latest/configure-controller-ha-cluster">here</a>.
+To deploy an Avi Controller cluster, first deploy a single Avi Controller node (the leader), then add the follower nodes to the leader. (After using the setup wizard to install Avi Vantage on the follower nodes, do not make any other configuration changes on these nodes.) For more in-depth information about initial cluster deployment, click <a href="configure-controller-ha-cluster">here</a>.
 
 ### Web Interface
 
 On the Avi Controller node that will be the leader:
 <ol> 
  <li>Navigate to Administration &gt; Controller and click Edit.</li> 
- <li>Enter the <a href="/docs/latest/controller-cluster-ip">cluster IP address</a>. This will be the shared management IP address of the cluster.</li> 
+ <li>Enter the <a href="controller-cluster-ip">cluster IP address</a>. This will be the shared management IP address of the cluster.</li> 
  <li>Enter the host IP addresses of each of the 3 nodes in the Controller Node fields: 
   <ul> 
    <li>Controller Node-1: Host IP address of the leader node.</li> 

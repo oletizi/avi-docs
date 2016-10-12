@@ -10,7 +10,7 @@ layout: default
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Description</strong></span></td>
-<td>Issues an HTTP redirect to a specified URI with a specified status code. This command is available only in the HTTP_REQ event. If a redirect needs to be performed in HTTP_RESP event, use <a href="/docs/latest/datascript-avi-http-response">avi.http.response()</a> which can be used to craft a response.</td>
+<td>Issues an HTTP redirect to a specified URI with a specified status code. This command is available only in the HTTP_REQ event. If a redirect needs to be performed in HTTP_RESP event, use <a href="datascript-avi-http-response">avi.http.response()</a> which can be used to craft a response.</td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Events</strong></span></td>

@@ -10,7 +10,7 @@ This article covers the following virtual service optimization topics:
 
 Avi Vantage supports scaling virtual services, which distributes the virtual service workload across multiple SEs to provide increased capacity on demand, thus extending the throughput capacity of the virtual service and increasing the level of high availability.
 
-* Scaling out a virtual service distributes that virtual service to an additional SE. By default, Avi Vantage supports a maximum of four SEs per virtual service when native load balancing of SEs is in play. In <a href="/docs/latest/bgp-support-for-virtual-services/">BGP</a> environments the maximum can be increased to 32.
+* Scaling out a virtual service distributes that virtual service to an additional SE. By default, Avi Vantage supports a maximum of four SEs per virtual service when native load balancing of SEs is in play. In <a href="bgp-support-for-virtual-services/">BGP</a> environments the maximum can be increased to 32.
 * Scaling in a virtual service reduces the number of SEs over which its load is distributed. A virtual service will always require a minimum of one SE. 
 
 ### Operational Notes

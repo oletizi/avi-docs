@@ -4,7 +4,7 @@ layout: default
 ---
 Beginning in Avi Vantage 16.2, legacy active/standby high availability (HA) is available for Avi Service Engine (SE) redundancy. Legacy active/standby is useful for migrating from hardware appliance-based solutions.
 
-Avi Vantage also provides <a href="/docs/latest/overview-of-vantage-high-availability">elastic HA</a>, including active/active and N+M modes.
+Avi Vantage also provides <a href="overview-of-vantage-high-availability">elastic HA</a>, including active/active and N+M modes.
 
 In legacy HA mode, exactly two Avi SEs are configured. One SE carries all the traffic for a virtual service placed on it, and is thus the active SE for that VS. The other SE in the pair is the standby for that VS, carrying no traffic for it while the other SE is healthy. Upon failure of an SE, the surviving SE takes over traffic for all virtual services previously active on the failed SE, while continuing to handle traffic for virtual services already assigned to it. As part of the takeover process, the survivor also takes ownership of all floating addresses, such as VIPs, SNAT-IP, and so on. Two options, compacted and distributed (figure 1), determine whether all active virtual service placements are concentrated onto one SE in a healthy pair or not.
 
@@ -17,7 +17,7 @@ In legacy HA mode, exactly two Avi SEs are configured. One SE carries all the tr
 
 By default, health checks are sent by both Avi SEs to back-end servers. Optionally, one can disable health monitoring by an SE for virtual services for which it is standing by.
 
-Optionally, health checks for each Avi SE's next-hop gateways also can be enabled. <a href="/docs/latest/gateway-monitoring-for-legacy-ha">Gateway health checking</a> is supported for both Avi SEs.
+Optionally, health checks for each Avi SE's next-hop gateways also can be enabled. <a href="gateway-monitoring-for-legacy-ha">Gateway health checking</a> is supported for both Avi SEs.
 
 ### Floating IP Address
 

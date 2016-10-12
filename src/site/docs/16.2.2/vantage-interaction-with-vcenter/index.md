@@ -6,7 +6,7 @@ layout: default
 
 Avi Vantage may be deployed with a VMware cloud in either No Access, Read Access, or Write Access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Vantage Controller within VMware vCenter.
 
-See <a href="/docs/latest/orchestrator-access-modes">Orchestrator Access Modes</a> for more information on access modes.
+See <a href="orchestrator-access-modes">Orchestrator Access Modes</a> for more information on access modes.
 
 ### Initial Discovery (Read operation)
 

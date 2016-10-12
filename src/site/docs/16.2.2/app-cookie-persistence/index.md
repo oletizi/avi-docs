@@ -12,13 +12,13 @@ Once an identifier has been located in a server response and a client's request,
 &gt; <code>www.avinetworks.com/index.html?jsessionid=a1b2c3d4e5</code>
  
 
-Note: This method involves using an existing server cookie. For Vantage to use its own cookie for persistence, use the <a href="/docs/latest/http-cookie-persistence">HTTP Cookie persistence</a> mode, which is straightforward and more scalable.
+Note: This method involves using an existing server cookie. For Vantage to use its own cookie for persistence, use the <a href="http-cookie-persistence">HTTP Cookie persistence</a> mode, which is straightforward and more scalable.
 
-See also <a href="/docs/latest/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
+See also <a href="overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 
 ### Persist Table
 
-Since app cookie persistence is stored locally on each Service Engine, larger tables will consume more memory.  For very large persist tables, consider adding additional memory to the SEs via the SE Group properties for SE memory and via the SE Group &gt; Connection table setting. See also <a href="/docs/latest/se-memory-consumption">SE Memory Consumption</a>
+Since app cookie persistence is stored locally on each Service Engine, larger tables will consume more memory.  For very large persist tables, consider adding additional memory to the SEs via the SE Group properties for SE memory and via the SE Group &gt; Connection table setting. See also <a href="se-memory-consumption">SE Memory Consumption</a>
 
 The app cookie persistence table is automatically mirrored to all Service Engines supporting the virtual service which is using a pool configured with this persistence type.
 

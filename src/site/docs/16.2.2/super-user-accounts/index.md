@@ -12,4 +12,4 @@ To enable super access for a Vantage user account, select the Super User checkbo
 
 <a href="img/user-account-superuser.png"><img src="img/user-account-superuser.png" alt="user-account-superuser" width="792" height="403" class="alignnone size-full wp-image-10430"></a>
 
-For detailed information about configuring user accounts, <a href="/docs/latest/user-accounts">click here</a>.
+For detailed information about configuring user accounts, <a href="user-accounts">click here</a>.

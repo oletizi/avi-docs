@@ -20,7 +20,7 @@ Vantage supports multiple architectures for terminating SSL traffic.  For client
 
 * Virtual Service Configuration
 * <a href="/docs/configuration-guide/applications/pools/">Pool Configuration</a>
-* <a href="/docs/latest/server-name-indication">Server Name Indication (SNI)</a> 
+* <a href="server-name-indication">Server Name Indication (SNI)</a> 
 
  
 
@@ -28,10 +28,10 @@ Vantage supports multiple architectures for terminating SSL traffic.  For client
 
 The profile contains the settings for the SSL-terminated connections.  This includes the list of supported ciphers and their priority, the supported versions of SSL/TLS, and a few other options.
 
-* <a href="/docs/latest/ssl-tls-profile">SSL Profile</a>
-* <a href="/docs/latest/app-transport-security">App Transport Security</a>
-* <a href="/docs/latest/ssl-tls-version-support">SSL Version Support</a>
-* <a href="/docs/latest/configure-stronger-ssl-cipher-strength">Configure Strong SSL Cipher Strength</a> 
+* <a href="ssl-tls-profile">SSL Profile</a>
+* <a href="app-transport-security">App Transport Security</a>
+* <a href="ssl-tls-version-support">SSL Version Support</a>
+* <a href="configure-stronger-ssl-cipher-strength">Configure Strong SSL Cipher Strength</a> 
 
  
 
@@ -39,12 +39,12 @@ The profile contains the settings for the SSL-terminated connections.  This incl
 
 An SSL certificate is presented to a client to authenticate the application.  A virtual service may be configured with two certificates at the same time, one each of RSA and elliptic curve cryptography (ECC).  A certificate may also be used for authenticating Vantage to back-end servers.
 
-* <a href="/docs/latest/ssl-certificates">SSL Certificates</a>
-* <a href="/docs/latest/ecc-versus-rsa-certificate-priority">EC versus RSA Certificate Priority</a>
-* <a href="/docs/latest/notification-of-ssl-certificate-expiration">Notification of Certificate Expiration</a>
-* <a href="/docs/latest/client-ssl-certificate-validation">Client Certificate Validation / PKI Profile</a>
-* <a href="/docs/latest/physical-security-for-ssl-keys">Physical Security for SSL Certificates</a>
-* <a href="/docs/latest/thales-nshield-integration-2">Thales nShield Integration</a> 
+* <a href="ssl-certificates">SSL Certificates</a>
+* <a href="ecc-versus-rsa-certificate-priority">EC versus RSA Certificate Priority</a>
+* <a href="notification-of-ssl-certificate-expiration">Notification of Certificate Expiration</a>
+* <a href="client-ssl-certificate-validation">Client Certificate Validation / PKI Profile</a>
+* <a href="physical-security-for-ssl-keys">Physical Security for SSL Certificates</a>
+* <a href="thales-nshield-integration-2">Thales nShield Integration</a> 
 
  
 
@@ -52,8 +52,8 @@ An SSL certificate is presented to a client to authenticate the application.  A 
 
 The performance of SSL-terminated traffic is dependent on the underlying hardware allocated to the Avi Service Engine, the number of SEs available to handle the virtual service, and the certificate and ciphers settings negotiated. As a general rule of thumb, each vCPU core can handle about 500 RSA transactions per second (TPS) or 2000 ECC TPS.  A vCPU core can push about 1 Gb/s SSL throughput.  SSL-terminated concurrent connections are more expensive than straight HTTP or layer 4 connections, and may necessitate additional memory to sustain high concurrency.
 
-* <a href="/docs/latest/ssl-performance">SSL Performance</a>
-* <a href="/docs/latest/se-memory-consumption">SE Memory Consumption</a> 
+* <a href="ssl-performance">SSL Performance</a>
+* <a href="se-memory-consumption">SE Memory Consumption</a> 
 
  
 
@@ -61,6 +61,6 @@ The performance of SSL-terminated traffic is dependent on the underlying hardwar
 
 SSL is a complicated subject, occasionally requiring redirects, rewrites, and other manipulation of HTTP to ensure proper traffic flow. Vantage includes a number of useful tools for troubleshooting and correcting SSL-related issues. They are described in the articles below.
 
-* <a href="/docs/latest/ssl-everywhere">SSL Everywhere</a>
-* <a href="/docs/latest/redirect-http-to-https">HTTP to HTTPS Redirect</a>
-* <a href="/docs/latest/ssl-visibility-and-troubleshooting">SSL Visibility and Troubleshooting</a> 
+* <a href="ssl-everywhere">SSL Everywhere</a>
+* <a href="redirect-http-to-https">HTTP to HTTPS Redirect</a>
+* <a href="ssl-visibility-and-troubleshooting">SSL Visibility and Troubleshooting</a> 

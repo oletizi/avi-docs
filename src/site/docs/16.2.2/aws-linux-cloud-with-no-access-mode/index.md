@@ -2,11 +2,11 @@
 title: AWS Linux Cloud with No-access Mode
 layout: default
 ---
-This article describes how to set up IP address management (IPAM) in an Avi Vantage deployment onto a Linux server cloud in Amazon Web Services (AWS). These steps deploy Avi Vantage into AWS in no <a href="/docs/latest/orchestrator-access-modes">access mode</a>.
+This article describes how to set up IP address management (IPAM) in an Avi Vantage deployment onto a Linux server cloud in Amazon Web Services (AWS). These steps deploy Avi Vantage into AWS in no <a href="orchestrator-access-modes">access mode</a>.
 
 The setup process consists of the following tasks:
 
-* Create a <a href="/docs/latest/iam-role-setup-for-installation-into-aws">role in IAM</a> using the supplied JSON file: avicontroller-role-ipam-policy.json
+* Create a <a href="iam-role-setup-for-installation-into-aws">role in IAM</a> using the supplied JSON file: avicontroller-role-ipam-policy.json
 * Launch the Avi Controller using the IAM role. This starts the setup wizard.
 * Afer initial setup, use the Avi Controller web interface to edit the Default-Cloud to add Linux server cloud settings, including the IP address management (IPAM) profile.
 * Use the Avi Controller CLI to enable no-access settings Avi Service Engines (SEs). 

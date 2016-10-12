@@ -10,4 +10,4 @@ User accounts that have access to multiple tenants are placed into a single, def
 
 Now the resources that can be accessed in the web interface are those that belong to the newly selected tenant, instead of the previously selected tenant.
 
-Note: If you are logged in with a super user account, a read-only <a href="/docs/latest/all-tenants-view">All Tenants</a> tenant also is available. 
+Note: If you are logged in with a super user account, a read-only <a href="all-tenants-view">All Tenants</a> tenant also is available. 

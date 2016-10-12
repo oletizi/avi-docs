@@ -6,11 +6,11 @@ This article describes the changes and fixes in Avi Vantage release 16.1.6.
 
 Note: For information about fixes and enhancements in earlier 16.*x* releases, see the following:
 
-* <a href="/docs/latest/avi-vantage-16-1-5-release-notes">16.1.5 Release Notes</a>
-* <a href="/docs/latest/avi-vantage-16-1-4-release-notes">16.1.4 Release Notes</a>
-* <a href="/docs/latest/avi-vantage-16-1-3-release-notes">16.1.3 Release Notes</a>
-* <a href="/docs/latest/avi-vantage-16-1-2-release-notes">16.1.2 Release Notes</a>
-* <a href="/docs/latest/avi-vantage-16-1-1-release-notes">16.1.1 Release Notes</a> (also contains information for 16.1) 
+* <a href="avi-vantage-16-1-5-release-notes">16.1.5 Release Notes</a>
+* <a href="avi-vantage-16-1-4-release-notes">16.1.4 Release Notes</a>
+* <a href="avi-vantage-16-1-3-release-notes">16.1.3 Release Notes</a>
+* <a href="avi-vantage-16-1-2-release-notes">16.1.2 Release Notes</a>
+* <a href="avi-vantage-16-1-1-release-notes">16.1.1 Release Notes</a> (also contains information for 16.1) 
 
 ## What’s New in 16.1.6
 
@@ -26,8 +26,8 @@ This release contains fixes but no new features.
 
 Upgrade prerequisite: current version of Avi Controller must be 15.1.5.
 
-* <a href="/docs/latest/upgrading-the-vantage-software/">Upgrade Instructions</a>
-* <a href="/docs/latest/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 ## Product Documentation
 
@@ -35,7 +35,7 @@ For more information, please see the following documents, also available within 
 
 ### Installation Guides
 
-* <a href="/docs/latest/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="installation-guides/">Avi Vantage Installation Guides</a> 
 
 ## Open Source Package Information
 

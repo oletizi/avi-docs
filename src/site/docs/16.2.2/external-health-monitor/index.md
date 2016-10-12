@@ -2,7 +2,7 @@
 title: External Health Monitor
 layout: default
 ---
-This article covers the specific configuration for this monitor type.  See the <a href="/docs/latest/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
+This article covers the specific configuration for this monitor type.  See the <a href="overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 
 The external monitor type allows scripts to be written to provide highly customized and granular health checks. The scripts may be Linux shell, Python, or Perl, which can be used to execute wget, netcat, curl, snmpget, mysql-client, or dig. External monitors have constrained access to resources, such as CPU and memory, so as to not affect normal functioning of Vantage Service Engines. As with any custom scripting, thoroughly validate the long term stability of the implemented script before pointing it at production servers.
 
@@ -22,7 +22,7 @@ Avi Vantage includes three sample scripts via the System-Xternal Perl, Python an
 
 As best practice, be sure to clean up any temporary files that are created by scripts.
 
-When building an external monitor, it is common to manually test the successful execution of the commands.  To test a command from an SE, it may be necessary to switch to the proper namespace or tenant.  The production external monitor will correctly use the proper tenant.  To manually switch tenants when testing a command from the SE CLI, follow the commands in the following KB:  <a href="/docs/latest/manually-validate-server-health">Manually Validate Server Health</a>.
+When building an external monitor, it is common to manually test the successful execution of the commands.  To test a command from an SE, it may be necessary to switch to the proper namespace or tenant.  The production external monitor will correctly use the proper tenant.  To manually switch tenants when testing a command from the SE CLI, follow the commands in the following KB:  <a href="manually-validate-server-health">Manually Validate Server Health</a>.
 
 * **Script Code**:  Upload the script via copy/paste or uploading the file.
 * **Script Parameters**:  Enter any optional arguments to apply. These strings are passed in as arguments to the script, such as $1 = server IP, $2 = server port.

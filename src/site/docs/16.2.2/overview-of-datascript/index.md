@@ -27,11 +27,11 @@ DataScripts are reusable objects that are maintained within: *Templates > Scrip
 
 ### Recommended Reading
 
-* <a href="/docs/latest/datascript-events/">Events</a>:  Each DataScript will executed when an event is triggered, such as when an HTTP request or HTTP response is received by the virtual service. A DataScript must be executed within one or more events.
-* <a href="/docs/latest/datascript-operators/">Operators</a>:  DataScripts may make use of operators, which may be relational, logical, or arithmetic.
-* <a href="/docs/latest/datascript-functions/">Functions: </a> Functions are Avi-specific commands, such as HTTP redirects or closing a client connection.
-* <a href="/docs/latest/datascript-execution-priority/">Execution Priority</a>:  DataScripts have a complex relationship with other features within Avi Vantage, and it is important to understand the order of execution priority when multiple DataScripts are attached to a virtual service, or Policies and other features conflict with the DataScripts.
-* <a href="/docs/latest/datascript-troubleshooting-rules/">Troubleshooting</a>:  DataScripts may fail to save / load at time of configuration, or they may be created without issue but fail to execute when applied to traffic. 
+* <a href="datascript-events/">Events</a>:  Each DataScript will executed when an event is triggered, such as when an HTTP request or HTTP response is received by the virtual service. A DataScript must be executed within one or more events.
+* <a href="datascript-operators/">Operators</a>:  DataScripts may make use of operators, which may be relational, logical, or arithmetic.
+* <a href="datascript-functions/">Functions: </a> Functions are Avi-specific commands, such as HTTP redirects or closing a client connection.
+* <a href="datascript-execution-priority/">Execution Priority</a>:  DataScripts have a complex relationship with other features within Avi Vantage, and it is important to understand the order of execution priority when multiple DataScripts are attached to a virtual service, or Policies and other features conflict with the DataScripts.
+* <a href="datascript-troubleshooting-rules/">Troubleshooting</a>:  DataScripts may fail to save / load at time of configuration, or they may be created without issue but fail to execute when applied to traffic. 
 
  
 

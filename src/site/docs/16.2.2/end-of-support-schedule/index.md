@@ -43,4 +43,4 @@ Here is the current Version Support Period for Avi Vantage software:
 
 See also:
 
-<a href="/docs/latest/support-terms-and-conditions">Support terms and conditions</a>
+<a href="support-terms-and-conditions">Support terms and conditions</a>

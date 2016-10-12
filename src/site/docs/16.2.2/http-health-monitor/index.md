@@ -2,7 +2,7 @@
 title: HTTP Health Monitor
 layout: default
 ---
-This article covers the specific configuration for this monitor type.  See the <a href="/docs/latest/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
+This article covers the specific configuration for this monitor type.  See the <a href="overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 
 The HTTP health monitor may only be applied to a pool whose virtual service has an HTTP application profile attached.
 

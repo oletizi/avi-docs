@@ -9,7 +9,7 @@ The application profile types and their options are described in the following s
 * <a href="#http-profile">HTTP Profile</a>
 * <a href="#dns-profile">DNS Profile</a>
 * <a href="#l4-profile">Layer 4 Profile</a>
-* <a href="/docs/latest/layer-4-ssl-support">SSL Profile</a>
+* <a href="layer-4-ssl-support">SSL Profile</a>
 * <a href="#syslog-profile">Syslog Profile</a> 
 
 ## Dependency on TCP/UDP Profile
@@ -92,7 +92,7 @@ The Security tab of the HTTP application profile controls the security settings 
 
 The HTTP security settings affect how a virtual service should handle HTTPS. If a virtual service is configured only for HTTP, any HTTPS settings in this section will not apply. Only if the virtual service is configured for HTTPS, or HTTP and HTTPS, will the settings take effect.
 
-More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies</a> or <a href="/docs/latest/datascript-guide/">DataScripts</a>.
+More granular settings also may be configured using <a href="configuration-guide/applications/vs-policies/">policies</a> or <a href="datascript-guide/">DataScripts</a>.
 
 * **SSL Everywhere:** This option enables all of the following options, which together provide the recommended security for HTTPS traffic.
 * **HTTP-to-HTTPS Redirect:** For a single virtual service configured with both an HTTP service port (SSL disabled) and an HTTPS service port (SSL enabled), this feature will automatically redirect clients from the insecure to the secure port. For instance, clients who type www.avinetworks.com into their browser will automatically be redirected to https://www.avinetworks.com. If the virtual service does not have both an HTTP and HTTPS service port configured, this feature will not activate. For two virtual services (one with HTTP and another on the same IP address listening to HTTPS), an HTTP request policy must be created to manually redirect the protocol and port.
@@ -188,7 +188,7 @@ Avi Vantage can cache HTTP content, thereby enabling faster page load times for 
 
 Enabling caching and compression allows Vantage to compress text-based objects and store both the compressed and original uncompressed versions in the cache. Subsequent requests from clients that support compression will be served from the cache, meaning that Vantage will need not compress every object every time, which greatly reduces the compression workload.
 
-**Note: Regardless of the configured caching policy, an object can be cached only if it is <a href="/docs/latest/overview-of-http-cache/">eligible for caching</a>. Some objects may not be eligible for caching.**
+**Note: Regardless of the configured caching policy, an object can be cached only if it is <a href="overview-of-http-cache/">eligible for caching</a>. Some objects may not be eligible for caching.**
 
 To enable caching, check the Caching checkbox.
 

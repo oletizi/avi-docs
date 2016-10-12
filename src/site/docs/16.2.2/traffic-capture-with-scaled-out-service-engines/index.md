@@ -8,4 +8,4 @@ Virtual services may exist on a single Service Engine (SE) or may be scaled out 
 
 <img class="alignnone size-full wp-image-416" src="img/PacketCapture.png" alt="PacketCapture" width="852" height="278">
 
-To view traffic flowing through a single SE for a scaled out virtual service, add a filter to the pcap viewer with the desired SE's IP address on the server side of the connection. See <a href="/docs/latest/manual-traffic-capture/">Traffic Capture</a> for more on this topic.    
+To view traffic flowing through a single SE for a scaled out virtual service, add a filter to the pcap viewer with the desired SE's IP address on the server side of the connection. See <a href="manual-traffic-capture/">Traffic Capture</a> for more on this topic.    
