@@ -23,6 +23,8 @@ $blue-color: #22a4e6;
 
 $highlight-color: #f5f5f5;
 
+$left-nav-highlight-color: $grey-color-dark;
+
 $border-color: $grey-color;
 
 //
@@ -342,18 +344,20 @@ figcapture, figcaption, figcaption.caption {
     //  padding-bottom: $spacing-unit / 4;
     //}
     ul {
-      padding-left: $spacing-unit / 4;
+      margin-left: $spacing-unit / 4;
+      padding-left: 0;
       list-style: none;
     }
     a {
       display: block;
+      //border-left: 2px solid $grey-color-light;
       padding-top: $spacing-unit / 4;
       padding-bottom: $spacing-unit / 4;
       padding-left: $spacing-unit / 4;
     }
     .toggle:after {
       /* symbol for "opening" panels */
-      font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+      font-family: 'Glyphicons Halflings', sans-serif; /* essential for enabling glyphicon */
       content: "\e114"; /* adjust as needed, taken from bootstrap.css */
       float: right; /* adjust as needed */
       color: grey; /* adjust as needed */
@@ -366,7 +370,7 @@ figcapture, figcaption, figcaption.caption {
       border-left: 2px solid $grey-color-light;
     }
     .active {
-      background-color: $grey-color-dark;
+      background-color: $left-nav-highlight-color;
       a {
         color: white;
         font-family: brandon-medium, sans-serif;

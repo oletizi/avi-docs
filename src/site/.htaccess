@@ -1,3 +1,12 @@
+# Allow resolution to resources minus the extension
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+#RewriteRule (.*)\.html$ /$1 [R=301,L]
+</IfModule>
+
 # __MOVER_START__
 Redirect 301 /ab-pool-feature /docs/latest/ab-pool-feature
 Redirect 301 /ab-pool-feature /docs/latest/ab-pool-feature
