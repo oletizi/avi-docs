@@ -8,7 +8,7 @@ Policies are comprised of one or more rules, which are match/action pairs. A rul
 
 Policies are not shared; they are defined on a per virtual service basis. While powerful, policies are intended to be simple point and click functionality.
 
-For more advanced capabilities, see <a href="overview-of-datascript/">DataScripts</a>.
+For more advanced capabilities, see <a href="/docs/16.2.2/overview-of-datascript/">DataScripts</a>.
 
 Policies are configured within the policy tab of the virtual service edit screen.
 
@@ -16,7 +16,7 @@ Policies are configured within the policy tab of the virtual service edit screen
 
 Policies may be used to recreate similar functionality found elsewhere within Vantage. For instance, a policy may be configured to generate an HTTP redirect from HTTP to HTTPS. This same functionality may be configured within the Secure-HTTP application profile. Because a policy is more specific than a general purpose profile, the policy will take precedence.
 
-If the profile is set to redirect HTTP to HTTPS via port 443, and the policy is set to redirect HTTP to HTTPS on port 8443, the client will be sent to port 8443. (See <a href="datascript-execution-priority/">Execution Priority</a> for more on this topic.)
+If the profile is set to redirect HTTP to HTTPS via port 443, and the policy is set to redirect HTTP to HTTPS on port 8443, the client will be sent to port 8443. (See <a href="/docs/16.2.2/datascript-execution-priority/">Execution Priority</a> for more on this topic.)
 
 A virtual service may have multiple policies defined, one for each of the four types. Once defined, policies for the four types are implemented in the following order of priority.
 <ol> 
@@ -90,7 +90,7 @@ The following table lists both the available Network Security Match Criteria and
 <td><strong>Allow / Deny:</strong> Explicitly allow or deny any matched traffic. Denied traffic will be issued a reset (RST), unless the system is under a volumetric or denial of service attack, in which case the connection may be silently discarded.</td>
 </tr>
 <tr>  
-<td><strong>Rate Limit:</strong> Restrict clients from opening greater than the specified number of connections per second in the Maximum Rate. Clients that exceed this number will have their excessive connection attempts silently discarded. If Burst Size is enabled, clients may be able to burst above the Max Rate provided they have not recently been opening connections. This feature may be applied to TCP or UDP. All clients that match the Match criteria will be treated as one bucket. For instance, if no Match is defined, any and all IP addresses will increment the Max Rate counter. Throttling will occur for all new connecting clients. To enable per client throttling, see the <a href="architectural-overview/applications/virtual-services/create-virtual-service/#vscreateadvanced">Advanced tab</a> for the virtual service. The manual for this page also contains a more robust description of connecting throttling.</td>
+<td><strong>Rate Limit:</strong> Restrict clients from opening greater than the specified number of connections per second in the Maximum Rate. Clients that exceed this number will have their excessive connection attempts silently discarded. If Burst Size is enabled, clients may be able to burst above the Max Rate provided they have not recently been opening connections. This feature may be applied to TCP or UDP. All clients that match the Match criteria will be treated as one bucket. For instance, if no Match is defined, any and all IP addresses will increment the Max Rate counter. Throttling will occur for all new connecting clients. To enable per client throttling, see the <a href="/docs/16.2.2/architectural-overview/applications/virtual-services/create-virtual-service/#vscreateadvanced">Advanced tab</a> for the virtual service. The manual for this page also contains a more robust description of connecting throttling.</td>
 </tr>
 </tbody>
 </table> 

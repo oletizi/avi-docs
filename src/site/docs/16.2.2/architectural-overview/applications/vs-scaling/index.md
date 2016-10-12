@@ -10,7 +10,7 @@ This article covers the following virtual service optimization topics:
 
 Avi Vantage supports scaling virtual services, which distributes the virtual service workload across multiple SEs to provide increased capacity on demand, thus extending the throughput capacity of the virtual service and increasing the level of high availability.
 
-* Scaling out a virtual service distributes that virtual service to an additional SE. By default, Avi Vantage supports a maximum of four SEs per virtual service when native load balancing of SEs is in play. In <a href="bgp-support-for-virtual-services">BGP</a> environments the maximum can be increased to 32.
+* Scaling out a virtual service distributes that virtual service to an additional SE. By default, Avi Vantage supports a maximum of four SEs per virtual service when native load balancing of SEs is in play. In <a href="/docs/16.2.2/bgp-support-for-virtual-services">BGP</a> environments the maximum can be increased to 32.
 * Scaling in a virtual service reduces the number of SEs over which its load is distributed. A virtual service will always require a minimum of one SE. 
 
 ### Operational Notes
@@ -44,7 +44,7 @@ Avi Vantage will issue an Alert if the average CPU utilization of an SE exceeds 
 The process used to scale out will depend on the level of access, write access or read/no Access, that Avi Vantage has to the hypervisor orchestrator:
 
 * If Avi Vantage is in Write Access mode with write privileges to the virtualization orchestrator, then Avi Vantage is able to automatically create additional Service Engines when required to share the load. If the Controller runs into an issue when creating a new Service Engine, it will wait a few minutes and then try again on a different host. With native load balancing of SEs in play, the original Service Engine (primary SE) owns and ARPs for the virtual service IP address to process as much traffic as it can. Some percentage of traffic arriving to it will be forwarded via layer 2 to the additional (secondary) Service Engines. When traffic decreases, the virtual service automatically scales in back to the original, primary Service Engine.
-* If Avi Vantage is in Read Access or No Access mode, an administrator must manually create and configure new Service Engines in the virtualization orchestrator. The virtual service can only be scaled out once the Service Engine is both properly configured for the network and connected to the Avi Vantage Controller. &gt; <p style="text-align: center;"><strong>Note:</strong> Existing Service Engines with spare capacity and appropriate network settings may be used for the scale out; otherwise, scaling out may require either modifying existing Service Engines or creating new Service Engines.
+* If Avi Vantage is in Read Access or No Access mode, an administrator must manually create and configure new Service Engines in the virtualization orchestrator. The virtual service can only be scaled out once the Service Engine is both properly configured for the network and connected to the Avi Vantage Controller. &gt; <p style="text-align: center;">**Note:** Existing Service Engines with spare capacity and appropriate network settings may be used for the scale out; otherwise, scaling out may require either modifying existing Service Engines or creating new Service Engines.
  
 
 ### Manual Scaling of Virtual Services<a href="img/VS-scale-in-out-migrate.png"><img class="alignright wp-image-10874" src="img/VS-scale-in-out-migrate.png" alt="VS scale in out migrate" width="275" height="171"></a>
@@ -58,7 +58,7 @@ Virtual services inherit from their SE group the values for the minimum and maxi
 ### Scaling Out
 
 To manually scale a virtual service out when Avi Vantage is operating in Write Access mode:
-</p><ol> 
+<ol> 
  <li>Open the Virtual Service Details page for the virtual service that you want to scale.</li> 
  <li>Hover the cursor over the name of the virtual service to open the Virtual Service Quick Info popup.</li> 
  <li>Click the Scale Out button to scale the Virtual Service out to an additional Service Engine per click, up to a maximum of four Service Engines.</li> 
@@ -68,8 +68,9 @@ To manually scale a virtual service out when Avi Vantage is operating in Write A
 
 The prompt "Currently scaling out" displays the progress while the operation is taking place.
 
-&gt; <strong>Note:</strong> If avirtual service scales out across multiple Service Engines, then each Service Engine will independently perform server health monitoring to the pool's servers. 
-&gt; <strong>Note:</strong> Scaling out does not interrupt existing client connections.
+> **Note:** If avirtual service scales out across multiple Service Engines, then each Service Engine will independently perform server health monitoring to the pool's servers. 
+
+> **Note:** Scaling out does not interrupt existing client connections.
  
 
 Scaling out a virtual service may take anywhere from a few seconds to a few minutes. The scale out timing depends whether an additional Service Engine exists or if a new one needs to be created, as well as network and disk speeds if creating a new SE.
@@ -87,11 +88,11 @@ To manually scale in a virtual service in when Avi Vantage is operating in Write
 
 The prompt "Currently scaling in" displays the progress while the operation is taking place.
 
-&gt; <strong>Note:</strong> When Scaling In, existing connections are given thirty seconds to complete. Remaining connections to the SE are closed and must restart.
+> **Note:** When Scaling In, existing connections are given thirty seconds to complete. Remaining connections to the SE are closed and must restart.
  
 
 ### Migrating
 
 The Migrate option allows graceful migration from one Service Engine to another. During this process, the primary SE will scale out to the new SE and begin sending it new connections. After thirty seconds, the old SE will be deprovisioned from supporting the virtual service.
-&gt; <strong>Note:</strong> Existing connections to the migration's source SE will be given thirty seconds to complete prior to the SE being deprovisioned for the virtual service. Remaining connections to the SE are closed and must restart.
+> **Note:** Existing connections to the migration's source SE will be given thirty seconds to complete prior to the SE being deprovisioned for the virtual service. Remaining connections to the SE are closed and must restart.
   
