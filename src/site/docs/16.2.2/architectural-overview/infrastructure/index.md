@@ -224,7 +224,7 @@ Clicking the Alerts icon in the Overlay Items bar displays any red Alerts icons 
 * **Summary:** Brief description of the event.
 * **Actions:**  
     * **Dismiss** the Alert with the red X to remove it from both the list shown and the Alert icon the chart pane. Dismissing an Alert here is the same as dismissing it via the bell icon at the top of the screen next to the Health Score, or dismissing it via the Alerts tab.
-    * **Edit** the Alert filter to make Vantage more or less sensitive to generating new <a href="/docs/configuration-guide/operations/alerts/">alerts</a>.
+    * **Edit** the Alert filter to make Vantage more or less sensitive to generating new <a href="/docs/16.2.2/configuration-guide/operations/alerts/">alerts</a>.
 * **Expand/Contract:** Clicking the plus (+) or minus sign (-) for an Alert opens and closes a sub-table showing more detail about the Alert. This will typically show the original events that triggered the alert. 
 
 ### SE Analytics: Config Events Overlay
@@ -456,8 +456,8 @@ The availability of a virtual service after an SE failure is governed by setting
 
 To gain an understanding of the three HA modes defined by Vantage, refer to these articles:
 
-* <a href="legacy-ha-for-avi-service-engines">Legacy HA</a>
-* <a href="elastic-ha-for-avi-service-engines/">Elastic HA</a> 
+* <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">Legacy HA</a>
+* <a href="/docs/16.2.2/elastic-ha-for-avi-service-engines/">Elastic HA</a> 
 
 ### Service Engine Capacity and Limit Settings
 
