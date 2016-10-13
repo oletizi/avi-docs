@@ -3,6 +3,10 @@ title: CLI Guide
 layout: default
 ---
 
+Avi Vantage provides a robust load balancing and visibility platform for any environment. Vantage’s unique architecture separates the control/management plane from the data plane. The entire load balancing fabric of distributed Service Engines (SEs), or micro-load balancers, can be managed from a Controller or cluster Controller IP (in a redundant configuration).
+
+Vantage may be managed via GUI, API, or CLI. Both the GUI and CLI are built on top of a RESTful API, which means any command within the CLI has a corresponding API that it is executing.
+
 ### How to Access the CLI
 
 To access the command line interface, either SSH to the Vantage Controller or access the Controller via the console from an orchestrator such as vCenter. Some user accounts may default into Linux bash. For these accounts, enter the Vantage shell by typing: <code>shell</code>
