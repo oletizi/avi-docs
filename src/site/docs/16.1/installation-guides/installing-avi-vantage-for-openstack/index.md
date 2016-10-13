@@ -217,7 +217,7 @@ In an OpenStack deployment, the Avi Controller and Avi Service Engines use the f
 </tr>
 <tr>   
 <td>Mgmt Net</td>
-<td>TCP 22<br> TCP 80 <em>(optional)</em><br> TCP 443<br> TCP 5054 <em>(if using the optional <a href="cli-installing-the-cli-shell/">CLI shell</a> for remote<br> management access)</em></td>
+<td>TCP 22<br> TCP 80 <em>(optional)</em><br> TCP 443<br> TCP 5054 <em>(if using the optional <a href="/docs/16.1/installation-guides/cli-installing-the-cli-shell/">CLI shell</a> for remote<br> management access)</em></td>
 </tr>
 </tbody>
 </table>  
@@ -490,19 +490,19 @@ You can change or customize settings following initial deployment using the Avi 
    <li>DNS and NTP server information</li> 
   </ul> 
   <div> 
-   <p> <img src="img/Ctlr-install-wizard-adminacct-4.png" alt="" align="left"> <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"></p> 
+   <p> <img src="img/Ctlr-install-wizard-adminacct-4.png" alt="" align="left"> <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"></p> 
    <p style="clear: both"> </p> 
   </div> </li> 
- <li>Set the infrastructure type to OpenStack:<a href="img/ctlr-setup-infra-openstack-161.png"><img class="alignnone size-full wp-image-6067" src="/wp-content/uploads/2016/03/ctlr-setup-infra-openstack-161.png" alt="ctlr-setup-infra-openstack-161" width="264" height="419"></a></li> 
+ <li>Set the infrastructure type to OpenStack:<a href="img/ctlr-setup-infra-openstack-161.png"><img class="alignnone size-full wp-image-6067" src="img/ctlr-setup-infra-openstack-161.png" alt="ctlr-setup-infra-openstack-161" width="264" height="419"></a></li> 
  <li>Enter OpenStack settings: 
   <ul> 
    <li>Tenant user credentials (username, password)</li> 
    <li>IP address of Keystone server</li> 
    <li>Enable (check) the Keystone Auth option.</li> 
-  </ul> <p> <a href="img/openstack-deploy-openstacklogin-selectkeystone.png"><img src="/wp-content/uploads/2016/03/openstack-deploy-openstacklogin-selectkeystone.png" alt="openstack-deploy-openstacklogin-selectkeystone" width="264" height="246" class="alignnone size-full wp-image-8510"></a></p></li> 
+  </ul> <p> <a href="img/openstack-deploy-openstacklogin-selectkeystone.png"><img src="img/openstack-deploy-openstacklogin-selectkeystone.png" alt="openstack-deploy-openstacklogin-selectkeystone" width="264" height="246" class="alignnone size-full wp-image-8510"></a></p></li> 
  <li>In the Management Network window, select a tenant. In this deployment, it should be the same tenant into which the<br> Avi Controller is deployed. Choose the management network created previously. <a href="img/ctlr-setup-mgmtnetwork-lbass-mgdmode-161.png"><img class="alignnone wp-image-6604" src="img/ctlr-setup-mgmtnetwork-lbass-mgdmode-161.png" alt="ctlr-setup-mgmtnetwork-lbass-mgdmode-161" width="264" height="325"></a> </li> 
- <li>In the Virtual Service Placement Settings window, select Import Tenants to import from tenants Keystone and click<br> Next. Then, in the Support Multiple Tenants window, click <strong>Yes</strong>.<a href="img/ctlr-setup-vsplacement-openstack-161.png"><img class="alignnone size-full wp-image-6068" src="/wp-content/uploads/2016/03/ctlr-setup-vsplacement-openstack-161.png" alt="ctlr-setup-vsplacement-openstack-161" width="264" height="305"></a> </li> 
- <li>In the Keystone Role Mapping window, select a Vantage user role to use as the default user role:<a href="img/ctlr-setup-openstack-keystonemapping-161.png"><img class="alignnone size-full wp-image-6070" src="/wp-content/uploads/2016/03/ctlr-setup-openstack-keystonemapping-161.png" alt="ctlr-setup-openstack-keystonemapping-161" width="264" height="288"></a>If a Vantage user who logs in with valid Keystone<br> credentials, but with a role that does not have the same name as any of the user roles defined on the Controller,<br> the default role is assigned to the user.To instead disallow access by any user who does not have a role that is<br> defined on the Controller, leave the selection empty (None). </li> 
+ <li>In the Virtual Service Placement Settings window, select Import Tenants to import from tenants Keystone and click<br> Next. Then, in the Support Multiple Tenants window, click <strong>Yes</strong>.<a href="img/ctlr-setup-vsplacement-openstack-161.png"><img class="alignnone size-full wp-image-6068" src="img/ctlr-setup-vsplacement-openstack-161.png" alt="ctlr-setup-vsplacement-openstack-161" width="264" height="305"></a> </li> 
+ <li>In the Keystone Role Mapping window, select a Vantage user role to use as the default user role:<a href="img/ctlr-setup-openstack-keystonemapping-161.png"><img class="alignnone size-full wp-image-6070" src="img/ctlr-setup-openstack-keystonemapping-161.png" alt="ctlr-setup-openstack-keystonemapping-161" width="264" height="288"></a>If a Vantage user who logs in with valid Keystone<br> credentials, but with a role that does not have the same name as any of the user roles defined on the Controller,<br> the default role is assigned to the user.To instead disallow access by any user who does not have a role that is<br> defined on the Controller, leave the selection empty (None). </li> 
  <li>In the Tenant Settings window, select the following settings: 
   <ul> 
    <li>Per tenant IP route domain</li> 
@@ -598,9 +598,9 @@ AVI_CONTROLLER = {"RegionA": "regiona.avi-lbaas.example.net",
 
 </pre> </li> 
 </ol> <ol start="10"> 
- <li><em>(Optional)</em> Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong> on<br> the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre> </li> 
+ <li><em>(Optional)</em> Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/docs/16.1/clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong> on<br> the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre> </li> 
 </ol> <ol start="11"> 
- <li><em>(Optional)</em> Enable the full LBaaS panel to be the Vantage web interface by setting the following in your<br> local settings file. (<a href="clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong><br> on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab<br> to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To<br> get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo<br> version</a>. The _tab_group.html file is located in one of the following directories:<p></p> 
+ <li><em>(Optional)</em> Enable the full LBaaS panel to be the Vantage web interface by setting the following in your<br> local settings file. (<a href="/docs/16.1/clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong><br> on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab<br> to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To<br> get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo<br> version</a>. The _tab_group.html file is located in one of the following directories:<p></p> 
   <ul> 
    <li><strong>Red Hat:</strong> /usr/lib/python2.7/site-packages/horizon/templates/horizon/common/_tab_group.html </li> 
    <li><strong>Ubuntu:</strong> /usr/lib/python2.7/dist-packages/horizon/templates/horizon/common/_tab_group.html </li> 

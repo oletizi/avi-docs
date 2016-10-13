@@ -6,8 +6,8 @@ Avi Vantage relies on Templates and Profiles to group together collections of se
 
 Avi Vantage supports the following Templates and Profiles:
 
-* <a href="application-profile/">Application Profile</a> 
-* <a href="tcpudp-profile">TCP/UDP Profile</a> 
-* <a href="persistence-profile">Persistence Profile</a> 
-* <a href="health-monitor-profile">Health Monitor Profile</a> 
-* <a href="analytics-profile">Analytics Profile</a>   
+* <a href="/docs/16.2.2/application-profile/">Application Profile</a> 
+* <a href="/docs/16.2.2/tcpudp-profile">TCP/UDP Profile</a> 
+* <a href="/docs/16.2.2/persistence-profile">Persistence Profile</a> 
+* <a href="/docs/16.2.2/health-monitor-profile">Health Monitor Profile</a> 
+* <a href="/docs/16.2.2/analytics-profile">Analytics Profile</a>   
