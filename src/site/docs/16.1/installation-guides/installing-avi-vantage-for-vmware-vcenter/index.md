@@ -9,7 +9,7 @@ Avi Vantage is a software-based solution that provides real-time analytics as we
 **Notes:**
 
 * **Deployment in *write access mode* is recommended. It's the quickest and easiest way to deploy.**
-* **After completing the deployment process, go <a href="configuring-a-virtual-service-for-vmware-basic">here</a> to create virtual services.** 
+* **After completing the deployment process, go <a href="/docs/16.1/virtual-service-creation-vmware">here</a> to create virtual services.** 
 
 ## How Avi Vantage Integrates into vCenter
 
@@ -264,7 +264,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
   </ul> 
   <div> 
    <img src="img/Ctlr-install-wizard-adminacct.png" alt="" align="left" vspace="6"> 
-   <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"> 
+   <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"> 
    <p></p> 
    <p style="clear: both;"> </p> 
   </div> </li> 
@@ -272,7 +272,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
   <ul> 
    <li>No access mode: select No Orchestrator to finish the wizard. No more information is required. </li> 
    <li>Read access mode: select VMware and continue with this procedure. </li> 
-  </ul> <p><img class="alignnone wp-image-6062" src="/wp-content/uploads/2016/03/vmware-ctlr-setup-infra-161.png" alt="vmware-ctlr-setup-infra-161" width="264" height="415"></p></li> 
+  </ul> <p><img class="alignnone wp-image-6062" src="img/vmware-ctlr-setup-infra-161.png" alt="vmware-ctlr-setup-infra-161" width="264" height="415"></p></li> 
  <li>Enter vCenter settings (read access mode): 
   <ul> 
    <li>vCenter IP address</li> 
@@ -283,8 +283,8 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>IP allocation method for the networks where the pools and virtual services will be located</li> 
   </ul> </li> 
  <div> 
-  <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-vcenterlogin.png" alt="" align="left" vspace="6"> 
-  <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter.png" alt="" align="left" hspace="12" vspace="6"> 
+  <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-vcenterlogin.png" alt="" align="left" vspace="6"> 
+  <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter.png" alt="" align="left" hspace="12" vspace="6"> 
   <p></p> 
   <p style="clear: both;"> </p> 
  </div> 
@@ -383,15 +383,15 @@ Use the following steps to assign an IP address pool to port groups:
  <li>Find a port group and IP subnet on which a DHCP service <em>is not</em> available.</li> 
  <li>Select the port group by clicking the edit icon: <img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"></li> 
  <li>Check Static for Network IP Address Management.</li> 
- <li>Select the IP subnet by clicking the edit icon: <img class="alignnone size-full wp-image-3558" src="/wp-content/uploads/2016/01/edit-icon-2.png" alt="edit-icon" width="13" height="12"></li> 
+ <li>Select the IP subnet by clicking the edit icon: <img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"></li> 
  <li>Enter a static IP address or a range.</li> 
 </ol> 
 
 <a href="img/vmware-deploy5.png"><img class="alignnone size-medium wp-image-3737" src="img/vmware-deploy5.png" alt="vmware-deploy5" width="528" height="287"></a>
 
-**If deploying in no access mode, <a href="#SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Vantage is ready for <a href="configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
+**If deploying in no access mode, <a href="#SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Vantage is ready for <a href="/docs/16.1/virtual-service-creation-vmware">creation of virtual services</a>.
 
-### <a href="virtual-service-creation-vmware/">Creating a Virtual Service</a>
+### <a href="/docs/16.1/virtual-service-creation-vmware/">Creating a Virtual Service</a>
 
-### <a href="troubleshooting-vmware-deployment/">Troubleshooting</a>
+### <a href="/docs/16.1/troubleshooting-vmware-deployment/">Troubleshooting</a>
 
