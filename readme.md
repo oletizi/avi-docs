@@ -72,7 +72,7 @@ Jekyll ships with a continuous rendering server suitable for local development. 
 
 * Run `bundle install` from the `src/site` directory in the project directory:
 
-    cd avi-docs/src/site
+    cd avi-docs/src/site;
     bundle install
 
   I you have trouble installing the jekyll gem, see this troubleshooting advice:
