@@ -25,6 +25,10 @@ exclude: [vendor]
 gems:
   - algoliasearch-jekyll
 
+meta:
+  base_url: http://docs.aviplayground.com/
+  repo_url: https://github.com/oletizi/avi-docs/
+
 # Search Settings
 search:
   applicationID: 272ZBU7KSH

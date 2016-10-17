@@ -126,7 +126,7 @@ Ranga reported the following steps were necessary to get ruby, gem, and jekyll i
 
 ### Prepare Toolkit for Windows
 
-<a href="src/site/docs/latest/meta/getting-started/windows.md">Instructions for Windows are here &rsaquo;</a>
+<a href="http://docs.aviplayground.com/docs/latest/meta/getting-started/windows">Instructions for Windows are here &rsaquo;</a>
 
 ### Post Toolkit Installation
 
