@@ -106,10 +106,10 @@ Jekyll ships with a continuous rendering server suitable for local development. 
     sudo gem install bundler
     
 * Run `bundle install` from the `src/site` directory in the project directory:
-
+<pre>
     cd avi-docs/src/site
     bundle install
-    
+</pre>    
 
     
 #### Special Instructions for Ubuntu 14.x
