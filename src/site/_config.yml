@@ -27,7 +27,8 @@ gems:
 
 meta:
   base_url: http://docs.aviplayground.com/
-  repo_url: https://github.com/oletizi/avi-docs/
+  repo_site: https://github.com/oletizi/avi-docs/
+  repo_url: git@github.com:oletizi/avi-docs.git
 
 # Search Settings
 search:

@@ -1,57 +1,32 @@
 ---
-title: Meta -- Getting Started on Windows
+title: Meta -- Getting Started on MacOS
 layout: default
 ---
 
-## Enable the Windows Subsystem for Linux
+## Install Homebrew
 
-The Windows Subsystem for Linux is a new way from Microsoft and Canonical to run a Linux envirnment inside Windows. If you like *NIX, but need to use Windows, this is a great new environment. We'll be using it to install and run the docs site locally.
+Homebrew is a package manager for MacOS. It's awesome.
 
-The official instructions for turning this feature on is [available from Microsoft here:](https://msdn.microsoft.com/commandline/wsl/install_guide)
+Go to [the Homebrew website and follow the one-line instructions:](http://brew.sh/)
 
-> <https://msdn.microsoft.com/commandline/wsl/install_guide>
+> <http://brew.sh>
 
-but, here are the basic steps:
+## Check Ruby Version
 
-**Step 1:** Turn on Developer Mode
-* Open Settings -> Update and Security -> For developers
-* Select the Developer Mode radio button
+Check your version of ruby to make sure it's up-to-date:
 
-**Step 2:** Enable Windows Subsystem for Linux
-* Open Control Panel
-* Search for “features”
-* Open “Turn windows features on or off”
-* Turn on “Windows Subsystem for Linux”
-* Reboot
+<pre class="command-line language-bash" data-output="2"><code>ruby -v
+ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]</code></pre>
 
-**Step 3:** Open a PowerShell as administrator (search for "PowerShell", right click on it and choose to run it as administrator) and run the following command:
-  > `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
-  
-**Step 4:** Open a command shell (search for "cmd") and run `bash`
+If the ruby version is less than 2.0, use Homebrew to update ruby:
 
-**Step 5:** Accept the license. Windows will now download and install the Linux environment. This might be a good time to grab a cup of coffee.
+<pre class="command-line language-bash"><code>brew install ruby</code></pre>
 
-**Step 6:** Create a username and password for yourself. Probably using your regular Avi credentials will be the best option.
+## Install the Bundler Gem
 
-## Install Required Unix Tools
+Bundler is a dependency manager for ruby. Install it thusly:
 
-The default Linux environment on Windows doesn't have very much installed on it, so we need to install a few packages:
-
-<pre><code class="command-line language-bash">sudo apt-get update
-sudo apt-get install make gcc git zlib1g-dev</code></pre>
-
-## Install Ruby
-
-The default Ruby is too old, so we'll install a packaged version from BrightBox.
-
-<pre><code class="command-line language-bash">sudo apt-add-repository ppa:brightbox/ruby-ng
-sudo apt-get update
-sudo apt-get install ruby2.3 ruby2.3-dev ruby-switch
-</code></pre>
-
-Finally, install the "Bundler" Ruby gem:
-
-<pre><code class="command-line language-bash">sudo gem install bundler</code></pre>
+<pre class="command-line language-bash" data-output="2"><code>sudo gem install bundler</code></pre>
 
 ## Setup Your Github Account
 
@@ -66,14 +41,6 @@ If you aren't already a collaborator on the avi-docs github repository, send me 
 You'll need an SSH key registered with GitHub to use it properly. GitHub has detailed instructions here:
 
 > <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>
-
-Since you're running in a Linux environment (on Windows), follow the "Linux" instructions.
-
-> **Important:** x-clip will not work on Windows. Instead, run the following command:
-
-<pre><code class="command-line language-bash">cat ~/.ssh/id_rsa.pub</code></pre>
-
-Copy the output to your clipboard, then follow the rest of the instructions from GitHub.
 
 ## Clone the Avi-Docs Repository
 

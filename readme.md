@@ -130,10 +130,7 @@ Ranga reported the following steps were necessary to get ruby, gem, and jekyll i
 
 ### Post Toolkit Installation
 
-* Add your public ssh key to your github account:
-
-    https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-
+* Add your public ssh key to your github account: <https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>
 * Clone this repository (see above)
 * Run the renderer/server (see above)
 * Open the local site in your browser (see above)
