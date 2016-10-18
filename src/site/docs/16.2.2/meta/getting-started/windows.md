@@ -1,5 +1,5 @@
 ---
-title: Meta -- Getting Started on Windows
+title: Meta -- Docs Getting Started on Windows
 layout: default
 ---
 

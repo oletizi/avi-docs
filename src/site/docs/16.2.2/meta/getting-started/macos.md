@@ -1,5 +1,5 @@
 ---
-title: Meta -- Getting Started on MacOS
+title: Meta -- Docs Getting Started on MacOS
 layout: default
 ---
 
@@ -56,7 +56,7 @@ bundle install --path vendor/bundle</code></pre>
 
 ## Run the Local Web Server
 
-The docs system (Jekyll) includes a web server that runs locally on your machine at port 4000, watches changes you make to the files in the documentation, and re-renders the documention as needed.
+The docs system <a href="https://jekyllrb.com" target="_blank">Jekyll</a> includes a web server that runs locally on your machine at port 4000, watches changes you make to the files in the documentation, and re-renders the documention as needed.
 
 Start the web server:
 
@@ -91,4 +91,4 @@ Congratulations, you're all set up.
 
 ## Next Steps
 
-<a href="/docs/16.2.2./meta/article-crud-basics/">Create or update an article &rsaquo;</a>
+[Create or update an article &rsaquo;](/docs/16.2.2/meta/article-crud-basics/)
