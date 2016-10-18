@@ -148,6 +148,12 @@ figure {
   }
 }
 
+figure.highlight {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 figcapture, figcaption, figcaption.caption {
   padding: $spacing-unit / 4;
   background-color: $blue-color; //$highlight-color;

@@ -18,18 +18,28 @@ layout: default
 </pre>
 Feel free to copy it from this document and paste it into your new document, then change the title. Leave the `layout` directive set to `default`
 
-**Step 4:** Add your article text and save your document. See <a href="/docs/16.2.2/meta/article-authoring-basics">Authoring Basics</a> for basic 
-authoring conventions and best-practices
+**Step 4:** Add your article text and save your document. See <a href="/docs/16.2.2/meta/article-authoring-basics">Authoring Basics</a> for basic authoring conventions and best-practices
  
 
 ## Add Your Article to the Navigation
 
-* TODO: Describe the nav and why you need to find a good place to put your article in it.
+If your article is new, you need to find a place to put it in the left navigation. Consult one of the documentation editors for help deciding where to put it.
 
+The left navigation structure is kept here in the docs repo:
+ 
+> avi-docs/src/site/_includes/left-nav.html
+
+Open that file in your editor and add a link to it in the relevant location.
+
+> **Note:** Links to documentation articles from the left nav should not specify a version. Use the "latest" path instead, e.g.:
+
+{% highlight HTML %}... 
+  <li><a href="/docs/latest/path/to/your/document/directory">My New Document</a></li>
+...{% endhighlight %}
 
 ## Double-Check Your Article in Your Browser
 
-* TODO: Add steps
+* If you are
 
 
 ## Commit Your Changes

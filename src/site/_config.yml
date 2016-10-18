@@ -29,6 +29,9 @@ meta:
   base_url: http://docs.aviplayground.com/
   repo_site: https://github.com/oletizi/avi-docs/
   repo_url: git@github.com:oletizi/avi-docs.git
+  admin_name: "Orion Letizi"
+  admin_email: "orion AT avinetworks.com"
+  version: 16.2.2
 
 # Search Settings
 search:
