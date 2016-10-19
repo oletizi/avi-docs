@@ -1,5 +1,5 @@
 ---
-title: Meta -- Avi Documentation Documentation
+title: Meta &mdash; Avi Documentation Documentation
 layout: default
 ---
 
