@@ -59,7 +59,7 @@ If you don't already have a GitHub account, [go get one (you probably should hav
 
 > <http://github.com/>
 
-If you aren't already a collaborator on the avi-docs github repository, send me and email (orion AT avinetworks.com) with your GitHub username and I'll add you as a collaborator.
+If you aren't already a collaborator on the avi-docs github repository, send an email to the docs admin (&lt;{{ site.meta.admin_name }}&gt; {{ site.meta.admin_email }}) with your GitHub username and request to be added as a collaborator.
 
 ## Create an SSH Key and Upload it to GitHub
 
@@ -86,6 +86,8 @@ The first time you use the local repository, you need to install some Ruby stuff
 
 <pre><code class="command-line language-bash">cd avi-docs/src/site
 bundle install --path vendor/bundle</code></pre>
+
+This may take a little while. Maybe a good time to get coffee. But, you only have to do this once.
 
 ## Run the Local Web Server
 
