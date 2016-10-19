@@ -47,4 +47,6 @@ If you need to make a quick edit to a documentation page, you may edit directly 
 
 * If you made edits in the "master" branch, wait for 30 seconds or so and visit the page on the live documentation site to see your changes live.
 
-HERE! I made a change!
+## Quick Edit Video Tutorial
+
+{% include youtubePlayer.html id="nGFBw4s5Lvc" %}
