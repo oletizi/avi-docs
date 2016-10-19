@@ -9,7 +9,7 @@ This a test of the markdown system.
 
 <figure>
 <img src="img/screenshot.png">
-<figcaption>This is my caption</figcaption>
+<figcaption>This is the new caption</figcaption>
 </figure>
 
 
