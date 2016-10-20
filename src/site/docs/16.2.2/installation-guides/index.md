@@ -37,4 +37,4 @@ See the following guides to install Avi Vantage version 16.1.*x*:
 
 ### SDN Integration
 
-* Cisco APIC: <a href="/docs/16.2.2/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller/">Installing Avi Vantage for Cisco Application Policy Infrastructure</a>   
+* Cisco APIC: <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-cisco-application-policy-infrastructure-controller/">Installing Avi Vantage for Cisco Application Policy Infrastructure</a>   

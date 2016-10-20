@@ -29,14 +29,14 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 This section summarizes the enhancements in 16.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
 * Linux server (bare metal) support enhancements  
-    * <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
     * <a href="/docs/16.2.2/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
     * <a href="/docs/16.2.2/upgrading-the-vantage-software/">Upgrade support</a>
 * Networking features  
     * <a href="/docs/16.2.2/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
     * <a href="/docs/16.2.2/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
 * Core ADC features  
-    * <a href="http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
+    * <a href="/docs/16.2.2/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
     * <a href="/docs/16.2.2/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
     * Dictionary/map support for HTTP policies:Policies can perform lookups against a list of items stored in a string group, and the lookup result can be used for the URL-rewrite action
     * Regular expression support for HTTP policies with RegEx match operations against a string list in a string group
