@@ -33,7 +33,7 @@ Avi also publishes responses to Common Vulnerabilities and Exposures (CVEs) of n
 See also:
 
 * <a href="/docs/16.2.2/support-terms-and-conditions">Support Terms &amp; Conditions</a>
-* <a href="/docs/16.2.2//search-results/?q=cve">CVEs</a>
+* <a href="/docs/16.2.2/search?search=cve">CVEs</a>
 * <a href="/docs/16.2.2/upgrading-the-vantage-software">Upgrade Vantage Software</a> 
 
 ### Hardening Vantage
