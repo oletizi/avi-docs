@@ -4,9 +4,9 @@ layout: default
 ---
 Events are used throughout Avi Vantage to provide a history of relevant changes that have occurred. Events are a permanent record, and can be used to generate alerts which can take action on the event. In the UI, events may be viewed within the context of specific objects, such as a virtual service, a pool, or a server. In contrast, viewing events from the Operations menu provides an unfiltered view of all events across the system or the tenant. For Vantage system debugging, this should be the first place to go for information.
 
-For the full list of events monitored by Vantage, see the <a href="events-list">Event List</a>.
+For the full list of events monitored by Vantage, see the <a href="/docs/16.2.2/events-list">Event List</a>.
 
-In addition to logging significant incidents within Vantage, events may be used to trigger alerts to provide external notification and potentially scaling application capacity or otherwise altering the Vantage configuration. For a deeper definition, see the <a href="alerts-overview">Alerts Overview</a> page.
+In addition to logging significant incidents within Vantage, events may be used to trigger alerts to provide external notification and potentially scaling application capacity or otherwise altering the Vantage configuration. For a deeper definition, see the <a href="/docs/16.2.2/alerts-overview">Alerts Overview</a> page.
 
 ### All Events
 

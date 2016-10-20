@@ -6,9 +6,9 @@ The HTTP cookie mode of persistence enables sticking a client to a server for th
 
 To use HTTP cookie persistence, no configuration changes are required on the back-end servers. HTTP persistence cookies created by Vantage have no impact on existing server cookies or behavior.
 
-Note: Vantage also has an <a href="app-cookie-persistence">"app cookie" persistence mode</a>, which relies on cookies as well. The app cookie method performs persistence based on information in existing server cookies, rather than inserting a Vantage-created cookie.
+Note: Vantage also has an <a href="/docs/16.2.2/app-cookie-persistence">"app cookie" persistence mode</a>, which relies on cookies as well. The app cookie method performs persistence based on information in existing server cookies, rather than inserting a Vantage-created cookie.
 
-See <a href="overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
+See <a href="/docs/16.2.2/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 
 ### Cookie Format
 

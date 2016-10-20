@@ -2,7 +2,7 @@
 title: Public Key Management on SE Hosts (pre-16&#46;2&#46;2)
 layout: default
 ---
-When <a href="/installing-avi-vantage-for-a-linux-server-cloud/">installing Vantage for a Linux server cloud</a>, part of the deployment process for a new Avi Service Engine is to add an SSH user to the Avi Controller, then add the same user and its public key to the SE host. The SSH user and key are used by the Controller to log onto the SE host, transfer the Docker container for the Avi SE onto the host, and start the SE within the Docker container.
+When <a href="/docs/16.2.2//installing-avi-vantage-for-a-linux-server-cloud/">installing Vantage for a Linux server cloud</a>, part of the deployment process for a new Avi Service Engine is to add an SSH user to the Avi Controller, then add the same user and its public key to the SE host. The SSH user and key are used by the Controller to log onto the SE host, transfer the Docker container for the Avi SE onto the host, and start the SE within the Docker container.
 
 For releases prior to 16.2.2, this article describes how to set up SSH on the Avi Controller and on each Avi SE host so that the Avi Controller can log onto the Avi SEs in a Linux server cloud. Part of this process takes place on the Avi Controller. The other part takes place on each of the Avi SE hosts.
 

@@ -27,7 +27,7 @@ The below table shows the correspondence between the previous and 16.2 HA modes.
 
 ### Details
 
-Pre-16.2 modes can be mimicked by choosing one of three modes and setting as many as seven options. [Note: Prior to 16.2, there was no equivalent to <a href="legacy-ha-for-avi-service-engines">legacy active/standby HA</a>.] Refer to table 2 for suggested settings of the fields labeled A-F in figure 3.
+Pre-16.2 modes can be mimicked by choosing one of three modes and setting as many as seven options. [Note: Prior to 16.2, there was no equivalent to <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines">legacy active/standby HA</a>.] Refer to table 2 for suggested settings of the fields labeled A-F in figure 3.
 
  
 

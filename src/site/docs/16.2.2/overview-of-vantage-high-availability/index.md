@@ -14,14 +14,14 @@ HA for Avi SEs and HA for Avi Controllers are separate features and are configur
 
 Best practice, especially for production deployments, is to deploy a set of 3 Avi Controllers as an HA cluster. In a cluster deployment, one of the Avi Controllers is the leader, and performs load balancing and configuration management for the cluster. The other 2 Avi Controllers are followers; they collaborate with the leader to perform data collection from SEs and process analytics data. More information about Avi Controller HA can be found in the following articles:
 
-* <a href="ha-for-avi-controllers">HA for Avi Controllers</a>
-* <a href="configure-controller-ha-cluster">Deploying an Avi Controller Cluster</a>
-* <a href="controller-cluster-ip">Controller Cluster IP</a>
-* <a href="changing-avi-controller-cluster-configuration">Changing Avi Controller Cluster Configuration</a>
-* <a href="cluster-operational-changes">Cluster Changes Following Avi Controller Reboot</a>
-* <a href="impact-of-a-controller-failure">Impact of a Controller Failure</a>
-* <a href="clustering-controllers-from-different-networks">Clustering Avi Controllers That Are in Different Networks</a>
-* <a href="backup-the-configuration">Configuration Backup and Restore</a> 
+* <a href="/docs/16.2.2/ha-for-avi-controllers">HA for Avi Controllers</a>
+* <a href="/docs/16.2.2/configure-controller-ha-cluster">Deploying an Avi Controller Cluster</a>
+* <a href="/docs/16.2.2/controller-cluster-ip">Controller Cluster IP</a>
+* <a href="/docs/16.2.2/changing-avi-controller-cluster-configuration">Changing Avi Controller Cluster Configuration</a>
+* <a href="/docs/16.2.2/cluster-operational-changes">Cluster Changes Following Avi Controller Reboot</a>
+* <a href="/docs/16.2.2/impact-of-a-controller-failure">Impact of a Controller Failure</a>
+* <a href="/docs/16.2.2/clustering-controllers-from-different-networks">Clustering Avi Controllers That Are in Different Networks</a>
+* <a href="/docs/16.2.2/backup-the-configuration">Configuration Backup and Restore</a> 
 
 <a name="data-plane-HA"></a>
 
@@ -29,12 +29,12 @@ Best practice, especially for production deployments, is to deploy a set of 3 Av
 
 Avi SE groups support the following HA modes:
 
-* **<a href="elastic-ha-for-avi-service-engines-16-2">Elastic HA:</a>** Provides fast recovery for individual virtual services following failure of an Avi SE. Depending on the mode, the virtual service is already running on multiple SEs or is quickly placed on another SE. The following modes of cluster HA are supported:  
+* **<a href="/docs/16.2.2/elastic-ha-for-avi-service-engines-16-2">Elastic HA:</a>** Provides fast recovery for individual virtual services following failure of an Avi SE. Depending on the mode, the virtual service is already running on multiple SEs or is quickly placed on another SE. The following modes of cluster HA are supported:  
     * **Active/Active**
     * **N + M**
-* **<a href="legacy-ha-for-avi-service-engines/">Legacy HA:</a>** Emulates the operation of 2-device hardware active/standby HA configuration. The active SE carries all the traffic for a virtual service placed on it. The other SE in the pair is the standby for the VS, carrying no traffic for it while the active SE is healthy. 
+* **<a href="/docs/16.2.2/legacy-ha-for-avi-service-engines/">Legacy HA:</a>** Emulates the operation of 2-device hardware active/standby HA configuration. The active SE carries all the traffic for a virtual service placed on it. The other SE in the pair is the standby for the VS, carrying no traffic for it while the active SE is healthy. 
 
 More information about Avi SE HA can be found in the following articles:
 
-* <a href="anti-affinity-for-service-engine-placement">Anti-affinity for Service Engine Placement</a>
-* <a href="gateway-monitoring-for-legacy-ha">Gateway Monitoring for Legacy HA</a> 
+* <a href="/docs/16.2.2/anti-affinity-for-service-engine-placement">Anti-affinity for Service Engine Placement</a>
+* <a href="/docs/16.2.2/gateway-monitoring-for-legacy-ha">Gateway Monitoring for Legacy HA</a> 

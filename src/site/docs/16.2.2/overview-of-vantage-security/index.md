@@ -32,21 +32,21 @@ Avi Networks strongly recommends key administrators subscribe to Avi's mailing l
 Avi also publishes responses to Common Vulnerabilities and Exposures (CVEs) of note, which include known vulnerabilities of Avi Vantage or software used by Vantage, such as SSL or Linux. Avi may also publish CVE responses to issues that do not impact Vantage in order to explicitly inform our customers that they are protected. These CVEs are published to the Avi knowledge base site, but not sent proactively via email alerts.
 See also:
 
-* <a href="support-terms-and-conditions">Support Terms &amp; Conditions</a>
-* <a href="/search-results/?q=cve">CVEs</a>
-* <a href="upgrading-the-vantage-software">Upgrade Vantage Software</a> 
+* <a href="/docs/16.2.2/support-terms-and-conditions">Support Terms &amp; Conditions</a>
+* <a href="/docs/16.2.2//search-results/?q=cve">CVEs</a>
+* <a href="/docs/16.2.2/upgrading-the-vantage-software">Upgrade Vantage Software</a> 
 
 ### Hardening Vantage
 
 With a basic deployment of Avi Vantage, the system is secured and reasonably locked down. However, many administrators may wish to customize the security posture or further tighten policies regarding who can access Vantage. Avi strongly recommends thoroughly reviewing the choices for securing Vantage which are essential for guaranteeing the security of Vantage in production environments where the potential exposure to malicious attack is more severe.
 
-* <a href="protocol-ports-used-by-avi-vantage-for-management-communication/">Open Ports Used by Vantage</a>
-* <a href="controller-to-service-engine-communication">Controller-to-SE Communication</a>
-* <a href="strong-password-enforcement">Strong Password Enforcement</a>
-* <a href="clickjacking-protection">Clickjacking Protection</a>
-* <a href="configuration-guide/administration/user-accounts/">Custom Roles and Users</a>
-* <a href="ldap-auth-profile-test">AAA via LDAP</a>
-* <a href="securing-management-ip-access">Securing Management IP Access</a> 
+* <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication/">Open Ports Used by Vantage</a>
+* <a href="/docs/16.2.2/controller-to-service-engine-communication">Controller-to-SE Communication</a>
+* <a href="/docs/16.2.2/strong-password-enforcement">Strong Password Enforcement</a>
+* <a href="/docs/16.2.2/clickjacking-protection">Clickjacking Protection</a>
+* <a href="/docs/16.2.2/configuration-guide/administration/user-accounts/">Custom Roles and Users</a>
+* <a href="/docs/16.2.2/ldap-auth-profile-test">AAA via LDAP</a>
+* <a href="/docs/16.2.2/securing-management-ip-access">Securing Management IP Access</a> 
 
  
 

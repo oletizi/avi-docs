@@ -4,7 +4,7 @@ layout: default
 ---
 This article describes the new features, changes, and fixes in Avi Vantage release 16.1.2.
 
-Note: For information about fixes and enhancements in 16.1.1 or 16.1, <a href="avi-vantage-16-1-1-release-notes">click here</a>.
+Note: For information about fixes and enhancements in 16.1.1 or 16.1, <a href="/docs/16.2.2/avi-vantage-16-1-1-release-notes">click here</a>.
 
 ## What’s New in 16.1.2
 

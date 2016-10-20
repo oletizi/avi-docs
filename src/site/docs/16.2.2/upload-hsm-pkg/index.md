@@ -2,7 +2,7 @@
 title: Hardware Security Module Package Upload
 layout: default
 ---
-Avi Vantage includes integration support for networked hardware security module (HSM) products, including <a href="/avi-vantage-integration-with-safenet-network-hsm">SafeNet Network HSM</a> and <a href="thales-nshield-integration-2">Thales nShield</a>.
+Avi Vantage includes integration support for networked hardware security module (HSM) products, including <a href="/docs/16.2.2//avi-vantage-integration-with-safenet-network-hsm">SafeNet Network HSM</a> and <a href="/docs/16.2.2/thales-nshield-integration-2">Thales nShield</a>.
 
 To integrate with HSM, upload of the Vantage user's HSM package is required.
 

@@ -15,7 +15,7 @@ The easiest and most scalable method to provide network layer access control li
  <li>From the <em>VS edit &gt; Rules &gt; Network Security Policy</em> tab, add a new Network Security rule.  Set the match to IP address and select the new IP Group from the pull down list.</li> 
 </ol> 
 
-See the following <a href="block-an-ip-address-to-a-virtual-service/">article </a>for creating an IP access control list via DataScript.
+See the following <a href="/docs/16.2.2/block-an-ip-address-to-a-virtual-service/">article </a>for creating an IP access control list via DataScript.
 
  
 

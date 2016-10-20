@@ -2,7 +2,7 @@
 title: Metrics Retention Period
 layout: default
 ---
-At regular intervals, Avi Service Engines collect values for a <a href="metrics-list">wide range of metrics</a> and sends them to the Avi Controller. The Controller then aggregates these metric values into several buckets.
+At regular intervals, Avi Service Engines collect values for a <a href="/docs/16.2.2/metrics-list">wide range of metrics</a> and sends them to the Avi Controller. The Controller then aggregates these metric values into several buckets.
 
 The frequency of metrics collection is determine by the setting with a virtual service's analytics setting. This may be as infrequent as every five minutes, or as frequent as every 5 seconds. If a DDoS event is detected by an SE, the SE immediately sends information about the attack to the Controller, instead of locally storing the data until the next polling interval.
 

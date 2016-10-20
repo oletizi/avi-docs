@@ -2,11 +2,11 @@
 title: User Roles
 layout: default
 ---
-Each Avi Vantage <a href="user-accounts">user account</a> is associated with a role. The role defines the type of access the user has to each area of the Vantage system. 
+Each Avi Vantage <a href="/docs/16.2.2/user-accounts">user account</a> is associated with a role. The role defines the type of access the user has to each area of the Vantage system. 
 
 Roles provide granular Role-Based Access Control (RBAC) within Avi Vantage. 
 
-The role, in combination with the <a href="tenants">tenant </a>(optional), comprise the authorization settings for a Vantage user.
+The role, in combination with the <a href="/docs/16.2.2/tenants">tenant </a>(optional), comprise the authorization settings for a Vantage user.
 
 ## Access Types
 

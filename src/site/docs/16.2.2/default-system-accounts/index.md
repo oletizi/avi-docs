@@ -15,7 +15,7 @@ Vantage inherently comes with several user accounts created.  These accounts ser
 * User is in sudoers list
 * Default password is “admin” and UI system-setup workflow requires a new password  
     * Password is synchronized to the SEs
-* Account has <a href="super-user-accounts">super-user</a> status, with full access to all tenants
+* Account has <a href="/docs/16.2.2/super-user-accounts">super-user</a> status, with full access to all tenants
 * This account is always authenticated via local user-db.  It does not use any configured remote authentication 
 
 ### cli

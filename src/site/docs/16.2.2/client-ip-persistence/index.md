@@ -4,11 +4,11 @@ layout: default
 ---
 The *client IP address* mode of persistence may be applied to any virtual service, regardless if it is TCP or UDP. With this persistence method, Vantage Service Engines will stick the client to the same server for the configurable duration of time and store the mapping in a local database.
 
-See also <a href="overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
+See also <a href="/docs/16.2.2/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 
 ### Persist Table
 
-Since client IP persistence is stored locally on each Service Engine, larger tables will consume more memory.  For very large persist tables, consider adding additional memory to the SEs via the SE Group properties for SE memory and via the SE Group &gt; Connection table setting. See also <a href="se-memory-consumption">SE Memory Consumption</a>
+Since client IP persistence is stored locally on each Service Engine, larger tables will consume more memory.  For very large persist tables, consider adding additional memory to the SEs via the SE Group properties for SE memory and via the SE Group &gt; Connection table setting. See also <a href="/docs/16.2.2/se-memory-consumption">SE Memory Consumption</a>
 
 The client IP persistence table is automatically mirrored to all Service Engines supporting the virtual service which is using a pool configured with this persistence type.
 

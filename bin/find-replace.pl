@@ -3,6 +3,7 @@ use strict;
 use warnings FATAL => 'all';
 use Curses::UI;
 use FindBin qw($Bin);
+use File::Temp qw/ tempfile /;
 
 my $docroot = "$Bin/../src/site";
 chdir $docroot;
@@ -36,10 +37,34 @@ foreach my $file (sort keys %matchfiles) {
         $preview =~ s/$searchpattern/$replacement_display/igm;
         println("Preview:\n$preview")
     }
+    print ("Replace (Y|n)?: ");
+    my $answer = <STDIN>;
+    if ($answer =~ /^n/) {
+        println("Skipping...");
+    } else {
+        println("Replacing...");
+        replaceInFile($file, $searchpattern, $replacement);
+        println("Done.");
+    }
     println("=================================");
 }
 
 flush();
+
+sub replaceInFile {
+    my ($file, $pattern, $replace) = @_;
+    open my $fh, $file or die "Can't open file for reading: $!";
+    my ($tmpout, $tmpname) = tempfile();
+    while (<$fh>) {
+        $_ =~ s/$pattern/$replace/gi;
+        print $tmpout $_;
+    }
+    close $fh;
+    println("Replaced: $tmpname");
+    my $cmd = "cp $tmpname $file";
+    println("Swap: $cmd");
+    execute($cmd);
+}
 
 sub searchInFile {
     my ($pathname, $pattern) = @_;
@@ -75,4 +100,18 @@ sub println {
 
 sub flush {
     #print $output;
+}
+
+sub execute {
+    system(shift);
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    }
+    elsif ($? & 127) {
+        printf "child died with signal %d, %s coredump\n",
+            ($? & 127),  ($? & 128) ? 'with' : 'without';
+    }
+    else {
+        printf "child exited with value %d\n", $? >> 8;
+    }
 }

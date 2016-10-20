@@ -4,7 +4,7 @@ layout: default
 ---
 Avi Vantage may use OpenStack's Keystone service for user authentication to the Avi Controller.  Keystone v2 has been supported from v15.1 onward.  Keystone v3 is supported in v16.3 onward.
 
-When Keystone is used for authentication, Avi Vantage may only be used with one instance of Keystone. No other remote authentication mechanism may be used. Therefore a single Vantage system may only be configured with one OpenStack cloud.  When using Keystone, Vantage sets an OpenStack flag use_keystone_auth to true.  The Vantage internal <a href="default-system-accounts">system accounts</a>, such as *admin*, will maintain an internal local flag, denoting they are locally authenticated as illustrated below.
+When Keystone is used for authentication, Avi Vantage may only be used with one instance of Keystone. No other remote authentication mechanism may be used. Therefore a single Vantage system may only be configured with one OpenStack cloud.  When using Keystone, Vantage sets an OpenStack flag use_keystone_auth to true.  The Vantage internal <a href="/docs/16.2.2/default-system-accounts">system accounts</a>, such as *admin*, will maintain an internal local flag, denoting they are locally authenticated as illustrated below.
 
  
 

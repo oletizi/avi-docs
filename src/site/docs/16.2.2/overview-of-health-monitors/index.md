@@ -13,10 +13,10 @@ Avi Vantage must validate whether servers are working correctly and are able to 
 
 See also:
 
-* <a href="why-is-a-server-marked-down">Reasons a Server Marked Down</a>
-* <a href="health-monitor-troubleshooting">Health Monitor Troubleshooting</a>
-* <a href="servers-flapping-up-down">Servers Flap Up / Down</a>
-* <a href="manually-validate-server-health">Manually Validate Server Health</a> 
+* <a href="/docs/16.2.2/why-is-a-server-marked-down">Reasons a Server Marked Down</a>
+* <a href="/docs/16.2.2/health-monitor-troubleshooting">Health Monitor Troubleshooting</a>
+* <a href="/docs/16.2.2/servers-flapping-up-down">Servers Flap Up / Down</a>
+* <a href="/docs/16.2.2/manually-validate-server-health">Manually Validate Server Health</a> 
 
 ### Active Health Monitors
 
@@ -26,13 +26,13 @@ Active health monitors originate from the Service Engines hosting the virtual se
 
 The following are configurable active health monitors:
 
-* <a href="dns-health-monitor">DNS Monitor</a>
-* <a href="external-health-monitor">External Monitor</a>
+* <a href="/docs/16.2.2/dns-health-monitor">DNS Monitor</a>
+* <a href="/docs/16.2.2/external-health-monitor">External Monitor</a>
 * <a href="http-health-monitor">HTTP Monitor</a>
 * <a href="https-health-monitor">HTTPS Monitor</a>
-* <a href="ping-health-monitor">Ping Monitor</a>
-* <a href="tcp-health-monitor">TCP Monitor</a>
-* <a href="udp-health-monitor">UDP Monitor</a> 
+* <a href="/docs/16.2.2/ping-health-monitor">Ping Monitor</a>
+* <a href="/docs/16.2.2/tcp-health-monitor">TCP Monitor</a>
+* <a href="/docs/16.2.2/udp-health-monitor">UDP Monitor</a> 
 
 ### Passive Health Monitor
 

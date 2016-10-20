@@ -32,4 +32,4 @@ Note: If no other SEs are available, click Create Service Engine and select the 
 
 Vantage migrates all virtual services that are on the disabled Avi SE to another SE. (Generally, this takes several minutes.) After all the virtual services have been migrated, the Avi SE is disabled and its health icon turns to grey. To view the virtual services that are on a remaining SE, including any migrated virtual services, click on the row for the SE (not on the SE name).
 
-Note: For more on disabling Avi SEs, click <a href="disable-se">here</a>.
+Note: For more on disabling Avi SEs, click <a href="/docs/16.2.2/disable-se">here</a>.

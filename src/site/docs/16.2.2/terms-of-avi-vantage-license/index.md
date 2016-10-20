@@ -6,7 +6,7 @@ Avi Vantage software must be licensed. A free trial license is available for eva
 
 Avi Vantage licenses are subscription based, and have a start date and an expiration date. Each licence applies to a specific infrastructure type, and more than one license can be added to the Avi Controller. For example, an Avi Controller that will be used in both a VMware vCenter cloud and in a Mesos cloud will need a separate license for each one.
 
-**Note: For information about procuring, installing, and managing a license, <a href="avi-vantage-license-management">click here</a>.**
+**Note: For information about procuring, installing, and managing a license, <a href="/docs/16.2.2/avi-vantage-license-management">click here</a>.**
 <table class="table table table-bordered table-hover">   
 <thead>  
 <tr>    

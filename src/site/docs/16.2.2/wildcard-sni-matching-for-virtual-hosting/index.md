@@ -2,7 +2,7 @@
 title: Wildcard SNI Matching for Virtual Hosting
 layout: default
 ---
-Virtual services have a configuration option to enable virtual hosting support. Enabling this option within a virtual service indicates the virtual service is a parent or child of another service, in a <a href="server-name-indication">server name indication (SNI)</a> deployment.
+Virtual services have a configuration option to enable virtual hosting support. Enabling this option within a virtual service indicates the virtual service is a parent or child of another service, in a <a href="/docs/16.2.2/server-name-indication">server name indication (SNI)</a> deployment.
 
 During the SSL handshake between a client and a parent virtual service, the parent virtual service checks the domain names of its children virtual services for a match with the domain name in the client's handshake. If there is a match, the parent virtual service passes the client request to the child virtual service with the matching domain name.
 

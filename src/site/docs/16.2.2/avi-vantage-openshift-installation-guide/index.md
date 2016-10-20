@@ -162,7 +162,7 @@ Configure EastWest networks and subnet for virtual services handling east-west t
 </figcapture>
 </figure> 
 
-Above example uses 172.50.0.0/16 subnet assuming kube-proxy is enabled. To use the service subnet (172.30.0.0/16) for east-west traffic, <a href="replace-kube-proxy-in-openshift-environment-with-avi-vantage">disable kube-proxy</a>.
+Above example uses 172.50.0.0/16 subnet assuming kube-proxy is enabled. To use the service subnet (172.30.0.0/16) for east-west traffic, <a href="/docs/16.2.2/replace-kube-proxy-in-openshift-environment-with-avi-vantage">disable kube-proxy</a>.
 
 <figure class="thumbnail wp-caption alignnone"> <a href="img/Fig8.png"><img class="wp-image-11596" src="img/Fig8.png" alt="Fig8" width="650" height="436"></a>  
 <figcapture> Step 8. Create NorthSouth network and add subnet with static IP range for IPs to be used by north-south virtual services. 
@@ -318,7 +318,7 @@ This section describes the configuration of OpenShift cloud. Here we are assumin
 * Click Next
 * Select SSH user configured previously and click Next. <a href="img/Fig21.png"><img class="alignnone wp-image-11626" src="img/Fig21.png" alt="Fig21" width="650" height="439"></a>
 * Set ‘Proxy Service Placement Subnet’ same as EastWest subnet configured earlier.
-* Uncheck ‘Use Cluster IP of service as VIP for East/West’ checkbox if it is checked (this is assuming kube-proxy is enabled. To configure this option with kube-proxy disabled click <a href="replace-kube-proxy-in-openshift-environment-with-avi-vantage">here</a>).
+* Uncheck ‘Use Cluster IP of service as VIP for East/West’ checkbox if it is checked (this is assuming kube-proxy is enabled. To configure this option with kube-proxy disabled click <a href="/docs/16.2.2/replace-kube-proxy-in-openshift-environment-with-avi-vantage">here</a>).
 * Set IPAM Profile from dropdown as shown. 
 <a href="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png"><img class="alignnone wp-image-12617 size-full" src="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png" width="2160" height="1452"></a>
 * Click Save. 

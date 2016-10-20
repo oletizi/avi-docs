@@ -81,5 +81,5 @@ Notes:
  <li>Review the role information, then click Create Role. <a href="img/2-avi-controller-gui-step9-2.png"><img src="img/2-avi-controller-gui-step9-2.png" alt="2-avi-controller-gui-step9" width="1031" height="423" class="alignnone size-full wp-image-8245"></a> The new roles should be in the list. <a href="img/2-avi-controller-gui-step10-2.png"><img src="img/2-avi-controller-gui-step10-2.png" alt="2-avi-controller-gui-step10" width="1030" height="485" class="alignnone size-full wp-image-8246"></a> </li> 
 </ol> 
 
-After completing the IAM role setup steps above, go <a href="installation-guides/installing-avi-vantage-in-amazon-web-services">here</a> to install the Avi Vantage EC2 instance.
+After completing the IAM role setup steps above, go <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-in-amazon-web-services">here</a> to install the Avi Vantage EC2 instance.
 

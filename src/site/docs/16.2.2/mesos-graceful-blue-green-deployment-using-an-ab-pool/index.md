@@ -2,7 +2,7 @@
 title: Mesos - Graceful Blue-Green Deployment Using an A/B Pool
 layout: default
 ---
-The <a href="ab-pool-feature">A/B pool feature</a> allows a virtual service (application) to be serviced by a pair of pools. In this case, each of the two pools receives a percentage of traffic for the application, based on configuration.
+The <a href="/docs/16.2.2/ab-pool-feature">A/B pool feature</a> allows a virtual service (application) to be serviced by a pair of pools. In this case, each of the two pools receives a percentage of traffic for the application, based on configuration.
 
 This article describes how to deploy A/B pool support for a virtual service in a DCOS/Apache Mesos cluster.
 

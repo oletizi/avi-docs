@@ -12,7 +12,7 @@ layout: default
 <td><span style="font-size: medium;"><strong>Description</strong></span></td>
 <td>Returns the user ID associated with a connection. The userid may be used by the DataScript in a number of ways, such as evaluating a user against a white or blacklist. This field is also used in the client logs to populate the searchable UserID field. This field is populated via the following methods, prioritized in the following order:<p></p> 
 <ol> 
- <li><strong>Custom</strong>: The userid may be explicitly set by a DataScript via the <a href="datascript-avi-http-set_userid/">avi.http.set_userid()</a> command. For instance, DataScript may parse through a cookie to grab a user name or session ID, then insert that value into the user ID field.</li> 
+ <li><strong>Custom</strong>: The userid may be explicitly set by a DataScript via the <a href="/docs/16.2.2/datascript-avi-http-set_userid/">avi.http.set_userid()</a> command. For instance, DataScript may parse through a cookie to grab a user name or session ID, then insert that value into the user ID field.</li> 
  <li><strong>Basic Auth</strong>: If HTTP Basic Auth is enabled on the Virtual Service and a client authenticates, the username field will be used to populate the userid.</li> 
  <li><strong>Client Certificate</strong>: If client certificate authentication has been enabled, the userid will be populated with the user name field from the client certificate received during the SSL/TLS handshake.</li> 
 </ol></td>

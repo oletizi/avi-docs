@@ -30,7 +30,7 @@ Using the ANSIBLE_LIBRARY=  environment variable:
 
 <pre><code class="language-lua">export ANSIBLE_LIBRARY=/etc/ansible/library/ansible-modules-extras-devel/network/avi</code></pre>  
 
-For help using the module and understanding key value pairs, please refer to the <a href="api-guide/">Avi API Guide</a>. You can also find a visual representation of current values using https://<controller_ip>/api/<object>/. For example, https://10.10.27.90/api/virtualservice/.
+For help using the module and understanding key value pairs, please refer to the <a href="/docs/16.2.2/api-guide/">Avi API Guide</a>. You can also find a visual representation of current values using https://<controller_ip>/api/<object>/. For example, https://10.10.27.90/api/virtualservice/.
 
 ## Usage
 

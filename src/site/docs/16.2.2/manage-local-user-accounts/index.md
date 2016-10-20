@@ -4,7 +4,7 @@ layout: default
 ---
 A valid account is required for access to Avi Vantage through the web interface, REST API, or CLI. User accounts can be maintained locally in Avi Vantage or remotely via an external authentication server.
 
-See also <a href="overview-of-account-management">Overview of Account Management</a>
+See also <a href="/docs/16.2.2/overview-of-account-management">Overview of Account Management</a>
 &gt; Notes: 
 &gt; <ul> 
 &gt;  <li>To configure or manage Vantage user accounts, one needs a user account having write access to the Accounts section of Vantage. (This is defined by the role assigned to the user account.)</li> 
@@ -46,9 +46,9 @@ To create a user account:
    <li><strong>Username:</strong> Name that the user will supply when signing into Avi Vantage, such as <code>jdoe</code> or <code>jdoe@avinetworks.com</code>.</li> 
    <li><strong>Password:</strong> You may either enter a case-sensitive password in this field or click the Generate button to create a random password for the new user.</li> 
    <li><strong>Email:</strong> Email address of the user. This field is used when a user loses their password and requests to have it reset. See Password Recovery.</li> 
-   <li><strong>Role:</strong> Areas of the Vantage system to which the user account will be allowed access. For each system area, the role defines whether the user account has read, write, or no access. Vantage comes with predefined roles. In addition, users who have write access to the Accounts section of Vantage can customize the predefined roles and create new roles. See <a href="user-account-roles">Roles</a>.</li> 
+   <li><strong>Role:</strong> Areas of the Vantage system to which the user account will be allowed access. For each system area, the role defines whether the user account has read, write, or no access. Vantage comes with predefined roles. In addition, users who have write access to the Accounts section of Vantage can customize the predefined roles and create new roles. See <a href="/docs/16.2.2/user-account-roles">Roles</a>.</li> 
   </ul> </li> 
- <li>If the user will need to have the same privileges as the "admin" account, select the <a href="super-user-accounts">Super User</a> checkbox.</li> 
+ <li>If the user will need to have the same privileges as the "admin" account, select the <a href="/docs/16.2.2/super-user-accounts">Super User</a> checkbox.</li> 
  <li>Click Save.</li> 
 </ol> 
 
