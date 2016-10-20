@@ -70,7 +70,7 @@ If the LDAP authentication profile is configured to use administrator binding fo
 
  
 
-<a href="img/Screen-Shot-2016-08-03-at-3.06.44-PM.png"><img class="alignnone wp-image-11271" src="/wp-content/uploads/2016/03/Screen-Shot-2016-08-03-at-3.06.44-PM.png" alt="LDAP Test User 2" width="650" height="453"></a>
+<a href="img/Screen-Shot-2016-08-03-at-3.06.44-PM.png"><img class="alignnone wp-image-11271" src="img/Screen-Shot-2016-08-03-at-3.06.44-PM.png" alt="LDAP Test User 2" width="650" height="453"></a>
 
  
 

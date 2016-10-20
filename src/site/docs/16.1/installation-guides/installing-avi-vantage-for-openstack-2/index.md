@@ -424,17 +424,17 @@ You can change or customize settings following initial deployment using the Avi 
    <li>DNS and NTP server information</li> 
   </ul> 
   <div> 
-   <p><img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-admin.png" alt="" align="left" hspace="0&quot;" vspace="6"> <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"></p> 
+   <p><img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-admin.png" alt="" align="left" hspace="0&quot;" vspace="6"> <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"></p> 
    <p style="clear: both"> </p> 
   </div> </li> 
- <li>Set the infrustructure type to OpenStack:<a href="img/openstack-deploy-orchestratorselection.png"><img class="alignnone size-full wp-image-5033" src="/wp-content/uploads/2016/02/openstack-deploy-orchestratorselection.png" alt="openstack-deploy-orchestratorselection" width="264" height="288"></a></li> 
+ <li>Set the infrustructure type to OpenStack:<a href="img/openstack-deploy-orchestratorselection.png"><img class="alignnone size-full wp-image-5033" src="img/openstack-deploy-orchestratorselection.png" alt="openstack-deploy-orchestratorselection" width="264" height="288"></a></li> 
  <li>Enter OpenStack settings: 
   <ul> 
    <li>Tenant user credentials (username, password)</li> 
    <li>IP address of Keystone server</li> 
    <li>Keystone Auth enabled</li> 
-  </ul> <p><a href="img/openstack-deploy-openstacklogin-selectkeystone.png"><img src="/wp-content/uploads/2016/02/openstack-deploy-openstacklogin-selectkeystone.png" alt="openstack-deploy-openstacklogin-selectkeystone" width="264" height="246" class="alignnone size-full wp-image-8512"></a></p></li> 
- <li>In the Virtual Service Placement Settings window, deselect all options and click Next. Then, in the Support Multiple Tenants window, click <strong>Yes</strong>.<a href="img/openstack-deploy-vsplacement.png"><img class="alignnone size-full wp-image-5037" src="/wp-content/uploads/2016/02/openstack-deploy-vsplacement.png" alt="openstack-deploy-vsplacement" width="264" height="221"></a></li> 
+  </ul> <p><a href="img/openstack-deploy-openstacklogin-selectkeystone.png"><img src="img/openstack-deploy-openstacklogin-selectkeystone.png" alt="openstack-deploy-openstacklogin-selectkeystone" width="264" height="246" class="alignnone size-full wp-image-8512"></a></p></li> 
+ <li>In the Virtual Service Placement Settings window, deselect all options and click Next. Then, in the Support Multiple Tenants window, click <strong>Yes</strong>.<a href="img/openstack-deploy-vsplacement.png"><img class="alignnone size-full wp-image-5037" src="img/openstack-deploy-vsplacement.png" alt="openstack-deploy-vsplacement" width="264" height="221"></a></li> 
  <li>In the Tenant Settings window, select the following settings: 
   <ul> 
    <li>Per tenant IP route domain</li> 

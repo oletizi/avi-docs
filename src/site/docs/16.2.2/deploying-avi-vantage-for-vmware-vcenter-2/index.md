@@ -262,7 +262,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
   </ul> 
   <div> 
    <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-admin.png" alt="" align="left" vspace="6"> 
-   <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"> 
+   <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp.png" alt="" align="left" hspace="12" vspace="6"> 
    <p></p> 
    <p style="clear: both;"> </p> 
   </div> </li> 
@@ -281,8 +281,8 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>IP allocation method for the networks where the pools and virtual services will be located</li> 
   </ul> 
   <div> 
-   <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-vcenterlogin.png" alt="" align="left" vspace="6"> 
-   <img src="/wp-content/uploads/2016/01/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter.png" alt="" align="left" hspace="12" vspace="6"> 
+   <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-vcenterlogin.png" alt="" align="left" vspace="6"> 
+   <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter.png" alt="" align="left" hspace="12" vspace="6"> 
    <p></p> 
    <p style="clear: both;"> </p> 
   </div> </li> 
@@ -381,7 +381,7 @@ Use the following steps to assign an IP address pool to port groups:
  <li>Find a port group and IP subnet on which a DHCP service <em>is not</em> available.</li> 
  <li>Select the port group by clicking the edit icon: <span style="display: inline-block;"><img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"></span></li> 
  <li>Check Static for Network IP Address Management.</li> 
- <li>Select the IP subnet by clicking the edit icon: <span style="display: inline-block;"><img class="alignnone size-full wp-image-3558" src="/wp-content/uploads/2016/01/edit-icon-2.png" alt="edit-icon" width="13" height="12"></span></li> 
+ <li>Select the IP subnet by clicking the edit icon: <span style="display: inline-block;"><img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"></span></li> 
  <li>Enter a static IP address or a range.</li> 
 </ol> 
 

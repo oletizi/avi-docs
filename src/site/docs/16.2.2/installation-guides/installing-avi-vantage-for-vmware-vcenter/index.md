@@ -264,14 +264,14 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>DNS and NTP server information</li> 
   </ul> 
   <div> 
-   <p><img class="alignnone size-full wp-image-9405" src="/wp-content/uploads/2016/05/Ctlr-install-wizard-adminacct-162-4.png" alt="Ctlr-install-wizard-adminacct-162" width="264" height="388" align="left"> <img src="/wp-content/uploads/2016/05/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp-162-3.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp-162" width="264" height="342" align="left" hspace="12" vspace="0"></p> 
+   <p><img class="alignnone size-full wp-image-9405" src="img/Ctlr-install-wizard-adminacct-162-4.png" alt="Ctlr-install-wizard-adminacct-162" width="264" height="388" align="left"> <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp-162-3.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-dnsntp-162" width="264" height="342" align="left" hspace="12" vspace="0"></p> 
    <p style="clear: both;"> </p> 
   </div> </li> 
  <li>Set the infrastructure type: 
   <ul> 
    <li>No access mode: select No Orchestrator to finish the wizard. No more information is required.</li> 
    <li>Read access mode: select VMware and continue with this procedure.</li> 
-  </ul> <p><img class="alignnone size-full wp-image-9413" src="/wp-content/uploads/2016/05/vmware-ctlr-setup-infra-162.png" alt="vmware-ctlr-setup-infra-162" width="264" height="419"></p></li> 
+  </ul> <p><img class="alignnone size-full wp-image-9413" src="img/vmware-ctlr-setup-infra-162.png" alt="vmware-ctlr-setup-infra-162" width="264" height="419"></p></li> 
  <li>Enter vCenter settings (read access mode): 
   <ul> 
    <li>vCenter credentials (username and password)</li> 
@@ -280,7 +280,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>Integration with Cisco APIC (leave unselected/disabled)</li> 
    <li>Data center (where Vantage will be deployed)</li> 
    <li>IP allocation method for the networks where the pools and virtual services will be located</li> 
-  </ul> <p><img src="img/VMware-deploy-ReadAccessmode-Ctlr-setup-vcenterlogin.png" alt="VMware-deploy-ReadAccessmode-Ctlr-setup-vcenterlogin" width="264" height="339" align="left" vspace="6"><br> <img src="/wp-content/uploads/2016/05/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter-dhcp-162.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter-dhcp-162" width="264" height="442" align="left" hspace="12"></p> <p style="clear: both;"> </p></li> 
+  </ul> <p><img src="img/VMware-deploy-ReadAccessmode-Ctlr-setup-vcenterlogin.png" alt="VMware-deploy-ReadAccessmode-Ctlr-setup-vcenterlogin" width="264" height="339" align="left" vspace="6"><br> <img src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter-dhcp-162.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter-dhcp-162" width="264" height="442" align="left" hspace="12"></p> <p style="clear: both;"> </p></li> 
  <li>To verify discovery by the Avi Controller of all vCenter resources, navigate to Administration &gt; Settings &gt; Infrastructure. The discovery status should be 100% complete. (See example above.)</li> 
 </ol> 
 
@@ -378,7 +378,7 @@ Use the following steps to assign an IP address pool to port groups:
  <li>Find a port group and IP subnet on which a DHCP service <em>is not</em> available.</li> 
  <li>Select the port group by clicking the edit icon: <img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"></li> 
  <li>Check Static for Network IP Address Management.</li> 
- <li>Select the IP subnet by clicking the edit icon: <img class="alignnone size-full wp-image-3558" src="/wp-content/uploads/2016/01/edit-icon-2.png" alt="edit-icon" width="13" height="12"></li> 
+ <li>Select the IP subnet by clicking the edit icon: <img class="alignnone size-full wp-image-3558" src="img/edit-icon-2.png" alt="edit-icon" width="13" height="12"></li> 
  <li>Enter a static IP address or a range.</li> 
 </ol> 
 

@@ -46,7 +46,7 @@ After installation is complete, a success dialog appears: <a href="img/dcos6.jpg
 For advanced installation, click Advanced Installation.
 Enter or select option values, then click Review and Install.
 <a href="img/dcos5.jpg"><img class="alignnone size-full wp-image-9333" src="img/dcos5.jpg" alt="dcos5" width="719" height="591"></a>
-After installation is complete, a success dialog appears: <a href="img/dcos6.jpg"><img class="alignnone size-full wp-image-9325" src="/wp-content/uploads/2016/05/dcos6.jpg" alt="dcos6" width="341" height="264"></a>
+After installation is complete, a success dialog appears: <a href="img/dcos6.jpg"><img class="alignnone size-full wp-image-9325" src="img/dcos6.jpg" alt="dcos6" width="341" height="264"></a>
 
 ## Viewing Deployment Status
 

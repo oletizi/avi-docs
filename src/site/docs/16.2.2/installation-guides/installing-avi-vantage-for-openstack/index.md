@@ -484,7 +484,7 @@ You can change or customize settings following initial deployment using the Avi 
    <li>DNS and NTP server information</li> 
   </ul> 
   <div> 
-   <p><img src="/wp-content/uploads/2016/06/openstack-install-adminacct-162.png" alt="" width="264" height="" align="left"> <img src="/wp-content/uploads/2016/06/openstack-install-dnsntp-262.png" alt="" width="264" height="" align="left" hspace="12" vspace=""></p> 
+   <p><img src="img/openstack-install-adminacct-162.png" alt="" width="264" height="" align="left"> <img src="img/openstack-install-dnsntp-262.png" alt="" width="264" height="" align="left" hspace="12" vspace=""></p> 
    <p style="clear: both;"> </p> 
   </div> </li> 
  <li>Set the infrastructure type to OpenStack:<img class="alignnone size-full wp-image-6067" src="img/ctlr-setup-infra-openstack-162.png" alt="ctlr-setup-infra-openstack-161" width="264" height="419"></li> 
@@ -495,8 +495,8 @@ You can change or customize settings following initial deployment using the Avi 
    <li>Enable (check) the Keystone Auth option.</li> 
   </ul> <p><a href="img/openstack-deploy-openstacklogin-selectkeystone-1.png"><img class="alignnone wp-image-11305" src="img/openstack-deploy-openstacklogin-selectkeystone-1.png" alt="openstack-deploy-openstacklogin-selectkeystone" width="285" height="265"></a></p></li> 
  <li>In the Management Network window, select a tenant. In this deployment, it should be the same tenant into which the Avi Controller is deployed. Choose the management network created previously. <img class="alignnone wp-image-6604" src="img/ctlr-setup-mgmtnetwork-162.png" alt="ctlr-setup-mgmtnetwork-lbass-mgdmode-161" width="264" height="325"></li> 
- <li>In the Keystone Role Mapping window, select a Vantage user role to use as the default user role: <img class="alignnone size-full wp-image-6070" src="/wp-content/uploads/2016/06/ctlr-setup-openstack-keystonemapping-162-1.png" alt="ctlr-setup-openstack-keystonemapping-161" width="264" height="288"><br> If a Vantage user logs in with valid Keystone credentials, but with a role that does not have the same name as any of the user roles defined on the Controller, the default role is assigned to the user. To instead disallow access by any user who does not have a role that is defined on the Controller, leave the selection empty (None).</li> 
- <li>In the Virtual Service Placement Settings window, select Import Tenants to import from tenants Keystone and click Next. Then, in the Support Multiple Tenants window, click <strong>Yes</strong>.<img class="alignnone size-full wp-image-6068" src="/wp-content/uploads/2016/06/ctlr-setup-vsplacement-openstack-162.png" alt="ctlr-setup-vsplacement-openstack-161" width="264" height="305"></li> 
+ <li>In the Keystone Role Mapping window, select a Vantage user role to use as the default user role: <img class="alignnone size-full wp-image-6070" src="img/ctlr-setup-openstack-keystonemapping-162-1.png" alt="ctlr-setup-openstack-keystonemapping-161" width="264" height="288"><br> If a Vantage user logs in with valid Keystone credentials, but with a role that does not have the same name as any of the user roles defined on the Controller, the default role is assigned to the user. To instead disallow access by any user who does not have a role that is defined on the Controller, leave the selection empty (None).</li> 
+ <li>In the Virtual Service Placement Settings window, select Import Tenants to import from tenants Keystone and click Next. Then, in the Support Multiple Tenants window, click <strong>Yes</strong>.<img class="alignnone size-full wp-image-6068" src="img/ctlr-setup-vsplacement-openstack-162.png" alt="ctlr-setup-vsplacement-openstack-161" width="264" height="305"></li> 
  <li>In the Tenant Settings window, select the following settings: 
   <ul> 
    <li>Per tenant IP route domain</li> 
@@ -507,7 +507,7 @@ You can change or customize settings following initial deployment using the Avi 
  <li>Click the Service Engine Group tab.</li> 
  <li>Click the edit icon on the right end of Default-Group.</li> 
  <li>Ensure that compact placement is selected and Max Number of Service Engines is high enough to meet the needs of all tenants.<a href="img/Screen-Shot-2016-07-13-at-12.50.49-PM.png"><img class="wp-image-10904 alignnone" src="img/Screen-Shot-2016-07-13-at-12.50.49-PM.png" alt="Screen Shot 2016-07-13 at 12.50.49 PM" width="427" height="321"><br> </a></li> 
- <li>To verify installation, navigate to Infrastructure &gt; Clouds, click Default-Cloud, then click the Status button. If the status is green, installation is a success.<br> <a href="img/openstack-deploy-verify-162.png"><img class="alignnone size-full wp-image-10219" src="/wp-content/uploads/2016/06/openstack-deploy-verify-162.png" alt="openstack-deploy-verify-162" width="1438" height="364"></a></li> 
+ <li>To verify installation, navigate to Infrastructure &gt; Clouds, click Default-Cloud, then click the Status button. If the status is green, installation is a success.<br> <a href="img/openstack-deploy-verify-162.png"><img class="alignnone size-full wp-image-10219" src="img/openstack-deploy-verify-162.png" alt="openstack-deploy-verify-162" width="1438" height="364"></a></li> 
 </ol>  
 
 <a name="OpenStack-managed_LBaaS_Mode"></a>
