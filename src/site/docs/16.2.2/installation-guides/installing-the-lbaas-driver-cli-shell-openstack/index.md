@@ -4,7 +4,7 @@ layout: default
 ---
 The CLI shell provides access to the Avi Controller through a PC client version of the Controller’s CLI. Two versions of the CLI shell installation package are available:
 
-* **avi_shell**-16.1.5000.tar.gz (or later): Can be used with all infrastructure types. If installing this version of the CLI shell, <a href="cli-installing-the-cli-shell">go here</a> instead. 
+* **avi_shell**-16.1.5000.tar.gz (or later): Can be used with all infrastructure types. If installing this version of the CLI shell, <a href="/docs/16.2.2/cli-installing-the-cli-shell">go here</a> instead. 
 * **avi_lbaas**-16.1.9014.tar.gz (or later): Can be used if the infrastructure type is OpenStack, and Keystone support is enabled. (This is an option during initial Avi Controller setup and also can be configured later.) To install this version of the CLI shell, continue with this article. 
 
 ### Requirements to enable remote CLI shell

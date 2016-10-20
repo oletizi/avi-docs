@@ -12,7 +12,7 @@ This chapter contains the following sections:
 * <a href="#events">Pool Events Page</a>
 * <a href="#alerts">Pool Alerts Page</a> 
 
-Pools maintain the list of servers assigned to them and perform health monitoring, load balancing, persistence, and functions that involve Vantage-to-server interaction. A typical virtual service will point to one pool; however, more advanced configurations may have a virtual service content switching across multiple pools via <a href="http-request-policy/">HTTP request policies</a> or <a href="/docs/16.2.2/overview-of-datascript/">DataScripts</a>. A pool may only be used or referenced by only one virtual service at a time.
+Pools maintain the list of servers assigned to them and perform health monitoring, load balancing, persistence, and functions that involve Vantage-to-server interaction. A typical virtual service will point to one pool; however, more advanced configurations may have a virtual service content switching across multiple pools via <a href="/docs/16.2.2/http-request-policy/">HTTP request policies</a> or <a href="/docs/16.2.2/overview-of-datascript/">DataScripts</a>. A pool may only be used or referenced by only one virtual service at a time.
 
 <a href="img/architecture_1.jpg"><img class="alignnone wp-image-1084" src="img/architecture_1.jpg" alt="architecture_1" width="578" height="110"></a>
 

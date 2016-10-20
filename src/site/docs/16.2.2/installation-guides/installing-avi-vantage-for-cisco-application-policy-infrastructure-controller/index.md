@@ -231,5 +231,5 @@ The Controller picks an IP address from the range and adds it to the data vNIC c
 
 This completes the installation phase of deployment. The next phase is to create a virtual service:
 
-## <a href="installation-guides/installing-avi-vantage-for-cisco-application-policy-infrastructure/">Creating a Virtual Service in a Vantage-APIC Deployment</a>
+## <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-cisco-application-policy-infrastructure/">Creating a Virtual Service in a Vantage-APIC Deployment</a>
 

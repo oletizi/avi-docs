@@ -20,7 +20,7 @@ The following options are available within the analytics profile:
     
     <img src="img/template_profiles_analytics_create-edit5.jpg" alt="">
     
-    The results are used as part of the performance metric of the pool and virtual service health score. The greater the number of satisfied responses, the higher the score. See <a href="http://www.apdex.org">www.apdex.org</a>.
+    The results are used as part of the performance metric of the pool and virtual service health score. The greater the number of satisfied responses, the higher the score. See <a shref="http://www.apdex.org">www.apdex.org</a>.
     
     * **Client Satisfactory Latency Threshold:** A client must receive a completed response to an HTTP request within this time frame to be considered satisfied with the transaction time. Using the default of 500ms, any response that is complete with 0-500ms is considered satisfactory. A response time is measured via the End to End Timing’s Total Time metric, which includes Client RTT, Server RTT, App Response, and the Data Transfer metrics.
     

@@ -3,6 +3,9 @@ title: Article CRUD Basics
 layout: default
 ---
 
+{% include youtubePlayer.html id="seeUgfG48_w" %}
+
+<!--
 ## Create a New Document
 
 **Step 1:** Create a directory for the article in the relevant documentation version.
@@ -46,4 +49,4 @@ Open that file in your editor and add a link to it in the relevant location.
 
 * TODO: Add steps
 
-
+-->

@@ -252,7 +252,7 @@ A management network is required for communication between the Avi Controller an
 
 A security group is required to allow the Controller and SEs to exchange management traffic. The group specifies the protocol ports for which traffic will be allowed.
 
-* For ingress traffic, the group must allow <a href="../protocol-ports-used-by-avi-vantage-for-management-communication/">these </a>ports.
+* For ingress traffic, the group must allow <a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication/">these </a>ports.
 * For egress traffic, the group can allow all ports. 
 
 Note: The Controller automatically creates a security group for the SEs.
