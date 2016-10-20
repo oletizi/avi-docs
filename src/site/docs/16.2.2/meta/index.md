@@ -1,5 +1,5 @@
 ---
-title: Meta -- Avi Documentation Documentation
+title: Meta &mdash; Avi Documentation Documentation
 layout: default
 ---
 
@@ -35,7 +35,7 @@ If you need to make a quick edit to a documentation page, you may edit directly 
 * Make sure you have "collaborator" access to the gitub repo. If you don't have collaborator access or you're not sure, contact the documentation administrator (&lt;{{ site.meta.admin_name }}&gt; {{ site.meta.admin_email }}) and ask to be added as a collaborator.
 * Navigate to the page you want to edit on GitHub. For example, <a href="{{ site.meta.repo_site }}blob/master/src/site/docs/{{ site.meta.version }}/meta/index.md" target="_blank">this page (the one you're reading now) is here on GitHub:</a>
 
-> <{{ site.meta.repo_site }}blob/master/src/site/docs{{ site.meta.version }}/meta/index.md>
+> <{{ site.meta.repo_site }}blob/master/src/site/docs/{{ site.meta.version }}/meta/index.md>
 
 * Make sure you are on the appropriate branch. Edits to the "master" branch will get published to the live document site immediately:
   <figure><img src="img/github-quick-edit-branch.png"></figure>
