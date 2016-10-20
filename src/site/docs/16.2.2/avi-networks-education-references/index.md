@@ -93,8 +93,8 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>HTTP Security Policy<br> <a href="http-security-policy">/http-security-policy/</a></li> 
  <li>Select Servers by Network<br> <a href="/docs/16.2.2/select-servers-by-network">/select-servers-by-network/</a></li> 
  <li>Reasons Servers Can Be Marked Down<br> <a href="/docs/16.2.2/why-is-a-server-marked-down">/why-is-a-server-marked-down/</a></li> 
- <li>Health Monitor Profile<br> <a href="/docs/configuration-guide/templates/profiles/health-monitor-profile/">/docs/configuration-guide/templates/profiles/health-monitor-profile/</a></li> 
- <li>Virtual Service Scaling<br> <a href="/docs/configuration-guide/applications/vs-scaling/">/docs/configuration-guide/applications/vs-scaling/</a></li> 
+ <li>Health Monitor Profile<br> <a href="/docs/16.2.2/configuration-guide/templates/profiles/health-monitor-profile/">/docs/configuration-guide/templates/profiles/health-monitor-profile/</a></li> 
+ <li>Virtual Service Scaling<br> <a href="/docs/16.2.2/configuration-guide/applications/vs-scaling/">/docs/configuration-guide/applications/vs-scaling/</a></li> 
  <li>All Tenants View<br> <a href="/docs/16.2.2/all-tenants-view">/all-tenants-view/</a></li> 
  <li>Avi Vantage Installation on Nutanix Acropolis Hypervisor<br> <a href="/docs/16.2.2/vantage-installation-on-nutanix-acropolis-hypervisor">/vantage-installation-on-nutanix-acropolis-hypervisor/</a></li> 
  <li>Clickjacking Protection<br> <a href="/docs/16.2.2/clickjacking-protection">/clickjacking-protection/</a></li> 
@@ -133,9 +133,9 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Issues With NTLM Authentication<br> <a href="/docs/16.2.2/issues-with-ntlm-authentication">/issues-with-ntlm-authentication/</a></li> 
  <li>Clustering Controllers From Different Networks<br> <a href="/docs/16.2.2/clustering-controllers-from-different-networks">/clustering-controllers-from-different-networks/</a></li> 
  <li>Network Reachability<br> <a href="/docs/16.2.2/network-reachability">/network-reachability/</a></li> 
- <li>Analytics Profile<br> <a href="/docs/configuration-guide/templates/profiles/analytics-profile/">/docs/configuration-guide/templates/profiles/analytics-profile/</a></li> 
+ <li>Analytics Profile<br> <a href="/docs/16.2.2/configuration-guide/templates/profiles/analytics-profile/">/docs/configuration-guide/templates/profiles/analytics-profile/</a></li> 
  <li>Navigation Timing<br> <a href="https://www.w3.org/TR/navigation-timing/">https://www.w3.org/TR/navigation-timing/</a><br> This specification defines an interface for web applications to access timing information related to navigation and elements.</li> 
- <li>Virtual Service Client Information<br> <a href="/docs/configuration-guide/applications/virtual-services/vs-clients/">/docs/configuration-guide/applications/virtual-services/vs-clients/</a></li> 
+ <li>Virtual Service Client Information<br> <a href="/docs/16.2.2/configuration-guide/applications/virtual-services/vs-clients/">/docs/configuration-guide/applications/virtual-services/vs-clients/</a></li> 
  <li>Redirect HTTP to HTTPS<br> <a href="/docs/16.2.2/redirect-http-to-https">/redirect-http-to-https/</a></li> 
  <li>Distributed Denial of Service<br> <a href="/docs/16.2.2/distributed-denial-of-service">https://kb.avinetworks.com/distributed-denial-of-service/</a></li> 
  <li>Alerts Overview<br> <a href="/docs/16.2.2/alerts-overview">/alerts-overview/</a></li> 

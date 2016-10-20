@@ -28,8 +28,8 @@ The following are configurable active health monitors:
 
 * <a href="/docs/16.2.2/dns-health-monitor">DNS Monitor</a>
 * <a href="/docs/16.2.2/external-health-monitor">External Monitor</a>
-* <a href="http-health-monitor">HTTP Monitor</a>
-* <a href="https-health-monitor">HTTPS Monitor</a>
+* <a href="/docs/16.2.2/http-health-monitor">HTTP Monitor</a>
+* <a href="/docs/16.2.2/https-health-monitor">HTTPS Monitor</a>
 * <a href="/docs/16.2.2/ping-health-monitor">Ping Monitor</a>
 * <a href="/docs/16.2.2/tcp-health-monitor">TCP Monitor</a>
 * <a href="/docs/16.2.2/udp-health-monitor">UDP Monitor</a> 

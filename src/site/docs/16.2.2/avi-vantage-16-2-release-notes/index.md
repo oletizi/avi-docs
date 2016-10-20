@@ -44,14 +44,14 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
     * <a href="/docs/16.2.2/disable-se">Graceful SE disable for non-disruptively migrating virtual services to other SEs</a>
     * <a href="/docs/16.2.2/login-banner-and-message-of-the-day">Configurable "banner" at CLI/UI login</a>
     * <a href="/docs/16.2.2/rolling-back-the-system">Ability to rollback the system from the REST API</a>
-    * <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud-16-2">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-a-linux-server-cloud">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
     * <a href="/docs/16.2.2/alert-config">Metrics based Alerts</a>: Generate alerts based on metrics hitting specific thresholds or ranges
     * <a href="/docs/16.2.2/terms-of-avi-vantage-license">Updated terms of Avi Vantage software license</a>
 * Ecosystem support  
     * <a href="/docs/16.2.2/configuring-a-tag-for-auto-created-ses-in-aws">AWS: Support for custom tags for AWS SE instances</a>: useful for automatically passing AWS a single key-value pair to better control the instantiation of SEs in EC2.
-    * <a href="/docs/16.2.2/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
     * Juniper Contrail SDN support
-    * <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
 * UI enhancements  
     * Ability to choose metrics for display in virtual services list view
     * New design and navigation
@@ -166,14 +166,14 @@ This section summarizes the enhancements in Vantage 16.2. For more information, 
     * <a href="/docs/16.2.2/disable-se">Graceful SE disable for non-disruptively migrating virtual services to other SEs</a>
     * <a href="/docs/16.2.2/login-banner-and-message-of-the-day">Configurable "banner" at CLI/UI login</a>
     * <a href="/docs/16.2.2/rolling-back-the-system">Ability to rollback the system from the REST API</a>
-    * <a href="/docs/16.2.2/installing-avi-vantage-for-a-linux-server-cloud-16-2">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-a-linux-server-cloud">Configurable mount folder for Avi Controller in Linux Server Cloud</a>
     * <a href="/docs/16.2.2/alert-config">Metrics based Alerts</a>: Generate alerts based on metrics hitting specific thresholds or ranges
     * <a href="/docs/16.2.2/terms-of-avi-vantage-license">Updated terms of Avi Vantage software license</a>
 * Ecosystem support  
     * <a href="/docs/16.2.2/configuring-a-tag-for-auto-created-ses-in-aws">AWS: Support for custom tags for AWS SE instances</a>: useful for automatically passing AWS a single key-value pair to better control the instantiation of SEs in EC2.
-    * <a href="/docs/16.2.2/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-for-csp-2100">Cisco Cloud Services Platform (CSP) support</a>
     * Juniper Contrail SDN support
-    * <a href="/docs/16.2.2/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
+    * <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-with-open-dcos-or-enterprise-dcos">Open DC/OS packaging support for Avi Vantage</a>
 * UI enhancements  
     * Ability to choose metrics for display in virtual services list view
     * New design and navigation

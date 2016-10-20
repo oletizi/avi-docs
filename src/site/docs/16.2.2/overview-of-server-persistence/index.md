@@ -12,7 +12,7 @@ Persistence is an optional profile, configured within Templates &gt; Profiles &g
 
 Vantage may be configured with a number of persistence templates:
 
-* <a href="http-cookie-persistence">HTTP Cookie</a>: Vantage inserts a cookie into HTTP responses
+* <a href="/docs/16.2.2/http-cookie-persistence">HTTP Cookie</a>: Vantage inserts a cookie into HTTP responses
 * <a href="/docs/16.2.2/app-cookie-persistence">App Cookie</a>: Vantage reads existing server cookies or URI embedded data such as JSessionID
 * <a href="/docs/16.2.2/custom-http-header-persistence">HTTP Header</a>: Administrators may create custom, static mappings of header values to specific servers
 * <a href="/docs/16.2.2/client-ip-persistence">Client IP Address</a>: The client's IP is used as the identifier and mapped to the server

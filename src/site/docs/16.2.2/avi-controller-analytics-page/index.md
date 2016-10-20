@@ -40,6 +40,6 @@ If deploying a 3-node cluster, all fields are applicable:
 See the following for more information on Avi Controller cluster deployment and management:
 
 * <a href="/docs/16.2.2/configure-controller-ha-cluster">Deploying an Avi Controller Cluster</a>
-* <a href="/docs/16.2.2//avi-controller-cluster-faq">Avi Controller Cluster FAQ</a>
+* <a href="/docs/16.2.2/overview-of-controller-cluster/">Avi Controller Cluster FAQ</a>
 * <a href="/docs/16.2.2/controller-cluster-ip">Controller Cluster IP</a>
 * <a href="/docs/16.2.2/changing-avi-controller-cluster-configuration">Changing Avi Controller Cluster Configuration</a> 

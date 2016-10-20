@@ -19,7 +19,7 @@ Using Vantage as the endpoint for SSL enables it to maintain full visibility int
 Vantage supports multiple architectures for terminating SSL traffic.  For client to Vantage SSL, the configuration will be done in the virtual service page.  For Vantage to server SSL encryption, the configuration is performed by editing the pool. For either, a virtual service or pool must be configured with an SSL Profile and an SSL Certificate, described below.
 
 * Virtual Service Configuration
-* <a href="/docs/configuration-guide/applications/pools/">Pool Configuration</a>
+* <a href="/docs/16.2.2/configuration-guide/applications/pools/">Pool Configuration</a>
 * <a href="/docs/16.2.2/server-name-indication">Server Name Indication (SNI)</a> 
 
  

@@ -12,7 +12,7 @@ Once an identifier has been located in a server response and a client's request,
 &gt; <code>www.avinetworks.com/index.html?jsessionid=a1b2c3d4e5</code>
  
 
-Note: This method involves using an existing server cookie. For Vantage to use its own cookie for persistence, use the <a href="http-cookie-persistence">HTTP Cookie persistence</a> mode, which is straightforward and more scalable.
+Note: This method involves using an existing server cookie. For Vantage to use its own cookie for persistence, use the <a href="/docs/16.2.2/http-cookie-persistence">HTTP Cookie persistence</a> mode, which is straightforward and more scalable.
 
 See also <a href="/docs/16.2.2/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 

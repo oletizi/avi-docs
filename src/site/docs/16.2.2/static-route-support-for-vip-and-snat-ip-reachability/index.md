@@ -20,7 +20,7 @@ Here is a sample topology without HA. The virtual service's VIP and SNAT IP addr
 
 Static routes can be provisioned on the next-hop router to point to the interface IP of the Avi SE. However, it is recommended to configure a floating interface IP for the SE group, and to have the static route use the floating interface as the adjacency. This will allow smooth addition of a second Avi SE in the future if required, for HA purposes (using <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines/">legacy HA mode</a>).
 <a href="img/static-route-topo1.png"><img class="alignnone size-full wp-image-8299" src="img/static-route-topo1.png" alt="static-route-topo1" width="621" height="402"></a>
-Likewise, static routes or a default gateway also will need to be provisioned on the SE group, to enable reachability to servers and clients, which may not be Layer-2 adjacent. For information on provisioning a default gateway and static routes on an SE, <a href="/docs/configuration-guide/infrastructure/">click here</a>.
+Likewise, static routes or a default gateway also will need to be provisioned on the SE group, to enable reachability to servers and clients, which may not be Layer-2 adjacent. For information on provisioning a default gateway and static routes on an SE, <a href="/docs/16.2.2/configuration-guide/infrastructure/">click here</a>.
 
 ## Static Routing with HA
 

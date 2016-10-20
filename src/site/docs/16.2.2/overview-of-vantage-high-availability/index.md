@@ -29,7 +29,7 @@ Best practice, especially for production deployments, is to deploy a set of 3 Av
 
 Avi SE groups support the following HA modes:
 
-* **<a href="/docs/16.2.2/elastic-ha-for-avi-service-engines-16-2">Elastic HA:</a>** Provides fast recovery for individual virtual services following failure of an Avi SE. Depending on the mode, the virtual service is already running on multiple SEs or is quickly placed on another SE. The following modes of cluster HA are supported:  
+* **<a href="/docs/16.2.2/elastic-ha-for-avi-service-engines">Elastic HA:</a>** Provides fast recovery for individual virtual services following failure of an Avi SE. Depending on the mode, the virtual service is already running on multiple SEs or is quickly placed on another SE. The following modes of cluster HA are supported:  
     * **Active/Active**
     * **N + M**
 * **<a href="/docs/16.2.2/legacy-ha-for-avi-service-engines/">Legacy HA:</a>** Emulates the operation of 2-device hardware active/standby HA configuration. The active SE carries all the traffic for a virtual service placed on it. The other SE in the pair is the standby for the VS, carrying no traffic for it while the active SE is healthy. 
