@@ -3,6 +3,8 @@ use strict;
 use warnings FATAL => 'all';
 use Curses::UI;
 use FindBin qw($Bin);
+use lib "$Bin/../lib/perl";
+use IO::Output qw(println);
 use File::Temp qw/ tempfile /;
 
 my $docroot = "$Bin/../src/site";
@@ -87,15 +89,6 @@ sub searchInFile {
 sub bold {
     my ($element) = @_;
     return "\033[1m".$element."\033[0m";
-}
-
-sub println {
-    my ($line) = @_;
-    if (defined $line) {
-        #$output .= $line."\n";
-        print $line."\n";
-    }
-
 }
 
 sub flush {

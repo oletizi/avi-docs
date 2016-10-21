@@ -3,6 +3,8 @@ use strict;
 use warnings FATAL => 'all';
 
 use FindBin qw($Bin);
+use lib "$Bin/../lib/perl";
+use IO::Output qw(println);
 use File::Temp qw/ tempfile tempdir /;
 
 
@@ -48,8 +50,4 @@ sub usage {
         ."Usage:\n\n"
         ."\tupdate-api-guide.pl <sdk-branch> <docs-branch>\n\n"
     ;
-}
-
-sub println {
-    print shift . "\n"
 }
