@@ -38,11 +38,12 @@ If you need to make a quick edit to a documentation page, you may edit directly 
 > <{{ site.meta.repo_site }}blob/master/src/site/docs/{{ site.meta.version }}/meta/index.md>
 
 * Make sure you are on the appropriate branch. Edits to the "master" branch will get published to the live document site immediately:
-  <figure><img src="img/github-quick-edit-branch.png"></figure>
+  
+  {% include figure.html title="Github branch control" url="img/github-quick-edit-branch.png" alt="github branch control" caption="Check the branch name" %}
 
 * Click on the pencil icon:
-  <figure><img src="img/github-quick-edit-pencil.png"></figure>
-
+  {% include figure.html title="Github edit control" url="img/github-quick-edit-pencil.png" alt="github edit control" caption="Click on the pencil icon to edit" %}
+  
 * Make your changes and save the document. Now you're done.
 
 * If you made edits in the "master" branch, wait for 30 seconds or so and visit the page on the live documentation site to see your changes live.
