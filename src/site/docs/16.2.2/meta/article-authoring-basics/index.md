@@ -15,6 +15,8 @@ The standard markdown syntax for links looks like this:
 
 >   `[the text of the link](http://example.com/)`
 
+TODO: describe when you have to use HTML syntax
+
 ## Images
 
 1. create a directory called "img" in the article folder
@@ -23,6 +25,19 @@ The standard markdown syntax for links looks like this:
 1. Rename the screenshot something meaningful
 1. Add an image tag referencing that screenshot:
     >    `<img src="img/my-screenshot.png">`
+
+### Horizontal Alignment
+
+If you would like to align images horizantally (left, center, right), add one of the classes to the image tag:
+
+**Left aligned:** 
+>   `<img class="alignleft" src="img/myimage.png" alt="some alt text" title="some title text">`
+
+**Centered:** 
+>   `<img class="aligncenter" src="img/myimage.png" alt="some alt text" title="some title text">`
+
+**Right aligned:** 
+>   `<img class="alignright" src="img/myimage.png" alt="some alt text" title="some title text">`
 
 ## Captioned Figures
 
@@ -36,11 +51,64 @@ The standard markdown syntax for links looks like this:
       alt="put some alt text in" title="give the image a title" &#37;}  
     </pre>
 
+---
+
 ## Code
 
-## Lists 
+Code blocks, including DataScript, can be formatted and highlighted using the `highlight` tag:
+
+**Example:**
+
+<pre>
+{&#37; highlight lua linenos &#37;}
+local ccTLD_map = {es="01345F", fi="5146FF", cn="45DFX", io="123456", ly="ABC123"}
+host = avi.http.host()
+
+if not host then
+  avi.http.close_conn()
+elseif string.sub(host, 1, #"www.avi.") == "www.avi." then
+  i,j = string.find(host, "avi")
+  ccTLD = string.sub(host, j+2, -1)
+  new_query = "?mandate=" .. ccTLD_map[ccTLD]
+  old_query = avi.http.get_query()
+
+  if #old_query &gt; 0 then
+    new_query = new_query .. "&amp;" .. old_query
+  end
+    avi.http.redirect("www.avi.com" ..
+      avi.http.get_path() ..
+      new_query, 302)
+end
+{&#37; endhighlight &#37;}
+</pre>
+
+**Result**
+
+{% highlight lua linenos %}
+local ccTLD_map = {es="01345F", fi="5146FF", cn="45DFX", io="123456", ly="ABC123"}
+host = avi.http.host()
+
+if not host then
+  avi.http.close_conn()
+elseif string.sub(host, 1, #"www.avi.") == "www.avi." then
+  i,j = string.find(host, "avi")
+  ccTLD = string.sub(host, j+2, -1)
+  new_query = "?mandate=" .. ccTLD_map[ccTLD]
+  old_query = avi.http.get_query()
+
+  if #old_query > 0 then
+    new_query = new_query .. " & " .. old_query
+  end
+    avi.http.redirect("www.avi.com" ..
+      avi.http.get_path() ..
+      new_query, 302)
+end
+{% endhighlight %}
 
 ## CLI
+
+
+## Lists 
 
 ## Links
 
