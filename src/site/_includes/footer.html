@@ -84,3 +84,18 @@
         </p>
     </div>
 </div>
+<script src="/js/annotator.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var app = new annotator.App();
+    app.include(annotator.ui.main, {
+        editorExtensions: [annotator.ui.tags.editorExtension],
+                viewerExtensions: [
+            annotator.ui.markdown.viewerExtension,
+            annotator.ui.tags.viewerExtension
+        ]
+    });
+    //app.include(annotator.storage.http);
+    app.start().then(function () {
+                app.annotations.load();
+            });
+</script>
