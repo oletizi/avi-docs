@@ -43,4 +43,5 @@ search:
 algolia:
   application_id: 272ZBU7KSH
   index_name:     'avi-docs'
-  record_css_selector: 'p,ul,ol,table'
+  record_css_selector: 'p,ul,ol,th,td,h1,h2,h3'
+  attributesToSnippet: ['text:20']
