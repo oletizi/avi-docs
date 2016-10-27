@@ -2,6 +2,7 @@ require 'json'
 class AlgoliaSearchRecordExtractor
   # Hook to modify a record after extracting
   def custom_hook_each(item, node)
+    # 'item' is a hash
     # `node` is a Nokogiri HTML node, so you can access its type through `node.name`
     # or its classname through `node.attr('class')` for example
 
