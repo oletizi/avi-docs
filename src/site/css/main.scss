@@ -385,6 +385,17 @@ figcapture, figcaption, figcaption.caption {
   }
 }
 
+#version-options {
+  ul {
+    list-style: none;
+    display: inline;
+    li {
+      display: inline;
+      margin-left: $spacing-unit;
+    }
+  }
+}
+
 /**
 * Table of Contents
 **/
