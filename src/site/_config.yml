@@ -34,17 +34,17 @@ meta:
   repo_url: git@github.com:oletizi/avi-docs.git
   admin_name: "Orion Letizi"
   admin_email: "orion AT avinetworks.com"
-  version: *version
+  version: *current_version
 
 # Search Settings
 search:
   applicationID: 272ZBU7KSH
   apiKey: 6fc3a75f0821308178cd612cfd4f8d2e
-  index: avi-docs
+  index: *current_version
   #index: wp_searchable_posts
 
 algolia:
   application_id: 272ZBU7KSH
-  index_name:     *version
+  index_name:     *current_version
   record_css_selector: 'p,ul,ol,th,td,h1,h2,h3'
-  attributesToSnippet: ['text:20']
+  #attributesToSnippet: ['text:20']
