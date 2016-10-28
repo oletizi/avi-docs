@@ -10,7 +10,30 @@ chdir $docroot;
 $docroot = `pwd`;
 chomp $docroot;
 
-my ($filepattern, $searchpattern, $replacement) = @ARGV;
+my $interactive = 1;
+
+my @opts;
+my @params;
+
+foreach my $opt (@ARGV) {
+    if ($opt =~ /^-/) {
+        push @opts, $opt;
+    } else {
+        push @params, $opt;
+    }
+}
+
+foreach my $opt (@opts) {
+    if ($opt =~ /--root=/) {
+        # specifying a different docroot
+        $docroot = (split /=/, $opt)[1];
+    }
+    if ($opt eq '-y') {
+        $interactive = 0;
+    }
+}
+
+my ($filepattern, $searchpattern, $replacement) = @params;
 
 my %matchfiles;
 
@@ -37,8 +60,13 @@ foreach my $file (sort keys %matchfiles) {
         $preview =~ s/$searchpattern/$replacement_display/igm;
         println("Preview:\n$preview")
     }
-    print ("Replace (Y|n)?: ");
-    my $answer = <STDIN>;
+    my $answer;
+    if ($interactive) {
+        print ( "Replace (Y|n)?: " );
+        $answer = <STDIN>;
+    } else {
+        $answer = 'y';
+    }
     if ($answer =~ /^n/) {
         println("Skipping...");
     } else {
@@ -109,7 +137,7 @@ sub execute {
     }
     elsif ($? & 127) {
         printf "child died with signal %d, %s coredump\n",
-            ($? & 127),  ($? & 128) ? 'with' : 'without';
+            ($? & 127), ($? & 128) ? 'with' : 'without';
     }
     else {
         printf "child exited with value %d\n", $? >> 8;
