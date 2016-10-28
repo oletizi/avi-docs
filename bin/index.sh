@@ -16,7 +16,8 @@ do
     echo "Indexing for version: <${i}>"
 
     cp ${root}/src/site/_config.yml /tmp/
-    ${bin}/find-replace.pl -y --root=/tmp/ _config.yml "index_name:\s*'avi-docs'" "index_name:     '${i}'"
+    #${bin}/find-replace.pl -y --root=/tmp/ _config.yml "index_name:\s*'avi-docs'" "index_name:     '${i}'"
     export DOCS_VERSION=$i
-    bundle exec jekyll algolia push --config /tmp/_config.yml
+    export ALGOLIA_INDEX_NAME=${i}
+    bundle exec jekyll algolia push
 done
