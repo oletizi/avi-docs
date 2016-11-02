@@ -3,6 +3,8 @@ title: Meta -- Docs Getting Started on Windows
 layout: default
 ---
 
+<a href="#video-tutorial">Video tutorial available here &rsaquo;</a>
+
 ## Enable the Windows Subsystem for Linux
 
 The Windows Subsystem for Linux is a new way from Microsoft and Canonical to run a Linux envirnment inside Windows. If you like *NIX, but need to use Windows, this is a great new environment. We'll be using it to install and run the docs site locally.
@@ -127,3 +129,7 @@ Congratulations, you're all set up.
 ## Next Steps
 
 <a href="/docs/16.2.2./meta/article-crud-basics/">Create or update an article &rsaquo;</a>
+
+## Video Tutorial
+
+{% include youtubePlayer.html id="M_F5nqT9b9U" %}

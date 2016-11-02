@@ -91,5 +91,3 @@ API: /api/serviceengine?owned_by_controller=True&amp;join_subresources=runtime
  </code></pre> 
 
 API echoed output may be enabled for every command executed during a single CLI session via terminal <code>display_api_details</code>. 
-
- 
