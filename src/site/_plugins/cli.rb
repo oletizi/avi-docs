@@ -20,8 +20,6 @@ module Jekyll
       text.each_line do |line|
         if (match = line.match(/#{pattern}/))
           prompt, cmd = match.captures
-          puts "prompt: #{prompt}"
-          puts "cmd   : #{cmd}"
           lines_by_prompt[prompt] << i
           out += cmd + "\n"
         else
@@ -39,11 +37,7 @@ module Jekyll
       prompt_param = prompt_params.join(';')
       data_param = ' data-output="' + data_output_lines.join(',') +'" '
       user_param = ' data-user=""'
-      puts "prompt_param: #{prompt_param}"
-      puts "data_param: #{data_param}"
       out = '<pre class="command-line language-bash" data-prompt="' + prompt_param + '" ' + data_param + ' ' + user_param + '><code>' + out + '</code></pre>'
-      puts out
-      out
     end
   end
 end
