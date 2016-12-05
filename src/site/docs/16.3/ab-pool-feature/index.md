@@ -1,12 +1,14 @@
 ---
-title: A/B Test Pool
+title: A/B Test Pool (pre-16&#46;3)
 layout: default
 ---
-Vantage allows a secondary (B) pool to be added to a virtual service's primary (A) pool. In this case, both the A and B pools can receive traffic for the virtual service. Based on configuration, a specific percentage (0-100) of the virtual service's traffic is sent to the B pool instead of the A pool. The rest of the traffic is sent to the A pool.
+This article describes the A/B test pool feature supported by Avi Vantage releases prior to 16.3. For information on pools and pool groups supported as of release 16.3, see <a href="/pool-groups/">here</a>.
+
+Avi Vantage allows a secondary (B) pool to be added to a virtual service's primary (A) pool. In this case, both the A and B pools can receive traffic for the virtual service. Based on configuration, a specific percentage (0-100) of the virtual service's traffic is sent to the B pool instead of the A pool. The rest of the traffic is sent to the A pool.
 
 The A/B pool feature, sometimes referred to as blue/green testing, provides a simple way to gradually transition a virtual service's traffic from one set of servers to another. For example, to test a major OS or application upgrade in a virtual service's primary pool (A), a second pool (B) running the upgraded version can be added to the primary pool. Then based on the configuration, a percentage (0-100) of the client-to-server traffic is sent to the B pool instead of the A pool.
 
-To continue this example, if the upgrade is performing well, the Vantage user can increase the percentage of traffic sent to the B pool. Likewise, if the upgrade is unsuccessful or sub-optimal, the percentage to the B pool easily can be reduced again to test another upgrade.
+To continue this example, if the upgrade is performing well, the Avi Vantage user can increase the percentage of traffic sent to the B pool. Likewise, if the upgrade is unsuccessful or sub-optimal, the percentage to the B pool easily can be reduced again to test another upgrade.
 
 To finish transitioning to the new pool following successful upgrade, the percentage can be adjusted to send 100 percent of the traffic to pool, which now makes pool B the production pool.
 
@@ -18,11 +20,10 @@ To perform the next upgrade, the process can be reversed. After upgrading pool A
 * For each of the pools, normal load balancing is performed. After Vantage selects a pool for a new session, the load balancing method configured for that pool is used to select a server. 
 * The A/B setting does not affect existing sessions. For example, setting the percentage sent to B to 100 percent does not cause existing sessions on pool A to move to B. Likewise, A/B pool settings do not affect persistence configurations. 
 * The <a href="/docs/16.2.2/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions. > In the current release, the backup pool action is not supported for either pool in an A/B pair.
- 
-* A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.  
-    
-    This behavior ensures that a failure in the selected pool is brought to the attention of the Vantage user, rather than masked by a silent failover to the other pool.
-    
+> In the current release, the backup pool action is not supported for either pool in an A/B pair.
+
+* A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.This behavior ensures that a failure in the selected pool is brought to the attention of the Avi Vantage user, rather than masked by a silent failover to the other pool. 
+
 ## Configuring the A/B Pool Feature
 
 The following sections show how to configure the A/B pool feature using the web interface or CLI.

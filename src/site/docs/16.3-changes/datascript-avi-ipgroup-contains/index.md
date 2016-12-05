@@ -40,7 +40,7 @@ if avi.ipgroup.contains("IP-Group", var) then
    avi.vs.log("Blacklisted IP" .. var.. "attempting to log in")
    avi.vs.close_conn()
 end</code></pre> 
-<!-- [Format Time: 0.0008 seconds] --></td>
+<!-- [Format Time: 0.0010 seconds] --></td>
 </tr>
 </tbody>
 </table> 

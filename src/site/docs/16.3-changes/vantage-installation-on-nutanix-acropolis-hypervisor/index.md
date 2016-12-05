@@ -83,7 +83,7 @@ The resources suggested in this installation guide are minimum recommendations f
     <li>Custom Scripts:  Paste the following information into this section.  This info is used to tell the Service Engine about the Controller IP address and the auth token it should present.  The auth token should have already been generated in step 3.  See the graphic for an example.<br> 
      <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">AVICNTRL: [Controller IP address]
 AVICNTRL_AUTHTOKEN: [Auth token]</code></pre> 
-     <!-- [Format Time: 0.0004 seconds] --> </li> 
+     <!-- [Format Time: 0.0003 seconds] --> </li> 
    </ul> </li> 
   <li><strong>Verify connectivity</strong> between the SE and Controller.  Power on the SE VM.  From the Controller, navigate to Infrastructure &gt; Dashboard.  The SE icon should be present and green.</li> 
   <li><strong>Repeat as necessary</strong> to create any additional Service Engines.</li> 

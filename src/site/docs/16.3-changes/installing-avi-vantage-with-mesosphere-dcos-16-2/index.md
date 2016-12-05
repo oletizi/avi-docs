@@ -72,7 +72,7 @@ ExecStop=/usr/bin/docker stop avicontroller
 
 [Install]
 WantedBy=multi-user.target</code></pre> 
-  <!-- [Format Time: 0.0018 seconds] --> </li> 
+  <!-- [Format Time: 0.0020 seconds] --> </li> 
  <li>Edit the following values in the file: 
   <ul> 
    <li>NUM_CPU: Sets the number of CPU cores/threads used by the Controller (8 in this example).</li> 
@@ -312,7 +312,7 @@ Use these steps if neither the VIP nor the client is in the same Mesos cluster a
     }
   ]
 }</code></pre> 
-  <!-- [Format Time: 0.0023 seconds] --> </li> 
+  <!-- [Format Time: 0.0021 seconds] --> </li> 
  <li>Start the application to create a virtual service for it in Avi Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-­hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.</li> 
  <li>To generate traffic to the application: 
   <ol> 

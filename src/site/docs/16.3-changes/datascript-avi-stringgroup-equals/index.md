@@ -39,7 +39,7 @@ layout: default
 if not match then
    avi.http.redirect("https://login.site.com")
 end</code></pre> 
-<!-- [Format Time: 0.0006 seconds] --> <p> </p></td>
+<!-- [Format Time: 0.0007 seconds] --> <p> </p></td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Example 2</strong></span></td>
@@ -72,7 +72,7 @@ end</code></pre>
 if match then
    avi.http.redirect("https://www.test.com" .. val .. avi.http.get_url())
 end</code></pre> 
-<!-- [Format Time: 0.0009 seconds] --> <i>sa.test.com/path/index.htm?query=1</i> will be redirected to <i>www.test.com/sa/path/index.htm?query=1</i></td>
+<!-- [Format Time: 0.0008 seconds] --> <i>sa.test.com/path/index.htm?query=1</i> will be redirected to <i>www.test.com/sa/path/index.htm?query=1</i></td>
 </tr>
 </tbody>
 </table> 

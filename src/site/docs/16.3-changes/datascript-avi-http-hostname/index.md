@@ -36,7 +36,7 @@ layout: default
 if not host then
    avi.http.close_conn()
 end</code></pre> 
-<!-- [Format Time: 0.0005 seconds] --> <p> </p></td>
+<!-- [Format Time: 0.0006 seconds] --> <p> </p></td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Example 2</strong></span></td>
@@ -46,7 +46,7 @@ if loc and string.beginswith(loc, "/") then
    loc = "https://" .. avi.http.hostname() .. loc
    avi.http.replace_header("Location", loc)
 end</code></pre> 
-<!-- [Format Time: 0.0009 seconds] --></td>
+<!-- [Format Time: 0.0010 seconds] --></td>
 </tr>
 </tbody>
 </table> 

@@ -123,7 +123,7 @@ The pre-existing implementation of backup pools is explained in the <a href="/do
         type: "FAIL_ACTION_CLOSE_CONN"
     }
 }</code></pre> 
-  <!-- [Format Time: 0.0019 seconds] --> </li> 
+  <!-- [Format Time: 0.0018 seconds] --> </li> 
 </ol> 
 
 ### A/B Pools
@@ -172,7 +172,7 @@ To perform the next upgrade, the process can be reversed. After upgrading pool A
       </controller> 
      </controller> 
     </controller></code></pre> 
-  <!-- [Format Time: 0.0015 seconds] --> </li> 
+  <!-- [Format Time: 0.0012 seconds] --> </li> 
 </ol> 
 
 ### A/B Pool Feature Prior to 16.3

@@ -223,7 +223,7 @@ This section walks through the workflow for deploying a Linux host on CSP, with 
  <li>Login to the Linux host from the console (credentials root/default).</li> 
  <li>List the interfaces.<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# ip a</code></pre> 
-  <!-- [Format Time: 0.0002 seconds] --> eth0 is the management interface and ens3 is the data interface.</li> 
+  <!-- [Format Time: 0.0003 seconds] --> eth0 is the management interface and ens3 is the data interface.</li> 
  <li>Edit/create the config file for the management interface to read as below:<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
@@ -238,7 +238,7 @@ PERSISTENT_DHCLIENT="1"
 IPADDR=10.128.2.18
 NETMASK=255.255.255.0
 GATEWAY=10.128.2.1</code></pre> 
-  <!-- [Format Time: 0.0007 seconds] --> In above example, 10.128.2.18 is the management IP and 10.128.2.1 is the gateway IP.</li> 
+  <!-- [Format Time: 0.0008 seconds] --> In above example, 10.128.2.18 is the management IP and 10.128.2.1 is the gateway IP.</li> 
  <li>Edit/create the config file for the data interface to read as below:<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
@@ -255,7 +255,7 @@ NETMASK=255.255.255.0</code></pre>
   <!-- [Format Time: 0.0007 seconds] --> In above example 10.128.12.62 is the data interface IP. Do not configure the gateway IP; this will be configured from the Controller UI.</li> 
  <li>Restart network for the configuration to take effect. This may take some time.<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]#  sudo systemctl network restart</code></pre> 
-  <!-- [Format Time: 0.0002 seconds] --> </li> 
+  <!-- [Format Time: 0.0003 seconds] --> </li> 
  <li>Check if default gateway is configured correctly. (E.g., 10.128.2.1 is the management default gateway in the below output.)<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# routel|grep default
 
@@ -288,7 +288,7 @@ NETMASK=255.255.255.0</code></pre>
    link/ether 02:42:23:fb:10:cb brd ff:ff:ff:ff:ff:ff
    inet 172.17.0.1/16 scope global docker0
       valid_lft forever preferred_lft forever</code></pre> 
-  <!-- [Format Time: 0.0055 seconds] --> </li> 
+  <!-- [Format Time: 0.0056 seconds] --> </li> 
 </ol> 
 
 ## Install Docker
@@ -330,7 +330,7 @@ Server:
  Git commit:   5604cbe
  Built:        Wed Apr 27 00:34:42 2016
  OS/Arch:      linux/amd64</code></pre> 
-  <!-- [Format Time: 0.0016 seconds] --> </li> 
+  <!-- [Format Time: 0.0017 seconds] --> </li> 
 </ol> 
 
 For the latest Docker installation instructions, please refer to <a href="https://docs.docker.com/engine/installation/linux/centos/">https://docs.docker.com/engine/installation/linux/centos/</a>.

@@ -58,7 +58,7 @@ Overwriting the previously entered value for ha_mode
 : serviceenginegroup&gt; enable_routing
 Overwriting the previously entered value for enable_routing
 : serviceenginegroup&gt; save</code></pre> 
-  <!-- [Format Time: 0.0005 seconds] -->  <p></p> <p><a href="img/enable-IP-routing-in-SE-1.png"><img class="size-full wp-image-18682 aligncenter" src="img/enable-IP-routing-in-SE-1.png" alt="enable IP routing in SE" width="854" height="589"></a></p></li> 
+  <!-- [Format Time: 0.0006 seconds] -->  <p></p> <p><a href="img/enable-IP-routing-in-SE-1.png"><img class="size-full wp-image-18682 aligncenter" src="img/enable-IP-routing-in-SE-1.png" alt="enable IP routing in SE" width="854" height="589"></a></p></li> 
  <li>The above steps completes the SE group configuration to enable routing. However, the network is incomplete without the front-end routers and back-end servers being configured accordingly.</li> 
  <li><span style="font-weight: 400;">Front-end router configuration (if no BGP peers are configured on SE)</span><br> <span style="font-weight: 400;">a. Configure the the front-end router with a static route to the back-end server network (with next-hop pointing to floating interface IP of SE in front-end network). For example:</span><p></p> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">route add -net 10.10.10.0/24 gw 10.10.40.11.</code></pre> 
