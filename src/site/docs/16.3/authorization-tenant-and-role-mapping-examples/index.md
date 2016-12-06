@@ -36,7 +36,7 @@ A user can be a member of multiple LDAP/AD groups. For each group, if there is a
 
 ## Examples
 
-### Multiple Groups Mapping to Different Roles 
+### Multiple Groups Mapping to Different Roles
 
 This example illustrates the case of an IT team with three user groups - super-admins, app-admins, operations - where the following applies:
 
@@ -52,7 +52,7 @@ Separate mapping rules are required to map users from each group to different ro
 
 <a href="img/Screen-Shot-2016-08-07-at-12.09.09-AM.png"><img class="alignnone wp-image-11388" src="img/Screen-Shot-2016-08-07-at-12.09.09-AM.png" alt="authrz mapping rules list 7" width="650" height="435"></a>
 
-### Multiple Groups Mapping to Different Tenants 
+### Multiple Groups Mapping to Different Tenants
 
 This example illustrates settings for an IT team that expects tenant isolation except for a few super users.
 

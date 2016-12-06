@@ -15,7 +15,7 @@ A DNS virtual service is a virtual service that has an application profile type 
 
 Note: In release 16.3, if DNS is run/placed on an SE, no other virtual service placements on that SE are permitted.
 
-For performance and high availability, the DNS virtual service can be placed/hosted on more than one Service Engine; all <a href="/overview-of-vantage-high-availability/">data plane high availability modes</a> — elastic HS (active/active and M+N) and legacy HA — are supported. [Not shown in diagram]
+For performance and high availability, the DNS virtual service can be placed/hosted on more than one Service Engine; all <a href="/docs/16.3/overview-of-vantage-high-availability/">data plane high availability modes</a> — elastic HS (active/active and M+N) and legacy HA — are supported. [Not shown in diagram]
 
 In addition, another level of high availability is possible for DNS virtual services. DNS entries can be hosted on more than one DNS virtual service, thus providing network-level redundancy as well. This is a useful option for a multi-cloud scenario, and when there are sufficient IP addresses to front-end the DNS service. [Not shown in diagram]
 
@@ -31,7 +31,7 @@ This configuration is available in the Administration section:
 
 <a href="img/kb-dns-1-1.png"><img class="alignnone wp-image-16137 size-full" src="img/kb-dns-1-1.png" alt=" System DNS Virtual Service Configuration" width="1130" height="308"></a>
 
-For more information on configuration steps for DNS virtual services, please refer to<a href="/avi-gslb-site-configuration-and-operations/"> configure local DNS virtual service on all active sites that host DNS</a>.
+For more information on configuration steps for DNS virtual services, please refer to<a href="/docs/16.3/avi-gslb-site-configuration-and-operations/"> configure local DNS virtual service on all active sites that host DNS</a>.
 
 ## Features
 
@@ -69,9 +69,9 @@ Limitations for 16.3:
 
 Avi DNS can host the names and IP addresses of the virtual services configured in Avi Vantage. 
 
-Details of configuring this can be found in <a href="/vip-allocation-using-ipam-or-dns/">IPAM and DNS Support</a>.
+Details of configuring this can be found in <a href="/docs/16.3/vip-allocation-using-ipam-or-dns/">IPAM and DNS Support</a>.
 
-Mesos port-based SRV records can also be hosted on the DNS service. For more information, please refer to <a href="/service-discovery-for-mesos/">DNS-based Service Discovery for Mesos</a>.
+Mesos port-based SRV records can also be hosted on the DNS service. For more information, please refer to <a href="/docs/16.3/service-discovery-for-mesos/">DNS-based Service Discovery for Mesos</a>.
 
 ### Hosting Manual or Static DNS Entries
 
@@ -79,13 +79,13 @@ The DNS service can host manual static DNS entries (A, SRV or CNAME records). Fo
 
 ### Hosting GSLB Service DNS Entries
 
-The DNS virtual service can host GSLB service DNS entries, and automatically update the responses based on the health, load and proximity of the services. Details of the GSLB service are available in <a href="/avi-gslb-architecture/">Avi GSLB Architecture</a>.
+The DNS virtual service can host GSLB service DNS entries, and automatically update the responses based on the health, load and proximity of the services. Details of the GSLB service are available in <a href="/docs/16.3/avi-gslb-architecture/">Avi GSLB Architecture</a>.
 
 ### DNS Health Monitoring
 
 DNS health monitors can be configured to monitor the health of DNS servers that are configured as DNS service pool members.
 
-Please see <a href="/dns-health-monitor/"><span style="font-weight: 400;">DNS Health Monitor KB</span></a>for more details. 
+Please see <a href="/docs/16.3/dns-health-monitor/"><span style="font-weight: 400;">DNS Health Monitor KB</span></a>for more details. 
 
 ### Additional Features
 
@@ -101,7 +101,7 @@ Features of the Avi DNS service:
 
 * Non-significant logs should be enabled with caution, since a large number of DNS queries typically hit a DNS service, and this would result in too many logs entries.
 * Categorization of non-significant logs is also very important. If certain errors are typical in the deployment, these errors should be excluded from significant logs.
-* Refer to the exclude DNS errors discussion found <a href="/docs/architectural-overview/templates/profiles/analytics-profile/#exclude-dns-errors">here</a>. 
+* Refer to the exclude DNS errors discussion found <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#exclude-dns-errors">here</a>. 
 
 ## Avi DNS Deployment Use Scenarios
 

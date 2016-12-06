@@ -27,6 +27,11 @@ for i in `find $queue -type f`; do
         echo "$desfile not found. Copy queue file there: $i"
         read response
         if [ "$response" == y ]; then
+            destdir=$(dirname $destfile)
+            if [ ! -e $destdir ]; then
+                # The destination directory doesn't exist. Create it.
+                mkdir -p $destdir
+            fi
             cp $i $destfile
         fi
     elif [[ $i ==  *.png || $i == *.jpg || $i == *.jpeg || $i == *.gif  ]]; then

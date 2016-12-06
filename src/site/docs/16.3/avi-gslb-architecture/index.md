@@ -22,9 +22,9 @@ Avi GSLB provides simplified and centralized configuration and monitoring of glo
 
 ### Related articles:
 
-* <a href="/avi-dns-architecture/">Avi DNS Architecture</a>
-* <a href="/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitors</a>
-* <a href="/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a> 
+* <a href="/docs/16.3/avi-dns-architecture/">Avi DNS Architecture</a>
+* <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitors</a>
+* <a href="/docs/16.3/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a> 
 
 ## Architecture and Terminology
 
@@ -126,7 +126,7 @@ In the above example, Santa Clara, Chicago, Austin and NY are Active sites while
 
 A GSLB service is the representation of a global application, that front-ends applications across multiple sites. This configuration object hosts the FQDN of the application, the backing virtual services in various sites, and the priority/ratios for the various members. This object also hosts the monitoring methods to make sure that the group members are alive.
 
-For more information, please refer to <a href="/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitors</a>.
+For more information, please refer to <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitors</a>.
 
 ## Health Checks
 
@@ -136,7 +136,7 @@ Three options for GSLB member Health Checks:
 * Data-Plane Health -DNS virtual service performs GSLB Health Monitors to member virtual services 
 * Both Control and Data Plane Health - In order for a GS member to be marked as UP, both Control and Data health should report UP. If Control Health check is failing (due to controller being down) and Data Health works, GS Member is  marked as UP. 
 
-For more information, please refer to <a href="/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitors</a>.
+For more information, please refer to <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitors</a>.
 
 ## Overall Flow
 
@@ -171,7 +171,7 @@ GSLB leader detects successful connectivity to follower and updates it with the 
 
 Only an admin can resume updates to the GSLB configuration.
 
-To know more about changing the GSLB Leader and site recovery, please refer to <a href="/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>.
+To know more about changing the GSLB Leader and site recovery, please refer to <a href="/docs/16.3/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>.
 
 ## Tenancy and GSLB
 

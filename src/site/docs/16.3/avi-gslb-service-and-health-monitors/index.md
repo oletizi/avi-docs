@@ -57,7 +57,7 @@ Please note that the above does not apply to third-party load balancer VIPs or s
 
 Service Engines hosting DNS virtual services (GSLB-enabled) can perform periodic health checks against the GSLB service members. The object used for this is called the <a style="font-weight: bold;" href="/docs/latest/api-guide/gslbhealthmonitor.html">GslbHealthMonitor</a>. Ping, tcp, udp, http(s) HealthMonitors are supported. Please note that the monitor-port is mandatory for non-ping GslbHealthMonitors.
 
-Please see <a href="/overview-of-health-monitors/">Health Monitoring KB</a> for more information.
+Please see <a href="/docs/16.3/overview-of-health-monitors/">Health Monitoring KB</a> for more information.
 
 <a href="img/Data-plane-healthcheck.png"><img class=" wp-image-17149 aligncenter" src="img/Data-plane-healthcheck.png" alt="Data plane healthcheck" width="434" height="232"></a>
 
@@ -69,7 +69,7 @@ Please see <a href="/overview-of-health-monitors/">Health Monitoring KB</a> for
 * **Data-plane health**: DNS virtual service performs GSLB Health Monitors to GSLB member virtual services.
 * **Both control- and data-plane health:** For a GS member to be marked as UP, both control and data health should report UP. If the control health check is failing (due to the Controller being down) but data health works, GS member is  marked as UP. 
 
-To know more about how the GS members are tagged depending upon the GS health monitors, please refer to<a href="/avi-gslb-site-configuration-and-operations/"> Avi GSLB Site Configuration and Operations</a>.
+To know more about how the GS members are tagged depending upon the GS health monitors, please refer to<a href="/docs/16.3/avi-gslb-site-configuration-and-operations/"> Avi GSLB Site Configuration and Operations</a>.
 
 ## Sample Topology
 
