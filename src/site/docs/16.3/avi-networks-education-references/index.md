@@ -49,7 +49,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Overview of DataScript<br> <a href="/docs/16.2.2/overview-of-datascript">/overview-of-datascript/</a></li> 
  <li>DataScript: Troubleshooting Rules<br> <a href="/docs/16.2.2/datascript-troubleshooting-rules">/datascript-troubleshooting-rules/</a></li> 
  <li>DataScript: Execution Priority<br> <a href="/docs/16.2.2/datascript-execution-priority">/datascript-execution-priority/</a></li> 
- <li>Create a Virtual Service<br> <a href="/docs/16.2.2/architectural-overview/applications/virtual-services/create-virtual-service/">/docs/latest/architectural-overview/applications/virtual-services/create-virtual-service/</a></li> 
+ <li>Create a Virtual Service<br> <a href="/docs/16.2.2/configuration-guide/applications/virtual-services/create-virtual-service/">/docs/latest/architectural-overview/applications/virtual-services/create-virtual-service/</a></li> 
  <li>DataScript: Functions<br> <a href="/docs/16.2.2/datascript-functions">/datascript-functions/</a></li> 
  <li>DataScript: Events<br> <a href="/docs/16.2.2/datascript-events">/datascript-events/</a></li> 
  <li>DataScript: Constants<br> <a href="/docs/16.2.2/datascript-constants">/datascript-constants/</a></li> 
@@ -272,4 +272,12 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Connection Multiplexing<br> <a href="/docs/16.2.2/connection-multiplex">/connection-multiplex/</a></li> 
  <li>HA for Avi Controllers<br> <a href="/docs/16.2.2/ha-for-avi-controllers">/ha-for-avi-controllers/</a></li> 
  <li>Verifying Notification Settings<br> <a href="/docs/16.2.2/verifying-notification-settings">/verifying-notification-settings/</a></li> 
+ <li>OpenStack External Networks<br> <span id="sample-permalink"><a href="/openstack-external-networks/">/<span id="editable-post-name">openstack-external-networks</span>/</a></span></li> 
+ <li>Mapping Multiple Virtual Service Ports to Server Ports<br> <a href="/mapping-multiple-virtual-service-ports-to-server-ports/">/mapping-multiple-virtual-service-ports-to-server-ports/</a></li> 
+ <li>Edge Proxy Design<br> <a href="/edge-proxy-design/">/edge-proxy-design/</a></li> 
+ <li>Migrate from F5 BIG-IP to Avi<br> <a href="/migrate-from-f5-big-ip-to-avi-vantage/">/migrate-from-f5-big-ip-to-avi-vantage/</a></li> 
+ <li>Rewriting Host Header to Server Name<br> <a href="/rewriting-host-header-to-server-name/">/rewriting-host-header-to-server-name/</a></li> 
+ <li>AWS Cross-Account AssumeRole Support<br> <a href="/aws-cross-account-assumerole-support/">/aws-cross-account-assumerole-support/</a></li> 
+ <li>Debugging BGP-based Service Engine Configurations<br> <a href="/debugging-bgp-based-service-engine-configurations/">/debugging-bgp-based-service-engine-configurations/</a></li> 
+ <li>Testing Vantage with Load Generators<br> <span id="sample-permalink"><a href="/testing-vantage-with-load-generators/">/<span id="editable-post-name">testing-vantage-with-load-generators</span>/</a></span></li> 
 </ol> 

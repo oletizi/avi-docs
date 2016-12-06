@@ -4,7 +4,7 @@ layout: default
 ---
 ## Avi GSLB Sites
 
-As mentioned in <a href="/avi-gslb-architecture/">Avi GSLB Architecture</a>, GSLB sites fall into two broad categories — **Avi sites** and **external sites** (e.g., running third-party ADCs from vendors such as F5, Citrix, etc.). This article focuses on Avi sites.
+As mentioned in <a href="/docs/16.3/avi-gslb-architecture/">Avi GSLB Architecture</a>, GSLB sites fall into two broad categories — **Avi sites** and **external sites** (e.g., running third-party ADCs from vendors such as F5, Citrix, etc.). This article focuses on Avi sites.
 
 Each Avi site is characterized as either **active** or a **passive**. Active sites synchronize the GSLB site configuration among themselves. They also query passive sites to obtain information about the health of those sites. Passive sites host local virtual services, but do not host any GSLB service configuration. Neither do passive sites monitor the health of other sites.
 
@@ -144,7 +144,7 @@ Go through the next 3 tabs, and save the virtual service.
 
 Create application virtual services normally. For example, create an HTTP virtual service vs-1 in Controller cluster 1, and virtual-service vs-2 in Controller cluster 2.
 
-See <a href="/docs/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
+See <a href="/docs/16.3/docs/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
 
 On 10.10.25.10 (Santa Clara):
 
@@ -355,7 +355,7 @@ From the UI or CLI, create an application profile that selects the domain names 
 
 Create application virtual services normally. For example, create an HTTP virtual service vs-1 in Controller cluster 1, and virtual-service vs-2 in Controller cluster 2.
 
-See <a href="/docs/configuration-guide/applications/virtual-services/">Configuring Virtual Services</a> for more details.
+See <a href="/docs/16.3/configuration-guide/applications/virtual-services/">Configuring Virtual Services</a> for more details.
 
 **5. Configure health monitor for GSLB Services**
 
