@@ -32,8 +32,8 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 
 * SR-IOV and VLAN filtering for Cisco CSP 
 * Ability to specify a Service Engine's disk configuration to VMware vCenter 
-* IPAM/DNS for VMware read-only cloud 
-* SE configuration controls to support dedicated dispatcher and socket placement 
+* <a href="/docs/16.3/ipam-and-dns-16-2-x/"><span class="s1">IPAM/DNS for VMware read-only cloud</span></a> 
+* SE configuration controls to support dedicated dispatcher and socket placement 
 * BGP selective advertisement for VIP/SNAT 
 * Support for multiple BGP peers in a single network  
 

@@ -1,0 +1,12 @@
+Dec 5, 2016
+
+### Unresolved Issues
+- Figure out what to do with the release notes. Make sure they all make sense
+- Perform linklint
+
+### Missing items:
+- img/Avi_Support_Terms_21Oct2016.pdf in avi-support-terms
+
+### Modified page names:
+
+legacy-ha-for-avi-service-engines	legacy-ha
