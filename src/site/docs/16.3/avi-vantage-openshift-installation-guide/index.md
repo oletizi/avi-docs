@@ -1,23 +1,29 @@
 ---
-title: Installing Avi Vantage in OpenShift
+title: Installing Avi Vantage in OpenShift/Kubernetes
 layout: default
 ---
 ## Introduction
 
-This guide describes how to integrate Avi Vantage into an OpenShift cloud. The instructions in this guide can be used for installing Avi Vantage 16.2.3 and subsequent.
+This guide describes how to integrate Avi Vantage into an OpenShift v3 or Kubernetes cloud. The instructions in this guide can be used for installing Avi Vantage 16.3 and subsequent.
 
 Avi Vantage is a software-based solution that provides real-time analytics as well as elastic application delivery services. Vantage optimizes core web-site functions, including SSL termination and load balancing. Vantage also provides access to network analytics, including end-to-end latency information for traffic between end-users and the load-balanced applications.
 
-When deployed into an OpenShift cloud, Avi Vantage performs as a fully distributed, virtualized system consisting of the Avi Controller and Avi Service Engines (SEs), each running as a separate container on OpenShift slave nodes.
+When deployed into an OpenShift/Kubernetes cloud, Avi Vantage performs as a fully distributed, virtualized system consisting of the Avi Controller and Avi Service Engines (SEs), each running as a separate container on OpenShift slave nodes.
+
+### Also of interest
+
+* <a href="/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">Replace kube-proxy in a OpenShift Environment with Avi Vantage</span></a>
+* <a href="/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration on Vantage</span></a>
+* <a href="/openshift-routes-virtual-service-configuration/">OpenShift Routes Virtual Service Configuration</a> 
 
 ## DEPLOYMENT PREREQUISITES
 
 ### PHYSICAL NODE REQUIREMENTS
 
-The main components of the Avi Vantage solution, Avi Controllers and Service Engines (SEs), run as containers on OpenShift slave nodes. For production deployment, a 3-instance Avi Controller cluster is recommended, with the each of the Avi Controller instances running in containers on separate physical nodes. After configuring the Avi Controller cluster for OpensShift cloud, it deploys one Avi SE container on each of the OpenShift nodes. The nodes on which an Avi Controller runs must meet at least the following minimum system requirements:
+The main components of the Avi Vantage solution, Avi Controllers and Service Engines (SEs), run as containers on OpenShift/Kubernetes minion nodes. For production deployment, a 3-instance Avi Controller cluster is recommended, with the each of the Avi Controller instances running in containers on separate physical nodes. After configuring the Avi Controller cluster for OpensShift/Kubernetes cloud, it deploys one Avi SE container on OpenShift/Kubernetes nodes. The nodes on which an Avi Controller runs must meet at least the following minimum system requirements:
 
-* 4 vCPUs
-* 12 GB memory
+* 8 vCPUs
+* 24 GB memory
 * 64 GB disk space 
 
 ### SYSTEM TIME (NTP) REQUIREMENT
@@ -29,13 +35,13 @@ The system time on all nodes must be synchronized. Use of a Network Time Protoco
 For deployment of SEs, the following system-level software is required:
 
 * Each node host OS must be a Linux distribution running systemd.
-* The Avi Controller uses password-less sudo SSH to access all the OpenShift nodes in the cluster and create SEs on those nodes. The SSH user must have password-less sudo access to all three OpenShift nodes hosting the Avi Vantage cluster. The SSH method requires a public-private key pair. You can import an existing private key onto the Avi Controller or generate a new key pair. In either case, the public key must be in the “/home/ssh_user/.ssh/authorized_keys” file, where ssh_user is the SSH username on all OpenShift nodes. The Avi Controller setup wizard automatically stores the private key on the Avi Controller node when you import or generate the key. 
+* The Avi Controller uses password-less sudo SSH to access all the OpenShift nodes in the cluster and create SEs on those nodes. The SSH user must have password-less sudo access to all three OpenShift nodes hosting the Avi Vantage cluster. The SSH method requires a public-private key pair. You can import an existing private key onto the Avi Controller or generate a new key pair. In either case, the public key must be in the “/home/ssh_user/.ssh/authorized_keys” file, where ssh_user is the SSH username on all OpenShift nodes. The Avi Controller setup wizard automatically stores the private key on the Avi Controller node when you import or generate the key. 
 
 ## INSTALLING THE AVI CONTROLLER
 
 To install the Avi Controller:
 <ol> 
- <li>Copy the .tgz package onto the OpenShift slave node that will host the Avi Controller leader (for controller cluster two followers run on separate nodes):<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>scp controller_docker.tgz username@remotehost.com:~/</code></pre> Note: Replace <em>username</em>@<em>remotehost.com</em> with your write-access username and password and the IP address or hostname for the host node.</li> 
+ <li>Copy the .tgz package onto a node that will host the Avi Controller leader (for a Controller cluster, two followers run on separate nodes):<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>scp controller_docker.tgz username@remotehost.com:~/</code></pre> Note: Replace <em>username</em>@<em>remotehost.com</em> with your write-access username and password and the IP address or hostname for the host node.</li> 
  <li>Log onto the OpenShift node:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>ssh username@remotehost.com</code></pre></li> 
  <li>Load the Avi Controller image into the host's local Docker repository:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo docker load &lt; controller_docker.tgz</code></pre></li> 
  <li>As a best practice, clean up any data that may be lingering from a previous run:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo rm -rf /var/lib/controller/*</code></pre></li> 
@@ -58,7 +64,7 @@ TimeoutStopSec=120
 StartLimitInterval=0
 ExecStartPre=-/usr/bin/docker kill avicontroller
 ExecStartPre=-/usr/bin/docker rm avicontroller
-ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5098:5098 -p 9080:9080 -p 9443:9443 -p 8443:8443 -p 5054:5054 -p 161:161 -p 8053:53/udp -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=80 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$$HOST_MANAGEMENT_IP -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$$TAG"
+ExecStartPre=/usr/bin/bash -c "/usr/bin/docker run --name=avicontroller --privileged=true -p 5098:5098 -p 9080:9080 -p 9443:9443 -p 8443:8443 -p 5054:5054 -p 161:161 -p 8053:53/udp -d -t -e NUM_CPU=8 -e NUM_MEMG=24 -e DISK_GB=64 -e HTTP_PORT=9080 -e HTTPS_PORT=9443 -e MANAGEMENT_IP=$$HOST_MANAGEMENT_IP -v /:/hostroot -v /var/lib/controller:/vol -v /var/run/fleet.sock:/var/run/fleet.sock -v /var/run/docker.sock:/var/run/docker.sock avinetworks/controller:$$TAG"
 ExecStart=/usr/bin/docker logs -f avicontroller
 ExecStop=/usr/bin/docker stop avicontroller
 
@@ -69,15 +75,15 @@ WantedBy=multi-user.target</code></pre>
 
 * **NUM_CPU:** Sets the number of CPU cores/threads used by the Controller (8 in this example).
 * **NUM_MEMG:** Sets the memory allocation (24 GB in this example).
-* **DISK_GB:** Sets the disk allocation (80 GB in this example).
+* **DISK_GB:** Sets the disk allocation (64 GB in this example).
 * **MANAGEMENT_IP**: Replace $$HOST_MANAGEMENT_IP with the management IP of current OpenShift Node
-* **$$TAG**: Replace with tag value of the Avi Vantage image in the Docker repository. For example, “16.3-5079-20160814.122257”. 
+* **$$TAG**: Replace with tag value of the Avi Vantage image in the Docker repository. For example, “16.3-5079-20160814.122257”. 
 
 2. Save and close the file.
 
 ## STARTING THE AVI CONTROLLER SERVICE
 
-To start the Avi Controller, enter the following command on the node on which you created the Avi Controller:
+To start the Avi Controller, enter the following command on the node on which you created the Avi Controller:
 
 <pre class="command-line language-bash" data-prompt=": >"><code>sudo systemctl enable avicontroller &amp;&amp; sudo systemctl start avicontroller</code></pre> 
 
@@ -87,98 +93,286 @@ Initial startup and full system initialization takes around 10 minutes.
 
 To access the Avi Controller web interface, navigate to the following URL:
 
-https://opensthift-node-ip:9443
+<code>https://avicontroller-node-ip:9443</code>
 
-Where openshift-node-ip is the management IP of the OpenShift node on which the Controller is installed.
+Note: avicontroller-node-ip is the management IP of the node on which the Controller is installed.
 
 ## SETTING UP THE AVI CONTROLLER
 
-This section shows how to perform initial configuration of the Avi Controller using its deployment wizard. You will configure the following settings.
+This section shows how to perform initial configuration of the Avi Controller using its deployment wizard. You will configure the following settings.
 
-Access Avi Controller UI from browser and follow below five steps:
+Access Avi Controller UI from browser and follow below six steps:
 
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Fig1.png"><img class="wp-image-11586" src="img/Fig1.png" alt="Fig1" width="300" height="441"></a>  
-<figcapture> Step 1. Set a password for the admin user. 
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig1.png"><img class="wp-image-11586" src="img/Fig1.png" alt="Fig1" width="350" height="515"></a>  
+<figcapture> Step 1. Set a password for the admin user. 
 </figcapture>
 </figure> 
-
- 
-
-<figure class="thumbnail wp-caption aligncenter"> <img class="wp-image-11588" src="img/Fig2.png" alt="Fig2" width="300" height="364">  
+<figure class="thumbnail wp-caption alignright"> <img class="wp-image-11588" src="img/Fig2.png" alt="Fig2" width="350" height="425">  
 <figcapture> Step 2. Set DNS and NTP server information. 
 </figcapture>
 </figure> 
 
- 
+ 
 
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Fig3.png"><img class="wp-image-11589" src="img/Fig3.png" alt="Fig3" width="300" height="421"></a>  
-<figcapture> Step 3. Select No Orchestrator as infrastructure type. 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<figure class="thumbnail wp-caption alignright"> <a href="img/Fig3.png"><img class="wp-image-11589" src="img/Fig3.png" alt="Fig3" width="350" height="491"></a>  
+<figcapture> Step 4. Select No Orchestrator as infrastructure type. 
+</figcapture>
+</figure> 
+<figure class="thumbnail wp-caption alignleft"> <a href="img/email_SMTP_settings.png"><img class="wp-image-20544" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="350" height="311"></a>  
+<figcapture> Step 3. Email and SMTP information 
 </figcapture>
 </figure> 
 
- 
+ 
 
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Fig4.png"><img class="wp-image-11590" src="img/Fig4.png" alt="Fig4" width="300" height="228"></a>  
-<figcapture> Step 4. Click Next. 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig4-1.png"><img class="wp-image-17206" src="img/Fig4-1.png" width="350" height="266"></a>  
+<figcapture> Step 5. Click Next. 
+</figcapture>
+</figure> 
+<figure class="thumbnail wp-caption alignright"> <a href="img/Fig5.png"><img class="wp-image-11591" src="img/Fig5.png" alt="Fig5" width="350" height="270"></a>  
+<figcapture> Step 6. Respond ‘No’ to the multiple tenants question. 
 </figcapture>
 </figure> 
 
- 
+ 
 
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Fig5.png"><img class="wp-image-11591" src="img/Fig5.png" alt="Fig5" width="300" height="232"></a>  
-<figcapture> Step 5. Respond ‘No’ to the multiple tenants question. 
-</figcapture>
-</figure> 
+ 
 
- 
+ 
 
-# CONFIGURE NETWORKS
+ 
 
-Configure EastWest networks and subnet for virtual services handling east-west traffic and NorthSouth subnet for virtual services handling client / north-south traffic as follows:
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+## CONFIGURE NETWORKS
+
+Configure a subnet and IP address pool for intra-cluster/east-west traffic and a subnet and IP address pool for external/north-south traffic. These IP addresses will be used as service virtual IPs (VIPs) or cluster IPs. The east-west subnet is an overlay or virtual subnet. The north-south subnet is the underlay subnet to which all the nodes/minions are connected. Use unused or spare IP addresses from the underlay subnet for the north-south VIP address pool.
+
+Configure east-west networks and subnet for virtual services handling east-west traffic and NorthSouth subnet for virtual services handling client / north-south traffic as follows:
 
 <figure class="thumbnail wp-caption alignleft"> <a href="img/Fig6.png"><img class="wp-image-11593" src="img/Fig6.png" alt="Fig6" width="650" height="168"></a>  
 <figcapture> Step 6. Navigate to Infrastructure &gt; Networks and click Create. 
 </figcapture>
 </figure> 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
-
- 
-
- 
-
- 
-
-<figure class="thumbnail wp-caption alignnone"> <a href="img/Fig7-1.png"><img class="wp-image-12599" src="img/Fig7-1.png" width="649" height="438"></a>  
-<figcapture> Step 7. Create EastWest network and add subnet with static IP range for IPs to be used by east-west virtual services. 
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig7-1.png"><img class="wp-image-12599" src="img/Fig7-1.png" width="649" height="438"></a>  
+<figcapture> Step 7. Create east-west network and add subnet with static IP range for IPs to be used by east-west virtual services. 
 </figcapture>
 </figure> 
 
-Above example uses 172.50.0.0/16 subnet assuming kube-proxy is enabled. To use the service subnet (172.30.0.0/16) for east-west traffic, <a href="/docs/16.2.2/replace-kube-proxy-in-openshift-environment-with-avi-vantage">disable kube-proxy</a>.
+ 
 
-<figure class="thumbnail wp-caption alignnone"> <a href="img/Fig8.png"><img class="wp-image-11596" src="img/Fig8.png" alt="Fig8" width="650" height="436"></a>  
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Avi provides a drop-in replacement for kube-proxy for east-west services. There are 2 options for the subnet from which virtual IPs for east-west services are allocated.
+
+OpenShift/Kubernetes allocates cluster IPs for east-west services from a virtual subnet.  Avi can use the same cluster IPs allocated by OpenShift/Kubernetes and provider east-west proxy services. Standard tools such as oc/kubernetes display cluster IPs for services, so display and troubleshooting become easier. However, this requires that kube-proxy be disabled in the cluster on all nodes. 
+
+Alternately, Avi can be configured to provide east-west services on a non-overlapping virtual subnet different from the cluster IP subnet.
+
+Kube-proxy is enabled:You must use a different subnet than the cluster IP subnet. The example above uses <a href="http://172.50.0.0/16"><span class="s3">172.50.0.0/16</span></a>. The link local subnet <a href="http://169.254.0.0/16"><span class="s3">169.254.0.0/16</span></a> can be used too.
+
+Kube-proxy is disabled:<a href="/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"> This KB</a> explains how to disable kube-proxy. With kube-proxy disabled, there's a choice of either using a separate subnet for east-west VIPs or using the same VIPs as cluster IPs allocated by OpenShift/Kubernetes.
+
+    **To use the same VIPs as cluster IPs: **Enter the same subnet as the cluster IP subnet e.g. <a href="http://172.30.0.0/16"><span class="s3">172.30.0.0/16</span></a> and use the first address 172.30.0.1 in the "Add static IP address pool" box. East-West services simply use the allocated cluster IP as VIPs.
+
+   **To use a different subnet for VIPs for east-west services: **Enter the subnet information and create a IP address pool from the subnet. East-west services will be allocated VIPs from this IPAM pool.
+
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig8.png"><img class="wp-image-11596" src="img/Fig8.png" alt="Fig8" width="650" height="436"></a>  
 <figcapture> Step 8. Create NorthSouth network and add subnet with static IP range for IPs to be used by north-south virtual services. 
 </figcapture>
 </figure> 
 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
 ## CONFIGURE IPAM/DNS PROFILE
 
-The Avi Controller can provide internal IPAM and DNS services for VIP allocation and service discovery. Configure the IPAM/DNS profile as follows:
+The Avi Controller provides internal IPAM and DNS services for VIP allocation and service discovery. Configure the IPAM/DNS profile as follows:
 
-<figure class="thumbnail wp-caption alignnone"> <a href="img/Fig9.png"><img class="wp-image-11602" src="img/Fig9.png" alt="Fig9" width="650" height="119"></a>  
-<figcapture> Step 9. Navigate to Templates &gt; Profile &gt; IPAM/DNS Profile and click Create. 
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig9.png"><img class="wp-image-11602" src="img/Fig9.png" alt="Fig9" width="650" height="119"></a>  
+<figcapture> Step 9. Navigate to Templates > Profile > IPAM/DNS Profile and click Create. 
 </figcapture>
 </figure> 
 
- 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 Create the EastWest profile:
 
@@ -186,44 +380,81 @@ Create the EastWest profile:
 <figcapture> Step 10. Select Type: Internal. Click on Add DNS Service Domain and enter desired service domain name. Click Next. 
 </figcapture>
 </figure> 
-<figure class="thumbnail wp-caption alignright"> <a href="img/Fig11.png"><img class="wp-image-11604" src="img/Fig11.png" alt="Fig11" width="350" height="401"></a>  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig11.png"><img class="wp-image-11604" src="img/Fig11.png" alt="Fig11" width="350" height="401"></a>  
 <figcapture> Step 11. Select Useable Network as EastWest network configured in previous section. 
 </figcapture>
 </figure> 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 Create the NorthSouth profile:
 
@@ -231,46 +462,85 @@ Create the NorthSouth profile:
 <figcapture> Step 12. Select Type: Internal. Click on Add DNS Service Domain and enter desired service domain name. Click Next. 
 </figcapture>
 </figure> 
-<figure class="thumbnail wp-caption alignright"> <a href="img/Fig13-2.png"><img class="wp-image-11610" src="img/Fig13-2.png" alt="Fig13" width="350" height="400"></a>  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<figure class="thumbnail wp-caption alignleft"> <a href="img/Fig13-2.png"><img class="wp-image-11610" src="img/Fig13-2.png" alt="Fig13" width="350" height="400"></a>  
 <figcapture> Step 13. Select Useable network as NorthSouth network configured in previous section 
 </figcapture>
 </figure> 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
- 
+ 
+
+ 
 
 ## CONFIGURE SSH USER
 
-The Avi Controller needs to be configured with the same private key which is used to install OpenShift. This is required to enable controller to SSH to OpenShift nodes and deploy Servie Engines.
+The Avi Controller needs to be configured with an SSH key pair that provides passwordless sudo access to all the nodes. On OpenShift, this key pair can be the same private key which is used to install OpenShift. These keys are used by the Avi Controller to SSH to OpenShift nodes and deploy Avi Service Engines. The private key is usually located at ~/.ssh/id_rsa, for example, to copy out the default key from the OpenShift master:
 
 * SSH to Master node. 
 
@@ -286,7 +556,7 @@ The Avi Controller needs to be configured with the same private key which is use
 
 ## CONFIGURE CERTIFICATES
 
-* Use SCP to copy OpenShift certificate files form the master node 
+* Use SCP to copy SSL client OpenShift certificate files from the master node. On OpenShift master nodes, the certificates are installed at /etc/origin/master. On Kubernetes master nodes, the certificates are installed at /etc/kubernetes/pki. If the Kubernetes API server is unauthenticated, this step can be skipped. 
 
 <pre class="command-line language-bash" data-prompt=": >"><code>scp username@os_master_ip:/etc/origin/master/admin.crt
 scp username@os_master_ip:/etc/origin/master/admin.key
@@ -305,22 +575,53 @@ scp username@os_master_ip:/etc/origin/master/ca.crt .</code></pre>
     * Click Validate. <a href="img/Fig19.png"><img class="alignnone size-full wp-image-11622" src="img/Fig19.png" alt="Fig19" width="2174" height="1456"></a>
     * Click Import to save. 
 
-## CONFIGURE OPENSHIFT CLOUD
+## CONFIGURE OPENSHIFT/KUBERNETES CLOUD
 
-This section describes the configuration of OpenShift cloud. Here we are assuming that kube-proxy is disabled on OpenShift nodes and the user is using Avi’s internal DNS/IPAM.
+This section describes the configuration of the OpenShift/Kubernetes cloud. Here we are assuming that kube-proxy is disabled on OpenShift/Kubernetes nodes and the user is using Avi’s internal DNS/IPAM.
 
-* Navigate to Infrastructure &gt; Clouds.
-* Edit Default-Cloud.                                <img class="wp-image-11623 alignnone" src="img/Fig14.png" alt="Fig14" width="650" height="139"> 
-* Select OpenShift as infrastructure type and click Next.                           <a href="img/Fig15.png"><img class="wp-image-11624 alignnone" src="img/Fig15.png" alt="Fig15" width="450" height="302"></a> 
+* Navigate to Infrastructure > Clouds.
+* Edit Default-Cloud.                                <img class="wp-image-11623 alignnone" src="img/Fig14.png" alt="Fig14" width="650" height="139"> 
+* Select OpenShift as infrastructure type and click Next.                           <a href="img/Fig15.png"><img class="wp-image-11624 alignnone" src="img/Fig15.png" alt="Fig15" width="450" height="302"></a> 
 * Make sure ‘Enable Event Subscription’ is selected.
-* Select ‘Client TLS Key and Certificate’ and ‘CA TLS Key and Certificate’ from dropdown.
-* Enter the OpenShift Master URL in format shown below.<a href="img/Screen-Shot-2016-08-25-at-2.03.59-PM.png"><img class="alignnone wp-image-12506 " src="img/Screen-Shot-2016-08-25-at-2.03.59-PM.png" width="645" height="432"></a>
-* Click Next
-* Select SSH user configured previously and click Next. <a href="img/Fig21.png"><img class="alignnone wp-image-11626" src="img/Fig21.png" alt="Fig21" width="650" height="439"></a>
+* Select ‘Client TLS Key and Certificate’ and ‘CA TLS Key and Certificate’ from dropdown, if authentication is enabled.
+* Enter the OpenShift/Kubernetes API URL in the format shown below.<a href="img/Screen-Shot-2016-08-25-at-2.03.59-PM.png"><img class="wp-image-12506 alignright" src="img/Screen-Shot-2016-08-25-at-2.03.59-PM.png" width="645" height="432"></a>
+* Click Next. 
+<a href="img/Screen-Shot-2016-10-27-at-10.24.52-AM.png"><img class="alignright wp-image-17201" src="img/Screen-Shot-2016-10-27-at-10.24.52-AM.png" alt="edit the default cloud" width="645" height="338"></a>
+* Select SSH user configured previously.
+* Check "Cluster user overlay SDN" for overlay-based networking for the cluster, such as OpenShift, Nuage, Weave, etc.
+* Click Next. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
 * Set ‘Proxy Service Placement Subnet’ same as EastWest subnet configured earlier.
-* Uncheck ‘Use Cluster IP of service as VIP for East/West’ checkbox if it is checked (this is assuming kube-proxy is enabled. To configure this option with kube-proxy disabled click <a href="/docs/16.2.2/replace-kube-proxy-in-openshift-environment-with-avi-vantage">here</a>).
-* Set IPAM Profile from dropdown as shown. 
-<a href="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png"><img class="alignnone wp-image-12617 size-full" src="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png" width="2160" height="1452"></a>
+* If kube-proxy is disabled, check the “Use Cluster IP of service as VIP for East/West”. If kube-proxy is enabled, uncheck “Use Cluster IP of service as VIP for East/West”. This <a href="/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">KB</span></a>describes how kube-proxy can be disabled.
+* Set IPAM Profile from dropdown as shown.<a href="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png"><img class="alignnone wp-image-12617 size-full" src="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png" width="2160" height="1452"></a>
 * Click Save. 
 
 The cloud status will show green (placement ready).<a href="img/Screen-Shot-2016-08-25-at-2.14.50-PM.png"><img class="alignnone size-full wp-image-12508" src="img/Screen-Shot-2016-08-25-at-2.14.50-PM.png" alt="Screen Shot 2016-08-25 at 2.14.50 PM" width="2784" height="440"></a>
@@ -328,3 +629,13 @@ The cloud status will show green (placement ready).<a href="img/Screen-Shot-2016
 It will take around 5 min for the Avi Controller to download the SE docker image and start the containers.
 
 <a href="img/Screen-Shot-2016-08-25-at-2.17.04-PM.png"><img class="alignnone size-full wp-image-12510" src="img/Screen-Shot-2016-08-25-at-2.17.04-PM.png" alt="Screen Shot 2016-08-25 at 2.17.04 PM" width="2784" height="866"></a>
+
+ 
+
+## NEXT STEPS
+
+Refer to “<a href="/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">Replace kube-proxy in a OpenShift Environment with Avi Vantage</span></a>” to learn how to disable kube-proxy in a OpenShift environment
+
+Refer to “<a href="/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration on Vantage</span></a>” to learn how to create services and test traffic.
+
+Refer to “<a href="/openshift-routes-virtual-service-configuration/"><span style="font-weight: 400;">OpenShift Routes Virtual Service configuration</span></a>” to learn how to create and test traffic with OpenShift routes.
