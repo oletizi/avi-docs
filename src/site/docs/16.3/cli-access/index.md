@@ -2,14 +2,15 @@
 title: CLI Access
 layout: default
 ---
-When accessing the CLI of Avi Vantage, an administrator needs to SSH via port 22 to the IP address of a Controller or the cluster IP.
+When accessing Avi Vantage's CLI, an administrator needs to SSH via port 22 to the IP address of an Avi Controller or the cluster IP.
 
 Avi Controller runs on Ubuntu Linux, which means there are two levels of CLI access. When an administrator logs into the CLI, the admin is first admitted to Linux. From there, the admin may access the Avi shell via a second step, outlined below. In some authentication modes, non-admin accounts may not access Linux, and are instead forwarded directly to the Avi shell.
 
 See also:
 
-* <a href="/docs/16.2.2/cli-guide/">CLI Guide</a>
-* <a href="/docs/16.2.2/cli-guide/cli-top-level-commands/">CLI Top-Level Commands</a> 
+* <a href="/docs/16.3/cli-guide/">CLI Guide</a>
+* <a href="/docs/16.3/cli-guide/cli-top-level-commands/">CLI Top-Level Commands</a>
+* <a href="/docs/16.3/ssh-users-and-keys/#ssh-key-based-controller-login">SSH Key-based Login to Avi Controller</a> (new for Avi Vantage release 16.3) 
 
 ### Access the Controller CLI
 
@@ -36,5 +37,5 @@ When accessing the CLI on a system configured with remote authentication such as
 
 For Mac and Linux clients, an Avi CLI package may be installed on the local computer.
 
-* <a href="/docs/16.2.2/cli-installing-the-cli-shell">Installing the Avi Vantage CLI Shell</a>
-* <a href="/docs/16.2.2/installation-guides/installing-the-lbaas-driver-cli-shell-openstack">Installing the LBaaS CLI Shell (OpenStack with Keystone)</a> 
+* <a href="/docs/16.3/cli-installing-the-cli-shell/">Installing the Avi Vantage CLI Shell</a>
+* <a href="/docs/16.3/installing-the-lbaas-driver-cli-shell-openstack/">Installing the LBaaS CLI Shell (OpenStack with Keystone)</a> 
