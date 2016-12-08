@@ -147,14 +147,27 @@ To configure a BGP profile:
 
 The following commands configure the BGP profile. The BGP profile is included under Avi Vantage's virtual routing and forwarding (VRF) settings.
 
-<pre><code>: &gt; configure vrfcontext global<br> : vrfcontext &gt; bgp_profile<br> : vrfcontext:bgp_profile &gt; local_as 100<br> : vrfcontext:bgp_profile &gt; ibgp<br> : vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd<br> : vrfcontext:bgp_profile:peers &gt; save<br> : vrfcontext:bgp_profile &gt; save<br> : vrfcontext &gt; save<br> : &gt;<br> </code></pre>
+{% cli %}: > configure vrfcontext global
+ : vrfcontext > bgp_profile
+ : vrfcontext:bgp_profile > local_as 100
+ : vrfcontext:bgp_profile > ibgp
+ : vrfcontext:bgp_profile > peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd
+ : vrfcontext:bgp_profile:peers > save
+ : vrfcontext:bgp_profile > save
+ : vrfcontext > save
+ : >{% endcli %}
 This profile enables iBGP with peer BGP router 10.115.0.1/16 in local AS 100. The BGP connection is secured using MD5 with shared secret "abcd."
 
 The following commands enable RHI for a virtual service (vs-1):
 
-<pre><code>: &gt; configure virtualservice vs-1<br> : virtualservice &gt; enable_rhi<br> : virtualservice &gt; save<br> : &gt;<br> </code></pre>
+{% cli %}: > configure virtualservice vs-1
+ : virtualservice > enable_rhi
+ : virtualservice > save
+ : >{% endcli %}
+
 The following command can be used to view the virtual service's configuration:
-<code>: &gt; show virtualservice<br> </code>
+
+{% cli %}: > show virtualservice {% endcli %}
 
  
 
@@ -163,5 +176,19 @@ Starting with release 16.3, two configuration knobs have been added to configure
 <pre><code><strong>advertisement_interval</strong></code>: Minimum time between advertisement runs, default = 5 seconds<
 
 <code><strong>connect_timer</strong></code>: Time due for connect timer, default = 10 seconds
+</pre>
 
-Usage is illustrated in this CLI sequence:<code><br> [admin:controller]:&gt; configure vrfcontext global<br> [admin:controller]: vrfcontext&gt; bgp_profile<br> [admin:controller]: vrfcontext:bgp_profile&gt; peers index 1<br> [admin:controller]: vrfcontext:bgp_profile:peers&gt; advertisement_interval 10<br> Overwriting the previously entered value for advertisement_interval<br> [admin:controller]: vrfcontext:bgp_profile:peers&gt; connect_timer 20<br> Overwriting the previously entered value for connect_timer<br> [admin:controller]: vrfcontext:bgp_profile:peers&gt; save<br> [admin:controller]: vrfcontext:bgp_profile&gt; save<br> [admin:controller]: vrfcontext&gt; save<br> </code>
+Usage is illustrated in this CLI sequence:
+
+{% cli %}
+ [admin:controller]:> configure vrfcontext global
+ [admin:controller]: vrfcontext> bgp_profile
+ [admin:controller]: vrfcontext:bgp_profile> peers index 1
+ [admin:controller]: vrfcontext:bgp_profile:peers> advertisement_interval 10
+ Overwriting the previously entered value for advertisement_interval
+ [admin:controller]: vrfcontext:bgp_profile:peers> connect_timer 20
+ Overwriting the previously entered value for connect_timer
+ [admin:controller]: vrfcontext:bgp_profile:peers> save
+ [admin:controller]: vrfcontext:bgp_profile> save
+ [admin:controller]: vrfcontext> save
+{% endcli %}
