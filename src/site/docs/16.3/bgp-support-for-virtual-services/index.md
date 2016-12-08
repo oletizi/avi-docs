@@ -6,13 +6,13 @@ One of the ways Avi Vantage can add load balancing capacity for a virtual servic
 
 An alternative method for scaling a virtual service is to use a Border Gateway Protocol (BGP) feature, route health injection (RHI), along with a layer 3 routing feature, equal cost multi-path (ECMP). Using RHI with ECMP for virtual service scaling avoids the managerial overhead placed upon the primary SE to coordinate the scaled out traffic among the SEs.
 
-The SE scaling method allows a virtual service to be scaled out to a maximum of 5 SEs, its primary SE and 4 additional scaled out SEs. Using BGP, a virtual service enabled for RHI can be placed on up to 32 SEs within the SE group. Each SE uses RHI to advertise a /32 host route to the virtual service's VIP address, and is able to accept the traffic. The upstream router uses ECMP to select a path to one of the SEs.
+Avi Vantage's native SE scaling method allows a virtual service to be scaled out to a maximum of 5 SEs, its primary SE and 4 additional scale-out SEs. Using BGP, a virtual service enabled for RHI can be placed on up to 32 SEs within the SE group. Each SE uses RHI to advertise a /32 host route to the virtual service's VIP address, and is able to accept the traffic. The upstream router uses ECMP to select a path to one of the SEs.
 
-Note: The limit is imposed by the ECMP support on the upstream router. If the router supports up to 32 ECMP paths, then a virtual service enabled for RHI is supported on up to 32 SEs. Likewise, if the router supports only up to 16 paths, then the virtual service enabled for RHI is supported on up to 16 SEs.
+Note: The limit on SE count is imposed by the ECMP support on the upstream router. If the router supports up to 32 ECMP paths, then a virtual service enabled for RHI can be supported on up to 32 SEs. Likewise, if the router supports only up to 16 paths, then the virtual service enabled for RHI can be supported on up to 16 SEs.
 
 ## BGP-based Scaling
 
-Beginning in Avi Vantage version 16.1, Vantage supports use of the following routing features to dynamically perform virtual service load balancing and scaling:
+Beginning in version 16.1, Avi Vantage supports use of the following routing features to dynamically perform virtual service load balancing and scaling:
 
 * **Route health injection (RHI):** RHI allows traffic to reach a VIP that is not in the same subnet as its SE. The Avi Service Engine (SE) where a virtual service is located advertises a host route to the VIP for that virtual service, with the SE's IP address as the next-hop router address. Based on this update, the BGP peer connected to the Avi SE updates its route table to use the Avi SE as the next hop for reaching the VIP. The peer BGP router also advertises itself to its upstream BGP peers as a next hop for reaching the VIP.
 * **Equal cost multi-path (ECMP):** Higher bandwidth for the VIP is provided by load sharing its traffic across multiple physical links to the SE(s). If an Avi SE has multiple links to the BGP peer, the Avi SE advertises the VIP host route on each of those links. The BGP peer router sees multiple next-hop paths to the virtual service's VIP, and uses ECMP to balance traffic across the paths. If the virtual service is scaled out to multiple Avi SEs, each SE advertises the VIP, on each of its links to the peer BGP router. 
@@ -34,7 +34,7 @@ Prior to Avi Vantage 16.2.2, any operation that modified/added/deleted the BGP 
 
 ## SE-Router Link Types Supported with BGP
 
-The following figure shows the types of links that are supported between Vantage and BGP peer routers.
+The following figure shows the types of links that are supported between Avi Vantage and BGP peer routers.
 
 <a href="img/bgp2.png"><img class="alignnone size-full wp-image-5962" src="img/bgp2.png" alt="bgp2" width="1478" height="778"></a>
 
@@ -57,12 +57,53 @@ Using multiple links to the BGP peer provides higher throughput for the VIP. The
 BFD is supported for fast detection of failed links. BFD enables networking peers on each end of a link to quickly detect and recover from a link failure. Typically, BFD detects and repairs a broken link much more quickly than would occur by waiting for BGP to detect the down link.
 
 For example, if an Avi SE fails, BFD on the BGP peer router can quickly detect and correct the link failure.
+<a name="flow-resiliency-during-scale-out-in"></a>
 
 ## Scaling
 
 Scaling out/in of virtual services is supported. In this example, a virtual service placed on the Avi SE on the 10.10.10.x network is scaled out to 3 additional Avi SEs.
 
 <a href="img/bgp3.png"><img class="alignnone size-full wp-image-5963" src="img/bgp3.png" alt="bgp3" width="1357" height="486"></a>
+
+## Flow Resiliency During Scale Out/In
+
+A flow is a 5-tuple: src-IP, src-port, dst-IP, dst-port and protocol. Routers do a hash of the 5-tuple to pick which equal cost path to use. When an SE scale out occurs, the router is given yet another path to use, and its hashing algorithm may make different choices, thus disrupting existing flows. To gracefully cope with this BGP-based scale-out issue, Avi Vantage 16.3 supports resilient flow handling using IPIP tunneling. The following sequence shows how this is done.
+
+<a href="img/flow_resiliency.1-3.png"><img class="aligncenter wp-image-19384" src="img/flow_resiliency.1-3.png" alt="flow_resiliency.1-3" width="800" height="452"></a>
+
+Figure 1 shows the virtual service placed on four SEs, with a flow ongoing between a client and SE-A. In figure 2, there is a scale out to SE-E. This changes the hash on the router. Existing flows get rehashed to other SEs. In this particular example, suppose it is SE-C.
+
+<a href="img/flow_resiliency.4-6.png"><img class="aligncenter wp-image-19386" src="img/flow_resiliency.4-6.png" alt="flow_resiliency.4-6" width="800" height="450"></a>
+
+In the Avi Vantage implementation SE-C sends a flow probe to all other SEs (figure 4). Figure 5 shows SE-A responding to claim ownership of the depicted flow. In figure 6, SE-C uses IPIP tunneling to send all packets of this flow to SE-A.
+
+<a href="img/flow_resiliency.7-7.png"><img class="alignleft wp-image-19388" src="img/flow_resiliency.7-7.png" alt="flow_resiliency.7-7" width="210" height="374"></a>
+
+ 
+
+In figure 7 SE-A continues to process the flow and sends its response directly to the client.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
 ## Mesos Support
 
@@ -73,9 +114,9 @@ The following requirements apply to the BGP peer router:
 * The BGP peer must allow the SE's IP interfaces and subnets in its BGP neighbor configuration. The SE will initiate the peer connection with the BGP router.
 * For eBGP, the peer router will see the TTL value decremented for the BGP session. This could prevent the session from coming up. This issue can be prevented from occuring by setting the eBGP multi-hop TTL. For example, on Juniper routers, the eBGP multi-hop TTL must be set to 64. 
 
-## Enabling BGP Features in Vantage
+## Enabling BGP Features in Avi Vantage
 
-Configuration of BGP features in Vantage is accomplished by configuring a BGP profile, and by enabling RHI in the virtual service's configuration.
+Configuration of BGP features in Avi Vantage is accomplished by configuring a BGP profile, and by enabling RHI in the virtual service's configuration.
 
 * Configure a BGP profile. The BGP profile specifies the local Autonomous System (AS) ID that the Avi SE and each of the peer BGP routers is in, and the IP address of each peer BGP router.
 * Enable the Advertise VIP using BGP option on the Advanced tab of the virtual service's configuration. This option advertises a host route to the VIP address, with the Avi SE as the next hop. 
@@ -104,26 +145,23 @@ To configure a BGP profile:
 
 ### CLI
 
-The following commands configure the BGP profile. The BGP profile is included under Vantage's virtual routing and forwarding (VRF) settings.
+The following commands configure the BGP profile. The BGP profile is included under Avi Vantage's virtual routing and forwarding (VRF) settings.
 
-<pre><code class="language-lua">: &gt; configure vrfcontext global
-: vrfcontext &gt; bgp_profile
-: vrfcontext:bgp_profile &gt; local_as 100
-: vrfcontext:bgp_profile &gt; ibgp
-: vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd
-: vrfcontext:bgp_profile:peers &gt; save    
-: vrfcontext:bgp_profile &gt; save
-: vrfcontext &gt; save
-: &gt;</code></pre>  
-
+<pre><code>: &gt; configure vrfcontext global<br> : vrfcontext &gt; bgp_profile<br> : vrfcontext:bgp_profile &gt; local_as 100<br> : vrfcontext:bgp_profile &gt; ibgp<br> : vrfcontext:bgp_profile &gt; peers peer_ip 10.115.0.1 subnet 10.115.0.0/16 md5_secret abcd<br> : vrfcontext:bgp_profile:peers &gt; save<br> : vrfcontext:bgp_profile &gt; save<br> : vrfcontext &gt; save<br> : &gt;<br> </code></pre>
 This profile enables iBGP with peer BGP router 10.115.0.1/16 in local AS 100. The BGP connection is secured using MD5 with shared secret "abcd."
 
 The following commands enable RHI for a virtual service (vs-1):
 
+<pre><code>: &gt; configure virtualservice vs-1<br> : virtualservice &gt; enable_rhi<br> : virtualservice &gt; save<br> : &gt;<br> </code></pre>
+The following command can be used to view the virtual service's configuration:
+<code>: &gt; show virtualservice<br> </code>
 
-<pre><code class="language-lua">: &gt; configure virtualservice vs-1 
-: virtualservice &gt; enable_rhi 
-: virtualservice &gt; save
-: &gt;</code></pre>  The following command can be used to view the virtual service's configuration: 
+ 
 
-<pre><code class="language-lua">: &gt; show virtualservice</code></pre>  
+Starting with release 16.3, two configuration knobs have been added to configure per-peer “advertisement-interval” and “connect” timer in Quagga BGP:
+
+<pre><code><strong>advertisement_interval</strong></code>: Minimum time between advertisement runs, default = 5 seconds<
+
+<code><strong>connect_timer</strong></code>: Time due for connect timer, default = 10 seconds
+
+Usage is illustrated in this CLI sequence:<code><br> [admin:controller]:&gt; configure vrfcontext global<br> [admin:controller]: vrfcontext&gt; bgp_profile<br> [admin:controller]: vrfcontext:bgp_profile&gt; peers index 1<br> [admin:controller]: vrfcontext:bgp_profile:peers&gt; advertisement_interval 10<br> Overwriting the previously entered value for advertisement_interval<br> [admin:controller]: vrfcontext:bgp_profile:peers&gt; connect_timer 20<br> Overwriting the previously entered value for connect_timer<br> [admin:controller]: vrfcontext:bgp_profile:peers&gt; save<br> [admin:controller]: vrfcontext:bgp_profile&gt; save<br> [admin:controller]: vrfcontext&gt; save<br> </code>

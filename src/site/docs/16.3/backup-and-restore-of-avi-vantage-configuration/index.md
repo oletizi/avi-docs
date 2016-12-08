@@ -32,7 +32,7 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
     * **Directory**: If a target directory other than the SSH user's home directory is desired, specify an absolute or relative pathname pointing to a directory to which the SSH user has write access.  
 
 ### Scheduled Backup via CLI
-
+<pre>
 <code>[admin:10-10-24-52]: &gt; configure scheduler Default-Scheduler</code>
 <code>+-------------------+------------------------------------------------+</code>
 <code>| Field             | Value                                          |</code>
@@ -48,7 +48,9 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
 <code>| scheduler_action  | SCHEDULER_ACTION_BACKUP                        |</code>
 <code>| tenant_ref        | admin                                          |</code>
 <code>+-------------------+------------------------------------------------+</code>
+</pre>
 
+<pre>
 <code>[admin:10-10-24-52]: &gt; configure backupconfiguration Backup-Configuration</code>
 <code>+------------------------+----------------------------------------------------------+</code>
 <code>| Field                  | Value                                                    |</code>
@@ -59,9 +61,10 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
 <code>| maximum_backups_stored | 4                                                        |</code>
 <code>| tenant_ref             | admin                                                    |</code>
 <code>+------------------------+----------------------------------------------------------+</code>
+</pre>
 
 ### **Scheduled Backup via API**
-
+<pre>
 <code>PUT : api/scheduler/&lt;uuid&gt;</code>
 <code>Example PUT data to change scheduler frequency to 1 week:</code>
 <code>{'_last_modified': u'1476209663670990',</code>
@@ -76,6 +79,7 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
 <code> 'tenant_ref': u'https://10.10.24.52/api/tenant/admin',</code>
 <code> 'url': 'https://10.10.24.52/api/scheduler/scheduler-b5f7e673-8818-44d1-8f74-45238cc08235',</code>
 <code> 'uuid': u'scheduler-b5f7e673-8818-44d1-8f74-45238cc08235'}</code>
+</pre>
 
 ### On-demand Backup via CLI
 
