@@ -1,4 +1,8 @@
 ---
 title: Test
-layout: test
+layout: default
 ---
+
+{% cli thingy %}
+The contents
+{% endcli %}

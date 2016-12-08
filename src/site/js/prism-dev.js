@@ -16,7 +16,7 @@ var _self = (typeof window !== 'undefined')
  * @author Lea Verou http://lea.verou.me
  */
 
-var Prism = (function(){
+var Prism = (function () {
 
 // Private helper vars
     var lang = /\blang(?:uage)?-(\w+)\b/i;
@@ -40,7 +40,7 @@ var Prism = (function(){
 
             objId: function (obj) {
                 if (!obj['__id']) {
-                    Object.defineProperty(obj, '__id', { value: ++uniqueId });
+                    Object.defineProperty(obj, '__id', {value: ++uniqueId});
                 }
                 return obj['__id'];
             },
@@ -63,7 +63,9 @@ var Prism = (function(){
 
                     case 'Array':
                         // Check for existence for IE8
-                        return o.map && o.map(function(v) { return _.util.clone(v); });
+                        return o.map && o.map(function (v) {
+                                return _.util.clone(v);
+                            });
                 }
 
                 return o;
@@ -127,7 +129,7 @@ var Prism = (function(){
                 }
 
                 // Update references in other language definitions
-                _.languages.DFS(_.languages, function(key, value) {
+                _.languages.DFS(_.languages, function (key, value) {
                     if (value === root[inside] && key != inside) {
                         this[key] = ret;
                     }
@@ -137,7 +139,7 @@ var Prism = (function(){
             },
 
             // Traverse a language definition with Depth First Search
-            DFS: function(o, callback, type, visited) {
+            DFS: function (o, callback, type, visited) {
                 visited = visited || {};
                 for (var i in o) {
                     if (o.hasOwnProperty(i)) {
@@ -157,7 +159,7 @@ var Prism = (function(){
         },
         plugins: {},
 
-        highlightAll: function(async, callback) {
+        highlightAll: function (async, callback) {
             var env = {
                 callback: callback,
                 selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
@@ -167,12 +169,12 @@ var Prism = (function(){
 
             var elements = env.elements || document.querySelectorAll(env.selector);
 
-            for (var i=0, element; element = elements[i++];) {
+            for (var i = 0, element; element = elements[i++];) {
                 _.highlightElement(element, async === true, env.callback);
             }
         },
 
-        highlightElement: function(element, async, callback) {
+        highlightElement: function (element, async, callback) {
             // Find language
             var language, grammar, parent = element;
 
@@ -181,7 +183,7 @@ var Prism = (function(){
             }
 
             if (parent) {
-                language = (parent.className.match(lang) || [,''])[1].toLowerCase();
+                language = (parent.className.match(lang) || [, ''])[1].toLowerCase();
                 grammar = _.languages[language];
             }
 
@@ -216,7 +218,7 @@ var Prism = (function(){
             if (async && _self.Worker) {
                 var worker = new Worker(_.filename);
 
-                worker.onmessage = function(evt) {
+                worker.onmessage = function (evt) {
                     env.highlightedCode = evt.data;
 
                     _.hooks.run('before-insert', env);
@@ -253,7 +255,7 @@ var Prism = (function(){
             return Token.stringify(_.util.encode(tokens), language);
         },
 
-        tokenize: function(text, grammar, language) {
+        tokenize: function (text, grammar, language) {
             var Token = _.Token;
 
             var strarr = [text];
@@ -269,7 +271,7 @@ var Prism = (function(){
             }
 
             tokenloop: for (var token in grammar) {
-                if(!grammar.hasOwnProperty(token) || !grammar[token]) {
+                if (!grammar.hasOwnProperty(token) || !grammar[token]) {
                     continue;
                 }
 
@@ -293,7 +295,7 @@ var Prism = (function(){
                     pattern = pattern.pattern || pattern;
 
                     // Don’t cache length as it changes during the loop
-                    for (var i=0, pos = 0; i<strarr.length; pos += (strarr[i].matchedStr || strarr[i]).length, ++i) {
+                    for (var i = 0, pos = 0; i < strarr.length; pos += (strarr[i].matchedStr || strarr[i]).length, ++i) {
 
                         var str = strarr[i];
 
@@ -351,7 +353,7 @@ var Prism = (function(){
                             continue;
                         }
 
-                        if(lookbehind) {
+                        if (lookbehind) {
                             lookbehindLength = match[1].length;
                         }
 
@@ -367,7 +369,7 @@ var Prism = (function(){
                             args.push(before);
                         }
 
-                        var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
+                        var wrapped = new Token(token, inside ? _.tokenize(match, inside) : match, alias, match, greedy);
 
                         args.push(wrapped);
 
@@ -401,14 +403,14 @@ var Prism = (function(){
                     return;
                 }
 
-                for (var i=0, callback; callback = callbacks[i++];) {
+                for (var i = 0, callback; callback = callbacks[i++];) {
                     callback(env);
                 }
             }
         }
     };
 
-    var Token = _.Token = function(type, content, alias, matchedStr, greedy) {
+    var Token = _.Token = function (type, content, alias, matchedStr, greedy) {
         this.type = type;
         this.content = content;
         this.alias = alias;
@@ -417,13 +419,13 @@ var Prism = (function(){
         this.greedy = !!greedy;
     };
 
-    Token.stringify = function(o, language, parent) {
+    Token.stringify = function (o, language, parent) {
         if (typeof o == 'string') {
             return o;
         }
 
         if (_.util.type(o) === 'Array') {
-            return o.map(function(element) {
+            return o.map(function (element) {
                 return Token.stringify(element, language, o);
             }).join('');
         }
@@ -465,7 +467,7 @@ var Prism = (function(){
             return _self.Prism;
         }
         // In worker
-        _self.addEventListener('message', function(evt) {
+        _self.addEventListener('message', function (evt) {
             var message = JSON.parse(evt.data),
                 lang = message.language,
                 code = message.code,
@@ -487,7 +489,7 @@ var Prism = (function(){
         _.filename = script.src;
 
         if (document.addEventListener && !script.hasAttribute('data-manual')) {
-            if(document.readyState !== "loading") {
+            if (document.readyState !== "loading") {
                 if (window.requestAnimationFrame) {
                     window.requestAnimationFrame(_.highlightAll);
                 } else {
@@ -548,7 +550,7 @@ Prism.languages.markup = {
 };
 
 // Plugin to make entity title show the real entity, idea by Roman Komarov
-Prism.hooks.add('wrap', function(env) {
+Prism.hooks.add('wrap', function (env) {
 
     if (env.type === 'entity') {
         env.attributes['title'] = env.content.replace(/&amp;/, '&');
@@ -607,7 +609,8 @@ if (Prism.languages.markup) {
             alias: 'language-css'
         }
     }, Prism.languages.markup.tag);
-};
+}
+;
 Prism.languages.clike = {
     'comment': [
         {
@@ -686,7 +689,7 @@ if (Prism.languages.markup) {
 }
 
 Prism.languages.js = Prism.languages.javascript;
-(function() {
+(function () {
 
     if (typeof self === 'undefined' || !self.Prism || !self.document) {
         return;
@@ -746,7 +749,7 @@ Prism.languages.js = Prism.languages.javascript;
                         }
                         if (!isNaN(promptStart) && !isNaN(promptEnd)) {
                             for (var j = promptStart; j <= promptEnd; j++) {
-                                var index = j-1;
+                                var index = j - 1;
                                 prompts[index] = promptValue;
                             }
                         }
@@ -785,9 +788,11 @@ Prism.languages.js = Prism.languages.javascript;
             if (!isNaN(outputStart) && !isNaN(outputEnd)) {
                 for (var j = outputStart; j <= outputEnd && j <= prompt.children.length; j++) {
                     var node = prompt.children[j - 1];
-                    node.removeAttribute('data-user');
-                    node.removeAttribute('data-host');
-                    node.removeAttribute('data-prompt');
+                    if (node) {
+                        node.removeAttribute('data-user');
+                        node.removeAttribute('data-host');
+                        node.removeAttribute('data-prompt');
+                    }
                 }
             }
         }

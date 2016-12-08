@@ -28,11 +28,11 @@ Dropping into the CLI leaves the administrator at a blank command prompt. To see
 
 While typing a command, tab will autocomplete the command. Double tab will return a list of available options for the command in the left column. Most options include a brief help description, which is shown in the right column.
 
-<pre class="command-line language-bash" data-prompt=": >"><code>export configuration
-export configuration serviceengine
-export serviceengine ova file from controller virtualservice
-export virtual service    
- </code></pre> 
+{% cli %}: > export configuration
+: > export configuration serviceengine
+: > export serviceengine ova file from controller virtualservice
+: > export virtual service{% endcli %}
+
 
 Commands or parameters may require multiple words or options. If there is only a single word or option, pressing tab will auto complete the next word in the command:
 
