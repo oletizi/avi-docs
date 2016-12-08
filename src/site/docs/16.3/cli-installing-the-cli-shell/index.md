@@ -42,7 +42,7 @@ The following sections provide steps for installing the Vantage CLI shell.
 To install the Vantage CLI shell on a Ubuntu Docker container, download the shell package onto the host, then enter the following commands. Make sure to edit the "/tmp" in "/tmp ubuntu" to the directory where you downloaded the image.
 
 
-<pre class="command-line language-bash" data-prompt=": >"><code>docker run -it -v /tmp:/tmp ubuntu
+<pre class="command-line language-bash"><code>docker run -it -v /tmp:/tmp ubuntu
 sudo apt-get update
 sudo apt-get install python-pip</code></pre> <a name="shell-install"></a> 
 
@@ -52,15 +52,15 @@ This section provides steps for installing the Vantage CLI shell onto the Linux 
 &gt; Note: If installing a CLI shell to manage an OpenStack write access mode deployment with Keystone support enabled, <a href="/docs/16.2.2/installation-guides/installing-the-lbaas-driver-cli-shell-openstack">go here</a> instead.
  <ol> 
  <li>Install pip, if not already installed.</li> 
- <li>Install virtualenv, if not already installed:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo pip install virtualenv
+ <li>Install virtualenv, if not already installed:<br> <pre crayon="false" class="command-line language-bash"><code>sudo pip install virtualenv
   Downloading virtualenv-14.0.6-py2.py3-none-any.whl (1.8MB)
     100% |████████████████████████████████| 1.8MB 178kB/s
 Installing collected packages: virtualenv
 Successfully installed virtualenv-14.0.6</code></pre></li> 
- <li>Create a virtual environment for the CLI shell:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>virtualenv avi_shell
+ <li>Create a virtual environment for the CLI shell:<br> <pre crayon="false" class="command-line language-bash" ><code>virtualenv avi_shell
 New python executable in /home/user/git/clean/avi-dev/build/avi_shell/bin/python
 Installing setuptools, pip, wheel...done.</code></pre></li> 
- <li>Go to the CLI shell virtual environment:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>cd avi_shell/
+ <li>Go to the CLI shell virtual environment:<br> <pre crayon="false" class="command-line language-bash"><code>cd avi_shell/
 source ./bin/activate</code></pre></li> 
  <li>Install the CLI shell package: <pre crayon="false" class="command-line language-bash"><code>pip install /tmp/avi_shell-16.1.5000.tar.gz
 Processing /tmp/avi_shell-16.1.5000.tar.gz
@@ -87,15 +87,13 @@ The *IPADDR* is the IP address of the Controller (10.10.10.99 in the example).
 
 After login, Vantage CLI commands can be entered into the shell. The command in the following example displays the Vantage version:
 
-<pre class="command-line language-bash"><code>: &gt; show version controller
+{% cli %}: > show version controller
 +-----------------+------------------------------------+
 | Controller Name | Version                            |
 +-----------------+------------------------------------+
 | 10.10.25.44     | 16.1(5000) 2016-03-03 22:42:48 UTC |
 +-----------------+------------------------------------+
-: &gt;
-
-</code></pre> 
+: >{% endcli %}
 
 <a name="shell-install-lbaas"></a>
 
@@ -104,20 +102,20 @@ After login, Vantage CLI commands can be entered into the shell. The command in 
 To exit the CLI shell virtual environment:
 
 
-<pre class="command-line language-bash" data-prompt=": >"><code>deactivate</code></pre>  
+{% cli %}: > deactivate{% endcli %}  
 
 ## Restarting the CLI Shell
 
 After the CLI shell is installed, just enter the following command to start it the next time:
 
 
-<pre class="command-line language-bash" data-prompt=": >"><code>avi_shell/bin/avi_shell 
+{% cli %} $> avi_shell/bin/avi_shell 
 
-: &gt; show version controller
+: > show version controller
 +-----------------+------------------------------------+
 | Controller Name | Version                            |
 +-----------------+------------------------------------+
 | node-1          | 16.2(5000) 2016-03-07 16:45:38 UTC |
 | node-2          | 16.2(5000) 2016-03-07 16:45:38 UTC |
 | node-3          | 16.2(5000) 2016-03-07 16:45:38 UTC |
-+-----------------+------------------------------------+</code></pre> 
++-----------------+------------------------------------+{% endcli %} 
