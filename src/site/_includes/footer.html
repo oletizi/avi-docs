@@ -88,14 +88,17 @@
 <script type="text/javascript">
     var app = new annotator.App();
     app.include(annotator.ui.main, {
-        editorExtensions: [annotator.ui.tags.editorExtension],
-                viewerExtensions: [
-            annotator.ui.markdown.viewerExtension,
+        editorExtensions: [
+            annotator.ui.tags.editorExtension
+        ],
+        viewerExtensions: [
             annotator.ui.tags.viewerExtension
         ]
     });
-    //app.include(annotator.storage.http);
+    app.include(annotator.storage.http, {
+        prefix: 'http://localhost:8080/annotator-store/1.0'
+    });
     app.start().then(function () {
-                app.annotations.load();
-            });
+        app.annotations.load();
+    });
 </script>

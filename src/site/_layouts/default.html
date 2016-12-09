@@ -9,10 +9,11 @@
     <div class="row content-row">
         <div id="sidebar-wrapper">
             {% include sidebar.html %}
+            <div class="in-page-controls"></div>
         </div>
         <div class="main-content col-xs-9">
-            <div class="row">
-                <div class="col-xs-9">
+            <div class="row content">
+                <div class="col-xs-9 inner">
                     <h1>{{ page.title }}</h1>
                     {{ content }}
                     <p>{% render_time Updated: %}</p>

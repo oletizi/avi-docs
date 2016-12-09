@@ -4,7 +4,7 @@ layout: default
 ---
 The Avi Vantage platform is built on software-defined principles, enabling a next generation architecture to deliver the flexibility and simplicity expected by IT and lines of business. The Avi Vantage architecture separates the data and control planes to deliver application services beyond load balancing, such as application analytics, predictive autoscaling, micro-segmentation, and self-service for app owners in both on-premises or cloud environments. The platform provides a centrally managed, dynamic pool of load balancing resources on commodity x86 servers, VMs or containers, to deliver granular services close to individual applications. This allows network services to scale near infinitely without the added complexity of managing hundreds of disparate appliances.
 
-<a href="img/Screen-Shot-2016-08-11-at-10.43.58-AM.png"><img class="wp-image-11487 aligncenter" src="img/Screen-Shot-2016-08-11-at-10.43.58-AM.png" alt="Screen-Shot-2016-08-11-at-10.43.58-AM" width="400" height="266"></a>
+<a href="img/Screen-Shot-2016-08-11-at-10.43.58-AM.png"><img class="wp-image-11487 aligncenter annotatable" src="img/Screen-Shot-2016-08-11-at-10.43.58-AM.png" alt="Screen-Shot-2016-08-11-at-10.43.58-AM" width="400" height="266"></a>
 
  
 
@@ -16,7 +16,7 @@ Avi Vantage provides out-of-the-box integrations for on-premises or cloud deploy
 
 The Avi Vantage Platform has three core components – Avi Service Engines, Avi Controller cluster, and Avi Admin Console:
 
-**<a href="img/Master_Single_Icons-01.png"><img class="wp-image-11489 alignleft" src="img/Master_Single_Icons-01.png" alt="Master_Single_Icons-01" width="72" height="72"></a>Service Engine:** Avi Service Engines (SEs) handle all data plane operations within Vantage by receiving and executing instructions from the Controller. The SEs perform load balancing and all client- and server-facing network interactions. It collects real-time application telemetry from application traffic flows. High availability is supported.
+**<a href="img/Master_Single_Icons-01.png"><img class="wp-image-11489 alignleft annotatable" src="img/Master_Single_Icons-01.png" alt="Master_Single_Icons-01" width="72" height="72"></a>Service Engine:** Avi Service Engines (SEs) handle all data plane operations within Vantage by receiving and executing instructions from the Controller. The SEs perform load balancing and all client- and server-facing network interactions. It collects real-time application telemetry from application traffic flows. High availability is supported.
 
 In a typical load balancing scenario, a client will communicate with a virtual service, which is an IP address and port hosted in Vantage by an SE. The virtual service internally passes the connection through a number of profiles. For HTTP traffic, the SE may terminate and proxy the client TCP connection, terminate SSL, and proxy the HTTP request. Once the request has been validated, it will be forwarded internally to a pool, which will choose an available server. A new TCP connection then originates from the SE, using an IP address of the SE on the internal network as the request's source IP address. Return traffic takes the same path back. The client communicates exclusively with the virtual service IP address, not the real server IP.
 

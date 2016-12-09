@@ -10,6 +10,7 @@ Dec 5, 2016
 
 - fix CLI examples on /docs/16.3/bgp-support-for-virtual-services/
 - figure out why cli plugin adds so many empty prompt lines at the end.
+- Try stuffing everything in confluence
 
 ### Missing items:
 - img/Avi_Support_Terms_21Oct2016.pdf in avi-support-terms
