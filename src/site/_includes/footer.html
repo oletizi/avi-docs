@@ -96,7 +96,7 @@
         ]
     });
     app.include(annotator.storage.http, {
-        prefix: 'http://localhost:8080/annotator-store/1.0'
+        prefix: '/annotator-store/1.0'
     });
     app.start().then(function () {
         app.annotations.load();
