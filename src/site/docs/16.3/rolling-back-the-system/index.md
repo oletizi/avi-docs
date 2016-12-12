@@ -44,7 +44,7 @@ Instead, use the following procedure:
 <ol> 
  <li>Enter the following command separately on each Avi Controller node in the cluster:<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">/bootstrap/install.sh --rollback</code></pre> 
-  <!-- [Format Time: 0.0010 seconds] --> </li> 
+  <!-- [Format Time: 0.0002 seconds] --> </li> 
  <li>Reboot each of the Avi Controller nodes in the cluster.</li> 
  <li>After reboot, verify that the cluster comes up running the previous version.</li> 
 </ol> 
