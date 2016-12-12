@@ -2,10 +2,14 @@
 title: SSH Users and Keys
 layout: default
 ---
-The Avi Controller and Avi Service Engines (SEs) use SSH for secure management communication. This requires an SSH user who exists on both the Avi Controller and the Avi SEs, and a copy of the SSH user's public key on the Avi SEs. While SSH setup is automated for some installation types, such as installation into VMware with write access, other installation types require manual setup of these SSH resources:
+The Avi Controller and Avi Service Engines (SEs) use SSH for secure management communication. The communication falls into two categories, Controller-to-SE, and administrator-to-Controller.
 
-* <a href="/docs/16.2.2/public-key-management-on-se-hosts">Linux server cloud</a>
-* <a href="/docs/16.2.2/installation-guides/installing-avi-vantage-with-mesosphere-dcos-on-premises">Mesos DC/OS (on-premises)</a> 
+## Controller-to-SE Communication
+
+This requires an SSH user who exists on both the Avi Controller and the Avi SEs, and a copy of the SSH user's public key on the Avi SEs. While SSH setup is automated for some installation types, such as installation into VMware with write access, other installation types require manual setup of these SSH resources:
+
+* <a href="/public-key-management-on-se-hosts">Linux server cloud</a>
+* <a href="/installing-avi-vantage-with-mesosphere-dcos-on-premises">Mesos DC/OS (on-premises)</a> 
 
 ### Create SSH User
 
@@ -27,5 +31,43 @@ After creating an SSH user on the Avi Controller (using the steps above), the us
  <li>Click the download icon next to the row for the SSH user.</li> 
 </ol> 
 
+<a name="ssh-key-based-controller-login"></a>
 <a href="img/Ctlr-sshuser-copykey-3b.png"><img class="alignnone size-full wp-image-10512" src="img/Ctlr-sshuser-copykey-3b.png" alt="Ctlr-sshuser-copykey-3b" width="908" height="249"></a>
+
+ 
+
+## Administrator-to-Controller Communication
+
+Starting with release 16.3, Avi Vantage provides a mechanism to manage public keys enabling admin user to login with an SSH Key rather than supplying a password.  
+
+### **CLI**
+
+To Upload a key:
+
+<code>     upload adminkey public_key "&lt;public key&gt;"</code>
+
+To delete a specific key:
+
+<code>     delete adminkey public_key "&lt;public key&gt;"</code>
+
+To delete all the keys:
+
+<code>     delete adminkey</code>
+
+### Using the Avi REST API
+
+To Upload a key:
+
+<code>     POST https://&lt;controller-ip&gt;/api/adminkey</code>
+<code>     JSON data: {"key":"&lt;public key&gt;"}</code>
+
+To delete a specific key:
+
+<code>     DELETE https://&lt;controller-ip&gt;/api/adminkey?key=&lt;public key&gt;</code>
+
+To delete all the keys:
+
+<code>     DELETE https://&lt;controller-ip&gt;/api/adminkey?key</code>
+
+### Related: <a href="/customizing-notification-of-certificate-expiration">Customizing Notification of Certificate Expiration</a>
 
