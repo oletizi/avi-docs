@@ -2,9 +2,9 @@
 title: Impact of a Controller Failure
 layout: default
 ---
-The impact of the loss of a Controller depends on whether the Controller is deployed as a standalone or as part of a 3-node Controller cluster.
+The impact of the loss of an Avi Controller depends on whether the Controller is deployed as a standalone or as part of a 3-node Controller cluster.
 
-A Controller failure can occur for various reasons, such as a software failure or failure in the underlying hardware. A Controller also can *fail* simply by losing connectivity to the networks containing the rest of the Avi Vantage infrastructure.  
+A Controller failure can occur for various reasons, such as a software failure or failure in the underlying hardware. A Controller also can *fail* simply by losing connectivity to the networks containing the rest of the Avi Vantage infrastructure.
 
 ### Controller Cluster
 
@@ -22,15 +22,15 @@ If a Controller is still online, but merely has lost contact with the other Cont
 
 If Controller failure is a permanent state, take the following actions to remove the Controller and restore full high availability to the cluster.
 <ol> 
- <li> <p>If the Controller was in a virtual machine, delete the VM from the cloud orchestrator.</p> </li> 
- <li> <p>From another (still up) Controller's web interface, delete the failed Controller's IP address. Navigate to Administration &gt; Controller.</p> </li> 
- <li> <p>Install a new Controller.</p> <p>Note: Do not log into the new Controller's web interface. Only perform initial setup (such as selecting the cloud orchestrator).</p> </li> 
- <li> <p>From the existing Controller, add the IP address of the new Controller. After a few minutes, the status of the cluster should turn green.  </p> </li> 
+ <li>If the Controller was in a virtual machine, delete the VM from the cloud orchestrator.</li> 
+ <li>From another (still up) Controller's web interface, delete the failed Controller's IP address. Navigate to Administration &gt; Controller.</li> 
+ <li>Install a new Controller. <p>Note: Do not log into the new Controller's web interface. Only perform initial setup (such as selecting the cloud orchestrator).</p></li> 
+ <li>From the existing Controller, add the IP address of the new Controller. After a few minutes, the status of the cluster should turn green.</li> 
 </ol> 
 
 ### Standalone Controller
 
-In a standalone Controller configuration, a Controller failure leaves the Vantage system in a headless state. In a headless state, existing Service Engines (SEs) will continue to operate with the last instructions they were given.
+In a standalone Controller configuration, a Controller failure leaves the Avi Vantage system in a headless state. In a headless state, existing Service Engines (SEs) will continue to operate with the last instructions they were given.
 
 No new configuration changes are possible until a Controller is restored. This may be done by rebuilding a new Controller, which is disruptive to existing connections, or by bringing the existing Controller back online, which is transparent to existing data traffic.
 

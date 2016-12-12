@@ -4,7 +4,7 @@ layout: default
 ---
 Avi Vantage can run with a single Avi Controller (single-node deployment) or with a 3-node Avi Controller cluster. In a deployment that uses a single Avi Controller, that Avi Controller performs all administrative functions as well as all analytics data gathering and processing.
 
-Adding 2 additional nodes to create a 3-node cluster provides node-level redundancy for the Avi Controller and also maximizes performance for CPU-intensive analytics functions. Whereas the lone Avi Controller in a single-node deployment performs all administrative functions and analytics data collection and processing, these tasks are distributed in 3-node cluster.
+Adding 2 additional nodes to create a 3-node cluster provides node-level redundancy for the Avi Controller and also maximizes performance for CPU-intensive analytics functions. Whereas the lone Avi Controller in a single-node deployment performs all administrative functions and analytics data collection and processing, these tasks are distributed in 3-node cluster.
 
 In a 3-node Avi Controller cluster, one node is the primary (leader) node and performs the administrative functions. The other two nodes are followers (secondaries), and perform data collection for analytics, in addition to standing by as backups for the leader.
 
@@ -26,7 +26,7 @@ The heartbeat interval is 10 seconds. The maximum number of consecutive heartbea
 
 If only one node is down, quorum is maintained and the cluster can continue to operate.
 
-* If a follower goes down but the (leader node remains up, access to virtual services continues without interruption. 
+* If a follower goes down but the (leader node remains up, access to virtual services continues without interruption. 
 
 <a href="img/admin-ctlr-cluster-heartbeats-missed-1.png"><img class="alignnone size-full wp-image-5405" src="img/admin-ctlr-cluster-heartbeats-missed-1.png" alt="admin-ctlr-cluster-heartbeats-missed" width="375" height="321"></a>
 

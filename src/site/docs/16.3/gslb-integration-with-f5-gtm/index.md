@@ -2,80 +2,59 @@
 title: GSLB Integration with F5 GTM
 layout: default
 ---
-To ensure high availability across geographic regions or data centers, Avi Networks recommends use of multiple data centers to distribute risk and reduce failure domains. Avi recognizes that many customers already own Global Server Load Balancers from other vendors, which provide DNS-based load balancing across geographies. Avi Vantage is able to work with most Global Server Load Balancing (GSLB) solutions, though the level of integration depends on the vendor used.
+To ensure high availability across geographic regions or data centers, Avi Networks recommends use of multiple data centers to distribute risk and reduce failure domains. Avi recognizes that many customers already own global server load balancers from other vendors, which provide DNS-based load balancing across geographies. Avi Vantage is able to work with most global server load balancing (GSLB) solutions, though the level of integration depends on the vendor used.
 
 The procedure in this article works with Avi Vantage version 15.x and higher, and F5 Networks Global Traffic Manager (GTM) version 10.x and higher. Other versions also may work but are not covered or tested under the scope of this article.
 
+For help configuring Avi Vantage's GSLB capabilities, see <a href="/avi-gslb-architecture/">here</a>.
+
 ## Assumptions
 
-This scope of this document covers integration of Avi Vantage with F5 GTM. Installation of either product is not covered.
+This scope of this document covers integration of Avi Vantage with F5 GTM. This document assumes that:
 
-This document assumes that:
+* Avi Vantage is installed in one or more data centers.
+* F5’s BIG-IP GTM is installed. 
 
-* Avi Vantage is installed in two or more data centers. 
-* F5’s BIG-IP GTM is installed.  
-
-GTM may or may not be installed in the same data centers where Vantage will be providing local application delivery services.
+GTM may or may not be installed in the same data centers where Avi Vantage will be providing local application delivery services.
 
 ## Configuration of Avi Vantage
 
-No special configuration is required for virtual services advertised by Vantage to be load balanced through global server load balancers. The virtual services may exist on a single Avi Controller cluster or they may exist across multiple Controller clusters.
+No special configuration is required for virtual services advertised by Avi Vantage to be load balanced through global server load balancers. The virtual services may exist on a single Avi Controller cluster or they may exist across multiple Controller clusters in different data centers.
 
-### Add Avi Service Engine to GTM
+### Create Load Balancer Server Object
 
-<ol> 
- <li> <p>From within the GTM GUI, navigate to DNS &gt; GSLB &gt; Server.</p> </li> 
- <li> <p>Configure the following information:</p> 
-  <ul> 
-   <li> <p>Create Server Object: Generic Load balancer</p> </li> 
-   <li> <p>Name: Unique Avi Service Engine (SE), for example "Avi_DC1"</p> </li> 
-   <li> <p>Address: Avi Controller’s cluster IP address</p> </li> 
-   <li> <p>Translation: Firewall/NAT public routable IP address of the Controller cluster IP</p> </li> 
-   <li> <p>Data Center: configured GTM data center object, for example "DC1"</p> </li> 
-   <li> <p>Health Monitor: Gateway_icmp</p> </li> 
-  </ul> </li> 
- <li> <p>Click on Create to finish.</p> </li> 
-</ol> 
+First, Avi Vantage must be added as a load balancer object to the GTM.  From within the GTM GUI, navigate to DNS > GSLB > Server and select Create. Configure the following fields within the General Properties section:
 
-### Create Avi Virtual Service as GTM VS Object
+* **Name**:  Unique Avi instance name, for example "Avi_DC1"
+* **Product**:  Generic Load balancer.
+* **Address**:  With the recommended configuration, the GTM never uses this IP address. Nonetheless, the field must have a value, so enter any IP address of an Avi Controller from the cluster and click Add.
+* **Data Center**:  Select a pre-configured GTM data center object, for example "DataCenter1". The GTM uses this information for determining which device will send health checks to Avi Vantage. 
 
-<ol> 
- <li> <p>Click Add. Enter the following information:</p> 
-  <ul> 
-   <li> <p>Name: Avi Controller</p> </li> 
-   <li> <p>Address: Avi virtual service IP (VIP) address</p> </li> 
-   <li> <p>Service Port: 80</p> </li> 
-   <li> <p>Health Monitor: HTTP or TCP</p> </li> 
-   <li> <p>Dependency List: Select Avi_Controller virtual server object</p> <p>Note: For HTTP virtual services, HTTP health checks are recommended. To be successful, an HTTP health check must include sending a valid HTTP request to the server, and receiving a valid HTTP response. For other types of virtual services, TCP health checks are recommended.</p> </li> 
-  </ul> </li> 
- <li> <p>Add to Dependency List.</p> </li> 
- <li> <p>Click on Create to finish.</p> </li> 
- <li> <p><em>(Optional)</em> Create additional Avi virtual services from different data center, if needed.</p> </li> 
-</ol> 
+Within the Configuration section:
+
+* **Health Monitor **: Avi's recommendation is to leave this health monitor field empty. It is optional to add a health check to verify access to Avi Vantage. This involves the GTM sending a query to the IP address of the Avi Controller. This additional check is not recommended by default as it requires the GTM to have access to the Controllers, which are often on protected management networks. Should this check be desired, the Address and Translation Address of the Avi Vantage server object must be correct. The health monitor to check access to the Avi Controller is added via the Health Monitor setting. Keep in mind that access to the Controllers does not reflect successful access to the application virtual service. 
+
+Within the Resources section, each virtual service must be added to the Avi Vantage server object:
+
+* **Name**:  Name of the VS
+* **Address**:  IP address of the VIP
+* **Service Port**:  Port used to access the VS
+* **Translation**:  If the VS is NATed between Avi Vantage and the client, input the public IP address that clients should access.
+* **Translation Port**:  If the VS is PATed (port has been changed) between Avi Vantage and the client, input the public port that clients should access. 
+<a href="img/GTM-vs-config.jpg"><img class="alignnone wp-image-20351" src="img/GTM-vs-config.jpg" alt="GTM vs config" width="378" height="260"></a> 
 
 ### Create GTM Pool
 
-<ol> 
- <li> <p>Navigate to DNS &gt; GSLB &gt; Pool.</p> </li> 
- <li> <p>Click on Create. Enter the following information:</p> 
-  <ul> 
-   <li> <p>Name: enter a name for the GTM pool.</p> </li> 
-   <li> <p>Health check: leave empty (none).</p> </li> 
-   <li> <p>Member list: select Avi Virtual Service Objects from the list and click Add.</p> </li> 
-  </ul> </li> 
- <li> <p>Click on Finish.</p> </li> 
-</ol> 
+Navigate to DNS > GSLB > Pool.  Click Create and configure the following fields:
 
-### Create GTM WideIP for Load Balancing
+* **Name**:  Enter a name for the GTM pool.
+* **Health Check**:  Apply a health monitor appropriate for the application type.  
+    * **TCP Monitor**:  If a basic TCP health monitor is used, an additional configuration change is recommended on the Avi Vantage VS.  From the Avi Vantage UI, edit the desired virtual service and navigate to the Advanced tab.  Enable the *Remove Listening Port when VS Down*.  When this option is not enabled (the default), Avi Vantage will accept the TCP connection, and then send a RST. GTM will mark this VS up, even though it received a RST.  When the option is enabled, Avi Vantage will not accept the connection, which will ensure a down VS is correctly marked down on the GTM.
+* **Member List**:  From the Virtual Server pull-down menu, select the appropriate virtual services from the list and click Add. The virtual services should have been added in the previous Create LB step. 
 
-<ol> 
- <li> <p>Navigate to DNS &gt; GSLB &gt; WideIP.</p> </li> 
- <li> <p>Click on Create. Add the following information:</p> 
-  <ul> 
-   <li> <p>Name: enter the FQDN of the application.</p> </li> 
-   <li> <p>LB Selection Log: select Pool and Member selection log.</p> </li> 
-   <li> <p>LB Method: select desired load balancing method.</p> </li> 
-   <li> <p>Pool List: add the GTM pool to the list.</p> </li> 
-  </ul> </li> 
- <li> <p>Click on Finish to complete the integration.</p> </li> 
-</ol> 
+### Create GTM WideIP
+
+Navigate to DNS > GSLB > WideIP.  Click on Create and configure the following fields:
+
+* **Name**:  Enter the FQDN of the application.
+* **Pool List**:  Add the GTM pool to the list. 
