@@ -6,7 +6,9 @@ Beginning in Avi Vantage 16.2, legacy active/standby high availability (HA) is a
 
 Avi Vantage also provides <a href="/docs/16.2.2/overview-of-vantage-high-availability">elastic HA</a>, including active/active and N+M modes.
 
-In legacy HA mode, exactly two Avi SEs are configured. One SE carries all the traffic for a virtual service placed on it, and is thus the active SE for that VS. The other SE in the pair is the standby for that VS, carrying no traffic for it while the other SE is healthy. Upon failure of an SE, the surviving SE takes over traffic for all virtual services previously active on the failed SE, while continuing to handle traffic for virtual services already assigned to it. As part of the takeover process, the survivor also takes ownership of all floating addresses, such as VIPs, SNAT-IP, and so on. Two options, compacted and distributed (figure 1), determine whether all active virtual service placements are concentrated onto one SE in a healthy pair or not.
+In legacy HA mode, exactly two Avi SEs are configured. One SE carries all the traffic for a virtual service placed on it, and is thus the active SE for that VS. The other SE in the pair is the standby for that VS, carrying no traffic for it while the other SE is healthy. Upon failure of an SE, the surviving SE takes over traffic for all virtual services previously active on the failed SE, while continuing to handle traffic for virtual services already assigned to it. As part of the takeover process, the survivor also takes ownership of all floating addresses, such as VIPs, SNAT-IP, and so on. Two options, compacted and distributed (figure 1), determine whether all active virtual service placements are concentrated onto one SE in a healthy pair or not.
+
+Starting with release 16.3, Avi Vantage supports rolling upgrades by the Avi Controller of SEs in a legacy HA configuration. Virtual services running on a legacy HA SE group are not disrupted during their upgrade.
 
 <figure class="thumbnail wp-caption alignnone"> <a href="img/legacy-HA-compacted-and-distributed-loads.png"><img class="wp-image-10958" src="img/legacy-HA-compacted-and-distributed-loads.png" width="500" height="278"></a>  
 <figcapture> Figure 1. Legacy HA active/standby, showing compacted and distributed load options. Standby virtual services are shown in light grey. 
@@ -21,7 +23,7 @@ Optionally, health checks for each Avi SE's next-hop gateways also can be enable
 
 ### Floating IP Address
 
-Optionally, one or more floating IP addresses can be assigned to an SE group configured for legacy HA. The floating IP address is applicable when the SE interfaces are not in the same subnet as the VIP or source NAT (SNAT) IP addresses that will use the SE group.  One floating interface IP is required per each attached subnet per SE group when configured in Legacy HA mode.
+Optionally, one or more floating IP addresses can be assigned to an SE group configured for legacy HA. The floating IP address is applicable when the SE interfaces are not in the same subnet as the VIP or source NAT (SNAT) IP addresses that will use the SE group.  One floating interface IP is required per each attached subnet per SE group when configured in Legacy HA mode.
 
 ## Configuring Legacy HA
 
