@@ -8,15 +8,15 @@ Avi Vantage supports running in the Nutanix Acropolis hypervisor orchestrated by
 
 ### VM Hardware Requirements
 
-The resources suggested in this installation guide are minimum recommendations for a proof of concept. See also the <a href="/docs/16.2.2/system-requirements-hardware">hardware requirements KB</a> for more sizing help.
+The resources suggested in this installation guide are minimum recommendations for a proof of concept. See also the <a href="/system-requirements-hardware/">hardware requirements KB</a> for more sizing help.
 
 * **Avi Controller:** The Controller needs at least 4 vCPUs and 12 GB memory. Also needed is a NIC for the management network. This is the network used for accessing the web interface. The Controller also uses this network to communicate with the Avi Service Engines (SEs).
 * **SEs:** Each SE needs at least 2 vCPUs and 2 GB memory. Also needed is a NIC for the management network as the first interface, and additional NICs for the data networks. 
 
 ### Software Requirements
 
-* **Avi Vantage 16.1+:**  The Controller image file is obtained from the <a href="https://avinetworks.com/portal/software/">avinetworks.com/portal</a>. From the image repository, select the latest software version &gt; OpenStack section &gt; controller.qcow2 image. The SE image will be downloaded from the Controller.
-* **Nutanix Acropolis 4.6+:**  Prism is required for creating the Avi VMs. 
+* **Avi Vantage 16.1+:**  The Controller image file is obtained from the <a href="https://avinetworks.com/portal/software/">avinetworks.com/portal</a>. From the image repository, select the latest software version > OpenStack section > controller.qcow2 image. The SE image will be downloaded from the Controller.
+* **Nutanix Acropolis 4.6+:**  Prism is required for creating the Avi VMs. 
 
 ### Deploy the Controller
 
@@ -83,35 +83,35 @@ The resources suggested in this installation guide are minimum recommendations f
     <li>Custom Scripts:  Paste the following information into this section.  This info is used to tell the Service Engine about the Controller IP address and the auth token it should present.  The auth token should have already been generated in step 3.  See the graphic for an example.<br> 
      <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">AVICNTRL: [Controller IP address]
 AVICNTRL_AUTHTOKEN: [Auth token]</code></pre> 
-     <!-- [Format Time: 0.0009 seconds] --> </li> 
+     <!-- [Format Time: 0.0003 seconds] --> </li> 
    </ul> </li> 
   <li><strong>Verify connectivity</strong> between the SE and Controller.  Power on the SE VM.  From the Controller, navigate to Infrastructure &gt; Dashboard.  The SE icon should be present and green.</li> 
   <li><strong>Repeat as necessary</strong> to create any additional Service Engines.</li> 
  </ol> 
 </ol> 
 
- 
+ 
 
 <a name="illustration1"></a>
 **Illustration 1 - Create Controller Image**
 
 <a href="img/Nutanix-1.png"><img class="wp-image-11891 alignnone" src="img/Nutanix-1.png" alt="Nutanix Acropolis Avi Networks" width="324" height="397"></a>
 
- 
+ 
 
 <a name="illustration2"></a>
 **Illustration 2 - Create Controller VM**
 
 <a href="img/Nutanix-2.png"><img class="wp-image-11893 alignnone" src="img/Nutanix-2.png" alt="Nutanix Acropolis Avi Networks" width="320" height="801"></a>
 
- 
+ 
 
 <a name="illustration3"></a>
 **Illustration 3 - Create SE Image**
 
 <a href="img/Nutanix-3.png"><img class="wp-image-11906 alignnone" src="img/Nutanix-3.png" alt="Nutanix-3" width="320" height="435"></a>
 
- 
+ 
 
 <a name="illustration4"></a>
 **Illustration 4 - Create SE VM**
