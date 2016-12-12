@@ -6,11 +6,13 @@ layout: default
 
 Server Name Indication, or SNI, is a method of virtual hosting multiple domain names for an SSL enabled virtual IP. A single VIP is advertised for multiple virtual services. When a client connects to the VIP, Avi Vantage begins the SSL/TLS negotiation, but does not choose a virtual service, or an SSL certificate, until the client has requested the site by name via the TLS hello packet's domain field. If the requested domain name is configured on the virtual IP, the appropriate certificate is returned to the client and the connection is bound to the proper virtual service.
 
+Other SNI-related KB articles: <a href="/wildcard-sni-matching-for-virtual-hosting/">Wildcard SNI Matching for Virtual Hosting</a>, <a href="/support-for-sni-extension-in-tls-handshakes-to-pool-servers/">Support for SNI Extension in TLS Handshakes to Pool Servers</a>.
+
 ### Configuration
 
 Avi uses a concept of parent and child virtual services for SNI virtual hosting. When the Virtual Hosting VS option is selected on the create VS (via advanced mode) or edit VS, the virtual service participates in the virtual hosting. The virtual hosting VS must be configured as either a parent or a child VS.
 
-<a href="img/apps_vs_sni.jpg"><img src="img/apps_vs_sni.jpg" alt="apps_vs_sni" width="250" height="126" class="alignright size-full wp-image-2079"></a>
+<a href="img/apps_vs_sni.jpg"><img class="alignright size-full wp-image-2079" src="img/apps_vs_sni.jpg" alt="apps_vs_sni" width="250" height="126"></a>
 
 ### Parent VS
 
