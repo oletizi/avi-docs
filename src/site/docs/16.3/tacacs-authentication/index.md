@@ -53,3 +53,7 @@ All TACACS+ packets are encrypted, whereas the 12-byte header is passed in the c
 ### Error Handling
 
 If an error is indicated in the Status field of any reply packet during this process, the user login is rejected and results in a failure.
+
+### Other Articles of Interest:
+
+<a href="/tacacs-configuration-examples/">TACACS+ Configuration Examples</a>

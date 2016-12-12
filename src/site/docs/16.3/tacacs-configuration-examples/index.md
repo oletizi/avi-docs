@@ -4,13 +4,13 @@ layout: default
 ---
  
 
-**ISE TACACS+ Server**
+### **ISE TACACS+ Server**
 
 Cisco ISE is a security policy management platform that provides secure access to network resources. Cisco ISE functions as a policy decision point and enables enterprises to ensure compliance, enhance infrastructure security, and streamline service operations.
 
-Given below are steps involved in setting up an ISE Tacacs+ server as a remote authentication and authorization system for Avi Vantage.
+Given below are steps involved in setting up an ISE TACACS+ server as a remote authentication and authorization system for Avi Vantage.
 
-* ISE server is generally configured with external Identity Sources (in this case OpenLDAP) 
+* The ISE server is generally configured with external Identity Sources (in this case OpenLDAP). 
 
  
 
@@ -80,7 +80,7 @@ Given below are steps involved in setting up an ISE Tacacs+ server as a remote a
 
  
 
-* Avi Vantage TACACS+ auth profile configured with the same shared secret configured for the device in ISE. "service" attribute is generally required for authorization. In case of ACS, service=shell is required to map to a shell profile; while in case of ACS, service=shell is known to cause authorization failure altogether. 
+* The Avi Vantage TACACS+ auth profile should be configured with the same shared secret that was assigned to the device in ISE. The "service" attribute is generally required for authorization. In the case of an ACS server, service=shell is required for user authorization; while in the case of an ISE server, service=shell is known to cause authorization failure. 
 
  
 
@@ -96,7 +96,7 @@ Given below are steps involved in setting up an ISE Tacacs+ server as a remote a
 
  
 
-**Shrubbery TAC_PLUS**
+### **Shrubbery TAC_PLUS**
 
  
 
@@ -114,5 +114,6 @@ Given below are steps involved in setting up an ISE Tacacs+ server as a remote a
 
 * Avi Vantage TACACS+ auth profile is configured the same way as that for ISE or ACS. 
 
- 
+### Other Articles of Interest:
 
+<a href="/protocol-ports-u…nt-communication/">Protocol Ports Used by Avi Vantage for Management Communication</a>
