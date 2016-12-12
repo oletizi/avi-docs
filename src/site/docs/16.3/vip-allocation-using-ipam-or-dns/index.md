@@ -54,11 +54,11 @@ Here is the list of providers and supported functionalities for IPAM and DNS:
 </tbody>
 </table> 
 
-For example, if Infoblox is the chosen provider, both IPAM and DNS profiles should be pointing to Infoblox. If Vantage is the chosen provider, the Vantage user has an option to use IPAM, DNS, or both.
+For example, if Infoblox is the chosen provider, both IPAM and DNS profiles should be pointing to Infoblox. If Avi Vantage is the chosen provider, the Avi Vantage user has an option to use IPAM, DNS, or both.
 
 ## IPAM / DNS Support for Cloud Infrastructure
 
-This table lists the IPAM and DNS provider support available for each type of cloud (infrastructure) configured in Vantage. For example, when creating VirtualServices in OpenStack or AWS cloud, a separate configuration for IPAM is not needed/allowed as the cloud configuration has support for IPAM natively in Avi. However, Vantage DNS service can be still be used with these Clouds.
+This table lists the IPAM and DNS provider support available for each type of cloud (infrastructure) configured in Avi Vantage. For example, when creating VirtualServices in OpenStack or AWS cloud, a separate configuration for IPAM is not needed/allowed as the cloud configuration has support for IPAM natively in Avi. However, Avi Vantage DNS service can be still be used with these Clouds.
 
 <table class="table table table-bordered table-hover">  
 <tbody>          
@@ -147,7 +147,7 @@ This table lists the IPAM and DNS provider support available for each type of cl
 
 ## Cloud Configuration Workflow
 
-This section lists the steps for configuring IPAM and DNS support. The configuration fields differ among the infrastructure types and the provider (Vantage, Infoblox, AWS, and OpenStack). See the sections following this one for detailed steps.
+This section lists the steps for configuring IPAM and DNS support. The configuration fields differ among the infrastructure types and the provider (Avi Vantage, Infoblox, AWS, and OpenStack). See the sections following this one for detailed steps.
 <ol> 
  <li>Navigate to Templates &gt; Profiles.</li> 
  <li>Click IPAM/DNS Profile.</li> 
@@ -170,11 +170,11 @@ Sample Cloud Configuration with IPAM & DNS from steps 1 through 9:
 
 <a href="img/cloud-ipam-dns.png"><img class="alignnone size-full wp-image-10298" src="img/cloud-ipam-dns.png" alt="cloud-ipam-dns" width="1080" height="677"></a>
 
-The following sections provide information for each of the IPAM / DNS providers supported by Vantage.
+The following sections provide information for each of the IPAM / DNS providers supported by Avi Vantage.
 
-## IPAM / DNS Configuration: Vantage
+## IPAM / DNS Configuration: Avi Vantage
 
-These steps are applicable if using Vantage as the IPAM and/or DNS provider.
+These steps are applicable if using Avi Vantage as the IPAM and/or DNS provider.
 
 ### IPAM
 
@@ -191,7 +191,7 @@ Avi Controller will allocate IP addresses from a pool configured for the cloud a
   <ol> 
    <li>Click Add Subnet.</li> 
    <li>Enter the subnet address, in the following format: 9.9.9.0/24</li> 
-   <li>Click Add Static IP address pool. Vantage will allocate IP addresses from this pool. For example, 9.9.9.100-9.9.9.200.</li> 
+   <li>Click Add Static IP address pool. Avi Vantage will allocate IP addresses from this pool. For example, 9.9.9.100-9.9.9.200.</li> 
    <li>Repeat steps 1-3 for adding more subnets to choose IPs from for a VirtualService under the same network object.</li> 
    <li>Click Save.</li> 
    <li>Repeat for each network to be used for IP address allocation</li> 
@@ -209,7 +209,7 @@ East-West IPAM network creation after steps 1 through 5:
 
 ### DNS
 
-In the IPAM/DNS profile, add DNS Service Domains. Service_domain field provided will have Vantage as an authoritative DNS server.
+In the IPAM/DNS profile, add DNS Service Domains. Service_domain field provided will have Avi Vantage as an authoritative DNS server.
 
 Enter the domain name (for example, “mycompany-cloud”.) All applications using this IPAM profile will have DNS records with fully qualified domain name (FQDN) app-name.mycompany-cloud. User can input any hostname accompanied with the domain name (not necessarily the virtualservice name, although that is recommended for ease of use in identifying applications) in the fqdn field for virtualservice (Refer to VirtualService workflow section at the bottom of this page)
 
