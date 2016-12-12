@@ -12,7 +12,7 @@ This article shows the MIB definitions for the Avi Vantage objects and the defin
 
 To fetch SNMP objects from Avi Vantage, an external host needs to query the SNMP daemon, which only runs on the Controller cluster leader. It is therefore best to configure the external host to direct queries to the cluster IP of the Avi Controller cluster. Absent a cluster IP, the external host must know the IP addresses of *each* Controller, and try as many as three times before it finds the current leader's SNMP daemon.
 
-Firewall rules should be configured to give that external host access to the cluster IP or each of the Controller IPs.
+Firewall rules should be configured to give that external host access to port 161 on the cluster IP or each of the Controller IPs.
 
 During the brief period of time (1-4 minutes) that a Controller cluster is recovering from the failure of its leader, queries to the cluster IP will fail, which the external host may interpret as "Vantage is down." That is only true in the narrow sense that the control plane is down; the data plane (i.e., the SEs) are likely up and delivering virtual services to clients.
 
