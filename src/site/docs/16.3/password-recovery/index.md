@@ -5,7 +5,7 @@ layout: default
 ### <a href="img/MyAccount.png"><img class=" wp-image-13114 alignright" src="img/MyAccount.png" alt="MyAccount" width="366" height="321"></a>Reset a Known Password
 
 To reset a password that is known for a local user or admin account, first log into the account. Select the username in the top-right corner of the GUI and navigate to My Account. Enter the old password followed by the new password.
-&gt; Note:  An administrator may change other users' passwords via the User account page, but may only change their own password via the page.
+> Note:  An administrator may change other users' passwords via the User account page, but may only change their own password via the page.
  
 
 ### Local User Password Recovery
@@ -16,7 +16,7 @@ To reset a password that is known for a local user or admin account, first log i
 
 See the <a href="/docs/16.2.2/email-smtp">Email / SMTP</a> article for help configuring email from Avi Vantage.
 
-**Admin-Initiated:**  Any administrator or user who has *write* privileges to User objects can change the password for a local user. From the admin account, navigate to Administration &gt; Account &gt; User and edit the account to be reset. Either input a new password or select the Generate button to create a random password for the user. Note that while the password has been reset upon saving, the administrator must still copy and manually send this new password to the user.
+**Admin-Initiated:**  Any administrator or user who has *write* privileges to User objects can change the password for a local user. From the admin account, navigate to Administration > Account > User and edit the account to be reset. Either input a new password or select the Generate button to create a random password for the user. Note that while the password has been reset upon saving, the administrator must still copy and manually send this new password to the user.
 
 ### Remote User Password Recovery
 
@@ -24,10 +24,10 @@ Password recovery for users who are remotely authenticated through <a href="/doc
 
 ### Admin User Password Recovery
 
-**Email Reset:**  If SMTP has been configured for Vantage, an admin account may be reset the same as any other user account. Clicking the password reset link on the login screen will send a password reset email to the configured email address for the admin account. If SMTP has not been configured, the password reset link does not appear.
+**Email Reset:**  If SMTP has been configured for Vantage, an admin account may be reset the same as any other user account. Clicking the password reset link on the login screen will send a password reset email to the configured email address for the admin account. If SMTP has not been configured, the password reset link does not appear.
 
 See the <a href="/docs/16.2.2/email-smtp">Email / SMTP</a> article for help configuring email from Avi Vantage.
 
-**Reset via Another Admin:**  If another account exists with write privilege to the Accounts role for the admin tenant, this account may be used to reset another admin account. The System-Admin role is the only default role having such access.
-&gt; Note:  If neither of the above options are available, there is no recovery of the admin account.  Avi Networks strongly recommends validating a resilient password recovery by testing one of the above options for enabling password recovery.
+**Reset via Another Admin:**  If another account exists with write privilege to the Accounts role for the admin tenant, this account may be used to reset another admin account. The System-Admin role is the only default role having such access.
+> Note:  If neither of the above options are available, there is no recovery of the admin account.  Avi Networks strongly recommends validating a resilient password recovery by testing one of the above options for enabling password recovery.
  
