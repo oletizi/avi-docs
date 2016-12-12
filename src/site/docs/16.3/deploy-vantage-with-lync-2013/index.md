@@ -112,7 +112,7 @@ Three public VS IP addresses are required for the external side and one VS IP ad
 
 * Configure layer 4 load balancing with TCP proxy for all ports except for 3478/UDP.
 * Use the System-UDP-Fast-Path profile for the UDP load balancing. Note that while Microsoft recommends Half-NAT to preserve client IP addresses for this UDP load balancing to allow peer-to-peer communication, it is not required. Deploying with the Half-NAT option requires using the Service Engines as the server's default gateway, which may require additional configuration on Avi Vantage and on the servers.
-* Use UDP health monitor for port 3478 and TCP health monitor for other ports. The UDP health monitor verifies the application is listening on a given UDP port. If an ICMP port unreachable message is received the application is marked down.  Otherwise the UDP server is marked up. 
+* Use UDP health monitor for port 3478 and TCP health monitor for other ports. The UDP health monitor verifies the application is listening on a given UDP port. If an ICMP port unreachable message is received the application is marked down.  Otherwise the UDP server is marked up. 
 
 ### Reverse Proxy
 
@@ -127,6 +127,6 @@ In a typical deployment scenario, the Reverse Proxy does not have direct Layer 2
 
 ### Virtual Service Placement
 
-Figure 1 shows a logical separation of Avi Service Engines across four zones.  These SEs may be as few as a single consolidated pair, though for security best practices this will likely be one pair of SEs on the External Edge and Reverse Proxy load balancing, and another pair of SEs for the Internal Edge and Front End load balancing.
+Figure 1 shows a logical separation of Avi Service Engines across four zones.  These SEs may be as few as a single consolidated pair, though for security best practices this will likely be one pair of SEs on the External Edge and Reverse Proxy load balancing, and another pair of SEs for the Internal Edge and Front End load balancing.
 
 Before creating any VS, create the desired number of Service Engine groups, based on the level of segregation determined in the previous paragraph. When creating a VS, use the Advanced create option instead of the Basic option so that an SE group can be specified at the end of creation within the Advanced tab. This will ensure an SE does not host virtual servers of different Lync roles or cross security zones.

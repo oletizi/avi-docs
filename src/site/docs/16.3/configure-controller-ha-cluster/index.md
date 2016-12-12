@@ -53,6 +53,8 @@ The leader Avi Controller assigns the cluster IP address as a secondary IP addre
 
 For OpenStack deployments, the leader also performs a Neutron API call to set cluster IP address in the list of allowed-address-pairs for the Neutron port corresponding to its management interface.  
 
+In order to use FQDNs instead of IP address of controller nodes, refer to <a href="/cluster-configuration-with-fqdn/">this</a> page. 
+
 <a name="cluster-transition-process"></a>
 
 ## Transition Process

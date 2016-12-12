@@ -12,25 +12,25 @@ Avi Vantage includes three sample scripts via the System-Xternal Perl, Python an
 
 ### General Monitor Configuration
 
-* **Send Interval**:  Frequency at which the health monitor initiates a server check, in seconds.  
-    * Best practice**:**  For busy Service Engines, keep the monitoring interval lower and receive timeout larger, since external checks tend to use more system resources than the system default monitors.
-* **Receive Timeout**:  Maximum amount of time before the server must return a valid response to the health monitor, in seconds.
-* **Successful Checks**:  Number of consecutive health checks that must succeed before Vantage marks a down server as being back up.
-* **Failed Checks**:  Number of consecutive health checks that must fail before Vantage marks an up server as being down. 
+* **Send Interval**:  Frequency at which the health monitor initiates a server check, in seconds.  
+    * Best practice**:**  For busy Service Engines, keep the monitoring interval lower and receive timeout larger, since external checks tend to use more system resources than the system default monitors.
+* **Receive Timeout**:  Maximum amount of time before the server must return a valid response to the health monitor, in seconds.
+* **Successful Checks**:  Number of consecutive health checks that must succeed before Vantage marks a down server as being back up.
+* **Failed Checks**:  Number of consecutive health checks that must fail before Vantage marks an up server as being down. 
 
 ### External Specific Configuration
 
 As best practice, be sure to clean up any temporary files that are created by scripts.
 
-When building an external monitor, it is common to manually test the successful execution of the commands.  To test a command from an SE, it may be necessary to switch to the proper namespace or tenant.  The production external monitor will correctly use the proper tenant.  To manually switch tenants when testing a command from the SE CLI, follow the commands in the following KB:  <a href="/docs/16.2.2/manually-validate-server-health">Manually Validate Server Health</a>.
+When building an external monitor, it is common to manually test the successful execution of the commands.  To test a command from an SE, it may be necessary to switch to the proper namespace or tenant.  The production external monitor will correctly use the proper tenant.  To manually switch tenants when testing a command from the SE CLI, follow the commands in the following KB:  <a href="/manually-validate-server-health/">Manually Validate Server Health</a>.
 
-* **Script Code**:  Upload the script via copy/paste or uploading the file.
-* **Script Parameters**:  Enter any optional arguments to apply. These strings are passed in as arguments to the script, such as $1 = server IP, $2 = server port.
-* **Script Variables**:  Custom environment variables may be fed into the script to allow for simplified re-usability. For example, a script that authenticates to the server may have a variable set to USER=test. 
+* **Script Code**:  Upload the script via copy/paste or uploading the file.
+* **Script Parameters**:  Enter any optional arguments to apply. These strings are passed in as arguments to the script, such as $1 = server IP, $2 = server port.
+* **Script Variables**:  Custom environment variables may be fed into the script to allow for simplified re-usability. For example, a script that authenticates to the server may have a variable set to USER=test. 
 
-Script Success:  If a script exits with any response it is considered a success and marks a server up.  If there is no response from the script the monitor will mark the server.
+**Script Success**:  If a script exits with any data it is considered a success and marks a server up.  If there is no data from the script the monitor will mark the server down.  In the Sharepoint monitor example below, the script includes a:  | grep "200 OK".  If this is found, this data is returned and the monitor exists as a success.  If the grep does not find this string, no data is returned and the monitor marks the server down.
 
- 
+ 
 
 *MySQL example script:*
 

@@ -22,7 +22,7 @@ layout: default
 </tr>
 <tr>   
 <td><h4><span id="Supported_Status_Code"><strong>Supported Status Code</strong></span></h4></td>
-<td>200 HTTP Ok<br> 301 Moved Permanently<br> 302 Found<br> 303 See Other<br> 307 Temporary Redirect<br> 400 Bad Request<br> 401 Unauthorized<br> 402 Forbidden<br> 404 Not Found<br> 405 Method Not Allowed<br> 413 Request Entity Too Large<br> 414 Request-URI Too Long<br> 429 Too Many Requests<br> 501 Not Implemented<br> 503 Service Unavailable</td>
+<td>200 HTTP Ok<br> 301 Moved Permanently<br> 302 Found<br> 303 See Other<br> 307 Temporary Redirect<br> 400 Bad Request<br> 401 Unauthorized<br> 403 Forbidden<br> 404 Not Found<br> 405 Method Not Allowed<br> 413 Request Entity Too Large<br> 414 Request-URI Too Long<br> 429 Too Many Requests<br> 501 Not Implemented<br> 503 Service Unavailable</td>
 </tr>
 <tr>   
 <td><h4><span id="Returns"><strong>Returns</strong></span></h4></td>
@@ -38,7 +38,7 @@ for k, v in pairs(h) do
       "Blocking Shellshock Attack!")
    end
 end</code></pre> 
-<!-- [Format Time: 0.0034 seconds] --></td>
+<!-- [Format Time: 0.0013 seconds] --></td>
 </tr>
 </tbody>
 </table> 

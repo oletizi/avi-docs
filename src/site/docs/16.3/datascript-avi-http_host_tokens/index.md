@@ -1,5 +1,5 @@
 ---
-title: DataScript&#58; avi&#46;http_host_tokens
+title: DataScript&#58; avi&#46;http&#46;get_host_tokens
 layout: default
 ---
 <table class="table table-hover table table-bordered table-hover">  
@@ -28,16 +28,16 @@ layout: default
 <td><span style="font-size: medium;"><strong>Example</strong></span></td>
 <td>Example host header: <em>http://<strong>www.avinetworks.com</strong>/a/b/index.htm?avi=true</em><p></p> <p>Returns ‘www.avinetworks.com’<br> 
  <!-- Crayon Syntax Highlighter v2.7.1 --> </p><pre><code class="language-lua">avi.http.get_host_tokens(1)</code></pre> 
-<!-- [Format Time: 0.0012 seconds] --> Returns ‘avinetworks’<br> 
+<!-- [Format Time: 0.0003 seconds] --> Returns ‘avinetworks’<br> 
 <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_host_tokens(2,2)</code></pre> 
-<!-- [Format Time: 0.0013 seconds] --> Returns ‘nil’<br> 
+<!-- [Format Time: 0.0003 seconds] --> Returns ‘nil’<br> 
 <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.http.get_host_tokens(6)</code></pre> 
-<!-- [Format Time: 0.0008 seconds] --> Validate the second and third fields of the hostname are ‘avinetworks.com’.<br> 
+<!-- [Format Time: 0.0002 seconds] --> Validate the second and third fields of the hostname are ‘avinetworks.com’.<br> 
 <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">domain = avi.http.get_host_tokens(2, 3)
 if domain ~= "avinetworks.com" then
    avi.http.redirect("new.avinetworks.com")
 end</code></pre> 
-<!-- [Format Time: 0.0023 seconds] --></td>
+<!-- [Format Time: 0.0006 seconds] --></td>
 </tr>
 </tbody>
 </table> 

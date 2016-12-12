@@ -12,7 +12,7 @@ The Avi Controller cluster IP is ARPed by whichever Avi Controller is the primar
 
 Administrators may manage any of the Avi Controllers within the cluster by directly accessing the cluster IP address. The Avi Controllers will handle all replication, so there is no requirement to make changes specifically on the primary Avi Controller.
 
-Note: In Avi Vantage terminology, the cluster IP is not the same as a "floating IP". <a href="/docs/16.2.2/architectural-overview/applications/virtual-services/create-virtual-service/#openstack-floatingip">In Vantage, the term "floating IP" applies only to OpenStack.</a>
+Note: In Avi Vantage terminology, the cluster IP is not the same as a "floating IP". <a href="/docs/16.2.2/configuration-guide/applications/virtual-services/create-virtual-service/#openstack-floatingip">In Vantage, the term "floating IP" applies only to OpenStack.</a>
 
 ## Configuring the Cluster IP
 
@@ -20,4 +20,4 @@ Note: In Avi Vantage terminology, the cluster IP is not the same as a "floating 
 
 To add the cluster IP within the web interface, navigate to Administration &gt; Controller &gt; Edit. Add the new address to the Controller Cluster IP field. This change takes effect immediately upon saving.
 
-<a href="img/cluster-config-example.png"><img src="img/cluster-config-example.png" alt="cluster-config-example" width="1140" height="456" class="alignnone size-full wp-image-10593"></a>
+<a href="img/cluster-config-example.png"><img class="alignnone size-full wp-image-10593" src="img/cluster-config-example.png" alt="cluster-config-example" width="1140" height="456"></a>

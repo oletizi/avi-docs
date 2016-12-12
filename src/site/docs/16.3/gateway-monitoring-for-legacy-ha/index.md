@@ -2,11 +2,14 @@
 title: Gateway Monitoring for Legacy HA
 layout: default
 ---
-Avi Vantage supports health monitoring of the first-hop gateways connected to Avi Service Engines (SEs.) ICMP echo packets are used to perform the health monitoring.
+Avi Vantage supports health monitoring of the first-hop gateways connected to Avi Service Engines (SEs). ICMP echo packets are used to perform the health monitoring.
 
 Gateway health monitoring is performed from both active and standby Avi SEs.
 
-Note: The current release supports gateway health monitoring only for Avi SEs configured for <a href="/docs/16.2.2/legacy-ha-for-avi-service-engines/">legacy high availability (HA)</a>.
+Notes:
+
+* The current release supports gateway health monitoring only for Avi SEs configured for <a href="/legacy-ha/">legacy high availability (HA)</a>.
+* Another article of interest:  <a href="/avi-se-behavior-on-gateway-monitor-failure/">Avi SE Behavior on Gateway Monitor Failure</a> 
 
 ## Enabling Gateway Health Monitoring
 
@@ -23,14 +26,18 @@ Gateway health monitoring is part of the cloud configuration. If and when an IP
 </ol> 
 
 <a href="img/gateway-monitor.png"><img class="alignnone size-full wp-image-9712" src="img/gateway-monitor.png" alt="gateway-monitor" width="525" height="232"></a>
+<a name="multiple-gw-monitors"></a>
 
 ### CLI
 
 Use the following commands to configure monitoring for a gateway:
 
-<pre>: &gt; configure vrfcontext global
-vrfcontext&gt; gateway_mon 192.168.1.10
-</pre> 
+<code>:&gt; configure vrfcontext global<br> <code>vrfcontext&gt; gateway_mon 192.168.1.10</code></code>
 
 Make sure to use the IP address of the gateway where this example shows "192.168.1.10."
 
+### Enhancements in Avi Vantage release 16.2.3
+
+Beginning with the 16.2.3 release, it is possible to configure multiple gateway monitors.  This is typically useful in two-armed deployment where the first-hop gateway used for front-end and back-end connections are different.
+
+Switchover of the virtual service is triggered if failure is detected in at least one gateway.
