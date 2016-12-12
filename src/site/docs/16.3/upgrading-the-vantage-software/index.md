@@ -8,7 +8,7 @@ Avi Vantage supports a simple system upgrade method wherein all Avi Controller n
 
 At the onset of an upgrade, the version of the running Controller cluster is checked. If it is too distant from the release being installed, a warning is emitted and the upgrade is aborted.
 
-If the upgrade is judged possible, the existing configuration is preserved. After the upgrade completes, Vantage still has its configuration.
+If the upgrade is judged possible, the existing configuration is preserved. After the upgrade completes, Avi Vantage still has its configuration.
 
 ## Management Access During Upgrade
 
@@ -39,16 +39,18 @@ This section provides the steps for system upgrade using the web interface, CLI 
 This section shows an example of the steps for upgrading from 15.x to 16.1.
 <ol> 
  <li>Download the latest version of the controller.pkg file from the Avi Networks <a href="http://avinetworks.com/portal/software">portal</a>.</li> 
- <li>If there are any firewalls in the environment, configure them to allow TCP port 8443 between SE nodes and Avi Controller nodes. (<a href="/docs/16.2.2/protocol-ports-used-by-avi-vantage-for-management-communication/">List of firewall ports to leave open.</a>)</li> 
+ <li>If there are any firewalls in the environment, configure them to allow TCP port 8443 between SE nodes and Avi Controller nodes. (<a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">List of firewall ports to leave open.</a>)</li> 
  <li>Using SCP, copy controller.pkg to /tmp on the Avi Controller node. If running a 3-node cluster, copy the file only to the primary/leader node.</li> 
 </ol> <ol start="4"> 
- <li>Using SSH, access the Avi Controller's CLI using SSH and enter the <strong>shell</strong> command: <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>ssh admin@&lt;IP-of-Avi-Controller&gt;
+ <li>Using SSH, access the Avi Controller's CLI using SSH and enter the <strong>shell</strong> command:<br> 
+  <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">ssh admin@&lt;IP-of-Avi-Controller&gt;
 shell
-The shell login username is "admin".
-</code>
-</pre> </li> 
+The shell login username is "admin".</code></pre> 
+  <!-- [Format Time: 0.0005 seconds] --> </li> 
 </ol> <ol start="5"> 
- <li>At the Avi shell prompt, enter a command such as the following. Replace "/tmp/controller.pkg" with the full path to the file (controller.pkg) you downloaded. <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>upgrade system image_path /tmp/controller.pkg</code></pre> <p> </p></li> 
+ <li>At the Avi shell prompt, enter a command such as the following. Replace "/tmp/controller.pkg" with the full path to the file (controller.pkg) you downloaded.<br> 
+  <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">upgrade system image_path /tmp/controller.pkg</code></pre> 
+  <!-- [Format Time: 0.0002 seconds] -->  </li> 
 </ol> <ol start="6"> 
  <li>To see the progress of the upgrade procedure: <strong>show upgrade status</strong></li> 
 </ol> 
@@ -66,7 +68,9 @@ DATA:
 * force = True or False. For every version of the image, there is a min compatible image. If you are upgrading from beyond that image, it will be rejected unless the force flag is set to True. If force flag is set, it will be converted to a disruptive operation.
 * disruptive = True or False. If you do not care for the non-disruptive rolling upgrade of SEs and would rather get through upgrade quickly, you can set this flag. 
 
-## How Vantage Performs the Upgrade
+## How Avi Vantage Performs the Upgrade
+
+<a name="rolling-service-engine-upgrade"></a>
 
 ### Avi Controller Node Upgrade
 
@@ -86,21 +90,33 @@ Rolling upgrade of the SEs is initiated by the Avi Controller, once all the Avi 
 
 The Service Engines (SEs) within each SE group are upgraded serially. The SE groups themselves are upgraded in parallel.
 
-### HA Mode Determines Virtual Service Availability During Upgrade
+### 16.3
 
-The non-disruptive nature of the SE upgrade is dictated by the high availability (HA) settings in the SE group.
+Virtual services are non-disruptive during SE upgrade, with one exception as listed below.
 
-All virtual services in an SE group will not face traffic disruption if the SE group is configured for high availability in one of the modes below.
+Upgrades are non-disruptive for virtual services running in:
+
+* Elastic HA, Active-Active mode
+* Elastic HA, N+M Buffer mode, for virtual services scaled to two or more SEs
+* Legacy Active-Standby mode 
+
+Upgrades are disruptive for virtual services running in:
+
+* Elastic HA, N+M Buffer mode, for virtual services placed on just one SE (not scaled out) 
+
+### Prior to 16.3
+
+HA mode determines virtual service availability during upgrade. The non-disruptive nature of the SE upgrade is dictated by the high availability (HA) settings in the SE group. All virtual services in an SE group will not face traffic disruption if the SE group is configured for high availability in one of the modes below.
 
 ### 16.2
 
 HA modes that are non-disruptive during SE upgrade:
 
-* Cluster HA, Active-Active mode 
+* Elastic HA, Active-Active mode 
 
-Traffic-disruptive SE Group HA Modes:
+Traffic-disruptive SE Group HA modes:
 
-* Cluster HA, N+M Buffer mode
+* Elastic HA, N+M Buffer mode
 * Legacy Active-Standby 
 
 ### 16.1 and Earlier
