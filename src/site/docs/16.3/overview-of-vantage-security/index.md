@@ -1,5 +1,5 @@
 ---
-title: Overview of Vantage Security
+title: Overview of Avi Vantage Security
 layout: default
 ---
 Avi Networks strives to ensure the highest level of security, adhering to rigorous testing and validation standards. Avi Vantage includes numerous security related features to ensure the integrity of the Vantage system as well as the applications and services protected by Vantage. This article is focused on the security of Avi Service Engines and Avi Controllers.
@@ -23,7 +23,7 @@ The following are a few examples of web UI and other attack vectors tested via e
 * Role based access control
 * Strong output validation to guard against disclosure of sensitive fields such as passwords, export of keys 
 
- 
+ 
 
 ### Patching Security Issues
 
@@ -49,5 +49,5 @@ With a basic deployment of Avi Vantage, the system is secured and reasonably loc
 * <a href="/docs/16.2.2/ldap-auth-profile-test">AAA via LDAP</a>
 * <a href="/docs/16.2.2/securing-management-ip-access">Securing Management IP Access</a> 
 
- 
+ 
 
