@@ -4,7 +4,7 @@ layout: default
 ---
 The Avi Controller cluster IP address is a single IP address shared by multiple Avi Controllers within a cluster. This is the address to which the web interface, CLI commands and REST API calls are directed. As a best practice, to access the Avi Controller, one logs onto the cluster IP address instead of the IP addresses of individual Avi Controller nodes.
 
-Note: If the IP address of an Avi Controller node has changed, a <a href="/docs/16.2.2/ctlr-cfg-update-after-ip-change">script </a>must be run to update the configuration. 
+Note: If the IP address of an Avi Controller node has changed, a <a href="/docs/16.3/ctlr-cfg-update-after-ip-change">script </a>must be run to update the configuration. 
 
 ### Cluster IP Advertisement
 
@@ -12,7 +12,7 @@ The Avi Controller cluster IP is ARPed by whichever Avi Controller is the primar
 
 Administrators may manage any of the Avi Controllers within the cluster by directly accessing the cluster IP address. The Avi Controllers will handle all replication, so there is no requirement to make changes specifically on the primary Avi Controller.
 
-Note: In Avi Vantage terminology, the cluster IP is not the same as a "floating IP". <a href="/docs/16.2.2/configuration-guide/applications/virtual-services/create-virtual-service/#openstack-floatingip">In Vantage, the term "floating IP" applies only to OpenStack.</a>
+Note: In Avi Vantage terminology, the cluster IP is not the same as a "floating IP". <a href="/docs/16.3/architectural-overview/applications/virtual-services/create-virtual-service/#openstack-floatingip">In Vantage, the term "floating IP" applies only to OpenStack.</a>
 
 ## Configuring the Cluster IP
 

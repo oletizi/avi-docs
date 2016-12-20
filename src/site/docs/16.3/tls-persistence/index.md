@@ -6,7 +6,7 @@ The TLS mode of persistence may be applied to any virtual service configured to 
 
 Note:  This persistence method is often confused for an older, broken method of persistence called SSL Session ID. While both are used for secure connections, these methods are unrelated.
 
-See also <a href="/docs/16.2.2/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
+See also <a href="/docs/16.3/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 
 ### Persist Table
 

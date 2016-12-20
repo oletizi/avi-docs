@@ -8,7 +8,7 @@ This article describes how to change node membership or node IP address in an Av
 * <a href="#removebothfollowers">Removing Both Followers</a>
 * <a href="#changefollower">Changing a Follower Node</a>
 * <a href="#replaceleader">Replacing the Leader Node</a>
-* <a href="#replacefollower">Replacing a Follower Node with a New Node</a> &gt; Note: If the IP address of an Avi Controller node has changed, a script must be run to update the configuration. <a href="/docs/16.2.2/ctlr-cfg-update-after-ip-change">Click here </a>for information.
+* <a href="#replacefollower">Replacing a Follower Node with a New Node</a> &gt; Note: If the IP address of an Avi Controller node has changed, a script must be run to update the configuration. <a href="/docs/16.3/ctlr-cfg-update-after-ip-change">Click here </a>for information.
  
 
 <a name="deploynewcluster"></a>
@@ -17,14 +17,14 @@ This article describes how to change node membership or node IP address in an Av
 
 This section shows the web interface popup and CLI commands for deploying an Avi Controller cluster.
 
-To deploy an Avi Controller cluster, first deploy a single Avi Controller node (the leader), then add the follower nodes to the leader. (After using the setup wizard to install Avi Vantage on the follower nodes, do not make any other configuration changes on these nodes.) For more in-depth information about initial cluster deployment, click <a href="/docs/16.2.2/configure-controller-ha-cluster">here</a>.
+To deploy an Avi Controller cluster, first deploy a single Avi Controller node (the leader), then add the follower nodes to the leader. (After using the setup wizard to install Avi Vantage on the follower nodes, do not make any other configuration changes on these nodes.) For more in-depth information about initial cluster deployment, click <a href="/docs/16.3/configure-controller-ha-cluster">here</a>.
 
 ### Web Interface
 
 On the Avi Controller node that will be the leader:
 <ol> 
  <li>Navigate to Administration &gt; Controller and click Edit.</li> 
- <li>Enter the <a href="/docs/16.2.2/controller-cluster-ip">cluster IP address</a>. This will be the shared management IP address of the cluster.</li> 
+ <li>Enter the <a href="/docs/16.3/controller-cluster-ip">cluster IP address</a>. This will be the shared management IP address of the cluster.</li> 
  <li>Enter the host IP addresses of each of the 3 nodes in the Controller Node fields: 
   <ul> 
    <li>Controller Node-1: Host IP address of the leader node.</li> 
@@ -133,7 +133,7 @@ After Save:
 * Each follower is re-imaged into its default state with no configuration and no access to the leader.
 * The leader holds the configuration. The Avi Service Engines (SEs) continue to connect to the leader. 
 
-For more information about the transition process, including descriptions of the status messages that appear, <a href="/docs/16.2.2//configure-controller-ha-cluster#cluster-transition-process">click here</a>.
+For more information about the transition process, including descriptions of the status messages that appear, <a href="/docs/16.3//configure-controller-ha-cluster#cluster-transition-process">click here</a>.
 
 Note: During the transition from a cluster to a single node, the REST API will be unavailable for around 2 minutes.
 
@@ -204,7 +204,7 @@ After Save:
 
 * The removed follower node is sent an API request asking it to gracefully clear its own state.
 * Since the old follower is not always expected to clear its own state, the leader will forcibly remove it if necessary.
-* The new follower node is added using the process described <a href="/docs/16.2.2/changing-avi-controller-cluster-configuration#cluster-transition-process"> here</a>. 
+* The new follower node is added using the process described <a href="/docs/16.3/changing-avi-controller-cluster-configuration#cluster-transition-process"> here</a>. 
 
 <a name="replaceleader"></a>
 

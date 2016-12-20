@@ -2,7 +2,7 @@
 title: Metrics List
 layout: default
 ---
-Avi Networks continuously adds additional metrics to Avi Vantage. They are used to trigger alerts, notify administrators of important information, and are the building blocks of much of the configuration automation. See <a href="/docs/16.2.2/events-overview">Events Overview</a>, <a href="/docs/16.2.2/alerts-overview">Alerts Overview</a>, and <a href="/docs/16.2.2/notifications-overview">Notifications Overview</a> for a larger view of how the event component is used for alerting and automation.
+Avi Networks continuously adds additional metrics to Avi Vantage. They are used to trigger alerts, notify administrators of important information, and are the building blocks of much of the configuration automation. See <a href="/docs/16.3/events-overview">Events Overview</a>, <a href="/docs/16.3/alerts-overview">Alerts Overview</a>, and <a href="/docs/16.3/notifications-overview">Notifications Overview</a> for a larger view of how the event component is used for alerting and automation.
 
 ### Object Types
 

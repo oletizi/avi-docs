@@ -9,7 +9,7 @@ Avi Vantage is a software-based solution that provides real-time analytics as we
 **Notes:**
 
 * **Deployment in *write access mode* is recommended. It's the quickest and easiest way to deploy.**
-* **After completing the deployment process, clik <a href="/docs/16.2.2/virtual-service-creation-vmware/">here</a> to learn how to create virtual services.** 
+* **After completing the deployment process, clik <a href="/docs/16.3/virtual-service-creation-vmware/">here</a> to learn how to create virtual services.** 
 
 ## How Avi Vantage Integrates into vCenter
 
@@ -72,7 +72,7 @@ The following table lists the minimum requirements for the VMs on which the Avi 
 
 Add 1 GB of RAM to the SE configuration for each additional vCPU. With 10 GB as an absolute minimum, set the disk value to at least (2 x RAM-size) + 5 GB.
 
-For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/16.2.2/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
+For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/16.3/overview-of-vantage-high-availability">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
 
 ### Software Requirements
 
@@ -384,9 +384,9 @@ Use the following steps to assign an IP address pool to port groups:
 
 <a href="img/vmware-deploy5.png"><img class="alignnone size-medium wp-image-3737" src="img/vmware-deploy5.png" alt="vmware-deploy5" width="528" height="287"></a>
 
-**If deploying in no access mode, <a href="#Avi SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Vantage is ready for <a href="/docs/16.2.2/virtual-service-creation-vmware/">creation of virtual services</a>.
+**If deploying in no access mode, <a href="#Avi SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Vantage is ready for <a href="/docs/16.3/virtual-service-creation-vmware/">creation of virtual services</a>.
 
 ### Recommended Reading
 
-* <a href="/docs/16.2.2/virtual-service-creation-vmware/">Creating a Virtual Service</a>
-* <a href="/docs/16.2.2/troubleshooting-vmware-deployment/">Troubleshooting</a> 
+* <a href="/docs/16.3/virtual-service-creation-vmware/">Creating a Virtual Service</a>
+* <a href="/docs/16.3/troubleshooting-vmware-deployment/">Troubleshooting</a> 

@@ -4,7 +4,7 @@ layout: default
 ---
 When logged into the web interface, an Avi Vantage user can view or change information about their own account.
 
-Note: This applies only to accounts in Vantage's <a href="/user-accounts/">local user database</a>.
+Note: This applies only to accounts in Vantage's <a href="/docs/16.3/user-accounts/">local user database</a>.
 
 To manage your Vantage user account:
 <ol> 

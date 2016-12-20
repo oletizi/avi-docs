@@ -36,7 +36,7 @@ Repeat the above steps for all other nodes in the OpenShift cluster.
 
 ## Configuration changes on Avi
 
-Make below changes while following the <a href="/avi-vantage-openshift-installation-guide/">OpenShift installation guide</a>.
+Make below changes while following the <a href="/docs/16.3/avi-vantage-openshift-installation-guide/">OpenShift installation guide</a>.
 
 * Configure the east-west VIP network to use the service network (default 172.30.0.0/16).<a href="img/Fig7.png"><img class="alignnone size-full wp-image-11594" src="img/Fig7.png" alt="Fig7" width="2168" height="1464"></a>
 *  In cloud configuration, set 'ProxyService Placement Subnet' as 172.30.0.0/16 and select ‘Use Cluster IP of service as VIP for East/West’ checkbox.<a href="img/Fig22.png"><img class="alignnone size-full wp-image-11627" src="img/Fig22.png" alt="Fig22" width="2156" height="1450"></a> 

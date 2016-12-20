@@ -8,7 +8,7 @@ layout: default
 The docs below show how to get started with this documentation system.
 
 * [Super-fast way to make a change to an existing documentation page &rsaquo;](#quick-edit)
-* <a href="/docs/16.2.2/{{ site.meta.repo_site }}" target="_blank">Documentation system overview (scroll down to the readme)&nbsp;&rsaquo;</a>
+* <a href="/docs/16.3/{{ site.meta.repo_site }}" target="_blank">Documentation system overview (scroll down to the readme)&nbsp;&rsaquo;</a>
 * [for Windows &rsaquo;](getting-started/windows)
 * [for Ubuntu &rsaquo;](getting-started/ubuntu)
 * [for MacOS &rsaquo;](getting-started/macos)
@@ -26,14 +26,14 @@ The docs below show how to get started with this documentation system.
 
 ## Quick Edit
 
-The documentation is kept in a <a href="/docs/16.2.2/{{ site.meta.repo_site }}" target="_blank">GitHub repository</a>
+The documentation is kept in a <a href="/docs/16.3/{{ site.meta.repo_site }}" target="_blank">GitHub repository</a>
 
-> <a href="/docs/16.2.2/{{ site.meta.repo_site }}" target="_blank">{{ site.meta.repo_site }}</a> 
+> <a href="/docs/16.3/{{ site.meta.repo_site }}" target="_blank">{{ site.meta.repo_site }}</a> 
 
 If you need to make a quick edit to a documentation page, you may edit directly via the GitHub web interface:
 
 * Make sure you have "collaborator" access to the gitub repo. If you don't have collaborator access or you're not sure, contact the documentation administrator (&lt;{{ site.meta.admin_name }}&gt; {{ site.meta.admin_email }}) and ask to be added as a collaborator.
-* Navigate to the page you want to edit on GitHub. For example, <a href="/docs/16.2.2/{{ site.meta.repo_site }}blob/master/src/site/docs/{{ site.meta.version }}/meta/index.md" target="_blank">this page (the one you're reading now) is here on GitHub:</a>
+* Navigate to the page you want to edit on GitHub. For example, <a href="/docs/16.3/{{ site.meta.repo_site }}blob/master/src/site/docs/{{ site.meta.version }}/meta/index.md" target="_blank">this page (the one you're reading now) is here on GitHub:</a>
 
 > <{{ site.meta.repo_site }}blob/master/src/site/docs/{{ site.meta.version }}/meta/index.md>
 

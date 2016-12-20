@@ -30,7 +30,7 @@ layout: default
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Related</strong></span></td>
-<td><a href="/datascript-avi-ipgroup-contains/">avi.ipgroup.contains()</a><strong><em> </em></strong>Matches an IP address against an IP group.<br> <a href="/datascript-string-beginswith/">avi.stringgroup.beginswith()</a><strong><em> </em></strong>Matches if a string group entry begins with part of another string<br> <a href="/datascript-string-endswith/">avi.stringgroup.endswith()</a><strong><em> </em></strong>Matches if a string group entry ends with part of another string<br> <a href="/datascript-avi-stringgroup-equals/">avi.stringgroup.equals()</a><strong><em> </em></strong>Matches if a string group entry equals another string.</td>
+<td><a href="/docs/16.3/datascript-avi-ipgroup-contains/">avi.ipgroup.contains()</a><strong><em> </em></strong>Matches an IP address against an IP group.<br> <a href="/docs/16.3/datascript-string-beginswith/">avi.stringgroup.beginswith()</a><strong><em> </em></strong>Matches if a string group entry begins with part of another string<br> <a href="/docs/16.3/datascript-string-endswith/">avi.stringgroup.endswith()</a><strong><em> </em></strong>Matches if a string group entry ends with part of another string<br> <a href="/docs/16.3/datascript-avi-stringgroup-equals/">avi.stringgroup.equals()</a><strong><em> </em></strong>Matches if a string group entry equals another string.</td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Example</strong></span></td>

@@ -4,7 +4,7 @@ layout: default
 ---
 Avi Vantage supports terminating client SSL and TLS connections at the virtual service. This requires Vantage to send a certificate to clients that authenticates the site and establishes secure communications. A virtual service that handles secure connections will require both of the following:
 
-* **SSL/TLS profile**:  Determines the supported ciphers and versions.  See <a href="/ssl-tls-profile/">SSL Profile</a>.
+* **SSL/TLS profile**:  Determines the supported ciphers and versions.  See <a href="/docs/16.3/ssl-tls-profile/">SSL Profile</a>.
 * **SSL certificate**:  A certificate is presented to clients connecting to the site. SSL certificates may also be used to present to administrators connecting to the Vantage web interface or API, and also for Avi Service Engines to present to servers when SE-to-server encryption is required with client (the SE) authentication. 
 
 The Templates > Security >SSL Certificates page supports import, export, and generation of SSL certificates or certificate requests. Newly-created certificates may be either self-signed by Avi Vantage or created as a certificate signing request (CSR) that must be sent to a trusted certificate authority (CA), which then generates a trusted certificate.

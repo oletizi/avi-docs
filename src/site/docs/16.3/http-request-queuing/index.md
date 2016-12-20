@@ -2,7 +2,7 @@
 title: HTTP Request Queuing
 layout: default
 ---
-HTTP request queuing allows Avi Vantage to queue requests that are received after a backend server has reached its maximum allowed number of concurrent connections. Queuing HTTP requests provides time for new connections to become available on the server, without performing the configured <a href="/docs/16.2.2/configuration-guide/applications/pools/#servers">pool down action</a>.
+HTTP request queuing allows Avi Vantage to queue requests that are received after a backend server has reached its maximum allowed number of concurrent connections. Queuing HTTP requests provides time for new connections to become available on the server, without performing the configured <a href="/docs/16.3/configuration-guide/applications/pools/#servers">pool down action</a>.
 
 HTTP request queuing is disabled by default. The feature can be enabled on a per pool basis. The default queue length is 128 requests (when the feature is enabled). The queue length is configurable, from 1 up to any required amount. The only limitation is that memory must be available on the Service Engine (SE).
 
@@ -12,7 +12,7 @@ Queued requests are managed on a last-in, first-out (LIFO) basis. For example, i
 
 Only GET requests can be queued. PUT requests are not queued.
 
-While the server is unable to accept new requests, Vantage queues the new requests, up to the maximum number of requests the queue can hold (the queue length). If the queue is full and the server is still unable to accept new requests, the queue is bypassed and Vantage begins applying the configured <a href="/docs/16.2.2/configuration-guide/applications/pools/#servers">pool down action</a> to new requests.
+While the server is unable to accept new requests, Vantage queues the new requests, up to the maximum number of requests the queue can hold (the queue length). If the queue is full and the server is still unable to accept new requests, the queue is bypassed and Vantage begins applying the configured <a href="/docs/16.3/configuration-guide/applications/pools/#servers">pool down action</a> to new requests.
 
 When the server is able to accept new requests again, priority is given to new requests. New requests have priority over the queued requests and are sent to the server first. Only when there are no new requests to send to the server, does the SE send requests from its queue, beginning with the most recent (the last one queued).
 > Sending the most recently queued requests instead of the oldest requests from the queue helps minimize impact on end-users, since some newer requests may be resends of older requests, or the client may have ended the unresponsive session. 

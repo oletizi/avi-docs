@@ -24,7 +24,7 @@ While F5 and Avi provide many similar high level features, there are important d
 <tr>    
 <td>application proxy</td>
 <td>virtual server</td>
-<td><a href="/docs/architectural-overview/applications/virtual-services/create-virtual-service/">virtual service</a></td>
+<td><a href="/docs/16.3/architectural-overview/applications/virtual-services/create-virtual-service/">virtual service</a></td>
 </tr>
 <tr>    
 <td>group of servers</td>
@@ -49,7 +49,7 @@ While F5 and Avi provide many similar high level features, there are important d
 <tr>    
 <td>Connection aggregation</td>
 <td>OneConnect ™</td>
-<td><a href="/connection-multiplex/">multiplex</a></td>
+<td><a href="/docs/16.3/connection-multiplex/">multiplex</a></td>
 </tr>
 <tr>    
 <td>Central config manager</td>

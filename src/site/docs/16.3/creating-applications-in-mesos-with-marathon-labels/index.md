@@ -28,7 +28,7 @@ The details for each deployment differ slightly, mainly in regard to network add
 In Mesos deployments, the Avi Controller uses configuration information from Marathon labels.
 
 * **FE-Proxy** - Used to indicate a front-end or a north-south service accessible from within or outside the cluster. Each service requires a virtual IP (VIP) address.
-* **avi_proxy** - Used for service configuration. The avi_proxy label has 2 sub-objects: virtualservice and pool. These objects use the same JSON schema as the <a href="/docs/16.2.2/api-guide/">Avi REST API</a>. 
+* **avi_proxy** - Used for service configuration. The avi_proxy label has 2 sub-objects: virtualservice and pool. These objects use the same JSON schema as the <a href="/docs/16.3/api-guide/">Avi REST API</a>. 
 
 ### Configure Virtual Services Through Marathon Only
 
@@ -245,5 +245,5 @@ This example enables route health injection (RHI) on a virtual service.
 "avi_proxy": "{\"virtualservice\": {\"enable_rhi\": true, \"ip_address\": {\"addr\": \"10.250.1.100\", \"type\": \"V4\"}, \"services\": [{\"port\": 80}]}}"
 </code></pre> 
 
-(For more information about using BGP RHI for virtual service scaling, <a href="/docs/16.2.2/bgp-support-for-virtual-services">click here</a>.)
+(For more information about using BGP RHI for virtual service scaling, <a href="/docs/16.3/bgp-support-for-virtual-services">click here</a>.)
 

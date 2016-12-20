@@ -2,7 +2,7 @@
 title: A/B Test Pool (pre-16&#46;3)
 layout: default
 ---
-This article describes the A/B test pool feature supported by Avi Vantage releases prior to 16.3. For information on pools and pool groups supported as of release 16.3, see <a href="/pool-groups/">here</a>.
+This article describes the A/B test pool feature supported by Avi Vantage releases prior to 16.3. For information on pools and pool groups supported as of release 16.3, see <a href="/docs/16.3/pool-groups/">here</a>.
 
 Avi Vantage allows a secondary (B) pool to be added to a virtual service's primary (A) pool. In this case, both the A and B pools can receive traffic for the virtual service. Based on configuration, a specific percentage (0-100) of the virtual service's traffic is sent to the B pool instead of the A pool. The rest of the traffic is sent to the A pool.
 
@@ -19,7 +19,7 @@ To perform the next upgrade, the process can be reversed. After upgrading pool A
 * Setting the A/B percentage to 0 sends all traffic to the primary pool (A). 
 * For each of the pools, normal load balancing is performed. After Vantage selects a pool for a new session, the load balancing method configured for that pool is used to select a server. 
 * The A/B setting does not affect existing sessions. For example, setting the percentage sent to B to 100 percent does not cause existing sessions on pool A to move to B. Likewise, A/B pool settings do not affect persistence configurations. 
-* The <a href="/docs/16.2.2/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions. > In the current release, the backup pool action is not supported for either pool in an A/B pair.
+* The <a href="/docs/16.3/configuration-guide/applications/pools#poolcreateadvancedtab">pool down actions</a> of pools A and B are independent of one another and can be set to different actions. > In the current release, the backup pool action is not supported for either pool in an A/B pair.
 > In the current release, the backup pool action is not supported for either pool in an A/B pair.
 
 * A/B pools do not act as backup pools for one other. Once a specific pool (A or B) is chosen, if server selection to the pool fails, then the client connection is terminated using the configured pool down action.This behavior ensures that a failure in the selected pool is brought to the attention of the Avi Vantage user, rather than masked by a silent failover to the other pool. 

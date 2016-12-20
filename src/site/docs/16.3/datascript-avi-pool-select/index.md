@@ -10,7 +10,7 @@ layout: default
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Description</strong></span></td>
-<td>Selects a pool or a specific server within a pool for the current request. The selection does not take effect if an HTTP Request Policy was also configured with a switching action to select a pool or a specific server in a pool. The switching action of the HTTP Request Policy takes <a href="/docs/16.2.2/datascript-guide/datascript-precedence/">precedence</a> over the DataScript's pool selection.</td>
+<td>Selects a pool or a specific server within a pool for the current request. The selection does not take effect if an HTTP Request Policy was also configured with a switching action to select a pool or a specific server in a pool. The switching action of the HTTP Request Policy takes <a href="/docs/16.3/datascript-guide/datascript-precedence/">precedence</a> over the DataScript's pool selection.</td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Events</strong></span></td>

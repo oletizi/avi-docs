@@ -16,7 +16,7 @@ Scripts may be uploaded or copy/pasted into either the Request Event Script or R
    avi.http.send(403)
 end</code></pre>  
 
-See the <a href="/docs/16.2.2/datascript-guide">Avi DataScript Guide</a> for complete documentation of commands and example DataScripts.
+See the <a href="/docs/16.3/datascript-guide">Avi DataScript Guide</a> for complete documentation of commands and example DataScripts.
 
 ### ControlScript
 

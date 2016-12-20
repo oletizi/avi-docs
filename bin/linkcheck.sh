@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-host=docs.avinetworks.com
+host=docs.avinetworks.dev
 #host=localhost:4000
 outdir=/tmp/linklint
 if [ -e $outdir ]; then

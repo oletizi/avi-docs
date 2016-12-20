@@ -19,69 +19,69 @@ This article describes the fixes in Avi Vantage release 16.3.1.
 
 ### What’s New in 16.3
 
-This section summarizes the enhancements in 16.3. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
+This section summarizes the enhancements in 16.3. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/docs/16.3/">knowledge base</a>.
 
 ### Core ADC Features
 
-* <a href="/avi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
-* <a href="/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
+* <a href="/docs/16.3/avi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
+* <a href="/docs/16.3/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
 * Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
-* Ability to forward <a href="/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
+* Ability to forward <a href="/docs/16.3/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
 
 ### IPAM/DNS
 
-* <a href="/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
-* Comprehensive support for <a href="/service-discovery-using-ipam-and-dns-16-3/">IPAM/DNS services</a>, including integrated Avi Vantage IPAM/DNS, Infoblox, and cloud-native solutions across all cloud infrastructures 
+* <a href="/docs/16.3/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
+* Comprehensive support for <a href="/docs/16.3/service-discovery-using-ipam-and-dns-16-3/">IPAM/DNS services</a>, including integrated Avi Vantage IPAM/DNS, Infoblox, and cloud-native solutions across all cloud infrastructures 
 
 ### Networking
 
-* <a href="/default-gateway-ip-routing-on-avi-se/">Ability to perform IP routing on SEs (default gateway)</a>
-* <a href="/preserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
-* <a href="/vrf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
-* <a href="/bgp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a> 
+* <a href="/docs/16.3/default-gateway-ip-routing-on-avi-se/">Ability to perform IP routing on SEs (default gateway)</a>
+* <a href="/docs/16.3/preserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
+* <a href="/docs/16.3/vrf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
+* <a href="/docs/16.3/bgp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a> 
 
 ### Cloud Connectors
 
-* AWS: <a href="/aws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
-* <a href="/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
+* AWS: <a href="/docs/16.3/aws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
+* <a href="/docs/16.3/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
 * OpenStack  
     * Mitaka release qualification
     * Keystone 3.0 support
     * LBaas v2 support
     * Heat resources for Avi Vantage
-    * <a href="/openstack-vip-modes-allowed-address-pairs-and-interface-secondary-ips/">Support for interface-secondary IPs (as an alternative to allowed address pairs) for VIP address</a> 
+    * <a href="/docs/16.3/openstack-vip-modes-allowed-address-pairs-and-interface-secondary-ips/">Support for interface-secondary IPs (as an alternative to allowed address pairs) for VIP address</a> 
 * SDN: Contrail support in OpenStack
 * VMware vCenter: <a href="/docs/architectural-overview/infrastructure/#multi-cloud-deployments">Support for multiple vCenter clouds on a single Avi Controller</a> 
 
 ### Security
 
-* <a href="/venafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
-* <a href="/ntp-settings/">Authentication of NTP servers</a>
-* <a href="/ssh-users-and-keys/#ssh-key-based-controller-login">Support for key-based SSH access to Avi Controller for the admin account</a>
-* <a href="/user-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
+* <a href="/docs/16.3/venafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
+* <a href="/docs/16.3/ntp-settings/">Authentication of NTP servers</a>
+* <a href="/docs/16.3/ssh-users-and-keys/#ssh-key-based-controller-login">Support for key-based SSH access to Avi Controller for the admin account</a>
+* <a href="/docs/16.3/user-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
 
 ### Analytics
 
-* <a href="/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
+* Ability to disable "Significant Logs" in <a href="/architectural-overview/templates/profiles/analytics-profile#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 
-* <a href="/upgrading-the-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
-* <a href="/backup-and-restore-of-avi-vantage-configuration">Configuration Backup Scheduler: </a>System configuration backups can now be scheduled
-* <a href="/cluster-configuration-with-fqdn/">Support DNS name (FQDN) for Controller cluster members</a>
-* <a href="/collecting-tech-support-logs/">Capability to collect and download tech-support from the UI</a>
-* <a href="/customizing-notification-of-certificate-expiration">Customizable notification intervals for SSL certificate expiration</a> 
+* <a href="/docs/16.3/upgrading-the-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
+* <a href="/docs/16.3/backup-and-restore-of-avi-vantage-configuration">Configuration Backup Scheduler: </a>System configuration backups can now be scheduled
+* <a href="/docs/16.3/cluster-configuration-with-fqdn/">Support DNS name (FQDN) for Controller cluster members</a>
+* <a href="/docs/16.3/collecting-tech-support-logs/">Capability to collect and download tech-support from the UI</a>
+* <a href="/docs/16.3/customizing-notification-of-certificate-expiration">Customizable notification intervals for SSL certificate expiration</a> 
 
 ### CLI, API, and Automation
 
-* <a href="/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
-* <a href="/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
-* API: <a href="/api-http-patch-support-163/">Nested PATCH support for multi-nested HttpReqRule</a> 
+* <a href="/docs/16.3/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
+* <a href="/docs/16.3/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
+* API: <a href="/docs/16.3/api-http-patch-support/">Nested PATCH support for multi-nested HttpReqRule</a> 
 
 ### DataScript
 
-* Support for <a href="/string-group/">String Groups</a> and <a href="/templates-groups-ip-group/">IP Groups</a> in <a href="/datascript-functions/">DataScripts</a> 
+* Support for <a href="/docs/16.3/string-group/">String Groups</a> and <a href="/docs/16.3/templates-groups-ip-group/">IP Groups</a> in <a href="/docs/16.3/datascript-functions/">DataScripts</a> 
 
 ### Key Changes in 16.3
 
@@ -109,17 +109,17 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 16.2 or later.
 
-<a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/16.3/upgrading-the-vantage-software/">Upgrade Instructions</a>
 
-<a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ### Supported Platforms
 
-Refer to <a href="/system-requirements-ecosystem/">System Requirements: Ecosystem</a>
+Refer to <a href="/docs/16.3/system-requirements-ecosystem/">System Requirements: Ecosystem</a>
 
 ### Product Documentation
 
-For more information, please see the following documents, also available within this <a href="/">knowledge base</a>.
+For more information, please see the following documents, also available within this <a href="/docs/16.3/">knowledge base</a>.
 
 ### Installation Guides
 

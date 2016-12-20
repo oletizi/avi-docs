@@ -13,7 +13,7 @@ layout: default
 <td>Sets (write) or gets (read) a variable. These variables have scope across the HTTP_REQ and HTTP_RESP events. Their lifetime is limited to that of the HTTP request/response transaction, so it does not need to be manually unset. Any Lua value can be stored within this variable.<p></p> <p>For variable data that is only required during the current event, simply map the variable to the data.<br> 
  <!-- Crayon Syntax Highlighter v2.7.1 --> </p><pre><code class="language-lua">var = 1
 if var == 1 then ...</code></pre> 
-<!-- [Format Time: 0.0010 seconds] --> For variable data that needs to be saved across connections or mirrored to other Service Engines for the virtual service use <a href="/docs/16.2.2/datascript-avi-vs-table_insert">avi.vs.table_insert()</a></td>
+<!-- [Format Time: 0.0010 seconds] --> For variable data that needs to be saved across connections or mirrored to other Service Engines for the virtual service use <a href="/docs/16.3/datascript-avi-vs-table_insert">avi.vs.table_insert()</a></td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Events</strong></span></td>

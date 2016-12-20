@@ -19,7 +19,7 @@ Vantage supports three techniques by which to scale data plane performance.
 
 As its name implies, Vantage's **native horizontal scaling** is orthogonal to vertical scaling. Indeed, both methods can be used in combination. Native scaling requires no changes to the first SE, but instead relies on distributing load to additional others. It is completely self-contained, meaning it does not require changes elsewhere within the network or applications in order to scale capacity. The rest of this article focuses on native scaling.
 
-To scale to as many as 32 Service Engines, Vantage supports **BGP-based horizontal scaling**. Relying also on RHI and ECMP, this method requires some manual intervention elsewhere in the network to scale the load balancing infrastructure. See <a href="/docs/16.2.2/bgp-support-for-virtual-services/">BGP Support for Scaling Virtual Services</a> for details.
+To scale to as many as 32 Service Engines, Vantage supports **BGP-based horizontal scaling**. Relying also on RHI and ECMP, this method requires some manual intervention elsewhere in the network to scale the load balancing infrastructure. See <a href="/docs/16.3/bgp-support-for-virtual-services/">BGP Support for Scaling Virtual Services</a> for details.
 
 ## How Native SE Scaling Works
 

@@ -12,4 +12,4 @@ To enable super access for a Avi Vantage user account, select the Super User che
 
 <a href="img/user-account-superuser.png"><img class="alignnone size-full wp-image-10430" src="img/user-account-superuser.png" alt="user-account-superuser" width="792" height="403"></a>
 
-For detailed information about configuring user accounts, <a href="/user-accounts">click here</a>.
+For detailed information about configuring user accounts, <a href="/docs/16.3/user-accounts">click here</a>.

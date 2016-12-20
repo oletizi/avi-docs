@@ -103,7 +103,7 @@ Lync 2013 recommends the following common configuration for all load balancing v
 One VS IP is shared across all ports. The Front End VS IP must be configured as the Lync Front End pool IP in the Lync topology setup.
 
 * Configure layer 4 load balancing with TCP proxy for all ports except for port 80 and 8080. Use HTTP load balancing for port 80 and 8080.
-* If client authentication requires NTLM, disable Connection Multiplex in the *Templates &gt; Profiles &gt; HTTP App* profile.  See <a href="/docs/16.2.2/issues-with-ntlm-authentication">NLTM </a>for more on this.
+* If client authentication requires NTLM, disable Connection Multiplex in the *Templates &gt; Profiles &gt; HTTP App* profile.  See <a href="/docs/16.3/issues-with-ntlm-authentication">NLTM </a>for more on this.
 * Use TCP health monitor for all ports. Note that the Lync Front End server has an option to allow an external load balancer to perform SIP health check on unencrypted SIP port, 5060. 
 
 ### External and Internal Edge Pool

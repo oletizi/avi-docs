@@ -67,7 +67,7 @@ The SSL Score section on the bottom left of the default security page shows in d
 
 <a href="img/DDoS.png"><img class="size-full wp-image-527 alignright" src="img/DDoS.png" alt="DDoS" width="400" height="286"></a>
 
-The DDoS section on the right of the default security page breaks down distributed denial of service data for the virtual service into the most relevant layer 4 and layer 7 attack data. See additional documentation on network <a href="/docs/16.2.2/ddos-attacks-mitigated/">attack mitigation</a>.
+The DDoS section on the right of the default security page breaks down distributed denial of service data for the virtual service into the most relevant layer 4 and layer 7 attack data. See additional documentation on network <a href="/docs/16.3/ddos-attacks-mitigated/">attack mitigation</a>.
 
 * **L4 Attacks:** The number of network attacks per second, such as IP fragmentation attacks or TCP SYN flood. For the example shown here, each unacknowledged SYN is counted as an attack. (This is the classic signature of the TCP SYN flood attack, a large volume of SYN requests that are not followed by the expected ACKs to complete session setup.)
 * **L7 Attacks:** The number of application attacks per second, such as HTTP SlowLoris attacks or request floods. For the example shown here, every request that exceeded the configured request throttle limit is counted as an attack. (See the application profile's DDoS tab for configuring custom layer 7 attack limits.)

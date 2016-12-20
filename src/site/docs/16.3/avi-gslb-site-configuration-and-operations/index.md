@@ -144,7 +144,7 @@ Go through the next 3 tabs, and save the virtual service.
 
 Create application virtual services normally. For example, create an HTTP virtual service vs-1 in Controller cluster 1, and virtual-service vs-2 in Controller cluster 2.
 
-See <a href="/docs/16.3/docs/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
+See <a href="/docs/16.3/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
 
 On 10.10.25.10 (Santa Clara):
 

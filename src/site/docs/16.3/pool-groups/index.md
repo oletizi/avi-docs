@@ -177,7 +177,7 @@ To perform the next upgrade, the process can be reversed. After upgrading pool A
 
 ### A/B Pool Feature Prior to 16.3
 
-<a href="/ab-pool-feature/">A/B Pool Test Pool</a> defines the feature shipping prior to 16.3. It had the following shortcomings:
+<a href="/docs/16.3/ab-pool-feature/">A/B Pool Test Pool</a> defines the feature shipping prior to 16.3. It had the following shortcomings:
 
 * Only two pools could specified as A/B. This could not be extended to pools C, D, etc.
 * A/B pools and backup pools were mutually exclusive. Only one of them could be specified. 
@@ -186,10 +186,10 @@ These shortcomings do not exist in the new implementation.
 
 ### Additional Use Cases
 
-### <a href="/pool-groups-bluegreen-use-case/">Blue/Green Deployment</a>
+### <a href="/docs/16.3/pool-groups-bluegreen-use-case/">Blue/Green Deployment</a>
 
 This is a release technique that reduces downtime and risk by running two identical production environments, only one of which (e.g., blue) is live at any moment, and serving all production traffic. In preparation for a new release, deployment and final-stage testing takes place in the environment that is *not* live (e.g., green). Once confident in green, all incoming requests go to green instead of blue. Green is now live, and blue is idle. Downtime due to application deployment is eliminated. In addition, if something unexpected happens with the new release on green, roll back to the last version is immediate; just switch back to blue.
 
-### <a href="/pool-groups-canary-use-case">Canary Upgrades</a>
+### <a href="/docs/16.3/pool-groups-canary-use-case">Canary Upgrades</a>
 
 This upgrade technique is so called because of its similarity to miner’s canary, which would detect toxic gasses before any humans might be affected. The idea is that when performing system updates or changes, a group of representative servers get updated first, are them monitored/tested for a period of time, and only thereafter are rolling changes made across the remaining servers.

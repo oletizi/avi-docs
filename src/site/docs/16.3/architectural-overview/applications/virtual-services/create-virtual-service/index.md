@@ -28,7 +28,7 @@ Create a new virtual service by navigating to Applications > Virtual Service. Cl
 
 * **Select Cloud:** If Vantage is configured for multiple cloud environments, such as VMware and Amazon Web Services (AWS), the cloud for the virtual service deployment must be selected. If Vantage exists in a single environment, this question is skipped.
 * **Name:** Provide a unique name for the new virtual service. (For clouds configured with Cisco ACI as the networking fabric, the name becomes a pull-down menu populated with the list of existing Service Graphs that are not currently assigned to a virtual service.)
-* **VIP Address:** Enter either the DNS resolvable name or an IP address for the virtual service. When using a DNS name, Vantage will attempt to resolve the name and populate the IP Address field if successful. If the name resolves to more than one IP address, select the address to use from the list shown. If the name cannot be resolved, it will appear in red.  See <a href="/docs/16.2.2/virtual-server-using-dns-for-vip-address/">Virtual Service Using DNS for VIP Address</a>.
+* **VIP Address:** Enter either the DNS resolvable name or an IP address for the virtual service. When using a DNS name, Vantage will attempt to resolve the name and populate the IP Address field if successful. If the name resolves to more than one IP address, select the address to use from the list shown. If the name cannot be resolved, it will appear in red.  See <a href="/docs/16.3/virtual-server-using-dns-for-vip-address/">Virtual Service Using DNS for VIP Address</a>.
 * **Application Type:** Select from the common app types. To use a different application profile or type, consider creating the virtual service via advanced mode.  
     * **HTTP:** The virtual service will listen for non-secure Layer 7 HTTP. Selecting this option auto-populates the Service port field to 80. Override the default with any valid port number; however, clients will need to include the port number when accessing this virtual service. Browsers default to automatically append the standard port 80 to HTTP requests. Selecting HTTP enables an HTTP application profile for the virtual service. This allows Vantage to proxy HTTP requests and responses for better visibility, security, acceleration, and availability.
     * **HTTPS:** The virtual service will listen for secure HTTPS. Selecting this option auto-populates port 443 in the Service port field. Override this default with any valid service port number; however, clients will need to include the port number when accessing this virtual service as browsers automatically append the standard port 443 to HTTPS requests. When selecting HTTPS, use the Certificate pull-down menu to reference an existing certificate or create a new self-signed certificate. A self-signed certificate will be created with the same name as the virtual service and will be an RSA 2048 bit cert and key. The certificate can be swapped out later if a valid certificate is not yet available at time of virtual service creation.
@@ -37,8 +37,8 @@ Create a new virtual service by navigating to Applications > Virtual Service. Cl
 * **Service:** Accept the displayed default for the application type or key in a service port to listen for connections. Basic mode supports configuring only one port. For multiple service ports or ranges, edit the virtual service after creation.
 * **Add Servers:** Add one or more servers to the new virtual service using any combination of the following methods:  
     * **Add by Server IP Address**: Enter the IP address for the server to be included in the Address field, and then click the Add Server button. A range of IP addresses may be entered using a dash character, such as 10.0.0.1–10.0.0.10.
-    * **Add by DNS Resolvable Server Name**: Enter the name of the server to be included in the Address field. If the server name successfully resolves, the IP address will be shown and the Add Server button will change to green. Click the Add Server button.  See <a href="/docs/16.2.2/add-servers-to-pool-by-dns/">Add Servers by DNS</a>.
-* **Select Servers by Network**: This option is only available if Vantage has read or write access to the cloud environment. Click the Select Servers by Network button to open a list of reachable networks. Selecting a network opens a list of the servers (virtual machines) available on that network. Click the green Add Servers button to add the selected servers to the virtual service. See <a href="/docs/16.2.2/select-servers-by-network/">Select Servers by Network</a>.
+    * **Add by DNS Resolvable Server Name**: Enter the name of the server to be included in the Address field. If the server name successfully resolves, the IP address will be shown and the Add Server button will change to green. Click the Add Server button.  See <a href="/docs/16.3/add-servers-to-pool-by-dns/">Add Servers by DNS</a>.
+* **Select Servers by Network**: This option is only available if Vantage has read or write access to the cloud environment. Click the Select Servers by Network button to open a list of reachable networks. Selecting a network opens a list of the servers (virtual machines) available on that network. Click the green Add Servers button to add the selected servers to the virtual service. See <a href="/docs/16.3/select-servers-by-network/">Select Servers by Network</a>.
 * **Save**: Click Save to finish. The new virtual service is now displayed in the Applications Dashboard and Virtual Services Page. 
 
 The virtual service will be assigned automatically to a Service Engine. If an available SE already exists, the virtual service will be deploy and be ready to accept traffic. If a new SE must be created, it may take a few minutes before it is ready.
@@ -76,8 +76,8 @@ To add or edit virtual server settings:
 * **Name:** Provide a unique name for the new virtual service. For clouds configured for Cisco ACI for the networking fabric, the name becomes a pulldown menu populated with the list of existing Service Graphs that are not assigned to a virtual service.
 * **Enabled:** The toggle icon enables (green) and disables (red) the virtual service.  
     * When enabled (green icon), the virtual service will accept and process traffic normally.
-    * When disabled (red icon), the virtual service will not accept any new connections. Existing concurrent connections will be terminated, and the virtual service will be unassociated from all Service Engines. No health monitoring is performed for disabled virtual services. See <a href="/docs/16.2.2/disable-a-virtual-service/">Disable a Virtual Service</a>.
-    * **VIP Address:** Enter either the DNS resolvable name or an IP address for the virtual service. When using a domain name, Vantage will attempt to resolve that name to populate the IP Address field. If the name resolves to more than one IP address, select the address to use from the list shown. If the name cannot be resolved, it will appear in red. See <a href="/docs/16.2.2/virtual-server-using-dns-for-vip-address/">Virtual Service Using DNS for VIP Address</a>.
+    * When disabled (red icon), the virtual service will not accept any new connections. Existing concurrent connections will be terminated, and the virtual service will be unassociated from all Service Engines. No health monitoring is performed for disabled virtual services. See <a href="/docs/16.3/disable-a-virtual-service/">Disable a Virtual Service</a>.
+    * **VIP Address:** Enter either the DNS resolvable name or an IP address for the virtual service. When using a domain name, Vantage will attempt to resolve that name to populate the IP Address field. If the name resolves to more than one IP address, select the address to use from the list shown. If the name cannot be resolved, it will appear in red. See <a href="/docs/16.3/virtual-server-using-dns-for-vip-address/">Virtual Service Using DNS for VIP Address</a>.
     * **AWS**  
         * **Elastic IP Address For External Client Access**: Will allocate a public IP address that AWS will use to NAT to the VIP address. This may be automatically allocated by AWS, or a static address may be specified.
         * **Network for VIP Address Allocation**: Specify the network for client reachability. An elastic IP address will be automatically chosen within the selected network.
@@ -117,7 +117,7 @@ Each rule is a match/action pair that uses if/then logic: If something is true, 
 
 Policies are simple GUI-based, wizard driven logic, whereas DataScript allows more powerful manipulation using Vantage’s Lua-based scripting language.
 
-For an in-depth explanation of policy configuration, see the Virtual Service Policies section. For help writing DataScripts, see the <a href="/docs/16.2.2/virtual-server-using-dns-for-vip-address/">Avi DataScript Guide</a>.
+For an in-depth explanation of policy configuration, see the Virtual Service Policies section. For help writing DataScripts, see the <a href="/docs/16.3/virtual-server-using-dns-for-vip-address/">Avi DataScript Guide</a>.
 
 Policies are specific to the virtual service they are configured within. They consist of a simple “if match is true, then perform action” logic. Each line of match/action logic is a rule.
 
@@ -163,11 +163,11 @@ To add a new policy:
 
 ### DataScript
 
-DataScripts are global objects that may be applied to multiple virtual services. More than one DataScript may be applied to a single virtual service. The order of the DataScripts is important. For instance, if the first script enforces a blacklist that may drop clients, and the second script redirects clients to another site, a client that is dropped by the first rule will never be evaluated against the second. Use the up and down arrows next to the DataScript to reorder. See also <a href="/docs/16.2.2/datascript-execution-priority/">Execution Priority</a>.
+DataScripts are global objects that may be applied to multiple virtual services. More than one DataScript may be applied to a single virtual service. The order of the DataScripts is important. For instance, if the first script enforces a blacklist that may drop clients, and the second script redirects clients to another site, a client that is dropped by the first rule will never be evaluated against the second. Use the up and down arrows next to the DataScript to reorder. See also <a href="/docs/16.3/datascript-execution-priority/">Execution Priority</a>.
 
 To add a DataScript to the virtual service: from the DataScript tab, select new DataScript to add a rule to the virtual service. Select a rule from the Script to Execute menu. Choose an existing script or create a new one. Select Save Script to add this DataScript to the virtual service.
 
-The scripts are maintained in the Templates > Scripts > DataScripts section of the web interface. To create a DataScript, start with the overview of <a href="/docs/16.2.2/overview-of-datascript/">DataScripts</a>, which walks through the high level objects and has links to numerous sample scripts.
+The scripts are maintained in the Templates > Scripts > DataScripts section of the web interface. To create a DataScript, start with the overview of <a href="/docs/16.3/overview-of-datascript/">DataScripts</a>, which walks through the high level objects and has links to numerous sample scripts.
 
 <a name="vscreateadvancedanalyticstab"></a>
 
@@ -219,7 +219,7 @@ To specify performance limits for a virtual service, expand the list of options 
 
 ### Performance Limits
 
-See <a href="/docs/16.2.2/rate-shaping-and-throttling-options/">Rate Shaping and Throttling</a> for additional options.
+See <a href="/docs/16.3/rate-shaping-and-throttling-options/">Rate Shaping and Throttling</a> for additional options.
 
 * **Rate Limit Number of New TCP Connections:**  
     * **Threshold:** Set the maximum threshold of new connections from all clients that may be created for this virtual service over the configured time period.

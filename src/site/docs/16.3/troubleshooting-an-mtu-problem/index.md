@@ -60,7 +60,7 @@ On Oct 5, 2016, at 11:22 PM, Mohammed Aziz <<a href="mailto:aziz@avinetworks.com
 
 Hello Guru,
 
-       For the past couple of days the <a href="/"><span class="s4">kbstage.avinetworks.com</span></a> seems to be flaky and gets a bad gateway error.
+       For the past couple of days the <a href="/docs/16.3/"><span class="s4">kbstage.avinetworks.com</span></a> seems to be flaky and gets a bad gateway error.
 
 <image.png>
 

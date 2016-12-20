@@ -8,7 +8,7 @@ Note:
 
 * If you are using OpenStack Cloud in Avi Vantage, then this configuration does not apply, as this is to provide support for other cloud providers who host their VMs/instances in OpenStack (for example, Mesos nodes running on OpenStack instances). 
 
-See also: <a href="/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
+See also: <a href="/docs/16.3/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
 
 ### IPAM
 

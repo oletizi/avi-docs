@@ -12,7 +12,7 @@ In this example, when a client sends an HTTP request Vantage checks to see if a 
 
  
 
-See also <a href="/docs/16.2.2/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
+See also <a href="/docs/16.3/overview-of-server-persistence">Overview of Server Persistence</a> for descriptions of other persistence methods and options.
 
 ### Persist Table
 

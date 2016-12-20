@@ -4,10 +4,10 @@ layout: default
 ---
 This article covers advanced troubleshooting for health monitors.  For general monitor definitions see:
 
-* <a href="/docs/16.2.2/overview-of-health-monitors">Overview of Health Monitors</a>
-* <a href="/docs/16.2.2/why-is-a-server-marked-down">Reasons a Server Can Be Marked Down</a>
-* <a href="/docs/16.2.2/servers-flapping-up-down">Servers Flap Up / Down</a>
-* <a href="/docs/16.2.2/manually-validate-server-health">Manually Validate Server Health</a> 
+* <a href="/docs/16.3/overview-of-health-monitors">Overview of Health Monitors</a>
+* <a href="/docs/16.3/why-is-a-server-marked-down">Reasons a Server Can Be Marked Down</a>
+* <a href="/docs/16.3/servers-flapping-up-down">Servers Flap Up / Down</a>
+* <a href="/docs/16.3/manually-validate-server-health">Manually Validate Server Health</a> 
 
 ### General Health Monitor Trivia
 
@@ -32,7 +32,7 @@ From the GUI, there are multiple ways to check the status of a server or see why
 * Mouse over a down (red) server icon.
 * From the pool &gt; server page, click the failed monitor in the health monitor table to expand the results.
 * Events for the virtual server and pool record up / down status changes and reasons.
-* More examples are available in the <a href="/docs/16.2.2/why-is-a-server-marked-down">Reasons a Server Can Be Marked Down</a>. 
+* More examples are available in the <a href="/docs/16.3/why-is-a-server-marked-down">Reasons a Server Can Be Marked Down</a>. 
 
 ### Via CLI and API
 
@@ -90,7 +90,7 @@ By default, Vantage does not include health monitor traffic when performing pack
 </tbody>
 </table> 
 
-See <a href="/docs/16.2.2/packet-capture">Packet Capture</a> for more help on this topic.
+See <a href="/docs/16.3/packet-capture">Packet Capture</a> for more help on this topic.
 
 ### Via Manual Test
 
@@ -134,7 +134,7 @@ Accept: */*\r\n\r\n</code></pre>
 ### External
 
 * The external health monitors are run using the user 'hmuser' with lower privileges. See  for more info on attaching to SEs and navigating tenants and namespace. Attach to a Service Engine and log in as root. su - hmuser &lt;-- login as hmuser.    
-<a href="/docs/16.2.2/manually-validate-server-health" target="_blank">Manually Validate Server Health</a>
+<a href="/docs/16.3/manually-validate-server-health" target="_blank">Manually Validate Server Health</a>
 
     <pre><code class="language-lua">root@test-se2:~# su - hmuser
 hmuser@10-10-25-28:~$ pwd

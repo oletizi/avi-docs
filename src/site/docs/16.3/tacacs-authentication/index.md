@@ -56,4 +56,4 @@ If an error is indicated in the Status field of any reply packet during this pro
 
 ### Other Articles of Interest:
 
-<a href="/tacacs-configuration-examples/">TACACS+ Configuration Examples</a>
+<a href="/docs/16.3/tacacs-configuration-examples/">TACACS+ Configuration Examples</a>

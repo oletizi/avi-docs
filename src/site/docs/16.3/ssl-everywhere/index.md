@@ -4,7 +4,7 @@ layout: default
 ---
 The Templates &gt; Profiles &gt; HTTP application profile's security settings page affects how a virtual service should handle HTTPS. These settings provide a simple interface to enabling common HTTPS-related functionality. If the HTTP profile is attached to a virtual service that is only configured for HTTP, the HTTPS settings in this section will not apply. Only if the virtual service is configured for HTTPS, or HTTP and HTTPS within the same virtual service, will these settings take effect.
 
-More granular settings also may be configured using <a href="/docs/16.2.2/configuration-guide/applications/vs-policies/">policies </a>or <a href="/docs/16.2.2/datascript-guide/">DataScripts</a>.
+More granular settings also may be configured using <a href="/docs/16.3/configuration-guide/applications/vs-policies/">policies </a>or <a href="/docs/16.3/datascript-guide/">DataScripts</a>.
 
 ### <a href="img/SSL-Everywhere1.png"><img class="size-full wp-image-7732 alignright" src="img/SSL-Everywhere1.png" alt="SSL Everywhere1" width="309" height="307"></a>SSL Everywhere
 
@@ -12,7 +12,7 @@ This option enables all six of the following options, which together provide the
 
 ### HTTP to HTTPS Redirect
 
-For a single virtual service configured with both an HTTP service port (SSL disabled) and an HTTPS service port (SSL enabled), this feature will automatically redirect clients from the insecure to the secure port. For instance, clients who type www.avinetworks.com into their browser will automatically be redirected to https://www.avinetworks.com. If the virtual service does not have both an HTTP and HTTPS service port configured, this feature will not activate. For two separate virtual services sharing one virtual IP (one with HTTP and another on the same IP address listening to HTTPS), an HTTP request policy must be created to <a href="/docs/16.2.2/redirect-http-to-https">manually redirect</a> the protocol and port.
+For a single virtual service configured with both an HTTP service port (SSL disabled) and an HTTPS service port (SSL enabled), this feature will automatically redirect clients from the insecure to the secure port. For instance, clients who type www.avinetworks.com into their browser will automatically be redirected to https://www.avinetworks.com. If the virtual service does not have both an HTTP and HTTPS service port configured, this feature will not activate. For two separate virtual services sharing one virtual IP (one with HTTP and another on the same IP address listening to HTTPS), an HTTP request policy must be created to <a href="/docs/16.3/redirect-http-to-https">manually redirect</a> the protocol and port.
 
 ### Secure Cookies
 

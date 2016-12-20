@@ -12,9 +12,9 @@ Enabling caching and compression allows Avi Vantage to compress text-based objec
 
 See also:
 
-* <a href="/docs/16.2.2/http-cache-configuration-via-cli">Configure HTTP Cache via the CLI</a>
-* <a href="/docs/16.2.2/purge-an-object-from-http-cache">Purge an Object from HTTP Cache</a>
-* <a href="/docs/16.2.2/https-responses-not-served-from-cache">HTTPS Responses Not Served from HTTP Cache</a> 
+* <a href="/docs/16.3/http-cache-configuration-via-cli">Configure HTTP Cache via the CLI</a>
+* <a href="/docs/16.3/purge-an-object-from-http-cache">Purge an Object from HTTP Cache</a>
+* <a href="/docs/16.3/https-responses-not-served-from-cache">HTTPS Responses Not Served from HTTP Cache</a> 
 
 ## Responses Eligible for Caching
 
@@ -45,7 +45,7 @@ Vantage never caches HTTP objects for the following types of responses:
 
 ## Verify Object Served from Cache
 
-To validate that an object is successfully served from the cache, navigate to the virtual service's logs page.  Apply the following filter:  cache_hit="true"  This will filter all requests that were successfully served from cache.  When using logs, be sure to enable Non-Significant Logs to show non-error traffic, and ensure the logging engine is capturing the Non-Significant logs for the duration of the test.  See the <a href="/docs/16.2.2/architectural-overview/applications/virtual-services/vs-logs/">Logs KB</a> for additional help.
+To validate that an object is successfully served from the cache, navigate to the virtual service's logs page.  Apply the following filter:  cache_hit="true"  This will filter all requests that were successfully served from cache.  When using logs, be sure to enable Non-Significant Logs to show non-error traffic, and ensure the logging engine is capturing the Non-Significant logs for the duration of the test.  See the <a href="/docs/16.3/architectural-overview/applications/virtual-services/vs-logs/">Logs KB</a> for additional help.
 
 ## Cache Size
 

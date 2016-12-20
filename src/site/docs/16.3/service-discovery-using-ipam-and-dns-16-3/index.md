@@ -194,12 +194,12 @@ Initial configuration is common to both IPAM and DNS. This section lists the ste
 
 IPAM and/or DNS profiles can be configured to use the following providers:
 
-* <a href="/avi-vantage-ipam/">Avi Vantage IPAM</a>
-* <a href="/dns-provider-avi-vantage-16-3">Avi Vantage DNS</a>
-* <a href="/ipam-provider-aws-16-3/">AWS IPAM </a>
-* <a href="/ipam-services-for-applications-running-on-instances-in-google-cloud-platform/">GCP IPAM</a>
-* <a href="/ipam-and-dns-provider-infoblox-16-3/">Infoblox IPAM and DNS</a>
-* <a href="/ipam-provider-openstack-16-3/">OpenStack IPAM</a> 
+* <a href="/docs/16.3/avi-vantage-ipam/">Avi Vantage IPAM</a>
+* <a href="/docs/16.3/dns-provider-avi-vantage-16-3">Avi Vantage DNS</a>
+* <a href="/docs/16.3/ipam-provider-aws-16-3/">AWS IPAM </a>
+* <a href="/docs/16.3/ipam-services-for-applications-running-on-instances-in-google-cloud-platform/">GCP IPAM</a>
+* <a href="/docs/16.3/ipam-and-dns-provider-infoblox-16-3/">Infoblox IPAM and DNS</a>
+* <a href="/docs/16.3/ipam-provider-openstack-16-3/">OpenStack IPAM</a> 
 
 ## Using IPAM/DNS in a VS Configuration
 

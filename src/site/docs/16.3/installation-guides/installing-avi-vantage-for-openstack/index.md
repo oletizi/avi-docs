@@ -2,7 +2,7 @@
 title: Installing Avi Vantage for OpenStack (16.2)
 layout: default
 ---
-Note to reader: With release 16.2.2, Avi Vantage now <a href="/docs/16.2.2/openstack-external-networks">supports using OpenStack external networks</a>.
+Note to reader: With release 16.2.2, Avi Vantage now <a href="/docs/16.3/openstack-external-networks">supports using OpenStack external networks</a>.
 
 ## Introduction
 
@@ -214,7 +214,7 @@ In an OpenStack deployment, the Avi Controller and Avi Service Engines use the f
 </tr>
 <tr>   
 <td>Management Net</td>
-<td>TCP 22<br> TCP 80 <em>(optional)</em><br> TCP 443<br> TCP 5054 <em>(if using the optional <a href="/docs/16.2.2/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em></td>
+<td>TCP 22<br> TCP 80 <em>(optional)</em><br> TCP 443<br> TCP 5054 <em>(if using the optional <a href="/docs/16.3/cli-installing-the-cli-shell/">CLI shell</a> for remote management access)</em></td>
 </tr>
 </tbody>
 </table>  
@@ -571,9 +571,9 @@ settings.update_dashboards([
                   "RegionB": "regionb.avi-lbaas.example.net", }</code></pre> 
   <!-- [Format Time: 0.0003 seconds] --> </li> 
 </ol> <ol start="10"> 
- <li><em>(Optional)</em> Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/docs/16.2.2/clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong> on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre></li> 
+ <li><em>(Optional)</em> Enable the Vantage Analytics Tab by setting the following in your local settings file. (<a href="/docs/16.3/clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong> on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_ANALYTICS_TAB_ENABLED = True</code></pre></li> 
 </ol> <ol start="11"> 
- <li><em>(Optional)</em> Enable the full LBaaS panel to be the Vantage web interface by setting the following in your local settings file. (<a href="/docs/16.2.2/clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong> on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo version</a>. The _tab_group.html file is located in one of the following directories: 
+ <li><em>(Optional)</em> Enable the full LBaaS panel to be the Vantage web interface by setting the following in your local settings file. (<a href="/docs/16.3/clickjacking-protection/">Click-jacking protection</a> must be <strong>disabled</strong> on the Controller.) <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>AVI_LBAAS_FULL_UI = True</code></pre> Note: In Juno's version of Horizon, there was a bug in _tab_group.html template file that caused the title of a tab to be shown in a tab group even when there was only one tab in the tab group. This is fixed in later versions. To get around this issue, replace the _tab_group.html file on the Horizon server with the <a href="https://github.com/openstack/horizon/blob/stable/kilo/horizon/templates/horizon/common/_tab_group.html">Kilo version</a>. The _tab_group.html file is located in one of the following directories: 
   <ul> 
    <li><strong>Red Hat:</strong> /usr/lib/python2.7/site-packages/horizon/templates/horizon/common/_tab_group.html</li> 
    <li><strong>Ubuntu:</strong> /usr/lib/python2.7/dist-packages/horizon/templates/horizon/common/_tab_group.html</li> 

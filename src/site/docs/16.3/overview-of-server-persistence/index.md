@@ -12,15 +12,15 @@ Persistence is an optional profile, configured within Templates &gt; Profiles &g
 
 Vantage may be configured with a number of persistence templates:
 
-* <a href="/docs/16.2.2/http-cookie-persistence">HTTP Cookie</a>: Vantage inserts a cookie into HTTP responses
-* <a href="/docs/16.2.2/app-cookie-persistence">App Cookie</a>: Vantage reads existing server cookies or URI embedded data such as JSessionID
-* <a href="/docs/16.2.2/custom-http-header-persistence">HTTP Header</a>: Administrators may create custom, static mappings of header values to specific servers
-* <a href="/docs/16.2.2/client-ip-persistence">Client IP Address</a>: The client's IP is used as the identifier and mapped to the server
-* <a href="/docs/16.2.2/tls-persistence">TLS</a>: Persist information is embedded in the client's SSL/TLS ticket ID 
+* <a href="/docs/16.3/http-cookie-persistence">HTTP Cookie</a>: Vantage inserts a cookie into HTTP responses
+* <a href="/docs/16.3/app-cookie-persistence">App Cookie</a>: Vantage reads existing server cookies or URI embedded data such as JSessionID
+* <a href="/docs/16.3/custom-http-header-persistence">HTTP Header</a>: Administrators may create custom, static mappings of header values to specific servers
+* <a href="/docs/16.3/client-ip-persistence">Client IP Address</a>: The client's IP is used as the identifier and mapped to the server
+* <a href="/docs/16.3/tls-persistence">TLS</a>: Persist information is embedded in the client's SSL/TLS ticket ID 
 
 Outside of the persistence profiles, two other types of persistence are available:
 
-* <a href="/docs/16.2.2/custom-persistence-with-datascript">DataScript</a>:  Custom persistence may be built using DataScripts for unique persistence identifiers
+* <a href="/docs/16.3/custom-persistence-with-datascript">DataScript</a>:  Custom persistence may be built using DataScripts for unique persistence identifiers
 * **Consistent Hash**:  This is a combined load balancing algorithm and persistence method, which can be based on a number of different identifiers as the key 
 
 ### Persistence Mirroring

@@ -11,7 +11,7 @@ Avi Vantage integrates with Mesos and Marathon to provide the following services
 * Autoscaling
 * Application map and visibility 
 
-Note: This guide applies to installation within an on-premises cloud. If you are deploying into a Mesos cluster within Amazon Web Services (AWS), go <a href="/docs/16.2.2/installation-guides/installing-mesos-in-aws-using-the-cli/">here</a> instead.
+Note: This guide applies to installation within an on-premises cloud. If you are deploying into a Mesos cluster within Amazon Web Services (AWS), go <a href="/docs/16.3/installation-guides/installing-mesos-in-aws-using-the-cli/">here</a> instead.
 
 Here is how Avi Vantage integrates into a Mesos cloud:
 
@@ -325,5 +325,5 @@ Use these steps if neither the VIP nor the client is in the same Mesos cluster a
 
 After Avi Vantage is installed, virtual services (applications) can be created. For information:
 
-* <a href="/docs/16.2.2/creating-applications-in-mesos-with-marathon-labels">Creating Applications with Mesos / Marathon Labels</a>
-* <a href="/docs/16.2.2/service-discovery-for-mesos">DNS-based Service Discovery for Mesos</a> 
+* <a href="/docs/16.3/creating-applications-in-mesos-with-marathon-labels">Creating Applications with Mesos / Marathon Labels</a>
+* <a href="/docs/16.3/service-discovery-for-mesos">DNS-based Service Discovery for Mesos</a> 
