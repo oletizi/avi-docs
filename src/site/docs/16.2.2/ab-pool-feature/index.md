@@ -2,6 +2,8 @@
 title: A/B Test Pool
 layout: default
 ---
+Here's a change to the ab-pool feature.
+
 Vantage allows a secondary (B) pool to be added to a virtual service's primary (A) pool. In this case, both the A and B pools can receive traffic for the virtual service. Based on configuration, a specific percentage (0-100) of the virtual service's traffic is sent to the B pool instead of the A pool. The rest of the traffic is sent to the A pool.
 
 The A/B pool feature, sometimes referred to as blue/green testing, provides a simple way to gradually transition a virtual service's traffic from one set of servers to another. For example, to test a major OS or application upgrade in a virtual service's primary pool (A), a second pool (B) running the upgraded version can be added to the primary pool. Then based on the configuration, a percentage (0-100) of the client-to-server traffic is sent to the B pool instead of the A pool.
