@@ -96,16 +96,8 @@
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         if (profile.getEmail().endsWith("avinetworks.com")) {
-            console.log("IS AN AVI ACCOUNT. SHOWING ANNOTATIONS.");
             var app = new annotator.App();
-            app.include(annotator.ui.main, {
-                editorExtensions: [
-                    annotator.ui.tags.editorExtension
-                ],
-                viewerExtensions: [
-                    annotator.ui.tags.viewerExtension
-                ]
-            });
+            app.include(annotator.ui.main);
             app.include(annotator.storage.http, {
                 prefix: '/annotator-store/1.0'
             });
@@ -113,8 +105,6 @@
                 app.annotations.load("q=" + encodeURIComponent(window.location.pathname));
             });
 
-        } else {
-            console.log("NOT AN AVI ACCOUNT! NOT SHOWING ANNOTATIONS.");
         }
     }
 </script>
