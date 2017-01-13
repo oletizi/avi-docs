@@ -98,8 +98,14 @@ b, strong {
 .card-deck {
   margin-bottom: $spacing-unit;
 }
+
+.card-header {
+  font-family: brandon-medium, sans-serif;
+  font-size: large;
+}
 .card-footer {
   background-color: transparent;
+  border: none;
 }
 
 .card-spacer {
@@ -116,7 +122,7 @@ button, .btn {
   cursor: pointer;
   background-image: none;
   background-color: transparent;
-  border: 1px solid $brand-color;
+  border: 1px solid $border-color;
   white-space: nowrap;
   padding: 6px 12px;
   font-size: 14px;

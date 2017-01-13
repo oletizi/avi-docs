@@ -66,7 +66,9 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>The LDAP base DN.  For example, avinetworks,com would be DC=avinetworks,DC=com</dd></dl><p><strong>bind_as_administrator</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>LDAP administrator credentials are used to search for users and group memberships.</dd><dt>Default</dt><dd>True</dd></dl><p><strong>settings</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#LdapDirectorySettings>LdapDirectorySettings</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>LDAP full directory configuration with administrator credentials</dd></dl><p><strong>user_bind</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#LdapUserBindSettings>LdapUserBindSettings</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>LDAP anonymous bind configuration</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#LdapUserBindSettings>LdapUserBindSettings</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>LDAP anonymous bind configuration</dd></dl><p><strong>email_attribute</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>LDAP attribute that refers to user email</dd><dt>Default</dt><dd>email</dd></dl><p><strong>full_name_attribute</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>LDAP attribute that refers to user's full name</dd><dt>Default</dt><dd>name</dd></dl></div>
 <div class='container'id=LdapDirectorySettings
 <p><h3 class='text-success'>LdapDirectorySettings<br></h3></p>
 <p><strong>admin_bind_dn</strong><br></p>
@@ -116,7 +118,7 @@
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 <a href="tenant.html">Tenant</a>
 </p>
 

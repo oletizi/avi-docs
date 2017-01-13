@@ -91,18 +91,25 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrPrefix>IpAddrPrefix</a></dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Subnet providing reachability for Peer</dd></dl><p><strong>md5_secret</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Peer Autonomous System Md5 Digest Secret Key</dd></dl><p><strong>bfd</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Enable Bi-Directional Forward Detection. Only async mode supported.</dd><dt>Default</dt><dd>True</dd></dl><p><strong>network_uuid</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Network providing reachability for Peer</dd><dt>Default</dt><dd></dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Network providing reachability for Peer</dd><dt>Default</dt><dd></dd></dl><p><strong>advertise_vip</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Advertise VIP to this Peer</dd><dt>Default</dt><dd>True</dd></dl><p><strong>advertise_snat_ip</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Advertise SNAT IP to this Peer</dd><dt>Default</dt><dd>True</dd></dl><p><strong>advertisement_interval</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Advertisement interval for this Peer</dd><dt>Default</dt><dd>5</dd></dl><p><strong>connect_timer</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Connect timer for this Peer</dd><dt>Default</dt><dd>10</dd></dl></div>
 <div class='container'id=GatewayMonitor
 <p><h3 class='text-success'>GatewayMonitor<br></h3></p>
 <p><strong>gateway_ip</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddr>IpAddr</a></dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>IP address of next hop gateway to be monitored</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddr>IpAddr</a></dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>IP address of next hop gateway to be monitored</dd></dl><p><strong>gateway_monitor_interval</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>The interval between two ping requests sent by the gateway monitor.  If a value is not specified, requests are sent every second (1000 milliseconds).</dd><dt>Default</dt><dd>1000</dd></dl><p><strong>gateway_monitor_fail_threshold</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>The number of consecutive failed gateway health checks before a gateway is marked down.</dd><dt>Default</dt><dd>10</dd></dl><p><strong>gateway_monitor_success_threshold</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.</dd><dt>Default</dt><dd>15</dd></dl></div>
 
 </div>
 
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 <a href="tenant.html">Tenant</a>
 <a href="cloud.html">Cloud</a>
 </p>

@@ -61,7 +61,8 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#ProxyConfiguration>ProxyConfiguration</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>mgmt_ip_access_control</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#MgmtIpAccessControl>MgmtIpAccessControl</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure Ip Access control for controller to restrict open access.</dd></dl><p><strong>ssh_ciphers</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Allowed Ciphers list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default ciphers are allowed. ssh -Q cipher provides the list of default ciphers supported.</dd></dl><p><strong>ssh_hmacs</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Allowed HMAC list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default HMACs are allowed. ssh -Q mac provides the list of default HMACs supported.</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Allowed HMAC list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default HMACs are allowed. ssh -Q mac provides the list of default HMACs supported.</dd></dl><p><strong>dns_virtualservice_uuids</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>DNS virtualservices hosting FQDN records for applications across Avi Vantage. If no virtualservices are provided, Avi Vantage will provide DNS services for configured applications. Switching back to Avi Vantage from DNS virtualservices is not allowed.</dd></dl></div>
 <div class='container'id=DNSConfiguration
 <p><h3 class='text-success'>DNSConfiguration<br></h3></p>
 <p><strong>server_list</strong><br></p>
@@ -75,7 +76,20 @@
 <div class='container'id=NTPConfiguration
 <p><h3 class='text-success'>NTPConfiguration<br></h3></p>
 <p><strong>ntp_server_list</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddr>IpAddr</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>List of NTP server hostnames or IP addresses</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddr>IpAddr</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>List of NTP server hostnames or IP addresses</dd></dl><p><strong>ntp_authentication_keys</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#NTPAuthenticationKey>NTPAuthenticationKey</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>NTP Authentication keys</dd></dl><p><strong>ntp_servers</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#NTPServer>NTPServer</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>List of NTP Servers</dd></dl></div>
+<div class='container'id=NTPAuthenticationKey
+<p><h3 class='text-success'>NTPAuthenticationKey<br></h3></p>
+<p><strong>key_number</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Key number to be assigned to the authentication-key.</dd></dl><p><strong>algorithm</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Message Digest Algorithm used for NTP authentication. Default is NTP_AUTH_ALGORITHM_MD5</dd><dt>Default</dt><dd>NTP_AUTH_ALGORITHM_MD5</dd><dt>Choices</dt><dd>NTP_AUTH_ALGORITHM_SHA1, NTP_AUTH_ALGORITHM_MD5</dd></dl><p><strong>key</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>NTP Authentication key</dd></dl></div>
+<div class='container'id=NTPServer
+<p><h3 class='text-success'>NTPServer<br></h3></p>
+<p><strong>server</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddr>IpAddr</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>IP Address of the NTP Server</dd></dl><p><strong>key_number</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Key number from the list of trusted keys used to authenticate this server</dd></dl></div>
 <div class='container'id=TechSupportUploaderConfiguration
 <p><h3 class='text-success'>TechSupportUploaderConfiguration<br></h3></p>
 <p><strong>auto_upload</strong><br></p>
@@ -104,7 +118,7 @@
 <div class='container'id=EmailConfiguration
 <p><h3 class='text-success'>EmailConfiguration<br></h3></p>
 <p><strong>smtp_type</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Type of SMTP Mail Service</dd><dt>Default</dt><dd>SMTP_NONE</dd><dt>Choices</dt><dd>SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER</dd></dl><p><strong>from_email</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Type of SMTP Mail Service</dd><dt>Default</dt><dd>SMTP_LOCAL_HOST</dd><dt>Choices</dt><dd>SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER</dd></dl><p><strong>from_email</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Email address in From field</dd><dt>Default</dt><dd>admin@avicontroller.net</dd></dl><p><strong>mail_server_name</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Mail server host</dd><dt>Default</dt><dd>localhost</dd></dl><p><strong>mail_server_port</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Mail server port</dd><dt>Default</dt><dd>25</dd></dl><p><strong>auth_username</strong><br></p>
@@ -152,10 +166,10 @@
 <div class='container'id=MgmtIpAccessControl
 <p><h3 class='text-success'>MgmtIpAccessControl<br></h3></p>
 <p><strong>ssh_access</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure ip addresses to access controller using SSH</dd></dl><p><strong>api_access</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure ip addresses to access controller using api</dd></dl><p><strong>shell_server_access</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure ip addresses to access controller using shell cli</dd></dl><p><strong>snmp_access</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure ip addresses to access controller using snmp</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure IP addresses to access controller using SSH</dd></dl><p><strong>api_access</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure IP addresses to access controller using API</dd></dl><p><strong>shell_server_access</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure IP addresses to access controller using CLI Shell</dd></dl><p><strong>snmp_access</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#IpAddrMatch>IpAddrMatch</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Configure IP addresses to access controller using SNMP</dd></dl></div>
 <div class='container'id=IpAddrMatch
 <p><h3 class='text-success'>IpAddrMatch<br></h3></p>
 <p><strong>match_criteria</strong><br></p>
@@ -177,10 +191,38 @@
 
 </div>
 
+<h3 class='text-primary'>Actions</h3>
+
+<h3 class='text-primary'>API</h3>
+<div class="container">
+<pre><code>
+    POST /api/testemail
+</code></pre>
+</div>
+
+<h3 class='text-primary'>CLI</h3>
+<div class="container">
+<pre><code>
+    test systememail
+</code></pre>
+</div>
+
+<h3 class='text-primary'>Data</h3>
+<div class="container">
+<div class='container'id=SysTestEmailParams
+<p><h3 class='text-success'>SysTestEmailParams<br></h3></p>
+<p><strong>to_emails</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Alerts are sent to the comma separated list of  email recipients</dd></dl><p><strong>cc_emails</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Alerts are copied to the comma separated list of  email recipients</dd></dl><p><strong>subject</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>The Subject line of the originating email from  Avi Controller</dd></dl><p><strong>text</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>The email context</dd></dl></div>
+
+</div>
+
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 <a href="sslkeyandcertificate.html">SSLKeyAndCertificate</a>
 <a href="ipaddrgroup.html">IpAddrGroup</a>
 <a href="sslprofile.html">SSLProfile</a>

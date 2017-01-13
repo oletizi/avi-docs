@@ -264,11 +264,12 @@
 <div class='container'id=HTTPSwitchingAction
 <p><h3 class='text-success'>HTTPSwitchingAction<br></h3></p>
 <p><strong>action</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Content switching action type</dd><dt>Choices</dt><dd>HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOL</dd></dl><p><strong>pool_ref</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Content switching action type</dd><dt>Choices</dt><dd>HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP, HTTP_SWITCHING_SELECT_POOL</dd></dl><p><strong>pool_ref</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=pool.html#Pool>Reference to Pool</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>UUID of the pool of servers to serve the request</dd></dl><p><strong>status_code</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>HTTP status code to use when serving local response</dd><dt>Choices</dt><dd>HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_404</dd></dl><p><strong>file</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#HTTPLocalFile>HTTPLocalFile</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>File from which to serve local response to the request</dd></dl><p><strong>server</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#PoolServer>PoolServer</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Specific pool server to select</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#PoolServer>PoolServer</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Specific pool server to select</dd></dl><p><strong>pool_group_ref</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=poolgroup.html#PoolGroup>Reference to PoolGroup</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>UUID of the pool group to serve the request</dd></dl></div>
 <div class='container'id=PoolServer
 <p><h3 class='text-success'>PoolServer<br></h3></p>
 <p><strong>ip</strong><br></p>
@@ -337,11 +338,12 @@
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
+<a href="poolgroup.html">PoolGroup</a>
 <a href="ipaddrgroup.html">IpAddrGroup</a>
+<a href="pool.html">Pool</a>
 <a href="stringgroup.html">StringGroup</a>
 <a href="tenant.html">Tenant</a>
-<a href="pool.html">Pool</a>
 </p>
 
 <h1 class='text-primary'>Sub Objects</h1>

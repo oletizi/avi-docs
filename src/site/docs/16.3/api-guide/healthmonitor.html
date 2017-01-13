@@ -72,7 +72,7 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd>int32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>A valid response from the server is expected within the receive timeout window.  This timeout must be less than the send interval.  If server status is regularly flapping up and down, consider increasing this value.</dd><dt>Default</dt><dd>4</dd></dl><p><strong>successful_checks</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>int32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Number of continuous successful health checks before server is marked up.</dd><dt>Default</dt><dd>2</dd></dl><p><strong>failed_checks</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>int32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Number of continuous failed health checks before the server is marked down.</dd><dt>Default</dt><dd>2</dd></dl><p><strong>type</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Type of the health monitor.</dd><dt>Choices</dt><dd>HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_PING</dd></dl><p><strong>tcp_monitor</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd>Type of the health monitor.</dd><dt>Choices</dt><dd>HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_PING</dd></dl><p><strong>tcp_monitor</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#HealthMonitorTcp>HealthMonitorTcp</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>http_monitor</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#HealthMonitorHttp>HealthMonitorHttp</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>https_monitor</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#HealthMonitorHttp>HealthMonitorHttp</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>external_monitor</strong><br></p>
@@ -123,7 +123,7 @@
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 <a href="tenant.html">Tenant</a>
 </p>
 

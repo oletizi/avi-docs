@@ -27,17 +27,24 @@
 <h3 class='text-primary'>API</h3>
 <div class="container">
 <pre><code>
+    POST /api/sslkeyandcertificate
+	Query Params: <a href=#SSLKeyAndCertificateDisplayFilter>SSLKeyAndCertificateDisplayFilter</a>
+    PUT /api/sslkeyandcertificate/&ltkey&gt
+	Query Params: <a href=#SSLKeyAndCertificateDisplayFilter>SSLKeyAndCertificateDisplayFilter</a>
     DELETE /api/sslkeyandcertificate/&ltkey&gt
+	Query Params: <a href=#SSLKeyAndCertificateDisplayFilter>SSLKeyAndCertificateDisplayFilter</a>
     GET /api/sslkeyandcertificate
+	Query Params: <a href=#SSLKeyAndCertificateDisplayFilter>SSLKeyAndCertificateDisplayFilter</a>
     GET /api/sslkeyandcertificate/&ltkey&gt
+	Query Params: <a href=#SSLKeyAndCertificateDisplayFilter>SSLKeyAndCertificateDisplayFilter</a>
 </code></pre>
 </div>
 
 <h3 class='text-primary'>CLI</h3>
 <div class="container">
 <pre><code>
-    delete sslkeyandcertificate &ltkey&gt
-    show sslkeyandcertificate &ltkey&gt
+    configure sslkeyandcertificate &ltkey&gt filter [export_key]
+    show sslkeyandcertificate &ltkey&gt filter [export_key]
 </code></pre>
 </div>
 
@@ -81,7 +88,7 @@
 }
  </code></pre>
 <p>  To import a CA-signed certificate  </p>
-<pre><code> <strong>POST /api/sslkeyandcertificate/sslkeyandcertificate-25b34625-1a5a-4bc8-ac1b-57926cc7d276/importcertificate</strong>
+<pre><code> <strong>POST /api/sslkeyandcertificate/sslkeyandcertificate-6318aec4-461f-4017-833a-d1fe05523d7a/importcertificate</strong>
 
 {
     "certificate": "\n-----BEGIN CERTIFICATE-----\nMIICmTCCAgKgAwIBAgIJAKfrg8i8iZZqMA0GCSqGSIb3DQEBCwUAMFAxCzAJBgNV\nBAYTAlVTMQswCQYDVQQIDAJDQTEVMBMGA1UECgwMQWNtZSBDb21wYW55MR0wGwYD\nVQQDDBRTeXN0ZW0gQWRtaW5pc3RyYXRvcjAeFw0xNTAxMTkwNzEyNThaFw0xNjAx\nMTkwNzEyNThaMFAxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTEVMBMGA1UECgwM\nQWNtZSBDb21wYW55MR0wGwYDVQQDDBRTeXN0ZW0gQWRtaW5pc3RyYXRvcjCBnzAN\nBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtT9psNKi/4oImbB4aIJLjJDPwTIAIrQP\nLoC4R/GHrBCByRYVfoyxFrHJU9WSg9KTqxc6Ph6/zK2hoR+MchQStMP+K5W+4HcR\nSW+1MJdMwRhm+egxH7hYwnrfsaQoo0GBPVb48deBB/yKTLj7trdGqWTD5oyZqr/B\nk+kR0kXGzx8CAwEAAaN7MHkwCQYDVR0TBAIwADAsBglghkgBhvhCAQ0EHxYdT3Bl\nblNTTCBHZW5lcmF0ZWQgQ2VydGlmaWNhdGUwHQYDVR0OBBYEFNhre4joManxHL+F\nDWzYSVblWVdlMB8GA1UdIwQYMBaAFNhre4joManxHL+FDWzYSVblWVdlMA0GCSqG\nSIb3DQEBCwUAA4GBAINlLdqGJW2Enow2ft+FRMZdo2qwOovuF4smNIFoXmSoywhW\n7dyeAkeCyUjZrbqFRNsCf969aUSIE8pARjSnT9P4otOvIMCaIN215F0nzKKZbsIL\nK4pA6A0h5GSd+aqol6P2vAWzLNE+kUbrE/PcZu9pozWp0GdoiAEu+BnqwWrC\n-----END CERTIFICATE-----\n"
@@ -117,7 +124,8 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=hardwaresecuritymodulegroup.html#HardwareSecurityModuleGroup>Reference to HardwareSecurityModuleGroup</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>tenant_ref</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=tenant.html#Tenant>Reference to Tenant</a></dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd></dd></dl><p><strong>certificate_management_profile_ref</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=certificatemanagementprofile.html#CertificateManagementProfile>Reference to CertificateManagementProfile</a></dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>dynamic_params</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#CustomParams>CustomParams</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Dynamic parameters needed for certificate management profile</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd><a href=#CustomParams>CustomParams</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Dynamic parameters needed for certificate management profile</dd></dl><p><strong>created_by</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Creator name</dd></dl></div>
 <div class='container'id=SSLCertificate
 <p><h3 class='text-success'>SSLCertificate<br></h3></p>
 <p><strong>version</strong><br></p>
@@ -137,7 +145,9 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>fingerprint</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>expiry_status</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>SSL_CERTIFICATE_GOOD</dd><dt>Choices</dt><dd>SSL_CERTIFICATE_EXPIRED, SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING</dd></dl><p><strong>chain_verified</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>subject_alt_names</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>subjectAltName that provides additional subject identities</dd></dl><p><strong>days_until_expire</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>int32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>365</dd></dl></div>
 <div class='container'id=SSLCertificateDescription
 <p><h3 class='text-success'>SSLCertificateDescription<br></h3></p>
 <p><strong>common_name</strong><br></p>
@@ -182,7 +192,7 @@
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 <a href="certificatemanagementprofile.html">CertificateManagementProfile</a>
 <a href="hardwaresecuritymodulegroup.html">HardwareSecurityModuleGroup</a>
 <a href="tenant.html">Tenant</a>
@@ -191,5 +201,12 @@
 
 <h1 class='text-primary'>Sub Objects</h1>
 
+<h1 class='text-primary'>Filters</h1>
+    <div class='container'id=SSLKeyAndCertificateDisplayFilter
+<p><h3 class='text-success'>SSLKeyAndCertificateDisplayFilter<br></h3></p>
+<p><strong>export_key</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Set export_key to export the private key. By default, the private key is not exported</dd></dl></div>
+
+    
 </body>
 </html>

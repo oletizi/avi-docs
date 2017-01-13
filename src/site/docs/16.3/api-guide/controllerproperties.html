@@ -78,14 +78,21 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>360</dd></dl><p><strong>attach_ip_retry_limit</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>4</dd></dl><p><strong>persistence_key_rotate_period</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>60</dd></dl><p><strong>allow_unauthenticated_apis</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Allow unauthenticated access for special APIs</dd><dt>Default</dt><dd>False</dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Allow unauthenticated access for special APIs</dd><dt>Default</dt><dd>False</dd></dl><p><strong>warmstart_se_reconnect_wait_time</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>300</dd></dl><p><strong>vs_se_ping_fail</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>60</dd></dl><p><strong>se_failover_attempt_interval</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Interval between attempting failovers to an SE</dd><dt>Default</dt><dd>300</dd></dl><p><strong>max_pcap_per_tenant</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Maximum number of pcap files stored per tenant</dd><dt>Default</dt><dd>4</dd></dl><p><strong>ssl_certificate_expiry_warning_days</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Number of days for SSL Certificate expiry warning</dd></dl><p><strong>seupgrade_fabric_pool_size</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Pool size used for all fabric commands during se upgrade.</dd><dt>Default</dt><dd>20</dd></dl><p><strong>seupgrade_segroup_min_dead_timeout</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>uint32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Time to wait before marking segroup upgrade as stuck.</dd><dt>Default</dt><dd>360</dd></dl></div>
 
 </div>
 
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 </p>
 
 <h1 class='text-primary'>Sub Objects</h1>

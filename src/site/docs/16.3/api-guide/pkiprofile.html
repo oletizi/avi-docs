@@ -56,7 +56,8 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=#CRL>CRL</a></dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>Certificate Revocation Lists</dd></dl><p><strong>ignore_peer_chain</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>When enabled, Avi will not trust Intermediate and Root certs presented by a client.  Instead, only the chain certs configured in the Certificate Authority section will be used to verify trust of the client's cert.</dd><dt>Default</dt><dd>False</dd></dl><p><strong>crl_check</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>When enabled, Avi will verify via CRL checks that certificates in the trust chain have not been revoked.</dd><dt>Default</dt><dd>True</dd></dl><p><strong>validate_only_leaf_crl</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>When enabled, Avi will only validate the revocation status of the leaf certificate using CRL. To enable validation for the entire chain, disable this option and provide all the relevant CRLs</dd><dt>Default</dt><dd>True</dd></dl><p><strong>tenant_ref</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>When enabled, Avi will only validate the revocation status of the leaf certificate using CRL. To enable validation for the entire chain, disable this option and provide all the relevant CRLs</dd><dt>Default</dt><dd>True</dd></dl><p><strong>created_by</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd>Creator name</dd></dl><p><strong>tenant_ref</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd><a href=tenant.html#Tenant>Reference to Tenant</a></dd><dt>Category</dt><dd>required</dd><dt>Description</dt><dd></dd></dl></div>
 <div class='container'id=SSLCertificate
 <p><h3 class='text-success'>SSLCertificate<br></h3></p>
@@ -77,7 +78,9 @@
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>fingerprint</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>expiry_status</strong><br></p>
 <dl class='dl-horizontal'><dt>Type</dt><dd>enum</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>SSL_CERTIFICATE_GOOD</dd><dt>Choices</dt><dd>SSL_CERTIFICATE_EXPIRED, SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING</dd></dl><p><strong>chain_verified</strong><br></p>
-<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl></div>
+<dl class='dl-horizontal'><dt>Type</dt><dd>bool</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd></dl><p><strong>subject_alt_names</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>string</dd><dt>Category</dt><dd>repeated</dd><dt>Description</dt><dd>subjectAltName that provides additional subject identities</dd></dl><p><strong>days_until_expire</strong><br></p>
+<dl class='dl-horizontal'><dt>Type</dt><dd>int32</dd><dt>Category</dt><dd>optional</dd><dt>Description</dt><dd></dd><dt>Default</dt><dd>365</dd></dl></div>
 <div class='container'id=SSLCertificateDescription
 <p><h3 class='text-success'>SSLCertificateDescription<br></h3></p>
 <p><strong>common_name</strong><br></p>
@@ -124,7 +127,7 @@
 
 <h1 class='text-primary'>References</h1>
 <p>
-
+<a href=".html"></a>
 <a href="tenant.html">Tenant</a>
 </p>
 
