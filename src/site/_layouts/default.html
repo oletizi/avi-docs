@@ -7,33 +7,39 @@
 <div class="container-fluid">
     {% include header.html %}
     <div class="row content-row">
-        <div id="sidebar-wrapper">
-            {% include sidebar.html %}
-            <div class="in-page-controls"></div>
+        <div class="col-sm-3">
+            <div id="sidebar-wrapper col-sm-3">
+                {% include sidebar.html %}
+                <div class="in-page-controls"></div>
+            </div>
         </div>
-        <div class="main-content col-xs-9">
-            <div class="row content">
-                <div class="col-xs-9 inner">
-                    <h1>{{ page.title }}</h1>
-                    {{ content }}
-                    <p>{% render_time Updated: %}</p>
-                </div>
-                <div class="col-xs-3 toc-wrapper">
-                    <div class="toc" data-spy="affix" data-offset-top="93">
-                        <div id="toc-title">On This Page</div>
-                        <div id="toc"></div>
-                        <script type="text/javascript">
-                            $('#toc').toc({
-                                'container': '.main-content'
-                            });
-                        </script>
+        <div class="col-sm-6">
+            <div class="main-content">
+                <div class=" content">
+                    <div class="inner">
+                        <h1>{{ page.title }}</h1>
+                        {{ content }}
+                        <p>{% render_time Updated: %}</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>  <!-- end of row -->
+        <div class="col-sm-3">
+            <div class="toc-wrapper">
+                <div class="toc" data-spy="affix" data-offset-top="93">
+                    <div id="toc-title">On This Page</div>
+                    <div id="toc"></div>
+                    <script type="text/javascript">
+                        $('#toc').toc({
+                            'container': '.main-content'
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row footer">
-        <div class="col-xs-12">
+        <div class="col-sm-12">
             {% include footer.html %}<!--<p>Version: { % project_version tag short % }</p>-->
         </div>
     </div>
