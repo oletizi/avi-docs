@@ -87,12 +87,23 @@ a, a:hover, a:visited {
   color: $blue-color;
 }
 
-a .panel-body {
+a .panel-body, .card-block a, .card-deck a {
   color: $font-color-normal
 }
 
 b, strong {
   font-family: brandon-medium, sans-serif;
+}
+
+.card-deck {
+  margin-bottom: $spacing-unit;
+}
+.card-footer {
+  background-color: transparent;
+}
+
+.card-spacer {
+  border: none;
 }
 
 button, .btn {
