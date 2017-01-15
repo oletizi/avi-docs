@@ -455,6 +455,10 @@ $toc-indent: 20px;
     top: 0;
     min-width: 235px;
 
+    p {
+      padding-left: $toc-indent;
+      padding-right: $toc-indent;
+    }
     ul {
       list-style: none;
       padding: 0;
@@ -470,6 +474,12 @@ $toc-indent: 20px;
 
     #toc {
       background-color: $highlight-color;
+
+      padding: 0 $toc-indent 0 $toc-indent;
+
+      ul {
+        padding: 0 0 0 $toc-indent;
+      }
 
       li {
         a {

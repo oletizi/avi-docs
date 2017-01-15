@@ -28,12 +28,17 @@
             <div class="toc-wrapper">
                 <div class="toc" data-spy="affix" data-offset-top="93">
                     <div id="toc-title">On This Page</div>
-                    <div id="toc"></div>
+                    <ul id="toc"></ul>
                     <script type="text/javascript">
-                        $('#toc').toc({
-                            'container': '.main-content'
+                        $(document).ready(function () {
+                            $('#toc').toc();
                         });
                     </script>
+                    <p>Version: {{ site.version }}</p>
+                    <p class="edit-page">
+                        <a href="https://github.com/oletizi/avi-docs/blob/master/src/site{{ page.url | replace: 'latest', site.version }}/index.md">Edit
+                            Page &rsaquo;</a>
+                    </p>
                 </div>
             </div>
         </div>
