@@ -1,7 +1,7 @@
 <ul id="expandable-nav">
     <li><a class="toggle collapsed" href="#" data-toggle="collapse"
            data-target="#collapse-architecture">Architecture</a>
-        <ul class="collapse subnav" id="collapse-architecture">
+        <ul id="collapse-architecture" class="collapse">
             <li><a href="/docs/latest/architectural-overview/">Overview</a></li>
             <li><a href="/docs/latest/architectural-overview/infrastructure#clouds">Clouds</a></li>
             <li><a href="/docs/latest/system-requirements-ecosystem">Ecosystem System Requirements</a></li>
@@ -409,7 +409,8 @@
                     </li>
                     <li><a href="/docs/latest/installation-guides/installing-avi-vantage-with-mesosphere-dcos">
                         Mesosphere DC/OS</a></li>
-                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-cisco-apic-16-2">Cisco APIC</a></li>
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-cisco-apic-16-2">Cisco
+                        APIC</a></li>
                     <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-csp-2100">Installing for
                         Cisco CSP-2100</a>
                     </li>
@@ -454,7 +455,9 @@
                         Monitor</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/profiles/analytics-profile/">Analytics</a>
                     </li>
-                    <li><a href="/docs/latest/service-discovery-using-ipam-and-dns-16-3/#Configuring_the_IPAM_DNS_Profiles_by_Provider_Type">IPAM/DNS</a></li>
+                    <li>
+                        <a href="/docs/latest/service-discovery-using-ipam-and-dns-16-3/#Configuring_the_IPAM_DNS_Profiles_by_Provider_Type">IPAM/DNS</a>
+                    </li>
                     <li><a href="/docs/latest/avi-gslb-service-and-health-monitors/">GSLB Health</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/groups/">Groups</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/security/">Security</a></li>
@@ -569,77 +572,6 @@
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
 </div>
-<script type="text/javascript">
+<script src="/js/left-nav.js" type="text/javascript">
 
-    $(document).ready(function () {
-        var cookieName = 'expandable-nav-v1.1';
-
-        function setActive() {
-            var url = window.location;
-            var parser = document.createElement('a');
-            parser.href = url;
-            var fullPath = parser.pathname;
-            var shortPath = fullPath.replace(/\/$/, "");
-            ;
-
-            $('ul#expandable-nav a[href="' + fullPath + '"]').parent().addClass('active');
-            $('ul#expandable-nav a[href="' + shortPath + '"]').parent().addClass('active');
-        }
-
-        function getExpanded() {
-            var tmp = Cookies.getJSON(cookieName);
-            var expanded;
-            if (!Array.isArray(tmp)) {
-                expanded = [];
-            } else {
-                expanded = tmp;
-            }
-            return expanded;
-        }
-
-        function containsObject(list, obj) {
-            var i;
-            for (i = 0; i < list.length; i++) {
-                if (list[i] === obj) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        setActive();
-
-        var expanded = getExpanded();
-        console.log("Expanded: " + expanded);
-
-        if (Array.isArray(expanded)) {
-            $("#expandable-nav .collapse").removeClass('in');
-            for (var i = 0; i < expanded.length; i++) {
-                $(expanded[i]).collapse("show");
-            }
-        }
-
-        $("[data-toggle='collapse']").on("click", function () {
-            var dataTarget = this.attributes['data-target'].value;
-            var tmp = Cookies.getJSON(cookieName);
-            var expanded;
-            if (!Array.isArray(tmp)) {
-                expanded = [];
-            } else {
-                expanded = tmp;
-            }
-            console.log("data target: " + dataTarget);
-            console.log("Expanded before: " + expanded);
-            var index = expanded.indexOf(dataTarget);
-            if (index >= 0) {
-                // remove it
-                expanded.splice(index, 1);
-            } else {
-                // add it
-                expanded.push(dataTarget);
-            }
-            console.log("Expanded after: " + expanded);
-            Cookies.set(cookieName, expanded);
-        });
-    })
 </script>

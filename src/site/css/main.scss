@@ -393,7 +393,7 @@ figcapture, figcaption, figcaption.caption {
     //  padding-bottom: $spacing-unit / 4;
     //}
     ul {
-      margin-left: $spacing-unit / 4;
+      margin-left: ($spacing-unit / 4) + 6;
       padding-left: 0;
       list-style: none;
     }
@@ -406,17 +406,21 @@ figcapture, figcaption, figcaption.caption {
     }
     .toggle:after {
       /* symbol for "opening" panels */
+      margin-top: 4px;
+      margin-right: 4px;
       font-family: 'Glyphicons Halflings', sans-serif; /* essential for enabling glyphicon */
-      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
-      float: right; /* adjust as needed */
+      font-size: 10px;
+      content: "\e259"; /* adjust as needed, taken from bootstrap.css */
+      float: left; /* adjust as needed */
       color: grey; /* adjust as needed */
     }
     .toggle.collapsed:after {
       /* symbol for "collapsed" panels */
-      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+      content: "\e258"; /* adjust as needed, taken from bootstrap.css */
     }
-    .collapse.in {
-      border-left: 2px solid $grey-color-light;
+    //.collapse.in {
+    .collapse {
+      border-left: 1px solid $grey-color-light;
     }
     .active {
       background-color: $left-nav-highlight-color;
