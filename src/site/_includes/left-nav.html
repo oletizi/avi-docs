@@ -48,7 +48,8 @@
                     <li><a href="/docs/latest/configuration-guide/applications/pools/#load_balancing_algorithms">Load
                         Balancing
                         Algorithms</a></li>
-                    <a class="toggle collapsed" href="#" data-toggle="collapse" data-target="#collapse-features-persistence">
+                    <a class="toggle collapsed" href="#" data-toggle="collapse"
+                       data-target="#collapse-features-persistence">
                         Persistence
                     </a>
                     <ul id="collapse-features-persistence">
@@ -65,8 +66,10 @@
                     </a>
                     <ul id="collapse-features-gslb">
                         <li><a href="/docs/latest/avi-gslb-architecture/">Architecture</a></li>
-                        <li><a href="/docs/latest/avi-gslb-service-and-health-monitors/">Service and Health Monitors</a></li>
-                        <li><a href="/docs/latest/avi-gslb-site-configuration-and-operations/">Config and Operations</a></li>
+                        <li><a href="/docs/latest/avi-gslb-service-and-health-monitors/">Service and Health Monitors</a>
+                        </li>
+                        <li><a href="/docs/latest/avi-gslb-site-configuration-and-operations/">Config and Operations</a>
+                        </li>
                         <li><a href="/docs/latest/avi-dns-architecture/">DNS Architecture and Features</a></li>
                     </ul>
                 </ul>
@@ -248,7 +251,7 @@
                     <li>
                         <a href="/docs/latest/configuration-guide/templates/profiles/application-profile/#HTTP_acceleration">HTTP
                             Acceleration</a></li>
-                    <li><a href="/docs/latest/overview-of-http-cache">Overview of HTTP Cache </a></li>
+                    <li><a href="/docs/latest/overview-of-http-cache">HTTP Caching</a></li>
                     <li>
                         <a href="/docs/latest/configuration-guide/templates/profiles/application-profile/#HTTP_compression/">Compression</a>
                     </li>
@@ -315,6 +318,8 @@
                             <li>
                                 <a href="/docs/latest/configuration-guide/applications/virtual-services/vs-security/#view_security_insights">
                                     View Security Insights </a></li>
+                            <li><a href="/docs/latest/configuration-guide/operations/traffic-capture/">Traffic
+                                Capture</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -330,19 +335,39 @@
                 <ul class="collapse subnav" id="collapse-features-admin">
                     <li><a class="toggle collapsed" href="#" data-toggle="collapse"
                            data-target="#collapse-features-admin-uam">User
-                        Acct Mgmt</a>
+                        Account Management</a>
                         <ul class="collapse subnav" id="collapse-features-admin-uam">
+                            <li><a href="/docs/latest/overview-of-account-management/">Overview</a></li>
+                            <li><a href="/docs/latest/user-accounts">Local User Accounts</a></li>
                             <li><a href="/docs/latest/user-account-self-service">User Account Self-Service</a></li>
-                            <li><a href="/docs/latest/user-accounts">User Accounts</a></li>
-                            <li><a href="/docs/latest/super-user-accounts">Super User</a></li>
-                            <li><a href="/docs/latest/remote-users-authen-authrz">Authentication and Authorization</a>
+                            <li><a href="/docs/latest/default-system-accounts">Default System Accounts</a></li>
+                            <li><a href="/docs/latest/super-user-accounts">Super User Accounts</a></li>
+                            <li><a href="/docs/latest/user-account-security">User Account Security</a></li>
+                            <li><a href="/docs/latest/password-recovery">Password Recovery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="toggle collapsed" href="#" data-toggle="collapse"
+                           data-target="#collapse-features-remote-user-authentication">Remote User Authentication</a>
+                        <ul class="collapse subnav" id="collapse-features-remote-user-authentication">
+                            <li><a href="/docs/latest/ldap-auth-profile-test/">LDAP Authentication Profile Testing</a>
                             </li>
+                            <li><a href="/docs/latest/ldap-configuration-examples/">LDAP Configuration Examples</a></li>
+                            <li><a href="/docs/latest/tacacs-authentication/">TCACS+ Authentication</a></li>
+                            <li><a href="/docs/latest/tacacs-configuration-examples/">TCACS+ Configuration Examples</a>
+                            </li>
+                            <li><a href="/docs/latest/keystone-authentication/">Keystone Authentication</a></li>
+                            <li><a href="/docs/latest/cli-access/#cli-access-using-remote-auth">CLI Access and Remote
+                                Auth</a></li>
                         </ul>
                     </li>
                     <li><a class="toggle collapsed" href="#" data-toggle="collapse"
                            data-target="#collapse-features-admin-multitenancy">Multitenancy</a>
                         <ul class="collapse subnav" id="collapse-features-admin-multitenancy">
                             <li><a href="/docs/latest/tenants">Tenants</a></li>
+                            <li><a href="/docs/latest/switch-between-tenants/">Switch Between Tenants</a></li>
+                            <li><a href="/docs/latest/authorization-tenant-and-role-mapping-examples/">Tenant and Role
+                                Mapping Examples</a></li>
                             <li><a href="/docs/latest/all-tenants-view">All Tenants View</a></li>
                         </ul>
                     </li>
@@ -370,22 +395,21 @@
             <li><a class="toggle collapsed" href="#" data-toggle="collapse" data-target="#collapse-guides-installation">Installation
                 Guides</a>
                 <ul class="collapse subnav" id="collapse-guides-installation">
-                    <li><a href="/docs/latest/installation-guides/">Installation Guides Overview</a></li>
-                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-vmware-vcenter">Installing
-                        for VMware
+                    <li><a href="/docs/latest/installation-guides/">Overview</a></li>
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-vmware-vcenter">VMware
                         vCenter</a></li>
-                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-openstack">Installing for
-                        OpenStack</a>
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-openstack">OpenStack</a>
                     </li>
-                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-a-linux-server-cloud">Installing
-                        on Bare
+                    <li>
+                        <a href="/docs/latest/installation-guides/avi-vantage-openshift-installation-guide">OpenShift</a>
+                    </li>
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-a-linux-server-cloud">Bare
                         Metal</a></li>
-                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-in-amazon-web-services">Installing
-                        for AWS</a>
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-in-amazon-web-services">AWS</a>
                     </li>
-                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-with-mesosphere-dcos">Installing
-                        for
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-with-mesosphere-dcos">
                         Mesosphere DC/OS</a></li>
+                    <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-cisco-apic-16-2">Cisco APIC</a></li>
                     <li><a href="/docs/latest/installation-guides/installing-avi-vantage-for-csp-2100">Installing for
                         Cisco CSP-2100</a>
                     </li>
@@ -430,6 +454,8 @@
                         Monitor</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/profiles/analytics-profile/">Analytics</a>
                     </li>
+                    <li><a href="/docs/latest/service-discovery-using-ipam-and-dns-16-3/#Configuring_the_IPAM_DNS_Profiles_by_Provider_Type">IPAM/DNS</a></li>
+                    <li><a href="/docs/latest/avi-gslb-service-and-health-monitors/">GSLB Health</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/groups/">Groups</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/security/">Security</a></li>
                     <li><a href="/docs/latest/configuration-guide/templates/scripts/">Scripts</a></li>
@@ -473,9 +499,9 @@
                         <ul class="collapse subnav" id="collapse-guides-administration">
                             <li><a href="/docs/latest/configuration-guide/administration/">Administration Overview</a>
                             </li>
-                            <li><a href="/docs/latest/user-accounts">User Accounts</a></li>
                             <li><a href="/docs/latest/remote-users-authen-authrz">User Authentication &amp;
                                 Authorization</a></li>
+                            <li><a href="/docs/latest/user-accounts">User Accounts</a></li>
                             <li><a href="/docs/latest/administrative-settings">Controller Administrative Settings</a>
                             </li>
                             <li><a href="/docs/latest/upgrading-the-vantage-software">Upgrading Avi Vantage</a></li>
@@ -496,11 +522,12 @@
                     <li><a href="/docs/latest/datascript-functions">Functions</a></li>
                 </ul>
             </li>
-            <li><a class="toggle collapsed" href="#" data-toggle="collapse" data-target="#collapse-guides-api">API
+            <li><a class="toggle collapsed" href="#" data-toggle="collapse" data-target="#collapse-guides-api">REST API
                 Guides</a>
                 <ul class="collapse subnav" id="collapse-guides-api">
-                    <li><a href="/docs/latest/api-guide/">API Guide v16.2.2</a></li>
-                    <li><a href="https://github.com/avinetworks/sdk/tree/16.1/doc/">API Guide v16.1</a></li>
+                    <li><a href="/docs/16.3/api-guide/">REST API Guide v16.3</a></li>
+                    <li><a href="/docs/16.2/api-guide/">REST API Guide v16.2</a></li>
+                    <li><a href="/docs/16.1/api-guide/">REST API Guide v16.1</a></li>
                 </ul>
             </li>
         </ul>
@@ -508,17 +535,18 @@
     <li><a class="toggle collapsed" href="#" data-toggle="collapse" data-target="#collapse-release-notes">Release
         Notes</a>
         <ul class="collapse subnav" id="collapse-release-notes">
-            <li><a href="/docs/latest/avi-vantage-16-2-2-release-notes">Latest (16.2.2)</a></li>
-            <li><a href="/docs/latest/avi-vantage-16-2-1-release-notes">16.2.1</a></li>
-            <li><a href="/docs/latest/avi-vantage-release-notes">All</a></li>
+            <li><a href="/docs/latest/avi-vantage-16-3-3-release-notes/">Latest (16.3.3)</a></li>
+            <li><a href="/docs/latest/avi-vantage-16-3-2-release-notes/">16.3.3</a></li>
+            <li><a href="/docs/latest/avi-vantage-release-notes/">All</a></li>
         </ul>
     </li>
     <li><a class="toggle collapsed" href="#" data-toggle="collapse" data-target="#collapse-support">Support</a>
         <ul class="collapse subnav" id="collapse-support">
-            <li><a href="/docs/latest/where-can-i-download-avi-vantage">Customer Download</a></li>
-            <li><a href="/docs/latest/upgrading-the-vantage-software">Upgrade</a></li>
-            <li><a href="/docs/latest/support-terms-and-conditions">Terms and Conditions</a></li>
+            <li><a href="/docs/latest/support-overview/">Support Overview</a></li>
             <li><a href="/docs/latest/access-to-avi-portal">Customer Portal</a></li>
+            <li><a href="/docs/latest/where-can-i-download-avi-vantage">Software Download</a></li>
+            <li><a href="/docs/latest/upgrading-the-vantage-software">Upgrade</a></li>
+            <li><a href="/docs/latest/support-terms-and-conditions">Terms</a></li>
             <li><a href="/docs/latest/terms-of-avi-vantage-license">License</a></li>
             <li><a href="/docs/latest/notification-of-vantage-license-expiration">License Expiration</a></li>
             <li><a href="/docs/latest/backup-and-restore-of-avi-vantage-configuration">Configuration Backup and
