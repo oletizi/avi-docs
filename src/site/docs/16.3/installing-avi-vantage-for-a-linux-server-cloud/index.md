@@ -8,7 +8,7 @@ Avi Vantage is a software-based solution that provides real-time analytics and e
 
 Installing Avi Vantage directly onto Linux servers leverages the raw horsepower of the underlying hardware without the overhead added by a virtualization layer. For example, installing Avi Vantage directly onto Linux servers that support Data Plane Development Kit (DPDK) allows the feature's optimized packet processing to be leveraged for virtual service traffic.
 
-Note: If installing Avi SEs directly onto Linux servers that include DPDK, make sure to enable the option in Vantage when adding the host for the Avi SE.
+Note: If installing Avi SEs directly onto Linux servers that include DPDK, make sure to enable the option in Avi Vantage when adding the host for the Avi SE.
 
 ### Docker Container
 
@@ -16,7 +16,7 @@ The Avi Vantage Linux server cloud solution uses containerization provided by Do
 
 ## Deployment Topologies
 
-Vantage can be deployed onto a Linux server cloud in the following topologies. The number of Linux servers required for deployment depends on the deployment topology.
+Avi Vantage can be deployed onto a Linux server cloud in the following topologies. The number of Linux servers required for deployment depends on the deployment topology.
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>     
 <tr>    
@@ -73,7 +73,7 @@ This section lists the minimum requirements for installation.
 
 ### Hardware Requirements
 
-Each Linux server to be managed by Vantage must meet at least the following physical requirements:
+Each Linux server to be managed by Avi Vantage must meet at least the following physical requirements:
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>      
 <tr>   
@@ -103,7 +103,7 @@ Each Linux server to be managed by Vantage must meet at least the following phys
 
 ### Software Requirements
 
-Installation of Vantage for a Linux server cloud also requires the following software:
+Installation of Avi Vantage for a Linux server cloud also requires the following software:
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>     
 <tr>   
@@ -136,13 +136,13 @@ To install Avi Vantage, some installation tasks are performed on each of the Lin
 
 ### Installation Workflow
 
-Vantage deployment for a Linux server cloud consists of the following:
+Avi Vantage deployment for a Linux server cloud consists of the following:
 <ol> 
  <li>Install the Docker platform (if not already installed).</li> 
  <li>Install the Avi Controller image onto a Linux server.</li> 
  <li>Use the setup wizard to perform initial configuration of the Avi Controller: 
   <ul> 
-   <li>Vantage user account creation (your Vantage administrator account)</li> 
+   <li>Avi Vantage user account creation (your Avi Vantage administrator account)</li> 
    <li>DNS and NTP servers</li> 
    <li>Infrastructure type (Linux)</li> 
    <li>SSH account information (required for installation and access to the Avi SE instance on each of the Linux servers that will host an Avi SE)</li> 
@@ -213,24 +213,22 @@ Server:
    <li>In interactive mode, the script displays a prompt for configuring each option. Go to Step 7.</li> 
   </ul> </li> 
 </ol> <ol start="6"> 
- <li>To run the setup script as a single command, enter a command string such as the following: <pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-prompt=""><code>./avi_baremetal_setup.py -c -cc 4 -cm 12 -i 10.120.0.39 -m 10.120.0.39</code></pre> The options are explained in the CLI help:<br> <pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-prompt="" data-output="2-100"><code>avi_baremetal_setup.py [-h] [-d] [-s] [-sc SE_CORES] [-sm SE_MEMORY_MB] [-c] [-cc CON_CORES] [-cm CON_MEMORY_GB] -i CONTROLLER_IP -m MASTER_CTL_IP 
-
-  -h, --help            show this help message and exit
-  -d, --dpdk_mode       Run SE in DPDK Mode. Default is False
-  -s, --run_se          Run SE locally. Default is False
-  -sc SE_CORES, --se_cores SE_CORES
-                        Cores to be used for AVI SE. Default is 1
-  -sm SE_MEMORY_MB, --se_memory_mb SE_MEMORY_MB
-                        Memory to be used for AVI SE. Default is 2048
-  -c, --run_controller  Run Controller locally. Default is No
-  -cc CON_CORES, --con_cores CON_CORES
-                        Cores to be used for AVI Controller. Default is 4
-  -cm CON_MEMORY_GB, --con_memory_gb CON_MEMORY_GB
-                        Memory to be used for AVI Controller. Default is 12
-  -i CONTROLLER_IP, --controller_ip CONTROLLER_IP
-                        Controller IP Address
-  -m MASTER_CTL_IP, --master_ctl_ip MASTER_CTL_IP
-                        Master controller IP Address</code></pre> </li> 
+ <li>To run the setup script as a single command, enter a command string such as the following: <pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-prompt=""><code>./avi_baremetal_setup.py -c -cc 4 -cm 12 -i 10.120.0.39 -m 10.120.0.39</code></pre> The options are explained in the CLI help:<br> <pre crayon="false" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-prompt="" data-output="2-100"><code>avi_baremetal_setup.py [-h] [-d] [-s] [-sc SE_CORES] [-sm SE_MEMORY_MB] [-c] [-cc CON_CORES] [-cm CON_MEMORY_GB] -i CONTROLLER_IP -m MASTER_CTL_IP-h, --help show this help message and exit
+-d, --dpdk_mode Run SE in DPDK Mode. Default is False
+-s, --run_se Run SE locally. Default is False
+-sc SE_CORES, --se_cores SE_CORES
+Cores to be used for AVI SE. Default is 1
+-sm SE_MEMORY_MB, --se_memory_mb SE_MEMORY_MB
+Memory to be used for AVI SE. Default is 2048
+-c, --run_controller Run Controller locally. Default is No
+-cc CON_CORES, --con_cores CON_CORES
+Cores to be used for AVI Controller. Default is 4
+-cm CON_MEMORY_GB, --con_memory_gb CON_MEMORY_GB
+Memory to be used for AVI Controller. Default is 12
+-i CONTROLLER_IP, --controller_ip CONTROLLER_IP
+Controller IP Address
+-m MASTER_CTL_IP, --master_ctl_ip MASTER_CTL_IP
+Master controller IP Address</code></pre></li> 
 </ol> <ol start="7"> 
  <li>To run in interactive mode, start by entering "avi_baremetal_setup.py". Here is an example: <pre crayon="false" pre="" class="command-line language-bash" data-user="aviuser" data-host="avihost" data-output="2-100"><code>./avi_baremetal_setup.py
 

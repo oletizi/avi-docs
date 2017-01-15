@@ -69,20 +69,20 @@ As a best practice, it is recommended to take a configuration backup before depl
 
 <pre><code class="language-lua">/opt/avi/python/bin/portal/manage.py export_configuration --file ~/setup-old.json --passphrase secret</code></pre>  
 
-### For a Mesos/Baremetal deployment:
+### For a Mesos/Bare-Metal Deployment:
 
 <code>setup.json</code> needs to be copied to the persistent directory in the host that is mounted as /vol in the controller container. If you are using avi_baremetal script, the default location is /opt/avi/controller/data on the host. When deploying the Controller as container, <code>setup.json</code> can be passed as an additional argument to <code>avi_baremetal_setup.py</code> script. For example:
 <code></code>
 
 <pre><code class="language-lua">./avi_baremetal_setup.py -c -cc 4 -cm 12 -i 10.10.22.108 -m 10.10.22.108 --setup-json /root/configs/avi-setup.json</code></pre>  
 
-### For a Controller deployment as a VM:
+### For a Controller Deployment as a VM:
 
 Wait until Controller comes up. Place the config file on the Controller as /var/lib/avi/etc/setup.json (note the filename). Upon reboot/fresh-start, the Avi Controller will self-configure using the provided <code>setup.json</code> file.
 
 <pre><code class="language-lua">reboot</code></pre>  
 
-### For an OpenStack deployment:
+### For an OpenStack Deployment:
 
 UserData config size is limited to 48 Kb. If size of <code>setup.json</code> is within allowable limits:
 <code></code>
@@ -124,7 +124,7 @@ For deployment:
 &gt;# metasvc userdata indirection
 nova boot --config-drive false --image avicontroller --key-name mykey --flavor 4 --user-data /root/my-avi-config-url.json --nic net-id=7402bf4f-240f-4172-99c1-90000ea45f86 --min-count=3 --max-count=3 avicontrollers</code></pre>  
 
-### For an AWS deployment:
+### For an AWS Deployment:
 
 UserData config size is limited to 16Kb. If size of <code>setup.json</code> is within allowable limits, cut-paste the my-avi-config.json into the user-data section during launch from AWS Web Console
 <code></code>

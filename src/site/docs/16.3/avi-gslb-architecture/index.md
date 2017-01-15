@@ -48,7 +48,7 @@ A global application requires a solution capable of performing these functions:
  <li><span style="font-weight: 400;">The actual processing of those responses.</span></li> 
 </ol> 
 
-In Avi's design, an individual GSLB site need not perform all of four functions. For example, a virtual service defined by Controller_cluster_A (site_A) might respond to requests steered to it by DNS functionality overseen by Controller_cluster_B (site_B).
+In Avi's design, an individual GSLB site need not perform all four functions. For example, a virtual service defined by Controller_cluster_A (site_A) might respond to requests steered to it by DNS functionality overseen by Controller_cluster_B (site_B).
 
 To better understand the steps one takes and the objects one touches to implement the Avi GSLB solution, it is important to keep in mind these distinct GSLB functions.
 

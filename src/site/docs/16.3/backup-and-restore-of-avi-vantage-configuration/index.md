@@ -32,7 +32,7 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
     * **Directory**: If a target directory other than the SSH user's home directory is desired, specify an absolute or relative pathname pointing to a directory to which the SSH user has write access.  
 
 ### Scheduled Backup via CLI
-<pre>
+
 <code>[admin:10-10-24-52]: &gt; configure scheduler Default-Scheduler</code>
 <code>+-------------------+------------------------------------------------+</code>
 <code>| Field             | Value                                          |</code>
@@ -48,9 +48,7 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
 <code>| scheduler_action  | SCHEDULER_ACTION_BACKUP                        |</code>
 <code>| tenant_ref        | admin                                          |</code>
 <code>+-------------------+------------------------------------------------+</code>
-</pre>
 
-<pre>
 <code>[admin:10-10-24-52]: &gt; configure backupconfiguration Backup-Configuration</code>
 <code>+------------------------+----------------------------------------------------------+</code>
 <code>| Field                  | Value                                                    |</code>
@@ -61,25 +59,24 @@ To effect changes, one clicks on the pencil icon shown in the above screenshot. 
 <code>| maximum_backups_stored | 4                                                        |</code>
 <code>| tenant_ref             | admin                                                    |</code>
 <code>+------------------------+----------------------------------------------------------+</code>
-</pre>
 
-### **Scheduled Backup via API**
-<pre>
-<code>PUT : api/scheduler/&lt;uuid&gt;</code>
-<code>Example PUT data to change scheduler frequency to 1 week:</code>
-<code>{'_last_modified': u'1476209663670990',</code>
-<code> 'backup_config_ref': 'https://10.10.24.52/api/backupconfiguration/backupconfiguration-5d65f12e-5da1-49e0-b703-ec65ae9a39c6',</code>
-<code> 'enabled': True,</code>
-<code> 'frequency': 1,</code>
-<code> 'frequency_unit': u'SCHEDULER_FREQUENCY_UNIT_WEEK',</code>
-<code> 'name': u'Default-Scheduler',</code>
-<code> 'run_mode': u'RUN_MODE_PERIODIC',</code>
-<code> 'scheduler_action': u'SCHEDULER_ACTION_BACKUP',</code>
-<code> 'start_date_time': u'2016-10-09T15:35:46.220623',</code>
-<code> 'tenant_ref': u'https://10.10.24.52/api/tenant/admin',</code>
-<code> 'url': 'https://10.10.24.52/api/scheduler/scheduler-b5f7e673-8818-44d1-8f74-45238cc08235',</code>
-<code> 'uuid': u'scheduler-b5f7e673-8818-44d1-8f74-45238cc08235'}</code>
-</pre>
+### Scheduled Backup via API
+
+In this example a PUT changes the scheduler frequency to 1 week:
+
+<pre><code class="language-lua">PUT : api/scheduler/
+{'_last_modified': u'1476209663670990',
+'backup_config_ref': 'https://10.10.24.52/api/backupconfiguration/backupconfiguration-5d65f12e-5da1-49e0-b703-ec65ae9a39c6',
+ 'enabled': True,
+ 'frequency': 1,
+ 'frequency_unit': u'SCHEDULER_FREQUENCY_UNIT_WEEK',
+ 'name': u'Default-Scheduler',
+ 'run_mode': u'RUN_MODE_PERIODIC',
+ 'scheduler_action': u'SCHEDULER_ACTION_BACKUP',
+ 'start_date_time': u'2016-10-09T15:35:46.220623',
+ 'tenant_ref': u'https://10.10.24.52/api/tenant/admin',
+ 'url': 'https://10.10.24.52/api/scheduler/scheduler-b5f7e673-8818-44d1-8f74-45238cc08235',
+ 'uuid': u'scheduler-b5f7e673-8818-44d1-8f74-45238cc08235'}</code></pre>  
 
 ### On-demand Backup via CLI
 
@@ -111,9 +108,38 @@ JSON data: {"passphrase":"&lt;passphrase&gt;"}</pre>
 
 Make sure to replace *Avi-Controller-IP* with the IP address of the Avi Controller (if using a single Avi Controller node), or the IP address of the Avi Controller cluster.
 
-## Restoring the Vantage Configuration
+### On-demand <code>bash</code> Backup Script Utilizing the API
 
-If the unlikely should occur and a disaster completely destroys the Avi Controller (or entire cluster), the following script can be used to automate the configuration recovery process:
+<pre><code class="language-lua">===========
+#!/bin/bash
+DATE=$(date "+%Y%m%d")
+SCRIPTDIR=/appdata0/conf/avi
+AVILIST=$SCRIPTDIR/avilist
+COOKIEFILE=$SCRIPTDIR/cookiefile
+while read -u10 DEVICE
+do
+FILENAME=$DEVICE-$DATE.json
+/usr/bin/curl -k -c $COOKIEFILE -X POST -H 'Content-Type: application/json' -d '
+{"username":"admin","password":"password123"}
+' https://$DEVICE/login
+/usr/bin/curl -k -b $COOKIEFILE -X GET https://$DEVICE/api/configuration/export?full_system=true &gt; $SCRIPTDIR/$FILENAME
+CSRFTOKEN=$(/bin/grep csrftoken $COOKIEFILE | awk '
+{ print $7 }
+')
+/usr/bin/curl -k -b $COOKIEFILE -X POST -H "X-CSRFToken: $CSRFTOKEN" -H "Referer: https://$DEVICE" https://$DEVICE/logout
+/bin/rm -f $SCRIPTDIR/cookiefile
+/usr/local/bin/gzip $SCRIPTDIR/$FILENAME
+/bin/chown fimtacs:uxusers $SCRIPTDIR/$FILENAME.gz
+done 10&lt; "$AVILIST"
+    1. Clean up files older than 60 days on the server
+       /usr/bin/find $SCRIPTDIR/*json.gz -type f -mtime +60 -exec rm {} \;
+       ===========</code></pre>  
+
+## Restoring the Avi Vantage Configuration
+
+If the unlikely should occur and a disaster completely destroys the Avi Controller (or entire cluster), the device/VM hosting the Avi Controller(s) should first be restored to factory default using <code>flushdb.sh</code>. Failure to do so can prevent the Controller from coming up. To restore the Controller to the factory default, run the script <code>/opt/avi/scripts/flushdb.sh</code>. Note: If it exists, the <code>/var/lib/avi/etc/flushdb.done</code> file should be removed before running the <code>flushdb.sh</code> script.
+
+Thereafter, the following script can be used to automate the configuration recovery process:
 
 <pre>/opt/avi/scripts/restore_config.py
 </pre> 
@@ -128,5 +154,6 @@ This script imports the backup configuration onto the Avi Controller. If restori
   <ul> 
    <li>If using SCP: <pre crayon="false"><code class="language-cli">scp /var/backup/avi_config.json admin@&lt;controller-ip&gt;://tmp/avi_config.json</code></pre> </li> 
    <li>If using SSH: <pre crayon="false"><code class="language-cli">/opt/avi/scripts/restore_config.py --config /tmp/avi_config.json --passphrase &lt;passphrase&gt; --username &lt;admin&gt; --password &lt;admin password&gt;</code></pre> </li> 
+   <li>Optionally, user may choose to delete all configuration before restoring. This can be achieved by passing --flushdb argument to restore_config.py</li> 
   </ul> </li> 
 </ol> 

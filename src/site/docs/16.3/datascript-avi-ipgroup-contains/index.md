@@ -10,7 +10,7 @@ layout: default
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Description</strong></span></td>
-<td>An IP address is compared against the list of IP addresses in an IP group.  The IP group may be either a list of IP addresses, networks, or countries.<p></p> <p>The comparison returns true upon the any match. If the IP group has entries for <em>10.0.0.0/8</em>, <em>10.10.0.0/16</em>, and <em>10.10.10.10</em> and the evaluated IP address is <em>10.10.10.10</em>, the function will match successfully.</p> <p>See <a href="/docs/16.3/templates-groups-ip-group/">IP group</a> for further help on creating and using IP groups.</p></td>
+<td>An IP address is compared against the list of IP addresses in an IP group.  The IP group may be either a list of IP addresses, networks, or countries.<p></p> <p>The comparison returns true upon the any match. If the IP group has entries for <em>10.0.0.0/8</em>, <em>10.10.0.0/16</em>, and <em>10.10.10.10</em> and the evaluated IP address is <em>10.10.10.10</em>, the function will match successfully.</p> <p>See <a href="/templates-groups-ip-group/">IP group</a> for further help on creating and using IP groups.</p></td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Events</strong></span></td>
@@ -38,9 +38,9 @@ layout: default
 <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">var = avi.vs.client_ip()
 if avi.ipgroup.contains("IP-Group", var) then
    avi.vs.log("Blacklisted IP" .. var.. "attempting to log in")
-   avi.vs.close_conn()
+   avi.http.close_conn()
 end</code></pre> 
-<!-- [Format Time: 0.0010 seconds] --></td>
+<!-- [Format Time: 0.0008 seconds] --></td>
 </tr>
 </tbody>
 </table> 

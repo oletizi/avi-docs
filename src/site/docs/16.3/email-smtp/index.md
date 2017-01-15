@@ -6,6 +6,8 @@ Avi Vantage may proactively send emails. This may be done for password reset ope
 
 The SMTP source is where the email will be sourced from when the Avi Controller is sending an email.
 
+*Note: Avi Vantage only supports TLS-enabled SMTP servers.*
+
 ### View or Modify Email / SMTP Settings
 
 <ol> 

@@ -10,7 +10,7 @@ layout: default
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Description</strong></span></td>
-<td>Issues an HTTP redirect to a specified URI with a specified status code. This command is available only in the HTTP_REQ event. If a redirect needs to be performed in HTTP_RESP event, use <a href="/docs/16.3/datascript-avi-http-response">avi.http.response()</a> which can be used to craft a response.</td>
+<td>Issues an HTTP redirect to a specified URI with a specified status code. This command is available only in the HTTP_REQ event. If a redirect needs to be performed in HTTP_RESP event, use <a href="/datascript-avi-http-response/">avi.http.response()</a> which can be used to craft a response.</td>
 </tr>
 <tr>   
 <td><span style="font-size: medium;"><strong>Events</strong></span></td>
@@ -33,9 +33,9 @@ layout: default
 <td><span style="font-size: medium;"><strong>Example</strong></span></td>
 <td>Redirect an HTTP request received on service port 80 to port 443.<br> 
 <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">if avi.vs.port() ~= "443" then
-   avi.http.redirect("https://" .. avi.vs.host() .. avi.http.get_uri())
+   avi.http.redirect("https://" .. avi.http.hostname() .. avi.http.get_uri())
 end</code></pre> 
-<!-- [Format Time: 0.0039 seconds] --></td>
+<!-- [Format Time: 0.0008 seconds] --></td>
 </tr>
 </tbody>
 </table> 

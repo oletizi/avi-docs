@@ -7,9 +7,9 @@ Starting in release 16.2, Avi Vantage supports automation of the process for re
 To accomplish this, a Templates > Security > Certificate Management Profile object is used. Creating an instance of this object, an individual certificate management profile, provides a way to configure a path to a certificate script, along with the set of parameters the script needs (CSR, Common Name, and others) to integrate with a certificate management service within the customer's internal network. The script itself is left opaque by design to accommodate the various certificate management services different customers may have.
 
 <a name="automated-CSR-workflow-for-HSM"></a>
-As a part of the SSL certificate configuration, the Vantage user needs only to select CSR, fill in the necessary fields for the certificate, and select the certificate management profile to which this certificate is bound. The Avi Controller will then use the CSR and the script to obtain the certificate and also renew the certificate upon expiration. As a part of the renewal process, a new key pair is generated and a certificate corresponding to this is obtained from the certificate management service.
+As a part of the SSL certificate configuration, the Avi Vantage user needs only to select CSR, fill in the necessary fields for the certificate, and select the certificate management profile to which this certificate is bound. The Avi Controller will then use the CSR and the script to obtain the certificate and also renew the certificate upon expiration. As a part of the renewal process, a new key pair is generated and a certificate corresponding to this is obtained from the certificate management service.
 
-Without the addition of this automation, the process for sending the CSR to the external CA, then installing the signed certificate and keys, must be performed by the Vantage user.
+Without the addition of this automation, the process for sending the CSR to the external CA, then installing the signed certificate and keys, must be performed by the Avi Vantage user.
 
 Note: Release 16.2 only supported use of Python scripts for this feature, as illustrated in the sample shown below. With release 16.2.2, automated CSR workflow for SafeNet HSM is supported.
 
@@ -77,5 +77,5 @@ After adding the script and creating the certificate management profile, the pro
  <li>Click on Generate.</li> 
 </ol> 
 
-The Avi Controller generates a key pair and CSR, executes the script to request the CA-signed certificate from the Vantage PKI service, and saves the signed certificate in persistent storage.
+The Avi Controller generates a key pair and CSR, executes the script to request the CA-signed certificate from the Avi Vantage PKI service, and saves the signed certificate in persistent storage.
 

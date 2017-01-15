@@ -34,4 +34,8 @@ This article lists the most recent Avi Vantage release notes.
 
 <a href="/docs/16.3/avi-vantage-16-1-2-release-notes/">16.1.2</a>
 
+<a href="/docs/16.3/avi-vantage-16-1-3-release-notes/">16.1.3</a>
+
+<a href="/docs/16.3/avi-vantage-16-1-2-release-notes/">16.1.2</a>
+
 <a href="/docs/16.3/avi-vantage-16-1-6-release-notes/">16.1.1</a>

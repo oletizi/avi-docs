@@ -20,11 +20,9 @@ When deployed into an OpenShift/Kubernetes cloud, Avi Vantage performs as a full
 
 ### PHYSICAL NODE REQUIREMENTS
 
-The main components of the Avi Vantage solution, Avi Controllers and Service Engines (SEs), run as containers on OpenShift/Kubernetes minion nodes. For production deployment, a 3-instance Avi Controller cluster is recommended, with the each of the Avi Controller instances running in containers on separate physical nodes. After configuring the Avi Controller cluster for OpensShift/Kubernetes cloud, it deploys one Avi SE container on OpenShift/Kubernetes nodes. The nodes on which an Avi Controller runs must meet at least the following minimum system requirements:
+The main components of the Avi Vantage solution, Avi Controllers and Service Engines (SEs), run as containers on OpenShift/Kubernetes minion nodes. For production deployment, a 3-instance Avi Controller cluster is recommended, with the each of the Avi Controller instances running in containers on separate physical nodes. After configuring the Avi Controller cluster for OpensShift/Kubernetes cloud, it deploys one Avi SE container on OpenShift/Kubernetes nodes. The nodes on which an Avi Controller runs must meet at least the minimum system requirements as defined in <a href="/system-requirements-hardware/">this article</a>.
 
-* 8 vCPUs
-* 24 GB memory
-* 64 GB disk space 
+Note: Just a single OpenShift/Kubernetes cloud is supported on an Avi Controller cluster.
 
 ### SYSTEM TIME (NTP) REQUIREMENT
 
@@ -48,10 +46,7 @@ To install the Avi Controller:
  <li>Use the vi editor to create a new file for spawning the Avi Controller service:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo vi /etc/systemd/system/avicontroller.service</code></pre></li> 
  <li>Copy the following lines into the file:</li> 
 </ol> 
-
- 
-
-<pre><code class="language-yaml">[Unit]
+<pre class="command-line language-bash" data-prompt=": >" data-output="1-99"><code>[Unit]
 Description=AviController
 After=docker.service
 Requires=docker.service
@@ -239,7 +234,7 @@ Configure a subnet and IP address pool for intra-cluster/east-west traffic and a
 Configure east-west networks and subnet for virtual services handling east-west traffic and NorthSouth subnet for virtual services handling client / north-south traffic as follows:
 
 <figure class="thumbnail wp-caption alignleft"> <a href="img/Fig6.png"><img class="wp-image-11593" src="img/Fig6.png" alt="Fig6" width="650" height="168"></a>  
-<figcapture> Step 6. Navigate to Infrastructure &gt; Networks and click Create. 
+<figcapture> Step 6. Navigate to Infrastructure > Networks and click Create. 
 </figcapture>
 </figure> 
 

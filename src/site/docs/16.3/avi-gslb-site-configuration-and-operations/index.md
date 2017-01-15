@@ -2,101 +2,120 @@
 title: Avi GSLB Site Configuration and Operations
 layout: default
 ---
-## Avi GSLB Sites
+### Avi GSLB Sites
 
-As mentioned in <a href="/docs/16.3/avi-gslb-architecture/">Avi GSLB Architecture</a>, GSLB sites fall into two broad categories — **Avi sites** and **external sites** (e.g., running third-party ADCs from vendors such as F5, Citrix, etc.). This article focuses on Avi sites.
+As mentioned in <a href="/gslb-architecture-and-object-model/">Avi GSLB Architecture</a>, GSLB sites fall into two broad categories — **Avi sites** and **external sites** (e.g., running third-party ADCs from vendors such as F5, Citrix, etc.). This article focuses on Avi sites.
 
-Each Avi site is characterized as either **active** or a **passive**. Active sites synchronize the GSLB site configuration among themselves. They also query passive sites to obtain information about the health of those sites. Passive sites host local virtual services, but do not host any GSLB service configuration. Neither do passive sites monitor the health of other sites.
+Each Avi site is characterized as either **active** or a **passive**. Active sites synchronize the GSLB site configuration among themselves. They also query all Avi sites to ascertain the health of those sites. Passive sites host local virtual services, but do not host any GSLB service configuration. Neither do passive sites monitor the health of other sites.
 
-Active sites are further classified into two types — **GSLB leader **and **f****ollowers**. Exactly one of the active sites — the one from which the initial GSLB site configuration is performed, is statically designated as the GSLB leader. GSLB site configuration changes are permitted only on the leader. The only way to switch the leader would be through an override configuration of the leader from a follower site. This override can be invoked in the case of site failures/maintenance.
+Active sites are further classified into two types — **GSLB leader **and **f****ollowers**. Exactly one of the active sites — the one from which the initial GSLB site configuration is performed, is designated as the GSLB leader. GSLB site configuration changes are permitted only on the leader. The only way to switch the leader is by overriding the configuration of the leader from a follower site. This override can be invoked in the case of site failures or for maintenance.
 
-Centralized analytics are available from the GSLB leader site. Localized metrics and logs are available for the DNS services hosting the GSLB records.
+Centralized analytics are only available from the GSLB leader site. Localized metrics and logs are available for the DNS services hosting the GSLB records.
 
 <a href="img/ActivePassiveSite-1.png"><img class="alignnone size-full wp-image-16815" src="img/ActivePassiveSite-1.png" alt="Active/Passive Site" width="1312" height="535"></a>
 
-In the above example, Santa Clara, Chicago, Austin and NY are active sites while Boston is a passive site. Among the active sites, Santa Clara performs the function of GSLB leader, redirecting DNS queries to the appropriate followers (Chicago, Austin and NY).
+In the above example, Santa Clara, Chicago, and NY-1 are active sites, as indicated by the orange oval around the Controller icons. Boston, Austin and NY-2 are passive sites, as the grey ovals depict. Santa Clara is the GSLB leader; all others are followers.
 
-## Site Failure Handling
+### Failure Scenarios
 
-Two failure cases need to be considered:
+Avi Vantage's behavior after a failure in a GSLB deployment will vary depending on whether the failure is 
+<ol> 
+ <li>At a leader site or one of the followers, and</li> 
+ <li>Of the entire site or just the Avi Controller.</li> 
+</ol> 
 
-* GSLB leader site fails
-* A follower site fails 
+### Follower Site Failures
 
-<a href="img/site-failure-handling.png"><img class="size-full wp-image-17698 aligncenter" src="img/site-failure-handling.png" alt="Site failure handling" width="1263" height="440"></a>
+A full-site failure at the NY follower site is depicted below.
+
+<a href="img/site-failure-handling.png"><img class="aligncenter wp-image-17698" src="img/site-failure-handling.png" alt="Follower site failure handling" width="800" height="279"></a>
 
  
+<ol> 
+ <li><span style="font-weight: 400;">The leader and Chicago Controllers detect the failure.</span></li> 
+ <li><span style="font-weight: 400;">Administrative changes to the GSLB configuration continue to be possible on the leader, but they will not make it to the NY site. Central analytics continue to be accessible, albeit without any contribution from NY.</span></li> 
+ <li><span style="font-weight: 400;">Both control-plane and data-plane health monitors will mark NY's GS members DOWN. [Read more about control- and data-plane health in <a href="/avi-gslb-service-and-health-monitors/">Avi GSLB Sergice and Health Monitors</a>.)</span></li> 
+ <li>Global application service will continue on the two surviving sites.</li> 
+</ol> 
 
-In both cases, DNS services marks all GS members of the failed site as DOWN. In the above example, NY site has crashed while Santa Clara (GSLB Leader) and Chicago sites are still functioning.
+If only the Avi Controller at the NY site fails, 
 
-If only the Avi Controller fails, the GS members are tagged depending upon the GS Health Monitors:
+<ol> 
+ <li>The leader and Chicago Controllers detect the failure via their control-plane monitors. Central analytics continue to be accessible, albeit without any contribution from NY.</li> 
+ <li>Any administrative changes made on the leader will not make it to the NY site.</li> 
+ <li>Data-plane health monitors running in Santa Clara and Chicago will continue to perceive NY's members as UP.</li> 
+ <li>Global application service will continue on all three sites.</li> 
+</ol> 
 
-<table class="table table-hover table table-bordered table-hover">  
-<tbody>    
-<tr>   
-<td><b>GS Member Status</b></td>
-<td><b>GS Health Monitors</b></td>
-</tr>
-<tr>   
-<td><span style="font-weight: 400;">DOWN</span></td>
-<td><span style="font-weight: 400;">Control Plane HM</span></td>
-</tr>
-<tr>   
-<td><span style="font-weight: 400;">UP</span></td>
-<td><span style="font-weight: 400;">Data Plane HM or Control Plane HM or both</span></td>
-</tr>
-</tbody>
-</table> 
+### Follower Site Recovery
 
-In case of GSLB follower site failure, the GSLB configuration is synchronized with currently UP site. In case only the follower Controller fails, then the site’s DNS server will not receive GSLB configuration updates.
+<ol> 
+ <li>The leader Controller detects connectivity to the follower Controller at NY. The latest configuration will be pushed to it.</li> 
+ <li>Other active sites will likewise detect successful connectivity to the NY follower Controller as a result of their control-plane health monitors.</li> 
+ <li>If the data-plane never went down, no more need be done.</li> 
+ <li>If data-plane monitors for NY's GS members had been configured and previously marked NY's GS members as DOWN, NY's members will be marked UP and traffic to them will resume only after those data-plane monitors once again perceive good health.</li> 
+</ol> 
 
-In case of GSLB leader site failure, no modification can be made to the GSLB configuration.
+### Leader Site Failures
 
-### Site Failure recovery
+A full-site failure at the Santa Clara leader site is depicted below .
 
-All active sites detect successful connection to a follower through control-plane healthmonitor updates. In case of contol plane healthmonitors, active sites query all the other sites to fetch health and load information of all virtual services which are behind GSLB services.
+<a href="img/leader_site_failure.png"><img class="aligncenter wp-image-21814" src="img/leader_site_failure.png" alt="Avi GSLB leader site failure" width="800" height="289"></a>
 
-DNS services then updates the GS member status of the recovered sites as UP or DOWN based on the GS health monitors.
+<ol> 
+ <li><span style="font-weight: 400;">As they are active sites, both Chicago and NY detect the failure.</span></li> 
+ <li><span style="font-weight: 400;">No administrative changes to the GSLB configuration can be made. There is no access to central analytics.</span></li> 
+ <li><span style="font-weight: 400;">Both control-plane and data-plane health monitors will mark Santa Clara's GS members DOWN.</span></li> 
+ <li>Global application service will continue on the two surviving sites.</li> 
+</ol> 
 
-* Follower Site Recovery 
+If only the leader Avi Controller at the Santa Clara site fails, 
 
-GSLB leader detects successful connectivity to follower and updates it with the updated GSLB configuration
+<ol> 
+ <li>As they are active sites, both Chicago and NY detect the Controller failure via their control-plane health monitors.</li> 
+ <li><span style="font-weight: 400;">No administrative changes to the GSLB configuration can be made. There is no access to central analytics.</span></li> 
+ <li>Data-plane health monitors running in Chicago and NY will continue to perceive Santa Clara's members as UP.</li> 
+ <li>Global application service will continue on all three sites.</li> 
+</ol> 
 
-* Leader Site Recovery 
+### Leader Site Change
 
-Only an admin can resume updates to the GSLB configuration.
+In neither of the above leader-site failure scenarios is a new leader designated; there is no automatic re-election process involved. This is an optional and manual operation that can be performed at any active follower site, either to restore the ability to lead, or for the sake of site maintenance. Both Chicago and NY qualify as potential leaders. From either the steps would be:
+<ol> 
+ <li>A GSLB admin logs into the follower Controller and commands it to become the new leader. Until it becomes the leader it is the so-called "leader-designate."</li> 
+ <li>A take-over message is propagated to all other Avi sites, apprising them of the change in command.</li> 
+ <li>Should the prior leader (Santa Clara) come back up, it assumes the role of a follower as a result of the take-over message that had been queued for transmission during its downtime.</li> 
+</ol> 
 
-### Change the GSLB Leader
-
-The GSLB leader may needed to change due to various reasons such as failure of the current leader or scheduled maintenance. However, there is no reelection process involved in selecting the new GSLB leader. That is, any follower site can take over as the new leader. To become the leader, the follower site must first log in into the leader-designate Controller and take over as leader. Then a “take-over” message is broadcast to all GSLB members. Now, configuration can successfully be done from the new leader. Even if the previous leader comes back, the “take-over”message forces the site to participate as a follower.
+ 
 
 <a href="img/change-gslb-leader.png"><img class="size-full wp-image-17701 aligncenter" src="img/change-gslb-leader.png" alt="Change gslb leader" width="851" height="285"></a>
 
 ### Network Partitioning
 
-Network partitioning (aka the split brain scenario) occurs due to network failure which may be caused by failures or outages in the Internet or VPN infrastructure across the sites. In case of network failure, each site updates the GS member state based on control-plane and data-plane health monitors. Both parts of the network act as independent and exclusive subnetworks.
+Network partitioning (a kind of "split brain") occurs due to failures or outages in the Internet or VPN infrastructure between the sites. In case of network failure, each site updates the GS member state based on control-plane and data-plane health monitors. Both parts of the network act as independent and exclusive subnetworks.
 
 <a href="img/network-partitioning.png"><img class="size-full wp-image-17704 aligncenter" src="img/network-partitioning.png" alt="Network partitioning" width="868" height="303"></a>
 
-Hence, each site responds to DNS queries with only members to which that site has connectivity. In the above example, DNS queries to Santa Clara receive vip-1, while DNS queries to Chicago or NY receive vip-3/vip-6.
+Hence, each site responds to DNS queries using only the members to which it has connectivity. In the above example, DNS queries to Santa Clara would be resolved to steer clients to vip-1, while DNS queries to Chicago or NY would steer clients to either vip-3 or vip-6.
 
-Assuming a network-wide partition, clients from the West get the same response as clients from the East.
+Santa Clara remains the leader during the network outage, notwithstanding its inaccessibility to access the other two Avi sites. No new leader is automatically elected on the other network partition.
 
-## Configuration of GSLB Sites
+### Configuration of GSLB Sites
 
-****1. Set up the individual Controller clusters****
+****1. Set up the individual Avi Controller clusters****
 
-Create two or more Controller clusters (two in this example), and run through the initial system configuration steps. In the example, the two Controllers are Santa Clara (10.10.25.10) and Boston (10.160.0.20). Each of the Controller clusters could be a 1-node or a 3-node cluster. For this beta, please restrict to two GSLB sites.
+Create two or more Controller clusters (two in this example), and run through the initial system configuration steps. In the below scenario the two Controllers will be Santa Clara (10.10.25.10) and Boston (10.160.0.20). Each of the Controller clusters could be a 1-node (test & development) or a 3-node (production) cluster. 
 
-[The recommended practice is to set up an admin user account for GSLB configuration, for better audit trails. Create a user ‘gslb’ with admin roles in all the Controller clusters.]
+Note: For better audit trails, the recommended practice is to set up an admin user account for GSLB configuration. Create a user named ‘gslb’ and assign it admin roles in all the Controller clusters.
 
-****2. Configure local DNS virtual service on all active sites that host DNS.****
+****2. <a></a>Configure local DNS virtual service on all active sites that host DNS****
 
 Configure a DNS virtual service on all the clusters where the DNS service needs to be hosted, bound to the g-dns se-group.
 
 In 16.3, the DNS virtual services need to be exclusively allocated their own Service Engine group.
 
-Configure a new Service Engine group to host the DNS virtual service (referred to as g-dns se-group), on **both **Controller clusters. This configuration is done from Infrastructure -> Cloud -> Service Engine Group<a href="img/configure-local-DNS-5.png"><img class="alignnone size-full wp-image-16875" src="img/configure-local-DNS-5.png" alt="configure local DNS" width="1071" height="670"></a>
+Configure a new Service Engine group to host the DNS virtual service (referred to as g-dns se-group), on **both **Controller clusters. This configuration is done from Infrastructure -> Cloud -> Service Engine Group<a href="img/configure-local-DNS-5.png"><img class="aligncenter wp-image-16875" src="img/configure-local-DNS-5.png" alt="configure local DNS" width="800" height="500"></a>
 
 In SantaClara (10.10.25.10):
 
@@ -104,25 +123,25 @@ Configure a DNS virtual service on all the clusters where the DNS service needs 
 
 Use Advanced setup:
 
-<a href="img/advanced-configurations.png"><img class="alignnone size-full wp-image-16883" src="img/advanced-configurations.png" alt="advanced configurations" width="1823" height="151"></a>
+<a href="img/advanced-configurations.png"><img class="aligncenter wp-image-16883" src="img/advanced-configurations.png" alt="advanced configurations" width="900" height="75"></a>
 
  
 
-Configure a DNS virtual-service.
+Configure a DNS virtual service.
 
-<a href="img/advance-setup-steptwo.png"><img class="alignnone size-full wp-image-16886" src="img/advance-setup-steptwo.png" alt="advance setup-stepTwo" width="1064" height="670"></a>
-
- 
-
-<a href="img/configure-local-DNS_stepTwo.png"><img class="alignnone size-full wp-image-16896" src="img/configure-local-DNS_stepTwo.png" alt="configure local DNS_stepTwo" width="1060" height="669"></a>
+<a href="img/advance-setup-steptwo.png"><img class="aligncenter wp-image-16886" src="img/advance-setup-steptwo.png" alt="advance setup-stepTwo" width="800" height="504"></a>
 
  
 
-<a href="img/configure-local-DNS_stepThree.png"><img class="alignnone size-full wp-image-16899" src="img/configure-local-DNS_stepThree.png" alt="configure local DNS_stepThree" width="1051" height="659"></a>
+<a href="img/configure-local-DNS_stepTwo.png"><img class="aligncenter wp-image-16896" src="img/configure-local-DNS_stepTwo.png" alt="configure local DNS_stepTwo" width="800" height="505"></a>
 
  
 
-<a href="img/configure-local-DNS_stepFour.png"><img class="alignnone size-full wp-image-16902" src="img/configure-local-DNS_stepFour.png" alt="configure local DNS_stepFour" width="1073" height="669"></a>
+<a href="img/configure-local-DNS_stepThree.png"><img class="aligncenter wp-image-16899" src="img/configure-local-DNS_stepThree.png" alt="configure local DNS_stepThree" width="800" height="502"></a>
+
+ 
+
+<a href="img/configure-local-DNS_stepFour.png"><img class="aligncenter wp-image-16902" src="img/configure-local-DNS_stepFour.png" alt="configure local DNS_stepFour" width="800" height="499"></a>
 
  
 
@@ -130,21 +149,21 @@ On 10.160.0.20 (Boston):
 
 Use Advanced setup:
 
-<a href="img/BostonAdvancedSetup.png"><img class="alignnone size-full wp-image-16905" src="img/BostonAdvancedSetup.png" alt="BostonAdvancedSetup" width="1823" height="151"></a>
+<a href="img/BostonAdvancedSetup.png"><img class="aligncenter wp-image-16905" src="img/BostonAdvancedSetup.png" alt="Boston Advanced Setup" width="900" height="75"></a>
 
-Configure a DNS virtual-service.
+Configure a DNS virtual service.
 
-<a href="img/configure-local-DNS_Boston.png"><img class="alignnone size-full wp-image-16908" src="img/configure-local-DNS_Boston.png" alt="configure local DNS_Boston" width="1434" height="485"></a>
+<a href="img/configure-local-DNS_Boston.png"><img class="aligncenter wp-image-16908" src="img/configure-local-DNS_Boston.png" alt="configure local DNS_Boston" width="800" height="271"></a>
 
  
 
-Go through the next 3 tabs, and save the virtual service.
+Go through the next 3 tabs (Rules, Analytics, Advanced), and save the virtual service.
 
 ****3. Configure local application virtual services****
 
 Create application virtual services normally. For example, create an HTTP virtual service vs-1 in Controller cluster 1, and virtual-service vs-2 in Controller cluster 2.
 
-See <a href="/docs/16.3/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
+See <a href="/docs/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
 
 On 10.10.25.10 (Santa Clara):
 
@@ -156,16 +175,16 @@ On 10.160.0.20 (Boston):
 
  
 
-****4. Designate GSLB leader Controller, and add site configuration****
+****4. Designate the GSLB leader Controller, and add site configuration****
 
 Choose one of the Controller clusters as the leader, and perform GSLB configuration on this Controller. In the sample topology, the Santa Clara site (10.10.25.10) is chosen as the GSLB leader.
 <ol> 
- <li><span style="font-weight: 400;">Go to Infrastructure -&gt; GSLB</span> <a href="img/GSLB_one.png"><img class="alignnone size-full wp-image-16922" src="img/GSLB_one.png" alt="GSLB_one" width="1413" height="215"></a></li> 
- <li><span style="font-weight: 400;">Edit and create the GSLB leader site</span><a href="img/GSLB_two.png"><img class="size-full wp-image-16924 aligncenter" src="img/GSLB_two.png" alt="GSLB_two" width="696" height="751"></a>After successful configuration, the following screen appears:<a href="img/GSLB_three.png"><img class="size-full wp-image-16926 aligncenter" src="img/GSLB_three.png" alt="GSLB_three" width="1880" height="407"></a></li> 
- <li><span style="font-weight: 400;">Add second site, by clicking on ‘Add New’</span></li> 
+ <li><span style="font-weight: 400;">Go to Infrastructure -&gt; GSLB</span> <a href="img/GSLB_one.png"><img class="aligncenter wp-image-16922" src="img/GSLB_one.png" alt="GSLB_one" width="900" height="137"></a></li> 
+ <li><span style="font-weight: 400;">Edit and create the GSLB leader site</span><a href="img/GSLB_two.png"><img class="size-full wp-image-16924 aligncenter" src="img/GSLB_two.png" alt="GSLB_two" width="696" height="751"></a>After successful configuration, the following screen appears. In the Type column, "Owner" should be interpreted as "Leader."<a href="img/GSLB_three.png"><img class="aligncenter wp-image-16926" src="img/GSLB_three.png" alt="GSLB_three" width="900" height="195"></a></li> 
+ <li><span style="font-weight: 400;">Add the second site by clicking ‘Add New’</span></li> 
 </ol> 
 
-<a href="img/GSLB_four.png"><img class="alignnone size-full wp-image-16928" src="img/GSLB_four.png" alt="GSLB_four" width="756" height="508"></a>
+<a href="img/GSLB_four.png"><img class="size-full wp-image-16928 aligncenter" src="img/GSLB_four.png" alt="GSLB_four" width="756" height="508"></a>
 
  
 
@@ -181,48 +200,46 @@ For sites that have a DNS virtual service, press ‘Save and Set DNS Virtual Ser
 
  
 
-<a href="img/Save-and-Set-DNS-Virtual-Services2.png"><img class="size-full wp-image-17670 aligncenter" src="img/Save-and-Set-DNS-Virtual-Services2.png" alt="Save and Set DNS Virtual Services2" width="1434" height="443"></a>
+<a href="img/Save-and-Set-DNS-Virtual-Services2.png"><img class="aligncenter wp-image-17670" src="img/Save-and-Set-DNS-Virtual-Services2.png" alt="Save and Set DNS Virtual Services2" width="900" height="278"></a>
 
  
 
 At this point, the two sites are talking to each other, and configuration synchronization is enabled.
 
-**Errors**
+### Site Configuration Errors
 
-Errors in site configuration — ip-address, credentials, etc. show up when the site information is saved. 
-
-Sample error screens:
+Errors in site configuration — ip-address, credentials, and the like — show up when the site information is saved. Some sample error screens follow.
 
 Authentication failure
 
-<a href="img/Authentication-failed.png"><img class="size-full wp-image-17672 aligncenter" src="img/Authentication-failed.png" alt="Authentication failed" width="1030" height="397"></a>
+<a href="img/Authentication-failed.png"><img class="aligncenter wp-image-17672" src="img/Authentication-failed.png" alt="Authentication failed" width="800" height="308"></a>
 
  
 
-Max Retry login failure:
+Max retry login failure
 
-<a href="img/MaxRetryError.png"><img class="size-full wp-image-17678 aligncenter" src="img/MaxRetryError.png" alt="MaxRetryError" width="1052" height="446"></a>
-
- 
-
-HTTP 400 error:
-
-<a href="img/http-error.png"><img class="alignnone size-full wp-image-17682" src="img/http-error.png" alt="HTTP 400 error" width="1041" height="428"></a>
+<a href="img/MaxRetryError.png"><img class="aligncenter wp-image-17678" src="img/MaxRetryError.png" alt="MaxRetryError" width="800" height="339"></a>
 
  
 
-**Validation**
+HTTP 400 error
+
+<a href="img/http-error.png"><img class="aligncenter wp-image-17682" src="img/http-error.png" alt="HTTP 400 error" width="800" height="329"></a>
+
+ 
+
+### Validating the GSLB Configuration
 
 In the secondary site (Boston), check the GSLB page, and make sure that the site configuration shows up.
 
 <a href="https://10.160.0.20/#/authenticated/administration/gslb"><span style="font-weight: 400;">https://10.160.0.20/#/authenticated/administration/gslb</span></a>
 
-<a href="img/GSLB-validation.png"><img class="size-full wp-image-17685 aligncenter" src="img/GSLB-validation.png" alt="GSLB validation" width="1417" height="494"></a>
+<a href="img/GSLB-validation.png"><img class="aligncenter wp-image-17685" src="img/GSLB-validation.png" alt="GSLB validation" width="800" height="279"></a>
 <ol start="5"> 
  <li><b> Configure routes to make sure that the DNS virtual service has accessibility to local virtual services</b></li> 
 </ol> 
 
-The DNS Service Engine monitors the health of the GSLB service members. Add static routes (or default gateway) to make sure that the members are reachable.(See KB article for more details).
+The DNS Service Engine monitors the health of the GSLB service members. Add static routes (or default gateway) to make sure that the members are reachable.
 
 <a href="img/local-vs.png"><img class="size-full wp-image-17688 aligncenter" src="img/local-vs.png" alt="local vs" width="1532" height="296"></a>
 
@@ -236,29 +253,25 @@ On 10.160.0.20 (Boston):
 
  
 
-# CLI-Based Configuration
+### CLI-Based Configuration
 
  
 
 ****1. Set up the Controller clusters****
 
- 
-
 **Current limitations:**
 
-- All member Controller clusters have to be set up completely, before starting any GSLB configuration. If GSLB configuration is made, and a new Controller is added, configuration is not [yet] synced to the new Controller.
+- All member Controller clusters have to be set up completely, before starting any GSLB configuration. If GSLB configuration is made, and a new Controller is added, the configuration is not [yet] synced to the new Controller.
 
 ****2. Designate GSLB leader Controller, and create global configuration****
-
- 
 
 Create GSLB global configuration:
 
 Example: two Controller clusters (10.10.25.10 and 10.160.0.25)
 
-10.10.25.10 is the designated GSLB Leader. So, create the configuration in the GSLB leader.
+10.10.25.10 is the designated GSLB leader. So, create the configuration in the GSLB leader.
 
-Find the cluster-ids of both Controller clusters.
+Find the cluster uuids of both Controller clusters.
 
 On 10.10.25.10:
 
@@ -355,7 +368,7 @@ From the UI or CLI, create an application profile that selects the domain names 
 
 Create application virtual services normally. For example, create an HTTP virtual service vs-1 in Controller cluster 1, and virtual-service vs-2 in Controller cluster 2.
 
-See <a href="/docs/16.3/configuration-guide/applications/virtual-services/">Configuring Virtual Services</a> for more details.
+See <a href="/docs/configuration-guide/applications/virtual-services/">Configuring Virtual Services</a> for more details.
 
 **5. Configure health monitor for GSLB Services**
 
@@ -479,7 +492,7 @@ From the UI or CLI, create an application profile that selects the domain names 
 
 Delegate avi.com to the Avi GSLB
 
-To try this out in the lab, dnsmasq was installed on the clients, and the following entries added:
+To try this out in the lab, <code>dnsmasq</code> was installed on the clients, and the following entries added:
 
 On client 1:
 
@@ -495,6 +508,7 @@ server=/avi.com/10.160.110.100
 
 server=/avi.com/10.10.25.10
 
+<code></code>
 **10. Troubleshooting**
 
 <pre><code class="language-lua">: &gt; show virtualservice colo-dns dnstable
