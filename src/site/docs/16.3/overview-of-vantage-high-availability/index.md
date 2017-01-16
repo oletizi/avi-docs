@@ -10,7 +10,7 @@ To ensure the highest level of uptime for a site, including through <a href="/d
 HA for Avi SEs and HA for Avi Controllers are separate features and are configured separately. HA for Avi Controllers is a system administration setting. HA for Avi SEs is an SE group setting.
 <a name="control-plane-HA"></a>
 
-Note: To ensure application availability in the presence of whole-site failures, Avi recommends use of Avi GSLB, an overview for which is available <a href="/avi-gslb-overview/">here</a>.
+Note: To ensure application availability in the presence of whole-site failures, Avi recommends use of Avi GSLB, an overview for which is available <a href="/docs/16.3/avi-gslb-overview/">here</a>.
 
 ## Control Plane High Availability
 

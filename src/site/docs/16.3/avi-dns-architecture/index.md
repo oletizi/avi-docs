@@ -16,10 +16,10 @@ This article covers that functionality, three architectural variants, features
 
 The Avi DNS virtual service can host GSLB service DNS entries, and automatically update its responses based on factors such as application service health, service load and proximity of clients to sites implementing the application service. In so doing, it provides essential load-balancing functionality required by global applications. Details of Avi GSLB are available in these articles:
 
-* <a href="/avi-gslb-overview/">Avi GSLB Overview</a>
-* <a href="/gslb-architecture-and-object-model/">Avi GSLB Architecture and Object Model</a>
-* <a href="/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>
-* <a href="/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a> 
+* <a href="/docs/16.3/avi-gslb-overview/">Avi GSLB Overview</a>
+* <a href="/docs/16.3slb-architecture-and-object-model/">Avi GSLB Architecture and Object Model</a>
+* <a href="/docs/16.3/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>
+* <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a> 
 
 ### 2. Virtual Service IP Address DNS Hosting
 
@@ -135,6 +135,6 @@ DNS virtual service configuration is available in Administration -> Settings ->
 
 <a href="img/Screen-Shot-2016-12-31-at-3.41.52-PM.png"><img class="alignnone size-full wp-image-21990" src="img/Screen-Shot-2016-12-31-at-3.41.52-PM.png" alt="Screen Shot 2016-12-31 at 3.41.52 PM" width="894" height="273"></a>
 
-For more information on configuration steps for DNS virtual services, please refer to<a href="/avi-gslb-site-configuration-and-operations#configure-local-dns-vs"> configure local DNS virtual service on all active sites that host DNS</a>.
+For more information on configuration steps for DNS virtual services, please refer to<a href="/docs/16.3vi-gslb-site-configuration-and-operations#configure-local-dns-vs"> configure local DNS virtual service on all active sites that host DNS</a>.
 
  

@@ -63,7 +63,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### IPAM/DNS
 
-* <a href="/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
+* <a href="/docs/16.3/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
 * Comprehensive support for <a href="/service-discovery-using-ipam-and-dns-16-3/">IPAM/DNS services</a>, including integrated Avi Vantage IPAM/DNS, Infoblox, and cloud-native solutions across all cloud infrastructures 
 
 ### Networking
@@ -95,8 +95,8 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### Analytics
 
-* <a href="/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
+* Ability to disable "Significant Logs" in <a href="/docs/16.3/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 
@@ -110,7 +110,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 * <a href="/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
 * <a href="/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
-* API: <a href="/api-http-patch-support-163/">Nested PATCH support for multi-nested HttpReqRule</a> 
+* API: <a href="/docs/16.3/api-http-patch-support-163/">Nested PATCH support for multi-nested HttpReqRule</a> 
 
 ### DataScript
 
@@ -142,9 +142,9 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 16.2 or later.
 
-<a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/16.3/upgrading-the-vantage-software/">Upgrade Instructions</a>
 
-<a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/16.3/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ### Supported Platforms
 

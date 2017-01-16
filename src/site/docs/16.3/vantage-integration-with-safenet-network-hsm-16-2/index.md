@@ -2,7 +2,7 @@
 title: Avi Vantage Integration with SafeNet Network HSM (16&#46;2)
 layout: default
 ---
-**Note: Users of more recent releases of Avi Vantage than 16.2.2 are invited to instead read <a href="/avi-vantage-integration-with-safenet-network-hsm-16-2-3">Avi Vantage Integration with SafeNet Network HSM (16.2.3)</a> or <a href="/avi-vantage-integration-with-safenet-hsm-16-3-2/">Avi Vantage Integration with SafeNet HSM (16.3.2+)</a>.**
+**Note: Users of more recent releases of Avi Vantage than 16.2.2 are invited to instead read <a href="/avi-vantage-integration-with-safenet-network-hsm-16-2-3">Avi Vantage Integration with SafeNet Network HSM (16.2.3)</a> or <a href="/docs/16.3/avi-vantage-integration-with-safenet-hsm-16-3-2/">Avi Vantage Integration with SafeNet HSM (16.3.2+)</a>.**
 
 ****
 

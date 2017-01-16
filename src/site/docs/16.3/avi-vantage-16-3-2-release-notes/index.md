@@ -8,8 +8,8 @@ This article describes the enhancements and fixes in Avi Vantage release 16.3.2.
 
 This section summarizes the enhancements in 16.3.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
-* <a href="/installing-avi-vantage-for-csp-2100/#dedicated-hsm-network.">Support in a CSP configuration for a dedicated HSM network</a>
-* <a href="/mac-masquerade/">Support for a floating MAC address for back-end connectivity when in legacy active/standby mode</a>
+* <a href="/docs/16.3/installing-avi-vantage-for-csp-2100/#dedicated-hsm-network.">Support in a CSP configuration for a dedicated HSM network</a>
+* <a href="/docs/16.3/ac-masquerade/">Support for a floating MAC address for back-end connectivity when in legacy active/standby mode</a>
 * Support for up to 2048 service ports in a virtual service
 * Support for Ubuntu 16.04 and 16.04.1 in Linux server cloud 
 
@@ -50,14 +50,14 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### Core ADC Features
 
-* <a href="/avi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
+* <a href="/docs/16.3/vi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
 * <a href="/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
 * Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
 * Ability to forward <a href="/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
 
 ### IPAM/DNS
 
-* <a href="/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
+* <a href="/docs/16.3/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
 * Comprehensive support for <a href="/service-discovery-using-ipam-and-dns-16-3/">IPAM/DNS services</a>, including integrated Avi Vantage IPAM/DNS, Infoblox, and cloud-native solutions across all cloud infrastructures 
 
 ### Networking
@@ -89,8 +89,8 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### Analytics
 
-* <a href="/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
+* Ability to disable "Significant Logs" in <a href="/docs/16.3/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 
@@ -104,7 +104,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 * <a href="/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
 * <a href="/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
-* API: <a href="/api-http-patch-support-163/">Nested PATCH support for multi-nested HttpReqRule</a> 
+* API: <a href="/docs/16.3/api-http-patch-support-163/">Nested PATCH support for multi-nested HttpReqRule</a> 
 
 ### DataScript
 
@@ -136,9 +136,9 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 16.2 or later.
 
-<a href="/2016/03/07/upgrading-the-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/16.3/upgrading-the-vantage-software/">Upgrade Instructions</a>
 
-<a href="/2016/02/02/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/16.3/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ### Supported Platforms
 
