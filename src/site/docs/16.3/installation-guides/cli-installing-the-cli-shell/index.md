@@ -9,7 +9,7 @@ Avi Vantage can be managed through the web interface, REST API, or command line 
 The CLI shell provides access to the Avi Controller through a PC client version of the Controller’s CLI. Two versions of the CLI shell installation package are available:
 
 * **avi_shell**-16.1.5000.tar.gz (or later): Can be used with all infrastructure types. If installing this version of the CLI shell, continue with this article. 
-* **avi_lbaas**-16.1.9014.tar.gz (or later): Can be used if the infrastructure type is OpenStack, and Keystone support is enabled. (This is an option during initial Avi Controller setup and also can be configured later.) To install this version of the CLI shell, <a href="/docs/16.3/installing-the-lbaas-driver-cli-shell-openstack/">go here</a> instead. 
+* **avi_lbaas**-16.1.9014.tar.gz (or later): Can be used if the infrastructure type is OpenStack, and Keystone support is enabled. (This is an option during initial Avi Controller setup and also can be configured later.) To install this version of the CLI shell, <a href="/docs/16.3/installation-guides/installing-the-lbaas-driver-cli-shell-openstack/">go here</a> instead. 
 
 ### Requirements to enable remote CLI shell
 
@@ -49,7 +49,7 @@ sudo apt-get install python-pip</code></pre> <a name="shell-install"></a>
 ## Installing the CLI Shell on Linux or Mac
 
 This section provides steps for installing the Vantage CLI shell onto the Linux or Macintosh. The steps are the same for either OS.
-> Note: If installing a CLI shell to manage an OpenStack write access mode deployment with Keystone support enabled, <a href="/docs/16.3/installing-the-lbaas-driver-cli-shell-openstack/">go here</a> instead.
+> Note: If installing a CLI shell to manage an OpenStack write access mode deployment with Keystone support enabled, <a href="/docs/16.3/installation-guides/installing-the-lbaas-driver-cli-shell-openstack/">go here</a> instead.
  <ol> 
  <li>Install pip, if not already installed.</li> 
  <li>Install virtualenv, if not already installed:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo pip install virtualenv

@@ -17,7 +17,7 @@ This article covers that functionality, three architectural variants, features
 The Avi DNS virtual service can host GSLB service DNS entries, and automatically update its responses based on factors such as application service health, service load and proximity of clients to sites implementing the application service. In so doing, it provides essential load-balancing functionality required by global applications. Details of Avi GSLB are available in these articles:
 
 * <a href="/docs/16.3/avi-gslb-overview/">Avi GSLB Overview</a>
-* <a href="/docs/16.3slb-architecture-and-object-model/">Avi GSLB Architecture and Object Model</a>
+* <a href="/docs/16.3/avi-gslb-architecture/">Avi GSLB Architecture and Object Model</a>
 * <a href="/docs/16.3/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>
 * <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a> 
 

@@ -10,7 +10,7 @@ layout: default
 
 Avi Vantage includes support for networked hardware security module (HSM) products, including SafeNet Network HSM and Thales nShield.
 
-This article covers the SafeNet Network HSM (formerly Luna SA) integration. For Thales nShield support, see <a href="/docs/16.3/hales-nshield-integration-2/">here</a>.
+This article covers the SafeNet Network HSM (formerly Luna SA) integration. For Thales nShield support, see <a href="/docs/16.3/thales-nshield-integration-2/">here</a>.
 
 This article describes how to configure Avi Vantage to use the key generation and encryption/decryption services provided by SafeNet Network HSM. This enables use of SafeNet Network HSM to store keys associated with SSL/TLS resources configured on a virtual service.
 <a name="multiple-HSM-profiles"></a>

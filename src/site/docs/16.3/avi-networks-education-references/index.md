@@ -266,7 +266,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>IPAM Provider (AWS)<br> <a href="/docs/16.3/ipam-and-dns-provider-aws">/ipam-and-dns-provider-aws/</a></li> 
  <li>IPAM and DNS Provider (Infoblox)<br> <a href="/docs/16.3/ipam-and-dns-provider-infoblox">/ipam-and-dns-provider-infoblox/</a></li> 
  <li>Service Discovery using Avi Vantage as IPAM and DNS Provider<br> <a href="/docs/16.3/ipam-and-dns-provider-avi-vantage">/ipam-and-dns-provider-avi-vantage/</a></li> 
- <li>Avi Vantage OpenShift Installation Guide<br> <a href="/docs/16.3/avi-vantage-openshift-installation-guide">/avi-vantage-openshift-installation-guide/</a></li> 
+ <li>Avi Vantage OpenShift Installation Guide<br> <a href="/docs/16.3/installation-guides/avi-vantage-openshift-installation-guide">/installation-guides/avi-vantage-openshift-installation-guide/</a></li> 
  <li>Deploy Vantage with Lync 2013<br> <a href="/docs/16.3/deploy-vantage-with-lync-2013">/deploy-vantage-with-lync-2013/</a></li> 
  <li>TACACS+ Configuration Examples<br> <a href="/docs/16.3/tacacs-configuration-examples">/tacacs-configuration-examples/</a></li> 
  <li>Connection Multiplexing<br> <a href="/docs/16.3/connection-multiplex">/connection-multiplex/</a></li> 

@@ -18,7 +18,7 @@ Note that the tenant and role information from Keystone is imported only when a 
 
 ## Avi Vantage-Keystone Integration Overview
 
-For authentication, Keystone v2.0 has the concept of “users,” “projects” (also, alternatively referred to as “tenants”), and “roles.” A user can have one or more roles in one or more projects. Other services of OpenStack have their own policies to define the privileges of each role. Please refer to <a href="/docs/16.3/eystone-authentication/">Keystone Authentication</a> for details on how Avi Vantage imports the users, projects, and roles information from Keystone and map to Avi Vantage users, tenants, and roles objects, respectively.
+For authentication, Keystone v2.0 has the concept of “users,” “projects” (also, alternatively referred to as “tenants”), and “roles.” A user can have one or more roles in one or more projects. Other services of OpenStack have their own policies to define the privileges of each role. Please refer to <a href="/docs/16.3/keystone-authentication/">Keystone Authentication</a> for details on how Avi Vantage imports the users, projects, and roles information from Keystone and map to Avi Vantage users, tenants, and roles objects, respectively.
 
 Keystone v3.0 introduces an additional concept of “domains.” A “domain” defines the administrative boundaries for management of Keystone entities (“user” and “project”). A “user” or “project” thus belongs to one and only one domain. Each domain has a unique name. However, the same user name, e.g., “demo”, can exist in multiple domains. To be compatible with Keystone v2.0 APIs, v3.0 creates a default domain with name “Default” and all “users” and “projects” that are accessible under Keystone v2.0 APIs are placed under this default domain.
 

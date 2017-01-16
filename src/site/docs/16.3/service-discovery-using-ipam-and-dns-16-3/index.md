@@ -198,7 +198,7 @@ IPAM and/or DNS profiles can be configured to use the following providers:
 * <a href="/docs/16.3/avi-vantage-ipam/">Avi Vantage IPAM</a>
 * <a href="/docs/16.3/dns-provider-avi-vantage-16-3">Avi Vantage DNS</a>
 * <a href="/docs/16.3/ipam-provider-aws-16-3/">AWS IPAM </a>
-* <a href="/docs/16.3/ipam-services-for-applications-running-on-instances-in-google-cloud-platform/">GCP IPAM</a>
+* <a href="/docs/16.3/ipam-provider-gcp-16-3/">GCP IPAM</a>
 * <a href="/docs/16.3/ipam-and-dns-provider-infoblox-16-3/">Infoblox IPAM and DNS</a>
 * <a href="/docs/16.3/ipam-provider-openstack-16-3/">OpenStack IPAM</a> 
 

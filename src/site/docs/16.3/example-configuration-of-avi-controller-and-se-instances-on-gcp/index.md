@@ -4,7 +4,7 @@ layout: default
 ---
 Refer to <a href="https://cloud.google.com/docs/">Google Cloud Platform documentation</a> for Google's latest and detailed information regarding configuration of instances.
 
-This article is referenced by <a href="/docs/16.3/ipam-services-for-applications-running-on-instances-in-google-cloud-platform/">IPAM Services for Applications Running on Instances in Google Cloud Platform</a>.
+This article is referenced by <a href="/docs/16.3/ipam-provider-gcp-16-3/">IPAM Services for Applications Running on Instances in Google Cloud Platform</a>.
 
 ## Setting Up gcloud Client Account on the Local Machine
 

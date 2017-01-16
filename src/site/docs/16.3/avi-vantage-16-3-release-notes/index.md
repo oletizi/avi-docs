@@ -30,7 +30,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 ### Cloud Connectors
 
 * AWS: <a href="/docs/16.3/aws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
-* <a href="/docs/16.3/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
+* <a href="/docs/16.3/installation-guides/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
 * OpenStack  
     * Mitaka release qualification
     * Keystone 3.0 support

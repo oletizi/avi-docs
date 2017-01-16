@@ -8,7 +8,7 @@ Gateway health monitoring is performed from both active and standby Avi SEs.
 
 Notes:
 
-* The current release supports gateway health monitoring only for Avi SEs configured for <a href="/docs/16.3/legacy-ha/">legacy high availability (HA)</a>.
+* The current release supports gateway health monitoring only for Avi SEs configured for <a href="/docs/16.3/legacy-ha-for-avi-service-engines/">legacy high availability (HA)</a>.
 * Another article of interest:  <a href="/docs/16.3/avi-se-behavior-on-gateway-monitor-failure/">Avi SE Behavior on Gateway Monitor Failure</a> 
 
 ## Enabling Gateway Health Monitoring

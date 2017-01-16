@@ -9,7 +9,7 @@ This article describes the enhancements and fixes in Avi Vantage release 16.3.2.
 This section summarizes the enhancements in 16.3.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
 * <a href="/docs/16.3/installing-avi-vantage-for-csp-2100/#dedicated-hsm-network.">Support in a CSP configuration for a dedicated HSM network</a>
-* <a href="/docs/16.3/ac-masquerade/">Support for a floating MAC address for back-end connectivity when in legacy active/standby mode</a>
+* <a href="/docs/16.3/mac-masquerade/">Support for a floating MAC address for back-end connectivity when in legacy active/standby mode</a>
 * Support for up to 2048 service ports in a virtual service
 * Support for Ubuntu 16.04 and 16.04.1 in Linux server cloud 
 
@@ -51,9 +51,9 @@ This section summarizes the enhancements in 16.3. For more information, click on
 ### Core ADC Features
 
 * <a href="/docs/16.3/vi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
-* <a href="/docs/16.3/ool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
+* <a href="/docs/16.3/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
 * Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
-* Ability to forward <a href="/docs/16.3/pplication-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
+* Ability to forward <a href="/docs/16.3/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
 
 ### IPAM/DNS
 
@@ -65,7 +65,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 * <a href="/docs/16.3/default-gateway-ip-routing-on-avi-se/">Ability to perform IP routing on SEs (default gateway)</a>
 * <a href="/docs/16.3/reserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
 * <a href="/docs/16.3/rf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
-* <a href="/docs/16.3/gp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a> 
+* <a href="/docs/16.3/bgp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a> 
 
 ### Cloud Connectors
 
@@ -82,19 +82,19 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### Security
 
-* <a href="/docs/16.3/enafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
-* <a href="/docs/16.3/tp-settings/">Authentication of NTP servers</a>
+* <a href="/docs/16.3/venafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
+* <a href="/docs/16.3/ntp-settings/">Authentication of NTP servers</a>
 * <a href="/ssh-users-and-keys/#ssh-key-based-controller-login">Support for key-based SSH access to Avi Controller for the admin account</a>
 * <a href="/docs/16.3/ser-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
 
 ### Analytics
 
 * <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/docs/16.3/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* Ability to disable "Significant Logs" in <a href="/docs/16.3/docs/architectural-overview/templates/profiles/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 
-* <a href="/docs/16.3/pgrading-the-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
+* <a href="/docs/16.3/upgrading-the-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
 * <a href="/docs/16.3/ackup-and-restore-of-avi-vantage-configuration">Configuration Backup Scheduler: </a>System configuration backups can now be scheduled
 * <a href="/docs/16.3/cluster-configuration-with-fqdn/">Support DNS name (FQDN) for Controller cluster members</a>
 * <a href="/docs/16.3/collecting-tech-support-logs/">Capability to collect and download tech-support from the UI</a>
@@ -103,12 +103,12 @@ This section summarizes the enhancements in 16.3. For more information, click on
 ### CLI, API, and Automation
 
 * <a href="/docs/16.3/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
-* <a href="/docs/16.3/clie-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
-* API: <a href="/docs/16.3/api-http-patch-support-163/">Nested PATCH support for multi-nested HttpReqRule</a> 
+* <a href="/docs/16.3/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
+* API: <a href="/docs/16.3/api-http-patch-support/">Nested PATCH support for multi-nested HttpReqRule</a> 
 
 ### DataScript
 
-* Support for <a href="/docs/16.3/string-group/">String Groups</a> and <a href="/docs/16.3/emplates-groups-ip-group/">IP Groups</a> in <a href="/datascript-functions/">DataScripts</a> 
+* Support for <a href="/docs/16.3/string-group/">String Groups</a> and <a href="/docs/16.3/templates-groups-ip-group/">IP Groups</a> in <a href="/datascript-functions/">DataScripts</a> 
 
 ### Key Changes in 16.3
 

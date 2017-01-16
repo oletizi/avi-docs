@@ -20,9 +20,9 @@ To access the Service Engine group page, navigate to Infrastructure > Clouds > -
 
 The high availability mode of the SE group controls the behavior of the SE group in the event of an SE failure.  It also controls how load is scaled across SEs. Selecting a particular HA mode will change the settings and options that are exposed in the UI. These modes span a spectrum, from use of the fewest virtual machine resources on one end to providing the best high availability on the other.
 
-* <a href="/docs/16.3/legacy-ha/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, ready to take over in case of a failure of the active SE.  There is no Service Engine scale out.
-* <a href="/docs/16.3/cluster-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>: This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
-* <a href="/docs/16.3/cluster-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
+* <a href="/docs/16.3/legacy-ha-for-avi-service-engines/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, ready to take over in case of a failure of the active SE.  There is no Service Engine scale out.
+* <a href="/docs/16.3/elastic-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>: This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
+* <a href="/docs/16.3/elastic-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
 
 For additional considerations for SE high availability, see <a href="/docs/16.3/overview-of-vantage-high-availability/">Overview of Vantage High Availability</a>. To compare the above HA modes to those defined prior to Vantage 16.2, see <a href="/docs/16.3/comparing-past-and-present-se-group-ha-modes/">Comparing Past and Present SE Group HA Modes</a>.
 
