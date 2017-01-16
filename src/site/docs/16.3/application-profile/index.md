@@ -101,7 +101,7 @@ The HTTP security settings affect how a virtual service should handle HTTPS. If 
 
 <a href="img/Screen-Shot-2016-10-24-at-7.03.37-PM-1.png"><img class="aligncenter wp-image-16743" src="img/Screen-Shot-2016-10-24-at-7.03.37-PM-1.png" alt="Security settings tab of application profile" width="600" height="512"></a>
 
-More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies</a> or <a href="/docs/datascript-guide/">DataScripts</a>.
+More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies</a> or <a href="/docs/16.3/datascript-guide/">DataScripts</a>.
 
 * **SSL Everywhere:** This option enables all of the following options, which together provide the recommended security for HTTPS traffic.
 * **HTTP to HTTPS Redirect:** For a single virtual service configured with both an HTTP service port (SSL disabled) and an HTTPS service port (SSL enabled), this feature will automatically redirect clients from the insecure to the secure port. For instance, clients who type www.avinetworks.com into their browser will automatically be redirected to https://www.avinetworks.com. If the virtual service does not have both an HTTP and HTTPS service port configured, this feature will not activate. For two virtual services (one with HTTP and another on the same IP address listening to HTTPS), an HTTP request policy must be created to manually redirect the protocol and port.

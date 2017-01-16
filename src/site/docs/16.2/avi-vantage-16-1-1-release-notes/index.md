@@ -25,7 +25,7 @@ This section summarizes the enhancements in 16.1. For more information, click on
 * Linux server (bare metal) support enhancements  
     * <a href="/docs/16.1/installation-guides/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
     * <a href="/docs/16.2/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
-    * <a href="/docs/16.2/upgrading-the-vantage-software/">Upgrade support</a>
+    * <a href="/docs/16.2/upgrading-the-avi-vantage-software/">Upgrade support</a>
 * Networking features  
     * <a href="/docs/16.2/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
     * <a href="/docs/16.2/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
@@ -41,9 +41,9 @@ This section summarizes the enhancements in 16.1. For more information, click on
     * <a href="/docs/16.2/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
 * Containers  
     * <a href="/docs/16.2/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
-    * <a href="/docs/16.2/upgrading-the-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
+    * <a href="/docs/16.2/upgrading-the-avi-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
 * UI enhancements  
-    * <a href="/docs/16.2/upgrading-the-vantage-software/">Upgrade supported through web interface</a>
+    * <a href="/docs/16.2/upgrading-the-avi-vantage-software/">Upgrade supported through web interface</a>
     * <a href="/docs/16.2/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
 * Ecosystem support  
     * OpenStack Liberty
@@ -80,7 +80,7 @@ This section summarizes the enhancements in 16.1. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 15.2 or later.
 
-<a href="/docs/16.2/upgrading-the-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/16.2/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
 
 <a href="/docs/16.2/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 

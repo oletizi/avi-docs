@@ -19,7 +19,7 @@ A third and more generic approach is for the Service Engine to use the client I
 
 ## Scope of Preserve Client IP
 
-As enabling <a href="/default-gateway-ip-routing-on-avi-se/">IP routing</a> is a prerequisite for enabling preserve client IP, all the restrictions applicable to enabling IP routing are applicable here.
+As enabling <a href="/docs/16.3/default-gateway-ip-routing-on-avi-se/">IP routing</a> is a prerequisite for enabling preserve client IP, all the restrictions applicable to enabling IP routing are applicable here.
 
 ## Mutual Exclusions With Other Features
 

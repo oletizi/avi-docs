@@ -15,7 +15,7 @@ Notifications may take the form of:
 * Syslog
 * SNMP traps 
 
-See the <a href="/docs/16.3/alerts-overview/">Alerts Overview</a> for a broader view of how the alerts and notification system intersect. Refer to<a href="/docs/architectural-overview/operations/notifications/"> this article</a> to learn how to configure notifications via the UI.
+See the <a href="/docs/16.3/alerts-overview/">Alerts Overview</a> for a broader view of how the alerts and notification system intersect. Refer to<a href="/docs/16.3/architectural-overview/operations/notifications/"> this article</a> to learn how to configure notifications via the UI.
 
 ### Local Notifications
 

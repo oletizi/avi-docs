@@ -52,7 +52,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 * <a href="/docs/16.3/vi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
 * <a href="/docs/16.3/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
-* Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
+* Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
 * Ability to forward <a href="/docs/16.3/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
 
 ### IPAM/DNS
@@ -69,8 +69,8 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### Cloud Connectors
 
-* AWS: <a href="/docs/16.3/ws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
-* <a href="/docs/16.3/vi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
+* AWS: <a href="/docs/16.3/aws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
+* <a href="/docs/16.3/installation-guides/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
 * OpenStack  
     * Mitaka release qualification
     * Keystone 3.0 support
@@ -78,23 +78,23 @@ This section summarizes the enhancements in 16.3. For more information, click on
     * Heat resources for Avi Vantage
     * <a href="/openstack-vip-modes-allowed-address-pairs-and-interface-secondary-ips/">Support for interface-secondary IPs (as an alternative to allowed address pairs) for VIP address</a> 
 * SDN: Contrail support in OpenStack
-* VMware vCenter: <a href="/docs/architectural-overview/infrastructure/#multi-cloud-deployments">Support for multiple vCenter clouds on a single Avi Controller</a> 
+* VMware vCenter: <a href="/docs/16.3/architectural-overview/infrastructure/#multi-cloud-deployments">Support for multiple vCenter clouds on a single Avi Controller</a> 
 
 ### Security
 
 * <a href="/docs/16.3/venafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
 * <a href="/docs/16.3/ntp-settings/">Authentication of NTP servers</a>
 * <a href="/ssh-users-and-keys/#ssh-key-based-controller-login">Support for key-based SSH access to Avi Controller for the admin account</a>
-* <a href="/docs/16.3/ser-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
+* <a href="/docs/16.3/user-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
 
 ### Analytics
 
 * <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/docs/16.3/docs/architectural-overview/templates/profiles/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* Ability to disable "Significant Logs" in <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 
-* <a href="/docs/16.3/upgrading-the-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
+* <a href="/docs/16.3/upgrading-the-avi-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
 * <a href="/docs/16.3/ackup-and-restore-of-avi-vantage-configuration">Configuration Backup Scheduler: </a>System configuration backups can now be scheduled
 * <a href="/docs/16.3/cluster-configuration-with-fqdn/">Support DNS name (FQDN) for Controller cluster members</a>
 * <a href="/docs/16.3/collecting-tech-support-logs/">Capability to collect and download tech-support from the UI</a>
@@ -136,9 +136,9 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 16.2 or later.
 
-<a href="/docs/16.3/upgrading-the-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
 
-<a href="/docs/16.3/protocol-ports-used-by-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ### Supported Platforms
 

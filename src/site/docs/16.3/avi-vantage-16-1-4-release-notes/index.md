@@ -35,7 +35,7 @@ This release contains fixes but no new features.
 
 Upgrade prerequisite: current version of Avi Controller must be 15.3 or later.
 
-* <a href="/docs/16.3/upgrading-the-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
 * <a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 ## Product Documentation

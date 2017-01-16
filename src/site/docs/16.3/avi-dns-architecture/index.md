@@ -79,7 +79,7 @@ The Logs tab (shown below) provides detailed information about DNS queries from
 
 * Non-significant logs should be enabled with caution, since a large number of DNS queries typically hit a DNS service, and this would result in too many logs entries.
 * Categorization of non-significant logs is also very important. If certain errors are typical in the deployment, these errors should be excluded from significant logs.
-* Refer to the exclude DNS errors discussion found <a href="/docs/architectural-overview/templates/profiles/analytics-profile/#exclude-dns-errors">here</a>. 
+* Refer to the exclude DNS errors discussion found <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#exclude-dns-errors">here</a>. 
 
 A series of pop-ups appear by clicking one of 12 options in the Log Analytics selector (see red box above). Examples of each follow.
 

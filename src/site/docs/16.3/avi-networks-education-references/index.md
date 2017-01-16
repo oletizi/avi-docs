@@ -104,7 +104,7 @@ Avi Networks courseware references these resources by number and title. Most are
  <li>Logging All Headers in Client-Server HTTP Traffic<br> <a href="/docs/16.3/logging-all-headers-in-client-server-http-traffic">/logging-all-headers-in-client-server-http-traffic/</a></li> 
  <li>LDAP Authentication Profile Testing<br> <a href="/docs/16.3/ldap-auth-profile-test">/ldap-auth-profile-test/</a></li> 
  <li>VLAN Configuration on Bare Metal<br> <a href="/docs/16.3/vlan-configuration-on-bare-metal">/vlan-configuration-on-bare-metal/</a></li> 
- <li>Upgrading the Vantage Software<br> <a href="/docs/16.3/upgrading-the-vantage-software">/upgrading-the-vantage-software/</a></li> 
+ <li>Upgrading the Vantage Software<br> <a href="/docs/16.3/upgrading-the-vantage-software">/upgrading-the-avi-vantage-software/</a></li> 
  <li>Mesos: Use of SE Groups Based on Application Resource Needs<br> <a href="/docs/16.3/mesos-service-engine-group-for-front-end-applications">/mesos-service-engine-group-for-front-end-applications/</a></li> 
  <li>DNS-Based Service Discovery for Mesos<br> <a href="/docs/16.3/service-discovery-for-mesos">/service-discovery-for-mesos/</a></li> 
  <li>BGP Support for Virtual Services<br> <a href="/docs/16.3/bgp-support-for-virtual-services">/bgp-support-for-virtual-services/</a></li> 
