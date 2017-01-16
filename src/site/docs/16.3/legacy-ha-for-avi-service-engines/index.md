@@ -93,7 +93,7 @@ Detailed steps are provided below.
   </figure></li> 
 </ol> 
 
-Note: If Vantage was deployed in full access mode, the other SE is automatically added to the same group. If Avi Vantage was installed in no access mode, select the second SE to also add it to the group.
+Note: If Avi Vantage was deployed in full access mode, the other SE is automatically added to the same group. If Avi Vantage was installed in no access mode, select the second SE to also add it to the group.
 
 ### Placing a Virtual Service on the SE Group
 
@@ -125,7 +125,7 @@ The following comamnds create a new SE group for the pair of SEs:
               10.10.22.123  10.10.22.80
 : &gt; configure serviceengine 10.10.22.123
 : serviceengine&gt; se_group_ref NewGroup2
-: serviceengine&gt; save</code></pre>  Note: If Vantage was deployed in full access mode, these commands add both SEs to the group. If Avi Vantage was installed in no access mode, additional commands are needed to add the second SE to the group: 
+: serviceengine&gt; save</code></pre>  Note: If Avi Vantage was deployed in full access mode, these commands add both SEs to the group. If Avi Vantage was installed in no access mode, additional commands are needed to add the second SE to the group: 
 
 <pre><code class="language-lua">: &gt; configure serviceengine
               10.10.22.123  10.10.22.80

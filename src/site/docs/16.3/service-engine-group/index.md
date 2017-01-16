@@ -85,8 +85,10 @@ The advanced tab in the Service Engine group popup supports configuration of op
 <a href="img/Screen-Shot-2016-08-25-at-8.04.06-PM.png"><img class="wp-image-12555 alignright" src="img/Screen-Shot-2016-08-25-at-8.04.06-PM.png" alt="Screen Shot 2016-08-25 at 8.04.06 PM" width="250" height="68"></a>
 * **CPU socket Affinity: **Selecting this option causes Vantage to allocate all cores for SE VMs on the same socket of a multi-socket CPU. The option is applicable only in vCenter environments. Appropriate physical resources need to be present in the ESX Host. If not, then SE creation will fail and manual intervention will be required.
 * **Dedicated dispatcher CPU:** Selecting this option dedicates the core that handles packet receive/transmit from/to the data network to just the dispatching function. This option makes most sense in a group whose SEs have three or more vCPUs.
-* **Override Management Network**:  If the SEs require a different network for management than the Controller, it must be specified here. The SEs will use their management route to establish communications with the Controllers.  See <a href="/docs/16.3/deploy-ses-in-different-data-centers-from-controllers/">Deploy SEs in Different Datacenter from Controllers</a>. 
-
+* **Override Management Network**:  If the SEs require a different network for management than the Controller, it must be specified here. The SEs will use their management route to establish communications with the Controllers.  See <a href="/deploy-ses-in-different-data-centers-from-controllers/">Deploy SEs in Different Datacenter from Controllers</a>. 
+    
+    *Note: This option is only available if the SE group's overridden management network is DHCP-defined. An administrator's attempt to override a statically-defined management network (Infrastructure --> Cloud --> Network) will not work due to not allowing a default gateway in the statically-defined subnet.*
+    
 ### SECURITY
 
-* **HSM Group**:  Hardware security modules may be configured within the Templates > Security > HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/docs/16.3/physical-security-for-ssl-keys/">Physical Security for SSL Keys</a>.  
+* **HSM Group**:  Hardware security modules may be configured within the Templates > Security > HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/physical-security-for-ssl-keys/">Physical Security for SSL Keys</a>.  

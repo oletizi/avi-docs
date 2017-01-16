@@ -23,13 +23,13 @@ See the <a href="/docs/16.3/alerts-overview/">Alerts Overview</a> for a broader 
 
 <a href="img/AlertConfigNew-1.png"><img class="wp-image-4997 alignright" src="img/AlertConfigNew-1.png" alt="AlertConfigNew" width="171" height="223"></a>Local notifications are marked by the alert action with an alert priority, which provides an informative mechanism for categorizing the alerts. While high severity alerts are more important medium or low alerts, there is no functional difference between them as far as the notifications are concerned. The color in the GUI will reflect the severity only.
 
-The alert actions object determines which types of notifications will be generated for a new alert.  This object does not explicitly call out notifications logged to Vantage's internal database, though it does have an option to disable them via the *Only Generate External Alerts* checkbox.
+The alert actions object determines which types of notifications will be generated for a new alert.  This object does not explicitly call out notifications logged to Avi Vantage's internal database, though it does have an option to disable them via the *Only Generate External Alerts* checkbox.
 
 ### Syslog Notifications
 
-Syslog messages may be sent to one or more syslog servers. Communication is via TCP, using a customizable port. Most syslog servers listening to non-encrypted TCP default to port 601.
+Syslog messages may be sent to one or more syslog servers. Communication is non-encrypted via UDP, using a customizable port. According to <a href="https://tools.ietf.org/html/rfc5426">RFC 5426</a>, syslog receivers *must* support accepting syslog datagrams on the well-known port 514 (Avi Vantage's default), but may be configurable to listen on a different port.
 
-Configuring syslog notifications pushes alerts to syslog servers. It does not export Vantage's virtual service logs. These may be pulled from an external logging system via the API, or may be scripted to push from the Avi Controller to a remote log system.
+Configuring syslog notifications pushes alerts to syslog servers. It does not export Avi Vantage's virtual service logs. These may be pulled from an external logging system via the API, or may be scripted to push from the Avi Controller to a remote log system.
 
 ### Email Notifications
 
@@ -39,7 +39,7 @@ Alert Actions may be configured to send alerts to administrators via email. Thes
 
 Alerts may be sent via SNMP traps using SNMP v2c. Multiple trap servers may be defined.
 
-Configuring SNMP traps is exclusively for sending alerts to an SNMP trap server, not for configuring how SNMP would poll Vantage SNMP OIDs.
+Configuring SNMP traps is exclusively for sending alerts to an SNMP trap server, not for configuring how SNMP would poll Avi Vantage SNMP OIDs.
 
 Traps are sent from the Controller cluster leader, but the leadership role can move to either follower Controller after a failure. Consequently, the external SNMP server should be configured to allow traffic from any one of the three Controllers in the cluster, i.e., all three addresses should be in the SNMP server's allowed-access list. The firewall rules should be configured to allow UDP traffic destined to port 162 on the SNMP trap server from any of the three cluster member's IP addresses.
 

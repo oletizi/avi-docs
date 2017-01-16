@@ -14,7 +14,7 @@ layout: default
 
 ### BARE METAL (LINUX SERVER CLOUD)
 
-* Bare metal hosts running OEL7.0, 7.1, 7.2, RHEL7.0, 7.1, 7.2, CentOS 7.0, 7.1, 7.2, Ubuntu 14.04 
+* Bare metal hosts running OEL7.0, 7.1, 7.2, 7.3, RHEL7.0, 7.1, 7.2, CentOS 7.0, 7.1, 7.2, Ubuntu 14.04, 16.04 
 
 ### ORCHESTRATOR SUPPORT
 
@@ -35,6 +35,6 @@ layout: default
 * Juniper Contrail v3.0.2 and later (only for OpenStack)
 * Nuage v3.1 and later (only for OpenStack) 
 
-Avi Vantage may be deployed in various environments with write (recommended), read, or no access integration with the virtualization orchestrator. The primary difference among these modes is the level of automation performed by Vantage and the cloud orchestrator compared to the level of manual configuration required of administrators. There are no differences in hardware or system requirements among these modes. Servers being load balanced by Avi Vantage may exist within the same virtualization environment or be bare-metal, non-virtualized servers.
+Avi Vantage may be deployed in various environments with write (recommended), read, or no access integration with the virtualization orchestrator. The primary difference among these modes is the level of automation performed by Avi Vantage and the cloud orchestrator compared to the level of manual configuration required of administrators. There are no differences in hardware or system requirements among these modes. Servers being load balanced by Avi Vantage may exist within the same virtualization environment or be bare-metal, non-virtualized servers.
 
 Avi supports the ability to manage multiple cloud environments from a single Controller cluster.

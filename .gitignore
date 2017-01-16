@@ -7,3 +7,4 @@ _site
 .idea
 src/site/vendor
 src/site/.bundle
+.DS_Store

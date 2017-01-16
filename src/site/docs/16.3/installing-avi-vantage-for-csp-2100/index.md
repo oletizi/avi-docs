@@ -86,7 +86,7 @@ Use the following steps to deploy the Avi Controller using the CSP UI:
  <li>Click on Target Host Name and select the host from the list.</li> 
  <li>Click on Image Name and select the controller.qcow2 image from the list.</li> 
  <li>Click on vNIC &gt; vNIC1 &gt; External Network &gt; enp1s0f0. vNIC1 is used by the Avi Controller as the management interface.<br> Note: If the management network is on a different VLAN, specify the VLAN number in the VLAN field, and click on VLAN Tagged to enable tagging.<br> <a href="img/linux-server-cloud-csp2100-3.png"><img class="alignnone size-full wp-image-8620" src="img/linux-server-cloud-csp2100-3.png" alt="linux-server-cloud-csp2100-3" width="915" height="489"></a></li> 
- <li>Click on Resource Config and set the resource allocations. The minimum requirement is 4 cores, 12 GB of memory, and 64 GB of disk.</li> 
+ <li>Click on Resource Config and set the resource allocations. Refer to <a href="/docs/16.3/system-requirements-hardware/">System Requirements: Hardware</a> for the minimum requirements.</li> 
  <li><em>(optional) </em>Click on VNC Password and specify a password for console login using VNC.</li> 
  <li>Click on Deploy.</li> 
 </ol> 
@@ -162,7 +162,21 @@ Use a browser to navigate to the Avi Controller IP address, and follow the below
  <li>Configure email and SMTP settings and click "Next." <a href="img/email_SMTP_settings.png"><img class="alignnone wp-image-20544" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="236" height="210"></a></li> 
  <li>Select "No Orchestrator" for the cloud type and click "Next."<a href="img/Screen-Shot-2016-08-05-at-4.30.37-PM.png"><img class="alignnone wp-image-11336" src="img/Screen-Shot-2016-08-05-at-4.30.37-PM.png" alt="Screen Shot 2016-08-05 at 4.30.37 PM" width="236" height="303"></a></li> 
  <li><span style="font-weight: 400;"><span style="font-weight: 400;">Download the SE qcow2 image from the Controller. Vantage will spin up Avi SEs using this image. Note: To establish the correct parent-child relationship that Controllers and their SEs have, an Avi SE must be spun up using the SE qcow2 image downloaded from the particular Avi Controller to which it is to connect.</span></span><a href="img/Screen-Shot-2016-08-05-at-4.34.11-PM.png"><img class="alignnone size-full wp-image-11337" src="img/Screen-Shot-2016-08-05-at-4.34.11-PM.png" alt="Screen Shot 2016-08-05 at 4.34.11 PM" width="310" height="237"></a></li> 
- <li><span style="font-weight: 400;">To create an Avi SE on Cisco CSP, we need to configure a ‘day0’ yml file. Day0 files are used to insert configuration data into the Avi SE. That data includes details such as the SE management IP, Controller IP, token the SE uses to authenticate with the Avi Controller, etc.<br> </span><br> <span style="font-weight: 400;">5a. Generate a token for the SE from the Avi Controller by navigating to Infrastructure &gt; Clouds and clicking on the ‘key’ icon. </span><span style="font-weight: 400;">Note : A token needs to be generated<em> per Avi SE</em>. Since the token expires one hour from the time it is generated, an Avi SE needs to be created within 1 hour of token generation.<br> </span><span style="font-weight: 400;"><span style="font-weight: 400;"><br> <a href="img/Screen-Shot-2016-08-05-at-4.48.43-PM.png"><img class="alignnone size-full wp-image-11339" src="img/Screen-Shot-2016-08-05-at-4.48.43-PM.png" alt="Screen Shot 2016-08-05 at 4.48.43 PM" width="683" height="115"></a></span></span> 5b. Use the token generated to create the Avi SE ‘day0’ file. The ‘day0’ file needs to be a valid ‘yml’ file whose name starts with ‘avi_meta_data’. Sample configuration of the SE day0 file is shown here. Details include the management IP of the Avi SE and netmask, Avi SE management gateway, Avi Controller IP and the token that we generated in step 5a from the Avi Controller.<br> <a href="img/Screen-Shot-2016-08-05-at-5.13.45-PM.png"><img class="alignnone wp-image-11340" src="img/Screen-Shot-2016-08-05-at-5.13.45-PM.png" alt="Screen Shot 2016-08-05 at 5.13.45 PM" width="600" height="123"></a><img class="alignnone wp-image-11341" src="img/Screen-Shot-2016-08-05-at-5.14.11-PM.png" alt="Screen Shot 2016-08-05 at 5.14.11 PM" width="600" height="160"></li> 
+ <li><span style="font-weight: 400;">To create an Avi SE on Cisco CSP, we need to configure a ‘day0’ yml file. Day0 files are used to insert configuration data into the Avi SE. That data includes details such as the SE management IP, Controller IP, token the SE uses to authenticate with the Avi Controller, etc.<br> </span><br> <span style="font-weight: 400;">6a. Generate a token for the SE from the Avi Controller by navigating to Infrastructure &gt; Clouds and clicking on the ‘key’ icon. </span><span style="font-weight: 400;">Note : A token needs to be generated<em> per Avi SE</em>. Since the token expires one hour from the time it is generated, an Avi SE needs to be created within 1 hour of token generation.<br> <a name="dedicated-hsm-network"></a><br> </span><span style="font-weight: 400;"><span style="font-weight: 400;"><br> <a href="img/Screen-Shot-2016-08-05-at-4.48.43-PM.png"><img class="alignnone size-full wp-image-11339" src="img/Screen-Shot-2016-08-05-at-4.48.43-PM.png" alt="Screen Shot 2016-08-05 at 4.48.43 PM" width="683" height="115"></a></span></span> 6b. Use the token generated to create the Avi SE ‘day0’ file. The ‘day0’ file needs to be a valid ‘yml’ file whose name starts with ‘avi_meta_data’. A sample configuration of the SE day0 file is shown below. In it are specified the Avi Controller IP and the token generated in step 6a plus the SE's default gateway IP, management IP and netmask.Starting with Avi Vantage 16.3.2, if a dedicated HSM network is desired, three additional parameters must be provided:<p></p> 
+  <ul> 
+   <li>the static route to the HSM,</li> 
+   <li>the target HSM's IP and netmask, and</li> 
+   <li>the id of the vNIC the SE should use for SE-to-HSM communication. In this example "1" would correspond to eth1 on CSP.<br> 
+    <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">AVICNTRL: 10.10.25.213
+AVICNTRL_AUTHTOKEN: 24cb95c0-d3d0-4c35-9452-2e651811002a
+avi.default-gw.SE: 10.128.2.1
+avi.mgmt-ip.SE: 10.128.2.20
+avi.mgmt-mask.SE: 255.255.255.0
+avi.hsm-static-route.SE: 10.128.1.0/24 via 10.160.100.1
+avi.hsm-ip.SE: 10.160.100.175/24
+avi.hsm-vnic-id.SE: 1</code></pre> 
+    <!-- [Format Time: 0.0013 seconds] --> </li> 
+  </ul> </li> 
  <li><span style="font-weight: 400;">Log into the CSP dashboard and navigate to Configuration &gt; Repository to upload the Avi SE qcow2 image and the Avi SE day0 file.</span></li> 
  <li><span style="font-weight: 400;"><strong>Configure an Avi SE service</strong><br> </span><span style="font-weight: 400;">7a. Enter the name of the Avi SE service in the ‘Service Name’ field and hit enter. Choose the server on which the SE would be deployed in the ‘Target Host Name’ field and hit enter.</span><a href="img/Screen-Shot-2016-08-05-at-5.17.11-PM.png"><img class="alignnone wp-image-11342" src="img/Screen-Shot-2016-08-05-at-5.17.11-PM.png" alt="Screen Shot 2016-08-05 at 5.17.11 PM" width="600" height="347"><br> </a>7b. <strong>Configure SE Image:</strong> In the ‘Image Name’ section, choose the Avi SE qcow2 image and the corresponding Avi SE day0 yml file.<a href="img/Screen-Shot-2016-08-05-at-5.19.23-PM.png"><img class="alignnone wp-image-11343" src="img/Screen-Shot-2016-08-05-at-5.19.23-PM.png" alt="Screen Shot 2016-08-05 at 5.19.23 PM" width="600" height="324"></a><span style="font-weight: 400;"><span style="font-weight: 400;"><br> 7c. <strong>Configure SE interfaces.</strong> Note: This installation guide deploys an Avi SE with 3 interfaces. One of the interfaces would be used for Avi SE management and the other two interfaces would be used for application traffic. The Avi SE management interface needs to have connectivity to the Avi Controller. The Avi SE management interface would be configured with the information contained in the Avi SE ‘day0’ file.<br> </span></span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><span style="font-weight: 400;">7ci. From the ‘vNIC’ section click on ‘vNIC 1’. Then click on ‘Network Name &gt; External Network’ and choose the management network (enp1s0f0 in this example). Click on ‘Model and choose ‘virtio.’ Note: vNIC1 would be used by the Avi SE as the management interface.<br> </span></span><a href="img/Screen-Shot-2016-08-05-at-5.21.41-PM.png"><img class="alignnone wp-image-11345" src="img/Screen-Shot-2016-08-05-at-5.21.41-PM.png" alt="Screen Shot 2016-08-05 at 5.21.41 PM" width="600" height="343"></a>7cii. <b>Configure Avi SE data interface I (Configuring an Avi SE data interface in passthrough SR-IOV mode on a VLAN</b>): From the ‘vNIC’ section click on ‘Add vNIC.’ Next, click on ‘vNIC 2,’ and then click on ‘Network Name &gt; External Network.’ Finally, choose a passthrough SR-IOV interface (enp7s0f1 in this example). Note : Avi supports a VLAN configured on a SR-IOV Virtual Function. To add a VLAN to the SR-IOV Virtual Function, click on ‘VLAN’ and enter the VLAN ID.<br> <a href="img/Screen-Shot-2016-08-05-at-5.25.14-PM.png"><img class="alignnone wp-image-11346" src="img/Screen-Shot-2016-08-05-at-5.25.14-PM.png" alt="Screen Shot 2016-08-05 at 5.25.14 PM" width="600" height="353"></a><img class="alignnone wp-image-11347" src="img/Screen-Shot-2016-08-05-at-5.25.45-PM.png" alt="Screen Shot 2016-08-05 at 5.25.45 PM" width="600" height="308"><br> 7ciii. <b>Configure Avi SE data interface II (Configuring an Avi SE data interface in non-passthrough mode with ‘virtio’ (‘e1000’ is also supported):</b> From<p></p> <p class="p1"><span class="s1">the ‘vNIC’ section click on ‘Add vNIC’. Then click on ‘vNIC 3’ and then click on ‘Network Name &gt; External Network’. Choose a non-passthrough interface (enp7s0f0 in this example)</span></p> <p><a href="img/Screen-Shot-2016-08-05-at-5.28.57-PM.png"><img class="alignnone size-full wp-image-11349" src="img/Screen-Shot-2016-08-05-at-5.28.57-PM.png" alt="Screen Shot 2016-08-05 at 5.28.57 PM" width="671" height="329"></a></p></li> 
  <li><span style="font-weight: 400;"><span style="font-weight: 400;">From the ‘Resource Config’ section, enter the SE memory in MB, number of CPUs and the disk size in GB and click deploy. An Avi SE service should be deployed on the CSP server. The Avi SE will boot up using the Avi SE qcow2 image that was uploaded, configure itself with the metadata inserted through the Avi SE ‘day0’ yml file, and finally connect to the Avi Controller specified in the Avi SE ‘day0’ yml file.</span></span><a href="img/Screen-Shot-2016-08-05-at-5.31.34-PM.png"><img class="alignnone size-full wp-image-11350" src="img/Screen-Shot-2016-08-05-at-5.31.34-PM.png" alt="Screen Shot 2016-08-05 at 5.31.34 PM" width="683" height="423"></a><br> <a href="img/Screen-Shot-2016-08-05-at-5.32.16-PM.png"><img class="alignnone size-full wp-image-11351" src="img/Screen-Shot-2016-08-05-at-5.32.16-PM.png" alt="Screen Shot 2016-08-05 at 5.32.16 PM" width="683" height="121"></a></li> 
@@ -223,11 +237,11 @@ This section walks through the workflow for deploying a Linux host on CSP, with 
  <li>Login to the Linux host from the console (credentials root/default).</li> 
  <li>List the interfaces.<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# ip a</code></pre> 
-  <!-- [Format Time: 0.0003 seconds] --> eth0 is the management interface and ens3 is the data interface.</li> 
+  <!-- [Format Time: 0.0002 seconds] --> eth0 is the management interface and ens3 is the data interface.</li> 
  <li>Edit/create the config file for the management interface to read as below:<br> 
-  <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
-
-DEVICE="eth0"
+  <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0</code></pre> 
+  <!-- [Format Time: 0.0003 seconds] --> 
+  <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">DEVICE="eth0"
 BOOTPROTO="static"
 ONBOOT="yes"
 TYPE="Ethernet"
@@ -238,7 +252,7 @@ PERSISTENT_DHCLIENT="1"
 IPADDR=10.128.2.18
 NETMASK=255.255.255.0
 GATEWAY=10.128.2.1</code></pre> 
-  <!-- [Format Time: 0.0008 seconds] --> In above example, 10.128.2.18 is the management IP and 10.128.2.1 is the gateway IP.</li> 
+  <!-- [Format Time: 0.0006 seconds] --> In above example, 10.128.2.18 is the management IP and 10.128.2.1 is the gateway IP.</li> 
  <li>Edit/create the config file for the data interface to read as below:<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# sudo vi /etc/sysconfig/network-scripts/ifcfg-ens3
 
@@ -252,17 +266,17 @@ IPV6INIT="no"
 PERSISTENT_DHCLIENT="1"
 IPADDR=10.128.12.62
 NETMASK=255.255.255.0</code></pre> 
-  <!-- [Format Time: 0.0007 seconds] --> In above example 10.128.12.62 is the data interface IP. Do not configure the gateway IP; this will be configured from the Controller UI.</li> 
+  <!-- [Format Time: 0.0008 seconds] --> In above example 10.128.12.62 is the data interface IP. Do not configure the gateway IP; this will be configured from the Controller UI.</li> 
  <li>Restart network for the configuration to take effect. This may take some time.<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]#  sudo systemctl network restart</code></pre> 
-  <!-- [Format Time: 0.0003 seconds] --> </li> 
+  <!-- [Format Time: 0.0002 seconds] --> </li> 
  <li>Check if default gateway is configured correctly. (E.g., 10.128.2.1 is the management default gateway in the below output.)<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# routel|grep default
 
        default         10.128.2.1                                       eth0
        default        unreachable                   kernel              lo unspec
        default        unreachable                   kernel              lo unspec</code></pre> 
-  <!-- [Format Time: 0.0013 seconds] --> Note: If the gateway is not configured, restart network again.</li> 
+  <!-- [Format Time: 0.0014 seconds] --> Note: If the gateway is not configured, restart network again.</li> 
  <li>List the interfaces and check the IPs.<br> 
   <!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">[root@centos-host ~]# ip a
 
@@ -309,7 +323,7 @@ enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
 EOF</code></pre> 
-  <!-- [Format Time: 0.0009 seconds] --> </li> 
+  <!-- [Format Time: 0.0008 seconds] --> </li> 
  <li>Install Docker:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo yum install -y docker-engine</code></pre></li> 
  <li>Start Docker:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo service docker start</code></pre></li> 
  <li>To start Docker on boot, run the following command:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo systemctl enable docker</code></pre></li> 
@@ -330,7 +344,7 @@ Server:
  Git commit:   5604cbe
  Built:        Wed Apr 27 00:34:42 2016
  OS/Arch:      linux/amd64</code></pre> 
-  <!-- [Format Time: 0.0017 seconds] --> </li> 
+  <!-- [Format Time: 0.0016 seconds] --> </li> 
 </ol> 
 
 For the latest Docker installation instructions, please refer to <a href="https://docs.docker.com/engine/installation/linux/centos/">https://docs.docker.com/engine/installation/linux/centos/</a>.

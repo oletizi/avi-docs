@@ -4,14 +4,15 @@ layout: default
 ---
 This guide describes how to integrate Avi Vantage into a VMware vCenter cloud. The instructions in this guide can be used for installing Avi Vantage 16.3.
 
-Avi Vantage is a software-based solution that provides real-time analytics as well as elastic application delivery services. Vantage optimizes core web-site functions, including SSL termination and load balancing.
+Avi Vantage is a software-based solution that provides real-time analytics as well as elastic application delivery services. Avi Vantage optimizes core web-site functions, including SSL termination and load balancing.
 
 **Notes:**
 
 * **Deployment in *write access mode* is recommended. It's the quickest and easiest way to deploy.**
 * **After completing the deployment process, click <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">here</a> to learn how to create virtual services.**
-* **Avi Vantage may be deployed with a VMware cloud in either no access, read access, or write access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Avi Vantage Controller within VMware vCenter. For more information, please see<a href="/docs/16.3/vantage-interaction-with-vcenter/"> this article</a>.**
-* **Prior to Avi Vantage 16.3, Service Engines deployed manually by the Avi administrator in No Orchestrator or VMware vCenter read access clouds required the user to download a unique copy of the Service Engine image for each cloud configured in the system. Starting from 16.3 release, the Avi administrator needs to download only one Service Engine image for each type of image needed (<code>ova/qcow2/docker</code>). The same SE image can then be used to deploy Service Engines in any tenant and cloud configured in the system. Read <a href="/docs/16.3/manually-deploy-service-engines-in-non-default-tenantcloud/">this relevant article</a>.** 
+* **Avi Vantage may be deployed with a VMware cloud in either no access, read access, or write access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Avi Controller within VMware vCenter. For more information, please see<a href="/vantage-interaction-with-vcenter/"> this article</a>.**
+* **Prior to Avi Vantage 16.3, Service Engines deployed manually by the Avi administrator in No Orchestrator or VMware vCenter read access clouds required the user to download a unique copy of the Service Engine image for each cloud configured in the system. Starting from 16.3 release, the Avi administrator needs to download only one Service Engine image for each type of image needed (<code>ova/qcow2/docker</code>). The same SE image can then be used to deploy Service Engines in any tenant and cloud configured in the system. Read <a href="/manually-deploy-service-engines-in-non-default-tenantcloud/">this relevant article</a>.**
+* **vMotion is not supported.** 
 
 ## How Avi Vantage Integrates into vCenter
 
@@ -46,37 +47,9 @@ Each Avi SE runs on its own VM. The Avi Controller manages the lifecycles of Avi
 
 ### Virtual Machine Requirements
 
-The following table lists the minimum requirements for the VMs on which the Avi Controller and Avi SEs are installed.
-<table class="table table table-bordered table-hover">  
-<tbody>    
-<tr>     
-<th>Component
-</th>
-<th>Memory
-</th>
-<th>vCPUs
-</th>
-<th>Disk
-</th>
-</tr>
-<tr>     
-<td>Avi Controller</td>
-<td>24 GB</td>
-<td>8</td>
-<td>64 GB</td>
-</tr>
-<tr>     
-<td>Service Engine</td>
-<td>2 GB</td>
-<td>2</td>
-<td>10 GB</td>
-</tr>
-</tbody>
-</table>  
+The <a href="/system-requirements-hardware/">System Requirements: Hardware article</a> lists the minimum requirements for the VMs on which the Avi Controller and Avi SEs are installed.
 
- 
-
-For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/16.3/overview-of-vantage-high-availability/">Overview of Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
+For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/overview-of-vantage-high-availability/">Overview of Avi Vantage High Availability</a>.] In this case, a separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.
 
 Appropriate physical resources need to be present in the ESX Host. If appropriate resources are not present in the ESX host, SE creation will fail and manual intervention will be required. 
 
@@ -123,18 +96,22 @@ The Avi Controller requires one management IP address. Each Avi SE requires one 
 DHCP rather than static assignment is recommended for allocating the Avi SE management and the pool network interface IP addresses. The virtual service IP address is specified manually during creation of a load balancing policy.
 
 Traffic whose destination is the VIP address:port is load balanced by Vantage across the members (servers) within the pool.
+<a name="”vCenter"></a>
+<a name="”vCenter"></a>
 
 ### vCenter Account Requirement
 
-During initial Avi Controller setup, a vCenter account must be entered to allow the Avi Controller to communicate with vCenter. The vCenter account must have privileges to create new folders in vCenter. This is required for virtual service creation.
+During initial Avi Controller setup, a vCenter account must be entered to allow the Avi Controller to communicate with vCenter. The vCenter account must have privileges to create new folders in vCenter. This is required for SE creation, which in turn permits virtual service placement. The privileges required are depicted below.
+
+<a href="img/vCenterAviRole.jpg"><img class="alignnone size-full wp-image-21500" src="img/vCenterAviRole.jpg" alt="vCenterAviRole" width="586" height="920"></a>
 
 ## Deployment Modes
 
-Avi Vantage can be deployed into a VMware cloud in one of the following modes. Each mode differs depending on the level of vCenter access provided to Vantage. Each access level determines the amount of automation and analytics Vantage is able to provide, and accordingly has different requirements for deployment.
+Avi Vantage can be deployed into a VMware cloud in one of the following modes. Each mode differs depending on the level of vCenter access provided to Avi Vantage. Each access level determines the amount of automation and analytics Avi Vantage is able to provide, and accordingly has different requirements for deployment.
 
 * **Write access mode:** Avi Controller automatically spins up Avi SEs as needed. This mode requires a vCenter user account with write privileges.
-* **Read access mode:** Avi Controller accesses vCenter to discover information about networks and VMs. Avi SEs must be spun up and connected to networks by the Vantage user (possibly you). This mode requires a vCenter user account with read privileges.
-* **No access mode:** Avi Controller does not access vCenter. The Vantage user spins up an Avi SE, discovers networks, and connects the Avi SE to one of the networks. 
+* **Read access mode:** Avi Controller accesses vCenter to discover information about networks and VMs. Avi SEs must be spun up and connected to networks by the Avi Vantage user (possibly you). This mode requires a vCenter user account with read privileges.
+* **No access mode:** Avi Controller does not access vCenter. The Avi Vantage user spins up an Avi SE, discovers networks, and connects the Avi SE to one of the networks. 
 
 ### Deployment Example: Write access with DHCP
 
@@ -152,7 +129,7 @@ This section provides the steps for deploying Avi Vantage in write access mode.
 
 ### Deployment Steps
 
-Deployment of Vantage into a vCenter-managed VMware cloud in write access mode requires the following procedure. Detailed steps for each part of the procedure are provided.
+Deployment of Avi Vantage into a vCenter-managed VMware cloud in write access mode requires the following procedure. Detailed steps for each part of the procedure are provided.
 <ol> 
  <li>Deploy the Avi Controller OVA file.</li> 
  <li>Perform initial Avi Controller setup.</li> 
@@ -205,7 +182,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>vCenter IP address</li> 
    <li>Permissions (Select <strong>Write</strong>.)</li> 
    <li>Integration with Cisco APIC (Leave unselected/disabled.)</li> 
-   <li>Data center (where Vantage will be deployed)</li> 
+   <li>Data center (where Avi Vantage will be deployed)</li> 
    <li>IP allocation method for the networks where the pools and virtual services will be located: DHCP or Static. (Wizard screen example below shows DHCP.)</li> 
   </ul> 
   <div> 
@@ -218,13 +195,13 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>Management network</li> 
    <li>IP allocation method for management network</li> 
    <li>Support Multiple Tenants (Select <strong>No</strong>.)</li> 
-  </ul> <p>One of the Avi SE's 10 vNICs is for connection to the management network. The other vNICs are data vNICs. For the IP allocation method, if static address assignment is used, enter a subnet address and a range of host addresses within the subnet. Vantage assigns addresses from this range to the Avi SE data interfaces.</p> <p><img class="alignnone size-medium wp-image-9418" src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-multtenantsbox-162.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-multtenantsbox-162" width="264" height="213"></p></li> 
+  </ul> <p>One of the Avi SE's 10 vNICs is for connection to the management network. The other vNICs are data vNICs. For the IP allocation method, if static address assignment is used, enter a subnet address and a range of host addresses within the subnet. Avi Vantage assigns addresses from this range to the Avi SE data interfaces.</p> <p><img class="alignnone size-medium wp-image-9418" src="img/VMware-deploy-WriteAccessmode-Ctlr-setup-multtenantsbox-162.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-multtenantsbox-162" width="264" height="213"></p></li> 
  <li>To verify installation, navigate to Infrastructure &gt; Clouds, click Default-Clouds, then click the Status button. If the status is green, installation is a success.<a href="img/vmware-install-writeaccess-verify-cloud-162-1.png"><img class="alignnone size-full wp-image-9446" src="img/vmware-install-writeaccess-verify-cloud-162-1.png" alt="vmware-install-writeaccess-verify-cloud-162" width="1437" height="385"></a>If the management and pool networks use DHCP, the deployment procedure is complete. If static address allocation is used, an additional set of steps is required: <a href="#staticIPass">configure IP address pools for networks</a>.</li> 
 </ol> 
 
 ### Verify Controller-to-VMware Communications
 
-The Avi Controller must be able to communicate with vCenter and all ESX hosts that contribute to the deployment. Failing such, the Avi Controller will not be able to spawn SEs. In the same vein, if the ESX hosts have DNS names, then the Avi Controller should point to the very same DNS server.
+The Avi Controller must be able to communicate with vCenter and all ESX hosts that contribute to the deployment. Failing such, the Avi Controller will not be able to spawn SEs. In the same vein, if the ESX hosts have DNS names, then the Avi Controller should point to the very same DNS server used by the ESX hosts, to avoid names resolving to different IP addresses.
 
 ----
 
@@ -232,12 +209,12 @@ The Avi Controller must be able to communicate with vCenter and all ESX hosts th
 
 This section provides the steps for deploying Avi Vantage in read access mode or no access mode. In these modes:
 
-* The Avi Controller does not access vCenter and does not deploy Avi SEs or connect them to networks. Instead, Avi SE deployment is performed by the Avi Vantage user.
-* Read access mode can provide analytics. No access mode does not provide analytics. 
+* The Avi Controller does not access vCenter and does not deploy Avi SEs or connect them to networks. Instead, Avi SE deployment is performed by the vCenter administrator.
+* Read access mode can provide analytics. No access mode does not provide analytics, specifically the analytics related to the VM properties of the SE VM. 
 
 ### Deployment Process
 
-Deployment of Vantage into a vCenter-managed VMware cloud in read or no access mode requires the following procedure.
+Deployment of Avi Vantage into a vCenter-managed VMware cloud in read or no access mode requires the following procedure.
 <ol> 
  <li>Deploy the Avi Controller OVA.</li> 
  <li>Perform initial Avi Controller setup.</li> 
@@ -295,7 +272,7 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
    <li>vCenter IP address</li> 
    <li>Permissions (Select <strong>Read</strong>.)</li> 
    <li>Integration with Cisco APIC (leave unselected/disabled)</li> 
-   <li>Data center (where Vantage will be deployed)</li> 
+   <li>Data center (where Avi Vantage will be deployed)</li> 
    <li>IP allocation method for the networks where the pools and virtual services will be located</li> 
   </ul> <p><img src="img/VMware-deploy-ReadAccessmode-Ctlr-setup-vcenterlogin.png" alt="VMware-deploy-ReadAccessmode-Ctlr-setup-vcenterlogin" width="264" height="339" align="left" vspace="6"><br> <img src="/wp-content/uploads/2016/05/VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter-dhcp-162.png" alt="VMware-deploy-WriteAccessmode-Ctlr-setup-selectdatacenter-dhcp-162" width="264" height="442" align="left" hspace="12"></p> <p style="clear: both;"> </p></li> 
  <li>To verify discovery by the Avi Controller of all vCenter resources, navigate to Administration &gt; Settings &gt; Infrastructure. The discovery status should be 100% complete. (See example above.)</li> 
@@ -401,7 +378,7 @@ Use the following steps to assign an IP address pool to port groups:
 
 <a href="img/vmware-deploy5.png"><img class="alignnone size-medium wp-image-3737" src="img/vmware-deploy5.png" alt="vmware-deploy5" width="528" height="287"></a>
 
-**If deploying in no access mode, <a href="#Avi SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Avi Vantage is ready for <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
+**If deploying in no access mode, <a href="#Avi SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Avi Vantage is ready for <a href="/2016/02/01/configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
 
 ### Recommended Reading
 

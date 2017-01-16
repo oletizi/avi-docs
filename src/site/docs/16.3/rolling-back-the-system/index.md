@@ -22,7 +22,7 @@ If the system was upgraded from 16.2 to later, rollback to 16.2 is supported usi
 
 To roll back the system to a previous version, use the following command at the Vantage CLI shell prompt:
 
-<pre><code class="language-lua">rollback</code></pre>  
+<pre><code class="language-lua">rollback system</code></pre>  
 
 To monitor the progress of the rollback, enter the following command:
 

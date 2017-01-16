@@ -6,7 +6,11 @@ layout: default
 
  
 
-In an OpenShift or Kubernetes cloud, <a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html">service</a> creation triggers the corresponding creation of Avi Vantage <a href="/docs/latest/api-guide/virtualservice.html/">VirtualService</a> and <a href="/docs/latest/api-guide/pool.html">Pool</a> objects. Parameters governing most of the behavior of the Avi Vantage virtual service and its corresponding Avi Vantage pool members are automatically filled in from OpenShift/Kubernetes by the cloud connector. Others can be configured via annotations in the OpenShift/Kubernetes service object. The following article explains what fields are automatically derived by the cloud connector and how to stipulate additional configuration for Avi VirtualServices and Pools.
+In an OpenShift or Kubernetes cloud, <a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html">service</a> creation triggers the corresponding creation of Avi Vantage <a href="/docs/latest/api-guide/virtualservice.html/">VirtualService</a> and <a href="/docs/latest/api-guide/pool.html">Pool</a> objects. Parameters governing most of the behavior of the Avi Vantage virtual service and its corresponding Avi Vantage pool members are automatically filled in from OpenShift/Kubernetes by the cloud connector. Others can be configured via annotations in the OpenShift/Kubernetes service object. The following article explains what fields are automatically derived by the cloud connector and how to stipulate additional configuration for Avi virtual services and pools.
+
+### A Note on Tenancy
+
+OpenShift projects/Kubernetes namespaces map directly to Avi tenants. Avi tenants are automatically created and deleted following OpenShift projects/Kubernetes namespaces. Virtual services are created in the appropriate tenants. For example, services in project 'default' result in virtual service creation in Avi tenant 'default.'
 
 ## Automatic configuration
 

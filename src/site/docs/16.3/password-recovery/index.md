@@ -10,8 +10,8 @@ To reset a password that is known for a local user or admin account, first log i
 
 ### Local User Password Recovery
 
-**User-Initiated:**  If SMTP email has been configured for Vantage, locally authenticated users can make a reset-password request via the GUI. From the login screen, a blue *Forgot Your Password* link floats below the password field. An email is sent to user’s email-id configured in the Administration &gt; Account &gt; User page. The email contains a link to reset the password. If SMTP has not been configured, the *Forgot Your Password* link does not appear.
-&gt; <a href="img/ForgotPassword.png"><img class="wp-image-13135 alignright" src="img/ForgotPassword.png" alt="ForgotPassword" width="200" height="109"></a>Note:  The user account must have a valid email configured for the account, and Vantage must have access to an SMTP server.
+**User-Initiated:**  If SMTP email has been configured for Vantage, locally authenticated users can make a reset-password request via the GUI. From the login screen, a blue *Forgot Your Password* link floats below the password field. An email is sent to user’s email-id configured in the Administration > Account > User page. The email contains a link to reset the password. If SMTP has not been configured, the *Forgot Your Password* link does not appear.
+> <a href="img/ForgotPassword.png"><img class="wp-image-13135 alignright" src="img/ForgotPassword.png" alt="ForgotPassword" width="200" height="109"></a>Note:  The user account must have a valid email configured for the account, and Vantage must have access to an SMTP server.
  
 
 See the <a href="/docs/16.3/email-smtp">Email / SMTP</a> article for help configuring email from Avi Vantage.
@@ -26,8 +26,6 @@ Password recovery for users who are remotely authenticated through <a href="/doc
 
 **Email Reset:**  If SMTP has been configured for Vantage, an admin account may be reset the same as any other user account. Clicking the password reset link on the login screen will send a password reset email to the configured email address for the admin account. If SMTP has not been configured, the password reset link does not appear.
 
-See the <a href="/docs/16.3/email-smtp">Email / SMTP</a> article for help configuring email from Avi Vantage.
-
-**Reset via Another Admin:**  If another account exists with write privilege to the Accounts role for the admin tenant, this account may be used to reset another admin account. The System-Admin role is the only default role having such access.
-> Note:  If neither of the above options are available, there is no recovery of the admin account.  Avi Networks strongly recommends validating a resilient password recovery by testing one of the above options for enabling password recovery.
+See the <a href="/docs/16.3/email-smtp/">Email / SMTP</a> article for help configuring email from Avi Vantage.
+> Note:  If the above option is not available, there is no recovery of the admin account.  Avi Networks strongly recommends validating resilient password recovery by testing the above option.
  

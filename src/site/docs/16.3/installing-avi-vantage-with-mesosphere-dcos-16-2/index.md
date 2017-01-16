@@ -23,11 +23,7 @@ As shown here, Avi Vantage consists of the Avi Controller cluster and multiple S
 
 ### Physical Node Requirements
 
-The main components of the Avi Vantage solution, Avi Controllers and Service Engines (SEs), run as containers on Mesos nodes. For production deployment, a 3-node Avi Controller cluster is recommended, with the each of the Avi Controller nodes running on separate nodes. Each Avi SE is deployed as a container on one of the 3 Mesos nodes. Each Mesos node can run 1 SE container. The node on which the Avi Controller runs must meet at least the following minimum system requirements:
-
-* 8 vCPUs
-* 24 GB memory
-* 64 GB disk space 
+The main components of the Avi Vantage solution, Avi Controllers and Service Engines (SEs), run as containers on Mesos nodes. For production deployment, a 3-node Avi Controller cluster is recommended, with the each of the Avi Controller nodes running on separate nodes. Each Avi SE is deployed as a container on one of the 3 Mesos nodes. Each Mesos node can run 1 SE container. The node on which the Avi Controller runs must meet at least the minimum system requirements, which are specified in <a href="/system-requirements-hardware/">this article</a>.
 
 ### System Time (NTP) Requirement
 
@@ -72,7 +68,7 @@ ExecStop=/usr/bin/docker stop avicontroller
 
 [Install]
 WantedBy=multi-user.target</code></pre> 
-  <!-- [Format Time: 0.0020 seconds] --> </li> 
+  <!-- [Format Time: 0.0018 seconds] --> </li> 
  <li>Edit the following values in the file: 
   <ul> 
    <li>NUM_CPU: Sets the number of CPU cores/threads used by the Controller (8 in this example).</li> 
@@ -136,8 +132,7 @@ To start, use a browser to navigate to the Avi Controller.
   <div> 
    <p><img class="alignleft" src="img/mesos-install-adminacct-162.png" alt="" width="200" height="290" align="left" hspace="0&quot;" vspace="6"> <img class="aligncenter" src="img/mesos-install-dnsntp-262.png" alt="" width="200" height="257" align="left" hspace="12" vspace="6"></p> 
    <p style="clear: both;"> <a href="img/email_SMTP_settings.png"><img class="size-full wp-image-20544 alignnone" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="200" height="225"></a></p> 
-   <a href="img/email_SMTP_settings.png"> </a> 
-   <p><a href="img/email_SMTP_settings.png"></a></p> 
+   <p> </p> 
   </div> </li> 
  <li>Select Mesos as the infrastructure type:<img class="alignnone size-full wp-image-6059" src="img/Ctlr-install-wizard-infra-161-mesos.png" alt="Ctlr-install-wizard-infra-161-mesos" width="275" height="435"></li> 
  <li>Configure Mesos infrastructure settings: 
@@ -226,8 +221,8 @@ Use these steps if the VIP and the client are both in the same Mesos cluster.
         }
       ]
 }</code></pre> 
-  <!-- [Format Time: 0.0022 seconds] --> </li> 
- <li>Start the application to create a virtual service for it in Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.</li> 
+  <!-- [Format Time: 0.0021 seconds] --> </li> 
+ <li>Start the application to create a virtual service for it in Avi Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.</li> 
  <li>Start a client container on the VM:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker run -d --name=aviclient avinetworks/server</code></pre></li> 
  <li>Connect to the client container that you just started:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>sudo docker exec -it aviclient bash</code></pre></li> 
  <li>Generate test traffic:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://172.17.0.1:10001/100kb.txt</code></pre> This command sends 100 requests for the specified file to the virtual service. The port number (10001 in this example) is the service port number assigned to the virtual service.</li> 
@@ -270,7 +265,7 @@ Use these steps if the VIP is in the same Mesos cluster as the application but t
     }
   ]
 }</code></pre> 
-  <!-- [Format Time: 0.0023 seconds] --> </li> 
+  <!-- [Format Time: 0.0021 seconds] --> </li> 
  <li>Start the application to create a virtual service for it in Avi Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-ip-or-hostname with the IP address or hostname of Marathon.</li> 
  <li>To generate traffic to the application, open an SSH ssh connection to another VM that is located in the same network as the host, and enter the following command:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>ab -n 100 http://10.10.10.100/100kb.txt</code></pre></li> 
 </ol> 
@@ -312,7 +307,7 @@ Use these steps if neither the VIP nor the client is in the same Mesos cluster a
     }
   ]
 }</code></pre> 
-  <!-- [Format Time: 0.0021 seconds] --> </li> 
+  <!-- [Format Time: 0.0023 seconds] --> </li> 
  <li>Start the application to create a virtual service for it in Avi Vantage:<br> <pre crayon="false" class="command-line language-bash" data-prompt=": >" data-output="1-100"><code>curl -H "Content-Type: application/json" -X POST -d@Docker.json http://marathon-ip-or-­hostname:8080/v2/apps</code></pre> The H and X options are required. The H option inserts a Content­Type header for the Avi SE application. The X option changes the HTML method of the request from GET (the default) to POST. Replace marathon-­ip-or-hostname with the IP address or hostname of Marathon.</li> 
  <li>To generate traffic to the application: 
   <ol> 

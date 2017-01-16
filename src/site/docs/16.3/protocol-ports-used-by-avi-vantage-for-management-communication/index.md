@@ -44,7 +44,7 @@ The Controller may send traffic to the following ports as part of network operat
 * UDP 123 (NTP)
 * UDP 162 (SNMP traps)
 * TCP or UDP 389 (LDAP)
-* UDP 514 (Syslog)
+* UDP 514 (syslog)
 * TCP or UDP 636 (LDAPS) 
 
 ### Protocols / Ports Used by Cloud Orchestrators
@@ -57,7 +57,7 @@ Some or all of the following ports may be required:
 * Glance: TCP 9292
 * Nova: TCP 8774
 * Neutron: TCP 9696
-* Heat (optional; used for autoscale of back-end members): TCP 8004 
+* Heat (optional; used for autoscaling back-end members): TCP 8004 
 
 ### VMware vCenter
 

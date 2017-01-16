@@ -9,7 +9,8 @@ Avi Vantage is a software-based solution that provides real-time analytics as we
 **Notes:**
 
 * **Deployment in *write access mode* is recommended. It's the quickest and easiest way to deploy.**
-* **After completing the deployment process, clik <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">here</a> to learn how to create virtual services.** 
+* **After completing the deployment process, clik <a href="/2016/02/01/configuring-a-virtual-service-for-vmware-basic">here</a> to learn how to create virtual services.**
+* **vMotion is not supported.** 
 
 ## How Avi Vantage Integrates into vCenter
 

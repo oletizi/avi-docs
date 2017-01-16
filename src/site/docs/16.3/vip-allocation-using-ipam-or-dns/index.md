@@ -115,8 +115,8 @@ This table lists the IPAM and DNS provider support available for each type of cl
 <td>No</td>
 <td>No</td>
 <td>Yes</td>
-<td>N/A (default, native)</td>
-<td>N/A (default, native)</td>
+<td>N/A (default, native)*</td>
+<td>N/A (default, native)*</td>
 </tr>
 <tr>       
 <td>Containers (Mesos/Rancher/Docker UCP)</td>
@@ -144,6 +144,8 @@ This table lists the IPAM and DNS provider support available for each type of cl
 </tr>
 </tbody>
 </table> 
+
+/* Avi Vantage supports Route 53 when AWS is the cloud provider configuration in Avi.
 
 ## Cloud Configuration Workflow
 

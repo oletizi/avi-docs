@@ -4,6 +4,8 @@ layout: default
 ---
 <a href="img/Venafi.png"><img class="size-full wp-image-18385 alignright" src="img/Venafi.png" alt="Venafi" width="263" height="185"></a>Avi Vantage can be set up to integrate with the <a href="https://www.venafi.com/platform/trust-protection-platform">Venafi Trust Protection Platform</a>™ for automation of SSL and TLS certificate life-cycle management.  All certificates will be protected and controlled through TPP.  This process is transparent to the Avi Controllers.
 
+*Note: Minimum Venafi release is Trust Protection Platform 16.3.*
+
 ### Configuration
 
 **Config**:  The Venafi Trust Protection Platform leverages Avi Vantage's REST API for all communications, including creating and updating SSL certificate and keys.  No configuration changes are required on Avi Vantage.  TPP does require a username, password, and an IP address of an Avi Controller.  If the Controller is configured with a floating Controller cluster IP, this address should be used.  If no floating IP is configured, the IP address of any Controller can be used.

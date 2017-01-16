@@ -4,16 +4,16 @@ layout: default
 ---
 Starting with Avi Vantage release 16.3, Avi Service Engine data interfaces can be assigned to multiple VRFs (Virtual Routing and Forwarding Context).
 
-Virtual Routing Framework, or VRF, is a method of isolating traffic within a system. This is also referred to as a "Route Domain" within the load balancer community.
+Virtual Routing Framework, or VRF, is a method of isolating traffic within a system. This is also referred to as a "route domain" within the load balancer community.
 
-## **Clouds Types Supported**
+### **Clouds Types Supported**
 
 Avi Vantage supports assignment of Service Engine data interfaces to multiple VRFs only in the cloud types listed below.
 
 * No Access Cloud
 * Linux Server Cloud 
 
-## **Types of Interfaces Supported**
+### **Types of Interfaces Supported**
 
 The VRF property for the following types of data interfaces can be modified by the user, via the REST API, UI, or CLI.
 
@@ -26,16 +26,16 @@ The types of data interfaces below do not support modification of the VRF prope
 * Port-channel member interfaces
 * Management interface 
 
-## **How It Works**
+### **Dependency on In-band Management**
 
-Each deployed Service Engine has a new attribute, inband management. When enabled, the management interface of the Service Engine (i.e., the interface used to communicate with the Avi Controller cluster) is also used for data plane traffic.
+Each deployed Service Engine has a new attribute, "in-band management". When enabled, the management interface of the Service Engine (i.e., the interface used to communicate with the Avi Controller cluster) is also used for data plane traffic.
 
-* If inband management is enabled on an SE, that SE will not support multiple VRFs.
-* To add support for multiple VRFs on an SE, it must be deployed with inband management *disabled*. The caveat with disabling inband management is that the management interface will not be used for data plane traffic, and hence no VIPs will be placed on this interface and this interface will not be used to communicating with back-end servers. 
+* If in-band management is enabled on an SE, that SE will not support multiple VRFs.
+* To enable multiple VRFs on an SE, it must be deployed with in-band management *disabled*. The caveat with disabling in-band management is that the management interface will not be used for data plane traffic, and hence no VS will be placed on this interface and this interface will not be used to communicating with back-end servers. 
 
-Subsequent sections cover the specifics of enabling/disabling the inband management attribute on an SE.
+To learn how to disable/enable in-band management read <a href="/configuring-in-band-management-for-an-avi-service-engine/">this article</a>.
 
-## **Creating VRF Contexts**
+### **Creating VRF Contexts**
 
 <ol> 
  <li>Navigate to Infrastructure &gt; Clouds.</li> 
@@ -47,7 +47,7 @@ Subsequent sections cover the specifics of enabling/disabling the inband managem
  <li>Enter the name of the VRF context and click Save.<a href="img/vrf2.png"><img class="size-full wp-image-5931 aligncenter" src="img/vrf2.png" alt="vrf2" width="752" height="562"></a></li> 
 </ol> 
 
-## **Modifying SE Data Interface VRF — UI**
+### **Modifying SE Data Interface VRF — UI**
 
 Service Engine physical, port-channel & VLAN interface VRFs can be updated if there are multiple VRFs configured in the tenant and cloud to which the SE belongs.
 
@@ -63,14 +63,14 @@ Service Engine physical, port-channel & VLAN interface VRFs can be updated if th
 </figcapture>
 </figure> 
 
-## **Modifying SE Data Interface VRF - CLI**
+### **Modifying SE Data Interface VRF ****—****CLI**
 
 <figure class="thumbnail wp-caption aligncenter"> <a href="img/Screen-Shot-2016-10-17-at-2.08.38-PM.png"><img class="wp-image-15776" src="img/Screen-Shot-2016-10-17-at-2.08.38-PM.png" alt="Setting VRF for physical and VLAN interfaces through CLI" width="800" height="234"></a>  
 <figcapture> Figure. Setting VRF for physical and VLAN interfaces through CLI 
 </figcapture>
 </figure> 
 
-## **Creating Virtual Services**
+### **Creating Virtual Services in a VRF**
 
 > Note: These steps can be performed from the admin tenant or from another tenant.
  <ol> 
@@ -79,39 +79,3 @@ Service Engine physical, port-channel & VLAN interface VRFs can be updated if th
  <li>Enter a name for the virtual service, virtual IP address (VIP) and other properties of the virtual service.</li> 
  <li>Click Save.</li> 
 </ol> 
-
-## **SE Inband Management Configuration Using Bare-Metal Script**
-
-This section details deployment of a Service Engine with inband management enabled or disabled using the avi_baremetal_setup.py script.
-
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Screen-Shot-2016-10-12-at-7.17.43-PM.png"><img class="wp-image-15521" src="img/Screen-Shot-2016-10-12-at-7.17.43-PM.png" alt="deployment of a Service Engine with inband management enabled or disabled using the avi_baremetal_setup.py script" width="900" height="604"></a>  
-<figcapture> Figure. Option to disable/enable inband management in the avi_baremetal_setup.py script interactive mode 
-</figcapture>
-</figure> 
-
- 
-
-## **SE Inband Management Configuration using Linux Server Cloud**
-
-The section details deployment of an SE with inband management enabled or disabled using the Linux Server Cloud configuration on the Avi Controller UI.<a href="img/Screen-Shot-2016-10-12-at-6.39.56-PM.png"><br> </a>
-
-A new server added to the Linux Server Configuration will inherit the cloud-level inband management property. This property can be explicitly modified per host to override the cloud-level value.
-
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Screen-Shot-2016-10-17-at-1.01.03-PM.png"><img class="wp-image-15730" src="img/Screen-Shot-2016-10-17-at-1.01.03-PM.png" alt="Inband management enabled at the cloud and host level" width="900" height="470"></a>  
-<figcapture> Figure.  Inband management enabled at the cloud and host level 
-</figcapture>
-</figure> 
-
- 
-
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Screen-Shot-2016-10-17-at-1.01.17-PM.png"><img class="wp-image-15732" src="img/Screen-Shot-2016-10-17-at-1.01.17-PM.png" alt="Inband management enabled at cloud level, but disabled at host level" width="800" height="421"></a>  
-<figcapture> Figure. Inband management enabled at cloud level, but disabled at host level 
-</figcapture>
-</figure> 
-
- 
-
-<figure class="thumbnail wp-caption aligncenter"> <a href="img/Screen-Shot-2016-10-17-at-2.05.18-PM.png"><img class="wp-image-15768" src="img/Screen-Shot-2016-10-17-at-2.05.18-PM.png" alt="Inband Management setting enabled at cloud and disabled at host level from Avi Vantage CLI" width="800" height="836"></a>  
-<figcapture> Figure. Inband management setting enabled at cloud and disabled at host level from the CLI 
-</figcapture>
-</figure> 

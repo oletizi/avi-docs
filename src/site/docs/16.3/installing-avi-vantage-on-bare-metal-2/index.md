@@ -65,33 +65,7 @@ This section lists the minimum requirements for installation.
 
 ### Hardware Requirements
 
-Each bare-metal server on which you plan to install and run Avi Vantage must meet at least the following physical requirements:
-<table class="myTable table table-bordered table-hover">  
-<tbody>      
-<tr>   
-<th>Component
-</th>
-<th>Minimum Requirement
-</th>
-</tr>
-<tr>   
-<td>CPU</td>
-<td>Intel Xeon with 8 cores</td>
-</tr>
-<tr>   
-<td>Memory</td>
-<td>16 GB RAM</td>
-</tr>
-<tr>   
-<td>Hard Drive (HD)</td>
-<td>64 GB</td>
-</tr>
-<tr>   
-<td>Network Interface Controller (NIC)</td>
-<td>1 x 1 Gbps (Intel NIC 82598 or 82599 controller family)</td>
-</tr>
-</tbody>
-</table>  
+Each bare-metal server on which you plan to install and run Avi Vantage must meet at least the physical requirements for Controllers and SEs as specified in <a href="/system-requirements-hardware/">this article</a>. In addition, the minimum NIC is one 1 x 1-Gbps member of the Intel NIC 82598 or 82599 controller families.
 
 ### Software Requirements
 
@@ -139,23 +113,23 @@ Avi Vantage for bare-metal servers is distributed as a Docker image. If Docker i
 
 <ol> 
  <li>Install updates to Oracle Linux (OEL): <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>yum
-    update</code></pre> </li> 
+update</code></pre></li> 
  <li>Download and install the latest version of Docker: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>wget –q0-
-    https://get.docker.yom/ | sh</code></pre> </li> 
+https://get.docker.yom/ | sh</code></pre></li> 
  <li>Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo service docker
-    start</code></pre> </li> 
+start</code></pre></li> 
  <li>If deploying on more than one host, repeat the steps above on each host.</li> 
 </ol> 
 
 ### Install Docker onto Red Hat Linux
 
 <ol> 
- <li>Register the bare-metal host with Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>subscription-manager register</code></pre> </li> 
- <li>Enable the repository for extra services: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>subscription-manager --enable=rhel-7-server-extras-rpms</code></pre> </li> 
- <li>Install updates to Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo yum update</code></pre> </li> 
+ <li>Register the bare-metal host with Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>subscription-manager register</code></pre></li> 
+ <li>Enable the repository for extra services: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>subscription-manager --enable=rhel-7-server-extras-rpms</code></pre></li> 
+ <li>Install updates to Red Hat: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo yum update</code></pre></li> 
  <li>Install Docker: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo yum install docker</code></pre></li> 
  <li>Start Docker services: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo service docker
-    start</code></pre> </li> 
+start</code></pre></li> 
  <li>If deploying on more than one host, repeat the steps above on each host.</li> 
 </ol> 
 
@@ -185,12 +159,12 @@ Server:
 ## Install Avi Controller Image
 
 <ol class="md-ignore"> 
- <li>Use SCP to copy the .tgz package onto the bare-metal node that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre> </li> 
+ <li>Use SCP to copy the .tgz package onto the bare-metal node that will host the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre></li> 
  <li>Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>ssh
-    root@Host-IP</code></pre> </li> 
+root@Host-IP</code></pre></li> 
  <li>Change to the /tmp directory: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>cd /tmp/</code></pre></li> 
  <li>Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo tar -xvf
-    docker_install.tar.gz</code></pre> </li> 
+docker_install.tar.gz</code></pre></li> 
  <li>Run the setup.py script. The script will display prompts for a series of questions. For the yes/no questions,<br> enter "y". For the questions about resource allocation, enter the amounts for your deployment. The script also<br> prompts for the Controller's IP address.<p></p> <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>./avi_baremetal_setup.py
 Welcome to AVI Initialization Script
 DPDK Mode:
@@ -223,7 +197,7 @@ kernel.core_pattern = /var/crash/%e.%p.%t.core
 
 Installation Successful. Reboot At A Convenient Time
 </code></pre> </li> 
- <li>Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>reboot</code></pre> </li> 
+ <li>Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>reboot</code></pre></li> 
  <li>If deploying a 3-node cluster, repeat the steps above on the hosts for each of the other 2 Controllers.</li> 
 </ol> 
 
@@ -240,10 +214,10 @@ Installation Successful. Reboot At A Convenient Time
 ## Deploy Service Engine
 
 <ol class="md-ignore"> 
- <li>Use SCP to copy the .tgz package onto the bare-metal node that will host the SE: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre> </li> 
- <li>Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>ssh root@Host-IP</code></pre> </li> 
+ <li>Use SCP to copy the .tgz package onto the bare-metal node that will host the SE: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>scp docker_install.tar.gz root@Host-IP:/tmp/</code></pre></li> 
+ <li>Use SSH to log into the host: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>ssh root@Host-IP</code></pre></li> 
  <li>Change to the /tmp directory: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>cd /tmp/</code></pre></li> 
- <li>Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo tar -xvf docker_install.tar.gz</code></pre> </li> 
+ <li>Unzip the .tgz package: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>sudo tar -xvf docker_install.tar.gz</code></pre></li> 
  <li>Run the setup.py script. The script will display prompts for a series of questions. Use the same answers as used<br> for the Controller. (For the yes/no questions, enter "y". For the questions about resource allocation, enter the<br> amounts for your deployment. The script also prompts for the Controller's IP address.)<p></p> <pre crayon="false" pre="" class="command-line language-bash" data-user="root" data-host="localhost ~" data-output="2-100"><code>./avi_baremetal_setup.py
 Welcome to AVI Initialization Script
 DPDK Mode:
@@ -272,5 +246,5 @@ kernel.core_pattern = /var/crash/%e.%p.%t.core
 
 Installation Successful. Reboot At A Convenient Time
 </code></pre> </li> 
- <li>Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>reboot</code></pre> </li> 
+ <li>Reboot the host to complete installation: <pre crayon="false" class="command-line language-bash" data-prompt=": >"><code>reboot</code></pre></li> 
 </ol> 

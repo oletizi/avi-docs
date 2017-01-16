@@ -24,7 +24,7 @@ Avi Vantage integrates with the following OpenStack services:
 * **Glance:** Avi Controller uses Glance for storing service engine (Avi SE) image.
 * **Nova:** Avi Controller uses Nova API to automatically create and destroy application delivery service engines (Avi SEs) as needed to support high availability and performance guarantees.
 * **Neutron:** Avi Controller uses Neutron API to plug service engines into right Neutron networks for receiving and sending the application traffic.
-* **Neutron LBaaS (v1 or v2):** Users can either use Avi Controller API (or UI or CLI) to directly configure load balancer instances. Optionally, the OpenStack admins can install Avi LBaaS driver on the Neutron API servers and enable Avi as a provider for Neutron LBaaS API.
+* **Neutron LBaaS (v1 or v2):** Users can either use Avi Controller API (or UI or CLI) to directly configure load balancer instances. Optionally, the OpenStack admins can install Avi LBaaS driver on the Neutron API servers and enable Avi as a provider for Neutron LBaaS API.*Note for Avi Vantage 16.3.x installations; If any pre-16.3.x versions of the Neutron-LBaaS Avi driver were installed, then installing or upgrading to Avi-Vantage 16.3.x requires upgrading the corresponding Avi driver to the 16.3.x version as well. Earlier versions of the Avi driver are incompatible with Avi-Vantage 16.3.x.*
 * **Horizon: **OpenStack admins can optionally install Avi Horizon Dashboard extensions to expose full Avi UI directly embedded in Horizon Dashboard. Users can then not only configure load balancer instances but can also access the full analytics of their applications.
 * **Heat: **OpenStack admins can optionally install Avi Heat package on the Heat Engine servers to expose all Avi Controller API resource types for users to use in their heat templates. In contrast to LBaaS (v1 or v2) resource types, Avi Heat resource types expose significantly advanced features. 
 
@@ -155,11 +155,11 @@ The following table lists the software requirements.
 </tr>
 <tr>   
 <td>Avi Controller</td>
-<td>16.2</td>
+<td>16.3</td>
 </tr>
 <tr>   
 <td>OpenStack (and Neutron service)</td>
-<td>One of the following: Havana, Icehouse, Juno, Kilo, or Liberty</td>
+<td>One of the following: Havana, Icehouse, Juno, Kilo, Liberty, Mitaka</td>
 </tr>
 <tr>   
 <td>Neutron extension for allowed-address-pair</td>
@@ -167,11 +167,11 @@ The following table lists the software requirements.
 </tr>
 <tr>   
 <td>Avi LBaaS driver</td>
-<td>16.2</td>
+<td>16.3</td>
 </tr>
 <tr>   
 <td>Avi SSL extension for OpenStack Horizon</td>
-<td>16.2</td>
+<td>16.3</td>
 </tr>
 </tbody>
 </table> 
@@ -574,43 +574,72 @@ Deployment of OpenStack-managed LBaaS mode requires the following procedure.
 
 Note: Replacing the Controller's self-signed certificate with a valid one allows access to the Avi Controller through the Horizon dashboard. Alternatively, the tenant user or administrator can log onto the Avi Controller's web interface directly, accept the self-signed certificate presented by the Controller. After this, the user or administrator can access the Controller through Horizon.
 
-### Perform OpenStack-managed LBaaS Mode Depoyment
+### Perform OpenStack-managed LBaaS Mode Deployment
 
 To begin, perform all the steps in <a href="#Deploying_Avi-managed_LBaaS_Mode">Deploying Avi-managed LBaaS Mode</a>. These steps also are required for OpenStack-managed LBaaS mode.
 
 ### Install Avi LBaaS Driver
 
-To install LBaaS v2 driver, please use the following script-based method. For installing LBaaS v1, you can use either the script-based or the UI-based approach described in the following sections.
-
-### Installing LBaaS driver using script
+### Installing / Upgrading LBaaS driver using script
 
 Avi Networks provides a script for installing or upgrading the LBaaS plugin driver (v1 or v2). The script makes the necessary OpenStack configuration changes automatically. Download the Avi LBaaS driver installation package (avi_openstack_package.tar.gz) from the Avi Networks portal website (<a href="https://portal.avinetworks.com">https://portal.avinetworks.com</a>).
-> <strong>Note:</strong> If preferred, the LBaaS driver can be installed alone without the virtual environment
->  files that the script also installs. (For more information and instructions, see the README file in the <strong>avi_openstack_package.tar.gz</strong>
->  package.)
- > <strong>Note:</strong> An account with root privileges for the Neutron API server is required. This account is
->  different from the account used by the Controller to access the OpenStack infrastructure.
- <ol class="md-ignore"> 
- <li>Copy the package onto the OpenStack Neutron API host.</li> 
- <li>Log into the Neutron API server.</li> 
- <li>On the OpenStack Neutron API server, back up neutron.conf.</li> 
- <li>Unzip and untar the driver package: <code>tar -xzf avi_openstack_package.tar.gz</code></li> 
- <li>Run the Avi LBaaS installation script. To install LBaaS v2 driver, specify the option "--v2" to the following install command.<br> In the following example of v1 driver installation, 10.114.214.250 is the IP address for the Avi<br> Controller cluster. The login credentials for the Controller are admin, avinetworks. Make sure to replace the IP<br> address in the example with the cluster IP address.<p></p> 
-  <blockquote> 
-   <p><strong>Note:</strong> If installing only the driver without the virtual environment files, see the<br> README file in the <strong>avi_openstack_package.tar.gz</strong> on the Avi Networks portal.</p> 
-  </blockquote> </li> 
-</ol> 
 
+**Note:** If preferred, the LBaaS driver can be installed alone without the virtual environment files that the script also installs. (For more information and instructions, see the README file in the **avi_openstack_package.tar.gz **package.)
 
-<pre>cd ./openstack_lbplugin
-./install.sh --aname cisco_lbaas --aip 10.114.214.250 --auser admin --apass avinetworks
-  --&gt; Install SeLinux module avi_lbaas? (y/n) n
-  --&gt; Configure Neutron Server with Avi LBaaS provider cisco_lbaas; with driver avi (y/n) y
-  08/28/2014 23:27:55 INFO: Neutron Avi LBaaS provider avi_adc configure...OK
-  08/28/2014 23:27:56 INFO: Neutron Avi LBaaS driver avi setup...OK
-  08/28/2014 23:28:01 INFO: neutron-server restart...OK
-  08/28/2014 23:28:01 INFO: Neutron Avi LBaaS configuration setup...OK
-</pre> 
+**Note:** An account with root privileges for the Neutron API server is required. This account is different from the account used by the Controller to access the OpenStack infrastructure.
+
+**Note**: If any pre-16.3.x versions of the Neutron-LBaaS Avi driver were installed, then installing or upgrading to Avi-Vantage 16.3.x requires upgrading the corresponding Avi driver to the 16.3.x version as well. Earlier versions of the Avi driver are incompatible with Avi-Vantage 16.3.x.
+
+* Copy the package onto the OpenStack Neutron API host.
+* Log into the Neutron API server.
+* On the OpenStack Neutron API server, back up neutron.conf.
+* Unzip and untar the driver package: <code>tar -xzf avi_openstack_package.tar.gz</code>
+* Run the Avi LBaaS installation script. To install LBaaS v2 driver, specify the option "--v2" to the following install command. In the following example of v1 driver installation, 10.10.22.44 is the IP address for the Avi Controller cluster. The login credentials for the Controller are admin, avinetworks. Make sure to replace the IP address in the example with the cluster IP address.
+
+ 
+
+**Note**: If installing only the driver without the virtual environment files, see the
+README file in the **avi_openstack_package.tar.gz** on the <a href="https://avinetworks.com/portal">Avi Networks customer portal</a>.
+
+<pre><code class="language-lua">[root@sivacos openstack_lbplugin(keystone_admin)]# ./install.sh --aname my_lbaas --aip 10.10.22.44 --auser admin --apass avinetworks
+12/06/2016 13:58:37 INFO: logging initialized
+12/06/2016 13:58:37 WARNING: Using auth_url IP 10.130.128.110 as keystone IP
+12/06/2016 13:58:37 INFO: OS distribution: Fedora
+12/06/2016 13:58:38 INFO: Neutron process check...OK
+12/06/2016 13:58:38 INFO: neutron path '/usr/lib/python2.7/site-packages/neutron'...OK
+12/06/2016 13:58:38 INFO: neutron_lbaas path '/usr/lib/python2.7/site-packages/neutron_lbaas'...OK
+12/06/2016 13:58:43 INFO: Local: Avi Controller '10.10.22.44' check using provided credentials...OK
+12/06/2016 13:58:44 INFO: Local: Avi Controller cloud 'Default-Cloud' check...OK
+--&gt; Install SeLinux module 'avi_lbaas'? (y/n)y
+12/06/2016 13:58:49 INFO: SeLinux module Install in progress...
+12/06/2016 13:59:05 INFO: SeLinux module 'avi_lbaas' install...OK
+12/06/2016 13:59:05 INFO: Horizon Load-Balancer tab already enabled
+12/06/2016 13:59:37 INFO: Horizon HTTP server restart...OK
+--&gt; Configure Neutron Server with Avi LBaaS provider 'my_lbaas' with driver 'avi'? (y/n)y
+12/06/2016 13:59:46 INFO: Neutron Avi LBaaS configure provider 'my_lbaas'...OK
+12/06/2016 13:59:46 INFO: Neutron Avi LBaaS driver 'avi' setup...OK
+12/06/2016 13:59:58 INFO: neutron-server restart...OK
+12/06/2016 13:59:58 INFO: Neutron Avi LBaaS configuration setup...OK
+12/06/2016 13:59:58 INFO: Refer '/tmp/openstack_lbplugin/avi_os_setup.log' for install log</code></pre>  
+* To upgrade the existing driver, if any, specify the option “--update" to the above install command.  
+<pre><code class="language-lua">[root@sivacos openstack_lbplugin(keystone_admin)]# ./install.sh --aname my_lbaas --aip 10.10.22.44 --auser admin --apass avinetworks --update
+12/06/2016 14:04:08 INFO: logging initialized
+12/06/2016 14:04:08 WARNING: Using auth_url IP 10.130.128.110 as keystone IP
+12/06/2016 14:04:08 INFO: OS distribution: Fedora
+12/06/2016 14:04:08 INFO: Neutron process check...OK
+12/06/2016 14:04:09 INFO: neutron path '/usr/lib/python2.7/site-packages/neutron'...OK
+12/06/2016 14:04:09 INFO: neutron_lbaas path '/usr/lib/python2.7/site-packages/neutron_lbaas'...OK
+12/06/2016 14:04:19 INFO: Local: Avi Controller '10.10.22.44' check using provided credentials...OK
+12/06/2016 14:04:20 INFO: Local: Avi Controller cloud 'Default-Cloud' check...OK
+12/06/2016 14:04:23 INFO: SeLinux module 'avi_lbaas' already installed
+12/06/2016 14:04:23 INFO: Horizon Load-Balancer tab already enabled
+12/06/2016 14:04:54 INFO: Horizon HTTP server restart...OK
+--&gt; Configure Neutron Server with Avi LBaaS provider 'my_lbaas' with driver 'avi'? (y/n)y
+12/06/2016 14:05:03 INFO: Neutron Avi LBaaS configure provider 'my_lbaas'...OK
+12/06/2016 14:05:04 INFO: Neutron Avi LBaaS driver 'avi' setup...OK
+12/06/2016 14:05:16 INFO: neutron-server restart...OK
+12/06/2016 14:05:16 INFO: Neutron Avi LBaaS configuration setup...OK
+12/06/2016 14:05:16 INFO: Refer '/tmp/openstack_lbplugin/avi_os_setup.log' for install log</code></pre>  
 
 ### Installing LBaaS v1 driver from Avi UI
 

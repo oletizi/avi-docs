@@ -2,7 +2,9 @@
 title: IPAM and DNS (16.2.x)
 layout: default
 ---
-The Avi Controller can be configured to provide automatic IP address allocation for virtual services and to provide authoritative DNS resolution for their virtual IP addresses.
+The Avi Controller can be configured to provide automatic IP address allocation for virtual services and to provide authoritative DNS resolution for their virtual IP addresses.
+
+*Note: Users of Avi Vantage 16.3+ should instead refer to <a href="/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS (16.3+)</a>.*
 
 To enable auto-allocation of VIPs, configure an IP address management (IPAM) profile and add it to the configuration of the cloud on the Avi Controller. IPAM profiles can be configured to use the following IP providers:
 
@@ -30,7 +32,7 @@ Here is the list of providers and supported functionalities for IPAM and DNS:
 </th>
 <th>Internal
 </th>
-<th> AWS/OpenStack
+<th> AWS/OpenStack
 </th>
 </tr>
 <tr>     
@@ -60,7 +62,7 @@ For example, if Infoblox is the chosen provider, both IPAM and DNS profiles shou
 
 This table lists the IPAM and DNS provider support available for each type of cloud (infrastructure) configured in Vantage. For example, when creating VirtualServices in OpenStack or AWS cloud, a separate configuration for IPAM is not needed/allowed as the cloud configuration has support for IPAM natively in Avi. However, Vantage DNS service can be still be used with these Clouds.
 
- 
+ 
 
 <table class=" table table-bordered table-hover">  
 <tbody>          
@@ -137,7 +139,7 @@ This table lists the IPAM and DNS provider support available for each type of cl
 </tbody>
 </table> 
 
- 
+ 
 
 ## Cloud Configuration Workflow
 
@@ -188,7 +190,7 @@ Select FQDN for the virtual service from a list of configured domain names:
 
 <a href="img/vs-create-ipam-1.png"><img class="alignnone wp-image-10302" src="img/vs-create-ipam-1.png" alt="vs-create-ipam" width="666" height="417"></a>
 
- 
+ 
 
 Note:
 <ol> 

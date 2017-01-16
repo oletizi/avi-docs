@@ -121,7 +121,7 @@ Installation of Avi Vantage for a Linux server cloud also requires the following
 </tr>
 <tr>   
 <td>Operating system (OS)</td>
-<td>One of the following:<br> Oracle Enterprise Linux 7.0, 7.1, or 7.2<br> Red Hat Enterprise Linux 7.0, 7.1, or 7.2<br> CentOS 7.0, 7.1, 7.2</td>
+<td>One of the following:<br> Oracle Enterprise Linux 7.0, 7.1, 7.2 or 7.3 (7.3 support added from 16.3.2)<br> Red Hat Enterprise Linux 7.0, 7.1, or 7.2<br> CentOS 7.0, 7.1, 7.2<p></p> <p>Ubuntu 14.04, 16.04 (16.04 support added from 16.3.2)</p></td>
 </tr>
 </tbody>
 </table>  
@@ -306,9 +306,8 @@ Use a web browser to navigate to the Avi Controller and start the setup wizard t
  
 
  
-<a href="img/email_SMTP_settings.png"><img class="alignleft wp-image-20544" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="236" height="210"></a> 
+<a href="img/email_SMTP_settings.png"><img class="alignleft wp-image-20544" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="236" height="210"></a> <img class="wp-image-9496 alignnone" src="img/Ctlr-setup-infra-linuxservercloud-262.png" alt="Ctlr-setup-infra-linuxservercloud-262 Avi Vantage orchestrator integration" width="245" height="389"> 
 
-<img class="wp-image-9496 alignnone" src="img/Ctlr-setup-infra-linuxservercloud-262.png" alt="Ctlr-setup-infra-linuxservercloud-262 Avi Vantage orchestrator integration" width="245" height="389">
                          The rest of the configuration information prompted for by the wizard also can be entered now while using the wizard, or any time after installation is complete. 
 
 * **SSH user and keys**: To use the "root" account (simpler option), select Create SSH User, enter the name, select Generate SSH Key Value Pair and click Generate SSH Key Pair. Then click Copy to clipboard, and save the key in a text file. (This file will be useful soon.)
@@ -495,7 +494,7 @@ Installation of Avi Vantage for a Linux server cloud also requires the following
 </tr>
 <tr>   
 <td>Operating system (OS)</td>
-<td>One of the following:<br> Oracle Enterprise Linux 7.0, 7.1, or 7.2<br> Red Hat Enterprise Linux 7.0, 7.1, or 7.2<br> CentOS 7.0, 7.1, 7.2</td>
+<td>One of the following:<br> Oracle Enterprise Linux 7.0, 7.1, 7.2 or 7.3 (7.3 support added from 16.3.2)<br> Red Hat Enterprise Linux 7.0, 7.1, or 7.2<br> CentOS 7.0, 7.1, 7.2<p></p> <p>Ubuntu 14.04, 16.04 (16.04 support added from 16.3.2)</p></td>
 </tr>
 </tbody>
 </table>  
@@ -655,9 +654,8 @@ Use a web browser to navigate to the Avi Controller and start the setup wizard t
 <img class="alignnone" src="img/bare-metal-ctlrdeploy-dnsntp-262.png" alt="bare-metal-ctlrdeploy-dnsntp Avi Vantage Linux server cloud system settings" width="236" height="307" align="left">
 
  
- <a href="img/email_SMTP_settings.png"><img class="alignleft wp-image-20544" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="236" height="210"></a> 
+ <a href="img/email_SMTP_settings.png"><img class="alignleft wp-image-20544" src="img/email_SMTP_settings.png" alt="email_SMTP_settings" width="236" height="210"></a> <img class="wp-image-9496 alignnone" src="img/Ctlr-setup-infra-linuxservercloud-262.png" alt="Ctlr-setup-infra-linuxservercloud-262 Avi Vantage orchestrator integration" width="245" height="389"> 
 
-<img class="wp-image-9496 alignnone" src="img/Ctlr-setup-infra-linuxservercloud-262.png" alt="Ctlr-setup-infra-linuxservercloud-262 Avi Vantage orchestrator integration" width="245" height="389">
                          The rest of the configuration information prompted for by the wizard also can be entered now while using the wizard, or any time after installation is complete. 
 
 * **SSH user and keys**: To use the "root" account (simpler option), select Create SSH User, enter the name, select Generate SSH Key Value Pair and click Generate SSH Key Pair. Then click Copy to clipboard, and save the key in a text file. (This file will be useful soon.)

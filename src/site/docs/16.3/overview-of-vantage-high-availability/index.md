@@ -1,14 +1,16 @@
 ---
-title: Overview of Vantage High Availability
+title: Overview of Avi Vantage High Availability
 layout: default
 ---
-To ensure the highest level of uptime, including through <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Avi Vantage software upgrades</a>, careful consideration must be made to ensure the availability for both Avi Controllers and Avi Service Engines.
+To ensure the highest level of uptime for a site, including through <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Avi Vantage software upgrades</a>, careful consideration must be made to ensure the availability for both Avi Controllers and Avi Service Engines.
 
 * **Avi Controller HA:** Provides node-level redundancy for Avi Controllers. A single Avi Controller is deployed as the leader node, then two additional Avi Controllers are added as follower nodes. [Note: Some *older* Avi literature may refer to the leader and followers as primary and secondaries, respectively.]
 * **Avi SE HA:** Provides SE-level redundancy within an SE group. If an SE within the group fails, HA heals the failure and compensates for the reduced site capacity. Typically, this consists of spinning up a new SE to take the place of the one that failed. 
 
 HA for Avi SEs and HA for Avi Controllers are separate features and are configured separately. HA for Avi Controllers is a system administration setting. HA for Avi SEs is an SE group setting.
 <a name="control-plane-HA"></a>
+
+Note: To ensure application availability in the presence of whole-site failures, Avi recommends use of Avi GSLB, an overview for which is available <a href="/avi-gslb-overview/">here</a>.
 
 ## Control Plane High Availability
 

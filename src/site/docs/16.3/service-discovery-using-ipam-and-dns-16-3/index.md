@@ -160,6 +160,7 @@ For example,
 
 * When creating virtual services in OpenStack or AWS cloud, a separate configuration for IPAM is not needed/allowed, since the cloud configuration has support for IPAM natively in Avi Vantage.  
     * "Default" means Avi accepts the cloud's IPAM/DNS support without additional action on the part of the Avi Vantage admin
+    * Avi Vantage supports Route 53 when AWS is the cloud provider configuration in Avi.
     * "Not used" means, although the cloud supports DNS, Avi Vantage does not use it
 * When creating a virtual service in "Linux Server" cloud in AWS/GCP environment, you can use the cloud-native IPAM solution of AWS/GCP
 * Avi Vantage DNS service can be used with all these clouds. 

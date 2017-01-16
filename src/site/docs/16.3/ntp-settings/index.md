@@ -4,7 +4,15 @@ layout: default
 ---
 NTP (Network Time Protocol) settings are critical to proper functioning of the Avi Controller. Analytics functionality in the Controller relies on the fact that Controller(s) in the cluster and SE(s) are synchronized. Controller(s) synchronize time from the configured NTP servers and the SE(s) in turn synchronize time from the Controller(s).
 
- 
+### GUI-based Configuration
+
+Configure NTP servers from the Avi GUI as follows:
+<ol> 
+ <li>Navigate to the DNS/NTP tab in the Administration -&gt; Settings window.<br> <a href="img/Screen-Shot-2017-01-06-at-3.31.38-PM.png"><img class="wp-image-22325 alignnone" src="img/Screen-Shot-2017-01-06-at-3.31.38-PM.png" alt="DNS/NTP Tab of Administration -> Settings" width="700" height="204"></a></li> 
+ <li style="text-align: left;">Click the pencil icon to open the System Settings editor. Enter a comma-delimited list of NTP server hostnames or IP addresses and click Save.<a href="img/Screen-Shot-2017-01-06-at-3.41.30-PM.png"><img class="alignleft wp-image-22327" src="img/Screen-Shot-2017-01-06-at-3.41.30-PM.png" alt="System Settings Editor window" width="700" height="227"></a></li> 
+</ol> 
+
+### CLI-based Configuration
 
 Configure NTP servers from the CLI as follows:
 
@@ -49,6 +57,8 @@ Configure NTP servers from the CLI as follows:
 | docker_mode                         | False                            |
 +-------------------------------------+----------------------------------+
 </code></pre> 
+
+### API-based Configuration
 
 Configure NTP servers with the API as follows:
 

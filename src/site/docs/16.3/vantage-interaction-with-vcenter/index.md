@@ -4,9 +4,11 @@ layout: default
 ---
 ### Description
 
-Avi Vantage may be deployed with a VMware cloud in either No Access, Read Access, or Write Access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Vantage Controller within VMware vCenter.
+Avi Vantage may be deployed with a VMware cloud in either No Access, Read Access, or Write Access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Avi Controller within VMware vCenter.
 
 See <a href="/docs/16.3/orchestrator-access-modes/">Orchestrator Access Modes</a> for more information on access modes, and <a href="/docs/16.3/installing-avi-vantage-for-vmware-vcenter-16-2-1/">this KB</a> for instructions on installing Avi Vantage into a VMware vCenter environment.
+
+Note: vMotion is not supported.
 
 ### Initial Discovery (Read operation)
 
@@ -25,11 +27,11 @@ Avi Controller retrieves the following objects from vCenter in both Read Access 
 
 ### Service Engine VM Creation (Read/Write operation)
 
-Vantage Controller interacts with OVF Manager functionality of the vCenter to spawn a Service Engine VM. The Controller needs the following access while in Write Access mode.
+The Avi Controller interacts with OVF Manager functionality of the vCenter to spawn a Service Engine VM. The Controller needs the following access while in Write Access mode.
 
-* **Folders**: Vantage Controller creates the Service Engine VM in the default "AviSeFolder" or a folder which the user can specify. It creates the folder "AviSeFolder" if it is not present.
+* **Folders**: The Avi Controller creates the Service Engine VM in the default "AviSeFolder" or a folder which the user can specify. It creates the folder "AviSeFolder" if it is not present.
 
-* **Datastores**: Vantage Controller performs the data transfer for the Service Engine VM directly to the ESX Host's datastore.
+* **Datastores**: The Avi Controller performs the data transfer for the Service Engine VM directly to the ESX Host's datastore.
 * **Network**: 9 out of 10 vNICs for the Service Engine VM are placed in "Avi Internal" portgroup of vSwitch0. "Avi Internal" Standard portgroup is created in vSwitch0 of the ESX Host. If vSwitch0 (default Standard Switch) is not present then Avi Controller creates vSwitch0 in the ESX Host
 
 * **vApp**: Avi Controller updates OVF parameters of the Service Engine VM which fall in the vApp functionality. 
@@ -38,14 +40,14 @@ Vantage Controller interacts with OVF Manager functionality of the vCenter to sp
 
 Vantage Controller moves vNICs of Service Engine VM from "Avi Internal" to the required Portgroup (Standard/Distributed) to stitch the network connectivity for the virtual service while in Write Access mode.
 
-* **VM Deletion**:** **Vantage Controller deletes the Service Engine VM by interacting with the vCenter 
+* **VM Deletion**:** **The Avi Controller deletes the Service Engine VM by interacting with the vCenter 
 
 ### vCenter Stats
 
-<a href="img/ServerMetrics.png"><img class="size-full wp-image-6522 alignright" src="img/ServerMetrics.png" alt="ServerMetrics" width="356" height="80"></a>Vantage Controller retrieves stats from vCenter for Virtual Machines and Hosts. This data is for metrics based analytics, such as assigning resource penalties. This data is queried by Vantage while in both Read and Write Access modes.
+<a href="img/ServerMetrics.png"><img class="size-full wp-image-6522 alignright" src="img/ServerMetrics.png" alt="ServerMetrics" width="356" height="80"></a>The Avi Controller retrieves stats from vCenter for Virtual Machines and Hosts. This data is for metrics based analytics, such as assigning resource penalties. This data is queried by Avi Vantage while in both Read and Write Access modes.
 
 ### Custom vCenter Roles
 
-Vantage may leverage a custom role created within vCenter to limit the scope of access, as shown below. No change is required on Vantage.
+Avi Vantage may leverage a custom role created within vCenter to limit the scope of access, as shown below. No change is required on Avi Vantage.
 
 <a href="img/vCenterAviRole.jpg"><img class="alignnone size-full wp-image-6525" src="img/vCenterAviRole.jpg" alt="vCenterAviRole" width="586" height="920"></a>
