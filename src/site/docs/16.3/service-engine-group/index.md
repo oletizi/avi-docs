@@ -91,4 +91,4 @@ The advanced tab in the Service Engine group popup supports configuration of op
     
 ### SECURITY
 
-* **HSM Group**:  Hardware security modules may be configured within the Templates > Security > HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/physical-security-for-ssl-keys/">Physical Security for SSL Keys</a>.  
+* **HSM Group**:  Hardware security modules may be configured within the Templates > Security > HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/docs/16.3/hysical-security-for-ssl-keys/">Physical Security for SSL Keys</a>.  

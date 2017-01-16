@@ -50,7 +50,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 ### Analytics
 
 * <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/architectural-overview/templates/profiles/analytics-profile#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* Ability to disable "Significant Logs" in <a href="/docs/16.3/rchitectural-overview/templates/profiles/analytics-profile#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 

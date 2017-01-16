@@ -6,7 +6,7 @@ Transparent TCP proxy may also be called routed mode or default gateway mode.  
 
 Refer to these articles:
 
-* <a href="/default-gateway-ip-routing-on-avi-se/">Default Gateway IP Routing on Avi SE</a>
-* <a href="/x-forwarded-for-header-insertion/">X-Forwarded-For Header Insertion</a>
-* <a href="/preserve-client-ip/">Preserve Client IP</a>
-* <a href="/proxy-protocol-support/">PROXY Protocol Support</a> 
+* <a href="/docs/16.3/default-gateway-ip-routing-on-avi-se/">Default Gateway IP Routing on Avi SE</a>
+* <a href="/docs/16.3/-forwarded-for-header-insertion/">X-Forwarded-For Header Insertion</a>
+* <a href="/docs/16.3/reserve-client-ip/">Preserve Client IP</a>
+* <a href="/docs/16.3/roxy-protocol-support/">PROXY Protocol Support</a> 

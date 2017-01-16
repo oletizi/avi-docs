@@ -22,6 +22,6 @@ Note: In Avi, the cluster IP is not referred to as a "floating IP". <a href="/do
 
 ### Web Interface
 
-To add the cluster IP within the web interface, navigate to Administration > Controller > Edit. Add the new address to the Controller Cluster IP field. This change takes effect immediately upon saving. Note: As of Avi Vantage 16.3, <a href="/cluster-configuration-with-fqdn/]">DNS host names may be specified in lieu of IP addresses</a>.
+To add the cluster IP within the web interface, navigate to Administration > Controller > Edit. Add the new address to the Controller Cluster IP field. This change takes effect immediately upon saving. Note: As of Avi Vantage 16.3, <a href="/docs/16.3/cluster-configuration-with-fqdn/]">DNS host names may be specified in lieu of IP addresses</a>.
 
 <a href="img/cluster-config-example.png"><img class="alignnone size-full wp-image-10593" src="img/cluster-config-example.png" alt="cluster-config-example" width="1140" height="456"></a>

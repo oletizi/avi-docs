@@ -67,6 +67,6 @@ The <a href="/docs/architectural-overview/applications/vs-policies/">Network Sec
 
 ### <a href="img/Blacklist.png"><img class="wp-image-22438 alignright" src="img/Blacklist.png" alt="Blacklist" width="285" height="306"></a>IP Group
 
-The IP group is configured and maintained separately from the DataScript or policy referencing it.  The group may contain lists of addresses or country codes.  See the <a href="/templates-groups-ip-group/">IP Group KB</a> for more detail on this feature.
+The IP group is configured and maintained separately from the DataScript or policy referencing it.  The group may contain lists of addresses or country codes.  See the <a href="/docs/16.3/emplates-groups-ip-group/">IP Group KB</a> for more detail on this feature.
 
  
