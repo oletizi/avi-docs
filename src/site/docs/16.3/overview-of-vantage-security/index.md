@@ -34,7 +34,7 @@ See also:
 
 * <a href="/docs/16.3/support-terms-and-conditions">Support Terms &amp; Conditions</a>
 * <a href="/docs/16.3/search?search=cve">CVEs</a>
-* <a href="/docs/16.3/upgrading-the-vantage-software">Upgrade Vantage Software</a> 
+* <a href="/docs/16.3/upgrading-the-avi-vantage-software">Upgrade Vantage Software</a> 
 
 ### Hardening Vantage
 
