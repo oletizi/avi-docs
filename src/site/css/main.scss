@@ -445,6 +445,17 @@ figcapture, figcaption, figcaption.caption {
   }
 }
 
+#profile-display {
+  font-size: small;
+}
+
+p.annotator-user {
+  margin-top: $spacing-unit / 2;
+  padding-top: $spacing-unit / 2;
+  border-top: 1px solid $border-color;
+  font-style: italic;
+}
+
 /**
 * Table of Contents
 **/
