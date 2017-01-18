@@ -5,6 +5,8 @@ layout: default
 
 Hi. Here's a new change.
 
+Here's an update to the change.
+
 This article describes the A/B test pool feature supported by Avi Vantage releases prior to 16.3. For information on pools and pool groups supported as of release 16.3, see <a href="/docs/16.3/pool-groups/">here</a>.
 
 Avi Vantage allows a secondary (B) pool to be added to a virtual service's primary (A) pool. In this case, both the A and B pools can receive traffic for the virtual service. Based on configuration, a specific percentage (0-100) of the virtual service's traffic is sent to the B pool instead of the A pool. The rest of the traffic is sent to the A pool.
