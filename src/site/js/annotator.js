@@ -24179,6 +24179,7 @@ HttpStorage = exports.HttpStorage = function HttpStorage(options) {
  */
 HttpStorage.prototype.create = function (annotation) {
     annotation.uri = window.location.pathname;
+    annotation.host = window.location.host;
     return this._apiRequest('create', annotation);
 };
 
@@ -24355,6 +24356,7 @@ HttpStorage.prototype._urlFor = function (action, id) {
     url += this.options.urls[action];
     // If there's an '{id}' in the URL, then fill in the ID.
     url = url.replace(/\{id\}/, id);
+    url = url.replace(/\{host\}/, window.location.host);
     return url;
 };
 
@@ -24488,7 +24490,7 @@ HttpStorage.options = {
         create: '/annotations',
         update: '/annotations/{id}',
         destroy: '/annotations/{id}',
-        search: '/search'
+        search: '/search/?host={host}'
     }
 };
 
