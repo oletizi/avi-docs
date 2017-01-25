@@ -1,6 +1,6 @@
 ---
 title: TCP Health Monitor
-layout: 16.3
+layout: layout163
 ---
 This article covers the specific configuration for this monitor type.  See the <a href="/docs/16.3/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 

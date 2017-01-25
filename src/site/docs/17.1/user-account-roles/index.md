@@ -1,6 +1,6 @@
 ---
 title: User Roles
-layout: default
+layout: layout171
 ---
 Each Avi Vantage <a href="/docs/17.1/user-accounts">user account</a> is associated with a role. The role defines the type of access the user has to each area of the Vantage system. 
 

@@ -1,6 +1,6 @@
 ---
 title: AWS Linux Cloud with No-access Mode
-layout: 16.3
+layout: layout163
 ---
 This article describes how to set up IP address management (IPAM) in an Avi Vantage deployment onto a Linux server cloud 
 in Amazon Web Services (AWS). These steps deploy Avi Vantage into AWS in no <a href="/docs/16.3/orchestrator-access-modes">access mode</a>.

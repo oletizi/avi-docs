@@ -1,6 +1,6 @@
 ---
 title: Custom HTTP Header Persistence
-layout: 16.2
+layout: layout162
 ---
 The *custom HTTP header* mode of persistence may be applied to a virtual service with an attached HTTP application profile. This method allows an HTTP header to be manually mapped to a specific server for persistence. The Service Engine will inspect the value of the defined HTTP header and will match the value against a statically assigned header field for each server. If there is a match, the client will be persisted to the server. The server’s header field is configured in the Application &gt; Pool’s edit server page using the Header Value field within the server table.
 

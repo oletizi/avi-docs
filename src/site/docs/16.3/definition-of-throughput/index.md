@@ -1,6 +1,6 @@
 ---
 title: Definition of Throughput
-layout: 16.3
+layout: layout163
 ---
 The term *throughput* appears throughout the Avi Vantage web interface and documentation. Every vendor has a slightly different definition of throughput, and the definition may even change depending on context. In Vantage, throughput is defined based on the traffic paths through virtual services, pools, and Service Engine (SEs):
 

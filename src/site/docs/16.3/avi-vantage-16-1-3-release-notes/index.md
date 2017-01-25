@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage 16.1.3 Release Notes
-layout: 16.3
+layout: layout163
 ---
 This article describes the changes and fixes in Avi Vantage release 16.1.3.
 

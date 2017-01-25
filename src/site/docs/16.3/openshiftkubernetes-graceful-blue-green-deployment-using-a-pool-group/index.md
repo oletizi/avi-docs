@@ -1,6 +1,6 @@
 ---
 title: OpenShift/Kubernetes - Graceful Blue-Green Deployment Using a Pool Group
-layout: 16.3
+layout: layout163
 ---
 The PoolGroup feature supports a virtual service (application) to be serviced by one or more pools. In this case, each of the the pools receives a share of the traffic for the application, based on configuration.
 

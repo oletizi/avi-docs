@@ -1,6 +1,6 @@
 ---
 title: CLI Enhancements in Avi Vantage 16&#46;3
-layout: 16.3
+layout: layout163
 ---
 In Avi Vantage 16.3, a set of CLI enhancements are introduced with the following in mind:
 

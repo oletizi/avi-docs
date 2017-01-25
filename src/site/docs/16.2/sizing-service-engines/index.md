@@ -1,6 +1,6 @@
 ---
 title: Sizing Service Engines
-layout: 16.2
+layout: layout162
 ---
 Avi publishes *minimum* and *recommended* resource requirements for new Avi Service Engines.  These are somewhat abstract numbers though, as network and application traffic may vary dramatically.  This guide provides some guidance on sizing.  Avi recommends consulting with your local Avi sales engineer for more recommendation that is tailored to the exact requirements.
 

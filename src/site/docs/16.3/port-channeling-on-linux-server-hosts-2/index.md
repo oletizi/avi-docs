@@ -1,6 +1,6 @@
 ---
 title: Port Channeling on Linux Server Hosts
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage support for Linux server (bare metal) clouds includes support for port channel (bond) interfaces on the Linux server hosts.
 

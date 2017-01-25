@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;ssl&#46;client_cert
-layout: 16.2
+layout: layout162
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>        

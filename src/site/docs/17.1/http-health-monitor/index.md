@@ -1,6 +1,6 @@
 ---
 title: HTTP Health Monitor
-layout: default
+layout: layout171
 ---
 This article covers the specific configuration for this monitor type.  See the <a href="/docs/17.1/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 

@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; Troubleshooting Rules
-layout: 16.2
+layout: layout162
 ---
 DataScripts may fail in one of the following two ways.
 

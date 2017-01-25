@@ -1,6 +1,6 @@
 ---
 title: Installing the Avi Vantage CLI Shell
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage can be managed through the web interface, REST API, or command line interface (CLI). This article describes how to install the CLI shell onto a client PC.
 

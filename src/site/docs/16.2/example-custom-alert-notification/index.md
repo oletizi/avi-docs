@@ -1,6 +1,6 @@
 ---
 title: Example Custom Alert Notification
-layout: 16.2
+layout: layout162
 ---
 <a href="img/Alert-Workflow.png"><img class="wp-image-7353 alignright" src="img/Alert-Workflow.png" alt="Alert Workflow" width="404" height="78"></a>Avi Vantage defines a robust collection of events for which the default notification is an entry in the alert log. An administrator may wish to replace or augment the default behavior with one or more of the following additional actions:
 

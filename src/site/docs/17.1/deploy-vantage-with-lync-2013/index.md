@@ -1,6 +1,6 @@
 ---
 title: Deploy Vantage with Lync 2013
-layout: default
+layout: layout171
 ---
 ### Deploy Avi Vantage with Lync 2013
 

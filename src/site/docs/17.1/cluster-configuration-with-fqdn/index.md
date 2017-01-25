@@ -1,6 +1,6 @@
 ---
 title: Cluster Configuration with DNS Hostnames
-layout: default
+layout: layout171
 ---
 As of Avi Vantage release 16.3, an Avi Controller cluster can be configured with DNS hostnames instead of IP addresses.
 

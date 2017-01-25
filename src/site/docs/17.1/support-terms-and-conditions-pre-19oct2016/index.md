@@ -1,6 +1,6 @@
 ---
 title: Support Terms and Conditions-pre-19Oct2016
-layout: default
+layout: layout171
 ---
 ### I    INTRODUCTION
 

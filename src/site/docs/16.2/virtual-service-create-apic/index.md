@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Creation&#58; APIC
-layout: 16.2
+layout: layout162
 ---
 This article describes how to create a virtual service for an APIC cloud:
 <ol> 

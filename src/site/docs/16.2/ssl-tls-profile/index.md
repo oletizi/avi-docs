@@ -1,6 +1,6 @@
 ---
 title: SSL/TLS Profile
-layout: 16.2
+layout: layout162
 ---
 <a href="img/SSLprofile.png"><img class="size-full wp-image-898 alignright" src="img/SSLprofile.png" alt="SSLprofile" width="400" height="300"></a>Avi Vantage supports the ability to terminate SSL connections between the client and the virtual service, and to enable encryption between Vantage and the back-end servers. The Templates > Security SSL/TLS Profile contains the list of accepted SSL versions and the prioritized list of SSL ciphers. To terminate client SSL connections, both an SSL profile and an SSL certificate must be assigned to the virtual service. To also encrypt traffic between Vantage and the servers, an SSL profile must be assigned to the pool. When creating a new virtual service via the basic mode, the default system SSL profile is automatically used.
 

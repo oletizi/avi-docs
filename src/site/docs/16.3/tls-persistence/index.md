@@ -1,6 +1,6 @@
 ---
 title: TLS Persistence
-layout: 16.3
+layout: layout163
 ---
 The TLS mode of persistence may be applied to any virtual service configured to terminate HTTPS. With this persistence method, Vantage embeds the client-to-server mapping within the TLS ticket ID, which is sent to the client, much the same way HTTP cookies behave. The data is embedded in an encrypted format that can be read by a Service Engine should a client reconnect to a different SE.
 

@@ -1,6 +1,6 @@
 ---
 title: Avi Controller Analytics Page
-layout: 16.2
+layout: layout162
 ---
 The Administration &gt; Controller page provides information about the Avi Controller (or Avi Controller cluster).
 

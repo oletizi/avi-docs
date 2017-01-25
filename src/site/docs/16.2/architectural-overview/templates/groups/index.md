@@ -1,6 +1,6 @@
 ---
 title: Groups
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage uses "groups" to separate long lists from the complexity of the feature they may be applied against. This is particularly useful for simplifying the automation of API calls. This article describes the following types of groups:
 

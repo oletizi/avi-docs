@@ -1,6 +1,6 @@
 ---
 title: Collecting Tech Support Logs
-layout: default
+layout: layout171
 ---
 Please read <a href="/docs/17.1/collecting-tech-support-logs-163/">a more recent version of this article</a>.
 

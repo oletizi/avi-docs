@@ -1,6 +1,6 @@
 ---
 title: Installing the LBaaS CLI Shell (OpenStack with Keystone)
-layout: default
+layout: layout171
 ---
 The CLI shell provides access to the Avi Controller through a PC client version of the Controller’s CLI. Two versions of the CLI shell installation package are available:
 

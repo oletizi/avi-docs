@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage Integration with Rancher OS
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage supports integration with Rancher OS. This article describes how to create a cloud configuration for Rancher OS, and how to create application stacks and services (in Vantage terminology, "virtual services").
 

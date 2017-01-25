@@ -1,6 +1,6 @@
 ---
 title: Creating Applications with Mesos / Marathon Labels
-layout: 16.3
+layout: layout163
 ---
 This article provides steps for creating and testing virtual services in a Marathon-managed Mesos cloud, using Marathon labels.
 

@@ -1,6 +1,6 @@
 ---
 title: Overview of Account Management
-layout: 16.2
+layout: layout162
 ---
 A valid account is required for access to Avi Vantage through the GUI, REST API, or CLI. Each user must be assigned a role which grants permissions and access to read or write to various objects within Vantage. Accounts may optionally be restricted to specific tenants, and granted different roles within each tenant.
 

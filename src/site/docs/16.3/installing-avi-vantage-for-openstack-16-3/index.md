@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for OpenStack (16&#46;3)
-layout: 16.3
+layout: layout163
 ---
 ## Introduction
 

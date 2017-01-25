@@ -1,6 +1,6 @@
 ---
 title: TCP/UDP Profile
-layout: 16.3
+layout: layout163
 ---
 A TCP/UDP Profile determines the type and settings of the network protocol that a subscribing virtual service will use. It sets a number of parameters, such as whether the virtual service is a TCP proxy versus a pass-through via fast path. A virtual service can have both TCP and UDP enabled, which is useful for protocols such as DNS or Syslog.
 

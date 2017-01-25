@@ -1,6 +1,6 @@
 ---
 title: Manually Deploy Service Engines in Non-Default Tenant/Cloud
-layout: 16.3
+layout: layout163
 ---
 Prior to Avi Vantage 16.3, Service Engines deployed manually by the Avi administrator in No Orchestrator or VMware vCenter read access clouds required the user to download a unique copy of the Service Engine image for each cloud configured in the system. Starting with 16.3 release, the Avi administrator need download only one Service Engine image for each type of image needed (<code>ova/qcow2/docker</code>). The same SE image can then be used to deploy Service Engines in any tenant and cloud configured in the system.
 

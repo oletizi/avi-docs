@@ -1,6 +1,6 @@
 ---
 title: Default Gateway (IP Routing on Avi SE)
-layout: 16.3
+layout: layout163
 ---
 ## Overview
 

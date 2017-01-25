@@ -1,6 +1,6 @@
 ---
 title: Service Engine Group (pre-16.2.1)
-layout: 16.2
+layout: layout162
 ---
 Service Engines are created within a group, which contains the definition of how the SEs should be sized, placed, and made highly available. Each cloud will have at least one SE group.  The options within an SE group may vary based on the type of cloud within which they exist and the settings within that cloud, such as*no access* versus *write access* mode.  SEs may only exist within one group.  Each group acts as an isolation domain.  SE resources within an SE group may be moved around to accommodate virtual services, but SE resources are never shared between SE Groups.
 

@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Client Information
-layout: 16.2
+layout: layout162
 ---
 The Clients tab for an HTTP virtual service displays information about clients accessing that service. The information shown within the tab is dependent on the setting for client insights. This setting can be modified in the Analytics tab of the Create Virtual Service popup.
 

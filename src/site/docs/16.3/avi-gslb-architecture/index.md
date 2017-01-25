@@ -1,6 +1,6 @@
 ---
 title: Avi GSLB Architecture
-layout: 16.3
+layout: layout163
 ---
 Avi GSLB provides simplified and centralized configuration and monitoring of global applications. In a typical environment, the corporate name server delegates one or more subdomains to Avi GSLB, which then owns these domains, and provides responses to DNS queries from clients. Avi GSLB provides an **a****ctive/backup** model for backup or disaster recovery applications, and an **a****ctive/active** model to respond with the most optimal site, based on load, proximity, etc. This article overviews the architecture, functionality, and terminology for Avi GSLB.
 

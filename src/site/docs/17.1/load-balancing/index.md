@@ -1,6 +1,6 @@
 ---
 title: Load Balancing
-layout: default
+layout: layout171
 ---
 
 ## Overview 

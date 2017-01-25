@@ -1,6 +1,6 @@
 ---
 title: Physical Security for SSL Keys
-layout: 16.2
+layout: layout162
 ---
 A key component of security is to ensure the integrity of data at rest, or in this case, for stored SSL keys.
 

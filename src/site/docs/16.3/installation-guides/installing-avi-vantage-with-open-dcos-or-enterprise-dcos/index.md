@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage with Open DC/OS or Enterprise DC/OS
-layout: 16.3
+layout: layout163
 ---
 This article describes how to install Avi Vantage into an Open DC/OS or Enterprise DC/OS cloud, using DC/OS Universe.
 

@@ -1,6 +1,6 @@
 ---
 title: Load Balancing Algorithms
-layout: default
+layout: layout171
 ---
 The heart of a load balancer is its ability to effectively distribute traffic across healthy servers. Avi Vantage provides a number of algorithms, each with characteristics that may be best suited for one use case versus another.
 

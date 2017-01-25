@@ -1,6 +1,6 @@
 ---
 title: Faults in Avi Vantage System
-layout: default
+layout: layout171
 ---
 Faults represent issues occurring in the Avi Vantage system itself.
 

@@ -1,6 +1,6 @@
 ---
 title: Verifying Notification Settings
-layout: 16.2
+layout: layout162
 ---
 Starting with Avi Vantage 16.2.2, users can verify certain settings prior to putting them into effect. These are:
 

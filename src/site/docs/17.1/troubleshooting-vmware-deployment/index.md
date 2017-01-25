@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Avi Vantage Deployment into VMware
-layout: default
+layout: layout171
 ---
 /*/*This article provides troubleshooting tips for Avi Vantage deployment into a VMware vCenter-managed cloud.
 

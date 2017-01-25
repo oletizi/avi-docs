@@ -1,6 +1,6 @@
 ---
 title: Determine When an Object Was Created / Modified / Deleted
-layout: 16.2
+layout: layout162
 ---
 View the events log to inspect when an object was created, modified, or deleted.
 

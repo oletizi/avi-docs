@@ -1,6 +1,6 @@
 ---
 title: HTTP Security Policy
-layout: default
+layout: layout171
 ---
 The following table lists both the available HTTP security match criteria and the configurable actions that can occur when a match is made.  
 

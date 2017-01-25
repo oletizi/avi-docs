@@ -1,6 +1,6 @@
 ---
 title: Modify Network Security ACL via API
-layout: default
+layout: layout171
 ---
 The easiest and most scalable method to provide network layer access control lists is via a Network Security Policy pointing to an IP Group.  The IP Group may be used by multiple virtual services.  When an IP is added to the group, that address will be blocked by all virtual services with a network security policy blocking the IP Group's list of addresses.  
 

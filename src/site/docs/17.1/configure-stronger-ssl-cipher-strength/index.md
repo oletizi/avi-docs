@@ -1,6 +1,6 @@
 ---
 title: Configure Stronger SSL Cipher Strength
-layout: default
+layout: layout171
 ---
 SSL ciphers are defined by the *Templates > Security > SSL/TLS Profile*. Within a profile, there are two modes for configuring ciphers, List view and String view.
 

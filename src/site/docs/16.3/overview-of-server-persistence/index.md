@@ -1,6 +1,6 @@
 ---
 title: Overview of Server Persistence
-layout: 16.3
+layout: layout163
 ---
 A persistence profile governs the settings that will force a client to stay connected to the same server for a specified duration of time. This is sometimes referred to as 'sticky connections'. By default, load balancing may send a client to a different server every time the client connects with a virtual service or even distribute every HTTP request to a different server when connection multiplex is enabled. Server persistence guarantees the client will reconnect to the same server every time when they connect to a virtual service, so long as the persistence is still in effect. Enabling a persistence profile ensures the client will reconnect to the same server every time, or at least for a desired duration of time. Persistent connections are critical for most servers that maintain client session information locally.
 

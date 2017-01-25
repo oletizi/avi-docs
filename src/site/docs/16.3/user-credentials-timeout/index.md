@@ -1,6 +1,6 @@
 ---
 title: User Credentials Timeout
-layout: 16.3
+layout: layout163
 ---
 The admin can choose to expire user credentials after a configurable number of days. Once credentials have expired, all API calls are going to error out. Only <code>api/useraccount</code> is supported at this point, to enable the user to change the password. If the user has configured an email address, “Forgot Password” workflow can also be followed as this point to reset the password.
 

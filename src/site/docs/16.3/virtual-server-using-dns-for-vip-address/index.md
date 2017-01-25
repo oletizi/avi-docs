@@ -1,6 +1,6 @@
 ---
 title: Assign/Update VIP Using DNS
-layout: 16.3
+layout: layout163
 ---
 During configuration, a virtual service's virtual IP (VIP) address can be specified by IP address or by DNS domain name.
 

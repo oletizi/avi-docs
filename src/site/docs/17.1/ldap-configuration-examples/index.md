@@ -1,6 +1,6 @@
 ---
 title: LDAP Configuration Examples
-layout: default
+layout: layout171
 ---
 LDAP authentication profile examples
 

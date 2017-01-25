@@ -1,6 +1,6 @@
 ---
 title: Access Settings for Clients of the Avi Controller
-layout: 16.3
+layout: layout163
 ---
 Select Administration &gt; Settings &gt; Access Settings to view or edit a range of settings mainly related to access to the Controller itself from the outside.
 

@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Events Log
-layout: 16.2
+layout: layout162
 ---
 Events are recordings or logs, and are used for reactive troubleshooting, but may also be used to trigger alerts, which can be used for proactive actions.
 

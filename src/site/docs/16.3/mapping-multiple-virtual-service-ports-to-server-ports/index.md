@@ -1,6 +1,6 @@
 ---
 title: Mapping Multiple Virtual Service Ports to Server Ports
-layout: 16.3
+layout: layout163
 ---
 A virtual service may expose multiple ports. This article explains two different ways to map VS ports to corresponding ports on pool servers.
 

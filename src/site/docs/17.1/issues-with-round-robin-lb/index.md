@@ -1,6 +1,6 @@
 ---
 title: Non-uniform RR Traffic Distribution
-layout: default
+layout: layout171
 ---
 ### Description
 

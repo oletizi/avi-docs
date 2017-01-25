@@ -1,6 +1,6 @@
 ---
 title: Geo Location Database
-layout: 16.2
+layout: layout162
 ---
 ### <img class="size-full wp-image-143 alignright" src="img/Country.png" alt="Country" width="150" height="125">Database
 

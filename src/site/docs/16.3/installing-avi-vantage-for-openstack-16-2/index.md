@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for OpenStack (16&#46;2)
-layout: 16.3
+layout: layout163
 ---
 Note to reader: With release 16.2.2, Avi Vantage now <a href="/docs/16.3/openstack-external-networks/">supports using OpenStack external networks</a>.
 

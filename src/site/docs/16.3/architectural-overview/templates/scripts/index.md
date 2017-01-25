@@ -1,6 +1,6 @@
 ---
 title: Scripts
-layout: 16.3
+layout: layout163
 ---
 Extensive behavior customization and automation can be done by utilizing scripts for both the control plane with the Python-based ControlScripts, and the data plane via Lua-based DataScripts.
 

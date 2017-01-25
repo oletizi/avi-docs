@@ -1,6 +1,6 @@
 ---
 title: Article CRUD Basics
-layout: 16.2
+layout: layout162
 ---
 
 {% include youtubePlayer.html id="seeUgfG48_w" %}
@@ -16,7 +16,7 @@ layout: 16.2
 <pre>
 ---
 title: Article CRUD Basics
-layout: 16.2
+layout: layout162
 ---    
 </pre>
 Feel free to copy it from this document and paste it into your new document, then change the title. Leave the `layout` directive set to `default`

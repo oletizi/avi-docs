@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage in an AWS-hosted Mesos Cluster
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage can be deployed as a distributed service proxy (load balancer) for microservices-based applications deployed across thousands of nodes in a Mesos / Marathon environment. The Vantage solution provides visibility and performance monitoring at microservice and service-fabric levels, and autoscales application instances based on real-time traffic and application performance.
 

@@ -1,6 +1,6 @@
 ---
 title: Network Reachability
-layout: 16.2
+layout: layout162
 ---
 In order for a virtual service to be placed on a Service Engine, the Controller first looks for SEs with available capacity and network reachability to make a virtual service placement decision.  Reachability means the Service Engine has access to the networks required per the configuration of the virtual service and its pool members.
 

@@ -1,6 +1,6 @@
 ---
 title: Administration
-layout: default
+layout: layout171
 ---
 The administration section of the web interface governs the following system-level resources:
 

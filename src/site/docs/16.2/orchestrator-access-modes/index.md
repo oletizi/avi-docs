@@ -1,6 +1,6 @@
 ---
 title: Orchestrator Access Modes
-layout: 16.2
+layout: layout162
 ---
 While Avi Vantage can be deployed within a virtualized environment or cloud, the access level that Vantage has for communicating with the virtualization orchestrator (such as VMware vCenter) affects how the system operates and is configured. The level of communication that Vantage has with the virtualization orchestrator is defined as the *access mode*.
 

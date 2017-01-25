@@ -1,6 +1,6 @@
 ---
 title: Client SSL Certificate Validation
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage can validate SSL certificates presented by clients against a trusted certificate authority and a configured client revocation list (CRL). Additional options support passing certificate information to the server through various HTTP headers. The certificate authentication requires configuring an HTTP application profile and an associated PKI profile, both defined below.
 

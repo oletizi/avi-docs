@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; string&#46;upper
-layout: default
+layout: layout171
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

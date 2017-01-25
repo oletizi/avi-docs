@@ -1,6 +1,6 @@
 ---
 title: OpenAPI (Swagger 2&#46;0) Specification Integration
-layout: 16.3
+layout: layout163
 ---
 Starting with release 16.3, Avi Vantage includes support for the <a href="http://github.com/OAI/OpenAPI-Specification"><span style="font-weight: 400;">OpenAPI Specification</span></a>(fka Swagger RESTful API Documentation Specification). It can be accessed via the Avi API Documentation link in the pull-down menu, as shown in the below screenshot.
 

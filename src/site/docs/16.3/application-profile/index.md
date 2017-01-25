@@ -1,6 +1,6 @@
 ---
 title: Application Profile
-layout: 16.3
+layout: layout163
 ---
 Application profiles determine the behavior of virtual services, based on application type.
 

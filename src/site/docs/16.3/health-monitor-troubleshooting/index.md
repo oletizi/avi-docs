@@ -1,6 +1,6 @@
 ---
 title: Health Monitor Troubleshooting
-layout: 16.3
+layout: layout163
 ---
 This article covers advanced troubleshooting for health monitors.  For general monitor definitions see:
 

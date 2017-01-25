@@ -1,6 +1,6 @@
 ---
 title: Load Balancing Algorithms
-layout: 16.2
+layout: layout162
 ---
 The heart of a load balancer is its ability to effectively distribute traffic across healthy servers. Vantage provides a number of algorithms, each with characteristics that may be best suited for one use case versus another.
 

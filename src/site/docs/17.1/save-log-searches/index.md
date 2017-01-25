@@ -1,6 +1,6 @@
 ---
 title: Saving Log Searches
-layout: default
+layout: layout171
 ---
 One of Vantage's usability features is the ability to save and reuse log searches. A saved search captures the search parameter(s) defined by the currently configured search, and allows the same Vantage user to retrieve the search later. Searches are tied to the user account and are not be visible to other users.
 

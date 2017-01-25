@@ -1,6 +1,6 @@
 ---
 title: Avi GSLB Site Configuration and Operations
-layout: default
+layout: layout171
 ---
 ### Avi GSLB Sites
 

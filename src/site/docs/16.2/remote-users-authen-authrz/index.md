@@ -1,6 +1,6 @@
 ---
 title: Authentication and Authorization for User Login
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage requires valid credentials for login. Moreover, Vantage allows a successfully authenticated Vantage user to access only those resources for which the user is authorized.
 

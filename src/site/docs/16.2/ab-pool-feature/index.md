@@ -1,6 +1,6 @@
 ---
 title: A/B Test Pool
-layout: 16.2
+layout: layout162
 ---
 Here's a change to the ab-pool feature.
 

@@ -1,6 +1,6 @@
 ---
 title: DataScript Precedence
-layout: default
+layout: layout171
 ---
 Many DataScript capabilities can be performed via Policies and potentially standard features. It is important to understand the order of precedence, as this will dictate the order that various functions will occur. For instance, if a network security policy is set to discard a connection, a DataScript set to redirect certain HTTP requests may never see the client.
 

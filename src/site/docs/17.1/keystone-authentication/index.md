@@ -1,6 +1,6 @@
 ---
 title: Keystone Authentication
-layout: default
+layout: layout171
 ---
 Avi Vantage may use OpenStack's Keystone service for user authentication to the Avi Controller.  Keystone v2 has been supported from v15.1 onward.  Keystone v3 is supported in v16.3 onward.
 

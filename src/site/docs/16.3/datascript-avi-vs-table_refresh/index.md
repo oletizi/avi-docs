@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;vs&#46;table_refresh
-layout: 16.3
+layout: layout163
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>        

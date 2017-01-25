@@ -1,6 +1,6 @@
 ---
 title: Notifications
-layout: default
+layout: layout171
 ---
 Alert actions may be configured to proactively send notifications to an administrator using the methods available on the Notifications page (email, syslog, SNMP).
 

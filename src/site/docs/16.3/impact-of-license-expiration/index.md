@@ -1,6 +1,6 @@
 ---
 title: Impact of License Expiration
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage requires a valid license to ensure disruption-free operation of service.  Licenses are generally valid for one year or three years, but they may occasionally be valid for a different timeframe.
 

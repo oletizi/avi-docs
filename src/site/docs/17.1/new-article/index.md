@@ -1,6 +1,6 @@
 ---
 title: My New Article
-layout: default
+layout: layout171
 ---
 
 Hi. I'm a new article.

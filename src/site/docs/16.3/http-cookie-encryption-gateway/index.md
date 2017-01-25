@@ -1,6 +1,6 @@
 ---
 title: DataScript &#58; HTTP Cookie Encryption Gateway
-layout: 16.3
+layout: layout163
 ---
 The following DataScript will encrypt the contents of a cookie going to a client, and decrypt the content before returning the cookie to the server.
 

@@ -1,6 +1,6 @@
 ---
 title: OpenStack/AWS - Forcing Deletion of Virtual Service Ports in Neutron
-layout: 16.2
+layout: layout162
 ---
 In OpenStack or Amazon Web Services (AWS) clouds, when a virtual service is deleted from Avi Vantage, the port associated with the VIP of the virtual service also is deleted. However, the ports associated with the pool networks of the virtual service are not immediately deleted. Instead, they are removed as part of a garbage collection process. 
 

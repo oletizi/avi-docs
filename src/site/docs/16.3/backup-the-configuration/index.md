@@ -1,6 +1,6 @@
 ---
 title: CLI&#58; Back Up the Configuration
-layout: 16.3
+layout: layout163
 ---
 The Avi Controller maintains a local database to store its configuration information. This includes all configuration related to tenants, virtual services, pools, policies and accounts. The Controller configuration can be exported as a JSON file. The JSON file provides a backup for the Controller. Portions of a Controller's exported configuration also can be migrated into the configurations of other Controllers.
 

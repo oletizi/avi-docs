@@ -1,6 +1,6 @@
 ---
 title: IPAM Provider (AWS)
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage integrates with Amazon Web Services (AWS) for providing IPAM services to applications running on instances in AWS.
 

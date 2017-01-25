@@ -1,6 +1,6 @@
 ---
 title: Navigation Timing for Client Insights
-layout: 16.2
+layout: layout162
 ---
 ## About Navigation Timing
 

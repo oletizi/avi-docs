@@ -1,6 +1,6 @@
 ---
 title: A/B Test Pool (pre-16&#46;3)
-layout: 16.3
+layout: layout163
 ---
 
 Make the edit.

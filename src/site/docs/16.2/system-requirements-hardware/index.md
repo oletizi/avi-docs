@@ -1,6 +1,6 @@
 ---
 title: System Requirements&#58; Hardware
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage runs on standard x86-based servers, with no requirement for special-purpose hardware. In general, adding hardware capacity will greatly expand overall system capacity, for both SEs and Controllers. Please consult an Avi sales engineer or Avi technical support for recommendations tailored to meet the specific needs of your applications and environment.
 

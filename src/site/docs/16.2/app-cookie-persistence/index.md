@@ -1,6 +1,6 @@
 ---
 title: App Cookie Persistence
-layout: 16.2
+layout: layout162
 ---
 The *app cookie* mode of persistence may be applied to any virtual service with an attached HTTP application profile. With this persistence method,
 

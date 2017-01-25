@@ -1,6 +1,6 @@
 ---
 title: Source NAT for Application Identification
-layout: default
+layout: layout171
 ---
 Beginning in Avi Vantage 16.2, the source IP address used by Avi SEs for server back-end connections can be overridden through an explicit user-specified address — the source NAT (SNAT) IP address. The SNAT IP address can be specific as part of the virtual service configuration.
 

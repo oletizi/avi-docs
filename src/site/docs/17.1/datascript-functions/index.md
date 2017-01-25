@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; Functions
-layout: default
+layout: layout171
 ---
 DataScripts are comprised of any number of function or method calls which can be used to inspect and act on traffic flowing through a virtual service. DataScript's functions are exposed via Lua libraries and grouped into modules: *string, vs, http, pool, ssl and crypto*. Other Lua libraries may also be used, following the documentation from <a href="http://www.lua.org">www.lua.org</a>. The following functions are available:
 

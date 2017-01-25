@@ -1,6 +1,6 @@
 ---
 title: OpenStack Version Support
-layout: default
+layout: layout171
 ---
 Avi Vantage supports deployment within the following OpenStack releases:
 

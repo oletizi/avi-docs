@@ -1,6 +1,6 @@
 ---
 title: LDAP Authentication
-layout: default
+layout: layout171
 ---
 Avi Vantage supports user authentication using Lightweight Directory Access Protocol (LDAP). LDAP is a commonly used protocol for accessing a directory service. A directory service is a hierarchical object oriented database view of an authentication system.
 

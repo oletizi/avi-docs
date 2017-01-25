@@ -1,6 +1,6 @@
 ---
 title: AWS Cross-Account AssumeRole Support
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage can be deployed in Amazon Web Services (AWS) with multiple AWS accounts utilizing <a href="https://aws.amazon.com/iam/">IAM</a> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html">AssumeRole</a> functionality (which provides access across AWS accounts to the AWS resources/API from respective accounts), instead of sharing the “Access Key ID and Secret Access Key” of each user from different accounts.
 

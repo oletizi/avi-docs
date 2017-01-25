@@ -1,6 +1,6 @@
 ---
 title: CLI Guide
-layout: 16.2
+layout: layout162
 ---
 
 Avi Vantage provides a robust load balancing and visibility platform for any environment. Vantage’s unique architecture separates the control/management plane from the data plane. The entire load balancing fabric of distributed Service Engines (SEs), or micro-load balancers, can be managed from a Controller or cluster Controller IP (in a redundant configuration).

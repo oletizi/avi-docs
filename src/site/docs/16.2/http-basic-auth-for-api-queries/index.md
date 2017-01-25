@@ -1,6 +1,6 @@
 ---
 title: HTTP Basic Auth for API Queries
-layout: 16.2
+layout: layout162
 ---
 API calls from a client to the Avi Vantage Controller must first be authenticated, either by HTTP session based auth or HTTP basic auth. Use of HTTP basic authentication for API access is unrelated to the use of basic auth for clients accessing a virtual service in which the Service Engine is proxying the authentication.
 

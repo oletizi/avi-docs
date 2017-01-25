@@ -1,6 +1,6 @@
 ---
 title: Avi DNS Architecture and Features
-layout: 16.3
+layout: layout163
 ---
 The Avi DNS virtual service is a generic DNS infrastructure that implements the following functionality:
 

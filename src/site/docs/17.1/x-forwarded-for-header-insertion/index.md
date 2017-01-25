@@ -1,6 +1,6 @@
 ---
 title: X-Forwarded-For Header Insertion
-layout: default
+layout: layout171
 ---
 By default, Avi Service Engines (SEs) source-NAT (SNAT) traffic destined to servers. Due to SNAT, logs on the application servers will show the layer 4 IP address of the SE rather than the original client's IP address. 
 

@@ -1,6 +1,6 @@
 ---
 title: Backup and Restore of Avi Vantage Configuration
-layout: 16.2
+layout: layout162
 ---
 Periodic backup of the Avi Vantage configuration database is recommended. In addition, it is a best practice to store the backups in a safe, external location, in the unlikely event that a disaster destroys the entire Avi Controller (or cluster), with no possibility of remediation.
 

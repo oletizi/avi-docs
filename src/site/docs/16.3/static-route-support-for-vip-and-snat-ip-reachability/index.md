@@ -1,6 +1,6 @@
 ---
 title: Static Route Support for VIP and SNAT IP Reachability
-layout: 16.3
+layout: layout163
 ---
 In some cases, a static route may be required on the next-hop router through which back-end servers are connected to their Avi Service Engine (SE).
 

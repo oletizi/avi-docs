@@ -1,6 +1,6 @@
 ---
 title: CLI&#58; HTTP Cache Configuration
-layout: 16.3
+layout: layout163
 ---
 This article describes the CLI commands that are most commonly used for configuring the HTTP cache.  
 

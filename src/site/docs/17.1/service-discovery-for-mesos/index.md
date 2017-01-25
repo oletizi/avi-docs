@@ -1,6 +1,6 @@
 ---
 title: DNS-based Service Discovery for Mesos
-layout: default
+layout: layout171
 ---
 In a Mesos / Marathon deployment, the Avi Controller can serve as the authoritative domain for Mesos service discovery for proxied applications in Marathon. However, for other records, the expectation is for the Mesos cluster to have supplemental name servers (for example, non-proxied applications to talk to Mesos-DNS to obtain information about an application’s containers, reaching the Internet, and so on).
 

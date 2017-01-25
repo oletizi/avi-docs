@@ -1,6 +1,6 @@
 ---
 title: HTTP Cache
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage can cache HTTP content, thereby enabling faster page load times for clients and reduced workloads for both servers and Vantage.
 

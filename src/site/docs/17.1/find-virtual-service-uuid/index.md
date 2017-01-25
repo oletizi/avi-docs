@@ -1,6 +1,6 @@
 ---
 title: Find Virtual Service UUID
-layout: default
+layout: layout171
 ---
 Each object within Avi Vantage configuration is assigned a unique identity.  Multiple objects in different tenants may have the same name.  For instance, multiple tenants may have a virtual service named "web".  For automated interaction with Avi Vantage, particularly via the API, it is useful to know how to obtain the UUID of objects such as a virtual service.  For the example mentioned, it is recommended to have Tenant Header (X-Avi-Tenant) set in the API calls so the Controller can resolve the name to the correct tenant. The details for the header insertion are in the SDK and API guide.
 

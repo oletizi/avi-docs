@@ -1,6 +1,6 @@
 ---
 title: SSL / TLS Version Support
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage recommends staying up to date with SSL-related security alerts, and ensuring that support for deprecated or insecure versions and ciphers is quickly removed.
 

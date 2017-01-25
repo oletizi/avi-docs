@@ -1,6 +1,6 @@
 ---
 title: Traffic Capture
-layout: 16.2
+layout: layout162
 ---
 Most troubleshooting of connection or traffic data may be done quickly via virtual services logs. However, some troubleshooting may require full visibility into the packet transmission. Vantage provides a packet capture feature, which runs TCPdump against a designated virtual service. The packet capture is done on all Service Engines that may be hosting the VS, then collated into the completed capture.
 

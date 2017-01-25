@@ -1,6 +1,6 @@
 ---
 title: Overview of Avi Vantage High Availability
-layout: 16.3
+layout: layout163
 ---
 To ensure the highest level of uptime for a site, including through <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Avi Vantage software upgrades</a>, careful consideration must be made to ensure the availability for both Avi Controllers and Avi Service Engines.
 

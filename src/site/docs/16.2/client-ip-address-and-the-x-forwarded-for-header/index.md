@@ -1,6 +1,6 @@
 ---
 title: Client IP Address and the X-Forwarded-For Header
-layout: 16.2
+layout: layout162
 ---
 For TCP / HTTP traffic, Avi Vantage Source NATs the client's IP address, replacing it with the IP address of the Service Engine that proxied the connection.  A common requirement is to access the real client address from the server.  For HTTP servers, this is done via the X-Forwarded-For header.  The XFF header is inserted by the Service Engine into client requests destined for the server.  HTTP servers can be configured to capture the XFF IP address rather than the layer 3 address of the connection.  Apache uses *mod_remoteip*, while Nginx uses *ngx_http_realip_module* for this purpose.
 

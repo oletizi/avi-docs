@@ -1,6 +1,6 @@
 ---
 title: Exclude Unwanted Messages from Client Logs
-layout: default
+layout: layout171
 ---
 Some protocols can be a bit chatty and may generate a high volume of messages that do not indicate an error but are not excluded by disabling non-significant logs. These extraneous messages not only clutter the log but also may unnecessarily reduce the virtual service's overall health score. 
 

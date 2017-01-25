@@ -1,6 +1,6 @@
 ---
 title: SSH Key-based Login to Avi Controller
-layout: 16.3
+layout: layout163
 ---
 Starting with release 16.3, Avi Vantage provides a mechanism to manage public keys whereby the admin user may login with the SSH rather than username-password credentials.  This article describes the CLI and REST API interfaces involved.
 

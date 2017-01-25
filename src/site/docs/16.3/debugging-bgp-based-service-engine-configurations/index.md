@@ -1,6 +1,6 @@
 ---
 title: Debugging BGP-based Service Engine Configurations
-layout: 16.3
+layout: layout163
 ---
 How to check if a BGP session doesn’t come up: 
 

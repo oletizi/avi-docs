@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage in Amazon Web Services (16.2)
-layout: 16.3
+layout: layout163
 ---
 This guide describes how to install an Amazon Web Services (AWS) EC2 instance of Avi Vantage. The instructions in this guide can be used for installing Avi Vantage 16.2.
 

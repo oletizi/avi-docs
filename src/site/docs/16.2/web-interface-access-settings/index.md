@@ -1,6 +1,6 @@
 ---
 title: Web Interface Access Settings
-layout: 16.2
+layout: layout162
 ---
 Select Administration > Settings > Access Settings to open the System Access tab.
 

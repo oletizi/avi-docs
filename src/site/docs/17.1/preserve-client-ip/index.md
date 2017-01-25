@@ -1,6 +1,6 @@
 ---
 title: Preserve Client IP
-layout: default
+layout: layout171
 ---
 ## Overview
 

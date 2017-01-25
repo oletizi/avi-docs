@@ -1,6 +1,6 @@
 ---
 title: Upgrading the Avi Vantage Software
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage supports a simple system upgrade method wherein all Avi Controller nodes and Service Engine (SE) nodes are upgraded to the newer software version in one upgrade sequence.
 

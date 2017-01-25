@@ -1,6 +1,6 @@
 ---
 title: SE Memory Consumption
-layout: 16.3
+layout: layout163
 ---
 Calculating the utilization of memory within a Service Engine is useful to estimate the number of concurrent connections or the amount of memory that may be allocated to features such as HTTP caching.
 

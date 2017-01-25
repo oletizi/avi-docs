@@ -1,6 +1,6 @@
 ---
 title: Switch Between Tenants
-layout: default
+layout: layout171
 ---
 User accounts that have access to multiple tenants are placed into a single, default tenant after login. To switch the management session to another tenant:
 <ol> 

@@ -1,6 +1,6 @@
 ---
 title: Avi Controller Administrative Settings
-layout: 16.3
+layout: layout163
 ---
 The Administration &gt; Settings area of the Avi Controller web interface provides the following options:
 

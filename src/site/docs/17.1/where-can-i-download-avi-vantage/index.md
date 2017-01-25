@@ -1,6 +1,6 @@
 ---
 title: Where Can I Download Avi Vantage
-layout: default
+layout: layout171
 ---
 Avi Vantage software can be downloaded from the Avi Portal website, accessible at <a href="https://www.avinetworks.com/portal">www.avinetworks.com/portal</a>. Or you can click the Login button from within the main <a href="https://www.avinetworks.com">www.avinetworks.com</a> site. 
 

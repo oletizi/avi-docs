@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage-Global Load Balancer Beta
-layout: 16.2
+layout: layout162
 ---
 Avi Networks is currently accepting invitations for the closed beta of the global server load balancing functionality (GSLB).
 

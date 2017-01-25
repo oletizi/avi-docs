@@ -1,6 +1,6 @@
 ---
 title: Service Discovery using Avi Vantage as IPAM and DNS Provider
-layout: 16.2
+layout: layout162
 ---
 This article walks through the configuration of Avi Vantage's native IPAM and DNS solution for providing service discovery. The Vantage IPAM/DNS solution is available for the following clouds:
 

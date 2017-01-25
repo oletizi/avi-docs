@@ -1,6 +1,6 @@
 ---
 title: Article Authoring Basics
-layout: 16.3
+layout: layout163
 ---
 
 ## Inserting an Image

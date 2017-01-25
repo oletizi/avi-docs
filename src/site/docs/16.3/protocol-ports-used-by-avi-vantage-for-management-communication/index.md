@@ -1,6 +1,6 @@
 ---
 title: Protocol Ports Used by Avi Vantage for Management Communication
-layout: 16.3
+layout: layout163
 ---
 The Avi Controller and Avi Service Engines use the following ports for management. The firewall should allow traffic for these ports.
 <table class="table table table-bordered table-hover">  

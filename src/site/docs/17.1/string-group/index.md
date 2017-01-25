@@ -1,6 +1,6 @@
 ---
 title: String Group
-layout: default
+layout: layout171
 ---
 ### Description
 

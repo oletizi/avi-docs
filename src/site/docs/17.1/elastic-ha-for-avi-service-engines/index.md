@@ -1,6 +1,6 @@
 ---
 title: Elastic HA for Avi Service Engines (16.2)
-layout: default
+layout: layout171
 ---
 ### High Availability Modes
 

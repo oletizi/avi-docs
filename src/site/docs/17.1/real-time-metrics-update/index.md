@@ -1,6 +1,6 @@
 ---
 title: Why Real-Time Metrics Updates Slow Down After Deployment
-layout: default
+layout: layout171
 ---
 ### The Issue
 

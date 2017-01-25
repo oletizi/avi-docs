@@ -1,6 +1,6 @@
 ---
 title: Overview of SSL/TLS Termination
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage fully supports termination of SSL- and TLS-encrypted HTTPS traffic. The SSL and TLS names are used interchangeably throughout the documentation unless otherwise noted.
 

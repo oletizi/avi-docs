@@ -1,6 +1,6 @@
 ---
 title: Impact of a Controller Failure
-layout: 16.3
+layout: layout163
 ---
 The impact of the loss of an Avi Controller depends on whether the Controller is deployed as a standalone or as part of a 3-node Controller cluster.
 

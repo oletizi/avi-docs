@@ -1,6 +1,6 @@
 ---
 title: SSH Users and Keys
-layout: 16.2
+layout: layout162
 ---
 The Avi Controller and Avi Service Engines (SEs) use SSH for secure management communication. This requires an SSH user who exists on both the Avi Controller and the Avi SEs, and a copy of the SSH user's public key on the Avi SEs. While SSH setup is automated for some installation types, such as installation into VMware with write access, other installation types require manual setup of these SSH resources:
 

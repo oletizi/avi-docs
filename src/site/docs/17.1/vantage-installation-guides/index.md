@@ -1,6 +1,6 @@
 ---
 title: Vantage Installation Guides (15&#46;3)
-layout: default
+layout: layout171
 ---
 Avi Vantage can be installed into various types of cloud infrastructures. If performing a fresh installation, see the guide that matches the cloud infrastructure.
 

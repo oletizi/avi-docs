@@ -1,6 +1,6 @@
 ---
 title: DNS / NTP Settings
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage requires access to valid DNS and NTP servers for operation. Use of an NTP server is especially critical. Vantage cannot function properly without an NTP server.
 

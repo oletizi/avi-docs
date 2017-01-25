@@ -1,6 +1,6 @@
 ---
 title: Metrics Retention Period
-layout: default
+layout: layout171
 ---
 At regular intervals, Avi Service Engines collect values for a <a href="/docs/17.1/metrics-list">wide range of metrics</a> and sends them to the Avi Controller. The Controller then aggregates these metric values into several buckets.
 

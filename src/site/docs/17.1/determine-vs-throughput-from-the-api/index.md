@@ -1,6 +1,6 @@
 ---
 title: API&#58; Determine Virtual Service Throughput
-layout: default
+layout: layout171
 ---
 You can use the Avi Vantage API to access throughput data and other metrics for a virtual service. API calls to /API/analytics/metrics can be used to get all metric-related data. The following example shows a query for the throughput of a virtual service for a 24-hour period:
 

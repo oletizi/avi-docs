@@ -1,6 +1,6 @@
 ---
 title: OpenStack External Networks
-layout: 16.2
+layout: layout162
 ---
 With release 16.2.2, Avi Vantage now supports using OpenStack external networks (i.e , those marked as "external=True") as VIP and/or pool networks. If these external networks have been correctly provisioned/configured, then the VIP is directly reachable from outside OpenStack without need for a floating-IP association. 
 

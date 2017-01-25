@@ -1,6 +1,6 @@
 ---
 title: Avi GSLB Service Health Monitors
-layout: 16.3
+layout: layout163
 ---
 Data- and control-plane GSLB service health monitors and their GUI and CLI configuration are covered in this article. Relevant <a href="/docs/latest/api-guide/gslbservice.html">GslbService</a> API object parameters are reviewed to aid in understanding GSLB service health monitoring.
 

@@ -1,6 +1,6 @@
 ---
 title: Virtual Services
-layout: 16.2
+layout: layout162
 ---
 Virtual services are the core of the Vantage Vantage load-balancing and proxy functionality. A virtual service advertises an IP address and ports to the external world and listens for client traffic. When a virtual service receives traffic, it may be configured to:
 

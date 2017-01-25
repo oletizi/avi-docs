@@ -1,6 +1,6 @@
 ---
 title: Wildcard SNI Matching for Virtual Hosting
-layout: 16.3
+layout: layout163
 ---
 Virtual services have a configuration option to enable virtual hosting support. Enabling this option within a virtual service indicates the virtual service is a parent or child of another service, in a <a href="/docs/16.3/server-name-indication/">server name indication (SNI)</a> deployment.
 

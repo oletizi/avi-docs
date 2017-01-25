@@ -1,6 +1,6 @@
 ---
 title: Pool Groups
-layout: default
+layout: layout171
 ---
 A pool group is a list of server pools, accompanied by logic to selecta server pool from the list. Wherever a virtual service can refer to a server pool (directly, or via rules, DataScripts or service port pool selector), the virtual service could instead refer to a pool group.
 

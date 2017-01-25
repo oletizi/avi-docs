@@ -1,6 +1,6 @@
 ---
 title: Comparing Past and Present SE Group HA Modes
-layout: 16.3
+layout: layout163
 ---
 This article maps Avi Vantage's pre-16.2 SE-group high availability modes to those supported thereafter.
 

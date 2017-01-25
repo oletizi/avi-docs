@@ -1,6 +1,6 @@
 ---
 title: Service Discovery Using IPAM and DNS (16&#46;3+)
-layout: default
+layout: layout171
 ---
 Avi Vantage can be configured to provide automatic IP address allocation for virtual services and to provide authoritative DNS resolution for their virtual IP addresses. Use this article to learn:
 

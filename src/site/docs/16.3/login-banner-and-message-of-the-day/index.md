@@ -1,6 +1,6 @@
 ---
 title: Login Banner and Message of the Day
-layout: 16.3
+layout: layout163
 ---
 Avi Vantage supports configuration of the following types of management greeting messages:
 

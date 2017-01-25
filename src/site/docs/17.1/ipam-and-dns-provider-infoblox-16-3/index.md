@@ -1,6 +1,6 @@
 ---
 title: IPAM and DNS Provider (Infoblox) (16&#46;3+)
-layout: default
+layout: layout171
 ---
 See also: <a href="/docs/17.1/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
 

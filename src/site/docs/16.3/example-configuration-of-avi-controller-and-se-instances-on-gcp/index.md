@@ -1,6 +1,6 @@
 ---
 title: Example Configuration of Avi Controller and SE Instances on GCP
-layout: 16.3
+layout: layout163
 ---
 Refer to <a href="https://cloud.google.com/docs/">Google Cloud Platform documentation</a> for Google's latest and detailed information regarding configuration of instances.
 

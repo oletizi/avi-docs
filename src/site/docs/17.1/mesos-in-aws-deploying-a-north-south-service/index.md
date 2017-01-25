@@ -1,6 +1,6 @@
 ---
 title: Mesos in AWS&#58; Deploying a North-South Application
-layout: default
+layout: layout171
 ---
 This article describes how to deploy and verify load-balanced application in a Mesos / Marathon cloud hosted by Amazon Web Services (AWS).
 

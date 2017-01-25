@@ -1,6 +1,6 @@
 ---
 title: Block an IP Address from Access to a Virtual Service
-layout: 16.2
+layout: layout162
 ---
 A client's IP address may need to be prevented from accessing an application for any number of reasons. Likewise, blocking a client's access can accomplished in numerous ways. While this article focuses on IP addresses, a client also could be identified based on other identifiers such as a username, session cookie, or SSL client certificate.
 

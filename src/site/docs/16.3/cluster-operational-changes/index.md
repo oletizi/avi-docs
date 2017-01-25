@@ -1,6 +1,6 @@
 ---
 title: Cluster Changes Following Avi Controller Reboot
-layout: 16.3
+layout: layout163
 ---
 This article describes the operational changes that can occur when a node in a an Avi Controller cluster reboots.
 

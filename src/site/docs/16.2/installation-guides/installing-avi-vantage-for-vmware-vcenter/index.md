@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for VMware vCenter (16.2)
-layout: 16.2
+layout: layout162
 ---
 This guide describes how to integrate Avi Vantage into a VMware vCenter cloud. The instructions in this guide can be used for installing Avi Vantage 16.2. Installation into subsequent releases are documented in other KB articles.
 

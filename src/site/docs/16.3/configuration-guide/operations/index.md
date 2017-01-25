@@ -1,6 +1,6 @@
 ---
 title: Operations
-layout: 16.3
+layout: layout163
 ---
 * <a href="/docs/16.3/configuration-guide/operations/alerts/">Alerts</a>
 * <a href="/docs/16.3/configuration-guide/operations/events/">Events</a>

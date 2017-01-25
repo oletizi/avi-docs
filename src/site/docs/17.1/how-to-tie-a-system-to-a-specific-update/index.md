@@ -1,6 +1,6 @@
 ---
 title: How to tie a system to a specific update
-layout: default
+layout: layout171
 ---
 ## CentOS Linux
 

@@ -1,6 +1,6 @@
 ---
 title: Network Reachability
-layout: default
+layout: layout171
 ---
 For a virtual service to be placed on an Avi Service Engine, the Avi Controller first looks for SEs with available capacity and network reachability to make a virtual service placement decision.  Reachability means the Service Engine has access to the networks required per the configuration of the virtual service and its pool members.
 

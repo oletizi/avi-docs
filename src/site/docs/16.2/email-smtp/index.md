@@ -1,6 +1,6 @@
 ---
 title: Email / SMTP Settings
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage may proactively send emails. This may be done for password reset operations, or as a result of a triggered alert action that calls for email notifications to be sent to administrators or monitoring systems. Emails are sent from the Avi Controller, which means the Avi Controller will require <a href="/docs/16.2/dns-ntp-settings">DNS </a>and network access to a destination email server.
 

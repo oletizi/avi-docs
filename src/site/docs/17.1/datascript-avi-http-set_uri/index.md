@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;http&#46;set_uri
-layout: default
+layout: layout171
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

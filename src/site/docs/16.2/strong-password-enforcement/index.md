@@ -1,6 +1,6 @@
 ---
 title: Strong Password Enforcement
-layout: 16.2
+layout: layout162
 ---
 The default deployment of Avi Vantage creates an admin account for access to the system. This initial account does not mandate any specific password requirements. Additional user accounts can be created, either local username/password, or remote accounts, which are tied into an external auth system such as LDAP. 
 

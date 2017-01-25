@@ -1,6 +1,6 @@
 ---
 title: Client Log Levels
-layout: default
+layout: layout171
 ---
 Client logs are viewable within the Logs tab of virtual service and pools, and provide a record of client interactions with the site.  Logs can be a very expensive task to collect and index, particularly taxing for the storage allocated to both Service Engines and Avi Controllers.  Because of this, Avi Vantage has many options for enabling different levels of logging for each virtual service.
 

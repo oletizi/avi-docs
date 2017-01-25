@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting an MTU Problem
-layout: default
+layout: layout171
 ---
 The issue is MTU. In 16.2.3, we added support to pay attention to the MTU that DHCP provides. In this case, we are seeing MTU of 9001 on the interfaces. However, the whole path is NOT setup for jumbo MTU. 
 

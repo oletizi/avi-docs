@@ -1,6 +1,6 @@
 ---
 title: Collecting Tech Support Logs
-layout: 16.2
+layout: layout162
 ---
 Tech support logs can be very beneficial for offline troubleshooting. This article describes how to collect tech support logs from a single Avi Controller or 3-node Avi Controller cluster.
 

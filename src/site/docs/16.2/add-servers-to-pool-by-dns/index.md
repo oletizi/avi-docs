@@ -1,6 +1,6 @@
 ---
 title: Add Servers to Pool by DNS
-layout: 16.2
+layout: layout162
 ---
 Servers may be added to a pool in any of the following ways:
 

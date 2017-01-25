@@ -1,6 +1,6 @@
 ---
 title: SSL Certificates
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage supports terminating client SSL and TLS connections at the virtual service. This requires Vantage to send a certificate to clients that authenticates the site and establishes secure communications. A virtual service that handles secure connections will require both of the following:
 

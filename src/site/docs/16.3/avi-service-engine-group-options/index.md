@@ -1,6 +1,6 @@
 ---
 title: Avi Service Engine Group Options
-layout: 16.3
+layout: layout163
 ---
 An Avi Service Engine (SE) group is a collection of one or more SEs that may share properties, such as network access and failover. An SE cannot scale out across or fail over to an SE which is in a different SE group, even if both SEs share the same physical host or network properties. Different applications can thus receive guaranteed data plane isolation when deployed on different SE groups.
 

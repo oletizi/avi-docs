@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage with Mesosphere DC/OS
-layout: 16.2
+layout: layout162
 ---
 This guide describes how to install Avi Vantage into an on-premises (private) Mesos cloud. The instructions in this guide can be used for installing Avi Vantage 16.1.*x*.
 

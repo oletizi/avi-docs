@@ -1,6 +1,6 @@
 ---
 title: Notification of Avi Vantage License Expiration
-layout: 16.2
+layout: layout162
 ---
 Avi Vantage license expiration is a significant event. It is important to ensure the license does not expire.
 

@@ -1,6 +1,6 @@
 ---
 title: Configuring In-band Management for an Avi Service Engine
-layout: 16.3
+layout: layout163
 ---
 Occasionally it is required to have the SE interface used to communicate with the Avi Controller cluster also be used for its data plane traffic. This article explains how to enable/disable the in-band management attribute on an SE.
 

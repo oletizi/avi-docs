@@ -1,6 +1,6 @@
 ---
 title: Notification of SSL Certificate Expiration
-layout: default
+layout: layout171
 ---
 The impact to production traffic of an expired SSL certificate can be drastic. At a minimum, clients receive a disturbing warning message. Worse, clients honoring HTTP strict transport security (HSTS) will not be allowed to access the site.
 

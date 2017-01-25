@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Integration with Mesos in AWS
-layout: default
+layout: layout171
 ---
 This article describes how to deploy Avi Vantage with Mesosphere DC/OS in Amazon Web Services (AWS).
 

@@ -1,6 +1,6 @@
 ---
 title: Support for SNI Extension in TLS Handshakes to Pool Servers
-layout: 16.3
+layout: layout163
 ---
 In Avi Vantage 16.2 and higher, TLS SNI is supported for connections to pool servers.
 

@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Alerts
-layout: default
+layout: layout171
 ---
 Alerts act as filters that provide notification for prioritized events or combinations of events. The virtual service alerts tab highlights user-specified events for the virtual service for the selected time period.
 
