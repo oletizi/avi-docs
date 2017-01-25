@@ -1,6 +1,6 @@
 ---
 title: Select Servers by Network
-layout: default
+layout: 16.2
 ---
 ### About
 

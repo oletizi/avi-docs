@@ -21,7 +21,7 @@ layout: default
 </pre>
 Feel free to copy it from this document and paste it into your new document, then change the title. Leave the `layout` directive set to `default`
 
-**Step 4:** Add your article text and save your document. See <a href="/docs/16.3/meta/article-authoring-basics">Authoring Basics</a> for basic authoring conventions and best-practices
+**Step 4:** Add your article text and save your document. See <a href="/docs/17.1/meta/article-authoring-basics">Authoring Basics</a> for basic authoring conventions and best-practices
  
 
 ## Add Your Article to the Navigation

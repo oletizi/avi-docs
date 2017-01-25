@@ -1,6 +1,6 @@
 ---
 title: Hello, World!
-layout: default
+layout: 16.2
 ---
 
 ## Hi.

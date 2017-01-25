@@ -1,6 +1,6 @@
 ---
 title: Customizing Notification of Certificate Expiration
-layout: default
+layout: 16.3
 ---
 Starting with 16.3, Avi Vantage enables users to customize when SSL certificate expiry notification is triggered. The system expects a minimum of 3 notification days. By default, the alerts are triggered 30 days, 7 days and 1 day before expiry.
 

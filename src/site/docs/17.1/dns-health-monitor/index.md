@@ -2,7 +2,7 @@
 title: DNS Health Monitor
 layout: default
 ---
-This article covers the specific configuration for this monitor type.  See the <a href="/docs/16.3/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
+This article covers the specific configuration for this monitor type.  See the <a href="/docs/17.1/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 
 The DNS health monitor validates the health of DNS servers by sending a UDP DNS request and comparing the response IP address.
 

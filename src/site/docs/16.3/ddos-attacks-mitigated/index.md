@@ -1,6 +1,6 @@
 ---
 title: DDoS Attack Mitigation&#58; What Avi Vantage Protects Against
-layout: default
+layout: 16.3
 ---
 Avi Vantage is the last line of defense for most applications. In most deployments, Vantage is directly exposed to public, untrusted networks. To protect application traffic, Service Engines (SEs) are able to detect and mitigate a wide range of Layer 4-7 network attacks. The following is a list of common denial of service (DoS) attacks and directed DoS (DDoS) attacks mitigated by Avi Vantage.
 

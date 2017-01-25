@@ -1,6 +1,6 @@
 ---
 title: Super User Accounts
-layout: default
+layout: 16.3
 ---
 Avi Vantage user accounts can be enabled for super user access. Super user access provides write access to all resources within Avi Vantage, and also automatically provides access to all tenants.
 

@@ -1,6 +1,6 @@
 ---
 title: HTTP Request Policy
-layout: default
+layout: 16.2
 ---
 HTTP request policies allow manipulation of HTTP requests. These requests may be modified before they are forwarded to the server, used as a basis for content switching, or discarded. The HTTP request policies may only be applied to a layer 7 virtual service configured with an HTTP profile. The table below lists the match criteria available under HTTP request, as well as the actions that can be configured to occur upon a match being made.
 

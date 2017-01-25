@@ -1,6 +1,6 @@
 ---
 title: App Transport Security
-layout: default
+layout: 16.3
 ---
 <a href="img/SSLprofile.png"><img class=" wp-image-898 alignright" src="img/SSLprofile.png" alt="SSLprofile" width="315" height="236"></a>With iOS 9 and later, Apple has mandated minimum security settings in order to be compliance with their <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35">App Transport Security</a> (ATS) standard.  To enable this level of SSL security for applications proxied by Vantage use the following settings for SSL/TLS Certificates and SSL/TLS Profiles.
 

@@ -1,6 +1,6 @@
 ---
 title: Documentation Editorial Guide
-layout: default
+layout: 16.3
 ---
 
 ## Publishing Lifecycle

@@ -2,7 +2,7 @@
 title: Ping Health Monitor
 layout: default
 ---
-This article covers the specific configuration for this monitor type.  See the <a href="/docs/16.3/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
+This article covers the specific configuration for this monitor type.  See the <a href="/docs/17.1/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 
 Vantage Service Engines will send an ICMP ping to the server. This monitor type is generally very fast and lightweight for both Service Engines and the server; however, it’s not uncommon for ping to drop a packet and fail. It is important to ensure the Failed Checks field is set to at least 2. This monitor type does not test the health of the application, so it generally works best when applied in conjunction with an application specific monitor for the Pool.
 

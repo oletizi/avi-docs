@@ -1,6 +1,6 @@
 ---
 title: Migrate from F5 BIG-IP to Avi Vantage
-layout: default
+layout: 16.3
 ---
 When deploying Avi Vantage into existing environments, it is often required to migrate application workloads from other load balancers to Avi Vantage.  Avi recognizes the stringent requirements of customers and the need to maintain up-time during a live migration.  This document provides insight into the process of migrating from F5's BIG-IP LTM to Avi Vantage.
 

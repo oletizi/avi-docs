@@ -1,6 +1,6 @@
 ---
 title: Load Balance API Gateways
-layout: default
+layout: 16.2
 ---
 ## What is an API Gateway
 

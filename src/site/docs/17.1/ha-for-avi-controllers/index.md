@@ -60,6 +60,6 @@ After these steps, the incumbent Avi Controller becomes the primary (leader) for
 
 For more information about cluster HA, see the following links:
 
-* <a href="/docs/16.3/controller-cluster-ip">Cluster IP Address</a>
-* <a href="/docs/16.3/clustering-controllers-from-different-networks">Clustering Avi Controllers from Different Networks</a>
-* <a href="/docs/16.3/impact-of-a-controller-failure">Impact of Avi Controller Failure</a> 
+* <a href="/docs/17.1/controller-cluster-ip">Cluster IP Address</a>
+* <a href="/docs/17.1/clustering-controllers-from-different-networks">Clustering Avi Controllers from Different Networks</a>
+* <a href="/docs/17.1/impact-of-a-controller-failure">Impact of Avi Controller Failure</a> 

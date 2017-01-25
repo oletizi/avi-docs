@@ -9,10 +9,10 @@ This article walks through the configuration of Avi Vantage's native DNS hosting
 * VMware
 * No Access
 * OpenStack
-* <a href="/docs/16.3/dns-provider-avi-vantage-16-3/#Avi_Vantage_DNS_With_AWS_Cloud">Amazon Web Services</a>
+* <a href="/docs/17.1/dns-provider-avi-vantage-16-3/#Avi_Vantage_DNS_With_AWS_Cloud">Amazon Web Services</a>
 * Google Cloud Platform 
 
-See also: <a href="/docs/16.3/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
+See also: <a href="/docs/17.1/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
 
 ### DNS Configuration
 
@@ -79,7 +79,7 @@ From Avi Vantage 16.3 release onward, when creating an AWS cloud, users can c
 
 ### **Configuration**
 
-Avi Vantage native DNS can be configured as explained in the above section (<a href="/docs/16.3/dns-provider-avi-vantage-16-3/#DNS_Configuration">DNS Configuration</a>) or can be created directly while creating the AWS cloud.
+Avi Vantage native DNS can be configured as explained in the above section (<a href="/docs/17.1/dns-provider-avi-vantage-16-3/#DNS_Configuration">DNS Configuration</a>) or can be created directly while creating the AWS cloud.
 <ol> 
  <li>Navigate to Infrastructure-&gt;Clouds, and create a new AWS cloud by clicking "Create button."<br> <a href="img/Create-AWS-cloud.png"><br> </a><a href="img/Create-AWS-cloud.png"><img class="aligncenter wp-image-17048" src="img/Create-AWS-cloud.png" alt="Create AWS cloud" width="600" height="362"></a><br> <a href="img/Create-AWS-cloud-1-1.png"><br> </a><a href="img/Create-AWS-cloud-1-1.png"><img class="wp-image-17052 aligncenter" src="img/Create-AWS-cloud-1-1.png" alt="Create AWS cloud-1" width="600" height="365"></a><a href="img/Create-AWS-cloud-1.png"><br> </a></li> 
  <li>The AWS VPC and Availability Zones configuration page has the new DNS profile option, as highlighted below.<br> <a href="img/AWS-cloud-AVI-DNS-option.png"><br> </a><a href="img/AWS-cloud-AVI-DNS-option.png"><img class="aligncenter wp-image-17054" src="img/AWS-cloud-AVI-DNS-option.png" alt="AWS cloud AVI DNS option" width="600" height="359"></a></li> 

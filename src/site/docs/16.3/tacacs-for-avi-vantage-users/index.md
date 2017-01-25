@@ -1,6 +1,6 @@
 ---
 title: TACACS+ Authentication
-layout: default
+layout: 16.3
 ---
 Avi Vantage supports authentication and authorization of Vantage users with TACACS+. TACACS+ is an open standards protocol that handles authentication and accounting (the first two "A"s in "AAA").
 

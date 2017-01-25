@@ -1,6 +1,6 @@
 ---
 title: Distributed Denial of Service
-layout: default
+layout: 16.3
 ---
 Distributed Denial of Service attacks are generally volumetric attacks, intended to overwhelm their target by consuming all available capacity for the vector being attacked. Avi Vantage is built on a distributed data plane model, which allows Vantage to quickly scale capacity to handle the attack.
 

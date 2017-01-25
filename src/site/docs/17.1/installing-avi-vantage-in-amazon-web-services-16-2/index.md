@@ -4,7 +4,7 @@ layout: default
 ---
 This guide describes how to install an Amazon Web Services (AWS) EC2 instance of Avi Vantage. The instructions in this guide can be used for installing Avi Vantage 16.2 and subsequent releases.
 
-Also of interest: <a href="/docs/16.3/aws-cross-account-assumerole-support/">AWS Cross-Account AssumeRole Support</a>
+Also of interest: <a href="/docs/17.1/aws-cross-account-assumerole-support/">AWS Cross-Account AssumeRole Support</a>
 
 ## 1. About Avi Vantage
 
@@ -24,7 +24,7 @@ When deploying Avi Vantage within Amazon Web Services (AWS), the installation wi
 You are not required to enter AWS Secret and Access key credentials. The credentials can be entered in either of the following forms:
 
 * **Identity and Access Management (IAM) roles:** A set of policies that define access to resources within AWS. The roles and the policies that define their access are defined in JSON files. This method does not require an AWS account key. Instead, the role and policy files must be downloaded from Avi Networks and installed using the AWS CLI. (Download links for the role and policy files, and the required AWS CLI syntax, are provided in .) After setting up the IAM roles, return to this article to install the Avi Vantage EC2 instance. Use this method if you don't want to enter AWS credentials.
-<a href="/docs/16.3/iam-role-setup-for-installation-into-aws/">this article</a>
+<a href="/docs/17.1/iam-role-setup-for-installation-into-aws/">this article</a>
 
 * **AWS customer account key:** A unique authentication key associated with the AWS account. If using this method, continue reading.
 
@@ -61,7 +61,7 @@ In an AWS deployment, the Avi Controller and Avi Service Engines use the followi
 </tr>
 <tr>   
 <td>Management Net</td>
-<td>TCP 22<p></p> <p>TCP 80 <em>(optional)</em></p> <p>TCP 443</p> <p>TCP 5054 <em>(if using the optional <a href="/docs/16.3/cli-installing-the-cli-shell/">CLI shell</a> for remote<br> management access)</em></p></td>
+<td>TCP 22<p></p> <p>TCP 80 <em>(optional)</em></p> <p>TCP 443</p> <p>TCP 5054 <em>(if using the optional <a href="/docs/17.1/cli-installing-the-cli-shell/">CLI shell</a> for remote<br> management access)</em></p></td>
 </tr>
 </tbody>
 </table>  
@@ -112,11 +112,11 @@ To install Avi Vantage in AWS, we need to deploy an EC2 instance of the Avi Cont
      <td>10 GB</td> 
     </tr> 
    </tbody> 
-  </table> <p>Add 1 GB of RAM to the SE configuration for each additional vCPU. With 10 GB as an absolute minimum, set the disk<br> value to at least (2 x RAM Size) + 5 GB.</p> <p>For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/16.3/overview-of-vantage-high-availability/">Overview of Vantage High Availability</a>.] In this case, a<br> separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.</p> <p>Note: While this example shows 4 CPUs and 16 GB memory.</p> <p><img class="alignnone size-full wp-image-12830" src="img/m4_xlarge_instance.png" alt="m4_xlarge_instance" width="2880" height="1800"></p></li> 
- <li>Select the appropriate VPC from the Network pull-down list and select the network from the Subnet pull-down list,<br> this is the subnet in which the controller will get the IP for the management NIC. Also select the Enable<br> termination protection option.<br> <a href="img/VPC_options.png"><img class="alignnone size-full wp-image-12909" src="img/VPC_options.png" alt="VPC_options" width="2870" height="1795"></a>Note:<br> If installing with an <a href="/docs/16.3/iam-role-setup-for-installation-into-aws/">IAM role</a> instead of an AWS customer<br> account key, select IAM role if you have created as explained in <a href="/docs/16.3/installing-avi-vantage-in-amazon-web-services-16-2/#3_Credential_Method">Credential Method</a>. In<br> this example we have used the IAM Role "AviController-Refined-Role".</li> 
+  </table> <p>Add 1 GB of RAM to the SE configuration for each additional vCPU. With 10 GB as an absolute minimum, set the disk<br> value to at least (2 x RAM Size) + 5 GB.</p> <p>For added resiliency and redundancy, the Avi Controller can be deployed as a 3-node cluster. [See <a href="/docs/17.1/overview-of-vantage-high-availability/">Overview of Vantage High Availability</a>.] In this case, a<br> separate VM is needed for each of the 3 Avi Controller nodes. The requirements are the same for each node.</p> <p>Note: While this example shows 4 CPUs and 16 GB memory.</p> <p><img class="alignnone size-full wp-image-12830" src="img/m4_xlarge_instance.png" alt="m4_xlarge_instance" width="2880" height="1800"></p></li> 
+ <li>Select the appropriate VPC from the Network pull-down list and select the network from the Subnet pull-down list,<br> this is the subnet in which the controller will get the IP for the management NIC. Also select the Enable<br> termination protection option.<br> <a href="img/VPC_options.png"><img class="alignnone size-full wp-image-12909" src="img/VPC_options.png" alt="VPC_options" width="2870" height="1795"></a>Note:<br> If installing with an <a href="/docs/17.1/iam-role-setup-for-installation-into-aws/">IAM role</a> instead of an AWS customer<br> account key, select IAM role if you have created as explained in <a href="/docs/17.1/installing-avi-vantage-in-amazon-web-services-16-2/#3_Credential_Method">Credential Method</a>. In<br> this example we have used the IAM Role "AviController-Refined-Role".</li> 
  <li>In the Size (G/B) field, enter 64 to allocate 64 GB to the Avi Controller instance, and go to the "Next:Tag<br> Instance" option.<a href="img/Storage.png"><img class="alignnone size-full wp-image-12844" src="img/Storage.png" alt="Storage" width="2880" height="1800"></a></li> 
  <li>Enter a name for this Avi Controller instance.<a href="img/Tag_instance.png"><img class="alignnone size-full wp-image-12846" src="img/Tag_instance.png" alt="Tag_instance" width="2868" height="1794"></a></li> 
- <li>Create a security group that allows <a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">traffic<br> through the firewall</a>, to allow management communication between the Avi Controller and the Avi Service Engines<br> (SEs)<a href="img/Security_group.png"><img class="alignnone size-full wp-image-12840" src="img/Security_group.png" alt="Security_group" width="2880" height="1800"></a></li> 
+ <li>Create a security group that allows <a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">traffic<br> through the firewall</a>, to allow management communication between the Avi Controller and the Avi Service Engines<br> (SEs)<a href="img/Security_group.png"><img class="alignnone size-full wp-image-12840" src="img/Security_group.png" alt="Security_group" width="2880" height="1800"></a></li> 
  <li>(Optional) Select SSD as the storage type. (This enhances the responsiveness of the Avi Controller web<br> interface.) <a href="img/SSD.png"><img class="alignnone size-full wp-image-12842" src="img/SSD.png" alt="SSD" width="2880" height="1795"></a></li> 
  <li>Review your EC2 instance, and click Launch. <a href="img/Review_instance_launch.png"><img class="alignnone size-full wp-image-12834" src="img/Review_instance_launch.png" alt="Review_instance_launch" width="2880" height="1800"></a></li> 
  <li><strong>Key pair settings:<br> </strong><p></p> 
@@ -154,7 +154,7 @@ After deploying an EC2 instance of the Avi Controller, use a browser to navigate
     * Access credentials are needed by the Avi Controller to communicate with AWS API. Enter the access key and secret access key.
 <a href="img/AWS_credentials-1.png"><img class="wp-image-12876 aligncenter" src="img/AWS_credentials-1.png" alt="AWS_credentials" width="250" height="342"></a>
     * (Optional) Proxy IP and port: If using custom proxy between your corporate network and AWS<a href="img/AWS_proxy.png"><img class="wp-image-12878 aligncenter" src="img/AWS_proxy.png" alt="AWS_proxy" width="263" height="415"></a>
-    * If using an <a href="/docs/16.3/iam-role-setup-for-installation-into-aws/">IAM role</a>, instead select Use AWS IAM Roles.
+    * If using an <a href="/docs/17.1/iam-role-setup-for-installation-into-aws/">IAM role</a>, instead select Use AWS IAM Roles.
 <img class="wp-image-12826 aligncenter" src="img/IAM.png" alt="IAM" width="265" height="262"> 
 * Configure SE Management Network, this is the subnet network which controller will place the management VNIC of SE's. The management network of SE should be reachable from Controller Management IP. Note: While creating virtual service make sure to select VIP subnet that has reachability to the SE's management subnet.
 
@@ -164,5 +164,5 @@ After deploying an EC2 instance of the Avi Controller, use a browser to navigate
 * To verify installation, navigate to Infrastructure > Clouds, click Default-Cloud, then click the Status button.<a href="img/cloud_progress.png"><img class="alignnone size-full wp-image-12820" src="img/cloud_progress.png" alt="cloud_progress" width="2871" height="805"></a>
 * When the status turns green, installation is a success.<a href="img/cloud_green.png"><img class="alignnone size-full wp-image-12818" src="img/cloud_green.png" alt="cloud_green" width="2867" height="798"></a> 
 
-This completes the installation process. The Avi Controller is now ready for <a href="/docs/16.3/architectural-overview/applications/virtual-services/create-virtual-service/">deploying virtual<br> services</a>.
+This completes the installation process. The Avi Controller is now ready for <a href="/docs/17.1/architectural-overview/applications/virtual-services/create-virtual-service/">deploying virtual<br> services</a>.
 

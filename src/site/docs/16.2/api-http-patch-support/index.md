@@ -1,6 +1,6 @@
 ---
 title: API - HTTP PATCH Support
-layout: default
+layout: 16.2
 ---
 Beginning in Avi Vantage 16.2, the HTTP method PATCH can be used in a limited fashion, as described in this article.
 

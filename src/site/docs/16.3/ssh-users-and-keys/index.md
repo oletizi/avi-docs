@@ -1,6 +1,6 @@
 ---
 title: SSH Users and Keys
-layout: default
+layout: 16.3
 ---
 The Avi Controller and Avi Service Engines (SEs) use SSH for secure management communication. The communication falls into two categories, Controller-to-SE, and administrator-to-Controller.
 

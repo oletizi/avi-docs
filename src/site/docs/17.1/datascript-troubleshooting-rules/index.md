@@ -63,6 +63,6 @@ The stack trace for this error may not provide the reason, but it does provide a
    avi.close_conn()
 end</code></pre>  
 
-Searching the Avi documentation for more help on the *avi.close_conn* returns the <a href="/docs/16.3/datascript-avi-http-close_conn/">avi.http.close_conn</a> article.  After changing the function to the correct name, test again and validate the issue is resolved.
+Searching the Avi documentation for more help on the *avi.close_conn* returns the <a href="/docs/17.1/datascript-avi-http-close_conn/">avi.http.close_conn</a> article.  After changing the function to the correct name, test again and validate the issue is resolved.
 
 In the above example, most clients would not be impacted by the broken rule.  This same logic can be used to isolate an issue and test without impacting other users.

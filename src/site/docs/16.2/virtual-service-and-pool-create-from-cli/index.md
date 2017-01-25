@@ -1,6 +1,6 @@
 ---
 title: CLI&#58; Virtual Service and Pool Creation
-layout: default
+layout: 16.2
 ---
 During virtual service creation, the virtual service will need to point to a pool, which the system expects to exist already.
 

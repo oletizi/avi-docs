@@ -1,6 +1,6 @@
 ---
 title: Determine Software Version
-layout: default
+layout: 16.3
 ---
 To determine the specific Avi Vantage software version running on the Avi Controller (and its Service Engines), use either of the following methods.
 

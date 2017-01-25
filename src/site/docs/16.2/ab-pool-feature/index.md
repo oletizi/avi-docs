@@ -1,6 +1,6 @@
 ---
 title: A/B Test Pool
-layout: default
+layout: 16.2
 ---
 Here's a change to the ab-pool feature.
 

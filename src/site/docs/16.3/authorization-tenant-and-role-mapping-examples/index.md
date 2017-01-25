@@ -1,6 +1,6 @@
 ---
 title: Authorization&#58; Tenant and Role Mapping Examples
-layout: default
+layout: 16.3
 ---
 Remote Auth requires assignment of roles and tenants for every user login via the authorization mapping rules. Authorization is assessed on every login and the user record is updated. Upon successful user login via an external authentication server, all mapping rules are evaluated; tenant and role pairs are added to user access list.
 

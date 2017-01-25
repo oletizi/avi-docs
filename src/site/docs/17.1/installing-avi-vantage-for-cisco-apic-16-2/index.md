@@ -239,4 +239,4 @@ The Controller automatically assigns IP addresses to data vNICs from an IP addre
 
 The Controller picks an IP address from the range and adds it to the data vNIC connected to the port group. Note: Cisco APIC completely controls distributed virtual switches and port groups. In other words, do not create port groups manually. APIC programs the SE vNICs to place them into the appropriate EPGs or port groups.
 
-This completes the installation phase of deployment. The next phase is to create a virtual service: <a href="/docs/16.3/virtual-service-create-apic/">Virtual Service Creation: APIC</a>
+This completes the installation phase of deployment. The next phase is to create a virtual service: <a href="/docs/17.1/virtual-service-create-apic/">Virtual Service Creation: APIC</a>

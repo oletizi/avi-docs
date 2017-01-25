@@ -1,6 +1,6 @@
 ---
 title: Layer 4 SSL Support
-layout: default
+layout: 16.2
 ---
 Avi Vantage release 16.2 and later versions support layer 4 SSL virtual services. All client-facing ports will be SSL-terminated. Unlike the HTTP application profile, there is no possibility to mix-and-match SSL and non-SSL ports on an SSL Profile app. For SSL termination of HTTP protocol, use <a href="/docs/16.2/configuration-guide/templates/profiles/application-profile/#http-profile">HTTP/HTTPs application profile</a>. Requests are forwarded to back-end servers in the clear.
 

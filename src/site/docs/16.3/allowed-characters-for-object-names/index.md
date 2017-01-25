@@ -1,6 +1,6 @@
 ---
 title: Allowed Characters for Object Names
-layout: default
+layout: 16.3
 ---
 ## Object Names
 

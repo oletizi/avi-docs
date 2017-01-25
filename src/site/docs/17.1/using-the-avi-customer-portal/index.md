@@ -37,7 +37,7 @@ Using the credentials Avi Networks provides them, Avi Customer Portal (<a href="
 The default Customer Portal page is the three-section Dashboard (figure 2). It provides a quick overview as well as buttons by which to drill down if required.
 
 * **PERSONAL DETAILS.** This section displays the full name Avi Networks has on file for the logged-in user, his/her company name, the user's email address, and whether the user has opted to receive email bulletins from Avi. For example, a subscribed user is notified by email when new Avi Vantage release notes become available on the Knowledge Base (kb.avinetworks.com).
-* **RECENT CASES.** This section displays the most recent cases submitted by the logged-in user, in order of most recent first. The list is empty if the user has yet to submit a case. Five columns display the auto-assigned case number, user-specified subject, when the case was opened, when last it was updated, and its type (issue, bug, feature request, or question). Typically, a case starts as a question or an issue. Avi Support's investigation of an issue typically results in its reclassification as either a bug or a feature request. Refer to <a href="/docs/16.3/avi-support-case-workflow/">Avi Support Case Workflow</a> for details.
+* **RECENT CASES.** This section displays the most recent cases submitted by the logged-in user, in order of most recent first. The list is empty if the user has yet to submit a case. Five columns display the auto-assigned case number, user-specified subject, when the case was opened, when last it was updated, and its type (issue, bug, feature request, or question). Typically, a case starts as a question or an issue. Avi Support's investigation of an issue typically results in its reclassification as either a bug or a feature request. Refer to <a href="/docs/17.1/avi-support-case-workflow/">Avi Support Case Workflow</a> for details.
 * **ACTIVE LICENSES**. Links by which to download YAML license files appear here, along with the names of the users who requested the licenses. The NAME column indicates a purpose or destination. The license type and start/expiry dates round out the display. The LICENSES link in the Customer Portal banner additionally lists expired licenses. 
 
 ## Downloading Software
@@ -121,7 +121,7 @@ Both the Dashboard and the Support Management Console of the Avi Customer Portal
 * **Subject**: Enter text to tersely suggest what the issue or question is about.
 * **Custom Tag**: Optionally enter text that may help you associate groups of similarly themed cases.
 * **Description**: Enter as much text and as many hyperlinks as needed to pose your question or describe your issue.
-* **Attachments**: Optionally attach relevant files, screenshots, etc. We highly recommend attaching the tech support log. Learn <a href="/docs/16.3/collecting-tech-support-logs-163/">how to collect tech support logs</a>. 
+* **Attachments**: Optionally attach relevant files, screenshots, etc. We highly recommend attaching the tech support log. Learn <a href="/docs/17.1/collecting-tech-support-logs-163/">how to collect tech support logs</a>. 
 
 <a name="support-case-notifications"></a>
 

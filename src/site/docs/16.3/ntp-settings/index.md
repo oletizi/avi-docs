@@ -1,6 +1,6 @@
 ---
 title: NTP Settings
-layout: default
+layout: 16.3
 ---
 NTP (Network Time Protocol) settings are critical to proper functioning of the Avi Controller. Analytics functionality in the Controller relies on the fact that Controller(s) in the cluster and SE(s) are synchronized. Controller(s) synchronize time from the configured NTP servers and the SE(s) in turn synchronize time from the Controller(s).
 

@@ -1,6 +1,6 @@
 ---
 title: Create a Virtual Service
-layout: default
+layout: 16.3
 ---
 A new virtual service may be created via either the basic or advanced mode. In basic mode, many features are not exposed during the initial setup. After the virtual service has been created via basic mode, the options shown while editing are the same as advanced mode, regardless which mode was initially used. While basic mode may have been used to create the virtual service, it does not preclude access to any advanced features.
 

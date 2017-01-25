@@ -8,7 +8,7 @@ You can use the Avi Vantage API to access throughput data and other metrics for 
 * **Controller VIP**:  Replace with the IP address of your Avi Controller or the cluster IP address assigned to the cluster of redundant Avi Controllers. 
 * **VS UUID**:  Universally Unique ID (UUID) of the virtual service. Since virtual service names may not be unique across multiple tenants, API queries are recommended to include the virtual service's UUID.  
 
-A quick way to find a virtual service's UUID is to view the virtual service in the Avi Controller's web interface, and capture the UUID from the browser URI.  (See the following link to <a href="/docs/16.3/find-virtual-service-uuid/">find virtual service UUIDs</a>.)
+A quick way to find a virtual service's UUID is to view the virtual service in the Avi Controller's web interface, and capture the UUID from the browser URI.  (See the following link to <a href="/docs/17.1/find-virtual-service-uuid/">find virtual service UUIDs</a>.)
 
 **step**:  Sampling period, in seconds. (For 24 hours, use sampling time 86400.)
 

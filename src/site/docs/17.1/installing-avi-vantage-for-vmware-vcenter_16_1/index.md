@@ -9,7 +9,7 @@ Avi Vantage is a software-based solution that provides real-time analytics as we
 **Notes:**
 
 * **Deployment in *write access mode* is recommended. It's the quickest and easiest way to deploy.**
-* **After completing the deployment process, go <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">here</a> to create virtual services.**
+* **After completing the deployment process, go <a href="/docs/17.1/configuring-a-virtual-service-for-vmware-basic">here</a> to create virtual services.**
 * **vMotion is not supported.** 
 
 ## How Avi Vantage Integrates into vCenter
@@ -389,9 +389,9 @@ Use the following steps to assign an IP address pool to port groups:
 
 <a href="img/vmware-deploy5.png"><img class="alignnone size-medium wp-image-3737" src="img/vmware-deploy5.png" alt="vmware-deploy5" width="528" height="287"></a>
 
-**If deploying in no access mode, <a href="#SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Vantage is ready for <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
+**If deploying in no access mode, <a href="#SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Vantage is ready for <a href="/docs/17.1/configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
 
-### <a href="/docs/16.3/virtual-service-creation-vmware/">Creating a Virtual Service</a>
+### <a href="/docs/17.1/virtual-service-creation-vmware/">Creating a Virtual Service</a>
 
-### <a href="/docs/16.3/troubleshooting-vmware-deployment/">Troubleshooting</a>
+### <a href="/docs/17.1/troubleshooting-vmware-deployment/">Troubleshooting</a>
 

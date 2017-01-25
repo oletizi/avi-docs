@@ -1,6 +1,6 @@
 ---
 title: Rolling Back the System
-layout: default
+layout: 16.3
 ---
 During upgrade of Avi Vantage to a new software version, Vantage performs a snapshot of the configuration from the previous version to allow for a rollback in the case of special circumstances. The primary goal of rollback is to restore the system quickly and safely to the known configuration in the previous version.
 

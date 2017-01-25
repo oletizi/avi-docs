@@ -1,6 +1,6 @@
 ---
 title: Manually Validate Server Health
-layout: default
+layout: 16.3
 ---
 It is often helpful to validate the response of a server while troubleshooting reasons a server may be marked down. The challenge is to ensure the test is from a specific Avi Service Engine, using the same tenant, network, and IP address. SEs have multiple network stacks, one for the control plane which uses Linux, and a second for the data plane. Simply logging into an SE and pinging a server will go out the management port and IP address, which may route through different infrastructure than the SE data plane.
 

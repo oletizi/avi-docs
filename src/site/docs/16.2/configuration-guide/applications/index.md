@@ -1,6 +1,6 @@
 ---
 title: Applications
-layout: default
+layout: 16.2
 ---
 * <a href="/docs/16.2/configuration-guide/applications/virtual-services/">Virtual Services ›</a>
 * <a href="/docs/16.2/configuration-guide/applications/vs-scaling/">Virtual Services Scaling ›</a>

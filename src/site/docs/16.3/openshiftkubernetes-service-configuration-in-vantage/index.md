@@ -1,6 +1,6 @@
 ---
 title: OpenShift/Kubernetes Service Configuration in Avi Vantage
-layout: default
+layout: 16.3
 ---
 ## Introduction
 

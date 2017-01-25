@@ -1,6 +1,6 @@
 ---
 title: User Account Self-Service
-layout: default
+layout: 16.2
 ---
 When logged into the web interface, an Avi Vantage user can view or change information about their own account.
 

@@ -1,6 +1,6 @@
 ---
 title: Rewriting Host Header to Server Name
-layout: default
+layout: 16.3
 ---
 Starting with Avi Vantage release 16.2.3, when proxying a request to a back-end server, an SE can rewrite the host header to the server name of the particular back-end server to which the request is forwarded. This functionality can be turned on for selected or all servers in the pool.
 

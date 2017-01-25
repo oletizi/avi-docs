@@ -1,6 +1,6 @@
 ---
 title: CLI - Script Mode
-layout: default
+layout: 16.3
 ---
 In Avi Vantage 16.3, a set of CLI enhancements are introduced with the following in mind:
 

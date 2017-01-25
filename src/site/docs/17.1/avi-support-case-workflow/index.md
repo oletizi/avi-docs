@@ -2,7 +2,7 @@
 title: Avi Support Case Workflow
 layout: default
 ---
-This article describes the workflow of cases submitted by Avi customers to Avi Support. Be it initiated over the phone or directly via the Avi Customer Portal, a case can be viewed and managed by visiting <a href="http://www.avinetworks.com/portal">www.avinetworks.com/portal</a>. Read <a href="/docs/16.3/using-the-avi-customer-portal/">Using the Avi Customer Portal</a> for full details on support case submission and tracking.
+This article describes the workflow of cases submitted by Avi customers to Avi Support. Be it initiated over the phone or directly via the Avi Customer Portal, a case can be viewed and managed by visiting <a href="http://www.avinetworks.com/portal">www.avinetworks.com/portal</a>. Read <a href="/docs/17.1/using-the-avi-customer-portal/">Using the Avi Customer Portal</a> for full details on support case submission and tracking.
 
 Four case types are defined: issue, bug, enhancement and question. As a case moves toward resolution, it may be reclassified, and therefore its type may change, as shown in the third column of the below table.
 

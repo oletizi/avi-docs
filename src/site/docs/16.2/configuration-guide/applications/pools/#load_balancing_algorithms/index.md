@@ -1,6 +1,6 @@
 ---
 title: Pools
-layout: default
+layout: 16.2
 ---
 This chapter contains the following sections:
 

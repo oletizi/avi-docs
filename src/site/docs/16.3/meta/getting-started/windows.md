@@ -1,6 +1,6 @@
 ---
 title: Meta -- Docs Getting Started on Windows
-layout: default
+layout: 16.3
 ---
 
 ## Enable the Windows Subsystem for Linux

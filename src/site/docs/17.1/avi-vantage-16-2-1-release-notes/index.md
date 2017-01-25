@@ -8,7 +8,7 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 
 * SR-IOV and VLAN filtering for Cisco CSP 
 * Ability to specify a Service Engine's disk configuration to VMware vCenter 
-* <a href="/docs/16.3/ipam-and-dns-16-2-x/"><span class="s1">IPAM/DNS for VMware read-only cloud</span></a> 
+* <a href="/docs/17.1/ipam-and-dns-16-2-x/"><span class="s1">IPAM/DNS for VMware read-only cloud</span></a> 
 * SE configuration controls to support dedicated dispatcher and socket placement 
 * BGP selective advertisement for VIP/SNAT 
 * Support for multiple BGP peers in a single network  
@@ -26,38 +26,38 @@ This article describes the new features, changes, and fixes in Avi Vantage relea
 
 ## What’s New in 16.2
 
-This section summarizes the enhancements in 16.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/docs/16.3/">knowledge base</a>.
+This section summarizes the enhancements in 16.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/docs/17.1/">knowledge base</a>.
 
 * Linux server (bare metal) support enhancements  
-    * <a href="/docs/16.3/installation-guides/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
-    * <a href="/docs/16.3/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
-    * <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade support</a>
+    * <a href="/docs/17.1/installation-guides/installing-avi-vantage-for-a-linux-server-cloud/">Linux server cloud</a> - Orchestration of Service Engines deployed on Linux servers
+    * <a href="/docs/17.1/vlan-configuration-on-bare-metal/">VLAN trunking</a> - Multiple VLAN interfaces per physical link
+    * <a href="/docs/17.1/upgrading-the-avi-vantage-software/">Upgrade support</a>
 * Networking features  
-    * <a href="/docs/16.3/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
-    * <a href="/docs/16.3/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
+    * <a href="/docs/17.1/bgp-support-for-virtual-services/">BGP with route health injection (RHI) and equal cost multi-path (ECMP)</a> for increased high availability and horizontal scaling of virtual services
+    * <a href="/docs/17.1/vrf-support-for-vcenter-deployments/">Multiple route domains (VRF-defined)</a> support in VMware vCenter environments
 * Core ADC features  
-    * <a href="/docs/16.3/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
-    * <a href="/docs/16.3/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
+    * <a href="/docs/17.1/http-request-queuing/">HTTP request queueing</a> to absorb bursts of traffic, by adding requests in a queue if all the servers of a pool have reached their maximum connection limit
+    * <a href="/docs/17.1/ab-pool-feature/">A/B pool testing</a> of applications sends a percentage of traffic to a secondary (B) pool; useful for gradually transitioning from one version of the application to another
     * Dictionary/map support for HTTP policies:Policies can perform lookups against a list of items stored in a string group, and the lookup result can be used for the URL-rewrite action
     * Regular expression support for HTTP policies with RegEx match operations against a string list in a string group
-    * <a href="/docs/16.3/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
+    * <a href="/docs/17.1/logging-all-headers-in-client-server-http-traffic/">Full logging of request/response headers for clients</a> via HTTP policies: Policies can selectively log all HTTP headers (request/response) to the client logs
 * SSL enhancements  
-    * <a href="/docs/16.3/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
-    * <a href="/docs/16.3/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
-    * <a href="/docs/16.3/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
+    * <a href="/docs/17.1/datascript-avi-ssl-cipher/">DataScript and policy support for SSL cipherlist:</a> SSL/TLS session information between clients and virtual services is accessible by DataScripts and HTTP policies
+    * <a href="/docs/17.1/crl-validation-options/">PKI profile certificate revocation (CRL) verification option:</a> CRL verification of only the leaf certificate, or the full chain of certificates
+    * <a href="/docs/17.1/thales-nshield-integration-2">Thales nShield Hardware Security Module (HSM)</a> support
 * Containers  
-    * <a href="/docs/16.3/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
-    * <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
+    * <a href="/docs/17.1/service-discovery-for-mesos/">Service discovery</a> in Mesos/Marathon environment
+    * <a href="/docs/17.1/upgrading-the-avi-vantage-software/">Upgrade support</a> in Mesos/Marathon deployments
 * UI enhancements  
-    * <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade supported through web interface</a>
-    * <a href="/docs/16.3/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
+    * <a href="/docs/17.1/upgrading-the-avi-vantage-software/">Upgrade supported through web interface</a>
+    * <a href="/docs/17.1/all-tenants-view/">All-tenant view: </a>Ability by the admin user to view objects within all tenants for the admin user
 * Ecosystem support  
     * OpenStack Liberty
-    * <a href="/docs/16.3/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
+    * <a href="/docs/17.1/vantage-installation-on-nutanix-acropolis-hypervisor/">Nutanix Acropolis</a>
 * Other features  
-    * <a href="/docs/16.3/ldap-auth-profile-test/">LDAP authentication profile testing</a>
+    * <a href="/docs/17.1/ldap-auth-profile-test/">LDAP authentication profile testing</a>
     * Python SDK
-    * <a href="/docs/16.3/cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
+    * <a href="/docs/17.1/cli-installing-the-cli-shell/">Standalone CLI shell package</a> 
 
 ## Issues Resolved in 16.2
 
@@ -78,9 +78,9 @@ This section summarizes the enhancements in 16.2. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 15.2 or later.
 
-<a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/17.1/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
 
-<a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ## Supported Platforms
 
@@ -103,11 +103,11 @@ Upgrade prerequisite: current version of Avi Controller must be 15.2 or later.
 
 ## Product Documentation
 
-For more information, please see the following documents, also available within this <a href="/docs/16.3/">knowledge base</a>.
+For more information, please see the following documents, also available within this <a href="/docs/17.1/">knowledge base</a>.
 
 ### Installation Guides
 
-* <a href="/docs/16.3/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/17.1/installation-guides/">Avi Vantage Installation Guides</a> 
 
 ## Open Source Package Information
 

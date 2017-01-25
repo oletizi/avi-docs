@@ -1,6 +1,6 @@
 ---
 title: Reset an OpenStack Default Cloud
-layout: default
+layout: 16.3
 ---
 ### When and Why To Reset Default-Cloud
 

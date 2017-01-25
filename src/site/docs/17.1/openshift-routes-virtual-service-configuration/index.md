@@ -2,7 +2,7 @@
 title: OpenShift Routes Virtual Service Configuration
 layout: default
 ---
-In an OpenShift cloud, OpenShift <a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/routes.html">route</a> creation triggers creation of north-south or ingress Avi Vantage VirtualService and Pool objects. <a href="/docs/16.3/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration in Avi Vantage</span></a>explained how OpenShift/Kubernetes <a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html">services</a> map to Avi Vantage's VirtualService and Pool objects. This article explains how OpenShift routes trigger VirtualService and Pool creation in Avi Vantage.
+In an OpenShift cloud, OpenShift <a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/routes.html">route</a> creation triggers creation of north-south or ingress Avi Vantage VirtualService and Pool objects. <a href="/docs/17.1/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration in Avi Vantage</span></a>explained how OpenShift/Kubernetes <a href="https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html">services</a> map to Avi Vantage's VirtualService and Pool objects. This article explains how OpenShift routes trigger VirtualService and Pool creation in Avi Vantage.
 
 ## OpenShift Routes to Avi Vantage Object Mapping
 

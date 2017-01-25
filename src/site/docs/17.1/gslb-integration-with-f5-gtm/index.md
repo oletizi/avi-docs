@@ -6,7 +6,7 @@ To ensure high availability across geographic regions or data centers, Avi Netwo
 
 The procedure in this article works with Avi Vantage version 15.x and higher, and F5 Networks Global Traffic Manager (GTM) version 10.x and higher. Other versions also may work but are not covered or tested under the scope of this article.
 
-For help configuring Avi Vantage's GSLB capabilities, see <a href="/docs/16.3/avi-gslb-architecture/">here</a>.
+For help configuring Avi Vantage's GSLB capabilities, see <a href="/docs/17.1/avi-gslb-architecture/">here</a>.
 
 ## Assumptions
 

@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;stringgroup&#46;beginswith
-layout: default
+layout: 16.3
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>         

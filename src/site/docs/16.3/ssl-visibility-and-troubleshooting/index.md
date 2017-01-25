@@ -1,6 +1,6 @@
 ---
 title: SSL Visibility and Troubleshooting
-layout: default
+layout: 16.3
 ---
 Avi Vantage provides a number of features to help understand the utilization of SSL traffic and troubleshoot SSL-related issues.
 

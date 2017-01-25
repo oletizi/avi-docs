@@ -17,7 +17,7 @@ The following options are classified as System Access Settings:
 
 The following option is related to **SNMP**:
 
-* **SNMP Community:** The string to be furnished by an external SNMP v2c manager wishing to query the SNMP daemon running on the Avi Controller leader. Refer to the <a href="/docs/16.3/snmp-support-in-avi-vantage">SNMP Support in Avi Vantage</a> article for additional information. 
+* **SNMP Community:** The string to be furnished by an external SNMP v2c manager wishing to query the SNMP daemon running on the Avi Controller leader. Refer to the <a href="/docs/17.1/snmp-support-in-avi-vantage">SNMP Support in Avi Vantage</a> article for additional information. 
 
 The **Client Management Access to Avi Controller** section specifies four kinds of clients that can be enumerated as legitimate accessors of the system:
 

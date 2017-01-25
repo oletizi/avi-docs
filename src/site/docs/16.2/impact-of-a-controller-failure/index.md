@@ -1,6 +1,6 @@
 ---
 title: Impact of a Controller Failure
-layout: default
+layout: 16.2
 ---
 The impact of the loss of a Controller depends on whether the Controller is deployed as a standalone or as part of a 3-node Controller cluster.
 

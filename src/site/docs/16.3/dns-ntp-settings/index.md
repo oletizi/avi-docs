@@ -1,6 +1,6 @@
 ---
 title: DNS / NTP Settings
-layout: default
+layout: 16.3
 ---
 Avi Vantage requires access to valid DNS and NTP servers for operation. Use of an NTP server is especially critical. Avi Vantage cannot function properly without an NTP server. Port 123 needs to be open on the Avi Controller to receive timestamps over UDP.
 

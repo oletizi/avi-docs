@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Scaling
-layout: default
+layout: 16.2
 ---
 This article covers the following virtual service optimization topics:
 

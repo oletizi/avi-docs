@@ -1,6 +1,6 @@
 ---
 title: Security
-layout: default
+layout: 16.2
 ---
 ### SSL Certificates
 

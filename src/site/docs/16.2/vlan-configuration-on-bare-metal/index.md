@@ -1,6 +1,6 @@
 ---
 title: VLAN Configuration on Bare Metal
-layout: default
+layout: 16.2
 ---
 Avi Vantage supports VLAN trunking on bare metal servers. If the Avi Controller is deployed on a bare metal server, the individual physical links of the server can be configured to support 802.1q-tagged virtual LANs (VLANs). Each VLAN interface has its own IP address. Multiple VLAN interfaces per physical link are supported.
 > Note: VLAN tagging applies only to bare metal deployments.

@@ -33,4 +33,4 @@ To disable a server for maintenance:
 
 <a href="img/Screen-Shot-2016-07-07-at-5.24.59-PM.png"><img class="alignnone wp-image-10770" src="img/Screen-Shot-2016-07-07-at-5.24.59-PM.png" alt="Screen Shot 2016-07-07 at 5.24.59 PM" width="391" height="175"></a>
 
-Note: Vantage also can be configured to use information in the health-check responses from servers to detect when a server is in maintenance mode. For information, <a href="/docs/16.3/detecting-server-maintenance-mode-with-a-health-monitor">click here</a>.
+Note: Vantage also can be configured to use information in the health-check responses from servers to detect when a server is in maintenance mode. For information, <a href="/docs/17.1/detecting-server-maintenance-mode-with-a-health-monitor">click here</a>.

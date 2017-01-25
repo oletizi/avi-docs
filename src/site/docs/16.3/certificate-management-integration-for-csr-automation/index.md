@@ -1,6 +1,6 @@
 ---
 title: Certificate Management Integration for CSR Automation
-layout: default
+layout: 16.3
 ---
 Starting in release 16.2, Avi Vantage supports automation of the process for requesting and installing a certificate signed by a certificate authority (CA). This feature handles initial certificate registration as well as renewal of certificates based on certificate expiration.
 

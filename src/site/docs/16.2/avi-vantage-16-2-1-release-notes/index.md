@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage 16&#46;2&#46;1 Release Notes
-layout: default
+layout: 16.2
 ---
 This article describes the new features, changes, and fixes in Avi Vantage release 16.2.1.
 

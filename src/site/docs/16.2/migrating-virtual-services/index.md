@@ -1,6 +1,6 @@
 ---
 title: Migrating Virtual Services
-layout: default
+layout: 16.2
 ---
 Vantage allows virtual services to easily be migrated from one Avi Service Engine (SE) to another. This capability can be useful in cases where an Avi SE needs to be disabled. For example, an Avi SE host may need to be disabled for maintenance. 
 

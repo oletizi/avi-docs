@@ -1,6 +1,6 @@
 ---
 title: User Account Lockout
-layout: default
+layout: 16.3
 ---
 This feature prevents users from logging in after 20 failed attempts. The user account is locked out for 30 minutes after the last failure login attempt. If the account has not been locked, the running count of  failed login attempts is reset to 0 after a valid login.
 

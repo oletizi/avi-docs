@@ -2,7 +2,7 @@
 title: TCP Health Monitor
 layout: default
 ---
-This article covers the specific configuration for this monitor type.  See the <a href="/docs/16.3/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
+This article covers the specific configuration for this monitor type.  See the <a href="/docs/17.1/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 
 For any TCP application, this monitor will wait for the TCP connection establishment, send the request string, and wait for the server to respond with the expected content. If no client request and server response are configured, the server will be marked 'up' from a successful TCP handshake completion.
 
@@ -24,6 +24,6 @@ For any TCP application, this monitor will wait for the TCP connection establish
 
 This feature allows an application owner to gracefully bleed connections from a server prior to taking the server offline without the requirement to log into Avi Vantage to first place the server in disabled state.
 
-See the <a href="/docs/16.3/detecting-server-maintenance-mode-with-a-health-monitor">Detecting Server Maintenance Mode</a> for an example configuration.
+See the <a href="/docs/17.1/detecting-server-maintenance-mode-with-a-health-monitor">Detecting Server Maintenance Mode</a> for an example configuration.
 
 * **Maintenance Server Response Data**:  If the defined string is seen in the server response, place the server in maintenance mode.  During this time, health checks will continue, and servers operate the same as if manually disabled, which means existing client flows are allowed to continue, but new flows are sent to other available servers.  Once a server stops responding with the maintenance string, it will be noticed by the subsequent health monitors and will be brought online, being marked up or down as it normally would based on the server response data.  Note that a manually disabled server does not receive health checks and is not automatically re-enabled. 

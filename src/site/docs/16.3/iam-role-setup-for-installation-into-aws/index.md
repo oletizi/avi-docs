@@ -1,6 +1,6 @@
 ---
 title: IAM Role Setup for Installation into AWS
-layout: default
+layout: 16.3
 ---
 If using the IAM role method to define access for an Avi Vantage installation in Amazon Web Services (AWS), use the steps in this article to set up the IAM roles before beginning deployment of the Avi Controller EC2 instance.
 <table class="myTable table table-bordered table-hover">  

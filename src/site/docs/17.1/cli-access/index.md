@@ -8,9 +8,9 @@ Avi Controller runs on Ubuntu Linux, which means there are two levels of CLI acc
 
 See also:
 
-* <a href="/docs/16.3/cli-guide/">CLI Guide</a>
-* <a href="/docs/16.3/cli-guide/cli-top-level-commands/">CLI Top-Level Commands</a>
-* <a href="/docs/16.3/ssh-users-and-keys/#ssh-key-based-controller-login">SSH Key-based Login to Avi Controller</a> (new for Avi Vantage release 16.3) 
+* <a href="/docs/17.1/cli-guide/">CLI Guide</a>
+* <a href="/docs/17.1/cli-guide/cli-top-level-commands/">CLI Top-Level Commands</a>
+* <a href="/docs/17.1/ssh-users-and-keys/#ssh-key-based-controller-login">SSH Key-based Login to Avi Controller</a> (new for Avi Vantage release 16.3) 
 
 ### Access the Controller CLI
 
@@ -37,5 +37,5 @@ When accessing the CLI on a system configured with remote authentication such as
 
 For Mac and Linux clients, an Avi CLI package may be installed on the local computer.
 
-* <a href="/docs/16.3/cli-installing-the-cli-shell/">Installing the Avi Vantage CLI Shell</a>
-* <a href="/docs/16.3/installation-guides/installing-the-lbaas-driver-cli-shell-openstack/">Installing the LBaaS CLI Shell (OpenStack with Keystone)</a> 
+* <a href="/docs/17.1/cli-installing-the-cli-shell/">Installing the Avi Vantage CLI Shell</a>
+* <a href="/docs/17.1/installation-guides/installing-the-lbaas-driver-cli-shell-openstack/">Installing the LBaaS CLI Shell (OpenStack with Keystone)</a> 

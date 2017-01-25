@@ -1,6 +1,6 @@
 ---
 title: Custom Persistence with DataScript
-layout: default
+layout: 16.3
 ---
 Avi Vantage includes a number of common methods of persisting clients to the same server for a duration of time. For some applications, it may be valuable to have more customization to the behavior of the persistence, or to support a wider array of application types.  See <a href="/docs/16.3/overview-of-server-persistence">Overview of Server Persistence</a> for other methods.
 

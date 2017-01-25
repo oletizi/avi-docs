@@ -1,6 +1,6 @@
 ---
 title: DNS Provider (Avi Vantage) (16&#46;3+)
-layout: default
+layout: 16.3
 ---
 This article walks through the configuration of Avi Vantage's native DNS hosting solution. The Avi Vantage DNS solution is available for the following clouds:
 

@@ -1,6 +1,6 @@
 ---
 title: Vantage Installation on Nutanix Acropolis Hypervisor
-layout: default
+layout: 16.2
 ---
 <a href="img/Nutanix-Ready_core.png"><img class="alignright wp-image-13846" src="img/Nutanix-Ready_core.png" alt="Nutanix Ready certification" width="150" height="77"></a>
 

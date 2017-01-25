@@ -1,6 +1,6 @@
 ---
 title: Auth Profile
-layout: default
+layout: 16.3
 ---
 An Auth profile is a set of Authentication, Authorization, and Accounting (AAA) attributes used by Avi Vantage users to log into Avi Vantage. The following types of AAA are supported for Vantage user login:
 

@@ -4,7 +4,7 @@ layout: default
 ---
 Alert actions may be configured to proactively send notifications to an administrator using the methods available on the Notifications page (email, syslog, SNMP).
 
-Before creating an alert action, the notification destinations must be configured. These can be syslog servers, email servers and addresses, and SNMP trap servers. Starting with Avi Vantage 16.2.2, one can <a href="/docs/16.3/verifying-notification-settings/">verify notification settings in advance</a> of triggering them. In addition to notifications, an alert action also can include running a ControlScript. Notifications need to be configured only if they are going to be used for an alert action.
+Before creating an alert action, the notification destinations must be configured. These can be syslog servers, email servers and addresses, and SNMP trap servers. Starting with Avi Vantage 16.2.2, one can <a href="/docs/17.1/verifying-notification-settings/">verify notification settings in advance</a> of triggering them. In addition to notifications, an alert action also can include running a ControlScript. Notifications need to be configured only if they are going to be used for an alert action.
 
 <img class="alignnone size-full wp-image-1265" src="img/Notification.png" alt="Notification" width="600" height="150">
 

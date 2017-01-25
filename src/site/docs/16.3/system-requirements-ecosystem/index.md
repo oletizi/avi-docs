@@ -1,6 +1,6 @@
 ---
 title: System Requirements&#58; Ecosystem
-layout: default
+layout: 16.3
 ---
  
 

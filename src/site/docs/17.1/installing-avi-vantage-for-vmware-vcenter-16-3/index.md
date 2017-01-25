@@ -9,9 +9,9 @@ Avi Vantage is a software-based solution that provides real-time analytics as we
 **Notes:**
 
 * **Deployment in *write access mode* is recommended. It's the quickest and easiest way to deploy.**
-* **After completing the deployment process, click <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">here</a> to learn how to create virtual services.**
-* **Avi Vantage may be deployed with a VMware cloud in either no access, read access, or write access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Avi Controller within VMware vCenter. For more information, please see<a href="/docs/16.3/antage-interaction-with-vcenter/"> this article</a>.**
-* **Prior to Avi Vantage 16.3, Service Engines deployed manually by the Avi administrator in No Orchestrator or VMware vCenter read access clouds required the user to download a unique copy of the Service Engine image for each cloud configured in the system. Starting from 16.3 release, the Avi administrator needs to download only one Service Engine image for each type of image needed (<code>ova/qcow2/docker</code>). The same SE image can then be used to deploy Service Engines in any tenant and cloud configured in the system. Read <a href="/docs/16.3/anually-deploy-service-engines-in-non-default-tenantcloud/">this relevant article</a>.**
+* **After completing the deployment process, click <a href="/docs/17.1/configuring-a-virtual-service-for-vmware-basic">here</a> to learn how to create virtual services.**
+* **Avi Vantage may be deployed with a VMware cloud in either no access, read access, or write access mode. Each mode results in escalating functionality and automation, but also requires higher levels of privilege for the Avi Controller within VMware vCenter. For more information, please see<a href="/docs/17.1/antage-interaction-with-vcenter/"> this article</a>.**
+* **Prior to Avi Vantage 16.3, Service Engines deployed manually by the Avi administrator in No Orchestrator or VMware vCenter read access clouds required the user to download a unique copy of the Service Engine image for each cloud configured in the system. Starting from 16.3 release, the Avi administrator needs to download only one Service Engine image for each type of image needed (<code>ova/qcow2/docker</code>). The same SE image can then be used to deploy Service Engines in any tenant and cloud configured in the system. Read <a href="/docs/17.1/anually-deploy-service-engines-in-non-default-tenantcloud/">this relevant article</a>.**
 * **vMotion is not supported.** 
 
 ## How Avi Vantage Integrates into vCenter
@@ -60,7 +60,7 @@ Appropriate physical resources need to be present in the ESX Host. If appropriat
 * Dedicated dispatcher CPU: If this option is selected, SEs within their group will dedicate a single CPU thread for dispatching data flows to other vCPU threads. This makes the most sense for SEs having three or more vCPUs.
 * **Disk:** With 10 GB as an absolute minimum, set the disk value to at least (2 x RAM-size) + 5 GB. 
 
-For more details on any of the above, read the <a href="/docs/16.3/service-engine-group-16-2-1/#SERVICE_ENGINE_CAPACITY_AND_LIMIT_SETTINGS">Service Engine Group KB</a>.
+For more details on any of the above, read the <a href="/docs/17.1/service-engine-group-16-2-1/#SERVICE_ENGINE_CAPACITY_AND_LIMIT_SETTINGS">Service Engine Group KB</a>.
 
 ### Software Requirements
 
@@ -378,9 +378,9 @@ Use the following steps to assign an IP address pool to port groups:
 
 <a href="img/vmware-deploy5.png"><img class="alignnone size-medium wp-image-3737" src="img/vmware-deploy5.png" alt="vmware-deploy5" width="528" height="287"></a>
 
-**If deploying in no access mode, <a href="#Avi SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Avi Vantage is ready for <a href="/docs/16.3/configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
+**If deploying in no access mode, <a href="#Avi SEint">one final setup item</a> is required. If deploying in write access or read access mode, the procedure is complete!** Now Avi Vantage is ready for <a href="/docs/17.1/configuring-a-virtual-service-for-vmware-basic">creation of virtual services</a>.
 
 ### Recommended Reading
 
-* <a href="/docs/16.3/virtual-service-creation-vmware/">Creating a Virtual Service</a>
-* <a href="/docs/16.3/troubleshooting-vmware-deployment/">Troubleshooting</a> 
+* <a href="/docs/17.1/virtual-service-creation-vmware/">Creating a Virtual Service</a>
+* <a href="/docs/17.1/troubleshooting-vmware-deployment/">Troubleshooting</a> 

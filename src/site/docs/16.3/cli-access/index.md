@@ -1,6 +1,6 @@
 ---
 title: CLI Access
-layout: default
+layout: 16.3
 ---
 When accessing Avi Vantage's CLI, an administrator needs to SSH via port 22 to the IP address of an Avi Controller or the cluster IP.
 

@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage in OpenShift/Kubernetes
-layout: default
+layout: 16.3
 ---
 ## Introduction
 

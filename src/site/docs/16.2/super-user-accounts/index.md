@@ -1,6 +1,6 @@
 ---
 title: Super User Accounts
-layout: default
+layout: 16.2
 ---
 Vantage user accounts can be enabled for super user access. Super user access provides write access to all resources within Vantage, and also automatically provides access to all tenants. 
 

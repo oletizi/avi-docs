@@ -1,6 +1,6 @@
 ---
 title: Overview of DataScript
-layout: default
+layout: 16.2
 ---
 ### About
 

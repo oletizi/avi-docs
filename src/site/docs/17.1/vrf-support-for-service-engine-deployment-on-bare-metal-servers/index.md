@@ -33,7 +33,7 @@ Each deployed Service Engine has a new attribute, "in-band management". When ena
 * If in-band management is enabled on an SE, that SE will not support multiple VRFs.
 * To enable multiple VRFs on an SE, it must be deployed with in-band management *disabled*. The caveat with disabling in-band management is that the management interface will not be used for data plane traffic, and hence no VS will be placed on this interface and this interface will not be used to communicating with back-end servers. 
 
-To learn how to disable/enable in-band management read <a href="/docs/16.3/configuring-in-band-management-for-an-avi-service-engine/">this article</a>.
+To learn how to disable/enable in-band management read <a href="/docs/17.1/configuring-in-band-management-for-an-avi-service-engine/">this article</a>.
 
 ### **Creating VRF Contexts**
 

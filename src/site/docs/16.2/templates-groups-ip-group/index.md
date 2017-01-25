@@ -1,6 +1,6 @@
 ---
 title: IP Group
-layout: default
+layout: 16.2
 ---
 ### Description
 

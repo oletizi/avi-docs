@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Analytics
-layout: default
+layout: 16.2
 ---
 ### About Virtual Service Analytics
 

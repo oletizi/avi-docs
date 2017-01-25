@@ -1,6 +1,6 @@
 ---
 title: IPAM and DNS Provider (Infoblox)
-layout: default
+layout: 16.3
 ---
 ## IPAM and DNS Configuration
 

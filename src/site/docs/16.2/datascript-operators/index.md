@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; Operators
-layout: default
+layout: 16.2
 ---
 Operators compare or contrast sets of data, and will return as *true* or *false*.  DataScripts rely on the Lua scripting language for the syntax and supported usage of arithmetic, relational and logical operators.  DataScripts are case sensitive when evaluating strings, so “a” does not equal “A”.
 

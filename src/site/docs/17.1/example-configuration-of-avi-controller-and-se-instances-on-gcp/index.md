@@ -4,7 +4,7 @@ layout: default
 ---
 Refer to <a href="https://cloud.google.com/docs/">Google Cloud Platform documentation</a> for Google's latest and detailed information regarding configuration of instances.
 
-This article is referenced by <a href="/docs/16.3/ipam-provider-gcp-16-3/">IPAM Services for Applications Running on Instances in Google Cloud Platform</a>.
+This article is referenced by <a href="/docs/17.1/ipam-provider-gcp-16-3/">IPAM Services for Applications Running on Instances in Google Cloud Platform</a>.
 
 ## Setting Up gcloud Client Account on the Local Machine
 
@@ -137,7 +137,7 @@ fnet1-ssh               net1     0.0.0.0/0     tcp:22</code></pre>
 
 If the Avi Controller is setup as a cluster, additional rules will have to be provisioned to allow cluster members to communicate among each other.
 
-For details on ports that need to be opened, refer to the KB titled <a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Avi Vantage for Management Communication</a>
+For details on ports that need to be opened, refer to the KB titled <a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Avi Vantage for Management Communication</a>
 
 * Spawn a 4-core instance for Avi Controller with tags http-server & https-server to allow outside connection and scope compute-rw to allow GCP route programming. 
 <pre class="command-line language-bash" data-prompt=": >" data-output="1-99"><code>gcloud compute instances create instance-1 --boot-disk-size 80 --image-family centos-7 --image-project centos-cloud --machine-type n1-standard-4 --subnet net1-subnet1 --scopes compute-rw --tags http-server,https-server</code></pre> 

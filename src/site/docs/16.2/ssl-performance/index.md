@@ -1,6 +1,6 @@
 ---
 title: SSL Performance
-layout: default
+layout: 16.2
 ---
 SSL performance is determined by a number of factors, including hardware, Avi Service Engine scaling, and the ciphers and certificates used. Performance can be broken down into three primary benchmark numbers:
 

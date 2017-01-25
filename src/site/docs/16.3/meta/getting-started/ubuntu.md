@@ -1,6 +1,6 @@
 ---
 title: Meta -- Docs Ubuntu Getting Started
-layout: default
+layout: 16.3
 ---
 
 ## Choose Ubuntu Version

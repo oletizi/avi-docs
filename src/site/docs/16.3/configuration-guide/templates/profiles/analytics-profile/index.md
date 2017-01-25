@@ -1,6 +1,6 @@
 ---
 title: Analytics Profile
-layout: default
+layout: 16.3
 ---
 Vantage relies extensively on analytics throughout the system to determine the health of applications based on expectations of what a typical user experience should be. Since each application is different, it may be necessary to modify the analytics profile to set the threshold for satisfactory client experience or omit certain errors from being counted against the application health, such as prompting a user to log in to a site via an HTTP 401 response code.
 

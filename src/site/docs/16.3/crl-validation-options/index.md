@@ -1,6 +1,6 @@
 ---
 title: Full-chain CRL Checking for Client Certificate Validation
-layout: default
+layout: 16.3
 ---
 Vantage supports use of Certificate Revocation Lists (CRLs). A CRL is a file issued by a certificate authority (CA) that lists certificates that were issued by the CA but have been revoked. When a client sends a request for an SSL connection to a virtual service, Vantage can check the CAs and CRL(s) in the virtual service's PKI profile to verify whether the client certificate is still valid.
 

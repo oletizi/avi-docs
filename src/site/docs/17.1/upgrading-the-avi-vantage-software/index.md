@@ -39,7 +39,7 @@ This section provides the steps for system upgrade using the web interface, CLI 
 This section shows an example of the steps for upgrading from 15.x to 16.1.
 <ol> 
  <li>Download the latest version of the controller.pkg file from the Avi Networks <a href="http://avinetworks.com/portal/software">portal</a>.</li> 
- <li>If there are any firewalls in the environment, configure them to allow TCP port 8443 between SE nodes and Avi Controller nodes. (<a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">List of firewall ports to leave open.</a>)</li> 
+ <li>If there are any firewalls in the environment, configure them to allow TCP port 8443 between SE nodes and Avi Controller nodes. (<a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">List of firewall ports to leave open.</a>)</li> 
  <li>Using SCP, copy controller.pkg to /tmp on the Avi Controller node. If running a 3-node cluster, copy the file only to the primary/leader node.</li> 
 </ol> <ol start="4"> 
  <li>Using SSH, access the Avi Controller's CLI using SSH and enter the <strong>shell</strong> command:<br> 

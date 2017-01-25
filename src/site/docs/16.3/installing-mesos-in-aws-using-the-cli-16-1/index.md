@@ -1,6 +1,6 @@
 ---
 title: Installing Avi in AWS with Mesos Using the CLI
-layout: default
+layout: 16.3
 ---
 This guide describes how to install Avi Vantage into an Apache Mesos (Mesos) or Mesosphere DC/OS (DC/OS) cloud hosted by Amazon Web Services (AWS).
 

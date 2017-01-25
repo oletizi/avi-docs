@@ -20,11 +20,11 @@ To access the Service Engine group page, navigate to Infrastructure > Clouds > -
 
 The high availability mode of the SE group controls the behavior of the SE group in the event of an SE failure.  It also controls how load is scaled across SEs. Selecting a particular HA mode will change the settings and options that are exposed in the UI. These modes span a spectrum, from use of the fewest virtual machine resources on one end to providing the best high availability on the other.
 
-* <a href="/docs/16.3/legacy-ha-for-avi-service-engines/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, ready to take over in case of a failure of the active SE.  There is no Service Engine scale out.
-* <a href="/docs/16.3/elastic-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>: This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
-* <a href="/docs/16.3/elastic-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
+* <a href="/docs/17.1/legacy-ha-for-avi-service-engines/">Legacy Active Standby HA Mode</a>:  This mode is primarily intended to mimic a legacy appliance load balancer for easy migration to Avi Vantage.  Only two Service Engines may be created.  For every virtual service active on one, there is a standby on the other, ready to take over in case of a failure of the active SE.  There is no Service Engine scale out.
+* <a href="/docs/17.1/elastic-ha-for-avi-service-engines/">Elastic N + M HA Mode</a>: This default mode permits up to N active SEs to deliver virtual services, with the capacity equivalent of M SEs within the group ready to absorb SE(s) failure(s).
+* <a href="/docs/17.1/elastic-ha-for-avi-service-engines/">Elastic Active/Active HA Mode</a>:  This HA mode distributes virtual services across a minimum of two SEs. 
 
-For additional considerations for SE high availability, see <a href="/docs/16.3/overview-of-vantage-high-availability/">Overview of Vantage High Availability</a>. To compare the above HA modes to those defined prior to Vantage 16.2, see <a href="/docs/16.3/comparing-past-and-present-se-group-ha-modes/">Comparing Past and Present SE Group HA Modes</a>.
+For additional considerations for SE high availability, see <a href="/docs/17.1/overview-of-vantage-high-availability/">Overview of Vantage High Availability</a>. To compare the above HA modes to those defined prior to Vantage 16.2, see <a href="/docs/17.1/comparing-past-and-present-se-group-ha-modes/">Comparing Past and Present SE Group HA Modes</a>.
 
  
 
@@ -40,7 +40,7 @@ For additional considerations for SE high availability, see <a href="/docs/16.3
 
 ### Virtual Service Placement Policy<a href="img/Screen-Shot-2016-07-18-at-3.59.40-PM.png"><img class="alignnone wp-image-11158" src="img/Screen-Shot-2016-07-18-at-3.59.40-PM.png" alt="Screen Shot 2016-07-18 at 3.59.40 PM" width="600" height="58"></a>
 
-* **Auto-Rebalance**:  When disabled, Vantage will generate an event when the Controller recommends migrating a virtual service to a different Service Engine, scaling in SE capacity, or scaling out SE capacity.  When checked, the Controller will generate an event and also take the recommended action.  This option applies to the elastic HA modes only. See<a href="/docs/16.3/autoscale-service-engines/"> Autoscale Service Engines</a> for more info on the criteria that triggers these recommendations.
+* **Auto-Rebalance**:  When disabled, Vantage will generate an event when the Controller recommends migrating a virtual service to a different Service Engine, scaling in SE capacity, or scaling out SE capacity.  When checked, the Controller will generate an event and also take the recommended action.  This option applies to the elastic HA modes only. See<a href="/docs/17.1/autoscale-service-engines/"> Autoscale Service Engines</a> for more info on the criteria that triggers these recommendations.
 * **Compact Placement**: When compact placement is ON (previously referred to as "Compactor"), Vantage uses the minimum number of SEs required. When it is OFF, Vantage will use as many SEs as required, up to the limit allowed by Max Number of Service Engines. By default, compact placement is ON for elastic HA N+M mode and OFF for elastic HA active/active mode. 
 
 ### SE Group — Advanced Tab
@@ -66,9 +66,9 @@ The advanced tab in the Service Engine group popup allows configuration of optio
 
 ### Placement
 
-* **Use Default Management Network**:  If the SEs require a different network for management than the Controller, it must be specified here. The SEs will use their management route to establish communications with the Controllers.  See <a href="/docs/16.3/deploy-ses-in-different-data-centers-from-controllers/">Deploy SEs in Different Datacenter from Controllers</a>
-* **Metric Update Frequency**: You can turn on real-time metrics, which will cause SEs in the group to upload SE-related metrics to the Controller once every 5 seconds, as opposed to once per five minutes or longer. [<a href="/docs/16.3/metrics-retention-period/">More info on metrics-upload intervals</a>.] After clicking the box, select the duration in minutes for real-time updating to last. A value of 0 is interpreted to mean "forever." 
+* **Use Default Management Network**:  If the SEs require a different network for management than the Controller, it must be specified here. The SEs will use their management route to establish communications with the Controllers.  See <a href="/docs/17.1/deploy-ses-in-different-data-centers-from-controllers/">Deploy SEs in Different Datacenter from Controllers</a>
+* **Metric Update Frequency**: You can turn on real-time metrics, which will cause SEs in the group to upload SE-related metrics to the Controller once every 5 seconds, as opposed to once per five minutes or longer. [<a href="/docs/17.1/metrics-retention-period/">More info on metrics-upload intervals</a>.] After clicking the box, select the duration in minutes for real-time updating to last. A value of 0 is interpreted to mean "forever." 
 
 ### Security
 
-* **HSM Group**:  Hardware security modules may be configured within the Templates > Security > HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/docs/16.3/physical-security-for-ssl-keys/">Physical Security for SSL Keys</a>  
+* **HSM Group**:  Hardware security modules may be configured within the Templates > Security > HSM Groups.  An HSM is an external security appliance that is used for secure storage of SSL certificates and keys.  The HSM Group dictates how Service Engines can reach and authenticate with the HSM.  See <a href="/docs/17.1/physical-security-for-ssl-keys/">Physical Security for SSL Keys</a>  

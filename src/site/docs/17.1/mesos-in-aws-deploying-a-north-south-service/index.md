@@ -4,7 +4,7 @@ layout: default
 ---
 This article describes how to deploy and verify load-balanced application in a Mesos / Marathon cloud hosted by Amazon Web Services (AWS).
 
-Applications must be created through Marathon, for example with a *curl* command through the CLI or using the "avi_proxy" label in a CloudFormation template. This article includes steps for creating a simple test application using the Marathon CLI. To create an application using labels, see <a href="/docs/16.3/creating-applications-in-mesos-with-marathon-labels/">here</a>.
+Applications must be created through Marathon, for example with a *curl* command through the CLI or using the "avi_proxy" label in a CloudFormation template. This article includes steps for creating a simple test application using the Marathon CLI. To create an application using labels, see <a href="/docs/17.1/creating-applications-in-mesos-with-marathon-labels/">here</a>.
 
 To deploy a service in this environment:
 <ol> 
@@ -17,7 +17,7 @@ Detailed steps are provided below.
 
 ## Requirements
 
-The article assumes that Avi Vantage is already <a href="/docs/16.3/installation-guides/installing-mesos-aws-using-the-vantage-cloudformation-template/">installed</a> in the Mesos / Marathon cloud.
+The article assumes that Avi Vantage is already <a href="/docs/17.1/installation-guides/installing-mesos-aws-using-the-vantage-cloudformation-template/">installed</a> in the Mesos / Marathon cloud.
 
 The steps in this article require access to the following resources:
 

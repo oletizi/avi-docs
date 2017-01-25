@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Health Monitoring
-layout: default
+layout: 16.3
 ---
 The Health tab presents a detailed breakdown of health score information for a virtual service. The health score is a pervasive concept throughout the Avi Vantage web interface.
 

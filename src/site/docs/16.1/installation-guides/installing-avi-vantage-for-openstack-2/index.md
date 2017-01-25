@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for OpenStack
-layout: default
+layout: 16.1
 ---
 Avi Vantage is a software-based solution that provides real-time analytics as well as elastic application delivery services. Vantage optimizes core web-site functions including SSL termination and load balancing. Vantage also provides access to network analytics, including end-to-end latency information for traffic between end-users and the load-balanced applications.
 

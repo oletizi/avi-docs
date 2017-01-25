@@ -4,7 +4,7 @@ layout: default
 ---
 This article describes how to install Avi Vantage in a Linux cloud. The instructions in this guide can be used for installing Avi Vantage 16.3 and subsequent releases. Avi Vantage is a software-based solution that provides real-time analytics and elastic application delivery services, including user-to-application timing, SSL termination, and load balancing.Installing Avi Vantage directly onto Linux servers leverages the raw horsepower of the underlying hardware without the overhead added by a virtualization layer. For example, installing Avi Vantage directly onto Linux servers that support Data Plane Development Kit (DPDK) allows the feature's optimized packet processing to be leveraged for virtual service traffic. Note: If installing Avi SEs directly onto Linux servers that include DPDK, make sure to enable the option in Avi Vantage when adding the host for the Avi SE.
 
-Other articles of potential interest: <a href="/docs/16.3/vlan-configuration-on-bare-metal/">VLAN Configuration on Bare Metal</a>, <a href="http://vrf-support-for-service-engine-deployment-on-bare-metal-servers/">VRF Support for Service Engine Deployment on Bare-Metal Servers</a> (supported in 16.3)
+Other articles of potential interest: <a href="/docs/17.1/vlan-configuration-on-bare-metal/">VLAN Configuration on Bare Metal</a>, <a href="http://vrf-support-for-service-engine-deployment-on-bare-metal-servers/">VRF Support for Service Engine Deployment on Bare-Metal Servers</a> (supported in 16.3)
 ### Docker Container
 
 The Avi Vantage Linux server cloud solution uses containerization provided by Docker for support across operating systems and for easy installation.
@@ -314,14 +314,14 @@ Use a web browser to navigate to the Avi Controller and start the setup wizard t
 * **Avi SE hosts:** After SSH access is set up on each Avi SE host, the hosts can be added to the Avi Controller. For now, click Complete.
 * **Multitenancy support**: For now, select No. This can be configured at any time later, if needed.  After the wizard closes, see the following articles to complete the installation and create virtual services: 
 
-* <a href="/docs/16.3/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a> 
-<a href="/docs/16.3/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a>  
+* <a href="/docs/17.1/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a> 
+<a href="/docs/17.1/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a>  
 
 ### 4. Set up SSH Access to the Avi SE Hosts
 
 If you are continuing with the wizard, this section describes how to add the SSH account information to the Avi Controller, and to then copy the SSH public key to each of the Avi SE hosts.
 
-Note: If the wizard has timed out or you have decided to click through the rest of the wizard and do the SSH setup later, go <a href="/docs/16.3/public-key-management-on-se-hosts/">here instead</a>, when ready. See the same link if using an account other than "root." This section assumes that "root" will be used.
+Note: If the wizard has timed out or you have decided to click through the rest of the wizard and do the SSH setup later, go <a href="/docs/17.1/public-key-management-on-se-hosts/">here instead</a>, when ready. See the same link if using an account other than "root." This section assumes that "root" will be used.
 
 **On the Avi Controller:**
 <ol> 
@@ -346,7 +346,7 @@ password:</code></pre> </li>
 </ol> <ol start="2"> 
  <li>Prepare the Avi SE host for adding the key from the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=": >" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; background: #141414; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: normal; tab-size: 4; box-shadow: black 1px 1px 0.5em inset;"><code class=" language-bash">mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre> </li> 
 </ol> <ol start="3"> 
- <li>Add the Avi Controller's public key to the authorized key file by pasting the key <a href="/docs/16.3/installing-avi-vantage-for-a-linux-server-cloud-16-2/#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line: <pre crayon="false" class="command-line language-bash" data-prompt=": >" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; background: #141414; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: normal; tab-size: 4; box-shadow: black 1px 1px 0.5em inset;"><code class=" language-bash">echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+ <li>Add the Avi Controller's public key to the authorized key file by pasting the key <a href="/docs/17.1/installing-avi-vantage-for-a-linux-server-cloud-16-2/#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line: <pre crayon="false" class="command-line language-bash" data-prompt=": >" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; background: #141414; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: normal; tab-size: 4; box-shadow: black 1px 1px 0.5em inset;"><code class=" language-bash">echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
 chmod 644 authorized_keys</code></pre> <p>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)</p></li> 
 </ol> <ol start="4"> 
  <li>Repeat these steps on each Avi SE host.</li> 
@@ -375,8 +375,8 @@ In the Avi Controller web interface login popup, enter the user name and passwor
 If you clicked through the SSH or Avi SE host pages of the wizard, see the following articles to complete installation:
 
 <ol> 
- <li><a href="/docs/16.3/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
- <li><a href="/docs/16.3/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
+ <li><a href="/docs/17.1/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
+ <li><a href="/docs/17.1/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
 </ol>   
 ### Docker Container
 
@@ -662,14 +662,14 @@ Use a web browser to navigate to the Avi Controller and start the setup wizard t
 * **Avi SE hosts:** After SSH access is set up on each Avi SE host, the hosts can be added to the Avi Controller. For now, click Complete.
 * **Multitenancy support**: For now, select No. This can be configured at any time later, if needed.  After the wizard closes, see the following articles to complete the installation and create virtual services: 
 
-* <a href="/docs/16.3/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a> 
-<a href="/docs/16.3/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a>  
+* <a href="/docs/17.1/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a> 
+<a href="/docs/17.1/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a>  
 
 ### 4. Set up SSH Access to the Avi SE Hosts
 
 If you are continuing with the wizard, this section describes how to add the SSH account information to the Avi Controller, and to then copy the SSH public key to each of the Avi SE hosts.
 
-Note: If the wizard has timed out or you have decided to click through the rest of the wizard and do the SSH setup later, go <a href="/docs/16.3/public-key-management-on-se-hosts/">here instead</a>, when ready. See the same link if using an account other than "root." This section assumes that "root" will be used.
+Note: If the wizard has timed out or you have decided to click through the rest of the wizard and do the SSH setup later, go <a href="/docs/17.1/public-key-management-on-se-hosts/">here instead</a>, when ready. See the same link if using an account other than "root." This section assumes that "root" will be used.
 
 **On the Avi Controller:**
 <ol> 
@@ -694,7 +694,7 @@ password:</code></pre> </li>
 </ol> <ol start="2"> 
  <li>Prepare the Avi SE host for adding the key from the Avi Controller: <pre crayon="false" class="command-line language-bash" data-prompt=": >" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; background: #141414; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: normal; tab-size: 4; box-shadow: black 1px 1px 0.5em inset;"><code class=" language-bash">mkdir .ssh &amp;&amp; chmod 700 .ssh &amp;&amp; cd .ssh</code></pre> </li> 
 </ol> <ol start="3"> 
- <li>Add the Avi Controller's public key to the authorized key file by pasting the key <a href="/docs/16.3/installing-avi-vantage-for-a-linux-server-cloud-16-2/#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line: <pre crayon="false" class="command-line language-bash" data-prompt=": >" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; background: #141414; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: normal; tab-size: 4; box-shadow: black 1px 1px 0.5em inset;"><code class=" language-bash">echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
+ <li>Add the Avi Controller's public key to the authorized key file by pasting the key <a href="/docs/17.1/installing-avi-vantage-for-a-linux-server-cloud-16-2/#copying-ssh-key">copied from the Avi Controller by clicking Copy to clipboard</a> into the following command line: <pre crayon="false" class="command-line language-bash" data-prompt=": >" style="box-sizing: border-box; overflow: auto; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 13px; display: block; padding: 1em; margin: 0.5em 0px; line-height: 1.5; word-break: normal; word-wrap: normal; color: white; background: #141414; border: 0.3em solid #545454; border-radius: 0.5em; direction: ltr; text-align: left; text-shadow: black 0px -0.1em 0.2em; white-space: pre; word-spacing: normal; tab-size: 4; box-shadow: black 1px 1px 0.5em inset;"><code class=" language-bash">echo "paste-key-file-copied-from-Controller" &gt; .ssh/authorized_keys
 chmod 644 authorized_keys</code></pre> <p>Use quotation marks to delimit the pasted key string. (If the authorized_keys file does not already exist, the command string also creates the file.)</p></li> 
 </ol> <ol start="4"> 
  <li>Repeat these steps on each Avi SE host.</li> 
@@ -723,6 +723,6 @@ In the Avi Controller web interface login popup, enter the user name and passwor
 If you clicked through the SSH or Avi SE host pages of the wizard, see the following articles to complete installation:
 
 <ol> 
- <li><a href="/docs/16.3/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
- <li><a href="/docs/16.3/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
+ <li><a href="/docs/17.1/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
+ <li><a href="/docs/17.1/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
 </ol> 

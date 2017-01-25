@@ -1,6 +1,6 @@
 ---
 title: End of Support Schedule
-layout: default
+layout: 16.3
 ---
 Avi Networks will support any major version release of the Licensed Products for a period of eighteen (18) months from its release date (the “Version Support Period”). A major version release is indicated by an increase in the number to the left of the first decimal point in the version number (e.g, from 16.x.x to 17.x.x), or an increase in the first number to the right of the first decimal point in the version number (e.g, from 16.1.x to 16.2.x). All minor version releases (indicated by increases in numbers to the right of the second decimal point) are treated as part of the associated major version release for the purposes of the Version Support Period.
 

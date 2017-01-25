@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;http&#46;add_header
-layout: default
+layout: 16.2
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

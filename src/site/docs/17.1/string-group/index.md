@@ -15,10 +15,10 @@ String groups may be automatically updated via external API calls.  When a gro
 The following are a few examples of string groups used within Avi Vantage.
 
 * **Compression**:  Avi Vantage includes a default *System-Compressible-Content-Types* string group.  This is a list of MIME types that determine if an HTTP response is eligible to be compressed.
-* **Caching**:  Avi Vantage includes a default *System-Cacheable-Resource-Types* string group.  This is a list of MIME types that determine if an HTTP response is eligible to be cached.  See <a href="/docs/16.3/overview-of-http-cache/">HTTP Caching</a> for other parameters that may factor into the eligibility of an object being cached.
+* **Caching**:  Avi Vantage includes a default *System-Cacheable-Resource-Types* string group.  This is a list of MIME types that determine if an HTTP response is eligible to be cached.  See <a href="/docs/17.1/overview-of-http-cache/">HTTP Caching</a> for other parameters that may factor into the eligibility of an object being cached.
 * **Policies**:  HTTP security and HTTP request policies may be triggered based on criteria matched against a string group.  For example, if a browser's User-Agent header matches an entry in a string group, send the request to a specific pool.
 * **Logs**  Logs may be selectively enabled based on a match in a VS > Analytics > log filter.  The filter can compare a client's requested path against a string group containing the list of important paths or URLs.
-* **DataScript**:  Custom decisions may be made based on a match against an entry in a string group.  See the DataScript function <a href="/docs/16.3/datascript-avi-stringgroup-contains/">avi.stringgroup.contains</a> for examples and syntax. 
+* **DataScript**:  Custom decisions may be made based on a match against an entry in a string group.  See the DataScript function <a href="/docs/17.1/datascript-avi-stringgroup-contains/">avi.stringgroup.contains</a> for examples and syntax. 
 
 The table on the Templates > Groups > String Group page contains the following information for each string group:
 

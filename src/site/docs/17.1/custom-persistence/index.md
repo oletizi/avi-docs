@@ -61,12 +61,12 @@ end</code></pre>
 
 ### <a href="img/ACL2.png"><img class="wp-image-756 alignright" src="img/ACL2.png" alt="ACL2" width="318" height="141"></a>Policy
 
-The <a href="/docs/16.3/architectural-overview/applications/vs-policies/">Network Security</a> and the <a href="/http-security-policy/">HTTP Security</a> policies may be used to discard a client based on its IP address.  The following illustrations show creating a configured policy rule which refers to an IP group called Blacklist.  When this policy is triggered, a significant log will be generated, indicating the policy dropped this client.  With enough frequency, this may also incur a penalty on the health score's security row.
+The <a href="/docs/17.1/architectural-overview/applications/vs-policies/">Network Security</a> and the <a href="/http-security-policy/">HTTP Security</a> policies may be used to discard a client based on its IP address.  The following illustrations show creating a configured policy rule which refers to an IP group called Blacklist.  When this policy is triggered, a significant log will be generated, indicating the policy dropped this client.  With enough frequency, this may also incur a penalty on the health score's security row.
 
  
 
 ### <a href="img/Blacklist.png"><img class="wp-image-22438 alignright" src="img/Blacklist.png" alt="Blacklist" width="285" height="306"></a>IP Group
 
-The IP group is configured and maintained separately from the DataScript or policy referencing it.  The group may contain lists of addresses or country codes.  See the <a href="/docs/16.3/templates-groups-ip-group/">IP Group KB</a> for more detail on this feature.
+The IP group is configured and maintained separately from the DataScript or policy referencing it.  The group may contain lists of addresses or country codes.  See the <a href="/docs/17.1/templates-groups-ip-group/">IP Group KB</a> for more detail on this feature.
 
  

@@ -1,6 +1,6 @@
 ---
 title: Replace kube-proxy in OpenShift Environment With Avi Vantage
-layout: default
+layout: 16.3
 ---
 In an OpenShift environment, a user may opt to use Avi Vantage alongside kube-proxy or instead disable kube-proxy and use Avi Vantage as the only application proxy.
 

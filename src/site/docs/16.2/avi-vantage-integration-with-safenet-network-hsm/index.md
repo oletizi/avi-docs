@@ -1,6 +1,6 @@
 ---
 title: Vantage Integration with SafeNet Network HSM (16&#46;2&#46;2)
-layout: default
+layout: 16.2
 ---
 **Note: Those still on Avi Vantage 16.2 should instead read <a href="/docs/16.2/avi-vantage-integration-with-safenet-network-hsm/">Vantage Integration with SafeNet Network HSM (16.2)</a>.**
 

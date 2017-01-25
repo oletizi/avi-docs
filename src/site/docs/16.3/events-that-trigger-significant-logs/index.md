@@ -1,6 +1,6 @@
 ---
 title: Events that Trigger Significant Logs
-layout: default
+layout: 16.3
 ---
 <a href="img/SignificantLog.png"><img class="size-full wp-image-458 alignright" src="img/SignificantLog.png" alt="SignificantLog" width="416" height="174"></a>Avi Vantage records the following Significant Log events types.  These errors are recorded in the virtual service > logs page when Significant Logs are enabled (the default).  A log may contain one or more of the following events listed below.
 

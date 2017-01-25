@@ -1,6 +1,6 @@
 ---
 title: VMware Version Support
-layout: default
+layout: 16.3
 ---
 Avi Vantage supports integration with the following versions of VMware's vCenter orchestrator:
 

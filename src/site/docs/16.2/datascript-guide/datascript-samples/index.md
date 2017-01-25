@@ -1,6 +1,6 @@
 ---
 title: DataScript Samples
-layout: default
+layout: 16.2
 ---
 **Example**
 

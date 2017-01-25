@@ -26,8 +26,8 @@ Enter one of the three modes by executing one of the following commands:
 
 This article reveals enhancements that simplify the operation of these modes. Two companion KBs provide specifics for the two new modes:
 
-* <a href="/docs/16.3/cli-script-mode/">CLI - Script Mode</a>
-* <a href="/docs/16.3/cli-linux-command-line-mode/">CLI - Linux Command Line Mode</a> 
+* <a href="/docs/17.1/cli-script-mode/">CLI - Script Mode</a>
+* <a href="/docs/17.1/cli-linux-command-line-mode/">CLI - Linux Command Line Mode</a> 
 
 ## Displaying Default Values
 

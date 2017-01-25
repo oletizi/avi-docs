@@ -1,6 +1,6 @@
 ---
 title: Avi Networks End User License Agreement (EULA)
-layout: default
+layout: 16.2
 ---
 **AVI NETWORKS, INC.**
 

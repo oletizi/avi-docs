@@ -16,10 +16,10 @@ This article covers that functionality, three architectural variants, features
 
 The Avi DNS virtual service can host GSLB service DNS entries, and automatically update its responses based on factors such as application service health, service load and proximity of clients to sites implementing the application service. In so doing, it provides essential load-balancing functionality required by global applications. Details of Avi GSLB are available in these articles:
 
-* <a href="/docs/16.3/avi-gslb-overview/">Avi GSLB Overview</a>
-* <a href="/docs/16.3/avi-gslb-architecture/">Avi GSLB Architecture and Object Model</a>
-* <a href="/docs/16.3/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>
-* <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a> 
+* <a href="/docs/17.1/avi-gslb-overview/">Avi GSLB Overview</a>
+* <a href="/docs/17.1/avi-gslb-architecture/">Avi GSLB Architecture and Object Model</a>
+* <a href="/docs/17.1/avi-gslb-site-configuration-and-operations/">Avi GSLB Site Configuration and Operations</a>
+* <a href="/docs/17.1/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a> 
 
 ### 2. Virtual Service IP Address DNS Hosting
 
@@ -79,7 +79,7 @@ The Logs tab (shown below) provides detailed information about DNS queries from
 
 * Non-significant logs should be enabled with caution, since a large number of DNS queries typically hit a DNS service, and this would result in too many logs entries.
 * Categorization of non-significant logs is also very important. If certain errors are typical in the deployment, these errors should be excluded from significant logs.
-* Refer to the exclude DNS errors discussion found <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#exclude-dns-errors">here</a>. 
+* Refer to the exclude DNS errors discussion found <a href="/docs/17.1/architectural-overview/templates/profiles/analytics-profile/#exclude-dns-errors">here</a>. 
 
 A series of pop-ups appear by clicking one of 12 options in the Log Analytics selector (see red box above). Examples of each follow.
 

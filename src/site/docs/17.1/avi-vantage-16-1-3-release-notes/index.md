@@ -6,8 +6,8 @@ This article describes the changes and fixes in Avi Vantage release 16.1.3.
 
 Note: For information about fixes and enhancements in earlier 16.*x* releases, see the following:
 
-* <a href="/docs/16.3/avi-vantage-16-1-2-release-notes">16.1.2 Release Notes</a>
-* <a href="/docs/16.3/avi-vantage-16-1-1-release-notes">16.1.1 Release Notes</a> (also contains information for 16.1) 
+* <a href="/docs/17.1/avi-vantage-16-1-2-release-notes">16.1.2 Release Notes</a>
+* <a href="/docs/17.1/avi-vantage-16-1-1-release-notes">16.1.1 Release Notes</a> (also contains information for 16.1) 
 
 ## What’s New in 16.1.3
 
@@ -31,16 +31,16 @@ Note: In 16.1.3, this new option is supported only in the REST API.
 
 Upgrade prerequisite: current version of Avi Controller must be 15.2 or later.
 
-* <a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
-* <a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
+* <a href="/docs/17.1/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
+* <a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a> 
 
 ## Product Documentation
 
-For more information, please see the following documents, also available within this <a href="/docs/16.3/">knowledge base</a>.
+For more information, please see the following documents, also available within this <a href="/docs/17.1/">knowledge base</a>.
 
 ### Installation Guides
 
-* <a href="/docs/16.3/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/17.1/installation-guides/">Avi Vantage Installation Guides</a> 
 
 ## Open Source Package Information
 

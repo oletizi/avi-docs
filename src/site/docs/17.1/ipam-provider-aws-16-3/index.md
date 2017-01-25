@@ -9,7 +9,7 @@ Note:
 * If the Avi Vantage cloud type is AWS, there is support for IPAM, by default, without need for a separate IPAM configuration.
 * A separate IPAM configuration (as described below) is required only for cases where AWS provides the infrastructure service for *other* clouds (e.g., Mesos Cluster running on AWS instances). In such cases, wherein Avi Vantage is the IPAM provider, it cannot also be the DNS provider; use Route 53 instead. 
 
-See also: <a href="/docs/16.3/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
+See also: <a href="/docs/17.1/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
 
 ## IPAM Configuration
 
@@ -20,7 +20,7 @@ To use AWS as the IPAM provider, one of the following types of credentials is re
 
 ### If Using IAM Role
 
-Note: If using the IAM role method to define access for an Avi Vantage installation in AWS, use the steps in <a href="/docs/16.3/iam-role-setup-for-installation-into-aws/">this article</a> to set up the IAM roles before beginning deployment of the Avi Controller EC2 instance.
+Note: If using the IAM role method to define access for an Avi Vantage installation in AWS, use the steps in <a href="/docs/17.1/iam-role-setup-for-installation-into-aws/">this article</a> to set up the IAM roles before beginning deployment of the Avi Controller EC2 instance.
 
 Select AWS and Use IAM Roles. Then select the AWS region into which the VIPs will be deployed.
 

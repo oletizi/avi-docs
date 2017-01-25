@@ -1,6 +1,6 @@
 ---
 title: Avi Controller Administrative Settings
-layout: default
+layout: 16.2
 ---
 The Administration &gt; Settings area of the Avi Controller web interface provides the following options:
 

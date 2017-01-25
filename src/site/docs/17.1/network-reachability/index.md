@@ -28,6 +28,6 @@ Issues such as network reachability are most commonly encountered when creating
 
 Read these articles for additional information on virtual service placement:
 
-* <a href="/docs/16.3/architectural-overview/applications/virtual-services/create-virtual-service/">Create a Virtual Service</a>
-* <a href="/docs/16.3/vi-service-engine-group-options/">Avi Service Engine Group Options</a>
-* <a href="/docs/16.3/nti-affinity-for-service-engine-placement/">Anti-Affinity for Service Engine Placement</a> 
+* <a href="/docs/17.1/architectural-overview/applications/virtual-services/create-virtual-service/">Create a Virtual Service</a>
+* <a href="/docs/17.1/vi-service-engine-group-options/">Avi Service Engine Group Options</a>
+* <a href="/docs/17.1/nti-affinity-for-service-engine-placement/">Anti-Affinity for Service Engine Placement</a> 

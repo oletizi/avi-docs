@@ -59,7 +59,7 @@ HTTP/2 uses a different connection methodology and does not utilize or require t
 Multiplexing often distorts the expected view of an administrator's world.  For instance, viewing connection counts from clients and to servers is typically very different.  Static load balancing algorithms such as round robin or least connections may exhibit different behavior.
 
 * **Preserve Source IP**:  Multiplexing explicitly decouples the client connection from the equation when sending traffic to destination servers.  When Preserve Source IP is enabled in conjunction with using the Service Engine as a default gateway of the servers, HTTP traffic cannot be multiplexed.
-* **NTLM**:  NTLM authentication is generally incompatible with multiplexing. Applications that rely on NTLM, such as SharePoint or StoreFront should be configured with connection multiplexing disabled.  See the <a href="/docs/16.3/issues-with-ntlm-authentication/">Issues with NTLM Authentication KB </a>for more help on this.
+* **NTLM**:  NTLM authentication is generally incompatible with multiplexing. Applications that rely on NTLM, such as SharePoint or StoreFront should be configured with connection multiplexing disabled.  See the <a href="/docs/17.1/issues-with-ntlm-authentication/">Issues with NTLM Authentication KB </a>for more help on this.
 * **Persistence**:  Persistence has a significant role to play in the behavior of multiplexing, described below. 
 
 ### Multiplex Plus Persistence

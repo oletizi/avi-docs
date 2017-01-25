@@ -1,6 +1,6 @@
 ---
 title: Updating the Configuration Following Avi Controller IP Address Change
-layout: default
+layout: 16.2
 ---
 The management IP addresses of each Avi Controller node should be static. This applies to single-node deployments and 3-node deployments.
 

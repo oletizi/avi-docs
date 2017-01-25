@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;pool&#46;select
-layout: default
+layout: 16.3
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>         

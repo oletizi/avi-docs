@@ -4,7 +4,7 @@ layout: default
 ---
 ### Avi GSLB Sites
 
-As mentioned in <a href="/docs/16.3/gslb-architecture-and-object-model/">Avi GSLB Architecture</a>, GSLB sites fall into two broad categories — **Avi sites** and **external sites** (e.g., running third-party ADCs from vendors such as F5, Citrix, etc.). This article focuses on Avi sites.
+As mentioned in <a href="/docs/17.1/gslb-architecture-and-object-model/">Avi GSLB Architecture</a>, GSLB sites fall into two broad categories — **Avi sites** and **external sites** (e.g., running third-party ADCs from vendors such as F5, Citrix, etc.). This article focuses on Avi sites.
 
 Each Avi site is characterized as either **active** or a **passive**. Active sites synchronize the GSLB site configuration among themselves. They also query all Avi sites to ascertain the health of those sites. Passive sites host local virtual services, but do not host any GSLB service configuration. Neither do passive sites monitor the health of other sites.
 
@@ -34,7 +34,7 @@ A full-site failure at the NY follower site is depicted below.
 <ol> 
  <li><span style="font-weight: 400;">The leader and Chicago Controllers detect the failure.</span></li> 
  <li><span style="font-weight: 400;">Administrative changes to the GSLB configuration continue to be possible on the leader, but they will not make it to the NY site. Central analytics continue to be accessible, albeit without any contribution from NY.</span></li> 
- <li><span style="font-weight: 400;">Both control-plane and data-plane health monitors will mark NY's GS members DOWN. [Read more about control- and data-plane health in <a href="/docs/16.3/avi-gslb-service-and-health-monitors/">Avi GSLB Sergice and Health Monitors</a>.)</span></li> 
+ <li><span style="font-weight: 400;">Both control-plane and data-plane health monitors will mark NY's GS members DOWN. [Read more about control- and data-plane health in <a href="/docs/17.1/avi-gslb-service-and-health-monitors/">Avi GSLB Sergice and Health Monitors</a>.)</span></li> 
  <li>Global application service will continue on the two surviving sites.</li> 
 </ol> 
 
@@ -163,7 +163,7 @@ Go through the next 3 tabs (Rules, Analytics, Advanced), and save the virtual se
 
 Create application virtual services normally. For example, create an HTTP virtual service vs-1 in Controller cluster 1, and virtual-service vs-2 in Controller cluster 2.
 
-See <a href="/docs/16.3/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
+See <a href="/docs/17.1/architectural-overview/applications/virtual-services/">Configuring Virtual Services</a> for more details: 
 
 On 10.10.25.10 (Santa Clara):
 

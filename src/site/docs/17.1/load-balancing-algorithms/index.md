@@ -8,7 +8,7 @@ The LB algorithm may be used for distributing TCP and UDP connections across ser
 
 When persistence is enabled, only the first connection from a client is load balanced. While the persistence remains in effect, subsequent connections or requests from a client are directed to the same server.
 
-Many features within Avi Vantage play an indirect role in the behavior of load balancing. See the following <a href="/docs/16.3/issues-with-round-robin-lb/">KB article</a> for an explanation of why an algorithm may not behave the way it might be expected.
+Many features within Avi Vantage play an indirect role in the behavior of load balancing. See the following <a href="/docs/17.1/issues-with-round-robin-lb/">KB article</a> for an explanation of why an algorithm may not behave the way it might be expected.
 
 ### <a href="img/ServerDistribution.png"><img class="alignright wp-image-13265 size-full" src="img/ServerDistribution.png" alt="ServerDistribution" width="550" height="270"></a>Validate Distribution
 
@@ -46,7 +46,7 @@ Instead of attempting to distribute all connections or requests across all serve
 <a href="img/OpenConns.png"><img class="alignright wp-image-13267 " src="img/OpenConns.png" alt="OpenConns" width="303" height="208"></a>New connections are sent to the server that currently has the least number of outstanding concurrent connections. This is the default algorithm when creating a new pool and is best for general-purpose servers and protocols. New servers with zero connections are introduced gracefully over a short period of time via the Connection Ramp setting in the Pool > Advanced page. This feature slowly brings the new server up to the connection levels of other servers within the pool.
 
 Avi uses Least Connections as the default algorithm because generally provides an equal distribution when all servers are healthy, and yet is adaptive to slower or unhealthy servers. It works well for both long lived and quick connections.
-> <strong>Note:</strong> A server that is having issues, such as rejecting all new connections, may have a concurrent connection count of zero and be the most eligible to receive all new connections. Avi recommends using the Least Connections algorithm in conjunction with the Passive Health Monitor which recognizes and adjusts for scenarios like this.  <a href="/docs/16.3/overview-of-health-monitors/">Passive monitor</a> will reduce the percent of new connections sent to a server based on the responses it returns to clients.
+> <strong>Note:</strong> A server that is having issues, such as rejecting all new connections, may have a concurrent connection count of zero and be the most eligible to receive all new connections. Avi recommends using the Least Connections algorithm in conjunction with the Passive Health Monitor which recognizes and adjusts for scenarios like this.  <a href="/docs/17.1/overview-of-health-monitors/">Passive monitor</a> will reduce the percent of new connections sent to a server based on the responses it returns to clients.
  
 
 ### Least Load

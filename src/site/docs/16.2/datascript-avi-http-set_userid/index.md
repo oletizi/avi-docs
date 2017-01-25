@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;http&#46;set_userid
-layout: default
+layout: 16.2
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

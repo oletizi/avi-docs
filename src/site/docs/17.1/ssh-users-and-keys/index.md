@@ -8,8 +8,8 @@ The Avi Controller and Avi Service Engines (SEs) use SSH for secure management c
 
 This requires an SSH user who exists on both the Avi Controller and the Avi SEs, and a copy of the SSH user's public key on the Avi SEs. While SSH setup is automated for some installation types, such as installation into VMware with write access, other installation types require manual setup of these SSH resources:
 
-* <a href="/docs/16.3/public-key-management-on-se-hosts">Linux server cloud</a>
-* <a href="/docs/16.3/installing-avi-vantage-with-mesosphere-dcos-on-premises">Mesos DC/OS (on-premises)</a> 
+* <a href="/docs/17.1/public-key-management-on-se-hosts">Linux server cloud</a>
+* <a href="/docs/17.1/installing-avi-vantage-with-mesosphere-dcos-on-premises">Mesos DC/OS (on-premises)</a> 
 
 ### Create SSH User
 
@@ -69,5 +69,5 @@ To delete all the keys:
 
 <code>     DELETE https://&lt;controller-ip&gt;/api/adminkey?key</code>
 
-### Related: <a href="/docs/16.3/customizing-notification-of-certificate-expiration">Customizing Notification of Certificate Expiration</a>
+### Related: <a href="/docs/17.1/customizing-notification-of-certificate-expiration">Customizing Notification of Certificate Expiration</a>
 

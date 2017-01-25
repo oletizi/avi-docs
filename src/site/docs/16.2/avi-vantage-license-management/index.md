@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage License Management
-layout: default
+layout: 16.2
 ---
 Avi Vantage software requires a <a href="/docs/16.2/terms-of-avi-vantage-license">license</a>. This article describes how to procure, install and manage Avi Vantage licenses.
 

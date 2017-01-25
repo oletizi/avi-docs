@@ -6,7 +6,7 @@ Validating performance characteristics of Vantage or any device under test (DUT)
 
 Avi has no specific preference for which load generators should be used.  Our intent and goal is for any published HTTP performance numbers to be fully repeatable via the industry standard ApacheBench (AB), which is freely available for most Linux distributions.
 
-Avi provides an Ubuntu virtual machine, downloadable from the <a href="/docs/16.3/access-to-avi-portal/">Avi Portal</a>.  This VM includes a default web server and AB, which can be used to quickly spin up clients and servers to test Vantage load balancing and performance.
+Avi provides an Ubuntu virtual machine, downloadable from the <a href="/docs/17.1/access-to-avi-portal/">Avi Portal</a>.  This VM includes a default web server and AB, which can be used to quickly spin up clients and servers to test Vantage load balancing and performance.
 
 The most common issue when testing with a load generator is the client or server running out of capacity.  When this happens, responses become slow, packets are dropped, and the load generator will report the device under test did not perform well.  Load generators make no distinction in results when the bottleneck is the client, the device under test, or the server.  If the performance doubles when adding a second load generator or a second server, then its a safe assumption that the Service Engine was not the bottleneck.
 
@@ -20,7 +20,7 @@ Free load generators generally are software that generate traffic and validate t
 
 ### Service Engine Optimization
 
-Ensure the Service Engines to be tested have been configured with enough hardware resources to achieve the desired goals.  This includes hardware such as CPU, memory, NICs etc.  Every virtualized environment has different performance maximums, particularly in the packets per second able to be sent to a single VM.  For instance, ESX 5.5 is about 500,000/s, ESX is about 950,000/s.  See the <a href="/docs/16.3/sizing-service-engines/">Sizing Service Engines</a> KB for general guidelines on performance.
+Ensure the Service Engines to be tested have been configured with enough hardware resources to achieve the desired goals.  This includes hardware such as CPU, memory, NICs etc.  Every virtualized environment has different performance maximums, particularly in the packets per second able to be sent to a single VM.  For instance, ESX 5.5 is about 500,000/s, ESX is about 950,000/s.  See the <a href="/docs/17.1/sizing-service-engines/">Sizing Service Engines</a> KB for general guidelines on performance.
 
 ### Vantage Configuration Recommendations
 

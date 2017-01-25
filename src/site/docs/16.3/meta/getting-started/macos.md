@@ -1,6 +1,6 @@
 ---
 title: Meta -- Docs Getting Started on MacOS
-layout: default
+layout: 16.3
 ---
 
 ## Install Homebrew

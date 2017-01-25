@@ -12,9 +12,9 @@ When deployed into an OpenShift/Kubernetes cloud, Avi Vantage performs as a full
 
 ### Also of interest
 
-* <a href="/docs/16.3/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">Replace kube-proxy in a OpenShift Environment with Avi Vantage</span></a>
-* <a href="/docs/16.3/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration on Vantage</span></a>
-* <a href="/docs/16.3/openshift-routes-virtual-service-configuration/">OpenShift Routes Virtual Service Configuration</a> 
+* <a href="/docs/17.1/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">Replace kube-proxy in a OpenShift Environment with Avi Vantage</span></a>
+* <a href="/docs/17.1/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration on Vantage</span></a>
+* <a href="/docs/17.1/openshift-routes-virtual-service-configuration/">OpenShift Routes Virtual Service Configuration</a> 
 
 ## DEPLOYMENT PREREQUISITES
 
@@ -301,7 +301,7 @@ Alternately, Avi can be configured to provide east-west services on a non-overla
 
 Kube-proxy is enabled:You must use a different subnet than the cluster IP subnet. The example above uses <a href="http://172.50.0.0/16"><span class="s3">172.50.0.0/16</span></a>. The link local subnet <a href="http://169.254.0.0/16"><span class="s3">169.254.0.0/16</span></a> can be used too.
 
-Kube-proxy is disabled:<a href="/docs/16.3/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"> This KB</a> explains how to disable kube-proxy. With kube-proxy disabled, there's a choice of either using a separate subnet for east-west VIPs or using the same VIPs as cluster IPs allocated by OpenShift/Kubernetes.
+Kube-proxy is disabled:<a href="/docs/17.1/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"> This KB</a> explains how to disable kube-proxy. With kube-proxy disabled, there's a choice of either using a separate subnet for east-west VIPs or using the same VIPs as cluster IPs allocated by OpenShift/Kubernetes.
 
     **To use the same VIPs as cluster IPs: **Enter the same subnet as the cluster IP subnet e.g. <a href="http://172.30.0.0/16"><span class="s3">172.30.0.0/16</span></a> and use the first address 172.30.0.1 in the "Add static IP address pool" box. East-West services simply use the allocated cluster IP as VIPs.
 
@@ -615,7 +615,7 @@ This section describes the configuration of the OpenShift/Kubernetes cloud. Here
  
 
 * Set ‘Proxy Service Placement Subnet’ same as EastWest subnet configured earlier.
-* If kube-proxy is disabled, check the “Use Cluster IP of service as VIP for East/West”. If kube-proxy is enabled, uncheck “Use Cluster IP of service as VIP for East/West”. This <a href="/docs/16.3/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">KB</span></a>describes how kube-proxy can be disabled.
+* If kube-proxy is disabled, check the “Use Cluster IP of service as VIP for East/West”. If kube-proxy is enabled, uncheck “Use Cluster IP of service as VIP for East/West”. This <a href="/docs/17.1/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">KB</span></a>describes how kube-proxy can be disabled.
 * Set IPAM Profile from dropdown as shown.<a href="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png"><img class="alignnone wp-image-12617 size-full" src="img/Screen-Shot-2016-08-26-at-9.32.40-PM.png" width="2160" height="1452"></a>
 * Click Save. 
 
@@ -629,8 +629,8 @@ It will take around 5 min for the Avi Controller to download the SE docker image
 
 ## NEXT STEPS
 
-Refer to “<a href="/docs/16.3/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">Replace kube-proxy in a OpenShift Environment with Avi Vantage</span></a>” to learn how to disable kube-proxy in a OpenShift environment
+Refer to “<a href="/docs/17.1/replace-kube-proxy-in-openshift-environment-with-avi-vantage/"><span style="font-weight: 400;">Replace kube-proxy in a OpenShift Environment with Avi Vantage</span></a>” to learn how to disable kube-proxy in a OpenShift environment
 
-Refer to “<a href="/docs/16.3/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration on Vantage</span></a>” to learn how to create services and test traffic.
+Refer to “<a href="/docs/17.1/openshiftkubernetes-service-configuration-in-vantage/"><span style="font-weight: 400;">OpenShift/Kubernetes Service Configuration on Vantage</span></a>” to learn how to create services and test traffic.
 
-Refer to “<a href="/docs/16.3/openshift-routes-virtual-service-configuration/"><span style="font-weight: 400;">OpenShift Routes Virtual Service configuration</span></a>” to learn how to create and test traffic with OpenShift routes.
+Refer to “<a href="/docs/17.1/openshift-routes-virtual-service-configuration/"><span style="font-weight: 400;">OpenShift Routes Virtual Service configuration</span></a>” to learn how to create and test traffic with OpenShift routes.

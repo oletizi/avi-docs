@@ -2,7 +2,7 @@
 title: Installing Avi Vantage for Cisco CSP-2100
 layout: default
 ---
-This article provides the steps for installing Avi Vantage on Cisco's CSP-2100.  Vantage may be deployed on CSP-2100 in either no orchestrator mode or Linux server cloud mode.  This article covers both. For documentation on installing Avi Vantage on Linux servers using non-CSP-2100 hardware, <a href="/docs/16.3/installing-avi-vantage-for-a-linux-server-cloud/">click here</a> instead.
+This article provides the steps for installing Avi Vantage on Cisco's CSP-2100.  Vantage may be deployed on CSP-2100 in either no orchestrator mode or Linux server cloud mode.  This article covers both. For documentation on installing Avi Vantage on Linux servers using non-CSP-2100 hardware, <a href="/docs/17.1/installing-avi-vantage-for-a-linux-server-cloud/">click here</a> instead.
 
 ## Topology
 
@@ -68,7 +68,7 @@ The pNIC named enp1s0f0 can be connected to the management network. This provide
 <ol> 
  <li> Log on to the CSP dashboard using a browser.</li> 
  <li> Navigate to Configuration &gt; Repository.<br> <a href="img/linux-server-cloud-csp2100.png"><img class="alignnone size-full wp-image-8622" src="img/linux-server-cloud-csp2100.png" alt="linux-server-cloud-csp2100" width="938" height="372"></a></li> 
- <li>Click on Select, and browse to and select the Avi Controller qcow2 image obtained from the <a href="/docs/16.3/access-to-avi-portal/">avinetworks.com/portal</a> site.</li> 
+ <li>Click on Select, and browse to and select the Avi Controller qcow2 image obtained from the <a href="/docs/17.1/access-to-avi-portal/">avinetworks.com/portal</a> site.</li> 
  <li>Click Upload.</li> 
 </ol> 
 
@@ -86,7 +86,7 @@ Use the following steps to deploy the Avi Controller using the CSP UI:
  <li>Click on Target Host Name and select the host from the list.</li> 
  <li>Click on Image Name and select the controller.qcow2 image from the list.</li> 
  <li>Click on vNIC &gt; vNIC1 &gt; External Network &gt; enp1s0f0. vNIC1 is used by the Avi Controller as the management interface.<br> Note: If the management network is on a different VLAN, specify the VLAN number in the VLAN field, and click on VLAN Tagged to enable tagging.<br> <a href="img/linux-server-cloud-csp2100-3.png"><img class="alignnone size-full wp-image-8620" src="img/linux-server-cloud-csp2100-3.png" alt="linux-server-cloud-csp2100-3" width="915" height="489"></a></li> 
- <li>Click on Resource Config and set the resource allocations. Refer to <a href="/docs/16.3/system-requirements-hardware/">System Requirements: Hardware</a> for the minimum requirements.</li> 
+ <li>Click on Resource Config and set the resource allocations. Refer to <a href="/docs/17.1/system-requirements-hardware/">System Requirements: Hardware</a> for the minimum requirements.</li> 
  <li><em>(optional) </em>Click on VNC Password and specify a password for console login using VNC.</li> 
  <li>Click on Deploy.</li> 
 </ol> 

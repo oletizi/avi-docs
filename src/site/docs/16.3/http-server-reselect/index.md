@@ -1,6 +1,6 @@
 ---
 title: HTTP Server Reselect
-layout: default
+layout: 16.3
 ---
 Avi Vantage 16.2 and later can be configured to retry an HTTP request that results in a 4*xx* or 5*xx* error code from the back-end server. Normally, Vantage forwards these error messages back to the client.
 

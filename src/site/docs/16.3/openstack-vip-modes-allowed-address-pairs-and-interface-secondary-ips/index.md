@@ -1,6 +1,6 @@
 ---
 title: OpenStack VIP Modes&#58; Allowed Address Pairs and Interface Secondary IPs
-layout: default
+layout: 16.3
 ---
 Avi Vantage supports two OpenStack virtual IP modes, <a href="http://specs.openstack.org/openstack/neutron-specs/specs/api/allowed_address_pairs.html">allowed-address pairs</a> and interface-secondary IPs.
 

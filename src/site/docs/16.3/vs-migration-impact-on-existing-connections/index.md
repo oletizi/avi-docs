@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Migration Impact on Existing Connections
-layout: default
+layout: 16.3
 ---
 A virtual service may be migrated, or moved onto a different Avi Service Engine.  This may be initiated automatically or manually depending on the automation mode set.  Under the hood, a migration uses the same mechanism as a virtual service scale out.
 <ol> 

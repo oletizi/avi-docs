@@ -1,6 +1,6 @@
 ---
 title: Alerts Overview
-layout: default
+layout: 16.2
 ---
 In its most generic form, alerts are a construct intended to inform administrators of significant events within Avi Vantage. In addition to triggering based on system events, alerts may also be triggered based one or more of the 200+ metrics Vantage is tracking. Once an alert is triggered, it may be used to notify an administrator through one or more of the notification actions. Or to take things a step further, alerts may trigger ControlScripts, which provide limitless scripting possibilities.
 

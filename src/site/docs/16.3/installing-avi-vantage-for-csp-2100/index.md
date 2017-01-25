@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for Cisco CSP-2100
-layout: default
+layout: 16.3
 ---
 This article provides the steps for installing Avi Vantage on Cisco's CSP-2100.  Vantage may be deployed on CSP-2100 in either no orchestrator mode or Linux server cloud mode.  This article covers both. For documentation on installing Avi Vantage on Linux servers using non-CSP-2100 hardware, <a href="/docs/16.3/installing-avi-vantage-for-a-linux-server-cloud/">click here</a> instead.
 

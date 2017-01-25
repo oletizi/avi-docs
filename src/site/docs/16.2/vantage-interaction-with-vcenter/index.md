@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage Interaction with vCenter
-layout: default
+layout: 16.2
 ---
 ### Description
 

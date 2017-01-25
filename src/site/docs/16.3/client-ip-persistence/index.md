@@ -1,6 +1,6 @@
 ---
 title: Client IP Persistence
-layout: default
+layout: 16.3
 ---
 The *client IP address* mode of persistence may be applied to any virtual service, regardless if it is TCP or UDP. With this persistence method, Vantage Service Engines will stick the client to the same server for the configurable duration of time and store the mapping in a local database.
 

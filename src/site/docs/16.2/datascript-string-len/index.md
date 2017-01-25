@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; string&#46;len
-layout: default
+layout: 16.2
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

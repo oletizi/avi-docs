@@ -1,6 +1,6 @@
 ---
 title: PROXY Protocol Support
-layout: default
+layout: 16.3
 ---
 By default, Avi Service Engines (SEs) source-NAT (SNAT) traffic destined to servers. Due to SNAT, logs on the application servers will show the layer 3 IP address of the SE rather than the original client’s IP address. Protocol extensions such as <a href="/docs/16.3/x-forwarded-for-header-insertion/">“X-Forwarded-For” header for HTTP</a> require knowledge of the underlying protocol (such as HTTP). For layer 4 applications, Avi Vantage supports versions 1 (human-readable format) and version 2 (binary format) of the PROXY protocol (<a href="http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt">PROXY protocol spec</a>), which conveys the original connection parameters, such as the client IP address, to the back-end servers. For layer 4 SSL applications, version 1 is supported. The Avi SE requires no knowledge of the encapsulated protocol. The impact on performance caused by processing of transported information is very minimal.
 

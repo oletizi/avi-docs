@@ -1,6 +1,6 @@
 ---
 title: Disabling Back-end Servers for Maintenance
-layout: default
+layout: 16.2
 ---
 Avi Vantage provides a way to actively disable back-end servers for maintenance.
 

@@ -8,7 +8,7 @@ Avi Vantage supports running in the Nutanix Acropolis hypervisor orchestrated by
 
 ### VM Hardware Requirements
 
-The resources suggested in this installation guide are minimum recommendations for a proof of concept. See also the <a href="/docs/16.3/system-requirements-hardware/">hardware requirements KB</a> for more sizing help.
+The resources suggested in this installation guide are minimum recommendations for a proof of concept. See also the <a href="/docs/17.1/system-requirements-hardware/">hardware requirements KB</a> for more sizing help.
 
 * **Avi Controller:** The Controller needs at least 4 vCPUs and 12 GB memory. Also needed is a NIC for the management network. This is the network used for accessing the web interface. The Controller also uses this network to communicate with the Avi Service Engines (SEs).
 * **SEs:** Each SE needs at least 2 vCPUs and 2 GB memory. Also needed is a NIC for the management network as the first interface, and additional NICs for the data networks. 

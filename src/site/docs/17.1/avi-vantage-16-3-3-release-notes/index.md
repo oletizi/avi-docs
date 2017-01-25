@@ -14,8 +14,8 @@ This article describes the fixes in Avi Vantage release 16.3.3.
 
 This section summarizes the enhancements in 16.3.2. For more information, click on the feature names. They are hyperlinks to additional information in the Avi Networks <a href="/">knowledge base</a>.
 
-* <a href="/docs/16.3/installing-avi-vantage-for-csp-2100/#dedicated-hsm-network.">Support in a CSP configuration for a dedicated HSM network</a>
-* <a href="/docs/16.3/mac-masquerade/">Support for a floating MAC address for back-end connectivity when in legacy active/standby mode</a>
+* <a href="/docs/17.1/installing-avi-vantage-for-csp-2100/#dedicated-hsm-network.">Support in a CSP configuration for a dedicated HSM network</a>
+* <a href="/docs/17.1/mac-masquerade/">Support for a floating MAC address for back-end connectivity when in legacy active/standby mode</a>
 * Support for up to 2048 service ports in a virtual service
 * Support for Ubuntu 16.04 and 16.04.1 in Linux server cloud 
 
@@ -56,27 +56,27 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 ### Core ADC Features
 
-* <a href="/docs/16.3/vi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
-* <a href="/docs/16.3/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
-* Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
-* Ability to forward <a href="/docs/16.3/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
+* <a href="/docs/17.1/vi-gslb-architecture">Global Server Load Balancing (GSLB)</a> - Active/DR and Active/Active GSLB, centralized provisioning and visibility, hybrid cloud support
+* <a href="/docs/17.1/pool-groups/">Pool Groups and Priorities</a> - Support for multiple pools with priorities and min-servers capability; enhanced support for A/B pool testing
+* Ability to exclude HTTP status code ranges or wildcard status codes in the <a href="/docs/17.1/architectural-overview/templates/profiles/analytics-profile/#exclude-http-status-codes">Analytics Profile for a Virtual Service</a>
+* Ability to forward <a href="/docs/17.1/application-profile/#forward-application-keep-alive-timeout-to-client">application keep-alive timeout value</a> to clients 
 
 ### IPAM/DNS
 
-* <a href="/docs/16.3/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
+* <a href="/docs/17.1/avi-dns-architecture/">DNS</a> implemented as a virtual service, capable of hosting GSLB, virtual service DNS records, and manually configured DNS records; DNS visibility and analytics
 * Comprehensive support for <a href="/service-discovery-using-ipam-and-dns-16-3/">IPAM/DNS services</a>, including integrated Avi Vantage IPAM/DNS, Infoblox, and cloud-native solutions across all cloud infrastructures 
 
 ### Networking
 
-* <a href="/docs/16.3/default-gateway-ip-routing-on-avi-se/">Ability to perform IP routing on SEs (default gateway)</a>
-* <a href="/docs/16.3/reserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
-* <a href="/docs/16.3/rf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
-* <a href="/docs/16.3/bgp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a> 
+* <a href="/docs/17.1/default-gateway-ip-routing-on-avi-se/">Ability to perform IP routing on SEs (default gateway)</a>
+* <a href="/docs/17.1/reserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
+* <a href="/docs/17.1/rf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
+* <a href="/docs/17.1/bgp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a> 
 
 ### Cloud Connectors
 
-* AWS: <a href="/docs/16.3/aws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
-* <a href="/docs/16.3/installation-guides/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
+* AWS: <a href="/docs/17.1/aws-cross-account-assumerole-support/">Support for IAM AssumeRole across multiple AWS accounts</a>
+* <a href="/docs/17.1/installation-guides/avi-vantage-openshift-installation-guide/">OpenShift and Kubernetes support</a> (Tech Preview)
 * OpenStack  
     * Mitaka release qualification
     * Keystone 3.0 support
@@ -84,37 +84,37 @@ This section summarizes the enhancements in 16.3. For more information, click on
     * Heat resources for Avi Vantage
     * <a href="/openstack-vip-modes-allowed-address-pairs-and-interface-secondary-ips/">Support for interface-secondary IPs (as an alternative to allowed address pairs) for VIP address</a> 
 * SDN: Contrail support in OpenStack
-* VMware vCenter: <a href="/docs/16.3/architectural-overview/infrastructure/#multi-cloud-deployments">Support for multiple vCenter clouds on a single Avi Controller</a> 
+* VMware vCenter: <a href="/docs/17.1/architectural-overview/infrastructure/#multi-cloud-deployments">Support for multiple vCenter clouds on a single Avi Controller</a> 
 
 ### Security
 
-* <a href="/docs/16.3/venafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
-* <a href="/docs/16.3/ntp-settings/">Authentication of NTP servers</a>
+* <a href="/docs/17.1/venafi-integration/">Integration with Venafi Trust Protection Platform </a>for automation of SSL and TLS certificate life-cycle management
+* <a href="/docs/17.1/ntp-settings/">Authentication of NTP servers</a>
 * <a href="/ssh-users-and-keys/#ssh-key-based-controller-login">Support for key-based SSH access to Avi Controller for the admin account</a>
-* <a href="/docs/16.3/user-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
+* <a href="/docs/17.1/user-account-security/">User account security enhancements:</a> password history enforcement, user account lockout after failed-login-attempts, maximum concurrent login sessions per user, and user credential timeouts 
 
 ### Analytics
 
-* <a href="/docs/16.3/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="/docs/16.3/architectural-overview/templates/profiles/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
+* <a href="/docs/17.1/avi-dns-architecture/">DNS visibility and analytics</a>
+* Ability to disable "Significant Logs" in <a href="/docs/17.1/architectural-overview/templates/profiles/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a> 
 
 ### Operations
 
-* <a href="/docs/16.3/upgrading-the-avi-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
-* <a href="/docs/16.3/ackup-and-restore-of-avi-vantage-configuration">Configuration Backup Scheduler: </a>System configuration backups can now be scheduled
-* <a href="/docs/16.3/cluster-configuration-with-fqdn/">Support DNS name (FQDN) for Controller cluster members</a>
-* <a href="/docs/16.3/collecting-tech-support-logs/">Capability to collect and download tech-support from the UI</a>
-* <a href="/docs/16.3/customizing-notification-of-certificate-expiration">Customizable notification intervals for SSL certificate expiration</a> 
+* <a href="/docs/17.1/upgrading-the-avi-vantage-software/#rolling-service-engine-upgrade">Non-disruptive rolling upgrades for N+M and Active/Standby HA</a>
+* <a href="/docs/17.1/ackup-and-restore-of-avi-vantage-configuration">Configuration Backup Scheduler: </a>System configuration backups can now be scheduled
+* <a href="/docs/17.1/cluster-configuration-with-fqdn/">Support DNS name (FQDN) for Controller cluster members</a>
+* <a href="/docs/17.1/collecting-tech-support-logs/">Capability to collect and download tech-support from the UI</a>
+* <a href="/docs/17.1/customizing-notification-of-certificate-expiration">Customizable notification intervals for SSL certificate expiration</a> 
 
 ### CLI, API, and Automation
 
-* <a href="/docs/16.3/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
-* <a href="/docs/16.3/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
-* API: <a href="/docs/16.3/api-http-patch-support/">Nested PATCH support for multi-nested HttpReqRule</a> 
+* <a href="/docs/17.1/openapi-swagger-2-0-specification-integration/">Swagger support for Avi Vantage REST API</a>
+* <a href="/docs/17.1/cli-enhancements-in-avi-vantage-16-3/">CLI enhancements</a> for better automation, including new "script" and "Linux command line" modes
+* API: <a href="/docs/17.1/api-http-patch-support/">Nested PATCH support for multi-nested HttpReqRule</a> 
 
 ### DataScript
 
-* Support for <a href="/docs/16.3/string-group/">String Groups</a> and <a href="/docs/16.3/templates-groups-ip-group/">IP Groups</a> in <a href="/docs/16.3/datascript-functions/">DataScripts</a> 
+* Support for <a href="/docs/17.1/string-group/">String Groups</a> and <a href="/docs/17.1/templates-groups-ip-group/">IP Groups</a> in <a href="/docs/17.1/datascript-functions/">DataScripts</a> 
 
 ### Key Changes in 16.3
 
@@ -142,13 +142,13 @@ This section summarizes the enhancements in 16.3. For more information, click on
 
 Upgrade prerequisite: current version of Avi Controller must be 16.2 or later.
 
-<a href="/docs/16.3/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
+<a href="/docs/17.1/upgrading-the-avi-vantage-software/">Upgrade Instructions</a>
 
-<a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
+<a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">Protocol Ports Used by Vantage for Management Communication</a>
 
 ### Supported Platforms
 
-Refer to <a href="/docs/16.3/system-requirements-ecosystem/">System Requirements: Ecosystem</a>
+Refer to <a href="/docs/17.1/system-requirements-ecosystem/">System Requirements: Ecosystem</a>
 
 ### Product Documentation
 
@@ -156,7 +156,7 @@ For more information, please see the following documents, also available within 
 
 ### Installation Guides
 
-* <a href="/docs/16.3/installation-guides/">Avi Vantage Installation Guides</a> 
+* <a href="/docs/17.1/installation-guides/">Avi Vantage Installation Guides</a> 
 
 ### Open Source Package Information
 

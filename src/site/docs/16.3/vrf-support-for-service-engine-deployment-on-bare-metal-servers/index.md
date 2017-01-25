@@ -1,6 +1,6 @@
 ---
 title: VRF Support for Service Engine Deployment on Bare-Metal Servers
-layout: default
+layout: 16.3
 ---
 Starting with Avi Vantage release 16.3, Avi Service Engine data interfaces can be assigned to multiple VRFs (Virtual Routing and Forwarding Context).
 

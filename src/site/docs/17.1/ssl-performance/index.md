@@ -22,11 +22,11 @@ Vantage performs SSL termination in software, leveraging advances in the x86 chi
 
 ### Memory
 
-Memory allocation for a Service Engine, which primarily impacts the number of concurrent connections, can be anywhere between 1 and 128 GB.  See <a href="/docs/16.3/se-memory-consumption">SE Memory Consumption</a> for a verbose description of expected concurrent SSL connections.  As a general rule of thumb, SSL connections consume about twice as much memory as HTTP layer 7 connections, and four times as much memory as layer 4 with TCP proxy.
+Memory allocation for a Service Engine, which primarily impacts the number of concurrent connections, can be anywhere between 1 and 128 GB.  See <a href="/docs/17.1/se-memory-consumption">SE Memory Consumption</a> for a verbose description of expected concurrent SSL connections.  As a general rule of thumb, SSL connections consume about twice as much memory as HTTP layer 7 connections, and four times as much memory as layer 4 with TCP proxy.
 
 ### NIC
 
-Throughput through a Service Engine can be a gating factor for the bulk throughput and sometimes for TPS.  The throughput for an SE is highly dependent on the platform.  For instance, VMware ESX 5.x will push approximately 550k packets per second, while VMware ESX 6.x can sustain closer to 1M packets per second.  For maximum performance on a single SE, Avi recommends bare metal or <a href="/docs/16.3/installation-guides/installing-avi-vantage-for-a-linux-server-cloud">Linux cloud deployments</a>, using an Intel 10 Gb/s or greater NIC capable of supporting DPDK.
+Throughput through a Service Engine can be a gating factor for the bulk throughput and sometimes for TPS.  The throughput for an SE is highly dependent on the platform.  For instance, VMware ESX 5.x will push approximately 550k packets per second, while VMware ESX 6.x can sustain closer to 1M packets per second.  For maximum performance on a single SE, Avi recommends bare metal or <a href="/docs/17.1/installation-guides/installing-avi-vantage-for-a-linux-server-cloud">Linux cloud deployments</a>, using an Intel 10 Gb/s or greater NIC capable of supporting DPDK.
 
  
 
@@ -34,7 +34,7 @@ Throughput through a Service Engine can be a gating factor for the bulk throughp
 
 Similar to how Vantage scales capacity across CPU cores, Vantage may also scale traffic across multiple Service Engines. This is primarily useful when CPU or memory are the limiting factor for a virtual service, as it allows linearly scaling.  It is beneficial for increasing throughput as well.  Using Vantage's native autoscale feature allows a virtual service to be striped across four Service Engines.  Using ECMP, a virtual service may be scaled out across up to 32 Service Engines.
 
-See <a href="/docs/16.3/autoscale-service-engines">SE Autoscaling</a> for an in-depth description.
+See <a href="/docs/17.1/autoscale-service-engines">SE Autoscaling</a> for an in-depth description.
 
  
 
@@ -42,7 +42,7 @@ See <a href="/docs/16.3/autoscale-service-engines">SE Autoscaling</a> for an in-
 
 In addition to the hardware factors outlined above, maximum TPS is dependent on the the negotiated settings of the SSL session between the client and Vantage.  Avi supports both RSA and elliptic curve certificates.  The type of certificate used, along with the cipher selected during negotiation, determines the CPU cost of establishing the session. At a high level, RSA 2k keys are about 4x more computationally expensive compared to EC.  EC using perfect forward secrecy (ECDHE) is about 15% more expensive than EC without PFS (ECDH).  As a general rule of thumb, assume 500 TPS per core for RSA and 2000 for EC.
 
-<a href="img/SSL-Performance.png"><img class="size-full wp-image-7762 alignright" src="img/SSL-Performance.png" alt="SSL Performance" width="373" height="250"></a>Avi Networks strongly recommends using EC with PFS, which provides the best performance and the best possible security.  RSA certificates may still be used as a backup for clients that do not support current industry standards.  See <a href="/docs/16.3/ecc-versus-rsa-certificate-priority">RSA versus EC</a> certificate priority for more on this.  Vantage's default settings prioritize EC over RSA, and PFS over non-PFS.
+<a href="img/SSL-Performance.png"><img class="size-full wp-image-7762 alignright" src="img/SSL-Performance.png" alt="SSL Performance" width="373" height="250"></a>Avi Networks strongly recommends using EC with PFS, which provides the best performance and the best possible security.  RSA certificates may still be used as a backup for clients that do not support current industry standards.  See <a href="/docs/17.1/ecc-versus-rsa-certificate-priority">RSA versus EC</a> certificate priority for more on this.  Vantage's default settings prioritize EC over RSA, and PFS over non-PFS.
 
 The table below illustrates the average performance seen on a Service Engine running on a virtual machine in VMware ESX 6, using a Xeon E5-2630 v3 @ 2.4-GHz processor.  These numbers are generated with SSL session reuse disabled.
 
@@ -130,4 +130,4 @@ Typically, SSL termination is only performed on the client-to-Vantage side of th
 
 ### Concurrent Connections
 
-Often overlooked when capacity planning for SSL is the impact on concurrent connections. Often administrators hear numbers of tens of millions of concurrent numbers achieved by a load balancer, so no further attention is paid to this metric. The concurrent benchmark numbers floating around are generally for layer 4 in a pass-through, or non-proxy mode. In other words, they are many orders of magnitude greater than what will be achieved. As a rough yet conservative estimate, assume 40k of memory per SSL terminated connection in the real world. The amount of HTTP header buffering, caching, compression, and other features play a role in the final number. See <a href="/docs/16.3/se-memory-consumption" target="_blank">SE Memory Consumption</a> for more detail, including methods for optimizing for greater concurrency.
+Often overlooked when capacity planning for SSL is the impact on concurrent connections. Often administrators hear numbers of tens of millions of concurrent numbers achieved by a load balancer, so no further attention is paid to this metric. The concurrent benchmark numbers floating around are generally for layer 4 in a pass-through, or non-proxy mode. In other words, they are many orders of magnitude greater than what will be achieved. As a rough yet conservative estimate, assume 40k of memory per SSL terminated connection in the real world. The amount of HTTP header buffering, caching, compression, and other features play a role in the final number. See <a href="/docs/17.1/se-memory-consumption" target="_blank">SE Memory Consumption</a> for more detail, including methods for optimizing for greater concurrency.

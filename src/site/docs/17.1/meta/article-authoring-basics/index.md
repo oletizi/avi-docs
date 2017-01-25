@@ -11,7 +11,7 @@ layout: default
 1. Rename the screenshot something meaningful
 1. Add an image tag referencing that screenshot:
   <img src="img/my-screenshot.png">
-1. Review your changes in your web browser: <a href="/docs/16.3/meta/article-basics/">My Article in my Web Browser</a>
+1. Review your changes in your web browser: <a href="/docs/17.1/meta/article-basics/">My Article in my Web Browser</a>
 
 ## Code
 
@@ -23,7 +23,7 @@ layout: default
 
 ### Cross-Referencing Other Articles
 
-Here's a link to <a href="/docs/16.3/tenants/">the Tenants article &rsaquo;</a>
+Here's a link to <a href="/docs/17.1/tenants/">the Tenants article &rsaquo;</a>
 
 * TODO: Describe the link structure and why it's important to embed the version number in the url
 

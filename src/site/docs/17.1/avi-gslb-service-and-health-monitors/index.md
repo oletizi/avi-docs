@@ -100,7 +100,7 @@ The monitor name is arbitrary; the letters "tcp" merely help us recognize it for
 
 Clicking Save in the new GSLB Health Monitor editor completes the custom-monitor creation.
 
-****2. Configure the GSLB services. ****Yet again, this operation can only be performed by an authorized user logged into the GSLB leader Controller. The **New GSLB Service** wizard speeds the definition of either active/active or active-standby configurations, as first introduced in the <a href="/docs/16.3/avi-gslb-overview/">Avi GSLB Overview</a> article. Both are illustrated below.
+****2. Configure the GSLB services. ****Yet again, this operation can only be performed by an authorized user logged into the GSLB leader Controller. The **New GSLB Service** wizard speeds the definition of either active/active or active-standby configurations, as first introduced in the <a href="/docs/17.1/avi-gslb-overview/">Avi GSLB Overview</a> article. Both are illustrated below.
 
 * **Active/standby GSLB service for view.avi.com******By astutely picking **GslbPool.priority** values, one for each of our pools, it is possible to fashion an active/standby configuration. A pool with priority 12 will handle all traffic unless and until it fails, at which time a standby pool with priority 5 will automatically take over.   
 ****

@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;ssl&#46;cipher
-layout: default
+layout: 16.3
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>        

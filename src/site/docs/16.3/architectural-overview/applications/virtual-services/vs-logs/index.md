@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Logs
-layout: default
+layout: 16.3
 ---
 Virtual services and pools are able to log client-to-application interactions for TCP connections and HTTP requests/responses. These logs can be indexed, viewed, and filtered locally within the Avi Controller. Logs can be useful for troubleshooting and surfacing insights about the end-user experience and success of the application.
 

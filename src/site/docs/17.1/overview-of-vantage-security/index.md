@@ -32,22 +32,22 @@ Avi Networks strongly recommends key administrators subscribe to Avi's mailing l
 Avi also publishes responses to Common Vulnerabilities and Exposures (CVEs) of note, which include known vulnerabilities of Avi Vantage or software used by Vantage, such as SSL or Linux. Avi may also publish CVE responses to issues that do not impact Vantage in order to explicitly inform our customers that they are protected. These CVEs are published to the Avi knowledge base site, but not sent proactively via email alerts.
 See also:
 
-* <a href="/docs/16.3/support-terms-and-conditions">Support Terms &amp; Conditions</a>
-* <a href="/docs/16.3/search?search=cve">CVEs</a>
-* <a href="/docs/16.3/upgrading-the-avi-vantage-software">Upgrade Vantage Software</a> 
+* <a href="/docs/17.1/support-terms-and-conditions">Support Terms &amp; Conditions</a>
+* <a href="/docs/17.1/search?search=cve">CVEs</a>
+* <a href="/docs/17.1/upgrading-the-avi-vantage-software">Upgrade Vantage Software</a> 
 
 ### Hardening Vantage
 
 With a basic deployment of Avi Vantage, the system is secured and reasonably locked down. However, many administrators may wish to customize the security posture or further tighten policies regarding who can access Vantage. Avi strongly recommends thoroughly reviewing the choices for securing Vantage which are essential for guaranteeing the security of Vantage in production environments where the potential exposure to malicious attack is more severe.
 
-* <a href="/docs/16.3/protocol-ports-used-by-avi-vantage-for-management-communication/">Open Ports Used by Vantage</a>
-* <a href="/docs/16.3/controller-to-service-engine-communication">Controller-to-SE Communication</a>
-* <a href="/docs/16.3/strong-password-enforcement">Strong Password Enforcement</a>
-* <a href="/docs/16.3/clickjacking-protection">Clickjacking Protection</a>
+* <a href="/docs/17.1/protocol-ports-used-by-avi-vantage-for-management-communication/">Open Ports Used by Vantage</a>
+* <a href="/docs/17.1/controller-to-service-engine-communication">Controller-to-SE Communication</a>
+* <a href="/docs/17.1/strong-password-enforcement">Strong Password Enforcement</a>
+* <a href="/docs/17.1/clickjacking-protection">Clickjacking Protection</a>
 <!-- TODO: Figure out where this is actually supposed to point. It's a broken link on the KB. -->
-* <a href="/docs/16.3/user-accounts/">Custom Roles and Users</a>
-* <a href="/docs/16.3/ldap-auth-profile-test">AAA via LDAP</a>
-* <a href="/docs/16.3/securing-management-ip-access">Securing Management IP Access</a> 
+* <a href="/docs/17.1/user-accounts/">Custom Roles and Users</a>
+* <a href="/docs/17.1/ldap-auth-profile-test">AAA via LDAP</a>
+* <a href="/docs/17.1/securing-management-ip-access">Securing Management IP Access</a> 
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: Manage Local User Accounts
-layout: default
+layout: 16.2
 ---
 A valid account is required for access to Avi Vantage through the web interface, REST API, or CLI. User accounts can be maintained locally in Avi Vantage or remotely via an external authentication server.
 

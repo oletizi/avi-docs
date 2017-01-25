@@ -1,6 +1,6 @@
 ---
 title: MAC Masquerade
-layout: default
+layout: 16.3
 ---
 As of release 16.3.2, Avi Vantage supports MAC masquerade, for use in conjunction with <a href="/docs/16.3/default-gateway-ip-routing-on-avi-se/">Avi SE IP routing</a>, to accelerate <a href="/docs/16.3/legacy-ha-for-avi-service-engines/">legacy HA SE</a> failover in Linux server clouds. The delay in failover that otherwise may occur is attributed to back-end servers clinging to the MAC address of the interface of the previously active SE while they wait to learn the new MAC address from the newly active SE.
 

@@ -1,6 +1,6 @@
 ---
 title: API - Configuring the Avi Controller Cluster
-layout: default
+layout: 16.3
 ---
 The Avi Vantage REST API provides commands for managing the Avi Controller cluster.
 

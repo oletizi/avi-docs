@@ -1,6 +1,6 @@
 ---
 title: IPAM Provider (OpenStack)
-layout: default
+layout: 16.2
 ---
 Avi Vantage communicates with OpenStack Neutron via APIs to provide IPAM functionality. Currently, DNS services from OpenStack are not supported in this configuration.
 

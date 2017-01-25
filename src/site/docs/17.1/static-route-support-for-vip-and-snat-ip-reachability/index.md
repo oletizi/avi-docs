@@ -8,7 +8,7 @@ A static route is required on the next-hop router from the Avi SE to the pool, i
 
 * The virtual service's VIP address or SNAT addresses are not in any of SE interface subnets.
 * There is no HA requirement on the SE (because only a single SE is used).
-* <a href="/docs/16.3/legacy-ha-for-avi-service-engines/">Legacy HA</a> mode is enabled. 
+* <a href="/docs/17.1/legacy-ha-for-avi-service-engines/">Legacy HA</a> mode is enabled. 
 
 This article shows sample topologies that use static routing for server response traffic.
 
@@ -18,9 +18,9 @@ Provisioning load balancers without HA is in general not a recommended practice.
 
 Here is a sample topology without HA. The virtual service's VIP and SNAT IP addresses are not in any of the SE interface subnets. Thus, a static route is needed on the next-hop router from the back-end server back to the SE. 
 
-Static routes can be provisioned on the next-hop router to point to the interface IP of the Avi SE. However, it is recommended to configure a floating interface IP for the SE group, and to have the static route use the floating interface as the adjacency. This will allow smooth addition of a second Avi SE in the future if required, for HA purposes (using <a href="/docs/16.3/legacy-ha-for-avi-service-engines/">legacy HA mode</a>).
+Static routes can be provisioned on the next-hop router to point to the interface IP of the Avi SE. However, it is recommended to configure a floating interface IP for the SE group, and to have the static route use the floating interface as the adjacency. This will allow smooth addition of a second Avi SE in the future if required, for HA purposes (using <a href="/docs/17.1/legacy-ha-for-avi-service-engines/">legacy HA mode</a>).
 <a href="img/static-route-topo1.png"><img class="alignnone size-full wp-image-8299" src="img/static-route-topo1.png" alt="static-route-topo1" width="621" height="402"></a>
-Likewise, static routes or a default gateway also will need to be provisioned on the SE group, to enable reachability to servers and clients, which may not be Layer-2 adjacent. For information on provisioning a default gateway and static routes on an SE, <a href="/docs/16.3/configuration-guide/infrastructure/">click here</a>.
+Likewise, static routes or a default gateway also will need to be provisioned on the SE group, to enable reachability to servers and clients, which may not be Layer-2 adjacent. For information on provisioning a default gateway and static routes on an SE, <a href="/docs/17.1/configuration-guide/infrastructure/">click here</a>.
 
 ## Static Routing with HA
 
@@ -59,7 +59,7 @@ The VIP address is the IP address that DNS will return in responses to queries f
 
 ### SNAT IP Address
 
-When the SE forwards a request to a back-end server, the SE uses the SNAT IP address as the source address of the client request. In deployments that handle VIP traffic differently depending on the application, the <a href="/docs/16.3/source-nat-for-application-identification">source NAT</a> IP address provides a way to direct the traffic. The SNAT IP address also ensures that response traffic from the back-end servers goes back through the SE that forwarded the request.
+When the SE forwards a request to a back-end server, the SE uses the SNAT IP address as the source address of the client request. In deployments that handle VIP traffic differently depending on the application, the <a href="/docs/17.1/source-nat-for-application-identification">source NAT</a> IP address provides a way to direct the traffic. The SNAT IP address also ensures that response traffic from the back-end servers goes back through the SE that forwarded the request.
 
 <a href="img/static-route-noha-snatipconfig-2.png"><img class="alignnone size-full wp-image-8343" src="img/static-route-noha-snatipconfig-2.png" alt="static-route-noha-snatipconfig" width="576" height="549"></a>
 

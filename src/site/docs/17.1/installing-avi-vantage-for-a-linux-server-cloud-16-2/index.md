@@ -296,8 +296,8 @@ kernel.core_pattern = /var/crash/%e.%p.%t.coreInstallation Successful. Starting 
   </ul> </li> 
  <li>After the wizard closes, see the following articles to complete the installation and create virtual services: 
   <ol> 
-   <li><a href="/docs/16.3/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
-   <li><a href="/docs/16.3/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
+   <li><a href="/docs/17.1/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
+   <li><a href="/docs/17.1/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
   </ol> </li> 
 </ol>  
 
@@ -305,7 +305,7 @@ kernel.core_pattern = /var/crash/%e.%p.%t.coreInstallation Successful. Starting 
 
 If you are continuing with the wizard, this section describes how to add the SSH account information to the Avi Controller, and to then copy the SSH public key to each of the Avi SE hosts.
 
-Note: If the wizard has timed out or you have decided to click through the rest of the wizard and do the SSH setup later, go <a href="/docs/16.3/public-key-management-on-se-hosts/">here instead</a>, when ready. See the same link if using an account other than "root". This section assumes that "root" will be used.
+Note: If the wizard has timed out or you have decided to click through the rest of the wizard and do the SSH setup later, go <a href="/docs/17.1/public-key-management-on-se-hosts/">here instead</a>, when ready. See the same link if using an account other than "root". This section assumes that "root" will be used.
 
 **On the Avi Controller:**
 <ol> 
@@ -359,6 +359,6 @@ In the Avi Controller web interface login popup, enter the user name and passwor
 If you clicked through the SSH or Avi SE host pages of the wizard, see the following articles to complete installation:
 
 <ol> 
- <li><a href="/docs/16.3/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
- <li><a href="/docs/16.3/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
+ <li><a href="/docs/17.1/public-key-management-on-se-hosts/">Public Key Management on Service Engine Hosts</a></li> 
+ <li><a href="/docs/17.1/adding-avi-service-engines-to-a-linux-server-cloud/">Adding Avi Service Engines to a Linux Server Cloud</a></li> 
 </ol> 

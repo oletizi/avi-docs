@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for a Linux Server Cloud
-layout: default
+layout: 16.1
 ---
 This article describes how to install Avi Vantage in a Linux cloud. The instructions in this guide can be used for installing Avi Vantage 16.1 and higher.
 

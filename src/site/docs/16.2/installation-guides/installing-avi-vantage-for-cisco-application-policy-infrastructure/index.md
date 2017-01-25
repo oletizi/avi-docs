@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for Cisco Application Policy Infrastructure Controller
-layout: default
+layout: 16.2
 ---
 This document describes how to integrate Avi Vantage with Cisco Application Policy Infrastructure Controller (APIC), using VMware vCenter as Cisco APIC’s Virtual Machine Manager (VMM).
 

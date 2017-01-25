@@ -8,7 +8,7 @@ There are multiple use cases for enabling IP routing on Avi Service Engines.
 
 When new application servers are deployed, the servers need external connectivity for manageability. In the absence of a router in the server networks, the Avi SE can be used for routing the traffic of server networks.
 
-Another use case is when virtual services use an application profile with the <a href="/docs/16.3/preserve-client-ip/">preserve client IP</a> option enabled, back-end servers receive traffic with the source IP set to the IP of the originating clients. The Avi SE’s IP needs to be configured as the default gateway for these servers to route all traffic back through the SEs to the clients.
+Another use case is when virtual services use an application profile with the <a href="/docs/17.1/preserve-client-ip/">preserve client IP</a> option enabled, back-end servers receive traffic with the source IP set to the IP of the originating clients. The Avi SE’s IP needs to be configured as the default gateway for these servers to route all traffic back through the SEs to the clients.
 
 ## Scope
 

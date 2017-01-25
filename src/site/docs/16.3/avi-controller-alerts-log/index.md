@@ -1,6 +1,6 @@
 ---
 title: Avi Controller Alerts Log
-layout: default
+layout: 16.3
 ---
 The Administration &gt; Controller &gt; Alerts page lists Avi Controller-related alerts. 
 

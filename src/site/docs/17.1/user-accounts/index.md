@@ -2,7 +2,7 @@
 title: User Accounts
 layout: default
 ---
-A valid account is required for access to Avi Vantage through the web interface, REST API, or CLI. User accounts can be maintained locally in Avi Vantage or remotely on an <a href="/docs/16.3/remote-users-authen-authrz">authentication, authorization, and accounting (AAA) server</a>.
+A valid account is required for access to Avi Vantage through the web interface, REST API, or CLI. User accounts can be maintained locally in Avi Vantage or remotely on an <a href="/docs/17.1/remote-users-authen-authrz">authentication, authorization, and accounting (AAA) server</a>.
 &gt; Notes: 
 &gt; <ul> 
 &gt;  <li>To configure or manage Vantage user accounts, one needs a user account having write access to the Accounts section of Vantage. (This is defined by the role assigned to the user account.)</li> 
@@ -42,8 +42,8 @@ To create a user account:
     * **Username:** Name that the user will supply when signing into Avi Vantage, such as <code>jdoe</code> or <code>jdoe@avinetworks.com</code>.
     * **Password:** You may either enter a case-sensitive password in this field or click the Generate button to create a random password for the new user.
     * **Email:** Email address of the user. This field is used when a user loses their password and requests to have it reset. See Password Recovery.
-    * **Role:** Areas of the Vantage system to which the user account will be allowed access. For each system area, the role defines whether the user account has read, write, or no access. Vantage comes with predefined roles. In addition, users who have write access to the Accounts section of Vantage can customize the predefined roles and create new roles. See <a href="/docs/16.3/user-account-roles">Roles</a>.
-* If the user will need to have the same privileges as the "admin" account, select the <a href="/docs/16.3/super-user-accounts">Super User</a> checkbox.
+    * **Role:** Areas of the Vantage system to which the user account will be allowed access. For each system area, the role defines whether the user account has read, write, or no access. Vantage comes with predefined roles. In addition, users who have write access to the Accounts section of Vantage can customize the predefined roles and create new roles. See <a href="/docs/17.1/user-account-roles">Roles</a>.
+* If the user will need to have the same privileges as the "admin" account, select the <a href="/docs/17.1/super-user-accounts">Super User</a> checkbox.
 * Click Save. 
 
 <a href="img/new-user-appadmin-1.png"><img class="alignnone size-full wp-image-10435" src="img/new-user-appadmin-1.png" alt="new-user-appadmin" width="724" height="538"></a>

@@ -1,6 +1,6 @@
 ---
 title: Meta -- Docs Getting Started on Windows
-layout: default
+layout: 16.2
 ---
 
 <a href="#video-tutorial">Video tutorial available here &rsaquo;</a>

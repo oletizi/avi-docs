@@ -6,8 +6,8 @@ Avi Vantage runs on standard x86-based servers, with no requirement for special-
 
 The defaults are:
 
-* **Avi Controller:** 8 vCPU cores, 24 GB RAM, and 64 GB of storage. (Click <a href="/docs/16.3/avi-controller-sizing">here</a> for important details, including minimum sizing requirements for Avi Controllers.)
-* **Avi Service Engine:** 2 vCPU cores, 2 GB RAM, and 10 GB of storage. (Click <a href="/docs/16.3/sizing-service-engines">here</a> for important details, including minimum sizing requirements for Avi SEs. 
+* **Avi Controller:** 8 vCPU cores, 24 GB RAM, and 64 GB of storage. (Click <a href="/docs/17.1/avi-controller-sizing">here</a> for important details, including minimum sizing requirements for Avi Controllers.)
+* **Avi Service Engine:** 2 vCPU cores, 2 GB RAM, and 10 GB of storage. (Click <a href="/docs/17.1/sizing-service-engines">here</a> for important details, including minimum sizing requirements for Avi SEs. 
 
 A typical deployment will have three Controllers in a redundant Controller cluster. The number of SEs required will depend on the number of applications being served by Avi Vantage and the configured level of redundancy.
 

@@ -81,7 +81,7 @@ The tools mentioned above can prove valuable for troubleshooting common SSL-rela
 
 ### Certificate Expiration
 
-When a certificate expires, the virtual service will incur a Security Penalty.  This is visible in the VS > Security page, as well as the SSL certificates page.  Consider enabling proactive <a href="/docs/16.3/notification-of-ssl-certificate-expiration/">certificate expiration notifications</a>
+When a certificate expires, the virtual service will incur a Security Penalty.  This is visible in the VS > Security page, as well as the SSL certificates page.  Consider enabling proactive <a href="/docs/17.1/notification-of-ssl-certificate-expiration/">certificate expiration notifications</a>
 
 ### SSL Version Related Threats
 

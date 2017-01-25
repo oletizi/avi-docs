@@ -24,17 +24,17 @@ While F5 and Avi provide many similar high level features, there are important d
 <tr>    
 <td>application proxy</td>
 <td>virtual server</td>
-<td><a href="/docs/16.3/architectural-overview/applications/virtual-services/create-virtual-service/">virtual service</a></td>
+<td><a href="/docs/17.1/architectural-overview/applications/virtual-services/create-virtual-service/">virtual service</a></td>
 </tr>
 <tr>    
 <td>group of servers</td>
 <td>pool</td>
-<td><a href="/docs/16.3/architectural-overview/applications/pools/">pool</a></td>
+<td><a href="/docs/17.1/architectural-overview/applications/pools/">pool</a></td>
 </tr>
 <tr>    
 <td>Data plane scripting</td>
 <td>iRules™</td>
-<td><a href="/docs/16.3/datascript-guide/">DataScript</a></td>
+<td><a href="/docs/17.1/datascript-guide/">DataScript</a></td>
 </tr>
 <tr>    
 <td>API</td>
@@ -44,22 +44,22 @@ While F5 and Avi provide many similar high level features, there are important d
 <tr>    
 <td>Load balancer</td>
 <td>BIG-IP™ LTM™ + GTM™</td>
-<td><a href="/docs/16.3/architectural-overview/">Service Engine</a></td>
+<td><a href="/docs/17.1/architectural-overview/">Service Engine</a></td>
 </tr>
 <tr>    
 <td>Connection aggregation</td>
 <td>OneConnect ™</td>
-<td><a href="/docs/16.3/connection-multiplex/">multiplex</a></td>
+<td><a href="/docs/17.1/connection-multiplex/">multiplex</a></td>
 </tr>
 <tr>    
 <td>Central config manager</td>
 <td>Enterprise Manager™ / BIG-IQ™</td>
-<td><a href="/docs/16.3/architectural-overview/">Controller</a></td>
+<td><a href="/docs/17.1/architectural-overview/">Controller</a></td>
 </tr>
 <tr>    
 <td>Orchestrator</td>
 <td>none</td>
-<td><a href="/docs/16.3/architectural-overview/">Controller</a></td>
+<td><a href="/docs/17.1/architectural-overview/">Controller</a></td>
 </tr>
 </tbody>
 </table> 
@@ -82,7 +82,7 @@ BIG-IP LTM configurations can be automatically imported into Avi Vantage's JSON 
 
 ### Manual
 
-Some functionality from BIG-IP LTM cannot be automatically converted.  For instance, F5's iRules are not migrated.  Avi's experience is that about 75% of all iRules can be converted to native point-and-click features, though a professional services engineer will manually inspect the iRule to make that determination.  iRules that cannot be performed as native features will be rewritten in Avi's <a href="/docs/16.3/datascript-guide/">DataScript</a> format, which is similar in logic and function, but based on the more modern Lua language.
+Some functionality from BIG-IP LTM cannot be automatically converted.  For instance, F5's iRules are not migrated.  Avi's experience is that about 75% of all iRules can be converted to native point-and-click features, though a professional services engineer will manually inspect the iRule to make that determination.  iRules that cannot be performed as native features will be rewritten in Avi's <a href="/docs/17.1/datascript-guide/">DataScript</a> format, which is similar in logic and function, but based on the more modern Lua language.
 
 Only LTM configuration is migrated; other modules must be done manually.  If a feature or functionality cannot be converted directly, the Avi engineer will work with the customer to provide a workaround or determine the best course of action.
 

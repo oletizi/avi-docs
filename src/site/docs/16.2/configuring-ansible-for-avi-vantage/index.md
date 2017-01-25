@@ -1,6 +1,6 @@
 ---
 title: Configuring Ansible for Avi Vantage
-layout: default
+layout: 16.2
 ---
 ## Setup
 

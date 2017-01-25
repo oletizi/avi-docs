@@ -1,6 +1,6 @@
 ---
 title: Templates
-layout: default
+layout: 16.2
 ---
 A template is a named set of configuration items or option settings. Templates greatly simplify configuration by allowing the same settings to be used by multiple objects. The settings in a template apply to all the objects that are associated with (bound to) that template.
 

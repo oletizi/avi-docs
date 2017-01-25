@@ -1,6 +1,6 @@
 ---
 title: Overview of Vantage High Availability
-layout: default
+layout: 16.2
 ---
 To ensure the highest level of uptime, careful consideration must be made to ensure the availability for both Avi Controllers and Avi Service Engines.
 

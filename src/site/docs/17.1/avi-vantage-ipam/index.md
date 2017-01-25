@@ -9,7 +9,7 @@ This article walks through the configuration of Avi Vantage's native IPAM soluti
 * VMware
 * No Access 
 
-See also: <a href="/docs/16.3/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
+See also: <a href="/docs/17.1/service-discovery-using-ipam-and-dns-16-3/">Service Discovery Using IPAM and DNS</a>
 
 ### IPAM Configuration
 

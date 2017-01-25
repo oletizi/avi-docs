@@ -9,7 +9,7 @@ The application profile types and their options are described in the following s
 * <a href="#http-profile">HTTP Profile</a>
 * <a href="#dns-profile">DNS Profile</a>
 * <a href="#l4-profile">Layer 4 Profile</a>
-* <a href="/docs/16.3/layer-4-ssl-support">SSL Profile</a>
+* <a href="/docs/17.1/layer-4-ssl-support">SSL Profile</a>
 * <a href="#syslog-profile">Syslog Profile</a> 
 
 ## Dependency on TCP/UDP Profile
@@ -77,7 +77,7 @@ The general tab contains HTTP basic settings:
 * **X-Forwarded-For:** With this option, Avi Vantage will insert an X-Forwarded-For (XFF) header into the HTTP request headers when the request is passed to the server. The XFF header value contains the original client source IP address. Web servers can use this header for logging client interaction instead of using the layer 3 IP address, which will incorrectly reflect the Service Engine's source NAT address. When enabling this option, the XFF Alternate Name field appears, which allows the XFF header insertion to use a custom HTTP header name. If the XFF header or the custom name supplied already exists in the client request, all instances of that header will first be removed. To add the header without removing pre-existing instances of it, use an HTTP request policy.
 * **WebSockets Proxy:** Enabling WebSockets allows the virtual service to accept a client's Upgrade header request. If the server is listening for WebSockets, the connection between the client and server will be upgraded. WebSocket is a full-duplex TCP protocol. The connection will initially start over HTTP, but once successfully upgraded, all HTTP parsing by Avi Vantage will cease and the connection will be treated as a normal TCP connection.
 * **Preserve Client IP Address**: Clicking this option causes the Avi SE to use the client-IP rather than its own as the source-IP for load-balanced connections from the SE to back-end application servers. Enable IP Routing in the SE group is a prerequisite for enabling this option. Preserve Client IP Address is mutually exclusive with SNAT-ting the virtual services. Connection Multiplexing from HTTP(s) Application Profile cannot be used with Preserve Client IP. Also see
-* **Save:** Select another tab from the top menu to continue editing or Save to return to the Application Profiles tab. See also the <a href="/docs/16.3/preserve-client-ip/">Preserve Client IP</a> article. 
+* **Save:** Select another tab from the top menu to continue editing or Save to return to the Application Profiles tab. See also the <a href="/docs/17.1/preserve-client-ip/">Preserve Client IP</a> article. 
 
 ### Multiplex plus Persistence
 
@@ -101,7 +101,7 @@ The HTTP security settings affect how a virtual service should handle HTTPS. If 
 
 <a href="img/Screen-Shot-2016-10-24-at-7.03.37-PM-1.png"><img class="aligncenter wp-image-16743" src="img/Screen-Shot-2016-10-24-at-7.03.37-PM-1.png" alt="Security settings tab of application profile" width="600" height="512"></a>
 
-More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies</a> or <a href="/docs/16.3/datascript-guide/">DataScripts</a>.
+More granular settings also may be configured using <a href="/docs/configuration-guide/applications/vs-policies/">policies</a> or <a href="/docs/17.1/datascript-guide/">DataScripts</a>.
 
 * **SSL Everywhere:** This option enables all of the following options, which together provide the recommended security for HTTPS traffic.
 * **HTTP to HTTPS Redirect:** For a single virtual service configured with both an HTTP service port (SSL disabled) and an HTTPS service port (SSL enabled), this feature will automatically redirect clients from the insecure to the secure port. For instance, clients who type www.avinetworks.com into their browser will automatically be redirected to https://www.avinetworks.com. If the virtual service does not have both an HTTP and HTTPS service port configured, this feature will not activate. For two virtual services (one with HTTP and another on the same IP address listening to HTTPS), an HTTP request policy must be created to manually redirect the protocol and port.
@@ -181,7 +181,7 @@ Avi Vantage can cache HTTP content, thereby enabling faster page load times for 
 
 Enabling caching and compression allows Avi Vantage to compress text-based objects and store both the compressed and original uncompressed versions in the cache. Subsequent requests from clients that support compression will be served from the cache, meaning that Avi Vantage will need not compress every object every time, which greatly reduces the compression workload.
 
-**Note: Regardless of the configured caching policy, an object can be cached o<a href="img/Screen-Shot-2016-10-24-at-7.11.49-PM.png"><img class="alignright wp-image-16748" src="img/Screen-Shot-2016-10-24-at-7.11.49-PM.png" alt="Screen Shot 2016-10-24 at 7.11.49 PM" width="375" height="118"></a>nly if it is <a href="/docs/16.3/overview-of-http-cache/">eligible for caching</a>. Some objects may not be eligible for caching.**
+**Note: Regardless of the configured caching policy, an object can be cached o<a href="img/Screen-Shot-2016-10-24-at-7.11.49-PM.png"><img class="alignright wp-image-16748" src="img/Screen-Shot-2016-10-24-at-7.11.49-PM.png" alt="Screen Shot 2016-10-24 at 7.11.49 PM" width="375" height="118"></a>nly if it is <a href="/docs/17.1/overview-of-http-cache/">eligible for caching</a>. Some objects may not be eligible for caching.**
 
 By default, caching is and appears off, as shown at right. Click the box to enable caching.
 

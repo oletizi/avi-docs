@@ -1,6 +1,6 @@
 ---
 title: Backup and Restore of Avi Vantage Configuration
-layout: default
+layout: 16.3
 ---
 Periodic backup of the Avi Vantage configuration database is recommended. This database defines all clouds, all virtual service, all users, and so on. Any user capable of logging into the admin tenant is authorized to perform a backup. A restore operation spans all the same entities, but can only be performed by the administrator(s) capable of logging into one of the Controllers using SSH or SCP.
 

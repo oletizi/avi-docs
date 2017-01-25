@@ -8,7 +8,7 @@ A change to a template affects all objects that are associated with that templat
 
 Avi Vantage uses the following types of templates:
 
-* <a href="/docs/16.3/configuration-guide/templates/profiles">Profiles ›</a>
-* <a href="/docs/16.3/configuration-guide/templates/groups">Groups ›</a>
-* <a href="/docs/16.3/configuration-guide/templates/security">Security ›</a>
-* <a href="/docs/16.3/configuration-guide/templates/scripts">Scripts ›</a>  
+* <a href="/docs/17.1/configuration-guide/templates/profiles">Profiles ›</a>
+* <a href="/docs/17.1/configuration-guide/templates/groups">Groups ›</a>
+* <a href="/docs/17.1/configuration-guide/templates/security">Security ›</a>
+* <a href="/docs/17.1/configuration-guide/templates/scripts">Scripts ›</a>  

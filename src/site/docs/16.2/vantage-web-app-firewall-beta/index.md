@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage-Web App Firewall Beta
-layout: default
+layout: 16.2
 ---
 Avi Networks is accepting invitations for the closed beta of the web application firewall (WAF) functionality.
 

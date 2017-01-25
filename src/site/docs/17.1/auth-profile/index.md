@@ -4,8 +4,8 @@ layout: default
 ---
 An Auth profile is a set of Authentication, Authorization, and Accounting (AAA) attributes used by Avi Vantage users to log into Avi Vantage. The following types of AAA are supported for Vantage user login:
 
-* <a href="/docs/16.3/ldap-authentication">Lightweight Directory Access Protocol (LDAP)</a>
-* <a href="/docs/16.3/tacacs-for-avi-vantage-users">Terminal Access Controller Access-Control System Plus (TACACS+)</a> 
+* <a href="/docs/17.1/ldap-authentication">Lightweight Directory Access Protocol (LDAP)</a>
+* <a href="/docs/17.1/tacacs-for-avi-vantage-users">Terminal Access Controller Access-Control System Plus (TACACS+)</a> 
 
 To configure an Auth profile:
 

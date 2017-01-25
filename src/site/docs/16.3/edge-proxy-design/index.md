@@ -1,6 +1,6 @@
 ---
 title: Edge Proxy Design
-layout: default
+layout: 16.3
 ---
 ### Edge Proxy Use Case
 

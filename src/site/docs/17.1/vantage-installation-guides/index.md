@@ -6,10 +6,10 @@ Avi Vantage can be installed into various types of cloud infrastructures. If per
 
 ### Cloud Management
 
-* <a href="/docs/16.3/deploying-avi-vantage-for-vmware-vcenter-2/">Installing Avi Vantage for VMware vCenter</a>
-* <a href="/docs/16.3/installation-guides/installing-avi-vantage-for-openstack-2/">Installing Avi Vantage for OpenStack</a>
-* <a href="/docs/16.3/installation-guides/installing-avi-vantage-on-bare-metal-2/">Installing Avi Vantage on Bare Metal</a> 
+* <a href="/docs/17.1/deploying-avi-vantage-for-vmware-vcenter-2/">Installing Avi Vantage for VMware vCenter</a>
+* <a href="/docs/17.1/installation-guides/installing-avi-vantage-for-openstack-2/">Installing Avi Vantage for OpenStack</a>
+* <a href="/docs/17.1/installation-guides/installing-avi-vantage-on-bare-metal-2/">Installing Avi Vantage on Bare Metal</a> 
 
 ### SDN Integration
 
-* Cisco APIC: <a href="/docs/16.3/installation-guides/installing-avi-vantage-for-cisco-application-policy-infrastructure/">Installing Avi Vantage for Cisco Application Policy Infrastructure</a> 
+* Cisco APIC: <a href="/docs/17.1/installation-guides/installing-avi-vantage-for-cisco-application-policy-infrastructure/">Installing Avi Vantage for Cisco Application Policy Infrastructure</a> 

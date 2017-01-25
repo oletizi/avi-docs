@@ -1,6 +1,6 @@
 ---
 title: Access to Avi Portal
-layout: default
+layout: 16.2
 ---
 The Avi portal is accessible here: <a href="http://www.avinetworks.com/portal">www.avinetworks.com/portal</a>
 

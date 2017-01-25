@@ -2,13 +2,13 @@
 title: Vantage Integration with SafeNet Network HSM (16&#46;2&#46;2)
 layout: default
 ---
-**Note: Those still on Avi Vantage 16.2 should instead read <a href="/docs/16.3/vantage-integration-with-safenet-network-hsm/">Vantage Integration with SafeNet Network HSM (16.2)</a>.**
+**Note: Those still on Avi Vantage 16.2 should instead read <a href="/docs/17.1/vantage-integration-with-safenet-network-hsm/">Vantage Integration with SafeNet Network HSM (16.2)</a>.**
 
 ## Introduction
 
 Avi Vantage includes support for networked hardware security module (HSM) products, including SafeNet Network HSM and Thales nShield.
 
-This article covers the SafeNet Network HSM (formerly Luna SA) integration. For Thales nShield support, see <a href="/docs/16.3/thales-nshield-integration-2/">here</a>.
+This article covers the SafeNet Network HSM (formerly Luna SA) integration. For Thales nShield support, see <a href="/docs/17.1/thales-nshield-integration-2/">here</a>.
 
 This article describes how to configure Vantage to use the key generation and encryption/decryption services provided by SafeNet Network HSM. This enables use of SafeNet Network HSM to store keys associated with SSL/TLS resources configured on a virtual service.
 <a name="multiple-HSM-profiles"></a>
@@ -96,7 +96,7 @@ This command uploads the packages and installs them on the Avi Controller or Avi
 
 ## Enabling HSM Support in Avi Vantage
 
-After using the above steps to install the SafeNet software bundle onto the Avi Controller, the Controller may be configured to secure virtual services with HSM certificates. Note: Starting with release 16.2.2, <a href="/docs/16.3//certificate-management-integration-for-csr-automation/">automated CSR workflow for SafeNet HSM</a> is supported.
+After using the above steps to install the SafeNet software bundle onto the Avi Controller, the Controller may be configured to secure virtual services with HSM certificates. Note: Starting with release 16.2.2, <a href="/docs/17.1//certificate-management-integration-for-csr-automation/">automated CSR workflow for SafeNet HSM</a> is supported.
 <ol> 
  <li>Create the HSM group and add the HSM devices to it.</li> 
  <li>Register the client with HSM devices.</li> 

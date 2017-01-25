@@ -1,6 +1,6 @@
 ---
 title: Connection Multiplexing
-layout: default
+layout: 16.2
 ---
 ### Overview
 

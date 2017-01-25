@@ -1,6 +1,6 @@
 ---
 title: Avi SE Behavior On Gateway Monitor Failure
-layout: default
+layout: 16.2
 ---
 <a href="/docs/16.2/gateway-monitoring-for-legacy-ha">Legacy high availability (HA) includes support for gateway monitoring</a>. Avi Service Engines (SEs) taking on either active or standby roles for a virtual service in a legacy HA deployment can perform gateway monitoring. By default, gateway monitoring is off until an IP address to monitor is furnished for the cloud. When an IP address is furnished, all legacy HA SE groups within the cloud perform gateway monitoring.
 

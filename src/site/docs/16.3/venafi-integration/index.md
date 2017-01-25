@@ -1,6 +1,6 @@
 ---
 title: Venafi Integration
-layout: default
+layout: 16.3
 ---
 <a href="img/Venafi.png"><img class="size-full wp-image-18385 alignright" src="img/Venafi.png" alt="Venafi" width="263" height="185"></a>Avi Vantage can be set up to integrate with the <a href="https://www.venafi.com/platform/trust-protection-platform">Venafi Trust Protection Platform</a>™ for automation of SSL and TLS certificate life-cycle management.  All certificates will be protected and controlled through TPP.  This process is transparent to the Avi Controllers.
 

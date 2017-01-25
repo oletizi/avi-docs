@@ -1,6 +1,6 @@
 ---
 title: Overview of Vantage Security
-layout: default
+layout: 16.2
 ---
 Avi Networks strives to ensure the highest level of security, adhering to rigorous testing and validation standards. Avi Vantage includes numerous security related features to ensure the integrity of the Vantage system as well as the applications and services protected by Vantage. This article is focused on the security of Avi Service Engines and Avi Controllers.
 

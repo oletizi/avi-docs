@@ -1,6 +1,6 @@
 ---
 title: SNMP Support in Avi Vantage
-layout: default
+layout: 16.3
 ---
 Avi Vantage supports SNMP v2c. The MIB file name is AVI-NETWORKS-MIB.my and is available for download at the following location: <a href="https://github.com/avinetworks/sdk/tree/master/mibs">https://github.com/avinetworks/sdk/tree/master/mibs</a>
 
