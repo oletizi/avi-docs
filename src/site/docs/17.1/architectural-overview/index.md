@@ -2,6 +2,7 @@
 title: Architectural Overview
 layout: layout171
 ---
+
 The Avi Vantage platform is built on software-defined principles, enabling a next generation architecture to deliver the flexibility and simplicity expected by IT and lines of business. The Avi Vantage architecture separates the data and control planes to deliver application services beyond load balancing, such as application analytics, predictive autoscaling, micro-segmentation, and self-service for app owners in both on-premises or cloud environments. The platform provides a centrally managed, dynamic pool of load balancing resources on commodity x86 servers, VMs or containers, to deliver granular services close to individual applications. This allows network services to scale near infinitely without the added complexity of managing hundreds of disparate appliances.
 
 <a href="img/Screen-Shot-2016-08-11-at-10.43.58-AM.png"><img class="wp-image-11487 aligncenter annotatable" src="img/Screen-Shot-2016-08-11-at-10.43.58-AM.png" alt="Screen-Shot-2016-08-11-at-10.43.58-AM" width="400" height="266"></a>
