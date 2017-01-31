@@ -64,4 +64,4 @@ $(document).ready(function () {
         }
         Cookies.set(cookieName, expanded);
     });
-})
+});
