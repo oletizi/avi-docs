@@ -1,3 +1,7 @@
 [submodule "src/avi-sdk"]
 	path = src/avi-sdk
 	url = https://github.com/avinetworks/sdk.git
+[submodule "src/site/docs/17.1"]
+	path = src/site/docs/17.1
+	url = git@github.com:oletizi/avi-docs-content.git
+	branch = 17.1
