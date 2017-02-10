@@ -16,6 +16,7 @@ cloned=0;
 
 for branch in $content_branches; do
 
+    cd $parent
     clone_name="avi-docs-content-${branch}"
     clone_path="${parent}/${clone_name}"
     ## Make sure the content repo clone for this branch exists
