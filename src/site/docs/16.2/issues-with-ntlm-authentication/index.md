@@ -1,6 +1,6 @@
 ---
 title: Issues with NTLM Authentication
-layout: default
+layout: layout162
 ---
 A number of Microsoft applications such as SharePoint and Outlook Anywhere rely on NTLM for session authentication. NTLM has a few unique requirements for load balancing that are addressed in this article, along with recommended changes for impacted applications or virtual services.
 

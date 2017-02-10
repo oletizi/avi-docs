@@ -1,6 +1,6 @@
 ---
 title: Password Recovery
-layout: default
+layout: layout162
 ---
 ### <a href="img/MyAccount.png"><img class=" wp-image-13114 alignright" src="img/MyAccount.png" alt="MyAccount" width="366" height="321"></a>Reset a Known Password
 

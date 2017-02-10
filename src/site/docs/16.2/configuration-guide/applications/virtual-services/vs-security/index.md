@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Security
-layout: default
+layout: layout162
 ---
 Avi Vantage continually assesses the health of each virtual service. This health information is available for viewing in both summary and detailed form.
 

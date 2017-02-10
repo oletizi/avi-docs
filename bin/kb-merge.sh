@@ -24,7 +24,8 @@ for i in `find $queue -type f`; do
     echo "Dest file : $destfile"
     if [ ! -e $destfile ]; then
         # Ask if the file should be copied to the destination location
-        echo "$desfile not found. Copy queue file there: $i"
+        echo "Dest file not found."
+        echo "Copy queue file to dest? [N|y]"
         read response
         if [ "$response" == y ]; then
             destdir=$(dirname $destfile)

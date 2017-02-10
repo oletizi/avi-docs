@@ -1,6 +1,6 @@
 ---
 title: Traffic Capture with Scaled Out Service Engines
-layout: default
+layout: layout162
 ---
 When running a traffic capture (TCPdump), a virtual service must first be selected.
 

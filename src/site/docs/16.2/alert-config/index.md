@@ -1,6 +1,6 @@
 ---
 title: Alert Config
-layout: default
+layout: layout162
 ---
 <a href="img/Alert-Workflow.png"><img class=" wp-image-8402 alignright" src="img/Alert-Workflow.png" alt="Alert Workflow" width="490" height="89"></a>Events trigger alerts to actively highlight important information. Avi Vantage includes a number of default alerts via the Operations &gt; Alerts &gt; Alert Config page. The default system alerts may not be deleted, but can be modified or disabled. Alert configs are triggers that determine whether or not an alert should be generated. See the <a href="/docs/16.2/alerts-overview">Alerts Overview</a> for a broader description of the entire process depicted in the above graphic.
 

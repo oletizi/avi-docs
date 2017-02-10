@@ -1,6 +1,6 @@
 ---
 title: SSL Everywhere
-layout: default
+layout: layout162
 ---
 The Templates &gt; Profiles &gt; HTTP application profile's security settings page affects how a virtual service should handle HTTPS. These settings provide a simple interface to enabling common HTTPS-related functionality. If the HTTP profile is attached to a virtual service that is only configured for HTTP, the HTTPS settings in this section will not apply. Only if the virtual service is configured for HTTPS, or HTTP and HTTPS within the same virtual service, will these settings take effect.
 

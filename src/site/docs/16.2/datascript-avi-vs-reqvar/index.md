@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;vs&#46;reqvar
-layout: default
+layout: layout162
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

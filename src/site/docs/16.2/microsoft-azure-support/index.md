@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure Support
-layout: default
+layout: layout162
 ---
 Avi Vantage does not yet support Microsoft Azure. Avi is actively working towards support of this environment. If this is a requirement, please contact Avi support at support@avinetworks.com 
 

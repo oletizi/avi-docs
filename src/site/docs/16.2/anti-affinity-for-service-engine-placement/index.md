@@ -1,6 +1,6 @@
 ---
 title: Anti-affinity for Service Engine Placement
-layout: default
+layout: layout162
 ---
 When Service Engines (SEs) are deployed in a cloud with write access mode, it is important to ensure that the SEs are deployed on different server hosts. If all SEs are created on a single host and that host fails, there is no high availability or immediate failover.
 

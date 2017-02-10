@@ -1,6 +1,6 @@
 ---
 title: Purge an Object from HTTP Cache
-layout: default
+layout: layout162
 ---
 Often a single object or page may become stale, such as when a website is updated. Rather than invalidate or expire all objects from Vantage's HTTP content cache, only the impacted items should be invalidated. The following commands show how to perform this action from the CLI.
 

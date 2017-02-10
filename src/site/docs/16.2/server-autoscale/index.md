@@ -1,6 +1,6 @@
 ---
 title: Server Autoscale
-layout: default
+layout: layout162
 ---
 Server autoscale dynamically scales a server pool, by adding new pool members (scaling out) or removing them (scaling in). This article exposes steps by which to configure server autoscale from the UI.
 

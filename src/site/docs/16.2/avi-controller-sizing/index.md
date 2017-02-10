@@ -1,6 +1,6 @@
 ---
 title: Avi Controller Sizing
-layout: default
+layout: layout162
 ---
 During deployment of an Avi Controller, the system capacity of the Avi Controller can be specified based on allocations of the following system resources:
 

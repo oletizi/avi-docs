@@ -1,6 +1,6 @@
 ---
 title: Clickjacking Protection
-layout: default
+layout: layout162
 ---
 Starting in version Avi Vantage 15.3, the Avi Controller has clickjacking protection. The clickjacking protection is enabled by default.
 

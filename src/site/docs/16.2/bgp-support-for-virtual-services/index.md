@@ -1,6 +1,6 @@
 ---
 title: BGP Support for Scaling Virtual Services
-layout: default
+layout: layout162
 ---
 One of the ways Avi Vantage can add load balancing capacity for a virtual service is to place the virtual service on additional Service Engines (SEs). For example, capacity can be added for a virtual service when needed by scaling out the virtual service onto additional SEs within the SE group, then removing (scaling in) the additional SEs when no longer needed. In this case, the primary SE for the virtual service coordinates distribution of the virtual service traffic among the other SEs, while also continuing to process some of the virtual service's traffic.
 

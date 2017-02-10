@@ -1,6 +1,6 @@
 ---
 title: IPAM and DNS Support (16&#46;2)
-layout: default
+layout: layout162
 ---
 The Avi Controller can be configured to provide automatic IP address allocation for VIPs and to provide authoritative DNS resolution for VIP addresses.
 

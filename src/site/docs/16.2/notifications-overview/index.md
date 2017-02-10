@@ -1,6 +1,6 @@
 ---
 title: Notifications Overview
-layout: default
+layout: layout162
 ---
 Avi Vantage aggressively monitors system health, which is tracked via events or metrics. Over 500 data points for the system and virtual services are analyzed continually by alert configurations, which create alerts.
 

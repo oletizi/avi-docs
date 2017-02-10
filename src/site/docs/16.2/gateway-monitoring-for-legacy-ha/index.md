@@ -1,6 +1,6 @@
 ---
 title: Gateway Monitoring for Legacy HA
-layout: default
+layout: layout162
 ---
 Avi Vantage supports health monitoring of the first-hop gateways connected to Avi Service Engines (SEs.) ICMP echo packets are used to perform the health monitoring.
 

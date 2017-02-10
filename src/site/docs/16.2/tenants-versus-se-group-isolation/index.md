@@ -1,6 +1,6 @@
 ---
 title: Tenants Versus SE Group Isolation
-layout: default
+layout: layout162
 ---
 ### About
 

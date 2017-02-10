@@ -1,6 +1,6 @@
 ---
 title: Clustering Avi Controllers That Are in Different Networks
-layout: default
+layout: layout162
 ---
 Avi Controller clusters provide high availability (HA) and redundancy, as well as increased scale for analytic workloads. A common question is how to best architect the placement of Avi Controllers to ensure the highest redundancy.
 

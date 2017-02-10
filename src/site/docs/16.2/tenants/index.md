@@ -1,6 +1,6 @@
 ---
 title: Tenants
-layout: default
+layout: layout162
 ---
 A tenant is an isolated instance of Avi Vantage. Each Vantage user account is associated with one or more tenants. The tenant associated with a user account defines the resources that user can access within Vantage. When a user logs in, Vantage restricts their access to only those resources that are in the same tenant.
 

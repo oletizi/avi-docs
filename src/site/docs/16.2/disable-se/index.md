@@ -1,6 +1,6 @@
 ---
 title: Disable SE
-layout: default
+layout: layout162
 ---
 Disable Service Engine (SE) feature provides ability for users to stop placement of VSs on certain SEs and to migrate multiple Virtual Services (VS) from an existing SE. This can be useful during maintenance or decommissioning of an SE. Currently, <a href="/docs/16.2/configuration-guide/applications/vs-scaling/">VS migration</a> lets user migrate a VS from one SE to another SE. Underneath, disable SE functionality relies on VS migration to achieve migration of all VSs from SE. 
 

@@ -1,9 +1,4 @@
-#!/usr/bin/env bash
-dir=`dirname $0`
-cd $dir
-cd ..
-root=`pwd`
-docroot=$root/src/site
-libroot=$root/lib/java/
+#!/bin/sh
 
-export snarfjar=$libroot/avi-docs-snarfer-1.0.3-jar-with-dependencies.jar
+content_git_url="git@github.com:oletizi/avi-docs-content.git"
+content_branches="16.3 17.1"

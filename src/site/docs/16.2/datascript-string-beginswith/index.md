@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; string&#46;beginswith
-layout: default
+layout: layout162
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>       

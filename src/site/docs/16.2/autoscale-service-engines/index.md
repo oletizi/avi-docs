@@ -1,6 +1,6 @@
 ---
 title: Autoscale Service Engines
-layout: default
+layout: layout162
 ---
 During the course of performing application delivery tasks, Avi Service Engines (SEs) may run into some form of resource exhaustion.  This may be due to CPU, memory, or packets per second.  To increase the capacity of a load-balanced virtual service, Vantage needs to increase the amount of resources dedicated to the virtual service. The Avi Controller can migrate a virtual service to an unused SE, or scale out the virtual service across multiple SEs for even greater capacity.  This allows multiple active SEs to concurrently share the workload of a single virtual service.
 &gt; <strong>Note: Prior to Avi Vantage version 16.1, scaling of virtual services was manual in the UI and automatic only when configured through the CLI.</strong>

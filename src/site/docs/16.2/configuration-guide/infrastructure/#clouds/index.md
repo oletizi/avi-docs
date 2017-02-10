@@ -1,6 +1,6 @@
 ---
 title: Infrastructure
-layout: default
+layout: layout162
 ---
 Avi Vantage may be deployed in multiple environments for the same system. Each environment is called a "cloud". During the initial configuration of the Avi Controller, a cloud is created by selecting the deployment environment: Mesos, VMware, Amazon Web Services (AWS), OpenStack, or another supported environment. Within the Infrastructure settings, the default cloud may be modified and additional clouds may be added.
 

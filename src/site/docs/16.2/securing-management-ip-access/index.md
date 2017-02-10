@@ -1,6 +1,6 @@
 ---
 title: Securing Management IP Access
-layout: default
+layout: layout162
 ---
 By default, the Avi Controller does not restrict the client IP addresses that are allowed to attempt access to the Avi Controller through its management interfaces. Beginning in 16.2, Avi Vantage provides a way to define the set of IP addresses that are allowed to attempt management access to the Avi Controller.
 

@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for VMware vCenter
-layout: default
+layout: layout162
 ---
 This guide describes how to integrate Avi Vantage into a VMware vCenter cloud.
 

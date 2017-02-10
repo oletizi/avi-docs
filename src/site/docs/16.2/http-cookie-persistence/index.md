@@ -1,6 +1,6 @@
 ---
 title: HTTP Cookie Persistence
-layout: default
+layout: layout162
 ---
 The HTTP cookie mode of persistence enables sticking a client to a server for the duration of their session. HTTP cookie persistence may be applied to any virtual service with an attached HTTP application profile. With this persistence method, Vantage Service Engines (SEs) will insert an HTTP cookie into a server's first response to a client. 
 

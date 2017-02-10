@@ -1,6 +1,6 @@
 ---
 title: Server Requires Original Client Source IP Address
-layout: default
+layout: layout162
 ---
 By default, Avi Service Engines (SE) perform Network Address Translation (SNAT) of the client source address. This means application servers will see the Avi SE's IP address as the source IP of the traffic.
 

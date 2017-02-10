@@ -1,6 +1,6 @@
 ---
 title: Default System Accounts
-layout: default
+layout: layout162
 ---
 Vantage inherently comes with several user accounts created.  These accounts serve specific purposes, and unlike custom user accounts, they may not be disabled or removed.
 

@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage in OpenShift
-layout: default
+layout: layout162
 ---
 ## Introduction
 

@@ -1,6 +1,6 @@
 ---
 title: Adding Avi Service Engines to a Linux Server Cloud
-layout: default
+layout: layout162
 ---
 This article describes how to add a new Avi Service Engine (SE) to an existing Linux server cloud.
 

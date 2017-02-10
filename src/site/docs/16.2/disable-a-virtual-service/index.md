@@ -1,6 +1,6 @@
 ---
 title: Disable a Virtual Service
-layout: default
+layout: layout162
 ---
 <img class="size-full wp-image-158 alignright" src="img/Disabled1.png" alt="Disabled1" width="302" height="104">A virtual service may be manually disabled by an administrator or an automated script.  While disabled, the virtual service is unattached from the Service Engines that were hosting it. Likewise:
 

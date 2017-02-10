@@ -1,6 +1,6 @@
 ---
 title: HA for Avi Controllers
-layout: default
+layout: layout162
 ---
 Avi Vantage can run with a single Avi Controller (single-node deployment) or with a 3-node Avi Controller cluster. In a deployment that uses a single Avi Controller, that Avi Controller performs all administrative functions as well as all analytics data gathering and processing.
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body>
+<div class="container-fluid">
+    {% include header.html %}
+    <div class="row content-row">
+        <div class="col-sm-3">
+            <div id="sidebar-wrapper col-sm-3">
+                {% include sidebar-16.1.html %}
+                <div class="in-page-controls"></div>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <div class="main-content">
+                <div class=" content">
+                    <div class="inner">
+                        <h1>{{ page.title }}</h1>
+                        {{ content }}
+                        <p>{% render_time Updated: %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="toc-wrapper">
+                <div class="toc" data-spy="affix" data-offset-top="93">
+                    <div id="toc-title">On This Page</div>
+                    <ul id="toc"></ul>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('#toc').toc();
+                        });
+                    </script>
+                    <p>Version: 16.1</p>
+                    <p class="edit-page">
+                        <a href="https://github.com/oletizi/avi-docs/blob/master/src/site{{ page.url | replace: 'latest', site.version }}/index.md">Edit
+                            Page &rsaquo;</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col-sm-12">
+            {% include footer.html %}<!--<p>Version: { % project_version tag short % }</p>-->
+        </div>
+    </div>
+</div>  <!-- end of container -->
+</body>
+</html>

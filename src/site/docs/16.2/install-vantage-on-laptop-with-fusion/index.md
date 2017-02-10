@@ -1,6 +1,6 @@
 ---
 title: Install Avi Vantage on a Laptop with Fusion
-layout: default
+layout: layout162
 ---
 Avi Networks provides best-effort support for installing Avi Vantage (the Avi Controller and Service Engine) on VMware Fusion. For basic functionality testing, such as installing on a laptop, this solution works quite well. However, for fully redundant deployments or for capacity and performance testing, Avi strongly recommends following the requirements for the chosen environment.
 
