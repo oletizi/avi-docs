@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $HOME/.algolia/key.sh
+
 cd `dirname $0`
 bin=`pwd | xargs echo -n`
 cd ..
