@@ -1,6 +1,6 @@
 ---
 title: Alert Actions
-layout: layout171
+layout: layout163
 ---
 <a href="img/Alert-Workflow.png"><img class="wp-image-8402 alignright" src="img/Alert-Workflow.png" alt="Alert Workflow" width="426" height="78"></a>
 The *Operations &gt; Alerts &gt; Alert Actions* page displays the configured Alert Actions. An alert config defines the *conditions under which* action for the particular alert should be taken.  It also defines a corresponding alert action, which lists the specific action(s) needing to be taken.  Multiple alert configs can point to the same alert action. For example, the alert configs for all security and account alerts might reference the same alert action, one which forwards messages to a remote audit system. See also:

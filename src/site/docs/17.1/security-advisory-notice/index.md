@@ -1,6 +1,6 @@
 ---
 title: Security Advisory Notice
-layout: layout171
+layout: layout163
 ---
 These are the security notices that affect the supported releases of Avi Vantage. It provides a brief description of the security vulnerability, the affected component and a link to detailed description of the issue and the associated Common Vulnerabilities and Exposure (CVE). Please plan on upgrading to the "Resolved from" release or beyond if this is a critical issue that affects your deployment.
 

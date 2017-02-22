@@ -1,6 +1,6 @@
 ---
 title: Password History Enforcement
-layout: layout171
+layout: layout163
 ---
 This feature prevents a user from updating his/her password to some password that was used in the recent past. A configurable number of previous password hashes are saved in the system. Any future proposed password update is compared against this list and marked invalid if there is a perfect match.
 

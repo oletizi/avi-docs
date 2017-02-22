@@ -1,6 +1,6 @@
 ---
 title: LDAP Authentication Profile Testing
-layout: layout171
+layout: layout163
 ---
 Avi Vantage provides an option for testing authentication profiles configured on the Avi Controller.
 

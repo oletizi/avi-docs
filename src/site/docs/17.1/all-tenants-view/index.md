@@ -1,6 +1,6 @@
 ---
 title: All Tenants View
-layout: layout171
+layout: layout163
 ---
 The All Tenants view provides a global view of all Vantage objects across all tenants. This includes all the tenants, including the admin tenant.
 

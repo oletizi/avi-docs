@@ -1,6 +1,6 @@
 ---
 title: Server Name Indication
-layout: layout171
+layout: layout163
 ---
 ### Description
 

@@ -1,6 +1,6 @@
 ---
 title: Controller to SE Communication
-layout: layout171
+layout: layout163
 ---
 <a href="img/ControllerCommunication.png"><img class=" wp-image-13066 alignright" src="img/ControllerCommunication.png" alt="ControllerCommunication" width="323" height="189"></a>Avi Controllers continually exchange information securely with Service Engines (SEs). Likewise, in cluster deployments (multiple Controllers), the Controllers also continually exchange information with one other, securely. SEs perform data plane operations such as load balancing, and report related information to the Controllers. This information includes server health, client connection information, and request logs. In cluster deployments, the multiple Controllers share the workload for log processing and analytics.
 

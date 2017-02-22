@@ -1,6 +1,6 @@
 ---
 title: Terms of Avi Vantage Software License
-layout: layout171
+layout: layout163
 ---
 Avi Vantage software must be licensed. A free trial license is available for evaluating the product. To deploy Avi Vantage into an enterprise cloud, an enterprise license is recommended.
 

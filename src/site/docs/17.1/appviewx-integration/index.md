@@ -1,6 +1,6 @@
 ---
 title: AppViewX Integration
-layout: layout171
+layout: layout163
 ---
 Avi Network's partnership with AppViewX enables Avi Vantage deployments to be managed from AppViewX's ADC+.  AppViewX uses API calls to send and receive configuration information with the Vantage Controllers, and can be used as a central point of management for multiple Vantage Controller clusters, other devices such as firewalls, and may also provide SSL certificate lifecycle management with CERT+.
 

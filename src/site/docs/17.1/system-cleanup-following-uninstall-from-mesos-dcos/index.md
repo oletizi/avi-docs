@@ -1,6 +1,6 @@
 ---
 title: System Cleanup Following Uninstall from Mesos DCOS
-layout: layout171
+layout: layout163
 ---
 If Avi Vantage will no longer be used in an on-premises Mesos Datacenter Operating System (DCOS) cloud, run the command string shown in the following example as ***root*** administrator on each host in the Mesos cluster. The command cleans up any persistent state information that may be left over from Vantage.
 

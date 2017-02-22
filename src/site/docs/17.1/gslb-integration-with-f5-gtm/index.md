@@ -1,6 +1,6 @@
 ---
 title: GSLB Integration with F5 GTM
-layout: layout171
+layout: layout163
 ---
 To ensure high availability across geographic regions or data centers, Avi Networks recommends use of multiple data centers to distribute risk and reduce failure domains. Avi recognizes that many customers already own global server load balancers from other vendors, which provide DNS-based load balancing across geographies. Avi Vantage is able to work with most global server load balancing (GSLB) solutions, though the level of integration depends on the vendor used.
 

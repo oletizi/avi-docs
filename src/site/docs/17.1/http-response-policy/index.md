@@ -1,6 +1,6 @@
 ---
 title: HTTP Response Policy
-layout: layout171
+layout: layout163
 ---
 HTTP response policies evaluate responses from the server, and can be used to modify the server’s response headers. These policies are generally used to rewrite redirects or used in conjunction with HTTP request policies to provide a client to server name rewriting capability similar to Apache’s ProxyPass. If the intent is to create a hostname mapping from internal to external, consider using the more straightforward Host Name Translation feature within the advanced section of a virtual service. During the HTTP response match, the match criteria that are based on client data are evaluated against the original client request. For instance, if the client requested /fruit.htm, and a request policy modified the path to /cheese.htm, the response match rule for path would compare against the unmodified, original path sent from the client, /fruit.htm. The table below lists the match criteria available under HTTP response, as well as the actions that can be configured to occur upon a match being made.
 

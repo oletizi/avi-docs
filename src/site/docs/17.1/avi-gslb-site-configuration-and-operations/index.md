@@ -1,13 +1,13 @@
 ---
 title: Avi GSLB Site Configuration and Operations
-layout: layout171
+layout: layout163
 ---
 This article describes Avi GSLB GUI- and CLI-based configuration, as well as its ability to cope with various failure modes.
 
 ### Prerequisite Reading
 
 * <a href="{% vpath %}/avi-gslb-overview/">Avi GSLB Overview</a>
-* <a href="/docs/16.4/gslb-architecture-and-object-model/">Avi GSLB Architecture and Object Model</a>
+* <a href="{% vpath %}/gslb-architecture-and-object-model/">Avi GSLB Architecture and Object Model</a>
 
 ### Avi GSLB Sites
 
@@ -558,5 +558,5 @@ Connection logs provide information about the FQDN and the response IP addresses
 
 ### Recommended Reading
 
-* <a href="/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitoring</a>
-* <a href="/avi-dns-architecture/">Avi DNS Architecture and Features</a>
+* <a href="{% vpath %}/avi-gslb-service-and-health-monitors/">Avi GSLB Service and Health Monitoring</a>
+* <a href="{% vpath %}/avi-dns-architecture/">Avi DNS Architecture and Features</a>

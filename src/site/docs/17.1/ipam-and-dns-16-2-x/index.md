@@ -1,6 +1,6 @@
 ---
 title: IPAM and DNS (16.2.x)
-layout: layout171
+layout: layout163
 ---
 The Avi Controller can be configured to provide automatic IP address allocation for virtual services and to provide authoritative DNS resolution for their virtual IP addresses.
 

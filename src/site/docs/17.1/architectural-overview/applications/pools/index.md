@@ -1,6 +1,6 @@
 ---
 title: Pools
-layout: layout171
+layout: layout163
 ---
 This chapter contains the following sections:
 

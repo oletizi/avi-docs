@@ -1,6 +1,6 @@
 ---
 title: Recover a Non-Operational Controller Cluster
-layout: layout171
+layout: layout163
 ---
 In the case where two of the three Controller nodes within a cluster are permanently down and not recoverable, the remaining Controller node in the cluster will be marked operationally down due to the lack of cluster quorum. Note that all Service Engines will continue to operate in a headless fashion. The following steps can be used to return to a fully redundant three node cluster.
 

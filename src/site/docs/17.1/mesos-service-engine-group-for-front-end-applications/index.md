@@ -1,6 +1,6 @@
 ---
 title: Mesos&#58; Use of SE Groups based on Application Resource Needs
-layout: layout171
+layout: layout163
 ---
 For optimal performance, it is sometimes necessary to create different "types" of Avi Service Engines (SEs) with different resource allocations within a Mesos cluster.
 

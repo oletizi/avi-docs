@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Creation&#58; VMware
-layout: layout171
+layout: layout163
 ---
 In Avi Vantage, a virtual service is the combination of an IP address and a TCP/UDP port number. Each virtual service is associated with a pool of servers. Vantage load balances web requests from end-users among the servers in the virtual service's pool.
 

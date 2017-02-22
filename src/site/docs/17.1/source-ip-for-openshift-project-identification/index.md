@@ -56,13 +56,33 @@ spec:
       value: 172.18.0.1
     - name: BRIDGE_NETMASK
       value: "16"
+    - name: TCP_HM_PORT
+      value: "4"
     volumeMounts:
-      - mountPath: /hostroot
-        name: hostroot
+      - mountPath: /hostroot/var/run
+        name: run
+      - mountPath: /hostroot/proc/1/ns/net
+        name: ns1
+    ports:
+      - name: foo
+        containerPort: 8080
+        protocol: TCP
+      - name: bar
+        containerPort: 8443
+        protocol: TCP
+    livenessProbe:
+      tcpSocket:
+        port: 4
+      initialDelaySeconds: 10
+      periodSeconds: 3
+      failureThreshold: 3
   volumes:
-  - name: hostroot
+  - name: run
     hostPath:
-      path: /</code></pre>  <code>EGRESS_SOURCE</code> uniquely identifies the project. It should be a free IP address from the subnet to which OpenShift nodes are connected. 
+      path: /var/run
+  - name: ns1
+    hostPath:
+      path: /proc/1/ns/net</code></pre>  <code>EGRESS_SOURCE</code> uniquely identifies the project. It should be a free IP address from the subnet to which OpenShift nodes are connected.
 
 <code>EGRESS_DESTINATION</code> is the destination IP address of the application outside the cluster.
 
@@ -70,9 +90,13 @@ spec:
 
 <code>BRIDGE_NETMASK</code> is the netmask bits for the Avi bridge, the default for which is 16.
 
+<code>TCP_HM_PORT</code> is the port used for TCP Health Monitoring. Defaults to port 4 if not set. If set to a different value, change the "port" field in the "livenessProbe" section above to match this port value.
+
+Avi egress pod has a TCP listener at port TCP_HM_PORT for Health Monitoring purposes. The Pod is configured with a livenessProbe for Health Monitoring.
+
 ### Create the Pod Using OpenShift Client
 
-<pre><code class="language-lua">&gt;oc create -f avi-egress-pod.yaml</code></pre>  
+<code><br> &gt;oc create -f avi-egress-pod.yaml<br> </code>
 
 ### 2. Create a Secure Service for the Pod
 
@@ -106,7 +130,7 @@ spec:
 
 ### Create the service using OpenShift client
 
-<pre><code class="language-lua">&gt;oc create -f secure-egress-service.json</code></pre>  
+<code><br> &gt;oc create -f secure-egress-service.json<br> </code>
 
 ### Service Usage
 

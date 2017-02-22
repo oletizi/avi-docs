@@ -1,6 +1,6 @@
 ---
 title: System Requirements&#58; Ecosystem
-layout: layout171
+layout: layout163
 ---
  
 

@@ -1,6 +1,6 @@
 ---
 title: Overview of Controller Cluster
-layout: layout171
+layout: layout163
 ---
 <a href="img/Controller-3-node.png"><img class="size-full wp-image-11811 alignright" src="img/Controller-3-node.png" alt="Controller-3-node" width="150" height="152"></a>Avi Controllers can be deployed as a single node (one instance of the Avi Controller) or as a 3-node cluster. This article answers basic questions about Avi Controller clusters.
 

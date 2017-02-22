@@ -1,6 +1,6 @@
 ---
 title: Deploy SEs in Different Data Centers from Controllers
-layout: layout171
+layout: layout163
 ---
 An oft asked question is whether Avi Controllers may be deployed in different data centers from their Avi Service Engines.  Asked another way, can Controllers manage SEs in multiple data centers?  There is no strict requirement that will prevent Controllers managing remote SEs.  However, it is important to understand the best practices and ensure the deployment will scale with resilience.
 

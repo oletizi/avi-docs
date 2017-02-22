@@ -1,6 +1,6 @@
 ---
 title: Multi-level Domain Support for SSL
-layout: layout171
+layout: layout163
 ---
 Avi Vantage SSL support includes multi-level domain name support. Multi-level domain support allows a pool to be configured with a list of multiple domain names for server certificate verification. During SSL session setup between a back-end server and Avi Service Engine (SE), Avi Vantage checks the server's certificate for the domain names listed in the pool. If any of the domain names are found in the certificate, the SSL session is allowed. However, if the certificate presented by the back-end server does not contain any of the domain names listed in the pool, the SSL session is not allowed.
 

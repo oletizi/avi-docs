@@ -1,6 +1,6 @@
 ---
 title: Sharing Admin Profiles Across Tenants
-layout: layout171
+layout: layout163
 ---
 Profile objects in the admin tenant are shared across all tenants in the system. We refer here to objects visible under the Templates section of the UI such as Health Monitor, Application Profile, SSL Profile, Network Profile, PKI Profile, etc.
 

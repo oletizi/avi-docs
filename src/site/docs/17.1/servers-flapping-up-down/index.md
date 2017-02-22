@@ -1,6 +1,6 @@
 ---
 title: Servers Flap Up / Down
-layout: layout171
+layout: layout163
 ---
 Server flapping, or bouncing between up and down, is a common issue. Generally, server flapping is caused by the server reaching or slightly exceeding the health monitor's maximum allowed response time.
 

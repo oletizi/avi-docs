@@ -1,6 +1,6 @@
 ---
 title: HTTPS Health Monitor
-layout: layout171
+layout: layout163
 ---
 This article covers the specific configuration for this monitor type.  See the <a href="{% vpath %}/overview-of-health-monitors">Overview of Health Monitors</a> article for general monitor information, implementation, and other monitor types.
 

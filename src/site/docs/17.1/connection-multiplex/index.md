@@ -1,6 +1,6 @@
 ---
 title: Connection Multiplexing
-layout: layout171
+layout: layout163
 ---
 ### Overview
 

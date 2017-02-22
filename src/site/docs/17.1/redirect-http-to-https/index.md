@@ -1,6 +1,6 @@
 ---
 title: Redirect HTTP to HTTPS
-layout: layout171
+layout: layout163
 ---
 For security, an industry best practice is to ensure all HTTP traffic is SSL-encrypted as HTTPS. Since typical end-users do not specify the HTTPS protocol when entering URLs for requests, the initial requests arrive over HTTP. Because Avi Vantage can provide SSL termination services, it also must handle redirecting of HTTP users to HTTPS. You can enable HTTP-to-HTTPS redirect in any of the following ways. The methods are presented in order from simplest (with fewest options) to most advanced.
 

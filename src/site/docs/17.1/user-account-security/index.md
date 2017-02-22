@@ -1,6 +1,6 @@
 ---
 title: User Account Security
-layout: layout171
+layout: layout163
 ---
 Avi Vantage implements a variety of mechanisms by which to protect its control plane from overload or abuse. Some of these were inspired by penetration test findings. Details about these mechanisms can be found in the below articles.
 

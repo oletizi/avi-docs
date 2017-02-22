@@ -1,6 +1,6 @@
 ---
 title: Customizing a Controller’s Initial Configuration
-layout: layout171
+layout: layout163
 ---
 Often there is a need to deploy multiple Avi Controller cluster instances starting from some common initial single Controller configuration that differs from the factory-default settings. This can be achieved by creating a JSON file with the required object definitions and then using it during deployment of subsequent Controllers, which, as leaders, can then add followers to become clusters. At the end of the process, the result is a set of identically initialized Controller clusters, ready to be individualized as needed.
 

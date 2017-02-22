@@ -1,6 +1,6 @@
 ---
 title: Support Terms and Conditions
-layout: layout171
+layout: layout163
 ---
 ### I    INTRODUCTION
 

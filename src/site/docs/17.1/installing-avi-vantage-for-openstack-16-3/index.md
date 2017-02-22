@@ -1,10 +1,10 @@
 ---
 title: Installing Avi Vantage for OpenStack (16&#46;3)
-layout: layout171
+layout: layout163
 ---
-## Introduction
+This guide describes how Avi Vantage integrates into an OpenStack cloud. It includes the Avi UI installation steps for a variety of deployment modes. This guide applies to Avi Vantage releases starting with 16.3.
 
-This guide describes how to integrate Avi Vantage into an OpenStack cloud. The instructions in this guide can be used for installing Avi Vantage 16.3.
+## Introduction
 
 Avi Vantage is a software-based solution that provides real-time analytics as well as elastic application delivery services. Avi Vantage optimizes core web-site functions including SSL termination and load balancing. Avi Vantage also provides access to network analytics, including end-to-end latency information for traffic between end-users and the load-balanced applications.
 
@@ -31,6 +31,18 @@ Avi Vantage integrates with the following OpenStack services:
 Here is how Avi Vantage integrates into an OpenStack cloud:
 
 <a href="img/openstack-integration-2.png"><img class="alignnone wp-image-19356 size-full" src="img/openstack-integration-2.png" width="664" height="501"></a>
+
+## Port Security and Allowed Address Pairs (AAP)
+
+Neutron’s security group always applies anti-spoof rules to the VMs. This allows traffic to originate from and terminate at the VM as expected, but prevents traffic from passing through the VM. This is required in cases where the VM routes traffic through it. To run network services in VM instances (e.g., router service in VM [router_plugin_cisco], [vyatta_l3_plugin] or firewall service in VM), it is required by some services for VMs to be able to receive/send all packets without any kind of firewall, security group, or anti-spoofing on the port. This is a basic requirement to run network service within VMs. Services requiring it or not, depending on the type of service.
+
+The port_security_enabled of network is used as the default attribute value at port creation. When the attribute is set to True (by default), the behavior remains same to the one without portsecurity extension, security group and anti spoofing will act as before. When the attribute is set to False, security group and anti spoofing are disabled on the port, and it is not allowed to set security group or allowedaddresspair with such ports. Since this feature is related to security, only the tenant owner is allowed to set/change the attribute.
+
+### Avi Vantage Support for Port Security
+
+Handle port-security and allowed-address-pair (AAP) settings appropriately for the SE and Controller ports. If port-security is enabled, the ports are used in AAP mode. If port-security is disabled, the Controller ports are untouched, and the SE ports are created with security disabled.
+
+Set port-security to False by default. Don't use it unless explicitly requested by the configuration.
 
 ## Deployment Modes
 
@@ -264,7 +276,7 @@ In the following example, only users with role lbaas_project_admin are allowed t
     ....
 }</code></pre>  
 
-## Metadata Instead of config_drive For Avi SEs
+## Metadata Instead of config_drive for Avi SEs
 
 In some OpenStack environments, "config_drive" support is either absent or not installed well. Also, sometimes customers prefer that Avi SEs not use config_drive, since using it to configure the VM might prevent SE migration under certain conditions.
 
@@ -374,7 +386,8 @@ Note: While the system is booting up, a blank web page or 503 status code may ap
  <li>Enter OpenStack settings: 
   <ul> 
    <li>Provide the tenant user credentials (username, password). <strong>(NEW in 16.3) </strong>If you are using Keystone V3 and want to provide an user in the non-Default domain, then please use the notation "user@domain-name" for the Username field. Please refer to following example:<br> <a href="img/openstack-v3-user-config.png"><img class="alignnone wp-image-19215" src="img/openstack-v3-user-config.png" alt="openstack-v3-user-config" width="202" height="251"></a></li> 
-   <li><strong>(NEW in 16.3) </strong>Full Auth URL for the OpenStack environment. Avi Vantage determines the Keystone API version automatically using that Auth URL. Note that when the Auth URL is a secure URL (HTTPS), an option to either allow or disallow self-signed certificates will show up (as seen in the right screenshot below). Please disable that checkbox in a production environment where OpenStack services use proper, trusted certificates.</li> 
+   <li><strong>(NEW in 16.3) </strong>If a username "test" is created as a Keystone v3 user in a domain named "default," then explicitly specify "test@testdomain" when logging into the Avi Controller. If the domain name is not specified, Keystone looks for a domain with UUID "testdomain" and not the name "testdomain." Since no domain with a UUID of  "testdomain" exists, Keystone fails, returning the error "invalid user/password."</li>
+   <li><strong>(NEW in 16.3) </strong>Using the full value in the Keystone Auth URL field,<strong> </strong>Avi Vantage determines the Keystone API version automatically. When the auth URL is a secure URL (HTTPS), an option to either allow or disallow self-signed certificates will show up (as seen in the right screenshot below). Please disable that checkbox in a production environment, since OpenStack services should use proper, trusted certificates.</li>
    <li>Enable (check) the Keystone Auth option.</li> 
   </ul> <p><a href="img/openstack-login-v2-full.png"><img class="wp-image-19199 alignleft" src="img/openstack-login-v2-full.png" alt="openstack-login-v2-full" width="264" height="325"></a><a href="img/openstack-login-v3-cert.png"><img class="wp-image-19201 aligncenter" src="img/openstack-login-v3-cert.png" alt="openstack-login-v3-cert" width="264" height="342"><br> </a></p></li> 
  <li>In the Management Network window, select a tenant. In this deployment, it should be the same tenant into which the Avi Controller is deployed. Choose the management network created previously. <img class="alignnone wp-image-6598" src="img/ctlr-setup-mgmtnetwork-162.png" alt="ctlr-setup-mgmtnetwork-161" width="264" height="322"></li> 
@@ -444,7 +457,7 @@ Detailed steps are provided below.
  <li>Log into the OpenStack Horizon dashboard with an account that has cloud administrator privileges.</li> 
  <li>Navigate to Identity &gt; Projects.</li> 
  <li>Click New Project and follow the wizard's instructions.</li> 
- <li>Follow the instructions of the tenant creation wizard. For Avi Vantage deployment, use the following settings:<br> a. Enter a project name (e.g., "avi-tenant”).<br> b. Click the Project Members tab.<br> c. Add a user account to Project Members and assign the “admin” role to the account.<br> d. Click the Quota tab and modify the maximum resources.These settings allow for three Avi Controllers (for redundancy), up to 1000 SEs and some other managerial instances, if required.</li> 
+ <li>Follow the instructions of the tenant creation wizard. For Avi Vantage deployment, use the following settings:<br> a. Enter a project name (e.g., "avi-tenant”).<br> b. Click the Project Members tab.<br> c. Add a user account to Project Members and assign the “admin” role to the account.<br> d. Click the Quota tab and modify the maximum resources. These settings allow for three Avi Controllers (for redundancy), up to 1000 SEs and some other managerial instances, if required.</li>
 </ol> 
 
 <a href="img/Screen-Shot-2017-02-07-at-11.37.13-AM.png"><img class="aligncenter wp-image-24096 size-full" src="img/Screen-Shot-2017-02-07-at-11.37.13-AM.png" alt="Screen Shot 2017-02-07 at 11.37.13 AM" width="719" height="717"></a>

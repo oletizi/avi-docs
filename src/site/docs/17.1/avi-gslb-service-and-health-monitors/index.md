@@ -1,6 +1,6 @@
 ---
 title: Avi GSLB Service Health Monitors
-layout: layout171
+layout: layout163
 ---
 The operation and configuration of data- and control-plane global application health monitors are covered in this article.
 

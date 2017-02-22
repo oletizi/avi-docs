@@ -1,6 +1,6 @@
 ---
 title: Legacy HA for Avi Service Engines
-layout: layout171
+layout: layout163
 ---
 Beginning in Avi Vantage 16.2, legacy active/standby high availability (HA) is available for Avi Service Engine (SE) redundancy. Legacy active/standby is useful for migrating from hardware appliance-based solutions.
 

@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Policies
-layout: layout171
+layout: layout163
 ---
 Policies allow advanced customization of network layer security, HTTP security, HTTP requests, and HTTP responses. A policy may be used to control security, client request attributes, or server response attributes. Policies are comprised of *matches* and *actions*, similar to an if/then logic. If something is true, then it matches the policy, therefore, perform the following action.
 

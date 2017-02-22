@@ -1,6 +1,6 @@
 ---
 title: Avi DNS Architecture and Features
-layout: layout171
+layout: layout163
 ---
 The Avi DNS virtual service is a generic DNS infrastructure that implements the following functionality:
 
@@ -15,7 +15,7 @@ This article covers that functionality, typical deployment scenarios, features,
 
 ### 1. Hosting GSLB Service DNS Entries
 
-The Avi DNS virtual service can host GSLB service DNS entries, and automatically update its responses based on factors such as application service health, service load and proximity of clients to sites implementing the application service. In so doing, it provides essential load-balancing functionality required by global applications. Details of Avi GSLB are available in these articles:
+The Avi DNS virtual service can host GSLB service DNS entries, and automatically update its responses based on factors such as application service health, service load and proximity of clients to sites implementing the application service. Avi GSLB automatically populates these DNS entries. Details of Avi GSLB are available in these articles:
 
 * <a href="{% vpath %}/avi-gslb-overview/">Avi GSLB Overview</a>
 * <a href="{% vpath %}/gslb-architecture-and-object-model/">Avi GSLB Architecture and Object Model</a>
@@ -148,11 +148,29 @@ Regardless of use case, DNS virtual service configuration begins with the Advanc
 
 <a href="img/Advanced-VS-wizard.settings.png"><img class="aligncenter wp-image-23611 size-full" src="img/Advanced-VS-wizard.settings.png" alt="Advanced VS wizard.settings" width="681" height="485"></a>
 
-Illustrated below is the application profile editor. Selection of Type=DNS brings up basic and more advanced settings by which to customize the behavior of Avi DNS when other than default behavior is desired.
+Illustrated below is the application profile editor. Setting the **Type **field to** **DNS brings up basic and request rate limiter settings by which to customize the behavior of Avi DNS when other than default behavior is desired.
 
 <a href="img/DNS-Application-Profile.png"><img class="aligncenter wp-image-24002" src="img/DNS-Application-Profile.png" alt="DNS Application Profile" width="681" height="419"></a>
 
-With or without a back-end pool of DNS servers selected in the Advanced VS wizard, configuration proceeds as normal with options to define policies, analytics, and advanced settings.
+Basic Settiings
+
+* **Preserve Client IP Address **is off by default. Setting it causes the client's IP to be used for the connection to the back-end server pool, a behavior which is incompatible with connection multiplexing.
+* **Valid subdomains **are those domains this DNS is prepared to resolve into IP addresses. These are configured with Ends-With semantics.
+* **Error Response **is "None, i.e., off by default (no response is sent back and client request will be timed out). If set to "Error," then if the DNS service encounters an error when processing the query, it returns that error to the requesting client.
+* **Number of IPs returned by DNS server **defaults to 1, but can be set as high as 20. If set to 0, this DNS will return all available IPs (A records) to the requesting client. On a per-GSLB-service, this general value may be overridden (see <a href="{% vpath %}/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a>).
+* **TTL** is the time-to-live in seconds (1 to 86400) for records served by this DNS. On a per-GSLB-service, this general value may be overridden (see <a href="{% vpath %}/avi-gslb-service-and-health-monitors/">Avi GSLB Service Health Monitors</a>).
+
+DNS Request Rate Limiter Settings (Rate Limit Connections from a Client)
+
+* **Threshold** is the maximum number (10 to 2500) of DNS requests any single client IP address may make during a specified contiguous span of time before rate limiting will begin.
+* **Time Period **is the contiguous span of time, a moving time window (number of seconds, field value can range from 1 to 300) over which Avi Vantage looks for the threshold to be exceeded. Put another way, Avi will calculate and take a specified action if the inbound request rate is exceeded. That rate is the ratio max-number / time-span.
+* **Action** is one of three to be taken when rate limiting must begin: <ol>
+ <li>Only report that the threshold has been exceeded.</li>
+ <li>Drop SYN packets to limit the inbound rate (only if this DNS VS is configured to listen to on TCP).</li>
+ <li>Send TCP RST to limit the inbound rate (only if this DNS VS is configured to listen to on TCP).</li>
+</ol>
+
+With or without a back-end pool of DNS servers selected in the Advanced VS wizard, configuration proceeds as normal with options to define policies, analytics, and advanced settings. These are the typical ones would expect when configuring any virtual service.
 
 Note: In the Advanced tab, one can identify the SE group on which the DNS VS will be placed. It is recommended that no other virtual services be placed on such a group.
 

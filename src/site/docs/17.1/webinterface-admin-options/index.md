@@ -1,6 +1,6 @@
 ---
 title: Web Interface - Administration Options
-layout: layout171
+layout: layout163
 ---
 The administration section of the web interface governs the following system-level resources:
 

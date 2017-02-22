@@ -1,6 +1,6 @@
 ---
 title: Maximum Concurrent Login Sessions
-layout: layout171
+layout: layout163
 ---
 This feature prevents having more than a configurable number of concurrent sessions. Default value is set to 0, which means the concurrent session check is bypassed. Additional logins are prevented if the maximum concurrent session count has been reached. Beyond this, the user can choose to login using shell <code>--clear-sessions</code> which will invalidate all the active sessions.
 

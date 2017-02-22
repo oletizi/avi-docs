@@ -1,6 +1,6 @@
 ---
 title: Maintenance and Support Releases — Schedule and Numbering
-layout: layout171
+layout: layout163
 ---
 Avi Networks makes three Avi Vantage feature releases per year, approximately four months apart. In addition, three to four maintenance releases accompany a given feature release; they are typically spaced 2 weeks apart.
 

@@ -1,6 +1,6 @@
 ---
 title: Testing Vantage with Load Generators
-layout: layout171
+layout: layout163
 ---
 Validating performance characteristics of Vantage or any device under test (DUT) with load generation tools is a common practice.  There are many load generators, and operating them is often more of an art than a science.
 

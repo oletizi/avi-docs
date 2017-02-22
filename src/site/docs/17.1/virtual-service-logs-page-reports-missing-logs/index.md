@@ -1,6 +1,6 @@
 ---
 title: Virtual Service Logs Page Reports Missing Logs
-layout: layout171
+layout: layout163
 ---
 Logs pages such as the pool and virtual service > logs show logs that are categorized as Non-Significant (green) and Significant (red).  At times the log histogram ribbon may show a yellow question mark, indicating logs are missing near that time frame.  There are a number of scenarios which may cause logs to be in a missing state.
 

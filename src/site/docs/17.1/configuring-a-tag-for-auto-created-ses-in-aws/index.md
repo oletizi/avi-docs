@@ -1,6 +1,6 @@
 ---
 title: Configuring a Tag for Auto-created SEs in AWS
-layout: layout171
+layout: layout163
 ---
 Starting in Avi Vantage v16.2, a user may optionally pass AWS a single key-value pair to better control the instantiation of SEs in EC2.The key string and its corresponding value are passed to EC2 with every request to instantiate a new SE.
 

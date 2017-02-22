@@ -1,6 +1,6 @@
 ---
 title: User Accounts
-layout: layout171
+layout: layout163
 ---
 A valid account is required for access to Avi Vantage through the web interface, REST API, or CLI. User accounts can be maintained locally in Avi Vantage or remotely on an <a href="{% vpath %}/remote-users-authen-authrz">authentication, authorization, and accounting (AAA) server</a>.
 &gt; Notes: 

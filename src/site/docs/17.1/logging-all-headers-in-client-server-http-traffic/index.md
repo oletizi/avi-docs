@@ -1,6 +1,6 @@
 ---
 title: Logging All Headers in Client-Server HTTP Traffic
-layout: layout171
+layout: layout163
 ---
 Vantage provides extensive logging options for virtual service traffic. Among these options is an option to enable logging of all headers in HTTP traffic between clients and servers. The option to log all headers is available for HTTP policies and for client log filters. HTTP polices and client log filters each are part of an individual virtual service's configuration.
 

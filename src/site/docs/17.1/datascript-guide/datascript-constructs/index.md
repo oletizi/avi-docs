@@ -1,6 +1,6 @@
 ---
 title: DataScript Constructs
-layout: layout171
+layout: layout163
 ---
 ### Operators
 

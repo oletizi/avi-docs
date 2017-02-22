@@ -1,6 +1,6 @@
 ---
 title: Load Balance FTP
-layout: layout171
+layout: layout163
 ---
 The File Transfer Protocol comes in two flavors, active and passive.  In both cases, clients open a TCP based control channel on port 21.  For active FTP, a second data channel is initiated from the server to the client via port 21.  For passive FTP, the client initiates the data channel via a high port negotiated with the server.  
 

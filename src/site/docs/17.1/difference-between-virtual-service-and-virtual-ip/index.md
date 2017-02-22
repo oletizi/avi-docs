@@ -1,6 +1,6 @@
 ---
 title: Difference Between Virtual Service and Virtual IP
-layout: layout171
+layout: layout163
 ---
 Avi Vantage uses virtual services and virtual IP addresses (VIPs). These are related but separate things.
 

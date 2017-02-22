@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage on Bare Metal
-layout: layout171
+layout: layout163
 ---
 This article describes how to install Avi Vantage on a bare-metal infrastructure.
 

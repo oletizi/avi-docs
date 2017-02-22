@@ -1,6 +1,6 @@
 ---
 title: IPAM Provider (Avi Vantage) (16&#46;3+)
-layout: layout171
+layout: layout163
 ---
 This article walks through the configuration of Avi Vantage's native IPAM solution, which is available for the following clouds:
 

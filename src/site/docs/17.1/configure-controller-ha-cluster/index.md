@@ -1,6 +1,6 @@
 ---
 title: Deploying an Avi Controller Cluster
-layout: layout171
+layout: layout163
 ---
 To ensure complete system redundancy, the Avi Controller must be highly available. To provide high availability (HA) for the Avi Controller, add 2 additional Avi Controller nodes to create a 3-node Avi Controller cluster.
 

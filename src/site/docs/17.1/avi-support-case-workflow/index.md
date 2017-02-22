@@ -1,6 +1,6 @@
 ---
 title: Avi Support Case Workflow
-layout: layout171
+layout: layout163
 ---
 This article describes the workflow of cases submitted by Avi customers to Avi Support. Be it initiated over the phone or directly via the Avi Customer Portal, a case can be viewed and managed by visiting <a href="http://www.avinetworks.com/portal">www.avinetworks.com/portal</a>. Read <a href="{% vpath %}/using-the-avi-customer-portal/">Using the Avi Customer Portal</a> for full details on support case submission and tracking.
 

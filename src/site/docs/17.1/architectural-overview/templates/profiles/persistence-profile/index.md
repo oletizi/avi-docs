@@ -1,6 +1,6 @@
 ---
 title: Persistence Profile
-layout: layout171
+layout: layout163
 ---
 A persistence profile governs the settings that will force a client to stay connected to the same server for a specified duration of time. By default, load balancing may send a client to a different server every time the client connects with a virtual service. This guarantees the client will reconnect to the same server every time when they connect to a virtual service, disconnect, and then reconnect to the same virtual service. Enabling a persistence profile ensures the client will reconnect to the same server every time, or at least for a desired duration of time. Persistent connections are critical for most servers that maintain client session information locally.
 

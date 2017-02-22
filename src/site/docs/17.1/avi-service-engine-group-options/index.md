@@ -1,6 +1,6 @@
 ---
 title: Avi Service Engine Group Options
-layout: layout171
+layout: layout163
 ---
 An Avi Service Engine (SE) group is a collection of one or more SEs that may share properties, such as network access and failover. An SE cannot scale out across or fail over to an SE which is in a different SE group, even if both SEs share the same physical host or network properties. Different applications can thus receive guaranteed data plane isolation when deployed on different SE groups.
 
@@ -51,8 +51,8 @@ The High Availability tab contains the HA option settings for the SE group.
 <a href="img/Elastic_HA_screenshot.png"><img class="alignnone size-full wp-image-10776" src="img/Elastic_HA_screenshot.png" alt="Elastic_HA_screenshot" width="930" height="1025"></a>
 The HA options for Avi SEs are described below. See the following for more information and deployment examples:
 
-* <a href="/cluster-ha-for-avi-service-engines/">Elastic HA</a>
-* <a href="/legacy-ha/">Legacy HA</a>
+* <a href="{% vpath %}/cluster-ha-for-avi-service-engines/">Elastic HA</a>
+* <a href="{% vpath %}/legacy-ha/">Legacy HA</a>
 
 ### Elastic HA Options
 

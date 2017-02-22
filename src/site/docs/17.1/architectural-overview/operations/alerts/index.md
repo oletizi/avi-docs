@@ -1,6 +1,6 @@
 ---
 title: Alerts
-layout: layout171
+layout: layout163
 ---
 Events are generated automatically within by Vantage to create a record of notable activities throughout the system. These may be Vantage errors, client traffic deviations, or many others.
 

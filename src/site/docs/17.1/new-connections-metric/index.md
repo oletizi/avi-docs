@@ -1,6 +1,6 @@
 ---
 title: How the New Connections Metric Is Calculated
-layout: layout171
+layout: layout163
 ---
 <a href="img/NewConnections.png"><img class="size-full wp-image-230 alignright" src="img/NewConnections.png" alt="NewConnections" width="263" height="108"></a>
 

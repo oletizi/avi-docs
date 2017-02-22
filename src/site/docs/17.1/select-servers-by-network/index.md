@@ -1,6 +1,6 @@
 ---
 title: Select Servers by Network
-layout: layout171
+layout: layout163
 ---
 ### About
 

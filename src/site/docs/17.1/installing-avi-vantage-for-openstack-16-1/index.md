@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for OpenStack
-layout: layout171
+layout: layout163
 ---
 This guide describes how to integrate Avi Vantage into an OpenStack cloud. The instructions in this guide can be used for installing Avi Vantage 16.1.
 *x*.

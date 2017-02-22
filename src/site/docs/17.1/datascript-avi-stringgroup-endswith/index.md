@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; avi&#46;stringgroup&#46;endswith
-layout: layout171
+layout: layout163
 ---
 <table class="table table-hover table table-bordered table-hover">  
 <tbody>         

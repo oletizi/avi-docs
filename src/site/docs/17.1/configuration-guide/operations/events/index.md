@@ -1,6 +1,6 @@
 ---
 title: Events
-layout: layout171
+layout: layout163
 ---
 Events are used throughout the system to provide a history of relevant changes that have occurred. Events are a permanent record, and can be used to generate Alerts which can take action on the Event. Events are viewable in the context of specific objects, such as a Virtual Service, a Pool, or a Server. Viewing Events from the Operations menu provides an unfiltered view of all Events across the system or the tenant.
 

@@ -1,6 +1,6 @@
 ---
 title: Avi Controller Events Log
-layout: layout171
+layout: layout163
 ---
 The Administration > Controller > Events page lists Avi Controller-related events. 
 

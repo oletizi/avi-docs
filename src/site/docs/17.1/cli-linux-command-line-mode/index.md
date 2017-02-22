@@ -1,6 +1,6 @@
 ---
 title: CLI - Linux Command Line Mode
-layout: layout171
+layout: layout163
 ---
 In Avi Vantage 16.3, a set of CLI enhancements are introduced with the following in mind:
 

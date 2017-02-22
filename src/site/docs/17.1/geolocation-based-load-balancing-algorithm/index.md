@@ -1,6 +1,6 @@
 ---
 title: Geolocation-based Load Balancing Algorithm for GSLB Members
-layout: layout171
+layout: layout163
 ---
 The geolocation algorithm of the Avi DNS for GSLB directs client requests to the optimal site based on the longitude and latitude of the client and GSLB sites. Each SE in the Avi DNS configuration refers to its own local copy of the geolocation database (geo DB) to make that determination.
 <h3>Operation</h3>

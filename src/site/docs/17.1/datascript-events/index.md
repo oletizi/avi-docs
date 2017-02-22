@@ -1,6 +1,6 @@
 ---
 title: DataScript&#58; Events
-layout: layout171
+layout: layout163
 ---
 ### About Events
 

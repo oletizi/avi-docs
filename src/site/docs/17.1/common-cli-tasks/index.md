@@ -1,6 +1,6 @@
 ---
 title: Common CLI Tasks
-layout: layout171
+layout: layout163
 ---
 This KB provides illustrated examples of executing common management tasks from the Avi Vantage CLI.
 

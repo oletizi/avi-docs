@@ -1,6 +1,6 @@
 ---
 title: Profiles
-layout: layout171
+layout: layout163
 ---
 Avi Vantage relies on Templates and Profiles to group together collections of settings into a single, reusable object. A profile may be used by multiple objects such as Virtual Services referencing the same TCP Profile. By making a change to the TCP Profile, all associated Virtual Services will inherit the change.
 

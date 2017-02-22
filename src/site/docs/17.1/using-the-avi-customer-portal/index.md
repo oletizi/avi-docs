@@ -1,6 +1,6 @@
 ---
 title: Using the Avi Customer Portal
-layout: layout171
+layout: layout163
 ---
  
 

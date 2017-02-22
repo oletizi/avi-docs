@@ -1,6 +1,6 @@
 ---
 title: VRF Support for vCenter Deployments
-layout: layout171
+layout: layout163
 ---
 Virtual Routing Framework, or VRF, is a method of isolating traffic within a system. This is also referred to as a "Route Domain" within the load balancer community.
 

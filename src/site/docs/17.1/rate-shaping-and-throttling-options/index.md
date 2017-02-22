@@ -1,6 +1,6 @@
 ---
 title: Rate Shaping and Throttling Options
-layout: layout171
+layout: layout163
 ---
 Avi Vantage includes many options for rate shaping and throttling of traffic.  This may be applied at the virtual service, pool/server, or client level.  These options exist in a number of places throughout the UI, depending on the specific object they are applied against.  Additionally, DataScripts may be used to create customized limits.
 

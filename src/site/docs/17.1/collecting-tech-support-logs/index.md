@@ -1,6 +1,6 @@
 ---
 title: Collecting Tech Support Logs
-layout: layout171
+layout: layout163
 ---
 Please read <a href="{% vpath %}/collecting-tech-support-logs-163/">a more recent version of this article</a>.
 

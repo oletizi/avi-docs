@@ -1,6 +1,6 @@
 ---
 title: Reasons Servers Can Be Marked Down
-layout: layout171
+layout: layout163
 ---
 Servers within a pool may have a status of up, down, or disabled (administratively disabled by an administrator).  The status is determined by the associated <a href="{% vpath %}/overview-of-health-monitors">health monitors</a> applied to the server pool.
 

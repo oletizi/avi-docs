@@ -1,6 +1,6 @@
 ---
 title: Mesos - Graceful App Migration in DC/OS Cluster
-layout: layout171
+layout: layout163
 ---
 Avi Vantage labels can be used in a Mesos / Marathon cloud to gracefully deploy application changes in a Continuous Integration and Deployment (CI/CD) environment.
 

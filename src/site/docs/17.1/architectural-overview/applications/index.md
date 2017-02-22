@@ -1,6 +1,6 @@
 ---
 title: Applications
-layout: layout171
+layout: layout163
 ---
 * <a href="{% vpath %}/configuration-guide/applications/virtual-services/">Virtual Services ›</a>
 * <a href="{% vpath %}/configuration-guide/applications/vs-scaling/">Virtual Services Scaling ›</a>

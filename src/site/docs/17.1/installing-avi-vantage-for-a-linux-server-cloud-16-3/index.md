@@ -1,6 +1,6 @@
 ---
 title: Installing Avi Vantage for a Linux Server Cloud (16&#46;3)
-layout: layout171
+layout: layout163
 ---
 This article describes how to install Avi Vantage in a Linux cloud. The instructions in this guide can be used for installing Avi Vantage 16.3 and subsequent releases. Avi Vantage is a software-based solution that provides real-time analytics and elastic application delivery services, including user-to-application timing, SSL termination, and load balancing.Installing Avi Vantage directly onto Linux servers leverages the raw horsepower of the underlying hardware without the overhead added by a virtualization layer. For example, installing Avi Vantage directly onto Linux servers that support Data Plane Development Kit (DPDK) allows the feature's optimized packet processing to be leveraged for virtual service traffic. Note: If installing Avi SEs directly onto Linux servers that include DPDK, make sure to enable the option in Avi Vantage when adding the host for the Avi SE.
 

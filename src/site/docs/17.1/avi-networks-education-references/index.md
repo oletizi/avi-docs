@@ -1,6 +1,6 @@
 ---
 title: Avi Networks Education References
-layout: layout171
+layout: layout163
 ---
 Avi Networks courseware references these resources by number and title. Most are Avi Knowledge Base articles. They appear in order of their addition to this list. Please report any broken links to <a href="mailto:education@avinetworks.com">education@avinetworks.com</a>.
 <ol> 

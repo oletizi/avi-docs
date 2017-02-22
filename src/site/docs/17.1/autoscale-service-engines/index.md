@@ -1,6 +1,6 @@
 ---
 title: Autoscale Service Engines
-layout: layout171
+layout: layout163
 ---
 During the course of performing application delivery tasks, Avi Service Engines (SEs) may run into some form of resource exhaustion.  This may be due to CPU, memory, or packets per second.  To increase the capacity of a load-balanced virtual service, Avi Vantage needs to increase the amount of resources dedicated to the virtual service. The Avi Controller can migrate a virtual service to an unused SE, or scale out the virtual service across multiple SEs for even greater capacity.  This allows multiple active SEs to concurrently share the workload of a single virtual service.
 > <strong>Note: Prior to Avi Vantage version 16.1, scaling of virtual services was manual in the UI and automatic only when configured through the CLI.</strong>
@@ -19,7 +19,7 @@ Avi Vantage supports three techniques by which to scale data plane performance.
 
 As its name implies, Avi Vantage's **native horizontal scaling** is orthogonal to vertical scaling. Indeed, both methods can be used in combination. Native scaling requires no changes to the first SE, but instead relies on distributing load to additional others. It is completely self-contained, meaning it does not require changes elsewhere within the network or applications in order to scale capacity. The rest of this article focuses on native scaling.
 
-To scale to as many as 32 Service Engines, Avi Vantage supports **BGP-based horizontal scaling**. Relying also on RHI and ECMP, this method requires some manual intervention elsewhere in the network to scale the load balancing infrastructure. See <a href="{% vpath %}/bgp-support-for-virtual-services/">BGP Support for Scaling Virtual Services</a> for details.
+To scale to well beyond native scaling's limit (4 SEs), Avi Vantage also supports **BGP-based horizontal scaling**. Relying also on RHI and ECMP, this method requires some manual intervention elsewhere in the network to scale the load balancing infrastructure. See <a href="{% vpath %}/bgp-support-for-virtual-services/">BGP Support for Scaling Virtual Services</a> for details.
 
 ## How Native SE Scaling Works
 
@@ -30,7 +30,7 @@ To scale to as many as 32 Service Engines, Avi Vantage supports **BGP-based hori
  <li>As traffic increases beyond the capacity of a single SE, the Avi Controller can add one or more new SEs to the virtual service. These new SEs may be processing other virtual service traffic, or they may be newly created for this task.  Existing SEs can be added within a couple seconds, whereas instantiating a new SE VM may take up to several minutes, depending on the time necessary to copy the SE image to the VM’s host.</li> 
  <li>Once the new SEs are configured (both for networking and configuration sync), the first SE, known as the primary, will begin forwarding a percentage of inbound client traffic to the new SE. Packets will flow from the client to the MAC address of the primary SE, then be forwarded (at layer 2) to the MAC address of the new SE.  This secondary SE will terminate the TCP connection, process the connection and/or request, then load balance the connection/request to the chosen destination server.</li> 
  <li>The secondary SE will source NAT the traffic <em>from</em> its own IP address when load balancing the flow <em>to</em> the chosen server. Servers will respond back to the source IP of the connection (the SE), ensuring a symmetrical return path from the server to the SE that owns the connection.</li> 
- <li>For VMware, Docker, bare metal, Amazon Web Services, and OpenStack using Nuage environments, the secondary SE will forward packets directly back to the original client. For OpenStack with standard Neutron, the secondary SE will forward response packets back through the primary SE, which will forward the packets back to the original client.</li> 
+ <li>For VMware, Docker, bare metal, Amazon Web Services, and OpenStack using Nuage environments, the secondary SE will forward packets directly back to the original client. For OpenStack with standard Neutron, the secondary SE will forward response packets back through the primary SE, which will forward the packets back to the original client. See <a href="{% vpath %}/direct-server-return/">Direct Server Return</a>.</li>
 </ol> 
 
 ### Scaling In

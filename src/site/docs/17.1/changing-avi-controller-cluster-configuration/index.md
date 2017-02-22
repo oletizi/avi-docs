@@ -1,6 +1,6 @@
 ---
 title: Changing Avi Controller Cluster Configuration
-layout: layout171
+layout: layout163
 ---
 This article describes how to change node membership or node IP address in an Avi Controller cluster.
 

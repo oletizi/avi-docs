@@ -1,6 +1,6 @@
 ---
 title: DataScript Guide
-layout: layout171
+layout: layout163
 ---
 ### About
 

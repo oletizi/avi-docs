@@ -1,6 +1,6 @@
 ---
 title: Default System Accounts
-layout: layout171
+layout: layout163
 ---
 Avi Vantage inherently comes with several user accounts created.  These accounts serve specific purposes, and unlike custom user accounts, they may not be disabled or removed.
 

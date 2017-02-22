@@ -1,6 +1,6 @@
 ---
 title: Servers
-layout: layout171
+layout: layout163
 ---
 Information for each server within a pool is available within the Server Details Page. This page allows views into correlation between server resources, application traffic, and response times.
 

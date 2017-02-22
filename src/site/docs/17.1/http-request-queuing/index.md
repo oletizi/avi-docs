@@ -1,6 +1,6 @@
 ---
 title: HTTP Request Queuing
-layout: layout171
+layout: layout163
 ---
 HTTP request queuing allows Avi Vantage to queue requests that are received after a backend server has reached its maximum allowed number of concurrent connections. Queuing HTTP requests provides time for new connections to become available on the server, without performing the configured <a href="{% vpath %}/configuration-guide/applications/pools/#servers">pool down action</a>.
 

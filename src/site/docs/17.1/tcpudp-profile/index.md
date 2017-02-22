@@ -1,6 +1,6 @@
 ---
 title: TCP/UDP Profile
-layout: layout171
+layout: layout163
 ---
 A TCP/UDP Profile determines the type and settings of the network protocol that a subscribing virtual service will use. It sets a number of parameters, such as whether the virtual service is a TCP proxy versus a pass-through via fast path. A virtual service can have both TCP and UDP enabled, which is useful for protocols such as DNS or Syslog.
 
@@ -58,7 +58,18 @@ Enabling TCP Proxy causes Avi Vantage to terminate an inbound connection from a 
 
 <img src="img/template_profiles_tcp_settings_proxy.jpg" alt="">
 
-Select TCP Proxy in the Create/Edit TCP/UDP Profile popup and select either Auto Learn or Custom. With Auto Learn, Avi Vantage will dynamically adjust the following parameters based on the virtual server application it is assigned to. This option is selected by default and is the easiest way to ensure optimal performance. Select Custom to manually configure the following parameters:
+Select TCP Proxy in the Create/Edit TCP/UDP Profile popup and select either Auto Learn or Custom. With Auto Learn, Avi Vantage will dynamically adjust the following parameters based on the virtual server application it is assigned to. This option is selected by default and is the easiest way to ensure optimal performance.
+
+Auto Learn mode sets all of the knobs to default values and dynamically changes the buffer size. Below are the **default** values when Auto Learn is selected.
+
+* TCP keepalive is enabled. The idle timeout is 10 minutes, i.e, after 10 minutes of idle, Avi Vantage initiates the TCP keepalive protocol. If the other side responds, the connection will continue to live.
+* Max. Retransmission is set to 8.
+* Max SYN retries is set to 8.
+* IP DSCP: No special DSCP values are used.
+* Nagles algorithm is disabled.
+* Buffer Management: The receive window advertised to the client and on the server dynamically change. It starts out small (32 KB) and can grow when needed up to 64 MB for a single TCP connection. The algorithm also takes into account the amount of memory available in the system and the number of open TCP connections.
+
+Alternatively, you can click Custom to manually configure the following parameters:
 
 <img src="img/template_profiles_tcp_settings_proxy1.jpg" alt="">
 
@@ -75,12 +86,12 @@ Select TCP Proxy in the Create/Edit TCP/UDP Profile popup and select either Auto
     * **Max Segment Size (MSS):** This may be calculated by using the maximum transmission unit (MTU) length for a network interface. The MSS determines the largest size of data that may be safely inserted into a TCP packet. In some environments, the MSS should be smaller than the MTU. For example, traffic between Avi Vantage and a client that is traversing a site-to-site VPN may require some space reserved for padding with encryption data. Select either:  
         * **Use Interface MTU:** Sets the MSS to the MTU size of the network interface.
         * **Custom value:** May be a range between 512–9000 kilobytes.
-* **QOS & Traffic Engineering:**  
-    * **IP DSCP:** Allows Avi Vantage to either pass an existing Differentiated Services Code Point (DSCP) parameter or specify a custom number. DSCP is an 8-bit field in the TCP header that can be used for classifying traffic in a manner similar to the deprecated TCP TOS field.
-        
-        <a name="custom-MTU"></a>
-        
-    * **Nagles Algorithm:** Attempts to reduce latency by combining small packets into a smaller quantity of larger packets before sending. This reduces the impact of network latency by reducing the number of round-trip times required due to TCP acknowledgements. This option could adversely impact real-time protocols, particularly SSH and Telnet. For example, typing in a telnet session many not reflect any text back until either a user types 1500 characters (enough to fill a typical packet) or enough time has elapsed and the packet is sent half-full.  
+* **QOS & Traffic Engineering:**
+        * **IP DSCP:** Allows Avi Vantage to either pass an existing Differentiated Services Code Point (DSCP) parameter or specify a custom number. DSCP is an 8-bit field in the TCP header that can be used for classifying traffic in a manner similar to the deprecated TCP TOS field.
+
+    <a name="custom-MTU"></a>
+
+    * **Nagles Algorithm:** Attempts to reduce latency by combining small packets into a smaller quantity of larger packets before sending. This reduces the impact of network latency by reducing the number of round-trip times required due to TCP acknowledgements. This option could adversely impact real-time protocols, particularly SSH and Telnet. For example, typing in a telnet session many not reflect any text back until either a user types 1500 characters (enough to fill a typical packet) or enough time has elapsed and the packet is sent half-full.
 
 Additional options may be configured but are not shown in the GUI.
 

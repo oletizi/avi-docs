@@ -1,6 +1,6 @@
 ---
 title: Health Monitor Profile
-layout: layout171
+layout: layout163
 ---
 Avi Vantage must validate whether servers are working correctly and are able to accommodate additional workloads before load balancing a client to a particular server. Health monitors perform this function by either actively sending a synthetic transaction to a server or by passively monitoring client experience with the server. Vantage sends active health monitors on a periodic basis that originate from the Service Engines assigned to the application’s virtual service.
 

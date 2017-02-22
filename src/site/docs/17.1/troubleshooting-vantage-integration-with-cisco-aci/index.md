@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Avi Vantage Integration with Cisco ACI
-layout: layout171
+layout: layout163
 ---
 This article provides troubleshooting tips for Avi Vantage integration with Cisco Application Policy Infrastructure Controller (APIC), using VMware vCenter as Cisco APIC’s Virtual Machine Manager (VMM).
 

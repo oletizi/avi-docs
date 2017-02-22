@@ -84,7 +84,7 @@ With only three pools in play, each at a different priority, the values in the R
 
 ### Backup Pools
 
-The pre-existing implementation of backup pools is explained in the <a href="{% vpath %}/architectural-overview/applications/pools/">Pools (pre-16.3) KB</a><a href="&quot;/docs/16.3/architectural-overview/applications/pools/</a">. </a>The existing option of specifying a backup pool as a pool-down/fail action, is deprecated. Instead, configure a pool group with two or more pools, with varying priorities. The highest priority pool will be chosen as long as a server is available within it (in alignment with the three previously mentioned circumstances).
+The pre-existing implementation of backup pools is explained in the <a href="{% vpath %}/architectural-overview/applications/pools/">Pools (pre-16.3) KB.</a>The existing option of specifying a backup pool as a pool-down/fail action, is deprecated. Instead, configure a pool group with two or more pools, with varying priorities. The highest priority pool will be chosen as long as a server is available within it (in alignment with the three previously mentioned circumstances).
 
 ### Operational Notes
 

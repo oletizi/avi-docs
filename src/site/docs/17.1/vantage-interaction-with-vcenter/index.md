@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage Interaction with vCenter Installing Avi Vantage for VMware vCenter
-layout: layout171
+layout: layout163
 ---
 ### Description
 

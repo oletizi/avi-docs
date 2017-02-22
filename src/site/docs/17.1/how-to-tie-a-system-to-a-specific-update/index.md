@@ -1,6 +1,6 @@
 ---
 title: Locking a Linux System to a Specific OS Version
-layout: layout171
+layout: layout163
 ---
 ### CentOS Linux
 

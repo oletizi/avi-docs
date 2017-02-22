@@ -1,6 +1,6 @@
 ---
 title: Operations
-layout: layout171
+layout: layout163
 ---
 * <a href="{% vpath %}/configuration-guide/operations/alerts/">Alerts</a>
 * <a href="{% vpath %}/configuration-guide/operations/events/">Events</a>

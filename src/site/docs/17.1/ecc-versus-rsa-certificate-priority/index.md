@@ -1,6 +1,6 @@
 ---
 title: EC versus RSA Certificate Priority
-layout: layout171
+layout: layout163
 ---
 A virtual service may be configured with both Elliptic Curve (EC) and RSA certificates, to support clients of each type.
 

@@ -1,6 +1,6 @@
 ---
 title: Thales nShield Integration
-layout: layout171
+layout: layout163
 ---
 Avi Vantage includes support for networked Hardware Security Module (HSM) products. Specifically, Vantage supports Thales nShield Connect.
 

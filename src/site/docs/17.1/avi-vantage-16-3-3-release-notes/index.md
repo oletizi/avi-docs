@@ -1,6 +1,6 @@
 ---
 title: Avi Vantage 16&#46;3&#46;3 Release Notes
-layout: layout171
+layout: layout163
 ---
 This article describes the fixes in Avi Vantage release 16.3.3.
 
@@ -76,8 +76,8 @@ This section summarizes the enhancements in 16.3. For more information, click on
 ### Networking
 
 * <a href="{% vpath %}/default-gateway-ip-routing-on-avi-se/">Ability to perform IP routing on SEs (default gateway)</a>
-* <a href="{% vpath %}/reserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
-* <a href="{% vpath %}/rf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
+* <a href="{% vpath %}/preserve-client-ip">Preserve Client IP (no SNAT) for virtual service traffic</a>
+* <a href="{% vpath %}/vrf-support-for-service-engine-deployment-on-bare-metal-servers">Multiple VRF (Virtual routing and forwarding) instances in Linux server and no-access clouds</a>
 * <a href="{% vpath %}/bgp-support-for-virtual-services/#flow-resiliency-during-scale-out-in">Resilient flow handing for BGP-based scale-out</a>
 
 ### Cloud Connectors
@@ -103,7 +103,7 @@ This section summarizes the enhancements in 16.3. For more information, click on
 ### Analytics
 
 * <a href="{% vpath %}/avi-dns-architecture/">DNS visibility and analytics</a>
-* Ability to disable "Significant Logs" in <a href="{% vpath %}/architectural-overview/templates/profiles/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a>
+* Ability to disable "Significant Logs" in <a href="{% vpath %}/analytics-profile/#enable-disable-significant-logs">Virtual Service Analytics Profile</a>
 
 ### Operations
 

@@ -1,6 +1,6 @@
 ---
 title: IPAM Provider (Google Cloud Platform) (16&#46;3+)
-layout: layout171
+layout: layout163
 ---
 Beginning with release 16.3, Avi Vantage has integration with Google Cloud Platform (GCP) for providing IPAM services to applications running on instances in GCP.
 

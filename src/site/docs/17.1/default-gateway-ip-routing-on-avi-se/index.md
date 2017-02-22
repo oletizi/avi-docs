@@ -1,6 +1,6 @@
 ---
 title: Default Gateway (IP Routing on Avi SE)
-layout: layout171
+layout: layout163
 ---
 ## Overview
 
@@ -12,8 +12,8 @@ Another use case is when virtual services use an application profile with the <a
 
 ### Suggested Additional Reading
 
-* <a href="/enable-a-virtual-service-vip-on-all-interfaces/">Enable a Virtual Service VIP on All Interfaces</a>
-* <a href="/mac-masquerade/">MAC Masquerade</a>
+* <a href="{% vpath %}/enable-a-virtual-service-vip-on-all-interfaces/">Enable a Virtual Service VIP on All Interfaces</a>
+* <a href="{% vpath %}/mac-masquerade/">MAC Masquerade</a>
 
 ## Scope
 

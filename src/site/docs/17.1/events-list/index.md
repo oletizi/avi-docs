@@ -1,6 +1,6 @@
 ---
 title: Events List
-layout: layout171
+layout: layout163
 ---
 Avi continuously adds additional events which are used to trigger alerts, notify administrators of important information, and are the building blocks of much of the configuration automation. See <a href="{% vpath %}/events-overview">Events Overview</a>, <a href="{% vpath %}/alerts-overview">Alerts Overview</a>, and <a href="{% vpath %}/notifications-overview">Notifications Overview</a> for a larger view of how the event component is used for alerting and automation.
 
