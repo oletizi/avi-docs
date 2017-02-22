@@ -16,7 +16,7 @@ The resources suggested in this installation guide are minimum recommendations f
 ### Software Requirements
 
 * **Avi Vantage 16.1+:**  The Controller image file is obtained from the <a href="https://avinetworks.com/portal/software/">avinetworks.com/portal</a>. From the image repository, select the latest software version > OpenStack section > controller.qcow2 image. The SE image will be downloaded from the Controller.
-* **Nutanix Acropolis 4.6+:**  Prism is required for creating the Avi VMs. 
+* **Nutanix Acropolis 4.6+:**  Prism is required for creating the Avi VMs. For a refresher, refer to this brief <a href="https://www.derekseaman.com/2015/07/nutanix-acropolis-101-creating-vms.html">tutorial</a> on creating VMs.
 
 ### Deploy the Controller
 
@@ -31,7 +31,7 @@ The resources suggested in this installation guide are minimum recommendations f
    <li>Name</li> 
    <li>vCPUs:  1</li> 
    <li>Number of Cores per vCPU:  4 (or more)</li> 
-   <li>Memory:  12</li> 
+   <li>Memory:  12 GB</li>
    <li>Disks: 
     <ul> 
      <li>Remove CD-ROM</li> 
@@ -40,9 +40,9 @@ The resources suggested in this installation guide are minimum recommendations f
      <li>Image:  [Select the name of the image created in the previous steps]</li> 
      <li>Size:  Default to 64 GB</li> 
     </ul> </li> 
-   <li>NIC &gt; VLAN Name:  Select a network that will be used for management.  This network will be used for the access to the Controller by administrators and for Controller-to-Service Engine communication.  For production environments this should be a static address.</li> 
+   <li>NIC &gt; VLAN Name:  Select a network that will be used for management.  This network will be used for the access to the Controller by administrators and for Controller-to-Service Engine communication.  For production environments this should be a static address. <p><strong>A note on configuring networks and IP addresses for the Controller and SEs</strong>: Usually, networks will have been created by the customer beforehand (refer to step 8 in the <a href="https://www.derekseaman.com/2015/07/nutanix-acropolis-101-creating-vms.html">Nutanix Acropolis 101: Creating VMs tutorial)</a>. One simply selects that network when adding a vNIC to a Controller or SE. Based on how the network was originally set up, the IP will be static or picked via DHCP and assigned to the vNIC.</p></li>
   </ul> </li> 
- <li><strong>Power on the Controller</strong> <strong>VM</strong>.  During the initial bootup, the Controller will initialize databases and run through internal setup tasks that may take several minutes.</li> 
+ <li><strong>Power on the Controller</strong> <strong>VM</strong>.  During the initial boot-up, the Controller will initialize databases and run through internal setup tasks (may take several minutes).</li>
  <li><strong>Connect to the GUI</strong> of the Controller via https://[IP Address]</li> 
  <li><strong>Set up the Controller</strong>.  From the GUI setup wizard, perform the initial configuration of the Controller. Provide a password, DNS, and set the Infrastructure Type to No-Orchestrator.</li> 
 </ol> 
@@ -51,20 +51,20 @@ The resources suggested in this installation guide are minimum recommendations f
 
 <ol> 
  <ol> 
-  <li><a href="img/Download.png"><img class="size-full wp-image-11904 alignright" src="img/Download.png" alt="Download" width="29" height="30"></a><strong>Download SE image</strong>. From the Controller web interface, navigate to Infrastructure &gt; Clouds. Click the download icon shown on the right. A small prompt asks which type of SE image you want.  Select qcow2.  The first time this operation is executed, the Controller will create the new SE image, which may take several minutes, depending on disk performance.  Once the image is created it will automatically download to your browser.</li> 
+  <li><a href="img/Download.png"><img class="size-full wp-image-11904 alignright" src="img/Download.png" alt="Download" width="29" height="30"></a><strong>Download SE image</strong>. From the Controller web interface, navigate to Infrastructure &gt; Clouds. Click the download icon shown on the right. A small prompt asks which type of SE image is desired.  Select qcow2.  The first time this operation is executed, the Controller will create the new SE image, which may take several minutes, depending on disk performance.  Once the image is created it will automatically download to your browser.</li>
   <li><strong>Upload SE image</strong> to Prism &gt; Image Creation &gt; Upload Image<br> <a href="#illustration3"><span style="color: gray;">See Illustration 3</span></a><p></p> 
    <ul> 
     <li>Name</li> 
     <li>Image Type:  Disk</li> 
     <li>Image Source:  se.qcow2<a href="img/AuthToken2.png"><img class="alignright wp-image-11912" src="img/AuthToken2.png" alt="AuthToken2" width="398" height="104"></a></li> 
    </ul> </li> 
-  <li><strong>Copy the auth token</strong>.  The new SE will be required to authenticate to the Controller by presenting a valid token which is generated by the Controller and placed on the SE.  This token may be used only once, and expires if not used within one hour.  From the Controller, navigate to Infrastructure &gt; Clouds.  Click the key icon to generate a new token.  Copy the token, which will be used at the end of the next step.</li> 
+  <li><strong>Copy the auth token</strong>.  The new SE will be required to authenticate to the Controller by presenting a valid token that is generated by the Controller and placed on the SE.  This token may be used only once, and expires if not used within one hour.  From the Controller, navigate to Infrastructure &gt; Clouds.  Click the key icon to generate a new token.  Copy the token, which will be used at the end of the next step.</li>
   <li><strong>Create the SE VM</strong> from Prism.<a href="#illustration4"><span style="color: gray;">See Illustration 4</span></a> 
    <ul> 
     <li>Name</li> 
     <li>vCPUs:  1</li> 
     <li>Cores per vCPU:  2</li> 
-    <li>Memory:  2</li> 
+    <li>Memory:  2 GB</li>
     <li>Disks: 
      <ul> 
       <li>Remove CD-ROM</li> 
