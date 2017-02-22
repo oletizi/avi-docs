@@ -1,16 +1,16 @@
 ---
-title: Avi LBaaS Driver Install Instructions for Contrail
-layout: default
+title: Avi LBaaS Driver Installation Instructions for Contrail
+layout: layout163
 ---
-The following details how to install Avi LBaaS driver in an OpenStack + Contrail  environment. There are two mutually exclusive modes:
+This article details installation of the Avi LBaaS driver in an OpenStack + Contrail  environment. There are two mutually exclusive modes:
 
-a) Neutron based Avi LBaaS driver: In this mode, Avi LBaaS driver derives off Neutron and resides in neutron-server process. This mode allows multiple Neutron LBaaS providers to co-exist.
+a) Neutron-based Avi LBaaS driver: In this mode, the Avi LBaaS driver derives off Neutron and resides in the Neutron-server process. This mode allows multiple Neutron LBaaS providers to co-exist.
 
-b) Contrail based Avi LBaaS driver. In this mode, Avi LBaaS driver derives off Contrail and resides in service-monitor process. This mode allows multiple Contrail LBaaS providers to co-exist.
+b) Contrail-based Avi LBaaS driver. In this mode, the Avi LBaaS driver derives off Contrail and resides in the service-monitor process. This mode allows multiple Contrail LBaaS providers to co-exist.
 
-The Avi Vantage Cloud configuration is exactly the same in both modes. Note that in a Contrail environment, you cannot have a mix of Contrail LBaaS and Neutron LBaaS; and thus must pick a mode that is compatible with the current environment.
+The Avi Vantage cloud configuration is exactly the same in both modes. Note that in a Contrail environment, you cannot have a mix of Contrail LBaaS and Neutron LBaaS; and thus must pick a mode that is compatible with the current environment.
 
-### Avi LBaaS Neutron Driver Install Instructions for Contrail
+### Avi LBaaS Neutron Driver Installation Instructions for Contrail
 
 The following steps are to be performed on Neutron-server host.
 
@@ -55,13 +55,29 @@ mysql&gt; alter table lbaas_loadbalancers drop FOREIGN KEY fk_lbaas_loadbalancer
 
 5. Continue with steps from README file for the Avi LBaaS plugin installation.
 
-5.a. For a local install:
+5.a. For a local installation:
 
 <pre><code class="language-lua"># LBaaS v1 driver
-$ ./install.sh ‐‐aname avi_adc ‐‐aip &lt;CONTROLLER_IP|CONTROLLER_VIP&gt; ‐‐auser &lt;avi‐admin‐tenant‐user&gt; ‐‐apass &lt;avi‐admin‐tenant‐password&gt;
+$ ./install.sh ‐‐aname avi_adc ‐‐aip
 
-# LBaaS v2 driver
-$ ./install.sh ‐‐aname avi_adc_v2 ‐‐aip &lt;CONTROLLER_IP|CONTROLLER_VIP&gt; ‐‐auser &lt;avi‐admin‐tenant‐user&gt; ‐‐apass &lt;avi‐admin‐tenant‐password&gt; --v2</code></pre>  
+  <controller_ip|controller_vip>
+    ‐‐auser
+   <avi‐admin‐tenant‐user>
+     ‐‐apass
+    <avi‐admin‐tenant‐password>
+      # LBaaS v2 driver $ ./install.sh ‐‐aname avi_adc_v2 ‐‐aip
+     <controller_ip|controller_vip>
+       ‐‐auser
+      <avi‐admin‐tenant‐user>
+        ‐‐apass
+       <avi‐admin‐tenant‐password>
+         --v2
+       </avi‐admin‐tenant‐password>
+      </avi‐admin‐tenant‐user>
+     </controller_ip|controller_vip>
+    </avi‐admin‐tenant‐password>
+   </avi‐admin‐tenant‐user>
+  </controller_ip|controller_vip></code></pre>
 
 5.b. For manual steps:
 
@@ -93,9 +109,9 @@ password=avi123
 $ service neutron-server restart
 $ neutron service-provider-list</code></pre>  
 
-### Avi LBaaS Contrail Driver Install Instructions for Contrail
+### Avi LBaaS Contrail Driver Installation Instructions for Contrail
 
-These steps are exclusive with Neutron-LBaaS mode and thus any changes from that mode would need to be undone apriori. The following steps are to be performed on Neutron-server/Contrail <code>api-server</code> host.
+These steps are exclusive of Neutron-LBaaS mode and thus any changes from that mode would need to be undone apriori. The following steps should be performed on the Neutron-server/Contrail <code>api-server</code> host.
 
 1. Determine Contrail-plugin version:
 
@@ -107,13 +123,23 @@ neutron-plugin-contrail 3.0.2.0-51</code></pre>
 2. Driver installation:
 
 <pre><code class="language-lua"># LBaaS v2 driver
-$ ./install.sh ‐‐aname ocavi_adc_v2 ‐‐aip &lt;CONTROLLER_IP|CONTROLLER_VIP&gt; ‐‐auser &lt;avi‐admin‐tenant‐user&gt; ‐‐apass &lt;avi‐admin‐tenant‐password&gt; --v2 --no-restart --no-confmodify</code></pre>  
+$ ./install.sh ‐‐aname ocavi_adc_v2 ‐‐aip
+
+  <controller_ip|controller_vip>
+    ‐‐auser
+   <avi‐admin‐tenant‐user>
+     ‐‐apass
+    <avi‐admin‐tenant‐password>
+      --v2 --no-restart --no-confmodify
+    </avi‐admin‐tenant‐password>
+   </avi‐admin‐tenant‐user>
+  </controller_ip|controller_vip></code></pre>
 
 3. Setup service-appliance-set:
 
 <pre><code class="language-lua">$ /opt/contrail/utils/service_appliance_set.py --api_server_ip 10.10.10.100 --api_server_port 8082 --oper add --admin_user admin --admin_password contrail123 --admin_tenant_name admin --name ocavi_adc_v2 --driver "neutron_lbaas.drivers.avi.avi_ocdriver.OpencontrailAviLoadbalancerDriver" --properties '{"address": "10.1.11.3", "user": "admin", "password": "avi123", "cloud": "Default-Cloud"}'</code></pre>  
 
-NOTE: In the event that 'neutron_lbaas' doesnt exist on the api-server node, the driver path should be adjusted to the correct path spec.
+NOTE: In the event 'neutron_lbaas' doesn't exist on the api-server node, the driver path should be adjusted to the correct path spec.
 
 4. Delete service-appliance-set:
 
@@ -121,7 +147,7 @@ NOTE: In the event that 'neutron_lbaas' doesnt exist on the api-server node, the
 
 ### Avi Controller Configuration
 
-1. If OpenStack endpoints are private IPs and Contrail provides a public/frontend IP to those endpoints, then use iptables to DNAT.
+1. If OpenStack endpoints are private IPs and Contrail provides a public/front-end IP to those endpoints, then use iptables to DNAT.
 
 <pre><code class="language-lua"># on AviController only - perform iptable nat to reach the private IPs.
 $ iptables -t nat -I OUTPUT --dest 172.16.11.50 -j DNAT --to-dest 10.10.10.100</code></pre>  

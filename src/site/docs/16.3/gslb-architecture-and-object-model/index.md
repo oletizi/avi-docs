@@ -10,10 +10,7 @@ A**GSLB service** is the representation of a global application; it front-ends
 
 * GSLB service's **name**, by which administrators reference the GSLB configuration.
 * **FQDN** by which end-user clients reference the GSLB application. A list of domain names can be provided for aliasing (e.g., www.foo.com and foo.com).
-* A **time-to-live (TTL)** ranging from 1-86400 seconds that determines the frequency with which clients need to obtain fresh steering information for client requests. If none is specified for a particular GSLB service, the TTL value defaults to the one specified in the DNS application profile (default there is 30 seconds). 
-    
-    Note: Avi suggests caution when using very low values of TTL, since some DNSs/operating systems will discard a very low TTL.
-    
+* A **time-to-live (TTL)** ranging from 1-86400 seconds that determines the frequency with which clients need to obtain fresh steering information for client requests. If none is specified for a particular GSLB service, the TTL value defaults to the one specified in the DNS application profile (default there is 30 seconds).Note: Avi suggests caution when using very low values of TTL, since some DNSs/operating systems will discard a very low TTL.
 * Backing **virtual services** in various **GSLB** **sites**, organized into **virtual service** **pools**.
 * **Priorities **for the various pools and**ratios** for their **members**,
 * **Load-balancing scheme**, and
@@ -113,7 +110,7 @@ All members of a********GSLB pool share the same priority, but each member of th
 
 Once a particular pool has been selected, a **GslbPool.algorithm** balances load across the pool's virtual services. In 16.3, **two load-unaware** algorithms are available.
 <ol> 
- <li>The <strong>weighted round robin</strong> algorithm balances even-handedly across all members. As discussed, load can be skewed by the <strong>GslbPoolMember.ratio</strong> [default = 1, range is 1-20] values that optionally may be set for members. For example, if virtual services A, B, and C have ratios of 1, 2 and 3 respectively, virtual service A will receive one-sixth, B will get one-third, and C will get one-half the load.</li> 
+ <li>The <strong>weighted-round robin</strong> algorithm balances even-handedly across all members. As discussed, load can be skewed by the <strong>GslbPoolMember.ratio</strong> [default = 1, range is 1-20] values that optionally may be set for members. For example, if virtual services A, B, and C have ratios of 1, 2 and 3 respectively, virtual service A will receive one-sixth, B will get one-third, and C will get one-half the load.</li>
  <li><strong>Consistent hash</strong> is based on the client IP address (typically the local DNS IP address). A mask can be applied on the client IP address, if there are multiple local DNSes in a given network, in one site. IT is the only option that can provide persistence.</li> 
 </ol> 
 
@@ -121,7 +118,7 @@ As of this writing, the complete list of supported and planned load balancing op
 
 * A**load-unaware configuration**, as discussed above.
 * A** load-aware configuration** steers clients to the most optimal site based on the observed load of the members. This option will be added in a future release.
-* A** geo-location-aware configuration**** steers** clients to the closest site. Member selection is based on the proximity of the client to the members. This option will be added in a future release. 
+* A** geolocation-aware configuration**** steers** clients to the closest site. Member selection is based on the proximity of the client to the members. This option will be added in a future release.
 
 ### GslbHealthMonitor
 

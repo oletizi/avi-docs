@@ -4,6 +4,16 @@ layout: layout163
 ---
 This article lists the most recent Avi Vantage release notes.
 
+<a href="{% vpath %}/avi-vantage-16-3-6-release-notes/">16.3.6</a>
+
+<a href="{% vpath %}/avi-vantage-16-3-5-release-notes/">16.3.5</a>
+
+<a href="{% vpath %}/avi-vantage-16-3-4-release-notes/">16.3.4</a>
+
+<a href="{% vpath %}/avi-vantage-16-3-3-release-notes/">16.3.3</a>
+
+<a href="{% vpath %}/avi-vantage-16-3-2-release-notes/">16.3.2</a>
+
 <a href="{% vpath %}/avi-vantage-16-3-1-release-notes/">16.3.1</a>
 
 <a href="{% vpath %}/avi-vantage-16-3-release-notes/">16.3</a>
@@ -29,14 +39,6 @@ This article lists the most recent Avi Vantage release notes.
 <a href="{% vpath %}/avi-vantage-16-1-5-release-notes/">16.1.5</a>
 
 <a href="{% vpath %}/avi-vantage-16-1-4-release-notes/">16.1.4</a>
-
-<a href="{% vpath %}/avi-vantage-16-1-3-release-notes/">16.1.3</a>
-
-<a href="{% vpath %}/avi-vantage-16-1-2-release-notes/">16.1.2</a>
-
-<a href="{% vpath %}/avi-vantage-16-1-3-release-notes/">16.1.3</a>
-
-<a href="{% vpath %}/avi-vantage-16-1-2-release-notes/">16.1.2</a>
 
 <a href="{% vpath %}/avi-vantage-16-1-3-release-notes/">16.1.3</a>
 

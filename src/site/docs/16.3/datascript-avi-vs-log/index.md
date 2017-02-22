@@ -27,11 +27,11 @@ layout: layout163
 <tr>   
 <td><span style="font-size: medium;"><strong>Example</strong></span></td>
 <td> From DataScript "Log1" HTTP_REQ event:<br> 
-<!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">avi.vs.log("Hello World!")</code></pre> 
-<!-- [Format Time: 0.0007 seconds] --> From DataScript "Log2" HTTP_RESP event:<br> 
-<!-- Crayon Syntax Highlighter v2.7.1 --> <pre><code class="language-lua">num = 2
+<pre><code class="language-lua">avi.vs.log("Hello World!")</code></pre>
+From DataScript "Log2" HTTP_RESP event:<br>
+<pre><code class="language-lua">num = 2
 avi.vs.log("Hello " .. num .. " You!")</code></pre> 
-<!-- [Format Time: 0.0012 seconds] --> Output from the client log:<p></p> <pre crayon="false" class="">DataScript Log: [string "Log1"]:1: Hello World!
+Output from the client log:<p></p> <pre crayon="false" class="">DataScript Log: [string "Log1"]:1: Hello World!
 
 DataScript Log: [string "Log2"]:1: Hello 2 You!</pre> <p>Note: The logs are prefixed by meta information, which is generally the function name and line number calling <strong>avi.vs.log()</strong>. When the call is not made from a function, the name is the name of the script (in our example, the script is a <strong>string</strong>, not a file, named Log1).</p></td>
 </tr>
