@@ -2,7 +2,7 @@
 title: Tenants
 layout: layout163
 ---
-A tenant is an isolated instance of Avi Vantage. Each Vantage user account is associated with one or more tenants. The tenant associated with a user account defines the resources that user can access within Vantage. When a user logs in, Vantage restricts their access to only those resources that are in the same tenant.
+A tenant is an isolated instance of Avi Vantage. Each Avi Vantage user account is associated with one or more tenants. The tenant associated with a user account defines the resources that user can access within Avi Vantage. When a user logs in, Avi Vantage restricts their access to only those resources that are in the same tenant.
 
 If a user is associated with multiple tenants, each tenant still isolates the resources that belong to that tenant from the resources in other tenants. To access resources in another tenant, the user must switch the focus of the management session to that other tenant.
 
@@ -14,7 +14,7 @@ By default, all resources belong to a single, global tenant: admin. The admin te
 
 The default admin user account belongs to the admin tenant and therefore can access all resources.
 
-If no additional tenants are created, all new Vantage user accounts are automatically added to the admin tenant.
+If no additional tenants are created, all new Avi Vantage user accounts are automatically added to the admin tenant.
 
 ### Tenant-to-Role Mapping
 
@@ -22,11 +22,11 @@ Within each user account, the role selected for the user is mapped to a tenant. 
 
 Creating additional tenants allows a user account to have multiple roles. In this case, within the user account, each role can be mapped individually to a tenant. Or, optionally, a single role can be mapped to all tenants.
 
-If a single role is mapped to all tenants, the default tenant for that user must be selected. The default tenant is the one the user is placed into when logging into Vantage. After logging in, the user can switch the management session to other tenants as needed.
+If a single role is mapped to all tenants, the default tenant for that user must be selected. The default tenant is the one the user is placed into when logging into Avi Vantage. After logging in, the user can switch the management session to other tenants as needed.
 
 ### *All Tenants* View-only Tenant for Super Users
 
-Vantage user accounts that are enabled for super user access automatically have access to a special read-only tenant: All Tenants. The All Tenants view provides read-only access to all resources within Avi Vantage.
+Avi Vantage user accounts that are enabled for super user access automatically have access to a special read-only tenant: All Tenants. The All Tenants view provides read-only access to all resources within Avi Vantage.
 
 The <a href="{% vpath %}/all-tenants-view">All Tenants</a> tenant cannot be mapped to any roles within a user account. The All Tenants tenant is automatically made available to all super user accounts.
 

@@ -87,7 +87,7 @@ The following table explains 3 possible NIC mapping options on CSP and the corre
 
 ### <a name="_Toc473547165"></a>Topology
 
-The topology shown below consists of an Avi Controller and Avi Service Engines (SEs). To leverage the DPDK capabilities of the physical NICs, the SEs should be connected to the 10G enp7s0fx pNICs of the CSP-2100 in passthrough (PCIe) or SR-IOV mode. The SE can be connected to multiple VLANs on the pNICs’ virtual functions (VF) in SR-IOV mode. The management network can be connected to 1G pNIC.
+The topology shown below consists of an Avi Controller and Avi Service Engines (SEs). To leverage the DPDK capabilities of the physical NICs, the SEs should be connected to the 10-Gbps enp7s0fx pNICs of the CSP-2100 in passthrough (PCIe) or SR-IOV mode. The SE can be connected to multiple VLANs on the pNICs’ virtual functions (VF) in SR-IOV mode. The management network can be connected to the 1-Gbps pNIC.
 
 <a href="img/Picture1.png"><img class="aligncenter wp-image-23663 size-full" src="img/Picture1.png" alt="Picture1" width="870" height="529"></a>
 
@@ -98,13 +98,17 @@ The topology shown below consists of an Avi Controller and Avi Service Engines (
 <ol> 
  <li>Log on to the CSP dashboard using a browser.</li>
  <li>Navigate to Configuration &gt; Repository.</li>
- <li>Click on + sign, and browse to and select the controller qcow2 image.</li>
+ <li>Click on + sign, and browse to and select the Controller qcow2 image.</li>
  <li>Click Upload.</li> 
 </ol> 
 
+The Controller itself can have a day-zero YAML file before it is spun up. The YAML file needs to be imported into the repository prior to image creation. Ensure you have VNC access to the console. In a large deployment, this *might* require additional firewall rules.
+
+Note: in a CSP cluster, multiple copies (equal to the number of cluster hosts ) of the same image/YAML file may result. Consequently, when any deletions are required, *all* copies should be deleted. Typically, you would change a key (such as auth token) with the same filename and re-upload.
+
 ### <a name="_Toc473547168"></a>Avi Controller Metadata File
 
-To configure controller management interface statically, the IP, netmask and gateway information must be passed as a yaml file. The name of the metadata file must be in ‘avi_meta/*.yml’ format.
+To configure the Controller management interface statically, the IP, netmask and gateway information must be passed as a YAML file. The name of the metadata file must be in ‘avi_meta/*.yml’ format.
 
 For example, create a text file with name avi_meta_controller.yml with contents as:
 
@@ -125,9 +129,9 @@ This section describes how to deploy Avi Controller using both the CSP UI and th
 Use the following steps to deploy the Avi Controller using the CSP UI:
 <ol> 
  <li>Navigate to Configuration &gt; Services.<a href="img/Picture1-1.png"><img class="aligncenter wp-image-23678 size-full" src="img/Picture1-1.png" width="870" height="217"></a></li>
- <li>Click on +.<a href="img/Picture2-1.png"><img class="aligncenter wp-image-23676 size-full" src="img/Picture2-1.png" width="870" height="414"></a></li>
+ <li>Click on +.Note: The disk size of any CSP image cannot be changed. To avoid deletion and recreation of the entire configuration, have an informed idea of deployment. Refer to <a href="/system-requirements-hardware/">System Requirements: Hardware</a> and/or contact Avi for a recommendation.<a href="img/Picture2-1.png"><img class="aligncenter wp-image-23676 size-full" src="img/Picture2-1.png" width="870" height="414"></a></li>
  <li>Enter “Avi Controller” in the Service Name field and press enter.</li>
- <li>Click on Target Host Name and select the host from the list.</li> 
+ <li>Click on Target Host Name and select the host from the list. In version CSP 2.1.0, on a CSP cluster, you can select the HA host name.</li>
  <li>Leave the VNF Management IP field blank. This is set using the Day Zero Config.</li>
  <li>Click on Image Name and select the controller.qcow2 image from the list.</li>
  <li>Click on Day Zero Config dropdown and select the Controller metadata file.</li>
@@ -207,12 +211,14 @@ Use a browser to navigate to the Avi Controller IP address, and follow the below
  <li>Configure an administrator password.<a href="img/Picture5.png"><img class="aligncenter wp-image-23655 size-full" src="img/Picture5.png" alt="Picture5" width="375" height="519"></a></li>
  <li>Set DNS information.<a href="img/Picture6.png"><img class="aligncenter wp-image-23653 size-full" src="img/Picture6.png" alt="Picture6" width="393" height="338"></a></li>
  <li>Select No Orchestrator.<a href="img/Picture7.png"><img class="size-full wp-image-23651 aligncenter" src="img/Picture7.png" alt="Picture7" width="369" height="513"></a></li>
- <li>On the Tenant Settings wizard page, select No.<a href="img/Picture8.png"><img class="size-full wp-image-23649 aligncenter" src="img/Picture8.png" alt="Picture8" width="375" height="402"></a></li>
+ <li>On the Tenant Settings wizard page, select the appropriate option. Refer to <a href="/tenants-versus-se-group-isolation/">Tenants Versus SE Group Isolation.</a><a href="img/Picture8.png"><img class="size-full wp-image-23649 aligncenter" src="img/Picture8.png" alt="Picture8" width="375" height="402"></a></li>
 </ol> 
 
 # <a name="_Toc473547173"></a>Deploy Avi SE
 
-This section walks through the workflow of deploying Avi SE on CSP, with data NICs in SR-IOV passthrough mode.
+This section walks through the workflow of deploying an Avi SE on CSP, with data NICs in SR-IOV passthrough mode.
+
+Note: Not every deployment will use SR-IOV, but if it is, it must be configured on the /***CSPs**/* beforehand. A figure appearing in the Enable SR-IOV section of this article shows the number of VFs and the switch mode being set.
 
 ### <a name="_Toc473547174"></a>Upload SE image
 
@@ -224,7 +230,7 @@ This section walks through the workflow of deploying Avi SE on CSP, with data NI
 
 ### <a name="_Toc473547175"></a>Upload SE metadata file
 
-To configure SE management interface statically, the IP, netmask and gateway information must be passed as a yaml file. The name of the metadata file must be in ‘avi_meta/*.yml’ format.
+To configure SE management interface statically, the IP, netmask and gateway information must be passed as a YAML file. The name of the metadata file must be in ‘avi_meta/*.yml’ format.
 
 For example, create a text file with name avi_meta_se.yml with contents as:
 
@@ -277,7 +283,7 @@ SR-IOV must be enabled on the CSP pNIC. Follow the below steps to enable SR-IOV 
 Use the following steps to deploy the Avi SE using the CSP UI:
 <ol> 
  <li>Navigate to Configuration &gt; Services.<a href="img/Picture3-1.png"><img class="aligncenter wp-image-23674 size-full" src="img/Picture3-1.png" width="870" height="217"></a></li>
- <li>Click on +.<a href="img/Picture4-1.png"><img class="aligncenter wp-image-23672 size-full" src="img/Picture4-1.png" width="870" height="360"></a></li>
+ <li>Click on +. Refer to <a href="/system-requirements-hardware/">System Requirements: Hardware</a> for recommendations on a minimum production SE configuration.<a href="img/Picture4-1.png"><img class="aligncenter wp-image-23672 size-full" src="img/Picture4-1.png" width="870" height="360"></a></li>
  <li>Enter “Avi SE1” in the Service Name field and press enter.</li>
  <li>Click on Target Host Name and select the host from the list.</li> 
  <li>Leave the VNF Management IP field blank. This is set using the Day Zero Config.</li>

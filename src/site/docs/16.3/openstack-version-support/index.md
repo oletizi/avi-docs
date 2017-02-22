@@ -2,14 +2,8 @@
 title: OpenStack Version Support
 layout: layout163
 ---
-Avi Vantage supports deployment within the following OpenStack releases:
+ 
 
-* Havana
-* Icehouse
-* Juno
-* Kilo
-* Liberty 
+Please refer to <a href="{% vpath %}/system-requirements-ecosystem/">System Requirements: Ecosystem</a>.
 
-Vantage supports integration through the Controller's management interfaces or through OpenStack LBaaS v1.  
-
-Note: Vantage does not support Neutron DVR mode.
+Note: Avi Vantage does not support Neutron DVR mode.
