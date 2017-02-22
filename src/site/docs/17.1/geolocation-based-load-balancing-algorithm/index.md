@@ -59,10 +59,10 @@ To support the geolocation algorithm, special consideration must be given when 
 <ul>
  	<li><strong>Memory Allocation</strong>. An Avi geo-DB can be very large (e.g., can easily contain 3 million entries). Accordingly, the minimum recommendation for an Avi DNS SE is 8 GB. An additional knob stipulates the amount of memory (2GB recommended) to be exclusively devoted to the geo-DB.</li>
  	<li><strong>Disk Allocation</strong>. An Avi geo-DB can be very large (e.g., can easily contain 3 million entries). Accordingly, an extra 2 GB is recommended for disk size. Controller disk size likewise needs to increase beyond the norm, since it is the first place the data are assembled.</li>
- 	<li>When the Avi geo-DB is large, the DNS Service Engine needs some time to load the entries into memory. In the <strong>Beta release, </strong>the service engine properties need to be modified to increase the heartbeat timers, to account for this time.</li>
+ 	<li>When the Avi geo-DB is large, the DNS Service Engine needs some time to load the entries into memory. In the <strong>Beta release, </strong>the SE properties need to be modified to increase the heartbeat timers, to account for this time.</li>
 </ul>
 <ul>
- 	<li>The CLI commands for these are discussed in the CLI section</li>
+ 	<li>The CLI commands for these are discussed in the CLI section.</li>
 </ul>
 <h3><strong>CLI Interface</strong></h3>
 &nbsp;
