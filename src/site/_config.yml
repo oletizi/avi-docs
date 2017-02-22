@@ -41,7 +41,7 @@ search:
   applicationID: 272ZBU7KSH
   apiKey: 6fc3a75f0821308178cd612cfd4f8d2e
   index: *current_version
-  versions: "17.1 16.3 16.2 16.1"
+  versions: "16.3 16.2 16.1"
   #index: wp_searchable_posts
 
 algolia:
