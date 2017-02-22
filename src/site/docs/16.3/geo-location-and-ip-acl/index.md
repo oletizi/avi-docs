@@ -1,5 +1,5 @@
 ---
-title: Geo Location and IP ACL
+title: Geolocation and IP ACL
 layout: default
 ---
 ### Description
