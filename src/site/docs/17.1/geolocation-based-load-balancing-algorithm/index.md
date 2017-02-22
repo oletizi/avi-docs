@@ -18,7 +18,8 @@ Note: The selection of DNS-2 is outside the control of Avi Vantage, and thus may
 
 The algorithm running in DNS-2 calculates four distances, determines that dist-1 is the shortest, and therefore responds to the DNS request with vip-1. As figure 2 shows, the client thereafter directs its application request to vip-1.
 
-[caption id="attachment_24457" align="aligncenter" width="800"]<a href="img/client-directs-request-to-closest-site.png"><img class="wp-image-24457" src="img/client-directs-request-to-closest-site.png" alt="Geolocation algorithm running in DNS-2 selects vip-1" width="800" height="523" /></a> Figure 2. Geolocation algorithm running in DNS-2 selects vip-1[/caption]
+{% include figure.html title="Geolocation algorithm running in DNS-2 selects vip-1" url="img/client-directs-request-to-closest-site.png" alt="Geolocation algorithm running in DNS-2 selects vip-1" caption="Figure 2. Geolocation algorithm running in DNS-2 selects vip-1" %}
+
 <h4></h4>
 <h4>Assigning Geographic Locations to VIPs</h4>
 Each GSLB service pool's algorithm is independently set. Current choices are the round-robin, consistent hash, and geolocation algorithms. To implement the geolocation algorithm, the Avi DNS for GSLB must have a way to assign locations to GSLB sites comprising a GSLB service. The choices on a per-GSLB-service basis are as follows:
